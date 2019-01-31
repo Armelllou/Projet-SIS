@@ -1,7 +1,20 @@
 package NF;
 
-public class Dm {
+import java.util.List;
+
+public abstract class Dm {
     private Observation observation;
-    private String resultats;
-    private
+    private Resultat resultats;
+    private List<Consultation> lc;
+    private List<Hospitalisation> lh;
+
+    public Dm(Observation observation, String resultats, List<Consultation> lc, List<Hospitalisation> lh) {
+        this.observation = observation;
+        this.resultats = resultats;
+        this.lc = lc;
+        this.lh = lh;
+    }
+
+
+
 }
