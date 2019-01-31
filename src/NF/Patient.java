@@ -25,6 +25,9 @@ public class Patient {
         this.localisation = localisation;
     }
 
+    public static void add(Patient patient) {
+    }
+
     public String getNomUsuel() {
         return NomUsuel;
     }
