@@ -1,4 +1,4 @@
-package fr.polytech.tis.sis;
+package UI;
 
 public class Patient {
    
