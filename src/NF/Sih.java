@@ -5,9 +5,9 @@ import fr.polytech.tis.sis.Medecin;
 import java.util.List;
 
 public class Sih {
-    private List<Patient> patientList;
+    private static List<Patient> patientList;
     private List<Medecin> medecinList;
-    private List<Dma> dmaList;
+    private static List<Dma> dmaList;
     private List<SecretaireMedical> secretaireMedicalList;
     private List<Dm> dmList;
     private List<Observation> observationList;
@@ -18,5 +18,10 @@ public class Sih {
 
     public static void ajoutPatient(Patient patient) {
         patientList.add(patient);
+    }
+
+
+    public static void nouvelleAdmission(Dma dma) {
+        dmaList.add(dma);
     }
 }
