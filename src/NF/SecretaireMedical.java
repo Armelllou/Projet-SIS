@@ -1,6 +1,6 @@
 package NF;
 
-public class SecretaireMedical {
+public class SecretaireMedical extends Personnel {
     public void nouveauPatient(Patient patient) {
         Sih.ajoutPatient(patient);
 
