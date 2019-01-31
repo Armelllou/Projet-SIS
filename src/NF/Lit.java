@@ -10,12 +10,20 @@ package NF;
  * @author annel
  */
 public class Lit {
-   int n;
+   String n;
+   String F;
+   String P;
 
-    public Lit(int n) {
-        if (n<000 && n>999){
-            System.out.println("Ce numéro de chambre est inconnu");
+
+    public Lit(String n) {
+        
+        if (n.equals(F)!= true) {
+            System.out.println("le numéro de lit est inconnu");
         }
+        if (n.equals(P) != true){
+             System.out.println("le format de mlit est inconnu");
+        }
+        
         else this.n=n;
     }
     
