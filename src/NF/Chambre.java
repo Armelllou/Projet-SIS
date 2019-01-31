@@ -10,14 +10,15 @@ package NF;
  * @author annel
  */
 class Chambre {
-     int n;
+     int[] num;
 
-    public Chambre(int n) {
+    public Chambre(int num[]) {
         
-        if (n<0 && n>999){
-            System.out.println("Le numéro de chambre est inconnu");
-        }
-        this.n = n;
-    }
+         if(num.length==3&&num[0]>=0&&num[0]<=9&&num[1]>=0&&num[1]<=9&&num[2]>=0&&num[2]<=9){
+             this.num=num;
+         }
+         else System.out.println("Le numéro de chambre est inconnu");
    
+       }
+        
 }

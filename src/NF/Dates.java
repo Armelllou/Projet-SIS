@@ -9,7 +9,7 @@ package NF;
  *
  * @author annel
  */
-public class Date {
+public class Dates {
     /**Méthode qui retourne le jour de la date
      * 
      * @return le jour
@@ -41,7 +41,7 @@ public class Date {
      * @param mois le mois de la date
      * @param annee l'année de la date
      */
-    public Date(int jour, int mois, int annee) {
+    public Dates(int jour, int mois, int annee) {
         this.jour=jour;
         this.mois=mois;
         this.annee=annee;
