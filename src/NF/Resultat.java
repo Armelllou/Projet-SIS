@@ -1,5 +1,7 @@
 package NF;
 
+import java.util.Date;
+
 public class Resultat {
     private Date date;
 
@@ -14,4 +16,6 @@ public class Resultat {
     public void setDate(Date date) {
         this.date = date;
     }
+
+
 }

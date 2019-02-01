@@ -1,5 +1,6 @@
 package fr.polytech.tis.sis;
 import java.sql.*;
+package NF;
 
 public class Main {
 
@@ -16,5 +17,8 @@ public class Main {
         catch (Exception exc){
             exc.printStackTrace();
         }
+       Ipp ipp = new Ipp();
+       
+               
     }
 }

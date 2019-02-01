@@ -5,11 +5,13 @@
  */
 package NF;
 
+import java.util.Date;
+
 /**
  *
  * @author annel
  */
-public class Date {
+public class Dates {
     /**Méthode qui retourne le jour de la date
      * 
      * @return le jour
@@ -41,7 +43,7 @@ public class Date {
      * @param mois le mois de la date
      * @param annee l'année de la date
      */
-    public Date(int jour, int mois, int annee) {
+    public Dates(int jour, int mois, int annee) {
         this.jour=jour;
         this.mois=mois;
         this.annee=annee;
@@ -62,7 +64,7 @@ public class Date {
     public boolean equals(Object o) {
         if (o instanceof Date) {
             Date d = (Date)o;
-            return (annee == d.annee) && (mois == d.mois) && (jour == d.jour);
+            return (annee == d.getYear()) && (mois == d.getMonth()) && (jour == d.getDay());
             }
         else
             return false;
@@ -77,14 +79,14 @@ public class Date {
      */
     public int compareTo(Object o) {
         Date d = (Date)o;
-        if (this.annee != d.getAnnee())
-            return this.annee - d.getAnnee();
+        if (this.annee != d.getYear())
+            return this.annee - d.getYear();
         // ici on a forcement annee == d.annee :
-        if (this.mois != d.getMois())
-            return this.mois  - d.getMois();
+        if (this.mois != d.getMonth())
+            return this.mois  - d.getMonth();
         // ici on a forcement annee == d.annee et mois == d.mois :
        
-           return this.jour - d.getJour();
+           return this.jour - d.getDay();
         
     }
     
