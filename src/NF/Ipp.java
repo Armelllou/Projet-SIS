@@ -18,10 +18,12 @@ class Ipp {
     String MM = "null";
     private static int XXXXXint;
     String XXXXX = "null";
-    String[][] ipps = new String[10000][3];
-    
+    int i;
    
-
+  int day;
+    
+   String ipp;
+   
     Calendar date = Calendar.getInstance();
 
 //constructeur d'un IPP
@@ -31,12 +33,32 @@ class Ipp {
 
 // récupère le mois et le transforme en string en lui ajoutant 0 pour faire format MM
         MMint = date.get(Calendar.MONTH);
+        MMint +=1;
         if (MMint < 10) {
             MM = "0";
-            MM += String.valueOf(MMint);
-        } 
+            MM += (String.valueOf(MMint));
+        }   
+       
+      day = date.get(Calendar.DAY_OF_MONTH);
+      
+       
+      i=XXXXXint;
+      i=i+1;
+      
+       if (day==1 && i>=0 ){
+            i=(i+1);
+       }
+       
+        if (day==1 && i!=0 ){
+           i=0;
+       }
+        
+         if (day!=1 ){
+           i=i+1;
+       }
+       
 // incrémente le chiffre à la création de chaque nombre de patient (ne change pas encore pour chaque mois) 
-      this.XXXXXint++;
+
 // rajoute des zéros pour le format
             if (XXXXXint < 10) {
                 XXXXX = "0000";
@@ -54,14 +76,16 @@ class Ipp {
                 XXXXX = "0";
                 XXXXX += String.valueOf(XXXXXint);
             }
-//création d'un string ipp
-//            ipp = String.valueOf(YY);
-//            ipp += MM;
-//            ipp += XXXXX; 
-//            
-
-
             
+            
+//création d'un string ipp
+            ipp = String.valueOf(YY);
+            ipp += MM;
+            ipp += XXXXX; 
+            
+        System.out.println(ipp);
+        System.out.println(i);
+            System.out.println(day);
         }
     
  

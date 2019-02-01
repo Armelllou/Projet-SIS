@@ -1,7 +1,8 @@
 package NF;
-import java.sql.*;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Main {
 
@@ -10,7 +11,7 @@ public class Main {
         //a
         try{
             // 1. Get a connection to database
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dem", "id", "mdp");
+            //Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dem", "id", "mdp");
             //2. Create a statement
             //3. Execute SQL query
             //4. Process the result set
@@ -18,8 +19,11 @@ public class Main {
         catch (Exception exc){
             exc.printStackTrace();
         }
-     
-       
-               
+        
+        Ipp ipp = new Ipp();
+         Ipp ipp3 = new Ipp();
+          Ipp ipp4 = new Ipp();
+           Ipp ipp5 = new Ipp();
+            Ipp ipp6 = new Ipp();
     }
 }
