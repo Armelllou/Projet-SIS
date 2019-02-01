@@ -1,5 +1,7 @@
 package NF;
 
+import java.util.Date;
+
 public class Patient {
   String NomUsuel ;
   String NomDeNaissance;

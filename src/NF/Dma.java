@@ -1,5 +1,7 @@
 package NF;
 
+import java.util.Date;
+
 public class Dma {
     private Patient patient;
     private int numeroDeSejour;

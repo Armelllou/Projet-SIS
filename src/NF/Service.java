@@ -10,5 +10,8 @@ package NF;
  * @author annel
  */
 public enum Service {
-    
+    Médecine,
+    Chirurgie,
+    Gynécologie,
+    Obstétrique,
 }

@@ -5,6 +5,8 @@
  */
 package NF;
 
+import java.util.Date;
+
 /**
  *
  * @author annel
@@ -62,7 +64,7 @@ public class Dates {
     public boolean equals(Object o) {
         if (o instanceof Date) {
             Date d = (Date)o;
-            return (annee == d.annee) && (mois == d.mois) && (jour == d.jour);
+            return (annee == d.annnee) && (mois == d.mois) && (jour == d.jour);
             }
         else
             return false;
