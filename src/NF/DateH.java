@@ -5,14 +5,18 @@
  */
 package NF;
 
+import java.io.File;
 import java.util.Date;
 
 /**
  *
  * @author annel
  */
-public class DateH extends Date {
+public class DateH extends Date  {
     
+    private int jour;
+    private int mois;
+    private int annee;
     private int heure;
     private int minutes;
     
@@ -26,7 +30,9 @@ public class DateH extends Date {
      * @param minutes minutes de la date
      */
     public DateH(int jour, int mois, int annee,int heure,int minutes) {
-       super(jour,mois,annee);
+       this.jour=jour;
+       this.mois=mois;
+       this.annee=annee;
        this.heure=heure;
        this.minutes=minutes;
     }
@@ -37,7 +43,7 @@ public class DateH extends Date {
      * @return la date sous chaîne de caractère 
      */
     public String toString() {
-        return this.heure+":"+this.minutes+" "+this.getJour() + "/" + this.getMois() + "/" + this.getAnnee();
+        return this.heure+":"+this.minutes+" "+this.getDay() + "/" + this.getMonth() + "/" + this.getYear();
         }
     
     
@@ -49,7 +55,7 @@ public class DateH extends Date {
     public boolean equals(Object o) {
         if (o instanceof DateH) {
             DateH d = (DateH)o;
-            return (getAnnee() == d.getAnnee()) && (getMois() == d.getMois()) && (getJour() == d.getJour()) &&(minutes==d.minutes)&&(heure==d.heure);
+            return (getYear() == d.getYear()) && (getMonth() == d.getMonth()) && (getDay() == d.getDay()) &&(minutes==d.minutes)&&(heure==d.heure);
             }
         else
             return false;
@@ -60,28 +66,27 @@ public class DateH extends Date {
      * @param o un Objet de type date 
      * @return la différence entre les 2 dates
      */
-    public int compareTo(Object o) {
+    /*public int compareTo(Object o) {
         DateH d = (DateH)o;
-        if (this.getAnnee() != d.getAnnee()){
-            
-            return this.getAnnee() - d.getAnnee();}
+        if (this.getYear() != d.getYear()){
+            return this.getYear() - d.getYear();}
         // ici on a forcement annee == d.annee :
-        if (getMois() != d.getMois())
-            return getMois()  - d.getMois();
+        if (getMonth() != d.getMonth())
+            return getMonth()  - d.getMonth();
         // ici on a forcement annee == d.annee et mois == d.mois :
-        if (getJour() != d.getJour())
-           return getJour() - d.getJour();
+        if (getDay() != d.getDay())
+           return getDay() - d.getDay();
         if (heure != d.getHeure())
             return heure -d.getHeure();
         return minutes-d.getMinutes();
     }
-    
+    */
     /**Méthode qui retourne la date de manière à l'inscrire grâce a InscriptionXML et pouvoir la relire avec LectureXML
      * 
      * @return une chaîne de caractère pour l'écriture XML 
      */
     public String toStringS() {
-        return this.heure+":"+this.minutes+";"+this.getAnnee() + "-" + this.getMois() + "-" + this.getJour();
+        return this.heure+":"+this.minutes+";"+this.getYear() + "-" + this.getMonth() + "-" + this.getDay()                                                                                                                                                                         ;
         }
 
     /**Méthode qui retourne l'heure
@@ -98,8 +103,8 @@ public class DateH extends Date {
         return minutes;
     }
     public boolean dateCorrect(){
-        
-        if(super.dateCorrect() && this.heure>=0 && this.minutes<60 && this.heure>=0 && this.heure<24){
+
+        if(this.heure>=0 && this.minutes<60 && this.heure>=0 && this.heure<24){
             return true;
         }
         else

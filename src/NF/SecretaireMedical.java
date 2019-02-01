@@ -7,7 +7,9 @@ public class SecretaireMedical extends Personnel {
 
     }
 
-public void admission(Dma dma){
-    Sih.nouvelleAdmission(dma);
-}
+    public void admission(Dma dma) {
+        Sih.nouvelleAdmission(dma);
+    }
+
+
 }

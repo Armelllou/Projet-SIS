@@ -109,6 +109,15 @@ public class Patient {
     public void setLocalisation(Localisation localisation) {
         this.localisation = localisation;
     }
+
+    public Patient rechercherPatient(String ipp) {
+        for(Patient patient : Sih.getPatientList()){
+            if(patient.ipp.equals(ipp)){
+                return patient;
+            }
+        }
+        return null;
+    }
   
   
 }

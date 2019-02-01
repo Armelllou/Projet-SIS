@@ -64,7 +64,7 @@ public class Dates {
     public boolean equals(Object o) {
         if (o instanceof Date) {
             Date d = (Date)o;
-            return (annee == d.annnee) && (mois == d.mois) && (jour == d.jour);
+            return (annee == d.getYear()) && (mois == d.getMonth()) && (jour == d.getDay());
             }
         else
             return false;
@@ -79,14 +79,14 @@ public class Dates {
      */
     public int compareTo(Object o) {
         Date d = (Date)o;
-        if (this.annee != d.getAnnee())
-            return this.annee - d.getAnnee();
+        if (this.annee != d.getYear())
+            return this.annee - d.getYear();
         // ici on a forcement annee == d.annee :
-        if (this.mois != d.getMois())
-            return this.mois  - d.getMois();
+        if (this.mois != d.getMonth())
+            return this.mois  - d.getMonth();
         // ici on a forcement annee == d.annee et mois == d.mois :
        
-           return this.jour - d.getJour();
+           return this.jour - d.getDay();
         
     }
     

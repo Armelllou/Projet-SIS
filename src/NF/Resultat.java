@@ -16,4 +16,6 @@ public class Resultat {
     public void setDate(Date date) {
         this.date = date;
     }
+
+
 }
