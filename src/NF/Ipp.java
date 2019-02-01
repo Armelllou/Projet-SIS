@@ -15,18 +15,30 @@ class Ipp {
    int YY;
    int MM;
    int XXXXX;
+   int i ;
+  
    String ipp;
    
    Date d=new Date();
 
     
     public Ipp() {
-        
-      
-YY = d.getYear();
+YY = d.getHours();
 MM= d.getMonth();
 
+        System.out.println(YY);
+        System.out.println(MM);
 
+//for (i=0; i<99999;i++){
+// 
+//  if (){
+//      i=0;  
+//  }  
+//   else XXXXX=i;
+//  
+
+//}
+    
 
        }
 }

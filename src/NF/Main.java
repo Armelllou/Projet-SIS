@@ -1,8 +1,10 @@
-package fr.polytech.tis.sis;
+package NF;
 
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+       Ipp ipp = new Ipp();
+       
+               
     }
 }
