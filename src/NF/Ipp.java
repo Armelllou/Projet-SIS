@@ -16,7 +16,7 @@ class Ipp {
    int YY;
    int MMint;
    String MM="null";
-           int XXXXX;
+   int XXXXX;
    int i ;
   
    String ipp;
@@ -27,48 +27,42 @@ class Ipp {
    
     public Ipp() {     
 YY =(date.get(Calendar.YEAR))-2000;
-MMint=date.get(Calendar.MONTH);
 
+MMint=date.get(Calendar.MONTH);
 if(MMint==1){
-    MM+="01";
+    MM="01";
 }
 if(MMint==2){
-    MM+="02";
+    MM="02";
 }
 if(MMint==3){
-    MM+="03";
+    MM="03";
 }
 if(MMint==4){
-    MM+="04";
+    MM="04";
 }
 if(MMint==5){
-    MM+="05";
+    MM="05";
 }
 if(MMint==6){
-    MM+="06";
+    MM="06";
 }
 if(MMint==7){
-    MM+="07";
+    MM="07";
 }
 if(MMint==8){
-    MM+="08";
+    MM="08";
 }
 if(MMint==9){
-    MM+="09";
+    MM="09";
 }
-        System.out.println(YY);
-        System.out.println(MM);
        
-//for (i=0; i<99999;i++){
-// 
-//  if (){
-//      i=0;  
-//  }  
-//   else XXXXX=i;
-//  
-//
-//}
-//    
+for (i=0; i<=99999;i++){
+    
+ XXXXX=i;
+}
+  
 
+        System.out.println(YY+MM+XXXXX);
        }
 }
