@@ -1,6 +1,5 @@
 package NF;
 
-import fr.polytech.tis.sis.Medecin;
 
 import java.util.List;
 

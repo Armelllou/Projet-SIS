@@ -9,12 +9,12 @@ package interfaces;
  *
  * @author Manon
  */
-public class AccueilSecrétaire extends javax.swing.JPanel {
+public class AccueilSecretaire extends javax.swing.JPanel {
 
     /**
      * Creates new form AccueilMedecin
      */
-    public AccueilSecrétaire() {
+    public AccueilSecretaire() {
         initComponents();
     }
 

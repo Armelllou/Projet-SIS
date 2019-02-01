@@ -10,11 +10,10 @@ public class Patient {
   String prenom;
   Adresse adresse;
   Ipp ipp;
-  MedecinGeneraliste medecinGeneraliste;
   Dma dma;
   Localisation localisation; 
 
-    public Patient(String NomUsuel, String NomDeNaissance, Date DateDeNaissance, Sexe sexe, String prenom, Adresse adresse, Ipp ipp, MedecinGeneraliste medecinGeneraliste, Dma dma, Localisation localisation) {
+    public Patient(String NomUsuel, String NomDeNaissance, Date DateDeNaissance, Sexe sexe, String prenom, Adresse adresse, Ipp ipp, Dma dma, Localisation localisation) {
         this.NomUsuel = NomUsuel;
         this.NomDeNaissance = NomDeNaissance;
         this.DateDeNaissance = DateDeNaissance;
@@ -22,7 +21,6 @@ public class Patient {
         this.prenom = prenom;
         this.adresse = adresse;
         this.ipp = ipp;
-        this.medecinGeneraliste = medecinGeneraliste;
         this.dma = dma;
         this.localisation = localisation;
     }
@@ -86,13 +84,8 @@ public class Patient {
         this.ipp = ipp;
     }
 
-    public MedecinGeneraliste getMedecinGeneraliste() {
-        return medecinGeneraliste;
-    }
 
-    public void setMedecinGeneraliste(MedecinGeneraliste medecinGeneraliste) {
-        this.medecinGeneraliste = medecinGeneraliste;
-    }
+
 
     public Dma getDma() {
         return dma;
