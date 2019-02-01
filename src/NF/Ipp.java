@@ -12,56 +12,52 @@ import java.util.Date;
  * @author annel
  */
 class Ipp {
-   int YY;
-   int MMint;
-   String MM="null";
-   int XXXXX;
-   int i ;
-  
-   String ipp;
-   
-   Date d = new Date();
 
-     Calendar date = Calendar.getInstance();
-   
-    public Ipp() {     
-YY =(date.get(Calendar.YEAR))-2000;
+    int YY;
+    int MMint;
+    String MM = "null";
+    private static int XXXXXint;
+    String XXXXX = "null";
+    String ipp = "null";
 
-MMint=date.get(Calendar.MONTH);
-if(MMint==1){
-    MM="01";
-}
-if(MMint==2){
-    MM="02";
-}
-if(MMint==3){
-    MM="03";
-}
-if(MMint==4){
-    MM="04";
-}
-if(MMint==5){
-    MM="05";
-}
-if(MMint==6){
-    MM="06";
-}
-if(MMint==7){
-    MM="07";
-}
-if(MMint==8){
-    MM="08";
-}
-if(MMint==9){
-    MM="09";
-}
-       
-for (i=0; i<=99999;i++){
-    
- XXXXX=i;
-}
-  
+    Calendar date = Calendar.getInstance();
 
-        System.out.println(YY+MM+XXXXX);
-       }
+//constructeur d'un IPP
+    public Ipp() {
+// récupère la date et enlève 2000 pour avoir uniquement les deux derniers chiffres de la date
+        YY = (date.get(Calendar.YEAR)) - 2000;
+
+// récupère le mois et le transforme en string en lui ajoutant 0 pour faire format MM
+        MMint = date.get(Calendar.MONTH);
+        if (MMint < 10) {
+            MM = "0";
+            MM += String.valueOf(MMint);
+
+// incrémente le chiffre à la création de chaque nombre de patient 
+            this.XXXXXint++;
+// rajoute des zéros pour le format
+            if (XXXXXint < 10) {
+                XXXXX = "0000";
+                XXXXX += String.valueOf(XXXXXint);
+            }
+            if (XXXXXint >= 10 && XXXXXint < 100) {
+                XXXXX = "000";
+                XXXXX += String.valueOf(XXXXXint);
+            }
+            if (XXXXXint >= 100 && XXXXXint < 1000) {
+                XXXXX = "00";
+                XXXXX += String.valueOf(XXXXXint);
+            }
+            if (XXXXXint >= 1000 && XXXXXint < 10000) {
+                XXXXX = "0";
+                XXXXX += String.valueOf(XXXXXint);
+            }
+//création d'un string ipp
+            ipp = String.valueOf(YY);
+            ipp += MM;
+            ipp += XXXXX;
+
+            System.out.println(ipp);
+        }
+    }
 }
