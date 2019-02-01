@@ -1,6 +1,5 @@
-package fr.polytech.tis.sis;
-import java.sql.*;
 package NF;
+import java.sql.*;
 
 import java.util.Calendar;
 
@@ -19,7 +18,7 @@ public class Main {
         catch (Exception exc){
             exc.printStackTrace();
         }
-       Ipp ipp = new Ipp();
+     
        
                
     }

@@ -18,7 +18,9 @@ class Ipp {
     String MM = "null";
     private static int XXXXXint;
     String XXXXX = "null";
-    String ipp = "null";
+    String[][] ipps = new String[10000][3];
+    
+   
 
     Calendar date = Calendar.getInstance();
 
@@ -32,9 +34,9 @@ class Ipp {
         if (MMint < 10) {
             MM = "0";
             MM += String.valueOf(MMint);
-
-// incrémente le chiffre à la création de chaque nombre de patient 
-            this.XXXXXint++;
+        } 
+// incrémente le chiffre à la création de chaque nombre de patient (ne change pas encore pour chaque mois) 
+      this.XXXXXint++;
 // rajoute des zéros pour le format
             if (XXXXXint < 10) {
                 XXXXX = "0000";
@@ -53,11 +55,16 @@ class Ipp {
                 XXXXX += String.valueOf(XXXXXint);
             }
 //création d'un string ipp
-            ipp = String.valueOf(YY);
-            ipp += MM;
-            ipp += XXXXX;
+//            ipp = String.valueOf(YY);
+//            ipp += MM;
+//            ipp += XXXXX; 
+//            
 
-            System.out.println(ipp);
+
+            
         }
+    
+ 
+    
     }
-}
+
