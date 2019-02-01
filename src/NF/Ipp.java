@@ -18,6 +18,9 @@ class Ipp {
     String MM = "null";
     private static int XXXXXint;
     String XXXXX = "null";
+    String[][] ipps = new String[10000][3];
+
+
     int i;
    
   int day;
@@ -26,12 +29,14 @@ class Ipp {
    
     Calendar date = Calendar.getInstance();
 
-//constructeur d'un IPP
+    //constructeur d'un IPP
     public Ipp() {
-// récupère la date et enlève 2000 pour avoir uniquement les deux derniers chiffres de la date
+
+        // récupère la date et enlève 2000 pour avoir uniquement les deux derniers chiffres de la date
         YY = (date.get(Calendar.YEAR)) - 2000;
 
-// récupère le mois et le transforme en string en lui ajoutant 0 pour faire format MM
+
+        // récupère le mois et le transforme en string en lui ajoutant 0 pour faire format MM
         MMint = date.get(Calendar.MONTH);
         MMint +=1;
         if (MMint < 10) {
