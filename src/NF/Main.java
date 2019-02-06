@@ -20,5 +20,7 @@ public class Main {
         Ipp ipp4 = new Ipp();
         Ipp ipp5 = new Ipp();
         Ipp ipp6 = new Ipp();
+        
+        
     }
 }
