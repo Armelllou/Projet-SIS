@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Manon
@@ -138,4 +140,24 @@ public class Connexion extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
+
+    public JButton getjButton1(){
+        return jButton1;
+    }
+
+    /**
+     * @return the jPasswordField1
+     */
+    public javax.swing.JPasswordField getjPasswordField1() {
+        return jPasswordField1;
+    }
+
+    /**
+     * @return the jScrollPane1
+     */
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+
 }
