@@ -15,27 +15,25 @@ import java.awt.event.ActionListener;
  *
  * @author annel
  */
-public class BoutonCreeDP implements ActionListener{
+public class BoutonCreeDP implements ActionListener {
 
-     CreationDPI dpi;
-     AccueilSecretaire as;
-     Fenetre jframe;
-     
-     
-       public BoutonCreeDP(AccueilSecretaire as,CreationDPI dpi,Fenetre jframe) {
-        this.jframe=jframe;
-        this.dpi=dpi;
-        this.as=as;
+    CreationDPI dpi;
+    AccueilSecretaire as;
+    Fenetre jframe;
+
+    public BoutonCreeDP(AccueilSecretaire as, CreationDPI dpi, Fenetre jframe) {
+        this.jframe = jframe;
+        this.dpi = dpi;
+        this.as = as;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-         
-    jframe.toutFalse();
-    jframe.add(dpi);
-    dpi.setVisible(true);
-   jframe.revalidate();
-    jframe.repaint();
+        jframe.PanelVisibleFalse();
+        jframe.add(dpi);
+        dpi.setVisible(true);
+        jframe.revalidate();
+        jframe.repaint();
     }
-    
+
 }
