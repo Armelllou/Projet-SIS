@@ -7,10 +7,6 @@ package NF;
 
 import java.util.Date;
 
-/**
- *
- * @author annel
- */
 public class Dates {
     /**Méthode qui retourne le jour de la date
      * 

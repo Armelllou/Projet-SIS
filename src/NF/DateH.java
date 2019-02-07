@@ -8,10 +8,6 @@ package NF;
 import java.io.File;
 import java.util.Date;
 
-/**
- *
- * @author annel
- */
 public class DateH extends Date  {
     
     private int jour;
