@@ -5,11 +5,14 @@
  */
 package interfaces;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Manon
  */
-public class AccueilSecretaire extends javax.swing.JPanel {
+public class AccueilSecretaire extends javax.swing.JPanel  {
 
     /**
      * @return the jButton1
@@ -18,19 +21,19 @@ public class AccueilSecretaire extends javax.swing.JPanel {
         return jButton1;
     }
 
-    /**
-     * @return the jButton2
-     */
+  
+    
     public javax.swing.JButton getjButton2() {
         return jButton2;
     }
 
+
+    
+    
     /**
      * Creates new form AccueilSecretaire
      */
-    public AccueilSecretaire() {
-        initComponents();
-    }
+  
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,4 +94,6 @@ public class AccueilSecretaire extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
+     
 }

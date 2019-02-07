@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import Listener.BoutonCreeDP;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
@@ -14,15 +15,17 @@ import javax.swing.JFrame;
  */
 public class Fenetre extends JFrame {
 
-    // Déclaration de tous les JPanel
-    Connexion c = new Connexion();
-    AccueilSecretaire as = new AccueilSecretaire();
-    CreationDPI cdpi = new CreationDPI();
+   
     
     // Attributs de la JFrame
     Fenetre frame = this;
     BarreDuHaut barre = new BarreDuHaut();
     
+    
+     // Déclaration de tous les JPanel
+    Connexion c = new Connexion();
+    AccueilSecretaire as = new AccueilSecretaire();
+    CreationDPI cdpi = new CreationDPI();
     
     // Déclarations Boutons, JTextField etc
     private JButton valider = c.getjButton1();
@@ -36,6 +39,9 @@ public class Fenetre extends JFrame {
         //state = State.NONCO;
         add(c);
         this.setSize(1700,830);
+        
+        
+         BoutonCreeDP.addActionListener(new BoutonCreeDP(as,cdpi, this));
     }
     
     
