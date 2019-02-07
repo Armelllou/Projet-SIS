@@ -41,7 +41,7 @@ public class Fenetre extends JFrame {
         this.setSize(1700,830);
         
         
-         BoutonCreeDP.addActionListener(new BoutonCreeDP(as,cdpi, this));
+         creerDP.addActionListener(new BoutonCreeDP(as,cdpi, this));
     }
     
     
