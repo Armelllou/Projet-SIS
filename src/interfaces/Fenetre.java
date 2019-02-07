@@ -5,9 +5,7 @@
  */
 package interfaces;
 
-import Listener.BoutonCreeDP;
-import Listener.Valider;
-import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
+import Listener.BoutonValiderConnexion;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JButton;
@@ -26,45 +24,25 @@ public class Fenetre extends JFrame {
     CreationDPI creationdpi = new CreationDPI();
     ConsulterDPI consultdpi = new ConsulterDPI();
 
-    
     // Attributs de la JFrame
     Fenetre frame = this;
     BarreDuHaut barreduhaut = new BarreDuHaut();
-    
-    
+
     // Déclarations Boutons, JTextField etc
     private JButton valider = connexion.getjButton1();
     private JButton creerDPI = accueilsecretaire.getjButton1();
     private JButton consulterDPI = accueilsecretaire.getjButton2();
+
     
     
-    
-    
-    public Fenetre(){
+    public Fenetre() {
         //state = State.NONCO;
         add(connexion);
-        this.setSize(1700,830);
-        
-     // creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));
-        valider.addActionListener(new Valider(accueilsecretaire,connexion,this));
+        this.setSize(1700, 830);
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        // creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));
+        valider.addActionListener(new BoutonValiderConnexion(accueilsecretaire, connexion, this));
+
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -81,40 +59,36 @@ public class Fenetre extends JFrame {
             }
         });
     }
-    
-    
-    
+
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Fenetre().setVisible(true);
-
             }
         });
     }
-    
-    public void PanelVisibleFalse(){
+
+    public void PanelVisibleFalse() {
         connexion.setVisible(false);
         accueilsecretaire.setVisible(false);
         creationdpi.setVisible(false);
         consultdpi.setVisible(false);
-        
+
     }
-    
-    public void TotaliteFalse(){
+
+    public void TotaliteFalse() {
         barreduhaut.setVisible(false);
         connexion.setVisible(false);
         this.PanelVisibleFalse();
     }
-    
+
     public void setState(State state) {
         //this.state = state;
     }
-    
+
     public State getStates() {
         //return state;
         return null;
     }
 
-    
 }

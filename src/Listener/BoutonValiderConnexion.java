@@ -15,18 +15,19 @@ import java.awt.event.ActionListener;
  *
  * @author annel
  */
-public class Valider implements ActionListener {
+public class BoutonValiderConnexion implements ActionListener {
     Connexion c;
     AccueilSecretaire as;
     Fenetre jframe;
 
-    public Valider(AccueilSecretaire as, Connexion c, Fenetre jframe) {
+    public BoutonValiderConnexion(AccueilSecretaire as, Connexion c, Fenetre jframe) {
         this.jframe = jframe;
         this.c = c;
         this.as = as;
     }
 
 
+    @Override
     public void actionPerformed(ActionEvent e) {
         jframe.PanelVisibleFalse();
         jframe.add(as);

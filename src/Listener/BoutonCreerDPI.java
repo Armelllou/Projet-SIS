@@ -15,13 +15,13 @@ import java.awt.event.ActionListener;
  *
  * @author annel
  */
-public class BoutonCreeDP implements ActionListener {
+public class BoutonCreerDPI implements ActionListener {
 
     CreationDPI dpi;
     AccueilSecretaire as;
     Fenetre jframe;
 
-    public BoutonCreeDP(AccueilSecretaire as, CreationDPI dpi, Fenetre jframe) {
+    public BoutonCreerDPI(AccueilSecretaire as, CreationDPI dpi, Fenetre jframe) {
         this.jframe = jframe;
         this.dpi = dpi;
         this.as = as;
