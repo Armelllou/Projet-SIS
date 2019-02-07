@@ -17,6 +17,7 @@ public class Fenetre extends JFrame {
     // Déclaration de tous les JPanel
     Connexion c = new Connexion();
     AccueilSecretaire as = new AccueilSecretaire();
+    CreationDPI cdpi = new CreationDPI();
     
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -25,13 +26,16 @@ public class Fenetre extends JFrame {
     
     // Déclarations Boutons, JTextField etc
     private JButton valider = c.getjButton1();
+    private JButton creerDP = as.getjButton1();
+    private JButton consulterDP = as.getjButton2();
+    
     
     
     
     public Fenetre(){
         //state = State.NONCO;
         add(c);
-        
+        this.setSize(1700,830);
     }
     
     
@@ -44,5 +48,22 @@ public class Fenetre extends JFrame {
             }
         });
     }
+    
+    public void toutFalse(){
+        c.setVisible(false);
+        as.setVisible(false);
+        cdpi.setVisible(false);
+        
+    }
+    
+    public void setState(State state) {
+        //this.state = state;
+    }
+    
+    public State getStates() {
+        //return state;
+        return null;
+    }
+
     
 }

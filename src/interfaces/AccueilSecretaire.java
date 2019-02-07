@@ -12,6 +12,20 @@ package interfaces;
 public class AccueilSecretaire extends javax.swing.JPanel {
 
     /**
+     * @return the jButton1
+     */
+    public javax.swing.JButton getjButton1() {
+        return jButton1;
+    }
+
+    /**
+     * @return the jButton2
+     */
+    public javax.swing.JButton getjButton2() {
+        return jButton2;
+    }
+
+    /**
      * Creates new form AccueilSecretaire
      */
     public AccueilSecretaire() {
@@ -66,7 +80,7 @@ public class AccueilSecretaire extends javax.swing.JPanel {
                 .addComponent(jButton1)
                 .addGap(75, 75, 75)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 312, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 258, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
