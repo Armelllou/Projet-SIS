@@ -8,26 +8,26 @@ public class Main {
 
     public static void main(String[] args) throws ClassNotFoundException {
 
-        try {
+       // try {
             // 1. Get a connection to database
-            Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dem", "id", "mdp");
+          //  Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dem", "id", "mdp");
 
             // Chargement du driver
-            Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
+           // Class.forName("org.apache.derby.jdbc.ClientDriver").newInstance();
 
             // Connexion à la base de données "DBurl"
-            this.conn = DriverManager.getConnection(String.valueOf(myConn));
+           // this.conn = DriverManager.getConnection(String.valueOf(myConn));
 
-            if (this.conn.isValid(0)) {
+            //if (this.conn.isValid(0)) {
                 System.out.println("===>Connexion effectuée");
 
                 //3. Execute SQL query
                 //4. Process the result set
-            }
+          //  }
 
-        } catch (IllegalAccessException | InstantiationException | SQLException e) {
-            e.printStackTrace();
-        }
+       // } catch (IllegalAccessException | InstantiationException | SQLException e) {
+        //    e.printStackTrace();
+       // }
 
         Ipp ipp = new Ipp();
         Ipp ipp3 = new Ipp();
