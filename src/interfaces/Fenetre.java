@@ -6,6 +6,7 @@
 package interfaces;
 
 import Listener.BoutonCreeDP;
+import Listener.Valider;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -44,8 +45,22 @@ public class Fenetre extends JFrame {
         add(connexion);
         this.setSize(1700,830);
         
-        creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));
+     // creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));
+        valider.addActionListener(new Valider(accueilsecretaire,connexion,this));
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         
