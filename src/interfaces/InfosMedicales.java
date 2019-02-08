@@ -12,6 +12,76 @@ package interfaces;
 public class InfosMedicales extends javax.swing.JPanel {
 
     /**
+     * @return the jButton1
+     */
+    public javax.swing.JButton getjButton1() {
+        return jButton1;
+    }
+
+    /**
+     * @return the jButton2
+     */
+    public javax.swing.JButton getjButton2() {
+        return jButton2;
+    }
+
+    /**
+     * @return the jButton3
+     */
+    public javax.swing.JButton getjButton3() {
+        return jButton3;
+    }
+
+    /**
+     * @return the jButton4
+     */
+    public javax.swing.JButton getjButton4() {
+        return jButton4;
+    }
+
+    /**
+     * @return the jLabelnom
+     */
+    public javax.swing.JLabel getjLabelnom() {
+        return jLabelnom;
+    }
+
+    /**
+     * @return the jLabelprenom
+     */
+    public javax.swing.JLabel getjLabelprenom() {
+        return jLabelprenom;
+    }
+
+    /**
+     * @return the jScrollPane1
+     */
+    public javax.swing.JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+
+    /**
+     * @return the jScrollPane2
+     */
+    public javax.swing.JScrollPane getjScrollPane2() {
+        return jScrollPane2;
+    }
+
+    /**
+     * @return the jTable1
+     */
+    public javax.swing.JTable getjTable1() {
+        return jTable1;
+    }
+
+    /**
+     * @return the jTable2
+     */
+    public javax.swing.JTable getjTable2() {
+        return jTable2;
+    }
+
+    /**
      * Creates new form InfosMedicales
      */
     public InfosMedicales() {

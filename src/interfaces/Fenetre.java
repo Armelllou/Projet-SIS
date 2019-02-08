@@ -23,7 +23,16 @@ public class Fenetre extends JFrame {
     Connexion connexion = new Connexion();
     AccueilSecretaire accueilsecretaire = new AccueilSecretaire();
     CreationDPI creationdpi = new CreationDPI();
-    ConsulterDPI consultdpi = new ConsulterDPI();
+    ConsulterDPISecretaire consultdpis = new ConsulterDPISecretaire();
+    ActeInfirmier acteinfirmier = new ActeInfirmier();
+    AjouterActeInfirmier ajouterai = new AjouterActeInfirmier();
+    AjouterConsultation ajouterconsult = new AjouterConsultation();
+    Consultation consultation = new Consultation();
+    ConsulterDPIPHetIDE consultdpiphide = new ConsulterDPIPHetIDE();
+    DPI dpi = new DPI();
+    InfosMedicales infosmed = new InfosMedicales();
+    ModificationDPI modifdpi = new ModificationDPI();
+    
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -33,6 +42,8 @@ public class Fenetre extends JFrame {
     private JButton valider = connexion.getjButton1();
     private JButton creerDPI = accueilsecretaire.getjButton1();
     private JButton consulterDPI = accueilsecretaire.getjButton2();
+    
+    
 
     
     
@@ -77,8 +88,16 @@ public class Fenetre extends JFrame {
         connexion.setVisible(false);
         accueilsecretaire.setVisible(false);
         creationdpi.setVisible(false);
-        consultdpi.setVisible(false);
-
+        consultdpis.setVisible(false);
+        acteinfirmier.setVisible(false);
+        consultdpiphide.setVisible(false);
+        ajouterai.setVisible(false);
+        ajouterconsult.setVisible(false);
+        consultation.setVisible(false);
+        dpi.setVisible(false);
+        infosmed.setVisible(false);
+        modifdpi.setVisible(false);
+        
     }
 
     public void TotaliteFalse() {
