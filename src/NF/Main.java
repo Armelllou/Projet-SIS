@@ -17,11 +17,7 @@ public class Main {
 //Service serviceResponsbale
 
     public static void main(String[] args) throws SQLException{
-        Ipp ipp = new Ipp();
-        Ipp ipp3 = new Ipp();
-        Ipp ipp4 = new Ipp();
-        Ipp ipp5 = new Ipp();
-        Ipp ipp6 = new Ipp();
+     
 
         ConnexionBD conn = new ConnexionBD();
   Date d= new Date(01-01-1999) ;
@@ -33,10 +29,17 @@ Service s1 = Service.GYNECOLOGIE;
 Lit lit = new Lit("F");
 Chambre chambre = null;
 Localisation localisation = new Localisation (lit,chambre,s2,s1);         
-//Patient p1 = new Patient("teulieres","lormand",d,s,"Bernard",a,localisation);
+Patient p1 = new Patient("teulieres","lormand",d,s,"Bernard",a,localisation);
 Patient p2 = new Patient("teulieres","lormand",d,s,"Bernard",a,localisation);
+Patient p3 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
+Patient p4 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
+Patient p5 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
 
-p2.AjouterSurBdPatient(p2, "medecin");
+p1.AjouterSurBdPatient(p1);
+p2.AjouterSurBdPatient(p2);
+p3.AjouterSurBdPatient(p3);
+p4.AjouterSurBdPatient(p4);
+p5.AjouterSurBdPatient(p5);
 
 
     }

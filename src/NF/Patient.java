@@ -19,6 +19,8 @@ public class Patient {
   Dma dma;
   Localisation localisation; 
 ConnexionBD conn = new ConnexionBD();
+Sih sih = new Sih();
+
     public Patient(String NomUsuel, String NomDeNaissance, Date DateDeNaissance, Sexe sexe, String prenom, Adresse adresse, Localisation localisation) throws SQLException {
         this.NomUsuel = NomUsuel;
         this.NomDeNaissance = NomDeNaissance;
@@ -31,15 +33,16 @@ ConnexionBD conn = new ConnexionBD();
         this.localisation = localisation;
         
 
-    }
+         sih. ajoutPatient(this);
 
-   
+    }
     
-    public void AjouterSurBdPatient(Patient p,String medecin) throws SQLException{{
+    public void AjouterSurBdPatient(Patient p) throws SQLException{
         
-        String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
+        if(!sih.getPatientList().contains(p)){
+             String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
-        statement.setObject(1,ipp.getIpp(), Types.INTEGER); 
+        statement.setObject(1,this.ipp.getIpp(), Types.INTEGER); 
         statement.setObject(2,p.getNomDeNaissance(),Types.VARCHAR); 
         statement.setObject(3,p.getPrenom(),Types.VARCHAR); 
         statement.setObject(4,p.getDateDeNaissance(),Types.DATE); 
@@ -47,10 +50,12 @@ ConnexionBD conn = new ConnexionBD();
         statement.setObject(6,123,Types.INTEGER); 
         
         statement.executeUpdate(); 
-    }
+            
+        }
+       
 
-    }
     
+    }
     
     public String getNomUsuel() {
         return NomUsuel;

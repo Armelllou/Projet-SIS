@@ -17,11 +17,11 @@ public class Lit {
 
     public Lit(String n) {
         
-        if (n.equals(F)!= true) {
+        if (n.equals(F)== false) {
             System.out.println("le numéro de lit est inconnu");
         }
-        if (n.equals(P) != true){
-             System.out.println("le format de mlit est inconnu");
+        if (n.equals(P) == false){
+             System.out.println("le format de lit est inconnu");
         }
         
         else this.n=n;
