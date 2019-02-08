@@ -30,6 +30,28 @@ public class DPI extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jLabelprenom = new javax.swing.JLabel();
+        jLabelnom = new javax.swing.JLabel();
+        jLabeljour = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabelannée = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabelmois = new javax.swing.JLabel();
+        jLabelnumsecu = new javax.swing.JLabel();
+        jLabelipp = new javax.swing.JLabel();
+        jLabeladresse = new javax.swing.JLabel();
+        jLabelcodepostal = new javax.swing.JLabel();
+        jLabelville = new javax.swing.JLabel();
+        jLabelemail = new javax.swing.JLabel();
+        jLabeltelephone = new javax.swing.JLabel();
+        jButtonmodifier = new javax.swing.JButton();
+        jButtoninfomed = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabelservicerespo = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabelservicegeo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -40,31 +62,209 @@ public class DPI extends javax.swing.JPanel {
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/accueil-ConvertImage.png"))); // NOI18N
 
+        jLabelprenom.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
+        jLabelprenom.setText("Prénom");
+
+        jLabelnom.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
+        jLabelnom.setText("NOM");
+
+        jLabeljour.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabeljour.setText("JJ");
+
+        jLabel2.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabel2.setText("/");
+
+        jLabelannée.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelannée.setText("AAAA");
+
+        jLabel3.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabel3.setText("/");
+
+        jLabelmois.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelmois.setText("MM");
+
+        jLabelnumsecu.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelnumsecu.setText("2971162574323");
+
+        jLabelipp.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
+        jLabelipp.setText("AAMMXXXXX");
+
+        jLabeladresse.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabeladresse.setText("4 rue de la liberté");
+
+        jLabelcodepostal.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelcodepostal.setText("38000");
+
+        jLabelville.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelville.setText("GRENOBLE");
+
+        jLabelemail.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelemail.setText("nom.prenom@email.com");
+
+        jLabeltelephone.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabeltelephone.setText("0675984286");
+
+        jButtonmodifier.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jButtonmodifier.setText("Modifier le dossier");
+
+        jButtoninfomed.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jButtoninfomed.setText("Accéder aux informations médicales");
+
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabel4.setText("Service responsable :");
+
+        jLabelservicerespo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelservicerespo.setText("blabla");
+
+        jLabel5.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabel5.setText("Service géographique :");
+
+        jLabelservicegeo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabelservicegeo.setText("blabla");
+
+        jLabel6.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabel6.setText("Chambre :");
+
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        jLabel7.setText("XXX");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(1429, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jButtoninfomed)
+                                .addGap(348, 348, 348)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(379, 379, 379)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(100, 100, 100)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelannée)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelcodepostal)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabelville)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabeltelephone))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabeladresse)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelemail))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabeljour)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabel2)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabelmois))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel4)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jLabelservicerespo)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 352, Short.MAX_VALUE)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelnumsecu, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel6)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jLabel7))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabelnom)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(128, 128, 128)
+                                                .addComponent(jLabelprenom)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabelipp)))
+                                .addGap(405, 405, 405)))))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addGap(377, 377, 377)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelservicegeo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButtonmodifier)
+                .addGap(681, 681, 681))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 568, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelnom)
+                            .addComponent(jLabelprenom)
+                            .addComponent(jLabelipp))))
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabeljour)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabelmois)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabelannée)
+                    .addComponent(jLabelnumsecu))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabeladresse)
+                    .addComponent(jLabelemail))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelcodepostal)
+                    .addComponent(jLabelville)
+                    .addComponent(jLabeltelephone))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(62, 62, 62)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabelservicerespo))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabelservicegeo)
+                            .addComponent(jLabel5)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(88, 88, 88)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addComponent(jButtonmodifier)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtoninfomed)
+                        .addGap(97, 97, 97))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -72,6 +272,28 @@ public class DPI extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtoninfomed;
+    private javax.swing.JButton jButtonmodifier;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabeladresse;
+    private javax.swing.JLabel jLabelannée;
+    private javax.swing.JLabel jLabelcodepostal;
+    private javax.swing.JLabel jLabelemail;
+    private javax.swing.JLabel jLabelipp;
+    private javax.swing.JLabel jLabeljour;
+    private javax.swing.JLabel jLabelmois;
+    private javax.swing.JLabel jLabelnom;
+    private javax.swing.JLabel jLabelnumsecu;
+    private javax.swing.JLabel jLabelprenom;
+    private javax.swing.JLabel jLabelservicegeo;
+    private javax.swing.JLabel jLabelservicerespo;
+    private javax.swing.JLabel jLabeltelephone;
+    private javax.swing.JLabel jLabelville;
     // End of variables declaration//GEN-END:variables
 }
