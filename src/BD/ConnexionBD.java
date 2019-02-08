@@ -2,6 +2,7 @@ package BD;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.Statement;
 
 public class ConnexionBD {
 
@@ -40,6 +41,8 @@ public class ConnexionBD {
         public Connection getConnexion() {
             return conn;
         }
+
+    
 
 
     }
