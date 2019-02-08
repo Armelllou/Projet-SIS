@@ -1,24 +1,24 @@
 package NF;
 
 import BD.ConnexionBD;
+
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.sql.Types;
 import java.util.Date;
 
 public class Patient {
-  String NomUsuel ;
-  String NomDeNaissance;
-  Date DateDeNaissance;
-  Sexe sexe;
-  String prenom;
-  Adresse adresse;
-  Ipp ipp;
-  Dma dma;
-  Localisation localisation; 
-ConnexionBD conn = new ConnexionBD();
+    String NomUsuel;
+    String NomDeNaissance;
+    Date DateDeNaissance;
+    Sexe sexe;
+    String prenom;
+    Adresse adresse;
+    Ipp ipp;
+    Dma dma;
+    Localisation localisation;
+    ConnexionBD conn = new ConnexionBD();
+
     public Patient(String NomUsuel, String NomDeNaissance, Date DateDeNaissance, Sexe sexe, String prenom, Adresse adresse, Localisation localisation) throws SQLException {
         this.NomUsuel = NomUsuel;
         this.NomDeNaissance = NomDeNaissance;
@@ -26,42 +26,42 @@ ConnexionBD conn = new ConnexionBD();
         this.sexe = sexe;
         this.prenom = prenom;
         this.adresse = adresse;
-         ipp = new Ipp();
+        ipp = new Ipp();
         this.dma = dma;
         this.localisation = localisation;
-        
+
 
     }
 
-   
-    
-    public void AjouterSurBdPatient(Patient p,String medecin) throws SQLException{{
-        
-        String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
-        PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
-        statement.setObject(1,ipp.getIpp(), Types.INTEGER); 
-        statement.setObject(2,p.getNomDeNaissance(),Types.VARCHAR); 
-        statement.setObject(3,p.getPrenom(),Types.VARCHAR); 
-        statement.setObject(4,p.getDateDeNaissance(),Types.DATE); 
-        statement.setObject(5,p.getSexe(),Types.VARCHAR); 
-        statement.setObject(6,123,Types.INTEGER); 
-        
-        statement.executeUpdate(); 
-    }
+
+    public void AjouterSurBdPatient(Patient p, String medecin) throws SQLException {
+        {
+
+            String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
+            PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+            statement.setObject(1, ipp.getIpp(), Types.INTEGER);
+            statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);
+            statement.setObject(3, p.getPrenom(), Types.VARCHAR);
+            statement.setObject(4, p.getDateDeNaissance(), Types.DATE);
+            statement.setObject(5, p.getSexe(), Types.VARCHAR);
+            statement.setObject(6, 123, Types.INTEGER);
+
+            statement.executeUpdate();
+        }
 
     }
-    
-    
+
+
     public String getNomUsuel() {
         return NomUsuel;
     }
 
     public void setNomUsuel(String NomUsuel) {
-          this.NomUsuel = NomUsuel;
+        this.NomUsuel = NomUsuel;
     }
 
 
-    public String getNomDeNaissance()  {
+    public String getNomDeNaissance() {
         return NomDeNaissance;
     }
 
@@ -110,8 +110,6 @@ ConnexionBD conn = new ConnexionBD();
     }
 
 
-
-
     public Dma getDma() {
         return dma;
     }
@@ -129,14 +127,13 @@ ConnexionBD conn = new ConnexionBD();
     }
 
     public Patient rechercherPatient(String ipp) {
-        for(Patient patient : Sih.getPatientList()){
-            if(patient.ipp.equals(ipp)){
+        for (Patient patient : Sih.getPatientList()) {
+            if (patient.ipp.equals(ipp)) {
                 return patient;
             }
         }
         return null;
     }
-
 
 
 }
