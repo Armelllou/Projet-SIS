@@ -6,34 +6,33 @@
 package Listener;
 
 import interfaces.AccueilSecretaire;
+import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.Fenetre;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JPanel;
 
 /**
  *
  * @author annel
  */
-public class BoutonValiderConnexion implements ActionListener {
-    Connexion c;
-    AccueilSecretaire as;
-    Fenetre jframe;
+public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
 
-    public BoutonValiderConnexion(AccueilSecretaire as, Connexion c, Fenetre jframe) {
-        this.jframe = jframe;
-        this.c = c;
-        this.as = as;
+    public BoutonValiderConnexion(BarreDuHaut bh, Connexion c, JPanel jp,Fenetre jframe) {
+        super(bh,c,jp,jframe);
     }
 
-
-    @Override
     public void actionPerformed(ActionEvent e) {
-        jframe.PanelVisibleFalse();
-        jframe.add(as);
-        as.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+       super.connexion();
+        
+    }
     
-}
+    
+    
+   
+        
+    
+    
+    
 }

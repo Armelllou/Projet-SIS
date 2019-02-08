@@ -6,6 +6,7 @@
 package interfaces;
 
 import Listener.BoutonValiderConnexion;
+import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JButton;
@@ -41,7 +42,11 @@ public class Fenetre extends JFrame {
         this.setSize(1700, 830);
 
         // creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));
-        valider.addActionListener(new BoutonValiderConnexion(accueilsecretaire, connexion, this));
+        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, accueilsecretaire,  this));
+          
+        
+    
+   
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
