@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Manon
@@ -29,6 +31,7 @@ public class BarreDuHaut extends javax.swing.JPanel {
      * Creates new form BarreDuHaut
      */
     public BarreDuHaut() {
+        
         initComponents();
     }
 
@@ -47,6 +50,8 @@ public class BarreDuHaut extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+
+        setMaximumSize(new java.awt.Dimension(100000, 100000));
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 153));
         jPanel1.setPreferredSize(new java.awt.Dimension(1700, 70));
@@ -85,7 +90,7 @@ public class BarreDuHaut extends javax.swing.JPanel {
                 .addComponent(jLabel2)
                 .addGap(465, 465, 465)
                 .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 428, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 425, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)

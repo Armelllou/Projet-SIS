@@ -18,9 +18,10 @@ import javax.swing.JPanel;
  * @author annel
  */
 public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
-
-    public BoutonValiderConnexion(BarreDuHaut bh, Connexion c, JPanel jp,Fenetre jframe) {
-        super(bh,c,jp,jframe);
+   
+    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, AccueilSecretaire as,Fenetre jframe) {
+        super(bh,c,as,jframe);  
+        
     }
 
     public void actionPerformed(ActionEvent e) {

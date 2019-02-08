@@ -41,9 +41,9 @@ public class Fenetre extends JFrame {
         add(connexion);
         this.setSize(1700, 830);
 
-        // creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));
-        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, accueilsecretaire,  this));
-          
+     
+        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,accueilsecretaire,  this));
+         // creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));    
         
     
    
