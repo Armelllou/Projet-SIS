@@ -2,10 +2,17 @@ package NF;
 
 import java.util.Calendar;
 
+
+
 public class IppCounter {
 
     private static int month = 0;
     private static int ippCounter = 0;
+
+
+    /**Méthode qui permet de remettre à zero l'ipp chaque mois
+     * @return un Ipp de type String
+     */
 
     public static String getNextIpp() {
         Calendar date = Calendar.getInstance();
@@ -13,7 +20,7 @@ public class IppCounter {
             ippCounter = 0;
             month = date.get(Calendar.MONTH);
         }
-        // incrémente le chiffre à la création de chaque nombre de patient (ne change pas encore pour chaque mois)
+        // incrémente le chiffre à la création de chaque nombre de patient
         ippCounter += 1;
 
         // ajoute des zéros pour le format

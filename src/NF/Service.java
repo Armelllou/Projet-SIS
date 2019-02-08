@@ -5,13 +5,21 @@
  */
 package NF;
 
-/**
- *
- * @author annel
- */
 public enum Service {
-    Médecine,
-    Chirurgie,
-    Gynécologie,
-    Obstétrique,
-}
+    MEDECINE("Médecine"),
+    CHIRURGIE("Chirurgie"),
+    GYNECOLOGIE("Gynécologie"),
+    OBSTETRIQUE("Obstétrique");
+
+    private String name = "";
+
+    //Constructeur
+    Service(String name) {
+        this.name = name;
+    }
+
+    public String toString() {
+        return name;
+    }
+    }
+

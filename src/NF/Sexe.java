@@ -5,10 +5,6 @@
  */
 package NF;
 
-/**
- *
- * @author annel
- */
 public enum Sexe {
     H,
     M,
