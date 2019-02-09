@@ -29,12 +29,10 @@ Patient p2 = new Patient("teulieres","lormand",d,s,"Bernard",a,localisation);
 Patient p3 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
 Patient p4 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
 Patient p5 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
+Patient p6 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
 
-p1.AjouterSurBdPatient(p1);
-p2.AjouterSurBdPatient(p2);
-p3.AjouterSurBdPatient(p3);
-p4.AjouterSurBdPatient(p4);
-p5.AjouterSurBdPatient(p5);
+Patient p7 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
+
 
 
 

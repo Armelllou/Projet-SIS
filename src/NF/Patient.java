@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.Date;
 
-public class Patient {
+public  class Patient {
   String NomUsuel ;
   String NomDeNaissance;
   Date DateDeNaissance;
@@ -32,14 +32,25 @@ Sih sih = new Sih();
         this.dma = dma;
         this.localisation = localisation;
 
-         sih. ajoutPatient(this);
-
+       
+      AjouterSurBdPatient(this);
+       
+       
+    } 
+    
+    public void SupprimerPatients() throws SQLException{
+            String query ="DELETE FROM Patient";
+        PreparedStatement statement1 = conn.getConnexion().prepareStatement(query); 
+         
+          statement1.executeUpdate();
     }
     
-    public void AjouterSurBdPatient(Patient p) throws SQLException{
-        
-        if(!sih.getPatientList().contains(p)){
-             String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
+    
+    
+    public   void AjouterSurBdPatient(Patient p) throws SQLException{
+     try{
+         
+         String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
         statement.setObject(1,this.ipp.getIpp(), Types.INTEGER); 
         statement.setObject(2,p.getNomDeNaissance(),Types.VARCHAR); 
@@ -48,14 +59,16 @@ Sih sih = new Sih();
         statement.setObject(5,p.getSexe(),Types.VARCHAR); 
         statement.setObject(6,123,Types.INTEGER); 
         
-        statement.executeUpdate(); 
-            
-        }
-       
-
-    
+        statement.executeUpdate();
+     }
+     catch (SQLException e){
+         System.out.println("Patient bien ajouté");
+     }
+        
+   
+  
     }
-
+    
     public String getNomUsuel() {
         return NomUsuel;
     }
