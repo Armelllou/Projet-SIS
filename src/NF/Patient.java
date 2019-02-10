@@ -3,22 +3,26 @@ package NF;
 import BD.ConnexionBD;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.Types;
 import java.util.Date;
 
 public  class Patient {
-  String NomUsuel ;
-  String NomDeNaissance;
-  Date DateDeNaissance;
-  Sexe sexe;
-  String prenom;
-  Adresse adresse;
-  Ipp ipp;
-  Dma dma;
-  Localisation localisation; 
+  String NomUsuel ="" ;
+  String NomDeNaissance="";
+  Date DateDeNaissance=null;
+  Sexe sexe=null;
+  String prenom="";
+  Adresse adresse=null;
+  Ipp ipp=null;
+  Dma dma=null;
+  Localisation localisation=null; 
 ConnexionBD conn = new ConnexionBD();
 Sih sih = new Sih();
+boolean ajoute = false;
 
 
     public Patient(String NomUsuel, String NomDeNaissance, Date DateDeNaissance, Sexe sexe, String prenom, Adresse adresse, Localisation localisation) throws SQLException {
@@ -32,25 +36,35 @@ Sih sih = new Sih();
         this.dma = dma;
         this.localisation = localisation;
 
-       
-      AjouterSurBdPatient(this);
-       
-       
-    } 
+//     //Création d'un objet Statement
+//      Statement state = conn.getConnexion().createStatement();
+//      //L'objet ResultSet contient le résultat de la requête SQL
+//      ResultSet result = state.executeQuery("SELECT IPP FROM Patient");
+//      
+//        System.out.println(result);
+//         
+//          if (this.ipp.getIpp().equals(result)){
+//         
+//        System.out.println("patient déjà dans la base de donnée");
+//         }
+//         
+//         else{  
+//      this.AjouterSurBdPatient(this);
+//         
+    //}
     
-    public void SupprimerPatients() throws SQLException{
-            String query ="DELETE FROM Patient";
-        PreparedStatement statement1 = conn.getConnexion().prepareStatement(query); 
-         
-          statement1.executeUpdate();
+    sih.ajoutPatient(this);
+    this.AjouterSurBdPatient(this);
+    
+    //parcourir la liste de patients et ajouter le dernier sur la base de donnée
+    
+    
+    
     }
-    
-    
-    
+
     public   void AjouterSurBdPatient(Patient p) throws SQLException{
-     try{
-         
-         String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
+  
+           String sql = " INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
         statement.setObject(1,this.ipp.getIpp(), Types.INTEGER); 
         statement.setObject(2,p.getNomDeNaissance(),Types.VARCHAR); 
@@ -59,17 +73,28 @@ Sih sih = new Sih();
         statement.setObject(5,p.getSexe(),Types.VARCHAR); 
         statement.setObject(6,123,Types.INTEGER); 
         
-        statement.executeUpdate();
-     }
-     catch (SQLException e){
-         System.out.println("Patient bien ajouté");
-     }
-        
-   
-  
-    }
-    
-    public String getNomUsuel() {
+        statement.executeUpdate();  
+      
+       }
+     
+     
+
+
+    //    public void SupprimerPatients() throws SQLException{
+//            String query ="DELETE FROM Patient";
+//        PreparedStatement statement1 = conn.getConnexion().prepareStatement(query); 
+//         
+//          statement1.executeUpdate();
+//    
+
+
+
+    public String getNomUsuel() throws SQLException {
+       
+//        String NomUsuel = "SELECT Nom FROM Patient";
+//        PreparedStatement statement = conn.getConnexion().prepareStatement(NomUsuel); 
+//        statement.executeUpdate();
+//        
         return NomUsuel;
     }
 
@@ -143,14 +168,14 @@ Sih sih = new Sih();
         this.localisation = localisation;
     }
 
-    public Patient rechercherPatient(String ipp) {
-        for (Patient patient : Sih.getPatientList()) {
-            if (patient.ipp.equals(ipp)) {
-                return patient;
-            }
-        }
-        return null;
-    }
+//    public Patient rechercherPatient(String ipp) {
+//        for (Patient patient : Sih.getPatientList()) {
+//            if (patient.ipp.equals(ipp)) {
+//                return patient;
+//            }
+//        }
+//        return null;
+//    }
 
 
 }
