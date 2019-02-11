@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  *
@@ -32,6 +33,7 @@ public class Fenetre extends JFrame {
     DPI dpi = new DPI();
     InfosMedicales infosmed = new InfosMedicales();
     ModificationDPI modifdpi = new ModificationDPI();
+    JPanel jp = new JPanel();
     
 
     // Attributs de la JFrame
@@ -51,10 +53,10 @@ public class Fenetre extends JFrame {
         //state = State.NONCO;
         add(connexion);
         this.setSize(1700, 830);
-
+       
      
-        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,accueilsecretaire,  this));
-         // creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));    
+       valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,jp,this));
+       //creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));    
         
     
    

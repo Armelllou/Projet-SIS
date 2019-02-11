@@ -11,6 +11,9 @@ import interfaces.Connexion;
 import interfaces.Fenetre;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 /**
@@ -19,13 +22,17 @@ import javax.swing.JPanel;
  */
 public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
    
-    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, AccueilSecretaire as,Fenetre jframe) {
-        super(bh,c,as,jframe);  
+    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, JPanel jp ,Fenetre jframe) {
+        super(bh,c,jp,jframe);  
         
     }
 
     public void actionPerformed(ActionEvent e) {
-       super.connexion();
+        try {
+            super.connexion();
+        } catch (SQLException ex) {
+            Logger.getLogger(BoutonValiderConnexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
     
