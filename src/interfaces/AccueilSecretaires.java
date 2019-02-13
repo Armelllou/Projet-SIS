@@ -9,7 +9,7 @@ package interfaces;
  *
  * @author Manon
  */
-public class AccueilSecretaire extends javax.swing.JPanel {
+public class AccueilSecretaires extends javax.swing.JPanel {
 
     /**
      * @return the jButton1
@@ -28,7 +28,7 @@ public class AccueilSecretaire extends javax.swing.JPanel {
     /**
      * Creates new form AccueilSecretaire2
      */
-    public AccueilSecretaire() {
+    public AccueilSecretaires() {
         initComponents();
     }
 

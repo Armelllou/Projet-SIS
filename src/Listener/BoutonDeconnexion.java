@@ -5,6 +5,7 @@
  */
 package Listener;
 
+import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.Fenetre;
@@ -17,23 +18,28 @@ import java.awt.event.ActionListener;
  */
 public class BoutonDeconnexion implements ActionListener {
 
-    BarreDuHaut b;
+  
     Connexion c;
-    Fenetre jframe;
+    Fenetre fen;
+    AccueilSecretaires as;
 
-    public BoutonDeconnexion(Connexion c, Fenetre jframe, BarreDuHaut b) {
-        this.b = b;
+    public BoutonDeconnexion(Connexion c, Fenetre fen, AccueilSecretaires as) {
         this.c = c;
-        this.jframe = jframe;
+        this.fen = fen;
+        this.as=as;
     }
 
     public void actionPerformed(ActionEvent e) {
-        jframe.PanelVisibleFalse();
+        fen.TotaliteFalse();
+      
+        fen.add(c);
         c.setVisible(true);
-        c.getjPasswordField1().setText("");
+        c.getjPasswordField1().setText("*******************");
         c.getjTextField1().setText("");
-        jframe.setSize(1700, 830);
-        jframe.repaint();
+
+        fen.setSize(1700, 830);
+        fen.revalidate();
+        fen.repaint();
 
         //jframe.setState(State.NONCO);
     }
