@@ -23,31 +23,25 @@ public class BoutonCreerDPI implements ActionListener {
 
     CreationDPI dpi;
     AccueilSecretaires as;
-    Fenetre jframe;
+    Fenetre fen;
     BarreDuHaut bh;
 
     public BoutonCreerDPI(AccueilSecretaires as, CreationDPI dpi, Fenetre jframe) {
-        this.jframe = jframe;
+        this.fen = jframe;
         this.dpi = dpi;
         this.as = as;
-        this.bh=bh;
+        
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        jframe.setLayout(new BorderLayout());
-
-        jframe.PanelVisibleFalse();
-        dpi = new CreationDPI();
-        jframe.add(dpi, BorderLayout.CENTER);
-        jframe.add(bh, BorderLayout.NORTH);
-
-        bh.setVisible(true);
-        as.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+       fen.PanelVisibleFalse();
+      
+        fen.add(dpi);
+        dpi.setVisible(true);
+        fen.revalidate();
+        fen.repaint();
     }
 
 }
