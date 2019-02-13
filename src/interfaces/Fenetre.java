@@ -6,7 +6,10 @@
 package interfaces;
 
 import Listener.BoutonCreerDPI;
+<<<<<<< Updated upstream
 import Listener.BoutonDeconnexion;
+=======
+>>>>>>> Stashed changes
 import Listener.BoutonValiderConnexion;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -59,10 +62,14 @@ public class Fenetre extends JFrame {
        
      
        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,jp,this));
+<<<<<<< Updated upstream
        creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaire, creationdpi, this));
        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, barreduhaut));
+=======
+       creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaire, creationdpi, this,barreduhaut) );    
+>>>>>>> Stashed changes
         
-    
+   
    
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
