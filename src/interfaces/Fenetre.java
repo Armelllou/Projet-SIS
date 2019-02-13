@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import Listener.BoutonConsulterDPE;
 import Listener.BoutonCreerDPI;
 
 import Listener.BoutonDeconnexion;
@@ -59,6 +60,7 @@ public class Fenetre extends JFrame {
 
         valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,accueilsecretaires,consultdpiphide,this));
         creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
+        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
         
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
