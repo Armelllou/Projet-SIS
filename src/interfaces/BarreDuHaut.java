@@ -12,6 +12,20 @@ package interfaces;
 public class BarreDuHaut extends javax.swing.JPanel {
 
     /**
+     * @return the jButton1
+     */
+    public javax.swing.JButton getjButton1() {
+        return jButton1;
+    }
+
+    /**
+     * @return the jButton2
+     */
+    public javax.swing.JButton getjButton2() {
+        return jButton2;
+    }
+
+    /**
      * Creates new form BarreDuHaut2
      */
     public BarreDuHaut() {

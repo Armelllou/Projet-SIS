@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import Listener.BoutonCreerDPI;
+import Listener.BoutonDeconnexion;
 import Listener.BoutonValiderConnexion;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -44,6 +46,7 @@ public class Fenetre extends JFrame {
     private JButton valider = connexion.getjButton1();
     private JButton creerDPI = accueilsecretaire.getjButton1();
     private JButton consulterDPI = accueilsecretaire.getjButton2();
+    private JButton deconnexion = barreduhaut.getjButton1();
     
     
 
@@ -56,7 +59,8 @@ public class Fenetre extends JFrame {
        
      
        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,jp,this));
-       //creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));    
+       creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaire, creationdpi, this));
+       deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, barreduhaut));
         
     
    
