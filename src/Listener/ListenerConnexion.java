@@ -51,18 +51,14 @@ public abstract class ListenerConnexion implements ActionListener {
     public void connexion() throws SQLException {
         
         
-        if (connexionSecretaire()==true){
-           
-        }
-        else  {
-           ConnexionIde();
-        
+        connexionSecretaire();
+        ConnexionIde();
+        //ConnexionPH();
     }
         
-       //ConnexionPH();
+       
        
     
-    }
     
     
     
@@ -156,7 +152,7 @@ boolean j = false;
             j= true;
 
         } else {
-            JOptionPane.showMessageDialog(null, "Mot de passe ou nom d'utilisateur inconnu");
+            //JOptionPane.showMessageDialog(null, "Mot de passe ou nom d'utilisateur inconnu");
         }
         return j;
 
