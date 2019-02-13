@@ -10,15 +10,15 @@ import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JPanel;
 
 /**
- *
  * @author annel
  */
 public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
@@ -34,14 +34,8 @@ public class BoutonValiderConnexion extends ListenerConnexion implements ActionL
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderConnexion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    
-    
-    
-   
-        
-    
-    
-    
+
+
 }
