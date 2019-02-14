@@ -11,34 +11,20 @@ package NF;
  *
  * @author annel
  */
-class Adresse {
-    String rue;
-    String numéro;
+public class Adresse {
+  
+    String adresse;
     String ville;
     String codePostal;
 
-    public Adresse(String rue, String numéro, String ville, String codePostal) {
-        this.rue = rue;
-        this.numéro = numéro;
+    public Adresse(String adresse, String ville, String codePostal) {
+        this.adresse = adresse;
+      
         this.ville = ville;
         this.codePostal = codePostal;
     }
 
-    public String getRue() {
-        return rue;
-    }
-
-    public void setRue(String rue) {
-        this.rue = rue;
-    }
-
-    public String getNuméro() {
-        return numéro;
-    }
-
-    public void setNuméro(String numéro) {
-        this.numéro = numéro;
-    }
+   
 
     public String getVille() {
         return ville;

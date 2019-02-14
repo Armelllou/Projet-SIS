@@ -1,6 +1,7 @@
 package NF;
 
 import BD.ConnexionBD;
+import interfaces.CreationDPI;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,75 +11,52 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.Date;
 
-public  class Patient {
-  String NomUsuel ="" ;
-  String NomDeNaissance="";
-  Date DateDeNaissance=null;
-  Sexe sexe=null;
-  String prenom="";
-  Adresse adresse=null;
-  Ipp ipp=null;
-  Dma dma=null;
-  Localisation localisation=null; 
-ConnexionBD conn = new ConnexionBD();
-Sih sih = new Sih();
-boolean ajoute = false;
+public class Patient {
 
+    String NomUsuel;
+    String NomDeNaissance;
+    Dates DateDeNaissance;
+    Sexe sexe;
+    String prenom;
+    Adresse adresse;
+    Ipp ipp;
+    Dma dma;
+    Localisation localisation;
+    ConnexionBD conn = new ConnexionBD();
+    Sih sih = new Sih();
+    boolean ajoute = false;
 
-    public Patient(String NomUsuel, String NomDeNaissance, Date DateDeNaissance, Sexe sexe, String prenom, Adresse adresse, Localisation localisation) throws SQLException {
-        this.NomUsuel = NomUsuel;
+    CreationDPI cdpi = new CreationDPI();
+
+    public Patient(String NomDeNaissance, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse) {
         this.NomDeNaissance = NomDeNaissance;
         this.DateDeNaissance = DateDeNaissance;
-        this.sexe = sexe;
+      
         this.prenom = prenom;
         this.adresse = adresse;
-        ipp = new Ipp();
-        this.dma = dma;
-        this.localisation = localisation;
-
-//     //Création d'un objet Statement
-//      Statement state = conn.getConnexion().createStatement();
-//      //L'objet ResultSet contient le résultat de la requête SQL
-//      ResultSet result = state.executeQuery("SELECT IPP FROM Patient");
-//      
-//        System.out.println(result);
-//         
-//          if (this.ipp.getIpp().equals(result)){
-//         
-//        System.out.println("patient déjà dans la base de donnée");
-//         }
-//         
-//         else{  
-//      this.AjouterSurBdPatient(this);
-//         
-    //}
-    
-    sih.ajoutPatient(this);
-    this.AjouterSurBdPatient(this);
-    
-    //parcourir la liste de patients et ajouter le dernier sur la base de donnée
-    
-    
-    
+        this.ipp = new Ipp();
+        
+           sih.ajoutPatient(this);
     }
 
-    public   void AjouterSurBdPatient(Patient p) throws SQLException{
+    
   
-           String sql = " INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?) ";
-        PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
-        statement.setObject(1,this.ipp.getIpp(), Types.INTEGER); 
-        statement.setObject(2,p.getNomDeNaissance(),Types.VARCHAR); 
-        statement.setObject(3,p.getPrenom(),Types.VARCHAR); 
-        statement.setObject(4,p.getDateDeNaissance(),Types.DATE); 
-        statement.setObject(5,p.getSexe(),Types.VARCHAR); 
-        statement.setObject(6,123,Types.INTEGER); 
-        
-        statement.executeUpdate();  
-      
-       }
-     
-     
 
+    public void AjouterSurBdPatient(Patient p) throws SQLException {
+
+        String sql = " INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse) VALUES(?,?,?,?,?,?,?) ";
+        PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+        statement.setObject(1, this.ipp.getIpp(), Types.INTEGER);
+        statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);
+        statement.setObject(3, p.getPrenom(), Types.VARCHAR);
+        statement.setObject(4, p.getDateDeNaissance(), Types.VARCHAR);
+        statement.setObject(5, "F", Types.VARCHAR);
+        statement.setObject(6, 123, Types.INTEGER);
+        statement.setObject(7, p.getAdresse(), Types.VARCHAR);
+
+        statement.executeUpdate();
+
+    }
 
     //    public void SupprimerPatients() throws SQLException{
 //            String query ="DELETE FROM Patient";
@@ -86,11 +64,8 @@ boolean ajoute = false;
 //         
 //          statement1.executeUpdate();
 //    
-
-
-
     public String getNomUsuel() throws SQLException {
-       
+
 //        String NomUsuel = "SELECT Nom FROM Patient";
 //        PreparedStatement statement = conn.getConnexion().prepareStatement(NomUsuel); 
 //        statement.executeUpdate();
@@ -102,7 +77,6 @@ boolean ajoute = false;
         this.NomUsuel = NomUsuel;
     }
 
-
     public String getNomDeNaissance() {
         return NomDeNaissance;
     }
@@ -111,12 +85,12 @@ boolean ajoute = false;
         this.NomDeNaissance = NomDeNaissance;
     }
 
-    public Date getDateDeNaissance() {
-        return DateDeNaissance;
+    public String getDateDeNaissance() {
+        return DateDeNaissance.toString();
     }
 
     public void setDateDeNaissance(Date DateDeNaissance) {
-        this.DateDeNaissance = DateDeNaissance;
+        //this.DateDeNaissance = DateDeNaissance;
     }
 
     public Sexe getSexe() {
@@ -151,7 +125,6 @@ boolean ajoute = false;
         this.ipp = ipp;
     }
 
-
     public Dma getDma() {
         return dma;
     }
@@ -176,6 +149,4 @@ boolean ajoute = false;
 //        }
 //        return null;
 //    }
-
-
 }
