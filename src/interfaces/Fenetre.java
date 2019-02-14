@@ -5,7 +5,13 @@
  */
 package interfaces;
 
+import Listener.BoutonConsulterDPE;
+import Listener.BoutonCreerDPI;
+
+import Listener.BoutonDeconnexion;
+
 import Listener.BoutonValiderConnexion;
+import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -18,11 +24,13 @@ import javax.swing.JPanel;
  *
  * @author Manon
  */
+
+
 public class Fenetre extends JFrame {
 
     // Déclaration de tous les JPanel
     Connexion connexion = new Connexion();
-    AccueilSecretaire accueilsecretaire = new AccueilSecretaire();
+    AccueilSecretaires accueilsecretaires = new AccueilSecretaires();
     CreationDPI creationdpi = new CreationDPI();
     ConsulterDPISecretaire consultdpis = new ConsulterDPISecretaire();
     ActeInfirmier acteinfirmier = new ActeInfirmier();
@@ -34,7 +42,6 @@ public class Fenetre extends JFrame {
     InfosMedicales infosmed = new InfosMedicales();
     ModificationDPI modifdpi = new ModificationDPI();
     JPanel jp = new JPanel();
-    
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -42,25 +49,20 @@ public class Fenetre extends JFrame {
 
     // Déclarations Boutons, JTextField etc
     private JButton valider = connexion.getjButton1();
-    private JButton creerDPI = accueilsecretaire.getjButton1();
-    private JButton consulterDPI = accueilsecretaire.getjButton2();
-    
-    
+    private JButton creerDPI = accueilsecretaires.getjButton1();
+    private JButton consulterDPI = accueilsecretaires.getjButton2();
+    private JButton deconnexion = barreduhaut.getjButton1();
 
-    
-    
     public Fenetre() {
         //state = State.NONCO;
         add(connexion);
         this.setSize(1700, 830);
-       
-     
-       valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,jp,this));
-       //creerDPI.addActionListener(new BoutonCreeDP(accueilsecretaire, creationdpi, this));    
-        
-    
-   
 
+        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion,accueilsecretaires,consultdpiphide,this));
+        creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
+        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
+        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
+        
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -88,7 +90,7 @@ public class Fenetre extends JFrame {
 
     public void PanelVisibleFalse() {
         connexion.setVisible(false);
-        accueilsecretaire.setVisible(false);
+        accueilsecretaires.setVisible(false);
         creationdpi.setVisible(false);
         consultdpis.setVisible(false);
         acteinfirmier.setVisible(false);
@@ -99,7 +101,7 @@ public class Fenetre extends JFrame {
         dpi.setVisible(false);
         infosmed.setVisible(false);
         modifdpi.setVisible(false);
-        
+
     }
 
     public void TotaliteFalse() {

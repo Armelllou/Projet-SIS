@@ -5,9 +5,10 @@
  */
 package Listener;
 
-import interfaces.AccueilSecretaire;
+import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
+import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -22,8 +23,8 @@ import javax.swing.JPanel;
  */
 public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
    
-    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, JPanel jp ,Fenetre jframe) {
-        super(bh,c,jp,jframe);  
+    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, AccueilSecretaires as,ConsulterDPIPHetIDE cdpiphetide,Fenetre jframe) {
+        super(bh,c,as,cdpiphetide,jframe);  
         
     }
 

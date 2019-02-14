@@ -5,30 +5,28 @@
  */
 package Listener;
 
-
 import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
+import interfaces.ConsulterDPISecretaire;
 import interfaces.CreationDPI;
 import interfaces.Fenetre;
-import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 
 /**
  *
  * @author annel
  */
-public class BoutonCreerDPI implements ActionListener {
-
-    CreationDPI dpi;
+public class BoutonConsulterDPE implements ActionListener{
+      
     AccueilSecretaires as;
     Fenetre fen;
     BarreDuHaut bh;
+    ConsulterDPISecretaire cdpis;
 
-    public BoutonCreerDPI(AccueilSecretaires as, CreationDPI dpi, Fenetre jframe) {
+    public BoutonConsulterDPE(AccueilSecretaires as,  ConsulterDPISecretaire cdpis, Fenetre jframe) {
         this.fen = jframe;
-        this.dpi = dpi;
+        this.cdpis = cdpis;
         this.as = as;
         
     }
@@ -38,10 +36,9 @@ public class BoutonCreerDPI implements ActionListener {
 
        fen.PanelVisibleFalse();
       
-        fen.add(dpi);
-        dpi.setVisible(true);
+        fen.add(cdpis);
+        cdpis.setVisible(true);
         fen.revalidate();
         fen.repaint();
     }
-
 }

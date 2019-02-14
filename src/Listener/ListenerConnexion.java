@@ -6,7 +6,7 @@
 package Listener;
 
 import BD.ConnexionBD;
-import interfaces.AccueilSecretaire;
+import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.ConsulterDPIPHetIDE;
@@ -35,34 +35,33 @@ public abstract class ListenerConnexion implements ActionListener {
     BarreDuHaut bh;
 
     ConnexionBD conn = new ConnexionBD();
-
+ConsulterDPIPHetIDE cdpiphetide ;
+AccueilSecretaires as ;
     ;
  
     
 
-    public ListenerConnexion(BarreDuHaut bh, Connexion c, JPanel jp, Fenetre jframe) {
+    public ListenerConnexion(BarreDuHaut bh, Connexion c, AccueilSecretaires as,ConsulterDPIPHetIDE cdpiphetide, Fenetre jframe) {
         this.bh = bh;
         this.c = c;
         this.jframe = jframe;
         this.jp = jp;
+        this.cdpiphetide=cdpiphetide;
+        this.as=as;
 
     }
 
     public void connexion() throws SQLException {
         
         
-        if (connexionSecretaire()==true){
-           
-        }
-        else  {
-           ConnexionIde();
-        
+        connexionSecretaire();
+        ConnexionIde();
+        //ConnexionPH();
     }
         
-       //ConnexionPH();
+       
        
     
-    }
     
     
     
@@ -110,7 +109,7 @@ public boolean ConnexionIde() throws SQLException {
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
-            ConsulterDPIPHetIDE cdpiphetide = new ConsulterDPIPHetIDE();
+            
             jframe.add(cdpiphetide, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
 
@@ -144,7 +143,7 @@ boolean j = false;
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
-            AccueilSecretaire as = new AccueilSecretaire();
+            
             jframe.add(as, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
 
@@ -156,7 +155,7 @@ boolean j = false;
             j= true;
 
         } else {
-            JOptionPane.showMessageDialog(null, "Mot de passe ou nom d'utilisateur inconnu");
+            //JOptionPane.showMessageDialog(null, "Mot de passe ou nom d'utilisateur inconnu");
         }
         return j;
 
