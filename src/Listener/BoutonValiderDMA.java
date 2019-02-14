@@ -27,7 +27,6 @@ import javax.swing.JOptionPane;
 public class BoutonValiderDMA implements ActionListener{
     AccueilSecretaires as;
     Fenetre fen;
-    BarreDuHaut bh;
     ConsulterDPISecretaire cdpis;
     CreationDPI cdpi;
 
@@ -36,7 +35,6 @@ public class BoutonValiderDMA implements ActionListener{
         this.cdpis = cdpis;
         this.as = as;
         this.cdpi=cdpi;
-        
     }
 
     @Override

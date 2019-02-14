@@ -21,6 +21,7 @@ public class IppCounter {
             month = date.get(Calendar.MONTH);
         }
         // incrémente le chiffre à la création de chaque nombre de patient
+
         ippCounter += 1;
 
         // ajoute des zéros pour le format

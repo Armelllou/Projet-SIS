@@ -5,13 +5,7 @@
  */
 package interfaces;
 
-import Listener.BoutonAccueilDPISecretaire;
-import Listener.BoutonAnnulerCreationDPI;
-import Listener.BoutonConsulterDPE;
-import Listener.BoutonCreerDPI;
-import Listener.BoutonDeconnexion;
-<<<<<<< Updated upstream
-import Listener.BoutonValiderConnexion;
+import Listener.*;
 
 
 import javax.swing.*;
@@ -41,6 +35,7 @@ import javax.swing.JPanel;
  */
 >>>>>>> Stashed changes
 public class Fenetre extends JFrame {
+
 
     // Déclaration de tous les JPanel
     Connexion connexion = new Connexion();
@@ -74,6 +69,7 @@ public class Fenetre extends JFrame {
     private JButton deconnexion = barreduhaut.getjButton1();
 <<<<<<< Updated upstream
     private JButton validerDMA = creationdpi.getjButton1();
+    private JButton recherchePatient = consultdpis.getjButton1();
 =======
     private JButton retourDPISVersAS = consultdpis.getjButton2();
     private JButton annulercreationDPI = creationdpi.getjButton2();
@@ -94,6 +90,8 @@ public class Fenetre extends JFrame {
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
         validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));
+        recherchePatient.addActionListener(new BoutonRecherchePatient(this,consultdpis));
+
 =======
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
@@ -134,10 +132,6 @@ public class Fenetre extends JFrame {
                 frame.setVisible(true);
                 //new Fenetre().setVisible(true);
                 new Fenetre().setVisible(true);
-
-
-                String IPP = consultdpis.getjTextField1().getText();
-                System.out.println(IPP);
 
             }
         });

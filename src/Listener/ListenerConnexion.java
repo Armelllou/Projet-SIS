@@ -37,23 +37,20 @@ public abstract class ListenerConnexion implements ActionListener {
     BarreDuHaut bh;
 
     ConnexionBD conn = new ConnexionBD();
-ConsulterDPIPHetIDE cdpiphetide ;
-AccueilSecretaires as ;
-    ;
+    ConsulterDPIPHetIDE cdpiphetide;
+    AccueilSecretaires as;
 
-    public ListenerConnexion(BarreDuHaut bh, Connexion c, AccueilSecretaires as,ConsulterDPIPHetIDE cdpiphetide, Fenetre jframe) {
+    public ListenerConnexion(BarreDuHaut bh, Connexion c, AccueilSecretaires as, ConsulterDPIPHetIDE cdpiphetide, Fenetre jframe) {
         this.bh = bh;
         this.c = c;
         this.jframe = jframe;
         this.jp = jp;
-        this.cdpiphetide=cdpiphetide;
-        this.as=as;
+        this.cdpiphetide = cdpiphetide;
+        this.as = as;
 
     }
 
     public void connexion() throws SQLException {
-
-
         connexionSecretaire();
         ConnexionIde();
         //ConnexionPH();
@@ -104,7 +101,7 @@ AccueilSecretaires as ;
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
-            
+
             jframe.add(cdpiphetide, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
 
@@ -135,7 +132,7 @@ AccueilSecretaires as ;
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
-            
+
             jframe.add(as, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
 
