@@ -141,12 +141,14 @@ public class Patient {
         this.localisation = localisation;
     }
 
-//    public Patient rechercherPatient(String ipp) {
-//        for (Patient patient : Sih.getPatientList()) {
-//            if (patient.ipp.equals(ipp)) {
-//                return patient;
-//            }
-//        }
-//        return null;
-//    }
+    public Patient rechercherPatientIPP(String ipp) {
+        for (Patient patient : Sih.getPatientList()) {
+            if (patient.ipp.equals(ipp)) {
+               return patient;
+           }
+        }
+       return null;
+   }
+
+
 }

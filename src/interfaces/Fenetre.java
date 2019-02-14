@@ -7,24 +7,13 @@ package interfaces;
 
 import Listener.BoutonConsulterDPE;
 import Listener.BoutonCreerDPI;
-
 import Listener.BoutonDeconnexion;
-
 import Listener.BoutonValiderConnexion;
-import Listener.BoutonValiderDMA;
-import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
-import java.awt.event.ActionEvent;
+
+
+import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
-/**
- *
- * @author Manon
- */
 
 
 public class Fenetre extends JFrame {
@@ -92,6 +81,12 @@ public class Fenetre extends JFrame {
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 frame.setVisible(true);
                 //new Fenetre().setVisible(true);
+                new Fenetre().setVisible(true);
+
+
+                String IPP = consultdpis.getjTextField1().getText();
+                System.out.println(IPP);
+
             }
         });
     }

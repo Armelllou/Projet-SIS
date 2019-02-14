@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Types;
 import java.util.Date;
 
 public class Main {
@@ -17,11 +15,11 @@ public class Main {
 //Service serviceResponsbale
 
 
-    public static void main(String[] args) throws SQLException{
-     
+    public static void main(String[] args) throws SQLException {
+
 
         ConnexionBD conn = new ConnexionBD();
-  Date d= new Date(01-01-1999) ;
+        Date d = new Date(01 - 01 - 1999);
 
 //Sexe s = Sexe.H;
 //Adresse a = new Adresse("2","Rue des fleurs","bayonne","64000");
@@ -33,9 +31,7 @@ public class Main {
 //Sih sih = new Sih();
 
 //Patient p10 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
- 
- 
-          
-          
+
+
     }
-    }
+}

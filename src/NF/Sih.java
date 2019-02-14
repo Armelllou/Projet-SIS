@@ -56,7 +56,7 @@ public class Sih {
         return soinInfList;
     }
 
-    public  List<Patient> getPatientList() {
+    public static List<Patient> getPatientList() {
         return patientList;
     }
 
