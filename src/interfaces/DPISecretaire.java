@@ -9,7 +9,7 @@ package interfaces;
  *
  * @author Manon
  */
-public class DPI extends javax.swing.JPanel {
+public class DPISecretaire extends javax.swing.JPanel {
 
     /**
      * @return the jButton1
@@ -28,9 +28,7 @@ public class DPI extends javax.swing.JPanel {
     /**
      * @return the jButtoninfomed
      */
-    public javax.swing.JButton getjButtoninfomed() {
-        return jButtoninfomed;
-    }
+    
 
     /**
      * @return the jButtonmodifier
@@ -147,7 +145,7 @@ public class DPI extends javax.swing.JPanel {
     /**
      * Creates new form DPI
      */
-    public DPI() {
+    public DPISecretaire() {
         initComponents();
     }
 
@@ -178,7 +176,6 @@ public class DPI extends javax.swing.JPanel {
         jLabelemail = new javax.swing.JLabel();
         jLabeltelephone = new javax.swing.JLabel();
         jButtonmodifier = new javax.swing.JButton();
-        jButtoninfomed = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -241,9 +238,6 @@ public class DPI extends javax.swing.JPanel {
         jButtonmodifier.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jButtonmodifier.setText("Modifier le dossier");
 
-        jButtoninfomed.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jButtoninfomed.setText("Accéder aux informations médicales");
-
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel4.setText("Service responsable :");
 
@@ -272,9 +266,7 @@ public class DPI extends javax.swing.JPanel {
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 681, Short.MAX_VALUE)
-                                .addComponent(jButtoninfomed)
-                                .addGap(348, 348, 348)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton2)
@@ -335,7 +327,7 @@ public class DPI extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButtonmodifier)
-                .addGap(681, 681, 681))
+                .addGap(678, 678, 678))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,16 +367,9 @@ public class DPI extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(jLabelchamnre))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
-                        .addComponent(jButtonmodifier)
-                        .addGap(36, 36, 36)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jButtoninfomed)
-                                .addGap(97, 97, 97))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -394,7 +379,9 @@ public class DPI extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                        .addGap(125, 125, 125)
+                        .addComponent(jButtonmodifier)
+                        .addGap(0, 133, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -402,7 +389,6 @@ public class DPI extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButtoninfomed;
     private javax.swing.JButton jButtonmodifier;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;

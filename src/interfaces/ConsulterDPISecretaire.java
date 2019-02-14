@@ -23,6 +23,13 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
     }
 
     /**
+     * @return the jButton2
+     */
+    public javax.swing.JButton getjButton2() {
+        return jButton2;
+    }
+
+    /**
      * @return the jButton1
      */
     public javax.swing.JButton getjButton1() {
