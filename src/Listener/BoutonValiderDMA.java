@@ -41,17 +41,9 @@ public class BoutonValiderDMA implements ActionListener{
     public void actionPerformed(ActionEvent e) {
        
         try {
-            Patient p = new Patient(cdpi.getNom().getText(), 
-                            new Dates(cdpi.getJour().getText(), cdpi.getMois().getText(), cdpi.getAnnee().getText())
-                            ,"f",
-                           cdpi.getPrenom().getText(),
-                            new Adresse(cdpi.getAdresse().getText(), cdpi.getVille().getText(), cdpi.getCodePostal().getText()));
-                            
-                            
-                            
+            Patient p = new Patient(cdpi.getNom().getText(), new Dates(cdpi.getJour().getText(), cdpi.getMois().getText(), cdpi.getAnnee().getText()),"f", cdpi.getPrenom().getText(), new Adresse(cdpi.getAdresse().getText(), cdpi.getVille().getText(), cdpi.getCodePostal().getText()));
             p.AjouterSurBdPatient(p);
-            
-            
+
             JOptionPane jop1 = new JOptionPane();
             jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
             fen.PanelVisibleFalse();

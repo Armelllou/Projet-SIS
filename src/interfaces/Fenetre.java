@@ -4,38 +4,21 @@
  * and open the template in the editor.
  */
 package interfaces;
-
 import Listener.*;
-
-
-import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
-
-=======
 import Listener.BoutonModifierDPI;
 import Listener.BoutonRetourDPISecretaireVersAccueil;
 import Listener.BoutonRetourDPIVersConsulterDPI;
-
 import Listener.BoutonValiderConnexion;
 import NF.Sih;
-import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author Manon
- */
->>>>>>> Stashed changes
-public class Fenetre extends JFrame {
 
+public class Fenetre extends JFrame {
 
     // Déclaration de tous les JPanel
     Connexion connexion = new Connexion();
@@ -67,17 +50,15 @@ public class Fenetre extends JFrame {
     private JButton creerDPI = accueilsecretaires.getjButton1();
     private JButton consulterDPI = accueilsecretaires.getjButton2();
     private JButton deconnexion = barreduhaut.getjButton1();
-<<<<<<< Updated upstream
     private JButton validerDMA = creationdpi.getjButton1();
     private JButton recherchePatient = consultdpis.getjButton1();
-=======
     private JButton retourDPISVersAS = consultdpis.getjButton2();
     private JButton annulercreationDPI = creationdpi.getjButton2();
     private JButton retourDPIVersConsulterDPISecretaire = dpis.getjButton2();
     private JButton accueilDPISecretaire = dpis.getjButton1();
     private JButton modificationdpi = dpis.getjButtonmodifier();
     
->>>>>>> Stashed changes
+
 
     public Fenetre() {
         //state = State.NONCO;
@@ -86,13 +67,13 @@ public class Fenetre extends JFrame {
 
         valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, accueilsecretaires, consultdpiphide, this));
         creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
-<<<<<<< Updated upstream
+
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
         validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));
         recherchePatient.addActionListener(new BoutonRecherchePatient(this,consultdpis));
 
-=======
+
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
         retourDPISVersAS.addActionListener(new BoutonRetourDPISecretaireVersAccueil(this, accueilsecretaires, consultdpis, sih));
@@ -100,8 +81,7 @@ public class Fenetre extends JFrame {
         retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPIVersConsulterDPI(this,consultdpis,dpis,sih));
         accueilDPISecretaire.addActionListener(new BoutonAccueilDPISecretaire(this,dpis,accueilsecretaires,sih));
         modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi, sih));
-        
->>>>>>> Stashed changes
+
         
 
 

@@ -6,29 +6,18 @@
 package Listener;
 
 import BD.ConnexionBD;
-<<<<<<< Updated upstream
-import interfaces.*;
-
 import javax.swing.*;
-import java.awt.*;
-=======
 import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.ConsulterDPIPHetIDE;
-import interfaces.DPISecretaire;
 import interfaces.Fenetre;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
->>>>>>> Stashed changes
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * @author annel
- */
 public abstract class ListenerConnexion implements ActionListener {
 
     Connexion c;
