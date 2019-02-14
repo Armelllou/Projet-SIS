@@ -11,6 +11,7 @@ import Listener.BoutonCreerDPI;
 import Listener.BoutonDeconnexion;
 
 import Listener.BoutonValiderConnexion;
+import Listener.BoutonValiderDMA;
 import static com.sun.java.accessibility.util.AWTEventMonitor.addActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.WindowAdapter;
@@ -52,6 +53,7 @@ public class Fenetre extends JFrame {
     private JButton creerDPI = accueilsecretaires.getjButton1();
     private JButton consulterDPI = accueilsecretaires.getjButton2();
     private JButton deconnexion = barreduhaut.getjButton1();
+    private JButton validerDMA = creationdpi.getjButton1();
 
     public Fenetre() {
         //state = State.NONCO;
@@ -62,6 +64,7 @@ public class Fenetre extends JFrame {
         creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
+        validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));
         
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
@@ -78,12 +81,17 @@ public class Fenetre extends JFrame {
                 }
             }
         });
+        
+        
     }
 
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Fenetre().setVisible(true);
+                Fenetre frame = new Fenetre();
+                frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                frame.setVisible(true);
+                //new Fenetre().setVisible(true);
             }
         });
     }
@@ -118,5 +126,10 @@ public class Fenetre extends JFrame {
         //return state;
         return null;
     }
+
+    
+   
+     
+
 
 }
