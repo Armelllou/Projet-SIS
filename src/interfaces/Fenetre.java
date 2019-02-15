@@ -115,6 +115,11 @@ public class Fenetre extends JFrame {
 
             }
         });
+        
+        
+        
+        //  String IPP = consultdpis.getjTextField1().getText();
+        
     }
 
     public void PanelVisibleFalse() {

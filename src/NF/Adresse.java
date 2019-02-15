@@ -30,6 +30,10 @@ public class Adresse {
         return ville;
     }
 
+    public String getAdresse() {
+        return adresse;
+    }
+
     public void setVille(String ville) {
         this.ville = ville;
     }
@@ -42,5 +46,13 @@ public class Adresse {
         this.codePostal = codePostal;
     }
     
-    
+    @Override
+    public String toString(){
+        
+        String a =(this.getAdresse()+ this.getVille()+ this.getCodePostal());
+        
+        return a;
+        
+        
+    }
 }

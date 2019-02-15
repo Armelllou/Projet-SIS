@@ -30,7 +30,7 @@ public class BoutonValiderDMA implements ActionListener{
     ConsulterDPISecretaire cdpis;
     CreationDPI cdpi;
 
-    public BoutonValiderDMA(AccueilSecretaires as,  ConsulterDPISecretaire cdpis, Fenetre jframe, CreationDPI cdpi) {
+    public BoutonValiderDMA(AccueilSecretaires as,ConsulterDPISecretaire cdpis, Fenetre jframe, CreationDPI cdpi) {
         this.fen = jframe;
         this.cdpis = cdpis;
         this.as = as;

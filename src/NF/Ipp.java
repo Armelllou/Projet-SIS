@@ -5,6 +5,7 @@
  */
 package NF;
 
+import java.sql.SQLException;
 import java.util.Calendar;
 
 class Ipp {
@@ -12,7 +13,7 @@ class Ipp {
     private String ipp;
 
     //constructeur d'un IPP
-    public Ipp() {
+    public Ipp() throws SQLException {
         Calendar date = Calendar.getInstance();
 
         // récupère la date et enlève 2000 pour avoir uniquement les deux derniers chiffres de la date

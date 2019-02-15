@@ -109,8 +109,8 @@ public class Patient {
         this.prenom = prenom;
     }
 
-    public Adresse getAdresse() {
-        return adresse;
+    public String getAdresse() {
+        return adresse.toString();
     }
 
     public void setAdresse(Adresse adresse) {

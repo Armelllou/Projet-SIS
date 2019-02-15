@@ -31,7 +31,8 @@ public class Main {
 //Sih sih = new Sih();
 
 //Patient p10 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
-
-
+ 
+    
+          
     }
 }
