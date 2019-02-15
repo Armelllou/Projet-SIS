@@ -12,6 +12,20 @@ package interfaces;
 public class Consultation extends javax.swing.JPanel {
 
     /**
+     * @return the jButton3
+     */
+    public javax.swing.JButton getjButton3() {
+        return jButton3;
+    }
+
+    /**
+     * @return the jButton4
+     */
+    public javax.swing.JButton getjButton4() {
+        return jButton4;
+    }
+
+    /**
      * @return the jTextField1
      */
     public javax.swing.JTextField getjTextField1() {

@@ -12,6 +12,41 @@ package interfaces;
 public class AjouterPrestation extends javax.swing.JPanel {
 
     /**
+     * @return the jButton1
+     */
+    public javax.swing.JButton getjButton1() {
+        return jButton1;
+    }
+
+    /**
+     * @return the jButton2
+     */
+    public javax.swing.JButton getjButton2() {
+        return jButton2;
+    }
+
+    /**
+     * @return the jButton3
+     */
+    public javax.swing.JButton getjButton3() {
+        return jButton3;
+    }
+
+    /**
+     * @return the jComboBox1
+     */
+    public javax.swing.JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    /**
+     * @return the jTextField1
+     */
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    /**
      * Creates new form AjouterPrestation
      */
     public AjouterPrestation() {
