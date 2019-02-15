@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package interfaces;
+
 import Listener.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -16,7 +17,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-
 
 public class Fenetre extends JFrame {
 
@@ -57,8 +57,6 @@ public class Fenetre extends JFrame {
     private JButton retourDPIVersConsulterDPISecretaire = dpis.getjButton2();
     private JButton accueilDPISecretaire = dpis.getjButton1();
     private JButton modificationdpi = dpis.getjButtonmodifier();
-    
-
 
     public Fenetre() {
         //state = State.NONCO;
@@ -68,22 +66,18 @@ public class Fenetre extends JFrame {
         valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, accueilsecretaires, consultdpiphide, this));
         creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
 
-        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
-        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
-        validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));
-        recherchePatient.addActionListener(new BoutonRecherchePatient(this,consultdpis));
-
+        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
+        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
+        validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires, consultdpis, this, creationdpi));
+        recherchePatient.addActionListener(new BoutonRecherchePatient(this, consultdpis));
 
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
         retourDPISVersAS.addActionListener(new BoutonRetourDPISecretaireVersAccueil(this, accueilsecretaires, consultdpis, sih));
         annulercreationDPI.addActionListener(new BoutonAnnulerCreationDPI(this, accueilsecretaires, creationdpi, sih));
-        retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPIVersConsulterDPI(this,consultdpis,dpis,sih));
-        accueilDPISecretaire.addActionListener(new BoutonAccueilDPISecretaire(this,dpis,accueilsecretaires,sih));
+        retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPIVersConsulterDPI(this, consultdpis, dpis, sih));
+        accueilDPISecretaire.addActionListener(new BoutonAccueilDPISecretaire(this, dpis, accueilsecretaires, sih));
         modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi, sih));
-
-        
-
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
@@ -94,14 +88,12 @@ public class Fenetre extends JFrame {
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE);
                 if (reponse == JOptionPane.YES_OPTION) {
-                    //InscriptionFichierXML sauvegarde = new InscriptionFichierXML();
-                    //sauvegarde.Xml(sih);
+                    
                     System.exit(0);
                 }
             }
         });
-        
-        
+
     }
 
     public static void main(String[] args) {
@@ -110,16 +102,11 @@ public class Fenetre extends JFrame {
                 Fenetre frame = new Fenetre();
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 frame.setVisible(true);
-                //new Fenetre().setVisible(true);
-                new Fenetre().setVisible(true);
+               frame.setVisible(true);
 
             }
         });
-        
-        
-        
-        //  String IPP = consultdpis.getjTextField1().getText();
-        
+
     }
 
     public void PanelVisibleFalse() {
@@ -139,7 +126,6 @@ public class Fenetre extends JFrame {
         prestations.setVisible(false);
         ajouterpresta.setVisible(false);
         prestafaite.setVisible(false);
-        
 
     }
 
@@ -157,10 +143,5 @@ public class Fenetre extends JFrame {
         //return state;
         return null;
     }
-
-    
-   
-     
-
 
 }

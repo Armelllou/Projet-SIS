@@ -16,46 +16,59 @@ public class Patient {
     String NomUsuel;
     String NomDeNaissance;
     Dates DateDeNaissance;
-    Sexe sexe;
+    String sexe;
     String prenom;
     Adresse adresse;
     Ipp ipp;
     Dma dma;
+    String numSS;
+    String email;
+    String telephone;
+
     Localisation localisation;
+
     ConnexionBD conn = new ConnexionBD();
     Sih sih = new Sih();
     boolean ajoute = false;
 
     CreationDPI cdpi = new CreationDPI();
 
-    public Patient(String NomDeNaissance, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse) throws SQLException {
+    public Patient(String NomDeNaissance, String NomUsuel, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse, String numss, String email, String telephone) throws SQLException {
         this.NomDeNaissance = NomDeNaissance;
         this.DateDeNaissance = DateDeNaissance;
-      
+        this.NomUsuel=NomUsuel;
+        this.sexe=sexe;
+
         this.prenom = prenom;
         this.adresse = adresse;
+        this.numSS=numss;
+        this.email=email;
+        this.telephone=telephone;
         this.ipp = new Ipp();
-        
-           sih.ajoutPatient(this);
+
+        sih.ajoutPatient(this);
     }
 
-    
-  
-
-    public void AjouterSurBdPatient(Patient p) throws SQLException {
-
-        String sql = " INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse) VALUES(?,?,?,?,?,?,?) ";
+    public boolean AjouterSurBdPatient(Patient p) throws SQLException {
+        boolean j = false;
+        String sql = " INSERT INTO Patient (IPP, NomDeNaissance,NomUsuel, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse,NumDeSS,email,telephone) VALUES(?,?,?,?,?,?,?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         statement.setObject(1, this.ipp.getIpp(), Types.INTEGER);
         statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);
-        statement.setObject(3, p.getPrenom(), Types.VARCHAR);
-        statement.setObject(4, p.getDateDeNaissance(), Types.VARCHAR);
-        statement.setObject(5, "F", Types.VARCHAR);
-        statement.setObject(6, 123, Types.INTEGER);
-        statement.setObject(7, p.getAdresse(), Types.VARCHAR);
+        statement.setObject(3, p.getNomUsuel(), Types.VARCHAR);
+        statement.setObject(4, p.getPrenom(), Types.VARCHAR);
+        statement.setObject(5, p.getDateDeNaissance(), Types.VARCHAR);
+        statement.setObject(6, p.getSexe(), Types.VARCHAR);
+
+        statement.setObject(7, 123, Types.INTEGER);
+        statement.setObject(8, p.getAdresse(), Types.VARCHAR);
+        statement.setObject(9, p.getNumSS(), Types.VARCHAR);
+        statement.setObject(10, p.getEmail(), Types.VARCHAR);
+        statement.setObject(11 , p.getTelephone(), Types.INTEGER);
 
         statement.executeUpdate();
-
+        j = true;
+        return j;
     }
 
     //    public void SupprimerPatients() throws SQLException{
@@ -71,6 +84,18 @@ public class Patient {
 //        statement.executeUpdate();
 //        
         return NomUsuel;
+    }
+
+    public String getNumSS() {
+        return numSS;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getTelephone() {
+        return telephone;
     }
 
     public void setNomUsuel(String NomUsuel) {
@@ -93,13 +118,13 @@ public class Patient {
         //this.DateDeNaissance = DateDeNaissance;
     }
 
-    public Sexe getSexe() {
+    public String getSexe() {
         return sexe;
     }
 
-    public void setSexe(Sexe sexe) {
-        this.sexe = sexe;
-    }
+//    public void setSexe(Sexe sexe) {
+//        this.sexe = sexe;
+//    }
 
     public String getPrenom() {
         return prenom;
@@ -144,11 +169,10 @@ public class Patient {
     public Patient rechercherPatientIPP(String ipp) {
         for (Patient patient : Sih.getPatientList()) {
             if (patient.ipp.equals(ipp)) {
-               return patient;
-           }
+                return patient;
+            }
         }
-       return null;
-   }
-
+        return null;
+    }
 
 }

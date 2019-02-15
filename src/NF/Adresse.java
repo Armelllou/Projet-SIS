@@ -49,7 +49,7 @@ public class Adresse {
     @Override
     public String toString(){
         
-        String a =(this.getAdresse()+ this.getVille()+ this.getCodePostal());
+        String a =(this.getAdresse()+" "+this.getVille()+" "+ this.getCodePostal());
         
         return a;
         
