@@ -25,29 +25,25 @@ public class BoutonRecherchePatient implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e)  {
-        System.out.println("aaaaaa");
 
         try {
             String ipp = cdpis.getjTextField1().getText();
-            String Sql1 = "Select* FROM patient WHERE IPP ='"+ipp+"'";
-            PreparedStatement ps2 = conn.getConnexion().prepareStatement(Sql1);
-            ResultSet Rs2 = ps2.executeQuery();
+            String Sql1 = "Select * FROM patient WHERE IPP ='" + ipp + "'";
 
-            ResultSetMetaData rsmd = Rs2.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (Rs2.next()) {
-                for (int i = 1; i <= columnsNumber; i++) {
-                    if (i > 1) {
-                        System.out.print(",  ");
-                    }
-                    String columnValue = Rs2.getString(i);
-                    System.out.print(columnValue);
-                }
-                System.out.println("aaaaaa");
+            java.sql.Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1"+"?serverTimezone=UTC","armelle","armelle");
+            Statement stmt = null;
+            stmt = conn1.createStatement();
+            ResultSet rs = stmt.executeQuery(Sql1);
+            while (rs.next()) {
+                String name = rs.getString("Nom");
+                String prenom = rs.getString("Prénom");
+                String ipp1 = rs.getString("IPP");
+                System.out.println(name + "\t" + prenom + "\t" + ipp1);
             }
 
-        } catch (SQLException ex) {
-            Logger.getLogger(BoutonRecherchePatient.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException e1) {
+            e1.printStackTrace();
         }
+
     }
 }
