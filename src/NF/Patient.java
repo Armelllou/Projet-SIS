@@ -28,7 +28,7 @@ public class Patient {
 
     CreationDPI cdpi = new CreationDPI();
 
-    public Patient(String NomDeNaissance, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse) {
+    public Patient(String NomDeNaissance, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse) throws SQLException {
         this.NomDeNaissance = NomDeNaissance;
         this.DateDeNaissance = DateDeNaissance;
       
