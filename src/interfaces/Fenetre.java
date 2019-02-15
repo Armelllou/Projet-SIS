@@ -57,6 +57,17 @@ public class Fenetre extends JFrame {
     private JButton retourDPIVersConsulterDPISecretaire = dpis.getjButton2();
     private JButton accueilDPISecretaire = dpis.getjButton1();
     private JButton modificationdpi = dpis.getjButtonmodifier();
+    private JButton retourActeInfVersInfosMed = acteinfirmier.getjButton4();
+    private JButton accueilActeInfirmier = acteinfirmier.getjButton3();
+    private JButton accueilAjouterActeInfirmier = ajouterai.getjButton3();
+    private JButton annulerAjouterAI = ajouterai.getjButton1();
+    private JButton accueilAjouterConsult = ajouterconsult.getjButton3();
+    private JButton annulerAjouterConsult = ajouterconsult.getjButton1();
+    private JButton accueilAjouterPresta = ajouterpresta.getjButton3();
+    private JButton annulerAjouterPresta = ajouterpresta.getjButton1();
+    private JButton accueilconsult = consultation.getjButton3();
+    private JButton retourConsultVersInfosMed = consultation.getjButton4();
+    private JButton accueilDPIPHetIDE = dpiphide.getjButton1();
 
     public Fenetre() {
         //state = State.NONCO;
@@ -66,6 +77,10 @@ public class Fenetre extends JFrame {
         valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, accueilsecretaires, consultdpiphide, this));
         creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
 
+        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
+        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
+        validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));
+        recherchePatient.addActionListener(new BoutonRecherchePatient(this,consultdpis));
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
         validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires, consultdpis, this, creationdpi));
@@ -78,6 +93,18 @@ public class Fenetre extends JFrame {
         retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPIVersConsulterDPI(this, consultdpis, dpis, sih));
         accueilDPISecretaire.addActionListener(new BoutonAccueilDPISecretaire(this, dpis, accueilsecretaires, sih));
         modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi, sih));
+        retourActeInfVersInfosMed.addActionListener(new BoutonRetourActeInfirmierVersInfosMedicales(this,infosmed,acteinfirmier,sih));
+        accueilActeInfirmier.addActionListener(new BoutonAccueilActeInfirmier(this,acteinfirmier,consultdpiphide,sih));
+        accueilAjouterActeInfirmier.addActionListener(new BoutonAccueilAjouterActeInfirmier(this,ajouterai, consultdpiphide,sih));
+        annulerAjouterAI.addActionListener(new BoutonAnnulerAjouterActeInfirmier(this,ajouterai,infosmed, sih));
+        accueilAjouterConsult.addActionListener(new BoutonAccueilAjouterConsultation(this,ajouterconsult,consultdpiphide,sih));
+        annulerAjouterConsult.addActionListener(new BoutonAnnulerAjouterConsultation(this,ajouterconsult, infosmed,sih));
+        accueilAjouterPresta.addActionListener(new BoutonAccueilAjouterPrestation(this,ajouterpresta,consultdpiphide,sih));
+        annulerAjouterPresta.addActionListener(new BoutonAnnulerAjouterPrestation(this,ajouterpresta,infosmed,sih));
+        accueilconsult.addActionListener(new BoutonAccueilConsultation(this,consultation,consultdpiphide,sih));
+        retourConsultVersInfosMed.addActionListener(new BoutonRetourConsultationVersInfosMed(this,consultation,infosmed,sih));
+        accueilDPIPHetIDE.addActionListener(new BoutonAccueilDPIPHetIDE(this,dpiphide,consultdpiphide,sih));
+
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
