@@ -10,6 +10,7 @@ import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
+import interfaces.Prestations;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -23,14 +24,15 @@ import java.util.logging.Logger;
  */
 public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
    
-    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, AccueilSecretaires as,ConsulterDPIPHetIDE cdpiphetide,Fenetre jframe) {
-        super(bh,c,as,cdpiphetide,jframe);  
+    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, AccueilSecretaires as,ConsulterDPIPHetIDE cdpiphetide, Prestations p,Fenetre jframe) {
+        super(bh,c,as,cdpiphetide,p,jframe);  
         
     }
 
     public void actionPerformed(ActionEvent e) {
         try {
             super.connexion();
+            
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderConnexion.class.getName()).log(Level.SEVERE, null, ex);
         }

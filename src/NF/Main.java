@@ -14,7 +14,6 @@ import java.util.logging.Logger;
 
 public class Main {
 
-
     public static void main(String[] args) throws SQLException {
 
         ConnexionBD conn = new ConnexionBD();
@@ -29,24 +28,23 @@ public class Main {
 //Localisation localisation = new Localisation (lit,chambre,s2,s1);      
 //Sih sih = new Sih();
 //Patient p10 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
-//        String Sql1 = "Select max(IPP) from patient";
-//        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-//        ResultSet resultSet = ps.executeQuery();
-//
-//        ResultSetMetaData rsmd = resultSet.getMetaData();
-//        int columnsNumber = rsmd.getColumnCount();
-//        while (resultSet.next()) {
-//            for (int i = 1; i <= columnsNumber; i++) {
-//                if (i > 1) {
-//
-//                }
-//                String columnValue = resultSet.getString(i);
-//                String columnInteressant = columnValue.substring(5);
-//                //System.out.print(columnInteressant);
-//                int ipp = Integer.parseInt(columnInteressant);
-//            }
-//
-//        }
+        String Sql1 = "Select * from ide WHERE idIDE ='456'and motDePasse='456'";
+        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
+        ResultSet Rs = ps.executeQuery();;
 
+        ResultSetMetaData rsmd = Rs.getMetaData();
+        int columnsNumber = rsmd.getColumnCount();
+        while (Rs.next()) {
+
+            String Nom = Rs.getString(3);
+            String Prenom = Rs.getString(4);
+            String Service = Rs.getString(5);
+            String Total = Nom + " " + Prenom + " " + Service;
+
+            System.out.print(Total);
+//                
+        }
+//System.out.println("");
     }
+
 }
