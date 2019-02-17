@@ -64,7 +64,7 @@ public class BoutonRecherchePatient implements ActionListener {
             }
             String nom1 = splitArray[0];
             String prenom1 = splitArray[1];
-            String Sql2 = "Select * FROM patient WHERE Nom ='" + nom1 + "'and Prénom ='" + prenom1 + "'";
+            String Sql2 = "Select * FROM patient WHERE Nom ='" + nom1 +"'OR Nom ='"+ prenom1+ "'and Prénom ='"+nom1+ "'OR Prénom ='" + prenom1 + "'";
             java.sql.Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
             Statement stmt = null;
             stmt = conn1.createStatement();
