@@ -14,7 +14,7 @@ public class Sih {
     private List<Resultat> resultatList;
     private List<Hospitalisation> hospitalisationList;
     private List<Consultation> consultationList;
-    private List <SoinInf> soinInfList;
+    private List <Acte> acte;
 
     public static void ajoutPatient(Patient patient) {
         patientList.add(patient);
@@ -52,8 +52,8 @@ public class Sih {
         return consultationList;
     }
 
-    public List<SoinInf> getSoinInfList() {
-        return soinInfList;
+    public List<Acte> getSoinInfList() {
+        return acte;
     }
 
     public static List<Patient> getPatientList() {

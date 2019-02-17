@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Manon
@@ -32,13 +34,7 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         return jButton2;
     }
 
-    /**
-     * @return the jTextField1
-     */
-    public javax.swing.JTextField getjTextField1() {
-        return jTextField1;
-    }
-
+   
     /**
      * @return the jTextField2
      */
@@ -46,37 +42,42 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
     /**
      * @return the jTextField3
      */
-    public javax.swing.JTextField getjTextField3() {
-        return jTextField3;
+    public javax.swing.JTextField getannee() {
+        return annee;
     }
 
     /**
      * @return the jTextField4
      */
-    public javax.swing.JTextField getjTextField4() {
-        return jTextField4;
+    public javax.swing.JTextField getjour() {
+        return jour;
     }
 
     /**
      * @return the jTextField5
      */
-    public javax.swing.JTextField getjTextField5() {
-        return jTextField5;
+    public javax.swing.JTextField getmois() {
+        return mois;
     }
 
     /**
      * @return the jTextField7
      */
-    public javax.swing.JTextField getjTextField7() {
-        return jTextField7;
+    public javax.swing.JTextField getobservation() {
+        return observation;
     }
 
     /**
      * @return the jTextField8
      */
-    public javax.swing.JTextField getjTextField8() {
-        return jTextField8;
+    public javax.swing.JTextField gettype() {
+        return type;
     }
+
+    public JLabel getIpp() {
+        return ipp;
+    }
+    
 
     /**
      * Creates new form AjouterConsultation
@@ -96,24 +97,24 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        PrenomIDE = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        annee = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jour = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        mois = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        observation = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jTextField8 = new javax.swing.JTextField();
+        type = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        ipp = new javax.swing.JLabel();
+        NomIDE = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -125,10 +126,8 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jButton2.setText("Valider");
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jLabel1.setText("ID :");
-
-        jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        PrenomIDE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        PrenomIDE.setText("Prenom");
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel2.setText("IDE :");
@@ -136,17 +135,17 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel4.setText("Date :");
 
-        jTextField3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        annee.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel5.setText("/");
 
-        jTextField4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jour.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel6.setText("/");
 
-        jTextField5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        mois.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel7.setText("Observations :");
@@ -154,13 +153,13 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel8.setText("Type d'acte :");
 
-        jTextField7.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        observation.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/accueil-ConvertImage.png"))); // NOI18N
 
-        jTextField8.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        type.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         jLabel10.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel10.setText("Prénom Patient");
@@ -168,37 +167,43 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         jLabel11.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel11.setText("Nom Patient");
 
-        jLabel12.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jLabel12.setText("IPP  Patient");
+        ipp.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        ipp.setText("IPP  Patient");
+
+        NomIDE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        NomIDE.setText("Nom ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(192, 192, 192)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(NomIDE, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(277, 277, 277)
+                        .addComponent(PrenomIDE, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(181, 181, 181)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(151, 151, 151)
                         .addComponent(jButton1)
                         .addGap(46, 46, 46)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(ipp, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(153, 153, 153)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -207,15 +212,15 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jour, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(mois, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(147, 147, 147))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(352, 352, 352)
@@ -225,12 +230,12 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
                 .addGap(411, 411, 411))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(observation, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(160, 160, 160))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(131, 131, 131)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(type, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap(951, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -245,22 +250,23 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(mois, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
+                        .addGap(14, 14, 14)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)))
+                            .addComponent(jLabel2)
+                            .addComponent(NomIDE)))
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ipp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(PrenomIDE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
@@ -268,7 +274,7 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+                        .addComponent(observation, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
@@ -281,20 +287,22 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(291, 291, 291)
-                    .addComponent(jTextField8)
+                    .addComponent(type)
                     .addGap(158, 158, 158)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel NomIDE;
+    private javax.swing.JLabel PrenomIDE;
+    private javax.swing.JTextField annee;
+    private javax.swing.JLabel ipp;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -302,11 +310,9 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
+    private javax.swing.JTextField jour;
+    private javax.swing.JTextField mois;
+    private javax.swing.JTextField observation;
+    private javax.swing.JTextField type;
     // End of variables declaration//GEN-END:variables
 }

@@ -24,28 +24,28 @@ ConnexionBD conn = new ConnexionBD();
     }
 
     public int getIdIDE() throws SQLException {
-         /// problème pour avoir li' id d'une IDE pour une seule personne et pas pour toute la table 
-          int idIDEs=0;
-        String Sql1 =  "SELECT idIDE FROM ide";
-        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-        ResultSet resultSet = ps.executeQuery();
-
-        ResultSetMetaData rsmd = resultSet.getMetaData();
-        int columnsNumber = rsmd.getColumnCount();
-        while (resultSet.next()) {
-            for (int i = 1; i <= columnsNumber; i++) {
-                if (i > 1) {
-
-                }
-                String columnValue = resultSet.getString(i);
-                String columnInteressant = columnValue.substring(5);
-                
-                 idIDEs = Integer.parseInt(columnInteressant);
-                //System.out.print(idIDEs);
-            } 
-        
-    }
-            return idIDEs;
+//         /// problème pour avoir li' id d'une IDE pour une seule personne et pas pour toute la table 
+//          int idIDEs=0;
+//        String Sql1 =  "SELECT idIDE FROM ide";
+//        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
+//        ResultSet resultSet = ps.executeQuery();
+//
+//        ResultSetMetaData rsmd = resultSet.getMetaData();
+//        int columnsNumber = rsmd.getColumnCount();
+//        while (resultSet.next()) {
+//            for (int i = 1; i <= columnsNumber; i++) {
+//                if (i > 1) {
+//
+//                }
+//                String columnValue = resultSet.getString(i);
+//                String columnInteressant = columnValue.substring(5);
+//                
+//                 idIDEs = Integer.parseInt(columnInteressant);
+//                //System.out.print(idIDEs);
+//            } 
+//        
+//    }
+            return idIDE;
 
         }
         
