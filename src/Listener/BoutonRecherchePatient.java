@@ -4,6 +4,7 @@ import BD.ConnexionBD;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.Fenetre;
 
+import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -39,6 +40,11 @@ public class BoutonRecherchePatient implements ActionListener {
                 String prenom = rs.getString("Prénom");
                 String ipp1 = rs.getString("IPP");
                 System.out.println(name + "\t" + prenom + "\t" + ipp1);
+                DefaultTableModel templatesTableModel = new DefaultTableModel(new String[][]{{name, prenom, ipp}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}}, new String[]{"Nom", "Prénom", "IPP"});
+                cdpis.getjTable1().setGridColor(new java.awt.Color(153, 153, 153));
+                cdpis.getjTable1().setModel(templatesTableModel);
+                
+
             }
 
         } catch (SQLException e1) {
