@@ -52,6 +52,7 @@ public class Fenetre extends JFrame {
     private JButton deconnexion = barreduhaut.getjButton1();
     private JButton validerDMA = creationdpi.getjButton1();
     private JButton recherchePatient = consultdpis.getjButton1();
+    private JButton getRecherchePatient2= consultdpiphide.getjButton1();
     private JButton retourDPISVersAS = consultdpis.getjButton2();
     private JButton annulercreationDPI = creationdpi.getjButton2();
     private JButton retourDPIVersConsulterDPISecretaire = dpis.getjButton2();
@@ -80,6 +81,7 @@ public class Fenetre extends JFrame {
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
         validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));
+        getRecherchePatient2.addActionListener(new BoutonRecherchePatientPhEtIde(this,consultdpiphide));
         recherchePatient.addActionListener(new BoutonRecherchePatient(this,consultdpis));
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
