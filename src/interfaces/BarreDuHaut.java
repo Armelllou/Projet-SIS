@@ -39,6 +39,14 @@ public class BarreDuHaut extends javax.swing.JPanel {
         return service;
     }
 
+    public JLabel getId() {
+        return id;
+    }
+
+    public JLabel getMdp() {
+        return mdp;
+    }
+
 
     /**
      * Creates new form BarreDuHaut2
@@ -64,6 +72,8 @@ public class BarreDuHaut extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         Nom = new javax.swing.JLabel();
         prenom = new javax.swing.JLabel();
+        id = new javax.swing.JLabel();
+        mdp = new javax.swing.JLabel();
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -102,6 +112,10 @@ public class BarreDuHaut extends javax.swing.JPanel {
         prenom.setForeground(new java.awt.Color(255, 255, 255));
         prenom.setText("Prénom");
 
+        id.setText("id");
+
+        mdp.setText("mdp");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -115,7 +129,11 @@ public class BarreDuHaut extends javax.swing.JPanel {
                 .addComponent(prenom)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(service)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1272, Short.MAX_VALUE)
+                .addGap(69, 69, 69)
+                .addComponent(id)
+                .addGap(18, 18, 18)
+                .addComponent(mdp)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1150, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -139,7 +157,9 @@ public class BarreDuHaut extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(service, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(id)
+                        .addComponent(mdp)))
                 .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -156,11 +176,13 @@ public class BarreDuHaut extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Nom;
+    private javax.swing.JLabel id;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel mdp;
     private javax.swing.JLabel prenom;
     private javax.swing.JLabel service;
     // End of variables declaration//GEN-END:variables
