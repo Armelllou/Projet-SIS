@@ -19,8 +19,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
 
-public abstract class ListenerConnexion{
+public abstract class ListenerConnexion {
 
     Connexion c;
     JPanel jp;
@@ -88,6 +89,8 @@ public abstract class ListenerConnexion{
             cdpiphetide.setVisible(true);
             bh.getId().setVisible(false);
             bh.getMdp().setVisible(false);
+
+//            cdpiphetide.getjTable1().TableauSecretaire();
             jframe.revalidate();
             jframe.repaint();
         } else {
@@ -178,9 +181,44 @@ public abstract class ListenerConnexion{
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
-
+            
+             
+            
+            
+            
+            
+            
             jframe.add(as, BorderLayout.CENTER);
-            jframe.add(bh, BorderLayout.NORTH);
+            jframe.add(bh, BorderLayout.NORTH); 
+           
+            
+            String Sql1 = "Select * from patient";
+            PreparedStatement ps;
+            ps = conn.getConnexion().prepareStatement(Sql1);
+            ResultSet resultSet = ps.executeQuery();
+       
+
+            String col[] = {"IPP", "Nom de Naissance", "Nom Usuel ", "Prenom"};
+            String cont[][] = new String[10][4];
+            int i = 0;
+            while (resultSet.next()) {
+                int idz = resultSet.getInt("IPP");
+                String nomDN = resultSet.getString("NomDeNaissance");
+                String nomUsuel = resultSet.getString("NomUsuel");
+                String prenom = resultSet.getString("prénom");
+                cont[i][0] = id + "";
+                cont[i][1] = nomDN;
+                cont[i][2] = nomUsuel;
+                cont[i][3] = prenom;
+                i++;
+            }
+            DefaultTableModel model = new DefaultTableModel(cont, col);
+            JTable table = new JTable(model);
+            jframe.add(table,BorderLayout.CENTER);
+            table.setShowGrid(true);
+            table.setShowVerticalLines(true);
+
+            
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
             bh.getNom().setText(Nom);
@@ -190,6 +228,7 @@ public abstract class ListenerConnexion{
             as.setVisible(true);
             bh.getId().setVisible(false);
             bh.getMdp().setVisible(false);
+
             jframe.revalidate();
             jframe.repaint();
 

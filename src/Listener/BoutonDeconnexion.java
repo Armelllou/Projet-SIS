@@ -32,7 +32,7 @@ public class BoutonDeconnexion implements ActionListener {
       
         fen.add(c);
         c.setVisible(true);
-        c.getjPasswordField1().setText("*******************");
+        c.getjPasswordField1().setText("          ");
         c.getjTextField1().setText("");
 
         fen.setSize(1700, 830);

@@ -27,7 +27,7 @@ public class Main {
 //Chambre chambre = null;
 //Localisation localisation = new Localisation (lit,chambre,s2,s1);      
 //Sih sih = new Sih();
-////Patient p10 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
+//Patient p10 = new Patient("teulieres","lormand",d,s,"Brnard");
 //        String Sql1 = "Select * from ide WHERE idIDE ='456'and motDePasse='456'";
 //        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
 //        ResultSet Rs = ps.executeQuery();;
@@ -63,9 +63,6 @@ String Sql1 = "Select * from patient";
                 }
                 System.out.println("");
             }
-
-
-
 
 
 

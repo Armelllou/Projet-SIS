@@ -5,6 +5,9 @@
  */
 package interfaces;
 
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Manon
@@ -161,4 +164,8 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+
+    public JTable getjTable1(DefaultTableModel model) {
+         return jTable1;
+    }
 }
