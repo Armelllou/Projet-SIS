@@ -182,10 +182,7 @@ public abstract class ListenerConnexion {
 
             jframe.PanelVisibleFalse();
             
-             
-            
-            
-            
+    
             
             
             jframe.add(as, BorderLayout.CENTER);
@@ -199,7 +196,7 @@ public abstract class ListenerConnexion {
        
 
             String col[] = {"IPP", "Nom de Naissance", "Nom Usuel ", "Prenom"};
-            String cont[][] = new String[10][4];
+            String cont[][] = new String[5000][4];
             int i = 0;
             while (resultSet.next()) {
                 int idz = resultSet.getInt("IPP");
