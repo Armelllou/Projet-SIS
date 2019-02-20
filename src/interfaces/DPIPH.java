@@ -12,6 +12,13 @@ package interfaces;
 public class DPIPH extends javax.swing.JPanel {
 
     /**
+     * @return the jButton3
+     */
+    public javax.swing.JButton getjButton3() {
+        return jButton3;
+    }
+
+    /**
      * @return the jButton1
      */
     

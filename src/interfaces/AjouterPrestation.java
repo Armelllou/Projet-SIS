@@ -25,12 +25,7 @@ public class AjouterPrestation extends javax.swing.JPanel {
         return jButton2;
     }
 
-    /**
-     * @return the jButton3
-     */
-    public javax.swing.JButton getjButton3() {
-        return jButton3;
-    }
+   
 
     /**
      * @return the jComboBox1
@@ -69,7 +64,6 @@ public class AjouterPrestation extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -92,8 +86,6 @@ public class AjouterPrestation extends javax.swing.JPanel {
         jLabel3.setText("Prestation demandée :");
 
         jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/accueil-ConvertImage.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -119,9 +111,6 @@ public class AjouterPrestation extends javax.swing.JPanel {
                                         .addGap(80, 80, 80)
                                         .addComponent(jButton2))))
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(204, 204, 204)
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
@@ -132,9 +121,7 @@ public class AjouterPrestation extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton3)
-                .addGap(37, 37, 37)
+                .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -156,7 +143,6 @@ public class AjouterPrestation extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -6,9 +6,11 @@
 package Listener;
 
 import NF.Sih;
-import interfaces.ConsultationPH;
-import interfaces.ConsulterDPIPHetIDE;
+import interfaces.AjouterConsultation;
+import interfaces.AjouterPrescription;
+import interfaces.AjouterPrestation;
 import interfaces.Fenetre;
+import interfaces.InfosMedicalesPH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,24 +18,24 @@ import java.awt.event.ActionListener;
  *
  * @author Manon
  */
-public class BoutonAccueilConsultation implements ActionListener {
+public class BoutonAjouterPrestation implements ActionListener {
     
-    ConsultationPH c;
-    ConsulterDPIPHetIDE dpiphide;
+    AjouterPrestation ac;
+    InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilConsultation(Fenetre jframe,ConsultationPH c, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAjouterPrestation(Fenetre jframe,AjouterPrestation ac, InfosMedicalesPH im, Sih sih) {
         this.jframe = jframe;
-        this.c=c;
-        this.dpiphide=dpiphide;
+        this.ac=ac;
+        this.im=im;
         this.sih = sih;
     }
 
     public void actionPerformed(ActionEvent ae) {
         jframe.PanelVisibleFalse();
-        jframe.add(dpiphide);
-        dpiphide.setVisible(true);
+        jframe.add(ac);
+        ac.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
     }

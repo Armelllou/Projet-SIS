@@ -6,9 +6,9 @@
 package Listener;
 
 import NF.Sih;
-import interfaces.AjouterPrestation;
-import interfaces.ConsulterDPIPHetIDE;
+import interfaces.DPISecretaire;
 import interfaces.Fenetre;
+import interfaces.ModificationDPI;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,24 +16,24 @@ import java.awt.event.ActionListener;
  *
  * @author Manon
  */
-public class BoutonAccueilAjouterPrestation implements ActionListener {
+public class BoutonAnnulerModificationDPI implements ActionListener {
     
-    AjouterPrestation ap;
-    ConsulterDPIPHetIDE dpiphide;
+    DPISecretaire dpis;
+    ModificationDPI mdpi;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilAjouterPrestation(Fenetre jframe,AjouterPrestation ap, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAnnulerModificationDPI(Fenetre jframe, DPISecretaire dpis, ModificationDPI mdpi, Sih sih) {
         this.jframe = jframe;
-        this.ap=ap;
-        this.dpiphide=dpiphide;
+        this.mdpi=mdpi;
+        this.dpis=dpis;
         this.sih = sih;
     }
 
     public void actionPerformed(ActionEvent ae) {
         jframe.PanelVisibleFalse();
-        jframe.add(dpiphide);
-        dpiphide.setVisible(true);
+        jframe.add(dpis);
+        dpis.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
     }
