@@ -69,6 +69,7 @@ public class Fenetre extends JFrame {
     private JButton accueilconsult = consultation.getjButton3();
     private JButton retourConsultVersInfosMed = consultation.getjButton4();
     private JButton accueilDPIPHetIDE = dpiphide.getjButton1();
+    private JButton ConnexionEntrerListener = connexion.getjButton1();
 
     public Fenetre() {
         //state = State.NONCO;
@@ -76,8 +77,10 @@ public class Fenetre extends JFrame {
         this.setSize(1700, 830);
 
         valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, consultdpis, consultdpiphide,prestations, this));
+        connexion.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(barreduhaut, connexion, consultdpis, consultdpiphide,prestations, this));
+        
+  
         creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
-
         consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
         validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));

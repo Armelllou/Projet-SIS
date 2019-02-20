@@ -21,7 +21,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
-public abstract class ListenerConnexion implements ActionListener {
+public abstract class ListenerConnexion{
 
     Connexion c;
     JPanel jp;

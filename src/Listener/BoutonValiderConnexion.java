@@ -16,6 +16,8 @@ import interfaces.Prestations;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +25,7 @@ import java.util.logging.Logger;
 /**
  * @author annel
  */
-public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
+public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener{
    
     public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, ConsulterDPISecretaire as,ConsulterDPIPHetIDE cdpiphetide, Prestations p,Fenetre jframe) {
         super(bh,c,as,cdpiphetide,p,jframe);  
@@ -39,6 +41,8 @@ public class BoutonValiderConnexion extends ListenerConnexion implements ActionL
         }
 
     }
+
+   
 
 
 }
