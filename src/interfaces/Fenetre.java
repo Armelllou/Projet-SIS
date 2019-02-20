@@ -8,6 +8,8 @@ package interfaces;
 import Listener.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.*;
+
 import Listener.BoutonModifierDPI;
 import Listener.BoutonRetourDPISVersConsulterDPISecretaire;
 import Listener.BoutonValiderConnexion;
@@ -173,6 +175,8 @@ public class Fenetre extends JFrame {
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 frame.setVisible(true);
                frame.setVisible(true);
+
+
 
             }
         });
