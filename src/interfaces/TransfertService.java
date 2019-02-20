@@ -12,6 +12,41 @@ package interfaces;
 public class TransfertService extends javax.swing.JPanel {
 
     /**
+     * @return the jButton2
+     */
+    public javax.swing.JButton getjButton2() {
+        return jButton2;
+    }
+
+    /**
+     * @return the jButton3
+     */
+    public javax.swing.JButton getjButton3() {
+        return jButton3;
+    }
+
+    /**
+     * @return the jComboBox1
+     */
+    public javax.swing.JComboBox<String> getjComboBox1() {
+        return jComboBox1;
+    }
+
+    /**
+     * @return the jComboBox2
+     */
+    public javax.swing.JComboBox<String> getjComboBox2() {
+        return jComboBox2;
+    }
+
+    /**
+     * @return the jTextField1
+     */
+    public javax.swing.JTextField getjTextField1() {
+        return jTextField1;
+    }
+
+    /**
      * Creates new form TransfertService
      */
     public TransfertService() {
@@ -28,7 +63,6 @@ public class TransfertService extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
@@ -43,8 +77,6 @@ public class TransfertService extends javax.swing.JPanel {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/accueil-ConvertImage.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel2.setText("Chambre :");
@@ -77,14 +109,8 @@ public class TransfertService extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(1429, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(631, 631, 631)
@@ -117,9 +143,7 @@ public class TransfertService extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addGap(47, 47, 47)
+                .addGap(105, 105, 105)
                 .addComponent(jLabel3)
                 .addGap(90, 90, 90)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -150,7 +174,6 @@ public class TransfertService extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
