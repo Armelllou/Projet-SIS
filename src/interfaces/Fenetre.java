@@ -89,7 +89,7 @@ public class Fenetre extends JFrame {
         validerDMA.addActionListener(new BoutonValiderDMA(consultdpis,this,creationdpi));
         getRecherchePatient2.addActionListener(new BoutonRecherchePatientPhEtIde(this,consultdpiphide));
         recherchePatient.addActionListener(new BoutonRecherchePatient(this,consultdpis));
-        validerDMA.addActionListener(new BoutonValiderDMA(consultdpis, this, creationdpi));
+      
 
 
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,barreduhaut));

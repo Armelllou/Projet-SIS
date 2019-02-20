@@ -86,20 +86,20 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Nom", "Prénom", "IPP"
+                "IPP", "Nom De Naissance", "Nom Usuel", "Prénom"
             }
         ));
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));

@@ -25,26 +25,26 @@ public class IppCounter {
         }
 
         // incrémente le chiffre à la création de chaque nombre de patient
-//        ConnexionBD conn = new ConnexionBD();
-//        String Sql1 = "Select max(IPP) from patient";
-//        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-//        ResultSet resultSet = ps.executeQuery();
-//
-//        ResultSetMetaData rsmd = resultSet.getMetaData();
-//        int columnsNumber = rsmd.getColumnCount();
-//        while (resultSet.next()) {
-//            for (int i = 1; i <= columnsNumber; i++) {
-//                if (i > 1) {
-//
-//                }
-//                String columnValue = resultSet.getString(i);
-//                String columnInteressant = columnValue.substring(5);
-//                //System.out.print(columnInteressant);
-//                int ipp = Integer.parseInt(columnInteressant);
-//                ippCounter = ipp;
-//            }
+        ConnexionBD conn = new ConnexionBD();
+        String Sql1 = "Select max(IPP) from patient";
+        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
+        ResultSet resultSet = ps.executeQuery();
 
-//        }
+        ResultSetMetaData rsmd = resultSet.getMetaData();
+        int columnsNumber = rsmd.getColumnCount();
+        while (resultSet.next()) {
+            for (int i = 1; i <= columnsNumber; i++) {
+                if (i > 1) {
+
+                }
+                String columnValue = resultSet.getString(i);
+                String columnInteressant = columnValue.substring(5);
+                //System.out.print(columnInteressant);
+                int ipp = Integer.parseInt(columnInteressant);
+                ippCounter = ipp;
+            }
+
+        }
         ippCounter += 1;
 
         // ajoute des zéros pour le format
