@@ -15,7 +15,7 @@ import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.CreationDPI;
 import interfaces.Fenetre;
-import interfaces.InfosMedicales;
+import interfaces.InfosMedicalesPH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
@@ -30,10 +30,10 @@ import javax.swing.JOptionPane;
 public class BoutonValiderActe implements ActionListener {
     BarreDuHaut bh;
     Fenetre fen;
-    InfosMedicales im;
+    InfosMedicalesPH im;
     AjouterActeInfirmier aai;
 
-    public BoutonValiderActe(BarreDuHaut bh,InfosMedicales im, Fenetre jframe, AjouterActeInfirmier aai) {
+    public BoutonValiderActe(BarreDuHaut bh,InfosMedicalesPH im, Fenetre jframe, AjouterActeInfirmier aai) {
         this.fen = jframe;
         this.im = im;
         this.bh = bh;

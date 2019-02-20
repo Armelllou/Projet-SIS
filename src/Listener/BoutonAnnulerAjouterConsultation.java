@@ -8,7 +8,7 @@ package Listener;
 import NF.Sih;
 import interfaces.AjouterConsultation;
 import interfaces.Fenetre;
-import interfaces.InfosMedicales;
+import interfaces.InfosMedicalesPH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,11 +19,11 @@ import java.awt.event.ActionListener;
 public class BoutonAnnulerAjouterConsultation implements ActionListener {
     
     AjouterConsultation ac;
-    InfosMedicales im;
+    InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAnnulerAjouterConsultation(Fenetre jframe,AjouterConsultation ac, InfosMedicales im, Sih sih) {
+    public BoutonAnnulerAjouterConsultation(Fenetre jframe,AjouterConsultation ac, InfosMedicalesPH im, Sih sih) {
         this.jframe = jframe;
         this.ac=ac;
         this.im=im;

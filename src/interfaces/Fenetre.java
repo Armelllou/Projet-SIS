@@ -31,8 +31,8 @@ public class Fenetre extends JFrame {
     Consultation consultation = new Consultation();
     ConsulterDPIPHetIDE consultdpiphide = new ConsulterDPIPHetIDE();
     DPISecretaire dpis = new DPISecretaire();
-    DPIPHetIDE dpiphide = new DPIPHetIDE();
-    InfosMedicales infosmed = new InfosMedicales();
+    DPIIDE dpiphide = new DPIIDE();
+    InfosMedicalesPH infosmed = new InfosMedicalesPH();
     ModificationDPI modifdpi = new ModificationDPI();
     JPanel jp = new JPanel();
     AjouterPrestation ajouterpresta = new AjouterPrestation();

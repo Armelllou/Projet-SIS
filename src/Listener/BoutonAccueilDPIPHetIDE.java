@@ -7,7 +7,7 @@ package Listener;
 
 import NF.Sih;
 import interfaces.ConsulterDPIPHetIDE;
-import interfaces.DPIPHetIDE;
+import interfaces.DPIIDE;
 import interfaces.Fenetre;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,12 +18,12 @@ import java.awt.event.ActionListener;
  */
 public class BoutonAccueilDPIPHetIDE implements ActionListener {
     
-    DPIPHetIDE d;
+    DPIIDE d;
     ConsulterDPIPHetIDE dpiphide;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilDPIPHetIDE(Fenetre jframe,DPIPHetIDE d, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAccueilDPIPHetIDE(Fenetre jframe,DPIIDE d, ConsulterDPIPHetIDE dpiphide, Sih sih) {
         this.jframe = jframe;
         this.d=d;
         this.dpiphide=dpiphide;

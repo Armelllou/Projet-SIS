@@ -9,7 +9,7 @@ package interfaces;
  *
  * @author Manon
  */
-public class DPIPHetIDE extends javax.swing.JPanel {
+public class DPIIDE extends javax.swing.JPanel {
 
     /**
      * @return the jButton1
@@ -145,7 +145,7 @@ public class DPIPHetIDE extends javax.swing.JPanel {
     /**
      * Creates new form DPI
      */
-    public DPIPHetIDE() {
+    public DPIIDE() {
         initComponents();
     }
 
