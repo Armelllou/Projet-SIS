@@ -9,6 +9,7 @@ import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.ConsulterDPIPHetIDE;
+import interfaces.ConsulterDPISecretaire;
 import interfaces.Fenetre;
 import interfaces.Prestations;
 
@@ -24,7 +25,7 @@ import java.util.logging.Logger;
  */
 public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener {
    
-    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, AccueilSecretaires as,ConsulterDPIPHetIDE cdpiphetide, Prestations p,Fenetre jframe) {
+    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, ConsulterDPISecretaire as,ConsulterDPIPHetIDE cdpiphetide, Prestations p,Fenetre jframe) {
         super(bh,c,as,cdpiphetide,p,jframe);  
         
     }
