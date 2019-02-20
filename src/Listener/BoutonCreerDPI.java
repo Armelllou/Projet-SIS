@@ -6,8 +6,9 @@
 package Listener;
 
 
-import interfaces.AccueilSecretaires;
+
 import interfaces.BarreDuHaut;
+import interfaces.ConsulterDPISecretaire;
 import interfaces.CreationDPI;
 import interfaces.Fenetre;
 import java.awt.BorderLayout;
@@ -22,14 +23,14 @@ import javax.swing.JFrame;
 public class BoutonCreerDPI implements ActionListener {
 
     CreationDPI dpi;
-    AccueilSecretaires as;
+    ConsulterDPISecretaire cdpi;
     Fenetre fen;
     BarreDuHaut bh;
 
-    public BoutonCreerDPI(AccueilSecretaires as, CreationDPI dpi, Fenetre jframe) {
+    public BoutonCreerDPI(ConsulterDPISecretaire cdpi, CreationDPI dpi, Fenetre jframe) {
         this.fen = jframe;
         this.dpi = dpi;
-        this.as = as;
+        this.cdpi=cdpi;
         
     }
 

@@ -9,7 +9,6 @@ import NF.Acte;
 import NF.Adresse;
 import NF.Dates;
 import NF.Patient;
-import interfaces.AccueilSecretaires;
 import interfaces.AjouterActeInfirmier;
 import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPISecretaire;

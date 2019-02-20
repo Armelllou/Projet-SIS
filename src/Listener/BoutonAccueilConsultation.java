@@ -6,7 +6,7 @@
 package Listener;
 
 import NF.Sih;
-import interfaces.Consultation;
+import interfaces.ConsultationPH;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import java.awt.event.ActionEvent;
@@ -18,12 +18,12 @@ import java.awt.event.ActionListener;
  */
 public class BoutonAccueilConsultation implements ActionListener {
     
-    Consultation c;
+    ConsultationPH c;
     ConsulterDPIPHetIDE dpiphide;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilConsultation(Fenetre jframe,Consultation c, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAccueilConsultation(Fenetre jframe,ConsultationPH c, ConsulterDPIPHetIDE dpiphide, Sih sih) {
         this.jframe = jframe;
         this.c=c;
         this.dpiphide=dpiphide;

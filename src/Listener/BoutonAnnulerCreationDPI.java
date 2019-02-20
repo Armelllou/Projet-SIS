@@ -6,7 +6,7 @@
 package Listener;
 
 import NF.Sih;
-import interfaces.AccueilSecretaires;
+import interfaces.ConsulterDPISecretaire;
 import interfaces.CreationDPI;
 import interfaces.Fenetre;
 import java.awt.event.ActionEvent;
@@ -18,22 +18,22 @@ import java.awt.event.ActionListener;
  */
 public class BoutonAnnulerCreationDPI implements ActionListener {
     
-    AccueilSecretaires as;
+    ConsulterDPISecretaire cdpi;
     CreationDPI dpi;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAnnulerCreationDPI(Fenetre jframe,AccueilSecretaires as, CreationDPI dpi, Sih sih) {
+    public BoutonAnnulerCreationDPI(Fenetre jframe,ConsulterDPISecretaire cdpi, CreationDPI dpi, Sih sih) {
         this.jframe = jframe;
-        this.as=as;
+        this.cdpi=cdpi;
         this.dpi=dpi;
         this.sih = sih;
     }
 
     public void actionPerformed(ActionEvent ae) {
         jframe.PanelVisibleFalse();
-        jframe.add(as);
-        as.setVisible(true);
+        jframe.add(cdpi);
+        cdpi.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
     }

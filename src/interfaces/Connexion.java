@@ -28,7 +28,7 @@ public class Connexion extends javax.swing.JPanel implements ActionListener {
     
 // connexion des interfaces
     Connexion c;
-    AccueilSecretaires as;
+    ConsulterDPISecretaire consultdpis;
     JPanel jp;
     Fenetre jframe;
     BarreDuHaut bh;

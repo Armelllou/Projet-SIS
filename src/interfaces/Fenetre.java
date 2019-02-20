@@ -9,8 +9,7 @@ import Listener.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import Listener.BoutonModifierDPI;
-import Listener.BoutonRetourDPISecretaireVersAccueil;
-import Listener.BoutonRetourDPIVersConsulterDPI;
+import Listener.BoutonRetourDPIVersConsulterDPISecretaire;
 import Listener.BoutonValiderConnexion;
 import NF.Sih;
 import javax.swing.JButton;
@@ -22,22 +21,29 @@ public class Fenetre extends JFrame {
 
     // Déclaration de tous les JPanel
     Connexion connexion = new Connexion();
-    AccueilSecretaires accueilsecretaires = new AccueilSecretaires();
     CreationDPI creationdpi = new CreationDPI();
     ConsulterDPISecretaire consultdpis = new ConsulterDPISecretaire();
-    ActeInfirmier acteinfirmier = new ActeInfirmier();
+    ActeInfirmierPH acteinfirmierPH = new ActeInfirmierPH();
     AjouterActeInfirmier ajouterai = new AjouterActeInfirmier();
     AjouterConsultation ajouterconsult = new AjouterConsultation();
-    Consultation consultation = new Consultation();
+    ConsultationPH consultationPH = new ConsultationPH();
     ConsulterDPIPHetIDE consultdpiphide = new ConsulterDPIPHetIDE();
     DPISecretaire dpis = new DPISecretaire();
-    DPIIDE dpiphide = new DPIIDE();
-    InfosMedicalesPH infosmed = new InfosMedicalesPH();
+    DPIIDE dpiide = new DPIIDE();
+    InfosMedicalesPH infosmedph = new InfosMedicalesPH();
     ModificationDPI modifdpi = new ModificationDPI();
     JPanel jp = new JPanel();
     AjouterPrestation ajouterpresta = new AjouterPrestation();
     PrestationFaite prestafaite = new PrestationFaite();
     Prestations prestations = new Prestations();
+    TransfertService transfert = new TransfertService();
+    AjouterPrescription ajouterprescri = new AjouterPrescription();
+    DPIPH dpiph = new DPIPH();
+    InfosMedicalesIDE infosmedide = new InfosMedicalesIDE();
+    ActeInfirmierIDE acteinfirmieride = new ActeInfirmierIDE();
+    ConsultationIDE consultationide= new ConsultationIDE();
+    PrescriptionIDE prescriptionide = new PrescriptionIDE();
+    PrescriptionPH prescriptionph = new PrescriptionPH();
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -47,8 +53,7 @@ public class Fenetre extends JFrame {
 
     // Déclarations Boutons, JTextField etc
     private JButton valider = connexion.getjButton1();
-    private JButton creerDPI = accueilsecretaires.getjButton1();
-    private JButton consulterDPI = accueilsecretaires.getjButton2();
+    private JButton creerDPI = consultdpis.getjButton2();
     private JButton deconnexion = barreduhaut.getjButton1();
     private JButton validerDMA = creationdpi.getjButton1();
     private JButton recherchePatient = consultdpis.getjButton1();
@@ -56,20 +61,20 @@ public class Fenetre extends JFrame {
     private JButton retourDPISVersAS = consultdpis.getjButton2();
     private JButton annulercreationDPI = creationdpi.getjButton2();
     private JButton retourDPIVersConsulterDPISecretaire = dpis.getjButton2();
-    private JButton accueilDPISecretaire = dpis.getjButton1();
     private JButton modificationdpi = dpis.getjButtonmodifier();
-    private JButton retourActeInfVersInfosMed = acteinfirmier.getjButton4();
-    private JButton accueilActeInfirmier = acteinfirmier.getjButton3();
+    private JButton retourActeInfVersInfosMedPH = acteinfirmierPH.getjButton4();
+    private JButton accueilActeInfirmierPH = acteinfirmierPH.getjButton3();
     private JButton accueilAjouterActeInfirmier = ajouterai.getjButton3();
     private JButton annulerAjouterAI = ajouterai.getjButton1();
     private JButton accueilAjouterConsult = ajouterconsult.getjButton3();
     private JButton annulerAjouterConsult = ajouterconsult.getjButton1();
     private JButton accueilAjouterPresta = ajouterpresta.getjButton3();
     private JButton annulerAjouterPresta = ajouterpresta.getjButton1();
-    private JButton accueilconsult = consultation.getjButton3();
-    private JButton retourConsultVersInfosMed = consultation.getjButton4();
-    private JButton accueilDPIPHetIDE = dpiphide.getjButton1();
+    private JButton accueilconsultPH = consultationPH.getjButton3();
+    private JButton retourConsultPHVersInfosMedPH = consultationPH.getjButton4();
     private JButton ConnexionEntrerListener = connexion.getjButton1();
+    private JButton retourActeInfIDEVersInfosMedIDE = acteinfirmieride.getjButton4();
+    private JButton accueilActeInfIDE = acteinfirmieride.getjButton3();
 
     public Fenetre() {
         //state = State.NONCO;
@@ -80,35 +85,30 @@ public class Fenetre extends JFrame {
         connexion.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(barreduhaut, connexion, consultdpis, consultdpiphide,prestations, this));
         
   
-        creerDPI.addActionListener(new BoutonCreerDPI(accueilsecretaires, creationdpi, this));
-        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires,consultdpis,this));
-        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,accueilsecretaires));
-        validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires,consultdpis,this,creationdpi));
+        creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
+        validerDMA.addActionListener(new BoutonValiderDMA(consultdpis,this,creationdpi));
         getRecherchePatient2.addActionListener(new BoutonRecherchePatientPhEtIde(this,consultdpiphide));
         recherchePatient.addActionListener(new BoutonRecherchePatient(this,consultdpis));
-        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
-        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
-        validerDMA.addActionListener(new BoutonValiderDMA(accueilsecretaires, consultdpis, this, creationdpi));
+        validerDMA.addActionListener(new BoutonValiderDMA(consultdpis, this, creationdpi));
 
 
-        consulterDPI.addActionListener(new BoutonConsulterDPE(accueilsecretaires, consultdpis, this));
-        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, accueilsecretaires));
-        retourDPISVersAS.addActionListener(new BoutonRetourDPISecretaireVersAccueil(this, accueilsecretaires, consultdpis, sih));
-        annulercreationDPI.addActionListener(new BoutonAnnulerCreationDPI(this, accueilsecretaires, creationdpi, sih));
-        retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPIVersConsulterDPI(this, consultdpis, dpis, sih));
-        accueilDPISecretaire.addActionListener(new BoutonAccueilDPISecretaire(this, dpis, accueilsecretaires, sih));
+        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this,barreduhaut));
+        annulercreationDPI.addActionListener(new BoutonAnnulerCreationDPI(this, consultdpis, creationdpi, sih));
+        retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPIVersConsulterDPISecretaire(this, consultdpis, dpis, sih));
         modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi, sih));
-        retourActeInfVersInfosMed.addActionListener(new BoutonRetourActeInfirmierVersInfosMedicales(this,infosmed,acteinfirmier,sih));
-        accueilActeInfirmier.addActionListener(new BoutonAccueilActeInfirmier(this,acteinfirmier,consultdpiphide,sih));
+        retourActeInfVersInfosMedPH.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this,infosmedph,acteinfirmierPH,sih));
+        accueilActeInfirmierPH.addActionListener(new BoutonAccueilActeInfirmierPH(this,acteinfirmierPH,consultdpiphide,sih));
         accueilAjouterActeInfirmier.addActionListener(new BoutonAccueilAjouterActeInfirmier(this,ajouterai, consultdpiphide,sih));
-        annulerAjouterAI.addActionListener(new BoutonAnnulerAjouterActeInfirmier(this,ajouterai,infosmed, sih));
+        annulerAjouterAI.addActionListener(new BoutonAnnulerAjouterActeInfirmier(this,ajouterai,infosmedide, sih));
         accueilAjouterConsult.addActionListener(new BoutonAccueilAjouterConsultation(this,ajouterconsult,consultdpiphide,sih));
-        annulerAjouterConsult.addActionListener(new BoutonAnnulerAjouterConsultation(this,ajouterconsult, infosmed,sih));
+        annulerAjouterConsult.addActionListener(new BoutonAnnulerAjouterConsultation(this,ajouterconsult, infosmedph,sih));
         accueilAjouterPresta.addActionListener(new BoutonAccueilAjouterPrestation(this,ajouterpresta,consultdpiphide,sih));
-        annulerAjouterPresta.addActionListener(new BoutonAnnulerAjouterPrestation(this,ajouterpresta,infosmed,sih));
-        accueilconsult.addActionListener(new BoutonAccueilConsultation(this,consultation,consultdpiphide,sih));
-        retourConsultVersInfosMed.addActionListener(new BoutonRetourConsultationVersInfosMed(this,consultation,infosmed,sih));
-        accueilDPIPHetIDE.addActionListener(new BoutonAccueilDPIPHetIDE(this,dpiphide,consultdpiphide,sih));
+        annulerAjouterPresta.addActionListener(new BoutonAnnulerAjouterPrestation(this,ajouterpresta,infosmedph,sih));
+        accueilconsultPH.addActionListener(new BoutonAccueilConsultation(this,consultationPH,consultdpiphide,sih));
+        retourConsultPHVersInfosMedPH.addActionListener(new BoutonRetourConsultationPHVersInfosMedPH(this,consultationPH,infosmedph,sih));
+        retourActeInfIDEVersInfosMedIDE.addActionListener(new BoutonRetourActeInfirmierIDEVersInfosMedicalesIDE(this,infosmedide,acteinfirmieride,sih));
+        accueilActeInfIDE.addActionListener(new BoutonAccueilActeInfirmierIDE(this,acteinfirmieride,consultdpiphide,sih));
+        
 
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
@@ -143,21 +143,29 @@ public class Fenetre extends JFrame {
 
     public void PanelVisibleFalse() {
         connexion.setVisible(false);
-        accueilsecretaires.setVisible(false);
         creationdpi.setVisible(false);
         consultdpis.setVisible(false);
-        acteinfirmier.setVisible(false);
+        acteinfirmierPH.setVisible(false);
         consultdpiphide.setVisible(false);
         ajouterai.setVisible(false);
         ajouterconsult.setVisible(false);
-        consultation.setVisible(false);
+        consultationPH.setVisible(false);
         dpis.setVisible(false);
-        infosmed.setVisible(false);
+        infosmedph.setVisible(false);
         modifdpi.setVisible(false);
-        dpiphide.setVisible(false);
+        dpiide.setVisible(false);
         prestations.setVisible(false);
         ajouterpresta.setVisible(false);
         prestafaite.setVisible(false);
+        transfert.setVisible(false);
+        ajouterprescri.setVisible(false);
+        dpiph.setVisible(false);
+        infosmedide.setVisible(false);
+        prescriptionph.setVisible(false);
+        prescriptionide.setVisible(false);
+        consultationide.setVisible(false);
+        acteinfirmieride.setVisible(false);
+        
 
     }
 

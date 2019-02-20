@@ -6,7 +6,7 @@
 package Listener;
 
 import NF.Sih;
-import interfaces.ActeInfirmier;
+import interfaces.ActeInfirmierPH;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
 import java.awt.event.ActionEvent;
@@ -16,14 +16,14 @@ import java.awt.event.ActionListener;
  *
  * @author Manon
  */
-public class BoutonRetourActeInfirmierVersInfosMedicales implements ActionListener {
+public class BoutonRetourActeInfirmierPHVersInfosMedicalesPH implements ActionListener {
     
-    ActeInfirmier ai;
+    ActeInfirmierPH ai;
     InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourActeInfirmierVersInfosMedicales(Fenetre jframe,InfosMedicalesPH im, ActeInfirmier ai, Sih sih) {
+    public BoutonRetourActeInfirmierPHVersInfosMedicalesPH(Fenetre jframe,InfosMedicalesPH im, ActeInfirmierPH ai, Sih sih) {
         this.jframe = jframe;
         this.ai=ai;
         this.im=im;

@@ -6,9 +6,9 @@
 package Listener;
 
 import NF.Sih;
-import interfaces.ActeInfirmier;
-import interfaces.ConsulterDPIPHetIDE;
+import interfaces.ConsultationPH;
 import interfaces.Fenetre;
+import interfaces.InfosMedicalesPH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,24 +16,24 @@ import java.awt.event.ActionListener;
  *
  * @author Manon
  */
-public class BoutonAccueilActeInfirmier implements ActionListener {
+public class BoutonRetourConsultationPHVersInfosMedPH implements ActionListener {
     
-    ActeInfirmier ai;
-    ConsulterDPIPHetIDE dpiphide;
+    ConsultationPH c;
+    InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilActeInfirmier(Fenetre jframe,ActeInfirmier ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonRetourConsultationPHVersInfosMedPH(Fenetre jframe,ConsultationPH c,InfosMedicalesPH im, Sih sih) {
         this.jframe = jframe;
-        this.ai=ai;
-        this.dpiphide=dpiphide;
+        this.c=c;
+        this.im=im;
         this.sih = sih;
     }
 
     public void actionPerformed(ActionEvent ae) {
         jframe.PanelVisibleFalse();
-        jframe.add(dpiphide);
-        dpiphide.setVisible(true);
+        jframe.add(im);
+        im.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
     }

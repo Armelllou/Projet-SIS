@@ -5,7 +5,6 @@
  */
 package Listener;
 
-import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.ConsulterDPIPHetIDE;

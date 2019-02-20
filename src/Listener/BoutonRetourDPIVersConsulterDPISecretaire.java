@@ -16,14 +16,14 @@ import java.awt.event.ActionListener;
  *
  * @author Manon
  */
-public class BoutonRetourDPIVersConsulterDPI implements ActionListener {
+public class BoutonRetourDPIVersConsulterDPISecretaire implements ActionListener {
     
     DPISecretaire dpis;
     ConsulterDPISecretaire cdpis;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourDPIVersConsulterDPI(Fenetre jframe,ConsulterDPISecretaire cdpis, DPISecretaire dpis, Sih sih) {
+    public BoutonRetourDPIVersConsulterDPISecretaire(Fenetre jframe,ConsulterDPISecretaire cdpis, DPISecretaire dpis, Sih sih) {
         this.jframe = jframe;
         this.cdpis=cdpis;
         this.dpis=dpis;

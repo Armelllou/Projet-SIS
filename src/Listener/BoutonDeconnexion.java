@@ -5,7 +5,6 @@
  */
 package Listener;
 
-import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.Fenetre;
@@ -18,15 +17,14 @@ import java.awt.event.ActionListener;
  */
 public class BoutonDeconnexion implements ActionListener {
 
-  
+    BarreDuHaut b;
     Connexion c;
     Fenetre fen;
-    AccueilSecretaires as;
 
-    public BoutonDeconnexion(Connexion c, Fenetre fen, AccueilSecretaires as) {
+    public BoutonDeconnexion(Connexion c, Fenetre fen,BarreDuHaut b) {
         this.c = c;
         this.fen = fen;
-        this.as=as;
+        this.b=b;
     }
 
     public void actionPerformed(ActionEvent e) {

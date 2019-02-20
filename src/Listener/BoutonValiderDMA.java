@@ -8,7 +8,6 @@ package Listener;
 import NF.Adresse;
 import NF.Dates;
 import NF.Patient;
-import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.CreationDPI;
@@ -25,15 +24,13 @@ import javax.swing.JOptionPane;
  * @author annel
  */
 public class BoutonValiderDMA implements ActionListener{
-    AccueilSecretaires as;
     Fenetre fen;
     ConsulterDPISecretaire cdpis;
     CreationDPI cdpi;
 
-    public BoutonValiderDMA(AccueilSecretaires as,ConsulterDPISecretaire cdpis, Fenetre jframe, CreationDPI cdpi) {
+    public BoutonValiderDMA(ConsulterDPISecretaire cdpis, Fenetre jframe, CreationDPI cdpi) {
         this.fen = jframe;
         this.cdpis = cdpis;
-        this.as = as;
         this.cdpi=cdpi;
     }
 

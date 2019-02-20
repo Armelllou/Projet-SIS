@@ -7,7 +7,6 @@ package Listener;
 
 import BD.ConnexionBD;
 import javax.swing.*;
-import interfaces.AccueilSecretaires;
 import interfaces.BarreDuHaut;
 import interfaces.Connexion;
 import interfaces.ConsulterDPIPHetIDE;
