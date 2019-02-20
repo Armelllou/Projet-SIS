@@ -2,7 +2,6 @@ package Listener;
 
 import BD.ConnexionBD;
 import interfaces.ConsulterDPIPHetIDE;
-import interfaces.ConsulterDPISecretaire;
 import interfaces.Fenetre;
 
 import javax.swing.table.DefaultTableModel;
@@ -17,7 +16,7 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
     ConsulterDPIPHetIDE cdpis;
     ConnexionBD conn = new ConnexionBD();
 
-    public BoutonRecherchePatientPhEtIde(Fenetre jframe, ConsulterDPIPHetIDE  cdpis) {
+    public BoutonRecherchePatientPhEtIde(Fenetre jframe, ConsulterDPIPHetIDE cdpis) {
         this.fen = jframe;
         this.cdpis = cdpis;
     }
@@ -28,7 +27,6 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
         try {
             String ipp = cdpis.getjTextField1().getText();
             String Sql1 = "Select * FROM patient WHERE IPP ='" + ipp + "'";
-
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
             Statement stmt = null;
             stmt = conn1.createStatement();
@@ -68,8 +66,7 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
                 cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
                 cdpis.repaint();
             }
-        }
-        catch(Exception e3){
+        } catch (Exception e3) {
             e3.toString();
         }
 
@@ -97,12 +94,18 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
                 String ipp1 = rs.getString("IPP");
                 System.out.println(name + "\t" + prenom + "\t" + ipp1);
                 DefaultTableModel templatesTableModel;
-                    templatesTableModel = new DefaultTableModel(new String[][]{{name, prenom, ipp1}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}}, new String[]{"Nom", "Prénom", "IPP"});
-                    cdpis.getjTable1().setGridColor(new Color(153, 153, 153));
-                    cdpis.getjTable1().setModel(templatesTableModel);
-                    cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
-
-
+                templatesTableModel = new DefaultTableModel(new String[][]{{name, prenom, ipp1}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}}, new String[]{"Nom", "Prénom", "IPP"});
+                cdpis.getjTable1().setGridColor(new Color(153, 153, 153));
+                cdpis.getjTable1().setModel(templatesTableModel);
+                cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
+                templatesTableModel.fireTableDataChanged();
+                if(splitArray[1].isEmpty()){
+                    templatesTableModel.fireTableDataChanged();
+                        templatesTableModel = new DefaultTableModel(new String[][]{{null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}}, new String[]{"Nom", "Prénom", "IPP"});
+                cdpis.getjTable1().setGridColor(new Color(153, 153, 153));
+                cdpis.getjTable1().setModel(templatesTableModel);
+                cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
+            }
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
