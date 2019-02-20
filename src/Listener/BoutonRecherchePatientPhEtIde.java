@@ -1,6 +1,7 @@
 package Listener;
 
 import BD.ConnexionBD;
+import interfaces.ConsulterDPIPHetIDE;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.Fenetre;
 
@@ -11,12 +12,12 @@ import java.awt.event.ActionListener;
 import java.sql.*;
 
 
-public class BoutonRecherchePatient implements ActionListener {
+public class BoutonRecherchePatientPhEtIde implements ActionListener {
     Fenetre fen;
-    ConsulterDPISecretaire cdpis;
+    ConsulterDPIPHetIDE cdpis;
     ConnexionBD conn = new ConnexionBD();
 
-    public BoutonRecherchePatient(Fenetre jframe, ConsulterDPISecretaire cdpis) {
+    public BoutonRecherchePatientPhEtIde(Fenetre jframe, ConsulterDPIPHetIDE  cdpis) {
         this.fen = jframe;
         this.cdpis = cdpis;
     }
@@ -68,47 +69,43 @@ public class BoutonRecherchePatient implements ActionListener {
                 cdpis.repaint();
             }
         }
-            catch(Exception e3){
-                e3.toString();
+        catch(Exception e3){
+            e3.toString();
+        }
+
+        try {
+            String nomPrenom = cdpis.getjTextField1().getText();
+            String[] splitArray = null; //tableau de chaînes
+
+            // On découpe la chaîne à traiter et on récupère le résultat dans le tableau "splitArray"
+            splitArray = nomPrenom.split(" ");
+
+            for (int i = 0; i < splitArray.length; i++) {
+                // On affiche chaque élément du tableau
+                System.out.println("élement n° " + i + "=[" + splitArray[i] + "]");
             }
+            String nom1 = splitArray[0];
+            String prenom1 = splitArray[1];
+            String Sql2 = "Select * FROM patient WHERE Nom ='" + nom1 + "'OR Nom ='" + prenom1 + "'and Prénom ='" + nom1 + "'OR Prénom ='" + prenom1 + "'OR Prénom ='" + "" + "'";
+            Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
+            Statement stmt = null;
+            stmt = conn1.createStatement();
+            ResultSet rs = stmt.executeQuery(Sql2);
+            while (rs.next()) {
+                String name = rs.getString("Nom");
+                String prenom = rs.getString("Prénom");
+                String ipp1 = rs.getString("IPP");
+                System.out.println(name + "\t" + prenom + "\t" + ipp1);
+                DefaultTableModel templatesTableModel;
+                    templatesTableModel = new DefaultTableModel(new String[][]{{name, prenom, ipp1}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}}, new String[]{"Nom", "Prénom", "IPP"});
+                    cdpis.getjTable1().setGridColor(new Color(153, 153, 153));
+                    cdpis.getjTable1().setModel(templatesTableModel);
+                    cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
 
-            try {
-                String nomPrenom = cdpis.getjTextField1().getText();
-                String[] splitArray = null; //tableau de chaînes
 
-                // On découpe la chaîne à traiter et on récupère le résultat dans le tableau "splitArray"
-                splitArray = nomPrenom.split(" ");
-
-                for (int i = 0; i < splitArray.length; i++) {
-                    // On affiche chaque élément du tableau
-                    System.out.println("élement n° " + i + "=[" + splitArray[i] + "]");
-                }
-                String nom1 = splitArray[0];
-                String prenom1 = splitArray[1];
-                String Sql2 = "Select * FROM patient WHERE Nom ='" + nom1 + "'OR Nom ='" + prenom1 + "'and Prénom ='" + nom1 + "'OR Prénom ='" + prenom1 + "'OR Prénom ='" + "" + "'";
-                Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
-                Statement stmt = null;
-                stmt = conn1.createStatement();
-                ResultSet rs = stmt.executeQuery(Sql2);
-                while (rs.next()) {
-                    String name = rs.getString("Nom");
-                    String prenom = rs.getString("Prénom");
-                    String ipp1 = rs.getString("IPP");
-                    System.out.println(name + "\t" + prenom + "\t" + ipp1);
-                    DefaultTableModel templatesTableModel;
-                    if (nomPrenom != null) {
-                        templatesTableModel = new DefaultTableModel(new String[][]{{name, prenom, ipp1}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}}, new String[]{"Nom", "Prénom", "IPP"});
-                        cdpis.getjTable1().setGridColor(new Color(153, 153, 153));
-                        cdpis.getjTable1().setModel(templatesTableModel);
-                        cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
-                    } else {
-                        templatesTableModel = new DefaultTableModel(new String[][]{{null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}, {null, null, null}}, new String[]{"Nom", "Prénom", "IPP"});
-
-                    }
-
-                }
-            } catch (SQLException e1) {
-                e1.printStackTrace();
             }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
         }
     }
+}
