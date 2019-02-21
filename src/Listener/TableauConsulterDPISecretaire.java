@@ -47,38 +47,20 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent me) {
-<<<<<<< HEAD
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-=======
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> master
+
+        
     }
 
     @Override
     public void mouseReleased(MouseEvent me) {
-<<<<<<< HEAD
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-=======
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> master
     }
 
     @Override
     public void mouseEntered(MouseEvent me) {
-<<<<<<< HEAD
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-=======
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> master
     }
 
     @Override
     public void mouseExited(MouseEvent me) {
-<<<<<<< HEAD
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-=======
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
->>>>>>> master
     }
 
 }
