@@ -15,10 +15,7 @@ import interfaces.Fenetre;
 import interfaces.Prestations;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
+import java.sql.*;
 import javax.swing.table.DefaultTableModel;
 
 public abstract class ListenerConnexion {
@@ -188,7 +185,7 @@ public abstract class ListenerConnexion {
             jframe.add(as, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH); 
            
-            
+            /*
             String Sql1 = "Select * from patient";
             PreparedStatement ps;
             ps = conn.getConnexion().prepareStatement(Sql1);
@@ -213,9 +210,10 @@ public abstract class ListenerConnexion {
             JTable table = new JTable(model);
             jframe.add(table,BorderLayout.CENTER);
             table.setShowGrid(true);
-            table.setShowVerticalLines(true);
+            table.setShowVerticalLines(true);*/
 
-            
+
+
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
             bh.getNom().setText(Nom);
