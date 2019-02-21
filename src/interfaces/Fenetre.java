@@ -8,6 +8,8 @@ package interfaces;
 import Listener.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.*;
+
 import Listener.BoutonModifierDPI;
 import Listener.BoutonRetourDPISVersConsulterDPISecretaire;
 import Listener.BoutonValiderConnexion;
@@ -167,12 +169,14 @@ public class Fenetre extends JFrame {
     }
 
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() { 
             public void run() {
                 Fenetre frame = new Fenetre();
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 frame.setVisible(true);
                frame.setVisible(true);
+
+
 
             }
         });

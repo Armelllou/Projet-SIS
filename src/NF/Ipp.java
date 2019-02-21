@@ -27,10 +27,15 @@ class Ipp {
 
         //création d'un string ipp
         ipp = String.valueOf(YY) + MM + XXXXX;
-        System.out.println(ipp);
+//        System.out.println(ipp);
     }
 
     public String getIpp() {
+        return ipp;
+    }
+    
+    public String toString(){
+        
         return ipp;
     }
 }

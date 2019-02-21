@@ -7,7 +7,7 @@ package NF;
 
 public enum Sexe {
     H,
-    M,
+    F,
     AUTRE,
     
 }

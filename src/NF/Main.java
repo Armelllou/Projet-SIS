@@ -8,6 +8,7 @@ import java.sql.*;
 import Listener.BoutonRecherchePatient;
 import interfaces.ConsulterDPISecretaire;
 
+import javax.swing.table.DefaultTableModel;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,7 +28,7 @@ public class Main {
 //Chambre chambre = null;
 //Localisation localisation = new Localisation (lit,chambre,s2,s1);      
 //Sih sih = new Sih();
-////Patient p10 = new Patient("teulieres","lormand",d,s,"Brnard",a,localisation);
+//Patient p10 = new Patient("teulieres","lormand",d,s,"Brnard");
 //        String Sql1 = "Select * from ide WHERE idIDE ='456'and motDePasse='456'";
 //        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
 //        ResultSet Rs = ps.executeQuery();;
@@ -46,25 +47,6 @@ public class Main {
 //        }
 ////System.out.println("");
 //    }
-
-String Sql1 = "Select * from patient";
-            PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-            ResultSet resultSet = ps.executeQuery();
-
-            ResultSetMetaData rsmd = resultSet.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (resultSet.next()) {
-                for (int i = 1; i <= 4; i++) {
-                    if (i > 1) {
-                        System.out.print(",  ");
-                    }
-                    String columnValue = resultSet.getString(i);
-                    System.out.print(columnValue);
-                }
-                System.out.println("");
-            }
-
-
 
 
 

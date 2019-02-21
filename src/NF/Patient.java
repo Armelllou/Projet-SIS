@@ -49,6 +49,8 @@ public class Patient {
         sih.ajoutPatient(this);
     }
 
+   
+
     public boolean AjouterSurBdPatient(Patient p) throws SQLException {
         boolean j = false;
         String sql = " INSERT INTO Patient (IPP, NomDeNaissance,NomUsuel, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse,NumDeSS,email,telephone) VALUES(?,?,?,?,?,?,?,?,?,?,?) ";
