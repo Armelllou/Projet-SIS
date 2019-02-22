@@ -48,7 +48,8 @@ public abstract class ListenerConnexion {
         ConnexionMedicoTechniques();
     }
 
-    public void ConnexionPH() throws SQLException {
+    public boolean ConnexionPH() throws SQLException {
+        boolean j = false;
         String Nom = " ";
         String Prenom = " ";
         String Service = " ";
@@ -90,10 +91,12 @@ public abstract class ListenerConnexion {
 //            cdpiphetide.getjTable1().TableauSecretaire();
             jframe.revalidate();
             jframe.repaint();
+
+            j = true;
         } else {
             // JOptionPane.showMessageDialog(null, "Mot de passe ou nom d'utilisateur inconnu");
         }
-
+        return j;
     }
 
     public boolean ConnexionIde() throws SQLException {
@@ -178,13 +181,10 @@ public abstract class ListenerConnexion {
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
-            
-    
-            
-            
+
             jframe.add(as, BorderLayout.CENTER);
-            jframe.add(bh, BorderLayout.NORTH); 
-           
+            jframe.add(bh, BorderLayout.NORTH);
+
 //            
 //            String Sql1 = "Select * from patient";
 //            PreparedStatement ps;
@@ -211,8 +211,6 @@ public abstract class ListenerConnexion {
 //            jframe.add(table,BorderLayout.CENTER);
 //            table.setShowGrid(true);
 //            table.setShowVerticalLines(true);
-
-            
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
             bh.getNom().setText(Nom);
