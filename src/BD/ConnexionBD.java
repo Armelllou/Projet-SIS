@@ -21,8 +21,8 @@ public class ConnexionBD {
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            this.conn = DriverManager.getConnection(DBurl, "armelle", "armelle");
-            //this.conn = DriverManager.getConnection(DBurl, "root", "ok");
+           // this.conn = DriverManager.getConnection(DBurl, "armelle", "armelle");
+            this.conn = DriverManager.getConnection(DBurl, "root", "ok");
 
             if (this.conn.isValid(0)) {
                 System.out.println("===>Connexion effectuée");
