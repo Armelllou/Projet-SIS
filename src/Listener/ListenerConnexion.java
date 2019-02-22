@@ -79,7 +79,6 @@ public class ListenerConnexion implements ActionListener {
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
-            ConsulterDPIPHetIDE cdpiphetide = new ConsulterDPIPHetIDE();
             jframe.add(cdpiphetide, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
             bh.getId().setText(id);

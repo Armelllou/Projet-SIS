@@ -31,23 +31,20 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
     InfosMedicalesPH imph;
     InfosMedicalesIDE imide;
     ConsulterDPIPHetIDE cdpi;
-<<<<<<< HEAD
-=======
     DPIIDE cide;
     DPIPH cph;
->>>>>>> master
     Fenetre fen;
     Sih sih;
     JTable table;
     ListenerConnexion conn;
 
-<<<<<<< HEAD
+
     public TableauConsulterDPIPHetIDE(InfosMedicalesPH imph, InfosMedicalesIDE imide, ConsulterDPIPHetIDE cdpi, Fenetre fen, JTable table, ListenerConnexion conn) {
         this.imph = imph;
         this.imide = imide;
-=======
+    }
     public TableauConsulterDPIPHetIDE(ConsulterDPIPHetIDE cdpi, DPIIDE cide, DPIPH cph, Fenetre fen, Sih sih, JTable table, ListenerConnexion conn) {
->>>>>>> master
+
         this.cdpi = cdpi;
         this.fen = fen;
         this.sih = sih;

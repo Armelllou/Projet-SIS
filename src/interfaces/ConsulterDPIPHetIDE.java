@@ -6,6 +6,7 @@
 package interfaces;
 
 import BD.ConnexionBD;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
@@ -16,6 +17,7 @@ import java.sql.*;
  * @author Manon
  */
 public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
+    BarreDuHaut bdh;
 
     /**
      * @return the jButton1
@@ -112,9 +114,11 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         templatesTableModel.setColumnIdentifiers(title);
 
         try {
-            Sql45 = "SELECT * FROM patient";
+            Sql45 = "SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service ";
             ConnexionBD conn = new ConnexionBD();
             PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
+            BarreDuHaut bdh = new BarreDuHaut();
+            System.out.println("AAA"+bdh.getService());
             ResultSet Rs = ps.executeQuery();
             rs = ps.executeQuery(Sql45);
 
