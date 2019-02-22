@@ -6,6 +6,7 @@
 package interfaces;
 
 import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.sql.*;
 
 
@@ -114,17 +115,13 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
 
             while (rs.next()) {
                 InfoAllPatient[0] = rs.getString("NomDeNaissance");
-                System.out.println(InfoAllPatient[0]);
                 InfoAllPatient[1] = rs.getString("NomUsuel");
-                System.out.println(InfoAllPatient[1]);
                 InfoAllPatient[2] = rs.getString("Prénom");
-                System.out.println(InfoAllPatient[2]);
                 InfoAllPatient[3] = rs.getString("IPP");
-                System.out.println(templatesTableModel);
-
                 templatesTableModel.addRow(InfoAllPatient);
             }
             this.getjTable1().setModel(templatesTableModel);
+            this.getjTable1().setFont(new Font("Calibri", 0, 18));
             System.out.println(this.getjTable1().getModel());
 
         } catch (SQLException e1) {
