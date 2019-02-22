@@ -14,11 +14,16 @@ import interfaces.ConsulterDPISecretaire;
 import interfaces.Fenetre;
 import interfaces.Prestations;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
-public abstract class ListenerConnexion {
+public class ListenerConnexion implements ActionListener {
 
     Connexion c;
     JPanel jp;
@@ -47,7 +52,6 @@ public abstract class ListenerConnexion {
         ConnexionPH();
         ConnexionMedicoTechniques();
     }
-
     public boolean ConnexionPH() throws SQLException {
         boolean j = false;
         String Nom = " ";
@@ -185,32 +189,6 @@ public abstract class ListenerConnexion {
             jframe.add(as, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
 
-//            
-//            String Sql1 = "Select * from patient";
-//            PreparedStatement ps;
-//            ps = conn.getConnexion().prepareStatement(Sql1);
-//            ResultSet resultSet = ps.executeQuery();
-//       
-//
-//            String col[] = {"IPP", "Nom de Naissance", "Nom Usuel ", "Prenom"};
-//            String cont[][] = new String[5000][4];
-//            int i = 0;
-//            while (resultSet.next()) {
-//                int idz = resultSet.getInt("IPP");
-//                String nomDN = resultSet.getString("NomDeNaissance");
-//                String nomUsuel = resultSet.getString("NomUsuel");
-//                String prenom = resultSet.getString("prénom");
-//                cont[i][0] = id + "";
-//                cont[i][1] = nomDN;
-//                cont[i][2] = nomUsuel;
-//                cont[i][3] = prenom;
-//                i++;
-//            }
-//            DefaultTableModel model = new DefaultTableModel(cont, col);
-//            JTable table = new JTable(model);
-//            jframe.add(table,BorderLayout.CENTER);
-//            table.setShowGrid(true);
-//            table.setShowVerticalLines(true);
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
             bh.getNom().setText(Nom);
@@ -285,4 +263,14 @@ public abstract class ListenerConnexion {
         return j;
 
     }
-}
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        try {
+            connexion();
+                    } catch (SQLException ex) {
+            Logger.getLogger(ListenerConnexion.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }}
+
+ 

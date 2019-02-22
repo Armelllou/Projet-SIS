@@ -24,20 +24,14 @@ import java.util.logging.Logger;
 /**
  * @author annel
  */
-public class BoutonValiderConnexion extends ListenerConnexion implements ActionListener{
+public class BoutonValiderConnexion implements ActionListener{
    
-    public BoutonValiderConnexion(BarreDuHaut bh,Connexion c, ConsulterDPISecretaire as,ConsulterDPIPHetIDE cdpiphetide, Prestations p,Fenetre jframe) {
-        super(bh,c,as,cdpiphetide,p,jframe);  
-        
+    public BoutonValiderConnexion() {
+     
     }
 
     public void actionPerformed(ActionEvent e) {
-        try {
-            super.connexion();
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(BoutonValiderConnexion.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
 
     }
 

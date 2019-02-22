@@ -4,68 +4,71 @@
  * and open the template in the editor.
  */
 package Listener;
+
 import NF.Sih;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.ConsultationIDE;
 import interfaces.ConsultationPH;
 import interfaces.Fenetre;
+import interfaces.InfosMedicalesIDE;
+import interfaces.InfosMedicalesPH;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
+
 /**
  *
  * @author stifinekawtar
  */
 
-public class TableauConsulterDPIPHetIDE implements MouseListener{
-    
-    
+public class TableauConsulterDPIPHetIDE implements MouseListener {
+
+    InfosMedicalesPH imph;
+    InfosMedicalesIDE imide;
     ConsulterDPIPHetIDE cdpi;
-    ConsultationIDE cide;
-    ConsultationPH cph;
     Fenetre fen;
     Sih sih;
     JTable table;
     ListenerConnexion conn;
 
-    public TableauConsulterDPIPHetIDE(ConsulterDPIPHetIDE cdpi, ConsultationIDE cide, ConsultationPH cph, Fenetre fen, Sih sih, JTable table, ListenerConnexion conn) {
+    public TableauConsulterDPIPHetIDE(InfosMedicalesPH imph, InfosMedicalesIDE imide, ConsulterDPIPHetIDE cdpi, Fenetre fen, JTable table, ListenerConnexion conn) {
+        this.imph = imph;
+        this.imide = imide;
         this.cdpi = cdpi;
-        this.cide = cide;
-        this.cph=cph;
         this.fen = fen;
         this.sih = sih;
-        this.table = table;   
-        this.conn=conn;
+        this.table = table;
+        this.conn = conn;
     }
-    
+
     @Override
     public void mouseClicked(MouseEvent e) {
-             int NumLigne;
-        NumLigne = table.getSelectedRow();
+
         try {
-            if (conn.ConnexionPH()==true){
+            int NumLigne;
+            NumLigne = table.getSelectedRow();
+
+            if (conn.ConnexionPH() == true) {
                 fen.PanelVisibleFalse();
-                fen.add(cph);
-                cph.setVisible(true);
+                fen.add(imph);
+                imph.setVisible(true);
                 fen.revalidate();
                 fen.repaint();
-            }
-            else{
-                if (conn.ConnexionIde()==true){
+            } else {
+                if (conn.ConnexionIde() == true) {
                     fen.PanelVisibleFalse();
-                    fen.add(cide);
-                    cide.setVisible(true);
+                    fen.add(imide);
+                    imide.setVisible(true);
                     fen.revalidate();
                     fen.repaint();
-                    
+
                 }
-                
-                
-                
-            }   } catch (SQLException ex) {
+
+            }
+        } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPIPHetIDE.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
@@ -89,7 +92,5 @@ public class TableauConsulterDPIPHetIDE implements MouseListener{
     public void mouseExited(MouseEvent e) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-
 
 }

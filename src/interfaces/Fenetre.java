@@ -100,13 +100,14 @@ public class Fenetre extends JFrame {
     private JButton annulerprestafaite = prestafaite.getjButton1();
     private JButton annulertransfert = transfert.getjButton2();
     private JTable tableauconsultdpis = consultdpis.getjTable1();
+    private JTable tableauPHetIDE = consultdpiphide.getjTable1();
 
     public Fenetre() {
         //state = State.NONCO;
         add(connexion);
         this.setSize(1700, 830);
 
-        valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this));
+        valider.addActionListener(new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this));
         connexion.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this));
 
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
@@ -151,6 +152,7 @@ public class Fenetre extends JFrame {
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
 
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
+//        tableauPHetIDE.addMouseListener(new TableauConsulterDPIPHetIDE (infosmedph, infosmedide, consultdpiphide,this,consultdpiphide.getjTable1(),));
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
@@ -215,13 +217,15 @@ public class Fenetre extends JFrame {
         this.PanelVisibleFalse();
     }
 
-    public void setState(State state) {
-        //this.state = state;
-    }
 
-    public State getStates() {
-        //return state;
-        return null;
-    }
+
+
+
+
+
+
+
+
+    
 
 }
