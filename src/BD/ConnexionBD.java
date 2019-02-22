@@ -15,14 +15,14 @@ public class ConnexionBD {
 
         try {
 
-           // String DBurl = "jdbc:mysql://192.168.64.2/bd1";
+            //String DBurl = "jdbc:mysql://192.168.64.2/bd1";
             String DBurl = "jdbc:mysql://localhost:3306/bd1";
             DBurl += "?serverTimezone=UTC";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
             this.conn = DriverManager.getConnection(DBurl, "armelle", "armelle");
-           // this.conn = DriverManager.getConnection(DBurl, "root", "ok");
+            //this.conn = DriverManager.getConnection(DBurl, "root", "ok");
 
             if (this.conn.isValid(0)) {
                 System.out.println("===>Connexion effectuée");
@@ -43,6 +43,5 @@ public class ConnexionBD {
     public Connection getConnexion() {
         return conn;
     }
-
 
 }

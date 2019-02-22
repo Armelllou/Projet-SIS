@@ -8,6 +8,7 @@ package interfaces;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
+import java.util.Vector;
 
 
 public class ConsulterDPISecretaire extends javax.swing.JPanel {
@@ -115,14 +116,14 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         ));
 
         //-----------------------------------------------------------------------------
-        DefaultTableModel templatesTableModel;
+       /* DefaultTableModel templatesTableModel= null;
         Statement stmt;
         String Sql45;
         String NbrePatient;
         ResultSet rs;
         ResultSet rs1;
         JTable tableau = null;
-        String[][] InfoAllPatient = null;
+        String[] InfoAllPatient = null;
         try {
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
             stmt = conn1.createStatement();
@@ -131,21 +132,37 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
             rs = stmt.executeQuery(Sql45);
             //rs1 = stmt.executeQuery(NbrePatient);
             int i = 0;
+<<<<<<< HEAD
             rs.next();
+=======
+            String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+            //rs.next();
+>>>>>>> master
             while (rs.next()) {
-
-                InfoAllPatient = new String[10 - 1][4];
-                rs.next();
-                InfoAllPatient[i][0] = rs.getString("NomDeNaissance");
+                InfoAllPatient = new String [4];
+                /*InfoAllPatient[i][0] = rs.getString("NomDeNaissance");
                 InfoAllPatient[i][1] = rs.getString("NomUsuel");
                 InfoAllPatient[i][2] = rs.getString("Prénom");
+<<<<<<< HEAD
                 InfoAllPatient[i][3] = rs.getString("IPP");
                 // this.getjTable1().add();
+=======
+                InfoAllPatient[i][3] = rs.getString("IPP");*//*
+                Vector row = new Vector();
+
+                row.add(InfoAllPatient[0] = rs.getString("NomDeNaissance"));
+                row.add( InfoAllPatient[1] = rs.getString("NomUsuel"));
+                row.add(InfoAllPatient[2] = rs.getString("Prénom"));
+                row.add(InfoAllPatient[3] = rs.getString("IPP"));
+                templatesTableModel.addRow(row);
+>>>>>>> master
                 i++;
+
+
+
             }
 
-            String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-            templatesTableModel = new DefaultTableModel(InfoAllPatient, title);
+            //templatesTableModel = new DefaultTableModel(InfoAllPatient, title);
             this.getjTable1().setModel(templatesTableModel);
 
 
@@ -168,7 +185,7 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-
+*/
 
 //-----------------------------------------------------------------------------
 
