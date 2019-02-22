@@ -52,6 +52,7 @@ public class ListenerConnexion implements ActionListener {
         ConnexionPH();
         ConnexionMedicoTechniques();
     }
+
     public boolean ConnexionPH() throws SQLException {
         boolean j = false;
         String Nom = " ";
@@ -79,6 +80,7 @@ public class ListenerConnexion implements ActionListener {
             jframe.setLayout(new BorderLayout());
 
             jframe.PanelVisibleFalse();
+
             jframe.add(cdpiphetide, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
             bh.getId().setText(id);
@@ -267,9 +269,8 @@ public class ListenerConnexion implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             connexion();
-                    } catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(ListenerConnexion.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }}
-
- 
+    }
+}

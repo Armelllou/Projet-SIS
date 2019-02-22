@@ -42,14 +42,12 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
     public TableauConsulterDPIPHetIDE(InfosMedicalesPH imph, InfosMedicalesIDE imide, ConsulterDPIPHetIDE cdpi, Fenetre fen, JTable table, ListenerConnexion conn) {
         this.imph = imph;
         this.imide = imide;
-    }
-    public TableauConsulterDPIPHetIDE(ConsulterDPIPHetIDE cdpi, DPIIDE cide, DPIPH cph, Fenetre fen, Sih sih, JTable table, ListenerConnexion conn) {
-
-        this.cdpi = cdpi;
         this.fen = fen;
         this.sih = sih;
         this.table = table;
         this.conn = conn;
+
+        
     }
 
     @Override
@@ -83,22 +81,22 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
