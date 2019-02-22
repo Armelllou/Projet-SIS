@@ -19,6 +19,8 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
+import Listener.ListenerConnexion;
+
 
 public class Fenetre extends JFrame {
 
@@ -53,6 +55,7 @@ public class Fenetre extends JFrame {
     BarreDuHaut barreduhaut = new BarreDuHaut();
 
     Sih sih;
+    ListenerConnexion conn;
 
     // Déclarations Boutons, JTextField etc
     private JButton valider = connexion.getjButton1();
@@ -100,7 +103,13 @@ public class Fenetre extends JFrame {
     private JButton annulerprestafaite = prestafaite.getjButton1();
     private JButton annulertransfert = transfert.getjButton2();
     private JTable tableauconsultdpis = consultdpis.getjTable1();
+<<<<<<< HEAD
     private JTable tableauPHetIDE = consultdpiphide.getjTable1();
+=======
+    private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
+    private JTable tableauconsultinfmedph = infosmedph.getjTable3();
+    
+>>>>>>> master
 
     public Fenetre() {
         //state = State.NONCO;
@@ -152,7 +161,13 @@ public class Fenetre extends JFrame {
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
 
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
+<<<<<<< HEAD
 //        tableauPHetIDE.addMouseListener(new TableauConsulterDPIPHetIDE (infosmedph, infosmedide, consultdpiphide,this,consultdpiphide.getjTable1(),));
+=======
+        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE(consultdpiphide, dpiide, dpiph, this, sih, consultdpiphide.getjTable1(), conn));
+        tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph,consultationPH,this,sih,infosmedph.getjTable3()));
+        
+>>>>>>> master
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
