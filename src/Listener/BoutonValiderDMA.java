@@ -13,12 +13,18 @@ import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.CreationDPI;
 import interfaces.Fenetre;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -53,6 +59,38 @@ public class BoutonValiderDMA implements ActionListener {
             jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
 
             fen.PanelVisibleFalse();
+            
+             Statement stmt;
+        String Sql45;
+        ResultSet rs;
+        Object[] InfoAllPatient = new Object[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+
+        try {
+            Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
+            stmt = conn1.createStatement();
+            Sql45 = "SELECT * FROM patient";
+            rs = stmt.executeQuery(Sql45);
+
+            while (rs.next()) {
+                InfoAllPatient[0] = rs.getString("NomDeNaissance");
+                InfoAllPatient[1] = rs.getString("NomUsuel");
+                InfoAllPatient[2] = rs.getString("Prénom");
+                InfoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(InfoAllPatient);
+            }
+            cdpis.getjTable1().setModel(templatesTableModel);
+            cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
+            System.out.println(cdpis.getjTable1().getModel());
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+            
+            
+            
 
             fen.add(cdpis);
             cdpis.setVisible(true);

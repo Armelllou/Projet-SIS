@@ -29,7 +29,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
         this.cdpis = cdpis;
         this.dpis = dpis;
         this.fen = fen;
-        this.sih = sih;
+       
         this.table = table;
     }
 
