@@ -131,7 +131,6 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
          */
 
 
-//-----------------------------------------------------------------------------
 
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
