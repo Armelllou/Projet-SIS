@@ -5,10 +5,8 @@
  */
 package interfaces;
 
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
-import java.util.Vector;
 
 
 public class ConsulterDPISecretaire extends javax.swing.JPanel {
@@ -96,96 +94,45 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/loupe.png"))); // NOI18N
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-                new Object[][]{
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null},
-                        {null, null, null, null}
-                },
-                new String[]{
-                        "IPP", "Nom De Naissance", "Nom Usuel", "Prénom"
-                }
-        ));
 
-        //-----------------------------------------------------------------------------
-       /* DefaultTableModel templatesTableModel= null;
+        /**Code qui retourne dans une JTable la liste des patients de la BD
+         *
+         */
         Statement stmt;
         String Sql45;
-        String NbrePatient;
         ResultSet rs;
-        ResultSet rs1;
-        JTable tableau = null;
-        String[] InfoAllPatient = null;
+        Object[] InfoAllPatient = new Object[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+
         try {
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
             stmt = conn1.createStatement();
             Sql45 = "SELECT * FROM patient";
-            NbrePatient = "SELECT COUNT(*) FROM patient";
             rs = stmt.executeQuery(Sql45);
-            //rs1 = stmt.executeQuery(NbrePatient);
-            int i = 0;
-<<<<<<< HEAD
-            rs.next();
-=======
-            String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-            //rs.next();
->>>>>>> master
+
             while (rs.next()) {
-                InfoAllPatient = new String [4];
-                /*InfoAllPatient[i][0] = rs.getString("NomDeNaissance");
-                InfoAllPatient[i][1] = rs.getString("NomUsuel");
-                InfoAllPatient[i][2] = rs.getString("Prénom");
-<<<<<<< HEAD
-                InfoAllPatient[i][3] = rs.getString("IPP");
-                // this.getjTable1().add();
-=======
-                InfoAllPatient[i][3] = rs.getString("IPP");*//*
-                Vector row = new Vector();
+                InfoAllPatient[0] = rs.getString("NomDeNaissance");
+                System.out.println(InfoAllPatient[0]);
+                InfoAllPatient[1] = rs.getString("NomUsuel");
+                System.out.println(InfoAllPatient[1]);
+                InfoAllPatient[2] = rs.getString("Prénom");
+                System.out.println(InfoAllPatient[2]);
+                InfoAllPatient[3] = rs.getString("IPP");
+                System.out.println(templatesTableModel);
 
-                row.add(InfoAllPatient[0] = rs.getString("NomDeNaissance"));
-                row.add( InfoAllPatient[1] = rs.getString("NomUsuel"));
-                row.add(InfoAllPatient[2] = rs.getString("Prénom"));
-                row.add(InfoAllPatient[3] = rs.getString("IPP"));
-                templatesTableModel.addRow(row);
->>>>>>> master
-                i++;
-
-
-
+                templatesTableModel.addRow(InfoAllPatient);
             }
-
-            //templatesTableModel = new DefaultTableModel(InfoAllPatient, title);
             this.getjTable1().setModel(templatesTableModel);
-
-
-            Object[][] data = {
-
-                    {"Cysboy", "28 ans", "1.80 m", "1"},
-
-                    {"BZHHydde", "28 ans", "1.80 m", "1"},
-
-                    {"IamBow", "24 ans", "1.90 m", "a"},
-
-                    {"FunMan", "32 ans", "1.85 m", "a"}
-
-            };
-
-
-            // DefaultTableModel templatesTableMode2 = new DefaultTableModel(InfoAllPatient, title);
-            //this.getjTable1().setModel(templatesTableMode2);
+            System.out.println(this.getjTable1().getModel());
 
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-*/
+        /**
+         */
+
 
 //-----------------------------------------------------------------------------
 
