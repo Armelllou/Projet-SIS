@@ -131,7 +131,7 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
             rs = stmt.executeQuery(Sql45);
             //rs1 = stmt.executeQuery(NbrePatient);
             int i = 0;
-            //rs.next();
+            rs.next();
             while (rs.next()) {
 
                 InfoAllPatient = new String[10 - 1][4];
@@ -140,7 +140,7 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
                 InfoAllPatient[i][1] = rs.getString("NomUsuel");
                 InfoAllPatient[i][2] = rs.getString("Prénom");
                 InfoAllPatient[i][3] = rs.getString("IPP");
-                //this.getjTable1().add();
+                // this.getjTable1().add();
                 i++;
             }
 
@@ -220,5 +220,5 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
                                         .addComponent(jButton2))
                                 .addContainerGap())
         );
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 }

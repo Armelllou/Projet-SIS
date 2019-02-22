@@ -25,7 +25,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
     Sih sih;
     JTable table;
 
-    public TableauConsulterDPISecretaire(ConsulterDPISecretaire cdpis, DPISecretaire dpis, Fenetre fen, Sih sih, JTable table) {
+    public TableauConsulterDPISecretaire(ConsulterDPISecretaire cdpis, DPISecretaire dpis, Fenetre fen, JTable table) {
         this.cdpis = cdpis;
         this.dpis = dpis;
         this.fen = fen;

@@ -108,6 +108,7 @@ public class Fenetre extends JFrame {
 
         valider.addActionListener(new BoutonValiderConnexion(barreduhaut, connexion, consultdpis, consultdpiphide,prestations, this));
         connexion.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(barreduhaut, connexion, consultdpis, consultdpiphide,prestations, this)); 
+      
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
         validerDMA.addActionListener(new BoutonValiderDMA(consultdpis,this,creationdpi));
         getRecherchePatient2.addActionListener(new BoutonRecherchePatientPhEtIde(this,consultdpiphide));
@@ -148,7 +149,10 @@ public class Fenetre extends JFrame {
         retourPrescriPHVersInfMedPH.addActionListener(new BoutonRetourPrescriptionPHVersInfosMedPH(this,prescriptionph,infosmedph,sih));
         annulerprestafaite.addActionListener(new BoutonAnnulerPrestaFaite(prestafaite, prestations, this));
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
-        tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis,dpis,this,sih,tableauconsultdpis));
+        
+        tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this,consultdpis.getjTable1()));
+        
+       
         
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
