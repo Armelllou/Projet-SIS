@@ -5,12 +5,19 @@
  */
 package Listener;
 
+import BD.ConnexionBD;
 import NF.Sih;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
 import interfaces.Fenetre;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTable;
 
 /**
@@ -29,26 +36,97 @@ public class TableauConsulterDPISecretaire implements MouseListener {
         this.cdpis = cdpis;
         this.dpis = dpis;
         this.fen = fen;
-        this.sih = sih;
+
         this.table = table;
     }
 
     @Override
     public void mouseClicked(MouseEvent me) {
-        int NumLigne;
-        NumLigne = table.getSelectedRow();
+        try {
+            int NumLigne;
+            NumLigne = table.getSelectedRow();
 
-        fen.PanelVisibleFalse();
-        fen.add(dpis);
-        dpis.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+            String nomDeNaissance = (String) table.getModel().getValueAt(NumLigne, 0);
+            String nomUsuel = (String) table.getModel().getValueAt(NumLigne, 1);
+            String prenom = (String) table.getModel().getValueAt(NumLigne, 2);
+            String ipp = (String )table.getModel().getValueAt(NumLigne, 3);
+            int ippS = Integer.parseInt(ipp);
+
+            dpis.getjLabelnom().setText(nomDeNaissance);
+            dpis.getjLabelprenom().setText(prenom);
+            dpis.getjLabelipp().setText(ipp);
+           
+
+            String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
+            ConnexionBD conn = new ConnexionBD();
+            PreparedStatement ps;
+
+            ps = conn.getConnexion().prepareStatement(Sql1);
+
+            ResultSet Rs = ps.executeQuery();;
+
+            ResultSetMetaData rsmd = Rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (Rs.next()) {
+
+                String DateDeNaissance = Rs.getString(5);
+                String Sexe = Rs.getString(6);
+                String MedecinG = Rs.getString(7);
+                String Adresse = Rs.getString(8);
+                String NumSS = Rs.getString(9);
+                String email = Rs.getString(10);
+                String telephone = Rs.getString(11);
+
+                dpis.getjLabeladresse().setText(Adresse);
+                dpis.getjLabelnumsecu().setText(NumSS);
+                dpis.getjLabelemail().setText(email);
+                dpis.getjLabeltelephone().setText(telephone);
+                dpis.getjLabelannée().setText(DateDeNaissance);
+                
+
+//           String Sql2 = "Select * from Patient WHERE IPP ='" + ipp + "'" Natural Join localisations 
+//          
+//            PreparedStatement ps2;
+//
+//            ps2 = conn.getConnexion().prepareStatement(Sql2);
+//
+//            ResultSet Rs2 = ps2.executeQuery();;
+//
+//            ResultSetMetaData rsmd2 = Rs2.getMetaData();
+//            int columnsNumber2 = rsmd2.getColumnCount();
+//            while (Rs.next()) {
+//
+//                String ServiceGegraphique = Rs2.getString(2);
+//                String ServiceRespo= Rs.getString(3);
+//          
+              dpis.getSereviceRespo().setText(Adresse);
+              dpis.getServiceGeo().setText(NumSS);
+//                dpis.getjLabelemail().setText(email);
+//                dpis.getjLabeltelephone().setText(telephone);
+//                dpis.getjLabelannée().setText(DateDeNaissance);
+                
+                
+                
+                
+                
+                dpis.getjLabelchamnre().setVisible(false);
+                dpis.getChambre().setVisible(false);
+                fen.PanelVisibleFalse();
+                fen.add(dpis);
+                dpis.setVisible(true);
+                fen.revalidate();
+                fen.repaint();
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     @Override
     public void mousePressed(MouseEvent me) {
 
-        
     }
 
     @Override

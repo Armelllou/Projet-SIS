@@ -15,8 +15,8 @@ public class ConnexionBD {
 
         try {
 
-            String DBurl = "jdbc:mysql://192.168.64.2/bd2";
-            //String DBurl = "jdbc:mysql://localhost:3306/bd1";
+            //String DBurl = "jdbc:mysql://192.168.64.2/bd1";
+            String DBurl = "jdbc:mysql://localhost:3306/bd2";
             DBurl += "?serverTimezone=UTC";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
