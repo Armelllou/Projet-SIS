@@ -64,6 +64,10 @@ public class DPISecretaire extends javax.swing.JPanel {
         return jLabelchamnre;
     }
 
+    public JLabel getChambre() {
+        return chambre;
+    }
+
     
    
 
@@ -161,7 +165,7 @@ public class DPISecretaire extends javax.swing.JPanel {
         jButtonmodifier = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        chambre = new javax.swing.JLabel();
         jLabelchamnre = new javax.swing.JLabel();
         ServiceGeo = new javax.swing.JLabel();
         sereviceRespo = new javax.swing.JLabel();
@@ -207,8 +211,8 @@ public class DPISecretaire extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel5.setText("Service géographique :");
 
-        jLabel6.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabel6.setText("Chambre :");
+        chambre.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        chambre.setText("Chambre :");
 
         jLabelchamnre.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelchamnre.setText("XXX");
@@ -263,7 +267,7 @@ public class DPISecretaire extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelnumsecu, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
+                                        .addComponent(chambre)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabelchamnre)))))
                         .addGap(405, 405, 405)))
@@ -303,7 +307,7 @@ public class DPISecretaire extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
+                            .addComponent(chambre)
                             .addComponent(jLabelchamnre))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -326,12 +330,12 @@ public class DPISecretaire extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ServiceGeo;
+    private javax.swing.JLabel chambre;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonmodifier;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabeladresse;
     private javax.swing.JLabel jLabelannée;
     private javax.swing.JLabel jLabelchamnre;

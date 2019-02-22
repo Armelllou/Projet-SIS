@@ -84,7 +84,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
                 dpis.getjLabelannée().setText(DateDeNaissance);
                 
 
-//           String Sql2 = "Select * from Patient WHERE IPP ='" + ipp + "'" Natural Join localisation 
+//           String Sql2 = "Select * from Patient WHERE IPP ='" + ipp + "'" Natural Join localisations 
 //          
 //            PreparedStatement ps2;
 //
@@ -96,8 +96,8 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 //            int columnsNumber2 = rsmd2.getColumnCount();
 //            while (Rs.next()) {
 //
-//                String ServiceGegraphique = Rs2.getString(5);
-//                String ServiceRespo= Rs.getString(6);
+//                String ServiceGegraphique = Rs2.getString(2);
+//                String ServiceRespo= Rs.getString(3);
 //          
               dpis.getSereviceRespo().setText(Adresse);
               dpis.getServiceGeo().setText(NumSS);
@@ -109,7 +109,8 @@ public class TableauConsulterDPISecretaire implements MouseListener {
                 
                 
                 
-                
+                dpis.getjLabelchamnre().setVisible(false);
+                dpis.getChambre().setVisible(false);
                 fen.PanelVisibleFalse();
                 fen.add(dpis);
                 dpis.setVisible(true);
