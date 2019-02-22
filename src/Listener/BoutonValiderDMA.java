@@ -5,6 +5,7 @@
  */
 package Listener;
 
+import BD.ConnexionBD;
 import NF.Adresse;
 import NF.Dates;
 import NF.Localisation;
@@ -64,10 +65,13 @@ public class BoutonValiderDMA implements ActionListener {
             templatesTableModel.setColumnIdentifiers(title);
 
             try {
-                Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
-                stmt = conn1.createStatement();
+
                 Sql45 = "SELECT * FROM patient";
-                rs = stmt.executeQuery(Sql45);
+                ConnexionBD conn = new ConnexionBD();
+                PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
+                ResultSet Rs = ps.executeQuery();;
+                rs = ps.executeQuery(Sql45);
+             
 
                 while (rs.next()) {
                     InfoAllPatient[0] = rs.getString("NomDeNaissance");

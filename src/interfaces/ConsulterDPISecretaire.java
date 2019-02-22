@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import BD.ConnexionBD;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.*;
@@ -108,10 +109,13 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         templatesTableModel.setColumnIdentifiers(title);
 
         try {
-            Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
-            stmt = conn1.createStatement();
+            ConnexionBD conn = new ConnexionBD();
+            
+            
             Sql45 = "SELECT * FROM patient";
-            rs = stmt.executeQuery(Sql45);
+            PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
+          ResultSet Rs = ps.executeQuery();;
+            rs = ps.executeQuery(Sql45);
 
             while (rs.next()) {
                 InfoAllPatient[0] = rs.getString("NomDeNaissance");
