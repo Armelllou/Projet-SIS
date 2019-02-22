@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Manon
@@ -32,20 +34,15 @@ public class DPISecretaire extends javax.swing.JPanel {
         return jButtonmodifier;
     }
 
-    /**
-     * @return the jComboBox1
-     */
-    public javax.swing.JComboBox<String> getjComboBox1() {
-        return jComboBox1;
+    public JLabel getServiceGeo() {
+        return ServiceGeo;
     }
 
-    /**
-     * @return the jComboBox2
-     */
-    public javax.swing.JComboBox<String> getjComboBox2() {
-        return jComboBox2;
+    public JLabel getSereviceRespo() {
+        return sereviceRespo;
     }
 
+   
     /**
      * @return the jLabeladresse
      */
@@ -67,12 +64,8 @@ public class DPISecretaire extends javax.swing.JPanel {
         return jLabelchamnre;
     }
 
-    /**
-     * @return the jLabelcodepostal
-     */
-    public javax.swing.JLabel getjLabelcodepostal() {
-        return jLabelcodepostal;
-    }
+    
+   
 
     /**
      * @return the jLabelemail
@@ -91,16 +84,7 @@ public class DPISecretaire extends javax.swing.JPanel {
     /**
      * @return the jLabeljour
      */
-    public javax.swing.JLabel getjLabeljour() {
-        return jLabeljour;
-    }
-
-    /**
-     * @return the jLabelmois
-     */
-    public javax.swing.JLabel getjLabelmois() {
-        return jLabelmois;
-    }
+ 
 
     /**
      * @return the jLabelnom
@@ -130,13 +114,24 @@ public class DPISecretaire extends javax.swing.JPanel {
         return jLabeltelephone;
     }
 
-    /**
-     * @return the jLabelville
-     */
-    public javax.swing.JLabel getjLabelville() {
-        return jLabelville;
+ 
+
+    public void setjLabelipp(JLabel jLabelipp) {
+        this.jLabelipp = jLabelipp;
     }
 
+    public void setjLabelnom(JLabel jLabelnom) {
+        this.jLabelnom = jLabelnom;
+    }
+
+    public void setjLabelprenom(JLabel jLabelprenom) {
+        this.jLabelprenom = jLabelprenom;
+    }
+
+    
+    
+    
+    
     /**
      * Creates new form DPI
      */
@@ -157,16 +152,10 @@ public class DPISecretaire extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabelprenom = new javax.swing.JLabel();
         jLabelnom = new javax.swing.JLabel();
-        jLabeljour = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabelannée = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabelmois = new javax.swing.JLabel();
         jLabelnumsecu = new javax.swing.JLabel();
         jLabelipp = new javax.swing.JLabel();
         jLabeladresse = new javax.swing.JLabel();
-        jLabelcodepostal = new javax.swing.JLabel();
-        jLabelville = new javax.swing.JLabel();
         jLabelemail = new javax.swing.JLabel();
         jLabeltelephone = new javax.swing.JLabel();
         jButtonmodifier = new javax.swing.JButton();
@@ -174,8 +163,8 @@ public class DPISecretaire extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabelchamnre = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        ServiceGeo = new javax.swing.JLabel();
+        sereviceRespo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -191,20 +180,8 @@ public class DPISecretaire extends javax.swing.JPanel {
         jLabelnom.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
         jLabelnom.setText("NOM");
 
-        jLabeljour.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabeljour.setText("JJ");
-
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabel2.setText("/");
-
         jLabelannée.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelannée.setText("AAAA");
-
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabel3.setText("/");
-
-        jLabelmois.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabelmois.setText("MM");
 
         jLabelnumsecu.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelnumsecu.setText("2971162574323");
@@ -214,12 +191,6 @@ public class DPISecretaire extends javax.swing.JPanel {
 
         jLabeladresse.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabeladresse.setText("4 rue de la liberté");
-
-        jLabelcodepostal.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabelcodepostal.setText("38000");
-
-        jLabelville.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabelville.setText("GRENOBLE");
 
         jLabelemail.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelemail.setText("nom.prenom@email.com");
@@ -242,11 +213,9 @@ public class DPISecretaire extends javax.swing.JPanel {
         jLabelchamnre.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelchamnre.setText("XXX");
 
-        jComboBox1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple consultation", "Urologie" }));
+        ServiceGeo.setText("Mort");
 
-        jComboBox2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple Consultation", "Urologie" }));
+        sereviceRespo.setText("Anapathologie");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -264,54 +233,39 @@ public class DPISecretaire extends javax.swing.JPanel {
                                 .addComponent(jButton2)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelcodepostal)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabelville)
+                                .addGap(467, 467, 467)
+                                .addComponent(jLabelprenom)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabeltelephone))
+                                .addComponent(jLabelipp))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabeladresse)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelemail))
-                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabeltelephone)
+                                    .addComponent(jLabelemail)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(290, 290, 290)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGap(20, 20, 20)
                                         .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(sereviceRespo, javax.swing.GroupLayout.DEFAULT_SIZE, 240, Short.MAX_VALUE))
+                                    .addComponent(jLabeladresse, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabelannée, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelnom, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(jLabeljour)
+                                        .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabelmois)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabelannée)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 202, Short.MAX_VALUE)
+                                        .addComponent(ServiceGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(252, 252, 252)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabelnumsecu, javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabelchamnre))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelnom)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(128, 128, 128)
-                                        .addComponent(jLabelprenom)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelipp)))
+                                        .addComponent(jLabelchamnre)))))
                         .addGap(405, 405, 405)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -334,21 +288,17 @@ public class DPISecretaire extends javax.swing.JPanel {
                             .addComponent(jLabelipp))))
                 .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabeljour)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabelmois)
-                    .addComponent(jLabel3)
                     .addComponent(jLabelannée)
                     .addComponent(jLabelnumsecu))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabeladresse)
-                    .addComponent(jLabelemail))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelcodepostal)
-                    .addComponent(jLabelville)
-                    .addComponent(jLabeltelephone))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelemail)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabeltelephone))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(jLabeladresse)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(88, 88, 88)
@@ -362,41 +312,35 @@ public class DPISecretaire extends javax.swing.JPanel {
                         .addGap(62, 62, 62)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(sereviceRespo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel5)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(125, 125, 125)
+                            .addComponent(ServiceGeo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 132, Short.MAX_VALUE)
                         .addComponent(jButtonmodifier)
-                        .addGap(0, 133, Short.MAX_VALUE))))
+                        .addGap(132, 132, 132))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ServiceGeo;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonmodifier;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabeladresse;
     private javax.swing.JLabel jLabelannée;
     private javax.swing.JLabel jLabelchamnre;
-    private javax.swing.JLabel jLabelcodepostal;
     private javax.swing.JLabel jLabelemail;
     private javax.swing.JLabel jLabelipp;
-    private javax.swing.JLabel jLabeljour;
-    private javax.swing.JLabel jLabelmois;
     private javax.swing.JLabel jLabelnom;
     private javax.swing.JLabel jLabelnumsecu;
     private javax.swing.JLabel jLabelprenom;
     private javax.swing.JLabel jLabeltelephone;
-    private javax.swing.JLabel jLabelville;
+    private javax.swing.JLabel sereviceRespo;
     // End of variables declaration//GEN-END:variables
 }
