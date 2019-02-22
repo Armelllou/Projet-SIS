@@ -8,9 +8,8 @@ import NF.Sih;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.ConsultationIDE;
 import interfaces.ConsultationPH;
-import interfaces.DPIIDE;
-import interfaces.DPIPH;
 import interfaces.Fenetre;
+import interfaces.InfosMedicalesPH;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.SQLException;
@@ -22,54 +21,33 @@ import javax.swing.JTable;
  * @author stifinekawtar
  */
 
-public class TableauConsulterDPIPHetIDE implements MouseListener{
+public class TableauConsultationsInfosMedPH implements MouseListener{
     
     
-    ConsulterDPIPHetIDE cdpi;
-    DPIIDE cide;
-    DPIPH cph;
+    InfosMedicalesPH imph;
+    ConsultationPH cph;
     Fenetre fen;
     Sih sih;
     JTable table;
-    ListenerConnexion conn;
 
-    public TableauConsulterDPIPHetIDE(ConsulterDPIPHetIDE cdpi, DPIIDE cide, DPIPH cph, Fenetre fen, Sih sih, JTable table, ListenerConnexion conn) {
-        this.cdpi = cdpi;
-        this.cide = cide;
+    public TableauConsultationsInfosMedPH(InfosMedicalesPH imph, ConsultationPH cph, Fenetre fen, Sih sih, JTable table) {
+        this.imph=imph;
         this.cph=cph;
         this.fen = fen;
         this.sih = sih;
-        this.table = table;   
-        this.conn=conn;
+        this.table = table;  
     }
     
     @Override
     public void mouseClicked(MouseEvent e) {
              int NumLigne;
         NumLigne = table.getSelectedRow();
-        try {
-            if (conn.ConnexionPH()==true){
-                fen.PanelVisibleFalse();
+        
+        fen.PanelVisibleFalse();
                 fen.add(cph);
                 cph.setVisible(true);
                 fen.revalidate();
                 fen.repaint();
-            }
-            else{
-                if (conn.ConnexionIde()==true){
-                    fen.PanelVisibleFalse();
-                    fen.add(cide);
-                    cide.setVisible(true);
-                    fen.revalidate();
-                    fen.repaint();
-                    
-                }
-                
-                
-                
-            }   } catch (SQLException ex) {
-            Logger.getLogger(TableauConsulterDPIPHetIDE.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     @Override

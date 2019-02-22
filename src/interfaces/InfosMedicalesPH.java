@@ -12,6 +12,13 @@ package interfaces;
 public class InfosMedicalesPH extends javax.swing.JPanel {
 
     /**
+     * @return the jTable3
+     */
+    public javax.swing.JTable getjTable3() {
+        return jTable3;
+    }
+
+    /**
      * @return the jButton6
      */
     public javax.swing.JButton getjButton6() {
