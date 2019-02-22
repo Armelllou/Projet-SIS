@@ -5,6 +5,10 @@
  */
 package interfaces;
 
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.sql.*;
+
 /**
  *
  * @author Manon
@@ -93,6 +97,42 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                 "IPP", "Nom de Naissance", "Nom Usuel", "Prénom"
             }
         ));
+
+        /**Code qui retourne dans une JTable la liste des patients de la BD
+         *
+         */
+        Statement stmt;
+        String Sql45;
+        ResultSet rs;
+        Object[] InfoAllPatient = new Object[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+
+        try {
+            Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
+            stmt = conn1.createStatement();
+            Sql45 = "SELECT * FROM patient";
+            rs = stmt.executeQuery(Sql45);
+
+            while (rs.next()) {
+                InfoAllPatient[0] = rs.getString("NomDeNaissance");
+                InfoAllPatient[1] = rs.getString("NomUsuel");
+                InfoAllPatient[2] = rs.getString("Prénom");
+                InfoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(InfoAllPatient);
+            }
+            this.getjTable1().setModel(templatesTableModel);
+            this.getjTable1().setFont(new Font("Calibri", 0, 18));
+            System.out.println(this.getjTable1().getModel());
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        /**
+         */
+
+
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 

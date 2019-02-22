@@ -3,7 +3,6 @@ package Listener;
 import BD.ConnexionBD;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.Fenetre;
-
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
