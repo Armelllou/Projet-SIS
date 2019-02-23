@@ -41,8 +41,9 @@ public class TableauConsulterDPISecretaire implements MouseListener {
     }
 
     @Override
+    @SuppressWarnings("empty-statement")
     public void mouseClicked(MouseEvent me) {
-    
+
         try {
             int NumLigne;
             NumLigne = table.getSelectedRow();
@@ -54,6 +55,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             int ippS = Integer.parseInt(ipp);
 
             dpis.getjLabelnom().setText(nomDeNaissance);
+            dpis.getjLabelnom1().setText(nomUsuel);
             dpis.getjLabelprenom().setText(prenom);
             dpis.getjLabelipp().setText(ipp);
 
@@ -70,6 +72,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             while (Rs.next()) {
 
                 String DateDeNaissance = Rs.getString(5);
+                
                 String Sexe = Rs.getString(6);
                 String MedecinG = Rs.getString(7);
                 String Adresse = Rs.getString(8);
@@ -82,11 +85,11 @@ public class TableauConsulterDPISecretaire implements MouseListener {
                 dpis.getjLabelemail().setText(email);
                 dpis.getjLabeltelephone().setText(telephone);
                 dpis.getjLabelannée().setText(DateDeNaissance);
+                dpis.getSexe().setText(Sexe);
 
             }
-            
-            
-         String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
+
+            String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
             PreparedStatement ps2;
 
             ps2 = conn.getConnexion().prepareStatement(Sql2);
@@ -96,36 +99,30 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             ResultSetMetaData rsmd2 = Rs2.getMetaData();
             int columnsNumber2 = rsmd2.getColumnCount();
 
-            while (Rs2.next() ){
+            while (Rs2.next()) {
 
-                String ServiceGegraphique = Rs2.getString(1);
-//                String ServiceRespo = Rs.getString(2);
-//          
-             //   dpis.getSereviceRespo().setText(ServiceRespo);
+               String ServiceGegraphique = Rs2.getString(2);
+               String ServiceRespo = Rs2.getString(3);
+               String chambre = Rs2.getString(4);
+          
+                dpis.getSereviceRespo().setText(ServiceRespo);
                 dpis.getServiceGeo().setText(ServiceGegraphique);
 
-                dpis.getjLabelchamnre().setVisible(false);
-                dpis.getChambre().setVisible(false);
+                dpis.getjLabelchamnre().setText(chambre);
+               
                 fen.PanelVisibleFalse();
                 fen.add(dpis);
                 dpis.setVisible(true);
                 fen.revalidate();
-     
-        }
-            
-            
-            
-            
-                    fen.repaint();
-        } catch (SQLException ex) {
-            Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
-        }   
-
 
             }
 
-        
-    
+            fen.repaint();
+        } catch (SQLException ex) {
+            Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
 
     @Override
     public void mousePressed(MouseEvent me) {

@@ -28,7 +28,7 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
             String ipp = cdpis.getjTextField1().getText();
             String Sql1 = "Select * FROM patient WHERE IPP ='" + ipp + "'";
 
-            Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
+            Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd2" + "?serverTimezone=UTC", "armelle", "armelle");
             Statement stmt = null;
             stmt = conn1.createStatement();
             ResultSet rs = stmt.executeQuery(Sql1);
