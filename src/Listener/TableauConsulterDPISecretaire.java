@@ -42,6 +42,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent me) {
+    
         try {
             int NumLigne;
             NumLigne = table.getSelectedRow();
@@ -49,13 +50,12 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             String nomDeNaissance = (String) table.getModel().getValueAt(NumLigne, 0);
             String nomUsuel = (String) table.getModel().getValueAt(NumLigne, 1);
             String prenom = (String) table.getModel().getValueAt(NumLigne, 2);
-            String ipp = (String )table.getModel().getValueAt(NumLigne, 3);
+            String ipp = (String) table.getModel().getValueAt(NumLigne, 3);
             int ippS = Integer.parseInt(ipp);
 
             dpis.getjLabelnom().setText(nomDeNaissance);
             dpis.getjLabelprenom().setText(prenom);
             dpis.getjLabelipp().setText(ipp);
-           
 
             String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
             ConnexionBD conn = new ConnexionBD();
@@ -82,47 +82,50 @@ public class TableauConsulterDPISecretaire implements MouseListener {
                 dpis.getjLabelemail().setText(email);
                 dpis.getjLabeltelephone().setText(telephone);
                 dpis.getjLabelannée().setText(DateDeNaissance);
-                
 
-//           String Sql2 = "Select * from Patient WHERE IPP ='" + ipp + "'" Natural Join localisations 
+            }
+            
+            
+         String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
+            PreparedStatement ps2;
+
+            ps2 = conn.getConnexion().prepareStatement(Sql2);
+
+            ResultSet Rs2 = ps2.executeQuery();;
+
+            ResultSetMetaData rsmd2 = Rs2.getMetaData();
+            int columnsNumber2 = rsmd2.getColumnCount();
+
+            while (Rs2.next() ){
+
+                String ServiceGegraphique = Rs2.getString(1);
+//                String ServiceRespo = Rs.getString(2);
 //          
-//            PreparedStatement ps2;
-//
-//            ps2 = conn.getConnexion().prepareStatement(Sql2);
-//
-//            ResultSet Rs2 = ps2.executeQuery();;
-//
-//            ResultSetMetaData rsmd2 = Rs2.getMetaData();
-//            int columnsNumber2 = rsmd2.getColumnCount();
-//            while (Rs.next()) {
-//
-//                String ServiceGegraphique = Rs2.getString(2);
-//                String ServiceRespo= Rs.getString(3);
-//          
-              dpis.getSereviceRespo().setText(Adresse);
-              dpis.getServiceGeo().setText(NumSS);
-//                dpis.getjLabelemail().setText(email);
-//                dpis.getjLabeltelephone().setText(telephone);
-//                dpis.getjLabelannée().setText(DateDeNaissance);
-                
-                
-                
-                
-                
+             //   dpis.getSereviceRespo().setText(ServiceRespo);
+                dpis.getServiceGeo().setText(ServiceGegraphique);
+
                 dpis.getjLabelchamnre().setVisible(false);
                 dpis.getChambre().setVisible(false);
                 fen.PanelVisibleFalse();
                 fen.add(dpis);
                 dpis.setVisible(true);
                 fen.revalidate();
-                fen.repaint();
+     
+        }
+            
+            
+            
+            
+                    fen.repaint();
+        } catch (SQLException ex) {
+            Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
+        }   
+
 
             }
 
-        } catch (SQLException ex) {
-            Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
+        
+    
 
     @Override
     public void mousePressed(MouseEvent me) {

@@ -25,6 +25,8 @@ public class IppCounter {
         }
 
         // incrémente le chiffre à la création de chaque nombre de patient
+        
+        // if (ippCounter !=0){
         ConnexionBD conn = new ConnexionBD();
         String Sql1 = "Select max(IPP) from patient";
         PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
@@ -42,7 +44,7 @@ public class IppCounter {
                 //System.out.print(columnInteressant);
                 int ipp = Integer.parseInt(columnInteressant);
                 ippCounter = ipp;
-            }
+            }//}
 
         }
         ippCounter += 1;

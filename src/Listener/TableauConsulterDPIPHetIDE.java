@@ -50,6 +50,8 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
         
     }
 
+  
+
     @Override
     public void mouseClicked(MouseEvent e) {
 

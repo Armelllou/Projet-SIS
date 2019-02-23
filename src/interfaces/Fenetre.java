@@ -112,8 +112,10 @@ public class Fenetre extends JFrame {
         //state = State.NONCO;
         add(connexion);
         this.setSize(1700, 830);
+        
+        ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this);
 
-        valider.addActionListener(new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this));
+        valider.addActionListener(l);
         connexion.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this));
 
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
@@ -159,9 +161,9 @@ public class Fenetre extends JFrame {
 
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
 
-//        tableauPHetIDE.addMouseListener(new TableauConsulterDPIPHetIDE (infosmedph, infosmedide, consultdpiphide,this,consultdpiphide.getjTable1(),));
+        tableauPHetIDE.addMouseListener(new TableauConsulterDPIPHetIDE (infosmedph, infosmedide, consultdpiphide,this,consultdpiphide.getjTable1(),l));
 
-        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE(consultdpiphide, dpiide, dpiph, this, sih, consultdpiphide.getjTable1(), conn));
+     
         tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph,consultationPH,this,sih,infosmedph.getjTable3()));
         
 
