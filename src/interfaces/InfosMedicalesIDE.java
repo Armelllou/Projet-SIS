@@ -12,6 +12,13 @@ package interfaces;
 public class InfosMedicalesIDE extends javax.swing.JPanel {
 
     /**
+     * @return the jTable3
+     */
+    public javax.swing.JTable getjTable3() {
+        return jTable3;
+    }
+
+    /**
      * @return the jButton5
      */
     
