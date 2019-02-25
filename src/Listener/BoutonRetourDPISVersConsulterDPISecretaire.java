@@ -5,12 +5,19 @@
  */
 package Listener;
 
+import BD.ConnexionBD;
 import NF.Sih;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
 import interfaces.Fenetre;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -31,6 +38,42 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
     }
 
     public void actionPerformed(ActionEvent ae) {
+        
+        Statement stmt;
+        String Sql45;
+        ResultSet rs;
+        Object[] InfoAllPatient = new Object[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+
+        try {
+            ConnexionBD conn = new ConnexionBD();
+            
+            
+            Sql45 = "SELECT * FROM patient";
+            PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
+          ResultSet Rs = ps.executeQuery();;
+            rs = ps.executeQuery(Sql45);
+
+            while (rs.next()) {
+                InfoAllPatient[0] = rs.getString("NomDeNaissance");
+                InfoAllPatient[1] = rs.getString("NomUsuel");
+                InfoAllPatient[2] = rs.getString("Prénom");
+                InfoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(InfoAllPatient);
+            }
+            
+            cdpis.getjTable1().setModel(templatesTableModel);
+            cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
+            System.out.println(cdpis.getjTable1().getModel());
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        
+        
+        
         jframe.PanelVisibleFalse();
         jframe.add(cdpis);
         cdpis.setVisible(true);

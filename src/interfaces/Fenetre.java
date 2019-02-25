@@ -101,6 +101,7 @@ public class Fenetre extends JFrame {
     private JButton retourPrescriPHVersInfMedPH = prescriptionph.getjButton4();
     private JButton annulerprestafaite = prestafaite.getjButton1();
     private JButton annulertransfert = transfert.getjButton2();
+    private JButton validermodifdpi = modifdpi.getjButton1();
     
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
@@ -166,6 +167,8 @@ public class Fenetre extends JFrame {
         retourPrescriPHVersInfMedPH.addActionListener(new BoutonRetourPrescriptionPHVersInfosMedPH(this, prescriptionph, infosmedph, sih));
         annulerprestafaite.addActionListener(new BoutonAnnulerPrestaFaite(prestafaite, prestations, this));
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
+        validermodifdpi.addActionListener (new BoutonValiderModificationDPI(this, dpis, modifdpi, sih));
+        
         
         //tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
