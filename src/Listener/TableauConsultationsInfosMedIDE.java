@@ -17,10 +17,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
-/**
- *
- * @author stifinekawtar
- */
+
 
 public class TableauConsultationsInfosMedIDE implements MouseListener{
     

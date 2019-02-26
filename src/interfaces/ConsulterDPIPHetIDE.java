@@ -103,7 +103,6 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         ));
 
         /**Code qui retourne dans une JTable la liste des patients de la BD
-         *
          */
         Statement stmt;
         String Sql45;
@@ -114,12 +113,11 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         templatesTableModel.setColumnIdentifiers(title);
 
         try {
+
+            System.out.println("AAA"+ bdh.getService().getText());
             Sql45 = "SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service ";
             ConnexionBD conn = new ConnexionBD();
             PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
-            BarreDuHaut bdh = new BarreDuHaut();
-            System.out.println("AAA"+bdh.getService());
-            ResultSet Rs = ps.executeQuery();
             rs = ps.executeQuery(Sql45);
 
             while (rs.next()) {
@@ -138,7 +136,6 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         }
         /**
          */
-
 
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
