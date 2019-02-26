@@ -32,12 +32,12 @@ public class Localisation {
 
     public boolean AjouterSurBdLocalisation(Localisation l) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO localisations (IPP, ServiceResponsable,ServiceGeographique) VALUES(?,?,?) ";
+        String sql = " INSERT INTO localisations (IPP, ServiceResponsable,ServiceGeographique,lit) VALUES(?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         statement.setObject(1, l.getP().getIpp(), Types.VARCHAR);
         statement.setObject(2, l.getServiceResponsbale(), Types.VARCHAR);
         statement.setObject(3, l.getServiceGeographique(), Types.VARCHAR);
-       
+        statement.setObject(4, 0, Types.VARCHAR);
 
         statement.executeUpdate();
         j = true;

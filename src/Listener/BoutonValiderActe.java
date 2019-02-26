@@ -14,6 +14,7 @@ import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.CreationDPI;
 import interfaces.Fenetre;
+import interfaces.InfosMedicalesIDE;
 import interfaces.InfosMedicalesPH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,10 +30,10 @@ import javax.swing.JOptionPane;
 public class BoutonValiderActe implements ActionListener {
     BarreDuHaut bh;
     Fenetre fen;
-    InfosMedicalesPH im;
+    InfosMedicalesIDE im;
     AjouterActeInfirmier aai;
 
-    public BoutonValiderActe(BarreDuHaut bh,InfosMedicalesPH im, Fenetre jframe, AjouterActeInfirmier aai) {
+    public BoutonValiderActe(BarreDuHaut bh,InfosMedicalesIDE im, Fenetre jframe, AjouterActeInfirmier aai) {
         this.fen = jframe;
         this.im = im;
         this.bh = bh;

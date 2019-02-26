@@ -50,10 +50,7 @@
                       <EmptySpace min="-2" pref="339" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabelcodepostal" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabelville" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="jLabeltelephone" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
@@ -62,17 +59,17 @@
                               <Component id="jLabelemail" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jComboBox2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ServiceGeo" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="ServiceRespo" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabeljour" min="-2" max="-2" attributes="0"/>
@@ -86,7 +83,7 @@
                                       <Component id="jLabelannée" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <EmptySpace pref="202" max="32767" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabelnumsecu" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
@@ -97,14 +94,12 @@
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabelnom" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
-                                      <Component id="jLabelprenom" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jLabelnom" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="jLabelnom1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="137" max="32767" attributes="0"/>
+                              <Component id="jLabelprenom" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="180" max="-2" attributes="0"/>
                               <Component id="jLabelipp" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -142,6 +137,7 @@
                           <Component id="jLabelnom" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelprenom" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabelipp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelnom1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -160,11 +156,7 @@
                   <Component id="jLabelemail" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jLabelcodepostal" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelville" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabeltelephone" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="jLabeltelephone" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
@@ -177,16 +169,16 @@
                       <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ServiceRespo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jComboBox2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ServiceGeo" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="77" max="32767" attributes="0"/>
+              <EmptySpace pref="75" max="32767" attributes="0"/>
               <Component id="jButtoninfomed" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jButton3" min="-2" max="-2" attributes="0"/>
@@ -292,22 +284,6 @@
         <Property name="text" type="java.lang.String" value="4 rue de la libert&#xe9;"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabelcodepostal">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="30" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="38000"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabelville">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="30" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="GRENOBLE"/>
-      </Properties>
-    </Component>
     <Component class="javax.swing.JLabel" name="jLabelemail">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -364,68 +340,36 @@
         <Property name="text" type="java.lang.String" value="XXX"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox1">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="24" style="0"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="14">
-            <StringItem index="0" value="Anapathologie"/>
-            <StringItem index="1" value="Anesth&#xe9;sie"/>
-            <StringItem index="2" value="Cardiologie"/>
-            <StringItem index="3" value="Chirurgie"/>
-            <StringItem index="4" value="Dermatologie"/>
-            <StringItem index="5" value="Gyn&#xe9;cologie"/>
-            <StringItem index="6" value="H&#xe9;matologie"/>
-            <StringItem index="7" value="Laboratoire"/>
-            <StringItem index="8" value="M&#xe9;decine"/>
-            <StringItem index="9" value="Obst&#xe9;trique"/>
-            <StringItem index="10" value="Psychiatrie"/>
-            <StringItem index="11" value="Radiologie"/>
-            <StringItem index="12" value="Simple consultation"/>
-            <StringItem index="13" value="Urologie"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JComboBox" name="jComboBox2">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="24" style="0"/>
-        </Property>
-        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="14">
-            <StringItem index="0" value="Anapathologie"/>
-            <StringItem index="1" value="Anesth&#xe9;sie"/>
-            <StringItem index="2" value="Cardiologie"/>
-            <StringItem index="3" value="Chirurgie"/>
-            <StringItem index="4" value="Dermatologie"/>
-            <StringItem index="5" value="Gyn&#xe9;cologie"/>
-            <StringItem index="6" value="H&#xe9;matologie"/>
-            <StringItem index="7" value="Laboratoire"/>
-            <StringItem index="8" value="M&#xe9;decine"/>
-            <StringItem index="9" value="Obst&#xe9;trique"/>
-            <StringItem index="10" value="Psychiatrie"/>
-            <StringItem index="11" value="Radiologie"/>
-            <StringItem index="12" value="Simple Consultation"/>
-            <StringItem index="13" value="Urologie"/>
-          </StringArray>
-        </Property>
-      </Properties>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-      </AuxValues>
-    </Component>
     <Component class="javax.swing.JButton" name="jButton3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Transfert de service"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabelnom1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="40" style="1"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="NOM"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ServiceRespo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="30" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="4 rue de la libert&#xe9;"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="ServiceGeo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Calibri" size="30" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="4 rue de la libert&#xe9;"/>
       </Properties>
     </Component>
   </SubComponents>

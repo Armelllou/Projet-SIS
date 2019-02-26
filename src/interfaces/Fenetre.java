@@ -20,6 +20,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTable;
 import Listener.ListenerConnexion;
+import NF.Acte;
 
 
 public class Fenetre extends JFrame {
@@ -102,6 +103,7 @@ public class Fenetre extends JFrame {
     private JButton annulerprestafaite = prestafaite.getjButton1();
     private JButton annulertransfert = transfert.getjButton2();
     private JButton validermodifdpi = modifdpi.getjButton1();
+    private JButton validerActe = ajouterai.getjButton2();
     
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
@@ -168,11 +170,12 @@ public class Fenetre extends JFrame {
         annulerprestafaite.addActionListener(new BoutonAnnulerPrestaFaite(prestafaite, prestations, this));
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
         validermodifdpi.addActionListener (new BoutonValiderModificationDPI(this, dpis, modifdpi, sih));
+        validerActe.addActionListener(new BoutonValiderActe(barreduhaut,infosmedide, this,ajouterai));
         
         
         //tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
-        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE (infosmedph, infosmedide, consultdpiphide,this,consultdpiphide.getjTable1(),l));     
+        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE (dpiph, dpiide, consultdpiphide,this,consultdpiphide.getjTable1(),l));     
         tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph,consultationPH,this,sih,infosmedph.getjTable3()));
         tableauconsultinfmedide.addMouseListener(new TableauConsultationsInfosMedIDE(infosmedide,consultationide,this,sih,infosmedide.getjTable3()));
         tableauacteinfirmierinfmedph.addMouseListener(new TableauActesInfirmiersInfosMedPH(infosmedph,acteinfirmierPH,this,sih,infosmedph.getjTable2()));
