@@ -10,7 +10,8 @@ import java.awt.*;
 import java.sql.SQLException;
 
 public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
-    BarreDuHaut bdh;
+
+    private String service;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -25,6 +26,10 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
      */
     public ConsulterDPIPHetIDE() throws SQLException {
         initComponents();
+    }
+
+    public void setService(String service) {
+        this.service = service;
     }
 
     /**
@@ -103,7 +108,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                 }
         ));
 
-        this.getjTable1().setModel(MethodeBD.listePatientJTableService()); // rempli la JTable avec les patients de la BD
+        this.getjTable1().setModel(MethodeBD.listePatientJTableService("Cardiologie")); // rempli la JTable avec les patients de la BD
         this.getjTable1().setFont(new Font("Calibri", 0, 18));
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);

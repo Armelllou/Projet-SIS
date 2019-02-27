@@ -13,7 +13,7 @@ import javax.swing.*;
 public class BarreDuHaut extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Nom;
+    private javax.swing.JLabel nom;
     private javax.swing.JLabel id;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -47,7 +47,7 @@ public class BarreDuHaut extends javax.swing.JPanel {
     }
 
     public JLabel getNom() {
-        return Nom;
+        return nom;
     }
 
     public JLabel getPrenom() {
@@ -81,7 +81,7 @@ public class BarreDuHaut extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        Nom = new javax.swing.JLabel();
+        nom = new javax.swing.JLabel();
         prenom = new javax.swing.JLabel();
         id = new javax.swing.JLabel();
         mdp = new javax.swing.JLabel();
@@ -115,9 +115,9 @@ public class BarreDuHaut extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 51, 0));
         jLabel4.setText("CHU Princeton Plainsboro");
 
-        Nom.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        Nom.setForeground(new java.awt.Color(255, 255, 255));
-        Nom.setText("Nom");
+        nom.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        nom.setForeground(new java.awt.Color(255, 255, 255));
+        nom.setText("nom");
 
         prenom.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         prenom.setForeground(new java.awt.Color(255, 255, 255));
@@ -135,7 +135,7 @@ public class BarreDuHaut extends javax.swing.JPanel {
                                 .addContainerGap()
                                 .addComponent(jLabel1)
                                 .addGap(23, 23, 23)
-                                .addComponent(Nom)
+                                .addComponent(nom)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(prenom)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -168,7 +168,7 @@ public class BarreDuHaut extends javax.swing.JPanel {
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                 .addComponent(service, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addComponent(id)
                                                 .addComponent(mdp)))
                                 .addContainerGap())

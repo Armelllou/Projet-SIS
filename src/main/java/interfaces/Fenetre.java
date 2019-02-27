@@ -31,14 +31,13 @@ public class Fenetre extends JFrame {
 
     // Déclaration de tous les JPanel
     Connexion connexion = new Connexion();
-    MethodeBD methodeBD = new MethodeBD(ConnexionBD.getInstance());
     CreationDPI creationdpi = new CreationDPI();
     ConsulterDPISecretaire consultdpis = new ConsulterDPISecretaire();
     ActeInfirmierPH acteinfirmierPH = new ActeInfirmierPH();
     AjouterActeInfirmier ajouterai = new AjouterActeInfirmier();
     AjouterConsultation ajouterconsult = new AjouterConsultation();
     ConsultationPH consultationPH = new ConsultationPH();
-    ConsulterDPIPHetIDE consultdpiphide = new ConsulterDPIPHetIDE();
+    ConsulterDPIPHetIDE consultdpiphide;
     DPISecretaire dpis = new DPISecretaire();
     DPIIDE dpiide = new DPIIDE();
     InfosMedicalesPH infosmedph = new InfosMedicalesPH();
@@ -68,7 +67,6 @@ public class Fenetre extends JFrame {
     private JButton deconnexion = barreduhaut.getjButton1();
     private JButton validerDMA = creationdpi.getjButton1();
     private JButton recherchePatient = consultdpis.getjButton1();
-    private JButton getRecherchePatient2 = consultdpiphide.getjButton1();
     private JButton retourDPISVersAS = consultdpis.getjButton2();
     private JButton annulercreationDPI = creationdpi.getjButton2();
     private JButton retourDPIVersConsulterDPISecretaire = dpis.getjButton2();
@@ -112,7 +110,6 @@ public class Fenetre extends JFrame {
 
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
-    private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
     private JTable tableauconsultinfmedph = infosmedph.getjTable3();
     private JTable tableauconsultinfmedide = infosmedide.getjTable3();
     private JTable tableauacteinfirmierinfmedph = infosmedph.getjTable2();
@@ -127,16 +124,18 @@ public class Fenetre extends JFrame {
         add(connexion);
 
 
+        consultdpiphide = new ConsulterDPIPHetIDE();
 
         ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this);
-
         //connexion
+        consultdpiphide.setService(l.getBDHService());
         valider.addActionListener(l);
         connexion.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this));
 
         //boutons
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
         validerDMA.addActionListener(new BoutonValiderDMA(consultdpis, this, creationdpi));
+        JButton getRecherchePatient2 = consultdpiphide.getjButton1();
         getRecherchePatient2.addActionListener(new BoutonRecherchePatientPhEtIde(this, consultdpiphide));
         recherchePatient.addActionListener(new BoutonRecherchePatient(this, consultdpis));
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, barreduhaut));
@@ -181,6 +180,7 @@ public class Fenetre extends JFrame {
 
         //tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
+        JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
         tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE(dpiph, dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
         tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph, consultationPH, this, sih, infosmedph.getjTable3()));
         tableauconsultinfmedide.addMouseListener(new TableauConsultationsInfosMedIDE(infosmedide, consultationide, this, sih, infosmedide.getjTable3()));
