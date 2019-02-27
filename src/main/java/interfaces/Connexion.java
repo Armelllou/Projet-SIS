@@ -20,7 +20,7 @@ import java.sql.ResultSet;
 public class Connexion extends javax.swing.JPanel implements ActionListener {
     // rapport avec la base de donnée
     ConnexionBD conn = null;
-    ResultSet Rs = null;
+    ResultSet rs = null;
     PreparedStatement ps = null;
 
     // connexion des main.java.interfaces

@@ -13,12 +13,12 @@ import javax.swing.*;
 public class DPIPH extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ServiceGeo;
+    private javax.swing.JLabel serviceGeo;
 
     /**
      * @return the jButton1
      */
-    private javax.swing.JLabel ServiceRespo;
+    private javax.swing.JLabel serviceRespo;
     private javax.swing.JButton jButton2;
 
     /**
@@ -158,11 +158,11 @@ public class DPIPH extends javax.swing.JPanel {
     }
 
     public JLabel getServiceGeo() {
-        return ServiceGeo;
+        return serviceGeo;
     }
 
     public JLabel getServiceRespo() {
-        return ServiceRespo;
+        return serviceRespo;
     }
 
     /**
@@ -195,8 +195,8 @@ public class DPIPH extends javax.swing.JPanel {
         jLabelchamnre = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabelnom1 = new javax.swing.JLabel();
-        ServiceRespo = new javax.swing.JLabel();
-        ServiceGeo = new javax.swing.JLabel();
+        serviceRespo = new javax.swing.JLabel();
+        serviceGeo = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -263,11 +263,11 @@ public class DPIPH extends javax.swing.JPanel {
         jLabelnom1.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
         jLabelnom1.setText("NOM");
 
-        ServiceRespo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        ServiceRespo.setText("4 rue de la liberté");
+        serviceRespo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        serviceRespo.setText("4 rue de la liberté");
 
-        ServiceGeo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        ServiceGeo.setText("4 rue de la liberté");
+        serviceGeo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        serviceGeo.setText("4 rue de la liberté");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -299,12 +299,12 @@ public class DPIPH extends javax.swing.JPanel {
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel5)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(ServiceGeo))
+                                                                                .addComponent(serviceGeo))
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addGap(20, 20, 20)
                                                                                 .addComponent(jLabel4)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(ServiceRespo))
+                                                                                .addComponent(serviceRespo))
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabeljour)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -380,11 +380,11 @@ public class DPIPH extends javax.swing.JPanel {
                                                 .addGap(62, 62, 62)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel4)
-                                                        .addComponent(ServiceRespo))
+                                                        .addComponent(serviceRespo))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel5)
-                                                        .addComponent(ServiceGeo))))
+                                                        .addComponent(serviceGeo))))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                                 .addComponent(jButtoninfomed)
                                 .addGap(18, 18, 18)

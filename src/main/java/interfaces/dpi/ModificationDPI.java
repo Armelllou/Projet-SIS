@@ -7,16 +7,13 @@ package main.java.interfaces.dpi;
 
 import javax.swing.*;
 
-/**
- * @author Manon
- */
 public class ModificationDPI extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Adresse;
-    private javax.swing.JTextField DateDeNaissance;
-    private javax.swing.JTextField NomUsuel;
-    private javax.swing.JComboBox<String> Sexe;
+    private javax.swing.JTextField dateDeNaissance;
+    private javax.swing.JTextField nomUsuel;
+    private javax.swing.JComboBox<String> sexe;
 
     /**
      * @return the jRadioButton1
@@ -139,14 +136,14 @@ public class ModificationDPI extends javax.swing.JPanel {
      * @return the jTextField7
      */
     public javax.swing.JTextField getjTextField7() {
-        return NomUsuel;
+        return nomUsuel;
     }
 
     /**
      * @return the jTextField8
      */
     public javax.swing.JTextField getjTextField8() {
-        return DateDeNaissance;
+        return dateDeNaissance;
     }
 
     public JTextField getAdresse() {
@@ -154,11 +151,11 @@ public class ModificationDPI extends javax.swing.JPanel {
     }
 
     public JTextField getDateDeNaissance() {
-        return DateDeNaissance;
+        return dateDeNaissance;
     }
 
     public JTextField getNomUsuel() {
-        return NomUsuel;
+        return nomUsuel;
     }
 
     public JTextField getChambre() {
@@ -194,7 +191,7 @@ public class ModificationDPI extends javax.swing.JPanel {
     }
 
     public JComboBox<String> getSexe() {
-        return Sexe;
+        return sexe;
     }
 
     public JLabel getjLabel3() {
@@ -221,8 +218,8 @@ public class ModificationDPI extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         numSS = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        NomUsuel = new javax.swing.JTextField();
-        DateDeNaissance = new javax.swing.JTextField();
+        nomUsuel = new javax.swing.JTextField();
+        dateDeNaissance = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -237,7 +234,7 @@ public class ModificationDPI extends javax.swing.JPanel {
         jLabel16 = new javax.swing.JLabel();
         nomDenaissance = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
-        Sexe = new javax.swing.JComboBox<>();
+        sexe = new javax.swing.JComboBox<>();
         jRadioButton2 = new javax.swing.JRadioButton();
         jRadioButton3 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
@@ -291,15 +288,15 @@ public class ModificationDPI extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel8.setText("Adresse :");
 
-        NomUsuel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        NomUsuel.addActionListener(new java.awt.event.ActionListener() {
+        nomUsuel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        nomUsuel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomUsuelActionPerformed(evt);
             }
         });
 
-        DateDeNaissance.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        DateDeNaissance.addActionListener(new java.awt.event.ActionListener() {
+        dateDeNaissance.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        dateDeNaissance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 DateDeNaissanceActionPerformed(evt);
             }
@@ -359,8 +356,8 @@ public class ModificationDPI extends javax.swing.JPanel {
         jLabel17.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel17.setText("Genre :");
 
-        Sexe.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        Sexe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Féminin", "Masculin", "Autre"}));
+        sexe.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        sexe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Féminin", "Masculin", "Autre"}));
 
         jRadioButton2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jRadioButton2.setText("Hospitalisation");
@@ -404,11 +401,11 @@ public class ModificationDPI extends javax.swing.JPanel {
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel16)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(NomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(nomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel7)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(DateDeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(dateDeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addGap(43, 43, 43)))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -417,7 +414,7 @@ public class ModificationDPI extends javax.swing.JPanel {
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addComponent(numSS, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(Sexe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                        .addComponent(sexe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                                 .addGap(121, 121, 121))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(Adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 1245, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -490,15 +487,15 @@ public class ModificationDPI extends javax.swing.JPanel {
                                                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                 .addGap(38, 38, 38)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(NomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(nomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel16)
                                         .addComponent(jLabel2)
                                         .addComponent(numSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(Sexe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(sexe, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel17)
-                                        .addComponent(DateDeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(dateDeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel7))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

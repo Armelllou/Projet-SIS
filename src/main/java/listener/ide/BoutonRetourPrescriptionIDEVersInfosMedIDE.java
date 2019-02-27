@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package main.java.listener.ide;
 
 import main.java.interfaces.Fenetre;
-import main.java.interfaces.ide.ActeInfirmierIDE;
 import main.java.interfaces.ide.InfosMedicalesIDE;
+import main.java.interfaces.ide.PrescriptionIDE;
 import main.java.nf.Sih;
 
 import java.awt.event.ActionEvent;
@@ -16,16 +16,16 @@ import java.awt.event.ActionListener;
 /**
  * @author Manon
  */
-public class BoutonRetourActeInfirmierIDEVersInfosMedicalesIDE implements ActionListener {
+public class BoutonRetourPrescriptionIDEVersInfosMedIDE implements ActionListener {
 
-    ActeInfirmierIDE ai;
+    PrescriptionIDE c;
     InfosMedicalesIDE im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourActeInfirmierIDEVersInfosMedicalesIDE(Fenetre jframe, InfosMedicalesIDE im, ActeInfirmierIDE ai, Sih sih) {
+    public BoutonRetourPrescriptionIDEVersInfosMedIDE(Fenetre jframe, PrescriptionIDE c, InfosMedicalesIDE im, Sih sih) {
         this.jframe = jframe;
-        this.ai = ai;
+        this.c = c;
         this.im = im;
         this.sih = sih;
     }

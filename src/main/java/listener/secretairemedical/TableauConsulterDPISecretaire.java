@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package main.java.listener.secretairemedical;
 
 import main.java.bd.ConnexionBD;
 import main.java.interfaces.Fenetre;

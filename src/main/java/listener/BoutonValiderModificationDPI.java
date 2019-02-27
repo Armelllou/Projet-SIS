@@ -9,6 +9,7 @@ import main.java.bd.ConnexionBD;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.dpi.ModificationDPI;
 import main.java.interfaces.secretaire.DPISecretaire;
+import main.java.listener.secretairemedical.TableauConsulterDPISecretaire;
 import main.java.nf.Sih;
 
 import javax.swing.*;

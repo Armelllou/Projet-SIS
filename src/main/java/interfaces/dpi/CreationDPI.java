@@ -14,12 +14,12 @@ public class CreationDPI extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Adresse;
-    private javax.swing.JTextField CodePostal;
-    private javax.swing.JTextField NomUsuel;
-    private javax.swing.JTextField NomdeNaissance;
-    private javax.swing.JTextField PRENOM;
-    private javax.swing.JComboBox<String> ServiceGeo;
-    private javax.swing.JComboBox<String> ServiceRespo;
+    private javax.swing.JTextField codePostal;
+    private javax.swing.JTextField nomUsuel;
+    private javax.swing.JTextField nomDeNaissance;
+    private javax.swing.JTextField prenom;
+    private javax.swing.JComboBox<String> serviceGeo;
+    private javax.swing.JComboBox<String> serviceRespo;
     private javax.swing.JTextField Ville;
     private javax.swing.JTextField annee;
     private javax.swing.JTextField email;
@@ -55,7 +55,7 @@ public class CreationDPI extends javax.swing.JPanel {
     }
 
     public JTextField getNomdeNaissance() {
-        return NomdeNaissance;
+        return nomDeNaissance;
     }
 
     public JTextField getEmail() {
@@ -71,11 +71,11 @@ public class CreationDPI extends javax.swing.JPanel {
     }
 
     public JComboBox<String> getServiceGeo() {
-        return ServiceGeo;
+        return serviceGeo;
     }
 
     public JComboBox<String> getServiceRespo() {
-        return ServiceRespo;
+        return serviceRespo;
     }
 
     /**
@@ -124,7 +124,7 @@ public class CreationDPI extends javax.swing.JPanel {
      * @return the jTextField3
      */
     public javax.swing.JTextField getPrenom() {
-        return PRENOM;
+        return prenom;
     }
 
     /**
@@ -152,7 +152,7 @@ public class CreationDPI extends javax.swing.JPanel {
      * @return the jTextField7
      */
     public javax.swing.JTextField getNom() {
-        return NomUsuel;
+        return nomUsuel;
     }
 
     /**
@@ -166,7 +166,7 @@ public class CreationDPI extends javax.swing.JPanel {
      * @return the jTextField9
      */
     public javax.swing.JTextField getCodePostal() {
-        return CodePostal;
+        return codePostal;
     }
 
     /**
@@ -184,7 +184,7 @@ public class CreationDPI extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         Adresse = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        PRENOM = new javax.swing.JTextField();
+        prenom = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jour = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -192,11 +192,11 @@ public class CreationDPI extends javax.swing.JPanel {
         jLabel7 = new javax.swing.JLabel();
         numSS = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        NomUsuel = new javax.swing.JTextField();
+        nomUsuel = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         annee = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
-        CodePostal = new javax.swing.JTextField();
+        codePostal = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         email = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
@@ -204,11 +204,11 @@ public class CreationDPI extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        NomdeNaissance = new javax.swing.JTextField();
+        nomDeNaissance = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         genre = new javax.swing.JComboBox<>();
-        ServiceGeo = new javax.swing.JComboBox<>();
-        ServiceRespo = new javax.swing.JComboBox<>();
+        serviceGeo = new javax.swing.JComboBox<>();
+        serviceRespo = new javax.swing.JComboBox<>();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
 
@@ -240,8 +240,8 @@ public class CreationDPI extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel4.setText("Genre :");
 
-        PRENOM.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        PRENOM.addActionListener(new java.awt.event.ActionListener() {
+        prenom.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        prenom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PRENOMActionPerformed(evt);
             }
@@ -280,8 +280,8 @@ public class CreationDPI extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel8.setText("Adresse :");
 
-        NomUsuel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        NomUsuel.addActionListener(new java.awt.event.ActionListener() {
+        nomUsuel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        nomUsuel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomUsuelActionPerformed(evt);
             }
@@ -300,8 +300,8 @@ public class CreationDPI extends javax.swing.JPanel {
         jLabel10.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel10.setText("Email :");
 
-        CodePostal.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        CodePostal.addActionListener(new java.awt.event.ActionListener() {
+        codePostal.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        codePostal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CodePostalActionPerformed(evt);
             }
@@ -341,8 +341,8 @@ public class CreationDPI extends javax.swing.JPanel {
         jLabel13.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel13.setText("Nom usuel :");
 
-        NomdeNaissance.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        NomdeNaissance.addActionListener(new java.awt.event.ActionListener() {
+        nomDeNaissance.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        nomDeNaissance.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NomdeNaissanceActionPerformed(evt);
             }
@@ -354,11 +354,11 @@ public class CreationDPI extends javax.swing.JPanel {
         genre.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Féminin", "Masculin", "Autre"}));
 
-        ServiceGeo.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        ServiceGeo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple sejour", "Urologie"}));
+        serviceGeo.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        serviceGeo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple sejour", "Urologie"}));
 
-        ServiceRespo.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        ServiceRespo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple sejour", "Urologie"}));
+        serviceRespo.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        serviceRespo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple sejour", "Urologie"}));
 
         jLabel15.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel15.setText("Service responsable :");
@@ -380,7 +380,7 @@ public class CreationDPI extends javax.swing.JPanel {
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel13)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                .addComponent(NomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                .addComponent(nomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                                 .addComponent(jLabel2))
                                                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -391,7 +391,7 @@ public class CreationDPI extends javax.swing.JPanel {
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                         .addComponent(numSS, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                        .addComponent(PRENOM, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addComponent(genre, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addComponent(jLabel8)
@@ -405,7 +405,7 @@ public class CreationDPI extends javax.swing.JPanel {
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel11)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                .addComponent(CodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(codePostal, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                                                         .addGroup(layout.createSequentialGroup()
@@ -419,15 +419,15 @@ public class CreationDPI extends javax.swing.JPanel {
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                                         .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(ServiceGeo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                                        .addComponent(ServiceRespo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                                                        .addComponent(serviceGeo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                                        .addComponent(serviceRespo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                                                 .addGap(229, 229, 229))
                                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel5)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                .addComponent(NomdeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                .addComponent(nomDeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                         .addGroup(layout.createSequentialGroup()
                                                                                 .addComponent(jLabel7)
                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -465,14 +465,14 @@ public class CreationDPI extends javax.swing.JPanel {
                                 .addGap(73, 73, 73)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(jLabel5)
-                                        .addComponent(PRENOM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(NomdeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(nomDeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel14))
                                 .addGap(43, 43, 43)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                         .addComponent(numSS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel2)
-                                        .addComponent(NomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(nomUsuel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jLabel13))
                                 .addGap(55, 55, 55)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -494,7 +494,7 @@ public class CreationDPI extends javax.swing.JPanel {
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(Ville, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jLabel9)
-                                                        .addComponent(CodePostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(codePostal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addComponent(jLabel11))
                                                 .addGap(31, 31, 31)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -508,10 +508,10 @@ public class CreationDPI extends javax.swing.JPanel {
                                                         .addGroup(layout.createSequentialGroup()
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(jLabel15)
-                                                                        .addComponent(ServiceRespo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(serviceRespo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(19, 19, 19)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(ServiceGeo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(serviceGeo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                         .addComponent(jLabel16))))
                                                 .addGap(5, 5, 5))
                                         .addGroup(layout.createSequentialGroup()

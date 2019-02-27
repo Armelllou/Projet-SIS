@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package main.java.listener.ide;
 
 import main.java.interfaces.Fenetre;
-import main.java.interfaces.ph.DPIPH;
-import main.java.interfaces.ph.InfosMedicalesPH;
+import main.java.interfaces.ide.DPIIDE;
+import main.java.interfaces.ide.InfosMedicalesIDE;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -15,12 +15,12 @@ import java.awt.event.ActionListener;
 /**
  * @author Manon
  */
-public class BoutonDPIPHVersInfosMedPH implements ActionListener {
-    DPIPH dpi;
-    InfosMedicalesPH im;
+public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
+    DPIIDE dpi;
+    InfosMedicalesIDE im;
     Fenetre fen;
 
-    public BoutonDPIPHVersInfosMedPH(DPIPH dpi, InfosMedicalesPH im, Fenetre fen) {
+    public BoutonDPIIDEVersInfosMedIDE(DPIIDE dpi, InfosMedicalesIDE im, Fenetre fen) {
         this.dpi = dpi;
         this.im = im;
         this.fen = fen;

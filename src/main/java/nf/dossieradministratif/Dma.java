@@ -9,15 +9,15 @@ public class Dma {
     private Patient patient;
     private int numeroDeSejour;
     private Date dateEntree;
-    private Personnel PhRespo;
-    private String ExamenDemandes;
+    private Personnel phRespo;
+    private String examenDemandes;
 
     public Dma(Patient patient, int numeroDeSejour, Date dateEntree, Personnel phRespo, String examenDemandes) {
         this.patient = patient;
         this.numeroDeSejour = numeroDeSejour;
         this.dateEntree = dateEntree;
-        PhRespo = phRespo;
-        ExamenDemandes = examenDemandes;
+        this.phRespo = phRespo;
+        this.examenDemandes = examenDemandes;
     }
 
     public Patient getPatient() {
@@ -45,18 +45,18 @@ public class Dma {
     }
 
     public Personnel getPhRespo() {
-        return PhRespo;
+        return phRespo;
     }
 
     public void setPhRespo(Personnel phRespo) {
-        PhRespo = phRespo;
+        this.phRespo = phRespo;
     }
 
     public String getExamenDemandes() {
-        return ExamenDemandes;
+        return examenDemandes;
     }
 
     public void setExamenDemandes(String examenDemandes) {
-        ExamenDemandes = examenDemandes;
+        this.examenDemandes = examenDemandes;
     }
 }

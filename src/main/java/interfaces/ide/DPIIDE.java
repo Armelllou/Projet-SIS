@@ -18,8 +18,8 @@ public class DPIIDE extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ServiceGeo;
-    private javax.swing.JLabel ServiceRespo;
+    private javax.swing.JLabel serviceGeo;
+    private javax.swing.JLabel serviceRespo;
 
     /**
      * @return the jButtonmodifier
@@ -79,7 +79,7 @@ public class DPIIDE extends javax.swing.JPanel {
      * @return the jLabeladresse
      */
     public javax.swing.JLabel getjLabeladresse() {
-        return ServiceRespo;
+        return serviceRespo;
     }
 
     /**
@@ -161,11 +161,11 @@ public class DPIIDE extends javax.swing.JPanel {
     }
 
     public JLabel getServiceGeo() {
-        return ServiceGeo;
+        return serviceGeo;
     }
 
     public JLabel getServiceRespo() {
-        return ServiceRespo;
+        return serviceRespo;
     }
 
     /**
@@ -188,7 +188,7 @@ public class DPIIDE extends javax.swing.JPanel {
         jLabelmois = new javax.swing.JLabel();
         jLabelnumsecu = new javax.swing.JLabel();
         jLabelipp = new javax.swing.JLabel();
-        ServiceRespo = new javax.swing.JLabel();
+        serviceRespo = new javax.swing.JLabel();
         jLabelemail = new javax.swing.JLabel();
         jLabeltelephone = new javax.swing.JLabel();
         jButtoninfomed = new javax.swing.JButton();
@@ -198,7 +198,7 @@ public class DPIIDE extends javax.swing.JPanel {
         jLabelchamnre = new javax.swing.JLabel();
         jLabelnom1 = new javax.swing.JLabel();
         Sexe = new javax.swing.JLabel();
-        ServiceGeo = new javax.swing.JLabel();
+        serviceGeo = new javax.swing.JLabel();
         jLabeladresse2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -236,8 +236,8 @@ public class DPIIDE extends javax.swing.JPanel {
         jLabelipp.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
         jLabelipp.setText("AAMMXXXXX");
 
-        ServiceRespo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        ServiceRespo.setText("Anpathologie");
+        serviceRespo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        serviceRespo.setText("Anpathologie");
 
         jLabelemail.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelemail.setText("nom.prenom@email.com");
@@ -266,8 +266,8 @@ public class DPIIDE extends javax.swing.JPanel {
         Sexe.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         Sexe.setText("Sexe");
 
-        ServiceGeo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        ServiceGeo.setText("Anapathologie");
+        serviceGeo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        serviceGeo.setText("Anapathologie");
 
         jLabeladresse2.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabeladresse2.setText("4 rue de la liberté");
@@ -329,8 +329,8 @@ public class DPIIDE extends javax.swing.JPanel {
                                                                                         .addComponent(jLabeltelephone)
                                                                                         .addGroup(layout.createSequentialGroup()
                                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                                                        .addComponent(ServiceRespo)
-                                                                                                        .addComponent(ServiceGeo))
+                                                                                                        .addComponent(serviceRespo)
+                                                                                                        .addComponent(serviceGeo))
                                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                                                                 .addComponent(jLabel6)
                                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -376,11 +376,11 @@ public class DPIIDE extends javax.swing.JPanel {
                                                 .addGap(172, 172, 172)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel4)
-                                                        .addComponent(ServiceRespo))
+                                                        .addComponent(serviceRespo))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                         .addComponent(jLabel5)
-                                                        .addComponent(ServiceGeo)))
+                                                        .addComponent(serviceGeo)))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(39, 39, 39)
                                                 .addComponent(Sexe)

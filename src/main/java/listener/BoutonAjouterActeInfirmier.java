@@ -13,9 +13,6 @@ import main.java.nf.Sih;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * @author Manon
- */
 public class BoutonAjouterActeInfirmier implements ActionListener {
 
     AjouterActeInfirmier ai;

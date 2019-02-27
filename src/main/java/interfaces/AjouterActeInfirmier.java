@@ -14,8 +14,8 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel NomIDE;
-    private javax.swing.JLabel PrenomIDE;
+    private javax.swing.JLabel nomIDE;
+    private javax.swing.JLabel prenomIDE;
 
 
     /**
@@ -109,7 +109,7 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        PrenomIDE = new javax.swing.JLabel();
+        prenomIDE = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         annee = new javax.swing.JTextField();
@@ -125,7 +125,7 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         ipp = new javax.swing.JLabel();
-        NomIDE = new javax.swing.JLabel();
+        nomIDE = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -137,8 +137,8 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jButton2.setText("Valider");
 
-        PrenomIDE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        PrenomIDE.setText("Prenom");
+        prenomIDE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        prenomIDE.setText("Prenom");
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel2.setText("IDE :");
@@ -179,8 +179,8 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         ipp.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         ipp.setText("IPP  Patient");
 
-        NomIDE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        NomIDE.setText("Nom ");
+        nomIDE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        nomIDE.setText("Nom ");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -190,9 +190,9 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
                                 .addGap(202, 202, 202)
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
-                                .addComponent(NomIDE)
+                                .addComponent(nomIDE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(PrenomIDE, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(prenomIDE, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -258,8 +258,8 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
                                                                 .addGap(71, 71, 71)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(jLabel2)
-                                                                        .addComponent(NomIDE)
-                                                                        .addComponent(PrenomIDE))))
+                                                                        .addComponent(nomIDE)
+                                                                        .addComponent(prenomIDE))))
                                                 .addGap(17, 17, 17))
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                                 .addGap(57, 57, 57)

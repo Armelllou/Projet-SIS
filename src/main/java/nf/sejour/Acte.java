@@ -11,7 +11,7 @@ public class Acte {
 
     ConnexionBD conn = ConnexionBD.getInstance();
     private Dates date;
-    private String Type;
+    private String type;
     private String idIDE;
     private String ipp;
     private String observations;
@@ -19,7 +19,7 @@ public class Acte {
 
     public Acte(String observations, String Type, String idIDE, String ipp, Dates dates) {
         this.date = date;
-        this.Type = Type;
+        this.type = Type;
         this.idIDE = idIDE;
         this.ipp = ipp;
         this.observations = observations;
@@ -44,7 +44,7 @@ public class Acte {
 
 
     public String getType() {
-        return Type;
+        return type;
     }
 
     public String getIde() {

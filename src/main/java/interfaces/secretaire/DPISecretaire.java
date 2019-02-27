@@ -14,7 +14,7 @@ public class DPISecretaire extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ServiceGeo;
+    private javax.swing.JLabel serviceGeo;
 
     /**
      * @return the jButtoninfomed
@@ -65,7 +65,7 @@ public class DPISecretaire extends javax.swing.JPanel {
     }
 
     public JLabel getServiceGeo() {
-        return ServiceGeo;
+        return serviceGeo;
     }
 
     public JLabel getSereviceRespo() {
@@ -183,7 +183,7 @@ public class DPISecretaire extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         chambre = new javax.swing.JLabel();
         jLabelchamnre = new javax.swing.JLabel();
-        ServiceGeo = new javax.swing.JLabel();
+        serviceGeo = new javax.swing.JLabel();
         sereviceRespo = new javax.swing.JLabel();
         jLabelnom1 = new javax.swing.JLabel();
         Sexe = new javax.swing.JLabel();
@@ -235,8 +235,8 @@ public class DPISecretaire extends javax.swing.JPanel {
         jLabelchamnre.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelchamnre.setText("XXX");
 
-        ServiceGeo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        ServiceGeo.setText("Mort");
+        serviceGeo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        serviceGeo.setText("Mort");
 
         sereviceRespo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         sereviceRespo.setText("Anapathologie");
@@ -278,7 +278,7 @@ public class DPISecretaire extends javax.swing.JPanel {
                                                                                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                                                                                 .addComponent(jLabel5)
                                                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                                                .addComponent(ServiceGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                                                .addComponent(serviceGeo, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                                         .addComponent(jLabelannée, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                                                 .addGap(252, 252, 252)
                                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -356,7 +356,7 @@ public class DPISecretaire extends javax.swing.JPanel {
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(jLabel5)
-                                                                        .addComponent(ServiceGeo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                        .addComponent(serviceGeo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
                                                                 .addComponent(jButtonmodifier)
                                                                 .addGap(132, 132, 132))))

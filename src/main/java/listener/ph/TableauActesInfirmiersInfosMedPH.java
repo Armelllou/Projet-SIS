@@ -3,28 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package main.java.listener.ph;
 
 import main.java.interfaces.Fenetre;
-import main.java.interfaces.ide.ConsultationIDE;
-import main.java.interfaces.ide.InfosMedicalesIDE;
+import main.java.interfaces.ph.ActeInfirmierPH;
+import main.java.interfaces.ph.InfosMedicalesPH;
 import main.java.nf.Sih;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+public class TableauActesInfirmiersInfosMedPH implements MouseListener {
 
-public class TableauConsultationsInfosMedIDE implements MouseListener {
 
-
-    InfosMedicalesIDE imph;
-    ConsultationIDE cph;
+    InfosMedicalesPH imph;
+    ActeInfirmierPH cph;
     Fenetre fen;
     Sih sih;
     JTable table;
 
-    public TableauConsultationsInfosMedIDE(InfosMedicalesIDE imph, ConsultationIDE cph, Fenetre fen, Sih sih, JTable table) {
+    public TableauActesInfirmiersInfosMedPH(InfosMedicalesPH imph, ActeInfirmierPH cph, Fenetre fen, Sih sih, JTable table) {
         this.imph = imph;
         this.cph = cph;
         this.fen = fen;
@@ -44,22 +43,22 @@ public class TableauConsultationsInfosMedIDE implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

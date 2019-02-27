@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package main.java.listener.ide;
 
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.ide.ActeInfirmierIDE;

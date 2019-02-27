@@ -12,6 +12,11 @@ import main.java.interfaces.ph.*;
 import main.java.interfaces.secretaire.ConsulterDPISecretaire;
 import main.java.interfaces.secretaire.DPISecretaire;
 import main.java.listener.*;
+import main.java.listener.ide.*;
+import main.java.listener.ph.*;
+import main.java.listener.secretairemedical.BoutonRecherchePatient;
+import main.java.listener.secretairemedical.BoutonRetourDPISVersConsulterDPISecretaire;
+import main.java.listener.secretairemedical.TableauConsulterDPISecretaire;
 import main.java.nf.Sih;
 
 import javax.swing.*;
@@ -71,7 +76,7 @@ public class Fenetre extends JFrame {
     private JButton annulerAjouterPresta = ajouterpresta.getjButton1();
     private JButton accueilconsultPH = consultationPH.getjButton3();
     private JButton retourConsultPHVersInfosMedPH = consultationPH.getjButton4();
-    private JButton ConnexionEntrerListener = connexion.getjButton1();
+    private JButton connexionEntrerListener = connexion.getjButton1();
     private JButton retourActeInfIDEVersInfosMedIDE = acteinfirmieride.getjButton4();
     private JButton accueilActeInfIDE = acteinfirmieride.getjButton3();
     private JButton annulerAjouterPrescri = ajouterpresta.getjButton1();

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package main.java.listener.ph;
 
-import main.java.interfaces.ConsulterDPIPHetIDE;
+import main.java.interfaces.AjouterConsultation;
 import main.java.interfaces.Fenetre;
-import main.java.interfaces.ide.PrescriptionIDE;
+import main.java.interfaces.ph.InfosMedicalesPH;
 import main.java.nf.Sih;
 
 import java.awt.event.ActionEvent;
@@ -16,24 +16,24 @@ import java.awt.event.ActionListener;
 /**
  * @author Manon
  */
-public class BoutonAccueilPrescriptionIDE implements ActionListener {
+public class BoutonAnnulerAjouterConsultation implements ActionListener {
 
-    PrescriptionIDE ai;
-    ConsulterDPIPHetIDE dpiphide;
+    AjouterConsultation ac;
+    InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilPrescriptionIDE(Fenetre jframe, PrescriptionIDE ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAnnulerAjouterConsultation(Fenetre jframe, AjouterConsultation ac, InfosMedicalesPH im, Sih sih) {
         this.jframe = jframe;
-        this.ai = ai;
-        this.dpiphide = dpiphide;
+        this.ac = ac;
+        this.im = im;
         this.sih = sih;
     }
 
     public void actionPerformed(ActionEvent ae) {
         jframe.PanelVisibleFalse();
-        jframe.add(dpiphide);
-        dpiphide.setVisible(true);
+        jframe.add(im);
+        im.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
     }
