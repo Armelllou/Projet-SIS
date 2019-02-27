@@ -23,20 +23,21 @@ public class MethodeBD {
         this.comm = comm;
 
     }
-    
-      public void AjouterSurBdPatient(Patient p) throws SQLException{{
-        
-        String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
-        PreparedStatement statement = comm.getConnexion().prepareStatement(sql); 
-        statement.setObject(1,p.getIpp(), Types.INTEGER); 
-        statement.setObject(2,p.getNomDeNaissance(),Types.VARCHAR); 
-        statement.setObject(3,p.getPrenom(),Types.VARCHAR); 
-        statement.setObject(4,p.getDateDeNaissance(),Types.DATE); 
-        statement.setObject(5,p.getSexe(),Types.VARCHAR); 
-        statement.setObject(6,123,Types.INTEGER); 
-        
-        statement.executeUpdate(); 
-    }
 
-      }
+    public void AjouterSurBdPatient(Patient p) throws SQLException {
+        {
+
+            String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
+            PreparedStatement statement = comm.getConnexion().prepareStatement(sql);
+            statement.setObject(1, p.getIpp(), Types.INTEGER);
+            statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);
+            statement.setObject(3, p.getPrenom(), Types.VARCHAR);
+            statement.setObject(4, p.getDateDeNaissance(), Types.DATE);
+            statement.setObject(5, p.getSexe(), Types.VARCHAR);
+            statement.setObject(6, 123, Types.INTEGER);
+
+            statement.executeUpdate();
+        }
+
+    }
 }

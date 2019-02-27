@@ -5,28 +5,28 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
 import main.java.interfaces.ConsulterDPIPHetIDE;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.ph.InfosMedicalesPH;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonAccueilInfMedPH implements ActionListener {
-    
+
     InfosMedicalesPH ai;
     ConsulterDPIPHetIDE dpiphide;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilInfMedPH(Fenetre jframe,InfosMedicalesPH ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAccueilInfMedPH(Fenetre jframe, InfosMedicalesPH ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
         this.jframe = jframe;
-        this.ai=ai;
-        this.dpiphide=dpiphide;
+        this.ai = ai;
+        this.dpiphide = dpiphide;
         this.sih = sih;
     }
 
@@ -37,5 +37,5 @@ public class BoutonAccueilInfMedPH implements ActionListener {
         jframe.revalidate();
         jframe.repaint();
     }
-    
+
 }

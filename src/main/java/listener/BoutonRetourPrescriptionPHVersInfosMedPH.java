@@ -5,28 +5,28 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.ph.InfosMedicalesPH;
 import main.java.interfaces.ph.PrescriptionPH;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonRetourPrescriptionPHVersInfosMedPH implements ActionListener {
-    
+
     PrescriptionPH c;
     InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourPrescriptionPHVersInfosMedPH(Fenetre jframe,PrescriptionPH c,InfosMedicalesPH im, Sih sih) {
+    public BoutonRetourPrescriptionPHVersInfosMedPH(Fenetre jframe, PrescriptionPH c, InfosMedicalesPH im, Sih sih) {
         this.jframe = jframe;
-        this.c=c;
-        this.im=im;
+        this.c = c;
+        this.im = im;
         this.sih = sih;
     }
 
@@ -37,5 +37,5 @@ public class BoutonRetourPrescriptionPHVersInfosMedPH implements ActionListener 
         jframe.revalidate();
         jframe.repaint();
     }
-    
+
 }

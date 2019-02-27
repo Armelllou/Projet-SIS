@@ -5,19 +5,19 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
-import main.java.interfaces.secretaire.DPISecretaire;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.dpi.ModificationDPI;
+import main.java.interfaces.secretaire.DPISecretaire;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonAnnulerModificationDPI implements ActionListener {
-    
+
     DPISecretaire dpis;
     ModificationDPI mdpi;
     Fenetre jframe;
@@ -25,8 +25,8 @@ public class BoutonAnnulerModificationDPI implements ActionListener {
 
     public BoutonAnnulerModificationDPI(Fenetre jframe, DPISecretaire dpis, ModificationDPI mdpi, Sih sih) {
         this.jframe = jframe;
-        this.mdpi=mdpi;
-        this.dpis=dpis;
+        this.mdpi = mdpi;
+        this.dpis = dpis;
         this.sih = sih;
     }
 
@@ -37,5 +37,5 @@ public class BoutonAnnulerModificationDPI implements ActionListener {
         jframe.revalidate();
         jframe.repaint();
     }
-    
+
 }

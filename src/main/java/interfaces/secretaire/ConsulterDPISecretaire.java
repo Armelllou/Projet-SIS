@@ -6,9 +6,13 @@
 package main.java.interfaces.secretaire;
 
 import main.java.bd.ConnexionBD;
+
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 
 public class ConsulterDPISecretaire extends javax.swing.JPanel {
@@ -109,12 +113,13 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         templatesTableModel.setColumnIdentifiers(title);
 
         try {
-            ConnexionBD conn = new ConnexionBD();
-            
-            
+            ConnexionBD conn = ConnexionBD.getInstance();
+
+
             Sql45 = "SELECT * FROM patient";
             PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
-          ResultSet Rs = ps.executeQuery();;
+            ResultSet Rs = ps.executeQuery();
+            ;
             rs = ps.executeQuery(Sql45);
 
             while (rs.next()) {
@@ -133,7 +138,6 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         }
         /**
          */
-
 
 
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));

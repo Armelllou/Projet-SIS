@@ -6,7 +6,6 @@
 package main.java.interfaces;
 
 /**
- *
  * @author Manon
  */
 public enum State {
@@ -14,5 +13,5 @@ public enum State {
     IDE,
     SM,
     NONCO;
-    
+
 }

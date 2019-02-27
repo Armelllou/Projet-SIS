@@ -6,10 +6,12 @@
 package main.java.listener;
 
 import main.java.bd.ConnexionBD;
-import main.java.nf.Sih;
-import main.java.interfaces.secretaire.DPISecretaire;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.dpi.ModificationDPI;
+import main.java.interfaces.secretaire.DPISecretaire;
+import main.java.nf.Sih;
+
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
@@ -18,10 +20,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
- *
  * @author Manon
  */
 public class BoutonValiderModificationDPI implements ActionListener {
@@ -43,7 +43,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
         try {
             String ipp = mdpi.getjLabel3().getText();
             // String SQL = "UPDATE patient SET Prénom '" + mdpi.getPrenom().getText() + "' WHERE CODE = '" + ipp + "'";
-            ConnexionBD conn = new ConnexionBD();
+            ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE patient SET NomDeNaissance= ?, NomUsuel= ?, Prénom = ?,DateDeNaissance= ?,Sexe= ?,idAdresse= ?,NumDeSS= ?,email= ?,telephone= ? WHERE ipp = ?");
             prep2.setString(1, mdpi.getNomDenaissance().getText());
             prep2.setString(2, mdpi.getNomUsuel().getText());
@@ -60,7 +60,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            ConnexionBD conn = new ConnexionBD();
+            ConnexionBD conn = ConnexionBD.getInstance();
             String ipp = mdpi.getjLabel3().getText();
             PreparedStatement prep = conn.getConnexion().prepareStatement("UPDATE localisations SET ServiceResponsable= ?, ServiceGeographique= ?, lit=? WHERE ipp = ?");
             prep.setString(1, mdpi.getServicerespo().getSelectedItem().toString());
@@ -79,12 +79,13 @@ public class BoutonValiderModificationDPI implements ActionListener {
         try {
             String ipp = mdpi.getjLabel3().getText();
             String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
-            ConnexionBD conn = new ConnexionBD();
+            ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
 
             ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet Rs = ps.executeQuery();;
+            ResultSet Rs = ps.executeQuery();
+            ;
 
             ResultSetMetaData rsmd = Rs.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
@@ -119,7 +120,8 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
             ps2 = conn.getConnexion().prepareStatement(Sql2);
 
-            ResultSet Rs2 = ps2.executeQuery();;
+            ResultSet Rs2 = ps2.executeQuery();
+            ;
 
             ResultSetMetaData rsmd2 = Rs2.getMetaData();
             int columnsNumber2 = rsmd2.getColumnCount();

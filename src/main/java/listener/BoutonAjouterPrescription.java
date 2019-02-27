@@ -5,28 +5,28 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
 import main.java.interfaces.AjouterPrescription;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.ph.InfosMedicalesPH;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonAjouterPrescription implements ActionListener {
-    
+
     AjouterPrescription ac;
     InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAjouterPrescription(Fenetre jframe,AjouterPrescription ac, InfosMedicalesPH im, Sih sih) {
+    public BoutonAjouterPrescription(Fenetre jframe, AjouterPrescription ac, InfosMedicalesPH im, Sih sih) {
         this.jframe = jframe;
-        this.ac=ac;
-        this.im=im;
+        this.ac = ac;
+        this.im = im;
         this.sih = sih;
     }
 
@@ -37,5 +37,5 @@ public class BoutonAjouterPrescription implements ActionListener {
         jframe.revalidate();
         jframe.repaint();
     }
-    
+
 }

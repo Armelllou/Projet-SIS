@@ -13,17 +13,17 @@ package main.java.listener;
 
 
 import main.java.bd.ConnexionBD;
-import javax.swing.*;
-import main.java.interfaces.BarreDuHaut;
-import main.java.interfaces.Connexion;
-import main.java.interfaces.ConsulterDPIPHetIDE;
+import main.java.interfaces.*;
 import main.java.interfaces.secretaire.ConsulterDPISecretaire;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.Prestations;
-import java.awt.BorderLayout;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,7 +33,7 @@ public class ConnexionEntrerListener implements KeyListener {
     JPanel jp;
     Fenetre jframe;
     BarreDuHaut bh;
-    ConnexionBD conn = new ConnexionBD();
+    ConnexionBD conn = ConnexionBD.getInstance();
     ConsulterDPIPHetIDE cdpiphetide;
     ConsulterDPISecretaire as;
     Prestations p;
@@ -55,6 +55,7 @@ public class ConnexionEntrerListener implements KeyListener {
         ConnexionPH();
         ConnexionMedicoTechniques();
     }
+
     public boolean ConnexionPH() throws SQLException {
         boolean j = false;
         String Nom = " ";
@@ -270,7 +271,7 @@ public class ConnexionEntrerListener implements KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-        
+
     }
 
     @Override
@@ -286,8 +287,8 @@ public class ConnexionEntrerListener implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    
+
 }

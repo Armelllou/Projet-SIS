@@ -5,22 +5,21 @@
  */
 package main.java.listener;
 
-import main.java.nf.sejour.Acte;
-import main.java.nf.Dates;
 import main.java.interfaces.AjouterActeInfirmier;
 import main.java.interfaces.BarreDuHaut;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.ide.InfosMedicalesIDE;
+import main.java.nf.Dates;
+import main.java.nf.sejour.Acte;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 /**
- *
  * @author annel
  */
 public class BoutonValiderActe implements ActionListener {
@@ -29,26 +28,26 @@ public class BoutonValiderActe implements ActionListener {
     InfosMedicalesIDE im;
     AjouterActeInfirmier aai;
 
-    public BoutonValiderActe(BarreDuHaut bh,InfosMedicalesIDE im, Fenetre jframe, AjouterActeInfirmier aai) {
+    public BoutonValiderActe(BarreDuHaut bh, InfosMedicalesIDE im, Fenetre jframe, AjouterActeInfirmier aai) {
         this.fen = jframe;
         this.im = im;
         this.bh = bh;
-        this.aai=aai;
-    
+        this.aai = aai;
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Acte a = new Acte(aai.getobservation().getText(),aai.gettype().getText(),bh.getId().getText(),aai.getIpp().getText(),new Dates(aai.getjour().getText(),aai.getmois().getText(),aai.getannee().getText()));
+        Acte a = new Acte(aai.getobservation().getText(), aai.gettype().getText(), bh.getId().getText(), aai.getIpp().getText(), new Dates(aai.getjour().getText(), aai.getmois().getText(), aai.getannee().getText()));
         try {
             a.AjouterActeSurBD(a);
-            
-              JOptionPane jop1 = new JOptionPane();
-          
-               jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
-          
+
+            JOptionPane jop1 = new JOptionPane();
+
+            jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
+
             fen.PanelVisibleFalse();
-            
+
             fen.add(im);
             im.setVisible(true);
             fen.revalidate();
@@ -56,6 +55,6 @@ public class BoutonValiderActe implements ActionListener {
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderActe.class.getName()).log(Level.SEVERE, null, ex);
         }
-   
+
     }
-    }
+}

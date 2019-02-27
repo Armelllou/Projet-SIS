@@ -2,7 +2,8 @@ package main.java.nf.patient;
 
 import main.java.bd.ConnexionBD;
 import main.java.interfaces.dpi.CreationDPI;
-import main.java.nf.*;
+import main.java.nf.Dates;
+import main.java.nf.Sih;
 import main.java.nf.dossieradministratif.Dma;
 import main.java.nf.localisation.Localisation;
 
@@ -27,7 +28,7 @@ public class Patient {
 
     Localisation localisation;
 
-    ConnexionBD conn = new ConnexionBD();
+    ConnexionBD conn = ConnexionBD.getInstance();
     Sih sih = new Sih();
     boolean ajoute = false;
 
@@ -36,20 +37,19 @@ public class Patient {
     public Patient(String NomDeNaissance, String NomUsuel, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse, String numss, String email, String telephone) throws SQLException {
         this.NomDeNaissance = NomDeNaissance;
         this.DateDeNaissance = DateDeNaissance;
-        this.NomUsuel=NomUsuel;
-        this.sexe=sexe;
+        this.NomUsuel = NomUsuel;
+        this.sexe = sexe;
 
         this.prenom = prenom;
         this.adresse = adresse;
-        this.numSS=numss;
-        this.email=email;
-        this.telephone=telephone;
+        this.numSS = numss;
+        this.email = email;
+        this.telephone = telephone;
         this.ipp = new Ipp();
 
         sih.ajoutPatient(this);
     }
 
-   
 
     public boolean AjouterSurBdPatient(Patient p) throws SQLException {
         boolean j = false;
@@ -66,7 +66,7 @@ public class Patient {
         statement.setObject(8, p.getAdresse(), Types.VARCHAR);
         statement.setObject(9, p.getNumSS(), Types.VARCHAR);
         statement.setObject(10, p.getEmail(), Types.VARCHAR);
-        statement.setObject(11 , p.getTelephone(), Types.INTEGER);
+        statement.setObject(11, p.getTelephone(), Types.INTEGER);
 
         statement.executeUpdate();
         j = true;
@@ -88,6 +88,10 @@ public class Patient {
         return NomUsuel;
     }
 
+    public void setNomUsuel(String NomUsuel) {
+        this.NomUsuel = NomUsuel;
+    }
+
     public String getNumSS() {
         return numSS;
     }
@@ -98,10 +102,6 @@ public class Patient {
 
     public String getTelephone() {
         return telephone;
-    }
-
-    public void setNomUsuel(String NomUsuel) {
-        this.NomUsuel = NomUsuel;
     }
 
     public String getNomDeNaissance() {

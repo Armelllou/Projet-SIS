@@ -5,28 +5,28 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
-import main.java.interfaces.ph.ActeInfirmierPH;
 import main.java.interfaces.ConsulterDPIPHetIDE;
 import main.java.interfaces.Fenetre;
+import main.java.interfaces.ph.ActeInfirmierPH;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonAccueilActeInfirmierPH implements ActionListener {
-    
+
     ActeInfirmierPH ai;
     ConsulterDPIPHetIDE dpiphide;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilActeInfirmierPH(Fenetre jframe,ActeInfirmierPH ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAccueilActeInfirmierPH(Fenetre jframe, ActeInfirmierPH ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
         this.jframe = jframe;
-        this.ai=ai;
-        this.dpiphide=dpiphide;
+        this.ai = ai;
+        this.dpiphide = dpiphide;
         this.sih = sih;
     }
 
@@ -37,5 +37,5 @@ public class BoutonAccueilActeInfirmierPH implements ActionListener {
         jframe.revalidate();
         jframe.repaint();
     }
-    
+
 }

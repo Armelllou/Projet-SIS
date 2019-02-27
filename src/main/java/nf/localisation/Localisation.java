@@ -14,7 +14,6 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 /**
- *
  * @author annel
  */
 public class Localisation {
@@ -23,7 +22,7 @@ public class Localisation {
     Chambre chambre;
     String serviceGeographique;
     String serviceResponsbale;
-    ConnexionBD conn = new ConnexionBD();
+    ConnexionBD conn = ConnexionBD.getInstance();
     Ipp ipp;
     Patient p;
 

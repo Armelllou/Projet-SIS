@@ -5,40 +5,40 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.PrestationFaite;
 import main.java.interfaces.Prestations;
+import main.java.nf.Sih;
+
+import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import javax.swing.JTable;
 
 /**
- *
  * @author Manon
  */
 public class TableauPrestations implements MouseListener {
-    
+
     Prestations p;
     PrestationFaite pf;
     Fenetre fen;
     Sih sih;
     JTable table;
-    
-    public TableauPrestations(Prestations p, PrestationFaite pf, Fenetre fen, Sih sih, JTable table){
-        this.p=p;
-        this.pf=pf;
-        this.fen=fen;
-        this.sih=sih;
-        this.table=table;
+
+    public TableauPrestations(Prestations p, PrestationFaite pf, Fenetre fen, Sih sih, JTable table) {
+        this.p = p;
+        this.pf = pf;
+        this.fen = fen;
+        this.sih = sih;
+        this.table = table;
     }
-   
+
 
     @Override
     public void mouseClicked(MouseEvent me) {
         int NumLigne;
         NumLigne = table.getSelectedRow();
-        
+
         fen.PanelVisibleFalse();
         fen.add(pf);
         pf.setVisible(true);
@@ -65,6 +65,6 @@ public class TableauPrestations implements MouseListener {
     public void mouseExited(MouseEvent me) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
+
 }

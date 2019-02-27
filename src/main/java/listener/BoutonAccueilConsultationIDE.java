@@ -5,28 +5,28 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
-import main.java.interfaces.ide.ConsultationIDE;
 import main.java.interfaces.ConsulterDPIPHetIDE;
 import main.java.interfaces.Fenetre;
+import main.java.interfaces.ide.ConsultationIDE;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonAccueilConsultationIDE implements ActionListener {
-    
+
     ConsultationIDE ai;
     ConsulterDPIPHetIDE dpiphide;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAccueilConsultationIDE(Fenetre jframe,ConsultationIDE ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAccueilConsultationIDE(Fenetre jframe, ConsultationIDE ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
         this.jframe = jframe;
-        this.ai=ai;
-        this.dpiphide=dpiphide;
+        this.ai = ai;
+        this.dpiphide = dpiphide;
         this.sih = sih;
     }
 
@@ -37,5 +37,5 @@ public class BoutonAccueilConsultationIDE implements ActionListener {
         jframe.revalidate();
         jframe.repaint();
     }
-    
+
 }

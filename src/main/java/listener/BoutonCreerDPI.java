@@ -6,17 +6,15 @@
 package main.java.listener;
 
 
-
 import main.java.interfaces.BarreDuHaut;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
-import main.java.interfaces.dpi.CreationDPI;
 import main.java.interfaces.Fenetre;
+import main.java.interfaces.dpi.CreationDPI;
+import main.java.interfaces.secretaire.ConsulterDPISecretaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author annel
  */
 public class BoutonCreerDPI implements ActionListener {
@@ -29,15 +27,15 @@ public class BoutonCreerDPI implements ActionListener {
     public BoutonCreerDPI(ConsulterDPISecretaire cdpi, CreationDPI dpi, Fenetre jframe) {
         this.fen = jframe;
         this.dpi = dpi;
-        this.cdpi=cdpi;
-        
+        this.cdpi = cdpi;
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-       fen.PanelVisibleFalse();
-      
+        fen.PanelVisibleFalse();
+
         fen.add(dpi);
         dpi.setVisible(true);
         fen.revalidate();

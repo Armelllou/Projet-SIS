@@ -1,8 +1,9 @@
 package main.java.listener;
 
 import main.java.bd.ConnexionBD;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
 import main.java.interfaces.Fenetre;
+import main.java.interfaces.secretaire.ConsulterDPISecretaire;
+
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,7 +13,7 @@ import java.sql.*;
 public class BoutonRecherchePatient implements ActionListener {
     Fenetre fen;
     ConsulterDPISecretaire cdpis;
-    ConnexionBD conn = new ConnexionBD();
+    ConnexionBD conn = ConnexionBD.getInstance();
 
     public BoutonRecherchePatient(Fenetre jframe, ConsulterDPISecretaire cdpis) {
         this.fen = jframe;

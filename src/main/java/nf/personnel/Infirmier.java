@@ -5,13 +5,13 @@ import main.java.bd.ConnexionBD;
 import java.sql.SQLException;
 
 public class Infirmier extends Personnel {
-public int idIDE;
-public int mdp;
-public String nom;
-public String prenom;
-public String service;
+    public int idIDE;
+    public int mdp;
+    public String nom;
+    public String prenom;
+    public String service;
 
-ConnexionBD conn = new ConnexionBD();
+    ConnexionBD conn = ConnexionBD.getInstance();
 
     public Infirmier(int idIDE, int mdp, String nom, String prenom, String service) {
         this.idIDE = idIDE;
@@ -43,11 +43,11 @@ ConnexionBD conn = new ConnexionBD();
 //            } 
 //        
 //    }
-            return idIDE;
+        return idIDE;
 
-        }
-        
-        
+    }
+
+
     public int getMdp() {
         return mdp;
     }
@@ -63,7 +63,6 @@ ConnexionBD conn = new ConnexionBD();
     public String getService() {
         return service;
     }
-
 
 
 }

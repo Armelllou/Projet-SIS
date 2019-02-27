@@ -5,28 +5,28 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
 import main.java.interfaces.AjouterPrestation;
 import main.java.interfaces.Fenetre;
 import main.java.interfaces.ph.InfosMedicalesPH;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonAnnulerAjouterPrestation implements ActionListener {
-    
+
     AjouterPrestation ap;
     InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonAnnulerAjouterPrestation(Fenetre jframe,AjouterPrestation ap, InfosMedicalesPH im, Sih sih) {
+    public BoutonAnnulerAjouterPrestation(Fenetre jframe, AjouterPrestation ap, InfosMedicalesPH im, Sih sih) {
         this.jframe = jframe;
-        this.ap=ap;
-        this.im=im;
+        this.ap = ap;
+        this.im = im;
         this.sih = sih;
     }
 

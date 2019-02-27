@@ -11,18 +11,16 @@ import java.awt.event.ActionListener;
 /**
  * @author annel
  */
-public class BoutonValiderConnexion implements ActionListener{
-   
+public class BoutonValiderConnexion implements ActionListener {
+
     public BoutonValiderConnexion() {
-     
+
     }
 
     public void actionPerformed(ActionEvent e) {
-       
+
 
     }
-
-   
 
 
 }

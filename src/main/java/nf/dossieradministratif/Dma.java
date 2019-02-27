@@ -1,7 +1,7 @@
 package main.java.nf.dossieradministratif;
 
-import main.java.nf.personnel.Personnel;
 import main.java.nf.patient.Patient;
+import main.java.nf.personnel.Personnel;
 
 import java.util.Date;
 
@@ -24,36 +24,36 @@ public class Dma {
         return patient;
     }
 
-    public int getNumeroDeSejour() {
-        return numeroDeSejour;
-    }
-
-    public Date getDateEntree() {
-        return dateEntree;
-    }
-
-    public Personnel getPhRespo() {
-        return PhRespo;
-    }
-
-    public String getExamenDemandes() {
-        return ExamenDemandes;
-    }
-
     public void setPatient(Patient patient) {
         this.patient = patient;
+    }
+
+    public int getNumeroDeSejour() {
+        return numeroDeSejour;
     }
 
     public void setNumeroDeSejour(int numeroDeSejour) {
         this.numeroDeSejour = numeroDeSejour;
     }
 
+    public Date getDateEntree() {
+        return dateEntree;
+    }
+
     public void setDateEntree(Date dateEntree) {
         this.dateEntree = dateEntree;
     }
 
+    public Personnel getPhRespo() {
+        return PhRespo;
+    }
+
     public void setPhRespo(Personnel phRespo) {
         PhRespo = phRespo;
+    }
+
+    public String getExamenDemandes() {
+        return ExamenDemandes;
     }
 
     public void setExamenDemandes(String examenDemandes) {

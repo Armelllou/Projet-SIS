@@ -6,17 +6,17 @@
 package main.java.listener;
 
 import main.java.bd.ConnexionBD;
-import javax.swing.*;
-import main.java.interfaces.BarreDuHaut;
-import main.java.interfaces.Connexion;
-import main.java.interfaces.ConsulterDPIPHetIDE;
+import main.java.interfaces.*;
 import main.java.interfaces.secretaire.ConsulterDPISecretaire;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.Prestations;
-import java.awt.BorderLayout;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -27,7 +27,7 @@ public class ListenerConnexion implements ActionListener {
     Fenetre jframe;
     BarreDuHaut bh;
 
-    ConnexionBD conn = new ConnexionBD();
+    ConnexionBD conn = ConnexionBD.getInstance();
     ConsulterDPIPHetIDE cdpiphetide;
     ConsulterDPISecretaire as;
     Prestations p;

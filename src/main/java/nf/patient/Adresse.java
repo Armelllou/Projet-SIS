@@ -6,36 +6,33 @@
 package main.java.nf.patient;
 
 
-
 /**
- *
  * @author annel
  */
 public class Adresse {
-  
+
     String adresse;
     String ville;
     String codePostal;
 
     public Adresse(String adresse, String ville, String codePostal) {
         this.adresse = adresse;
-      
+
         this.ville = ville;
         this.codePostal = codePostal;
     }
 
-   
 
     public String getVille() {
         return ville;
     }
 
-    public String getAdresse() {
-        return adresse;
-    }
-
     public void setVille(String ville) {
         this.ville = ville;
+    }
+
+    public String getAdresse() {
+        return adresse;
     }
 
     public String getCodePostal() {
@@ -45,14 +42,14 @@ public class Adresse {
     public void setCodePostal(String codePostal) {
         this.codePostal = codePostal;
     }
-    
+
     @Override
-    public String toString(){
-        
-        String a =(this.getAdresse()+" "+this.getVille()+" "+ this.getCodePostal());
-        
+    public String toString() {
+
+        String a = (this.getAdresse() + " " + this.getVille() + " " + this.getCodePostal());
+
         return a;
-        
-        
+
+
     }
 }

@@ -6,52 +6,60 @@
 package main.java.nf;
 
 public class Dates {
-    /**Méthode qui retourne le jour de la date
-     * 
+    private String jour;
+    private String mois;
+    private String annee;
+
+    /**
+     * Constructeur de la classe
+     *
+     * @param jour  le jour de la date
+     * @param mois  le mois de la date
+     * @param annee l'année de la date
+     */
+    public Dates(String jour, String mois, String annee) {
+        this.jour = jour;
+        this.mois = mois;
+        this.annee = annee;
+    }
+
+    /**
+     * Méthode qui retourne le jour de la date
+     *
      * @return le jour
      */
     public String getJour() {
         return jour;
     }
 
-    /**Méthode qui retourne le mois de la date
+    /**
+     * Méthode qui retourne le mois de la date
+     *
      * @return le mois
      */
     public String getMois() {
         return mois;
     }
 
-    /**Méthode qui retourne l'année de la date
+    /**
+     * Méthode qui retourne l'année de la date
+     *
      * @return l'annee
      */
     public String getAnnee() {
         return annee;
     }
-    private String jour;
-    private String mois;
-    private String annee;
-    
+
     /**
-     * Constructeur de la classe
-     * @param jour le jour de la date
-     * @param mois le mois de la date
-     * @param annee l'année de la date
-     */
-    public Dates(String jour, String mois, String annee) {
-        this.jour=jour;
-        this.mois=mois;
-        this.annee=annee;
-    }
-    
-    /**Méthode qui retourne la date sous forme de chaîne de caractère
-     * 
-     * @return la date sous chaîne de caractère 
+     * Méthode qui retourne la date sous forme de chaîne de caractère
+     *
+     * @return la date sous chaîne de caractère
      */
     public String toString() {
         return this.jour + "/" + this.mois + "/" + this.annee;
-        }
+    }
     /**Méthode qui verifie que l'objet est égale à cette instance
-     * 
+     *
      * @param o un objet 
      * @return un boolean en fonction de l'égalité 
      */
@@ -83,18 +91,19 @@ public class Dates {
 //           return this.jour - d.getDay();
 //        
 //    }
-    
-    /**Méthode qui retourne la date de manière à l'inscrire grâce a InscriptionXML et pouvoir la relire avec LectureXML
-     * 
-     * @return une chaîne de caractère pour l'écriture XML 
+
+    /**
+     * Méthode qui retourne la date de manière à l'inscrire grâce a InscriptionXML et pouvoir la relire avec LectureXML
+     *
+     * @return une chaîne de caractère pour l'écriture XML
      */
     public String toStringS() {
         return this.annee + "-" + this.mois + "-" + this.jour;
-        }
-    
-    
+    }
+
+
     /**Méthode qui vérifie que la date est correct
-     * 
+     *
      * @return un boolean en fonction de si la date est correct
      */
 //    public boolean dateCorrect(){
@@ -135,7 +144,7 @@ public class Dates {
 //        
 //        return rep;
 //    }
-    
-    }
+
+}
 
 

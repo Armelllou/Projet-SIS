@@ -9,14 +9,13 @@ import java.sql.Types;
 
 public class Acte {
 
+    ConnexionBD conn = ConnexionBD.getInstance();
     private Dates date;
     private String Type;
     private String idIDE;
     private String ipp;
     private String observations;
     private Dates dates;
-
-    ConnexionBD conn = new ConnexionBD();
 
     public Acte(String observations, String Type, String idIDE, String ipp, Dates dates) {
         this.date = date;
@@ -36,14 +35,13 @@ public class Acte {
         statement.setObject(3, a.getType(), Types.VARCHAR);
         statement.setObject(4, a.getObservation(), Types.VARCHAR);
         statement.setObject(5, a.getDates(), Types.INTEGER);
-        
+
 
         statement.executeUpdate();
         j = true;
         return j;
     }
 
-   
 
     public String getType() {
         return Type;

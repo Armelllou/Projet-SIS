@@ -1,12 +1,15 @@
 package main.java.nf;
 
 
-import main.java.nf.sejour.*;
 import main.java.nf.dossieradministratif.Dma;
 import main.java.nf.dossiermedical.Dm;
 import main.java.nf.patient.Patient;
 import main.java.nf.personnel.Medecin;
 import main.java.nf.personnel.SecretaireMedical;
+import main.java.nf.sejour.Acte;
+import main.java.nf.sejour.Hospitalisation;
+import main.java.nf.sejour.Observation;
+import main.java.nf.sejour.Resultat;
 import main.java.nf.sejour.consultation.Consultation;
 
 import java.util.ArrayList;
@@ -22,7 +25,7 @@ public class Sih {
     private List<Resultat> resultatList;
     private List<Hospitalisation> hospitalisationList;
     private List<Consultation> consultationList;
-    private List <Acte> acte;
+    private List<Acte> acte;
 
     public static void ajoutPatient(Patient patient) {
         patientList.add(patient);
@@ -34,6 +37,14 @@ public class Sih {
 
     public static List<Dma> getDmaList() {
         return dmaList;
+    }
+
+    public static List<Patient> getPatientList() {
+        return patientList;
+    }
+
+    public static void nouvelleAdmission(Dma dma) {
+        dmaList.add(dma);
     }
 
     public List<SecretaireMedical> getSecretaireMedicalList() {
@@ -62,13 +73,5 @@ public class Sih {
 
     public List<Acte> getSoinInfList() {
         return acte;
-    }
-
-    public static List<Patient> getPatientList() {
-        return patientList;
-    }
-
-    public static void nouvelleAdmission(Dma dma) {
-        dmaList.add(dma);
     }
 }

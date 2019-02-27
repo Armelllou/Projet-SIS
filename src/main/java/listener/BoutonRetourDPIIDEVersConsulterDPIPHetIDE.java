@@ -5,28 +5,28 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
 import main.java.interfaces.ConsulterDPIPHetIDE;
-import main.java.interfaces.ide.DPIIDE;
 import main.java.interfaces.Fenetre;
+import main.java.interfaces.ide.DPIIDE;
+import main.java.nf.Sih;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonRetourDPIIDEVersConsulterDPIPHetIDE implements ActionListener {
-    
+
     DPIIDE dpis;
     ConsulterDPIPHetIDE cdpis;
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourDPIIDEVersConsulterDPIPHetIDE(Fenetre jframe,ConsulterDPIPHetIDE cdpis, DPIIDE dpis, Sih sih) {
+    public BoutonRetourDPIIDEVersConsulterDPIPHetIDE(Fenetre jframe, ConsulterDPIPHetIDE cdpis, DPIIDE dpis, Sih sih) {
         this.jframe = jframe;
-        this.cdpis=cdpis;
-        this.dpis=dpis;
+        this.cdpis = cdpis;
+        this.dpis = dpis;
         this.sih = sih;
     }
 
@@ -37,5 +37,5 @@ public class BoutonRetourDPIIDEVersConsulterDPIPHetIDE implements ActionListener
         jframe.revalidate();
         jframe.repaint();
     }
-    
+
 }

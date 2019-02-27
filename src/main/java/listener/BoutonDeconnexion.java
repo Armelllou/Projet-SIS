@@ -8,11 +8,11 @@ package main.java.listener;
 import main.java.interfaces.BarreDuHaut;
 import main.java.interfaces.Connexion;
 import main.java.interfaces.Fenetre;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 /**
- *
  * @author Manon
  */
 public class BoutonDeconnexion implements ActionListener {
@@ -21,15 +21,15 @@ public class BoutonDeconnexion implements ActionListener {
     Connexion c;
     Fenetre fen;
 
-    public BoutonDeconnexion(Connexion c, Fenetre fen,BarreDuHaut b) {
+    public BoutonDeconnexion(Connexion c, Fenetre fen, BarreDuHaut b) {
         this.c = c;
         this.fen = fen;
-        this.b=b;
+        this.b = b;
     }
 
     public void actionPerformed(ActionEvent e) {
         fen.TotaliteFalse();
-      
+
         fen.add(c);
         c.setVisible(true);
         c.getjPasswordField1().setText("          ");

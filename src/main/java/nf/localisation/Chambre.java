@@ -6,19 +6,17 @@
 package main.java.nf.localisation;
 
 /**
- *
  * @author annel
  */
 class Chambre {
-     int[] num;
+    int[] num;
 
     public Chambre(int num[]) {
-        
-         if(num.length==3&&num[0]>=0&&num[0]<=9&&num[1]>=0&&num[1]<=9&&num[2]>=0&&num[2]<=9){
-             this.num=num;
-         }
-         else System.out.println("Le numéro de chambre est inconnu");
-   
-       }
-        
+
+        if (num.length == 3 && num[0] >= 0 && num[0] <= 9 && num[1] >= 0 && num[1] <= 9 && num[2] >= 0 && num[2] <= 9) {
+            this.num = num;
+        } else System.out.println("Le numéro de chambre est inconnu");
+
+    }
+
 }

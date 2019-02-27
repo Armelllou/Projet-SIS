@@ -7,7 +7,7 @@ public class Medecin {
     String nom;
     String Prenom;
     String ville;
-    boolean medecinGeneraliste=false;
+    boolean medecinGeneraliste = false;
 
     public Medecin(String nom, String Prenom, String ville) {
         this.nom = nom;
@@ -16,8 +16,8 @@ public class Medecin {
     }
 
     public Medecin rechercherMedecin(String nom, String prenom) {
-        for(Medecin medecin : Sih.getMedecinList()){
-            if(medecin.nom.equals(nom) && medecin.Prenom.equals(prenom)){
+        for (Medecin medecin : Sih.getMedecinList()) {
+            if (medecin.nom.equals(nom) && medecin.Prenom.equals(prenom)) {
                 return medecin;
             }
         }

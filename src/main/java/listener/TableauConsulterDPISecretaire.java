@@ -6,10 +6,12 @@
 package main.java.listener;
 
 import main.java.bd.ConnexionBD;
-import main.java.nf.Sih;
+import main.java.interfaces.Fenetre;
 import main.java.interfaces.secretaire.ConsulterDPISecretaire;
 import main.java.interfaces.secretaire.DPISecretaire;
-import main.java.interfaces.Fenetre;
+import main.java.nf.Sih;
+
+import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.PreparedStatement;
@@ -18,10 +20,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
 
 /**
- *
  * @author Manon
  */
 public class TableauConsulterDPISecretaire implements MouseListener {
@@ -60,19 +60,20 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             dpis.getjLabelipp().setText(ipp);
 
             String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
-            ConnexionBD conn = new ConnexionBD();
+            ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
 
             ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet Rs = ps.executeQuery();;
+            ResultSet Rs = ps.executeQuery();
+            ;
 
             ResultSetMetaData rsmd = Rs.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
             while (Rs.next()) {
 
                 String DateDeNaissance = Rs.getString(5);
-                
+
                 String Sexe = Rs.getString(6);
                 String MedecinG = Rs.getString(7);
                 String Adresse = Rs.getString(8);
@@ -94,22 +95,23 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
             ps2 = conn.getConnexion().prepareStatement(Sql2);
 
-            ResultSet Rs2 = ps2.executeQuery();;
+            ResultSet Rs2 = ps2.executeQuery();
+            ;
 
             ResultSetMetaData rsmd2 = Rs2.getMetaData();
             int columnsNumber2 = rsmd2.getColumnCount();
 
             while (Rs2.next()) {
 
-               String ServiceGegraphique = Rs2.getString(2);
-               String ServiceRespo = Rs2.getString(3);
-               String chambre = Rs2.getString(4);
-          
+                String ServiceGegraphique = Rs2.getString(2);
+                String ServiceRespo = Rs2.getString(3);
+                String chambre = Rs2.getString(4);
+
                 dpis.getSereviceRespo().setText(ServiceRespo);
                 dpis.getServiceGeo().setText(ServiceGegraphique);
 
                 dpis.getjLabelchamnre().setText(chambre);
-               
+
                 fen.PanelVisibleFalse();
                 fen.add(dpis);
                 dpis.setVisible(true);

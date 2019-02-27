@@ -14,7 +14,7 @@ import java.sql.*;
 public class BoutonRecherchePatientPhEtIde implements ActionListener {
     Fenetre fen;
     ConsulterDPIPHetIDE cdpis;
-    ConnexionBD conn = new ConnexionBD();
+    ConnexionBD conn = ConnexionBD.getInstance();
 
     public BoutonRecherchePatientPhEtIde(Fenetre jframe, ConsulterDPIPHetIDE cdpis) {
         this.fen = jframe;

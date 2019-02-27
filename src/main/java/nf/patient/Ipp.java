@@ -33,9 +33,9 @@ public class Ipp {
     public String getIpp() {
         return ipp;
     }
-    
-    public String toString(){
-        
+
+    public String toString() {
+
         return ipp;
     }
 }

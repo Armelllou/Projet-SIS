@@ -1,6 +1,7 @@
 package main.java.nf.patient;
 
 import main.java.bd.ConnexionBD;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
@@ -25,9 +26,9 @@ public class IppCounter {
         }
 
         // incrémente le chiffre à la création de chaque nombre de patient
-        
+
         // if (ippCounter !=0){
-        ConnexionBD conn = new ConnexionBD();
+        ConnexionBD conn = ConnexionBD.getInstance();
         String Sql1 = "Select max(IPP) from patient";
         PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
         ResultSet resultSet = ps.executeQuery();

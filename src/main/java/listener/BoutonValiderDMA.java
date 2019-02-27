@@ -6,20 +6,23 @@
 package main.java.listener;
 
 import main.java.bd.ConnexionBD;
-import main.java.nf.patient.Adresse;
+import main.java.interfaces.Fenetre;
+import main.java.interfaces.dpi.CreationDPI;
+import main.java.interfaces.secretaire.ConsulterDPISecretaire;
 import main.java.nf.Dates;
 import main.java.nf.localisation.Localisation;
+import main.java.nf.patient.Adresse;
 import main.java.nf.patient.Patient;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
-import main.java.interfaces.dpi.CreationDPI;
-import main.java.interfaces.Fenetre;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -67,11 +70,12 @@ public class BoutonValiderDMA implements ActionListener {
             try {
 
                 Sql45 = "SELECT * FROM patient";
-                ConnexionBD conn = new ConnexionBD();
+                ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
-                ResultSet Rs = ps.executeQuery();;
+                ResultSet Rs = ps.executeQuery();
+                ;
                 rs = ps.executeQuery(Sql45);
-             
+
 
                 while (rs.next()) {
                     InfoAllPatient[0] = rs.getString("NomDeNaissance");

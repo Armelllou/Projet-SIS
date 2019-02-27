@@ -5,21 +5,20 @@
  */
 package main.java.listener;
 
-import main.java.nf.Sih;
 import main.java.interfaces.ConsulterDPIPHetIDE;
+import main.java.interfaces.Fenetre;
 import main.java.interfaces.ide.DPIIDE;
 import main.java.interfaces.ph.DPIPH;
-import main.java.interfaces.Fenetre;
+import main.java.nf.Sih;
 
+import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
 
 /**
- *
  * @author stifinekawtar
  */
 
@@ -28,7 +27,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
     DPIPH imph;
     DPIIDE imide;
     ConsulterDPIPHetIDE cdpi;
-   
+
     Fenetre fen;
     Sih sih;
     JTable table;
@@ -43,21 +42,20 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
         this.table = table;
         this.conn = conn;
 
-        
+
     }
 
-  
 
     @Override
     public void mouseClicked(MouseEvent e) {
 
- 
-            int NumLigne;
-            NumLigne = table.getSelectedRow();
+
+        int NumLigne;
+        NumLigne = table.getSelectedRow();
 
         try {
             if (conn.ConnexionPH() == true) {
-                
+
 //                    try{
 //                    
 //            String nomDeNaissance = (String) table.getModel().getValueAt(NumLigne, 0);
@@ -72,7 +70,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 //            imide.getjLabelipp().setText(ipp);
 //
 //            String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
-//            ConnexionBD conn = new ConnexionBD();
+//            ConnexionBD conn = ConnexionBD.getInstance();
 //            PreparedStatement ps;
 //
 //            ps = conn.getConnexion().prepareStatement(Sql1);
@@ -124,32 +122,24 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 //
 //
 
-fen.PanelVisibleFalse();
-fen.add(imph);
-imph.setVisible(true);
-fen.revalidate();
-fen.repaint();
+                fen.PanelVisibleFalse();
+                fen.add(imph);
+                imph.setVisible(true);
+                fen.revalidate();
+                fen.repaint();
             }
-            
-            
-            
+
+
 //        } catch (SQLException ex) {
 //            Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 //
-            
-            
-            
-            
-            
-            
-            
-            
-            
+
+
             else {
                 if (conn.ConnexionIde() == true) {
-                    
-                    
+
+
 //
 //                    try{
 //                    
@@ -165,7 +155,7 @@ fen.repaint();
 //            imide.getjLabelipp().setText(ipp);
 //
 //            String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
-//            ConnexionBD conn = new ConnexionBD();
+//            ConnexionBD conn = ConnexionBD.getInstance();
 //            PreparedStatement ps;
 //
 //            ps = conn.getConnexion().prepareStatement(Sql1);
@@ -216,11 +206,11 @@ fen.repaint();
 //                imide.getjLabelchamnre().setText(chambre);
 //
 
-fen.PanelVisibleFalse();
-fen.add(imide);
-imph.setVisible(true);
-fen.revalidate();
-fen.repaint();
+                    fen.PanelVisibleFalse();
+                    fen.add(imide);
+                    imph.setVisible(true);
+                    fen.revalidate();
+                    fen.repaint();
 //
 //            }
 //
@@ -235,40 +225,33 @@ fen.repaint();
 //            }
 
                 }
-                
-                
-                
-                
-                
+
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPIPHetIDE.class.getName()).log(Level.SEVERE, null, ex);
         }
-}
-                
-            
-            
-            
-            
-            
-            @Override
-            public void mousePressed(MouseEvent e) {
-            // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-            
-            @Override
-            public void mouseReleased(MouseEvent e) {
-            //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-            
-            @Override
-            public void mouseEntered(MouseEvent e) {
-            //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-            
-            @Override
-            public void mouseExited(MouseEvent e) {
-            // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        } 
+    }
+
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

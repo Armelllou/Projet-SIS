@@ -2,15 +2,14 @@ package main.java.nf;
 
 import main.java.bd.ConnexionBD;
 
-import java.sql.*;
-
+import java.sql.SQLException;
 import java.util.Date;
 
 public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        ConnexionBD conn = new ConnexionBD();
+        ConnexionBD conn = ConnexionBD.getInstance();
         Date d = new Date(01 - 01 - 1999);
 
 //Sexe s = Sexe.H;
@@ -42,8 +41,5 @@ public class Main {
 //    }
 
 
-     
-
-              
-    
-}}
+    }
+}

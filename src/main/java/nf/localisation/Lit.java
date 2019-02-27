@@ -6,26 +6,22 @@
 package main.java.nf.localisation;
 
 /**
- *
  * @author annel
  */
 public class Lit {
-   String n;
-   String F;
-   String P;
+    String n;
+    String F;
+    String P;
 
 
     public Lit(String n) {
-        if (n.equals(F)== false) {
+        if (n.equals(F) == false) {
             System.out.println("le numéro de lit est inconnu");
         }
-        if (n.equals(P) == false){
-             System.out.println("le format de lit est inconnu");
-        }
-        
-        else this.n=n;
+        if (n.equals(P) == false) {
+            System.out.println("le format de lit est inconnu");
+        } else this.n = n;
     }
-    
-   
-    
+
+
 }
