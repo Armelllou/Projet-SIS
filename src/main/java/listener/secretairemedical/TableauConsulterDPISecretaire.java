@@ -105,7 +105,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
                 dpis.getjLabelchamnre().setText(chambre);
 
-                fen.PanelVisibleFalse();
+                fen.panelVisibleFalse();
                 fen.add(dpis);
                 dpis.setVisible(true);
                 fen.revalidate();

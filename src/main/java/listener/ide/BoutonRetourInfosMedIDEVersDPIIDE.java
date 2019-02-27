@@ -27,7 +27,7 @@ public class BoutonRetourInfosMedIDEVersDPIIDE implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        fen.PanelVisibleFalse();
+        fen.panelVisibleFalse();
         fen.add(dpi);
         dpi.setVisible(true);
         fen.revalidate();

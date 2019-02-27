@@ -137,7 +137,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
             Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(dpis);
         dpis.setVisible(true);
         jframe.revalidate();

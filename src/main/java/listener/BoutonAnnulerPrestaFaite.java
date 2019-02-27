@@ -28,7 +28,7 @@ public class BoutonAnnulerPrestaFaite implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        fen.PanelVisibleFalse();
+        fen.panelVisibleFalse();
         fen.add(p);
         p.setVisible(true);
         fen.revalidate();

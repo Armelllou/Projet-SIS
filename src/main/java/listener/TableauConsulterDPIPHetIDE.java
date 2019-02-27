@@ -117,7 +117,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 //
 //
 
-                fen.PanelVisibleFalse();
+                fen.panelVisibleFalse();
                 fen.add(imph);
                 imph.setVisible(true);
                 fen.revalidate();
@@ -201,7 +201,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 //                imide.getjLabelchamnre().setText(chambre);
 //
 
-                    fen.PanelVisibleFalse();
+                    fen.panelVisibleFalse();
                     fen.add(imide);
                     imph.setVisible(true);
                     fen.revalidate();

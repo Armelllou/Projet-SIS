@@ -34,7 +34,7 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent e) {
         int numLigne = table.getSelectedRow();
-        fen.PanelVisibleFalse();
+        fen.panelVisibleFalse();
         fen.add(cph);
         cph.setVisible(true);
         fen.revalidate();

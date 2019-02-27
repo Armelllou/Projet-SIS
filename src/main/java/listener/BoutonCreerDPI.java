@@ -34,7 +34,7 @@ public class BoutonCreerDPI implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        fen.PanelVisibleFalse();
+        fen.panelVisibleFalse();
 
         fen.add(dpi);
         dpi.setVisible(true);

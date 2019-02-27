@@ -61,7 +61,7 @@ public class BoutonModifierDPI implements ActionListener {
         mdpi.getjLabel3().setText(ipp);
 
 
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(mdpi);
         mdpi.setVisible(true);
         jframe.revalidate();

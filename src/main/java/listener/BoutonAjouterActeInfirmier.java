@@ -28,7 +28,7 @@ public class BoutonAjouterActeInfirmier implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(ai);
         ai.setVisible(true);
         jframe.revalidate();

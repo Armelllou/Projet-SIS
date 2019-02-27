@@ -5,8 +5,6 @@
  */
 package main.java.interfaces;
 
-import main.java.bd.ConnexionBD;
-import main.java.bd.MethodeBD;
 import main.java.interfaces.dpi.CreationDPI;
 import main.java.interfaces.dpi.ModificationDPI;
 import main.java.interfaces.ide.*;
@@ -127,10 +125,11 @@ public class Fenetre extends JFrame {
         consultdpiphide = new ConsulterDPIPHetIDE();
 
         ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this);
+
         //connexion
         consultdpiphide.setService(l.getBDHService());
         valider.addActionListener(l);
-        connexion.getjPasswordField1().addKeyListener(new ConnexionEntrerListener(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this));
+        connexion.getjPasswordField1().addKeyListener(l);
 
         //boutons
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
@@ -191,7 +190,7 @@ public class Fenetre extends JFrame {
         tableauprestations.addMouseListener(new TableauPrestations(prestations, prestafaite, this, sih, prestations.getjTable1()));
 
 
-        //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
+        //Confirmation pour quitter l'application
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 int reponse = JOptionPane.showConfirmDialog(frame,
@@ -200,7 +199,6 @@ public class Fenetre extends JFrame {
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE);
                 if (reponse == JOptionPane.YES_OPTION) {
-
                     System.exit(0);
                 }
             }
@@ -209,25 +207,16 @@ public class Fenetre extends JFrame {
     }
 
     public static void main(String[] args) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Fenetre frame = null;
-                try {
-                    frame = new Fenetre();
-                } catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-                frame.setVisible(true);
-                frame.setVisible(true);
-
-
-            }
-        });
-
+        try {
+            Fenetre frame = new Fenetre();
+            frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            frame.setVisible(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
-    public void PanelVisibleFalse() {
+    public void panelVisibleFalse() {
         connexion.setVisible(false);
         creationdpi.setVisible(false);
         consultdpis.setVisible(false);
@@ -251,13 +240,12 @@ public class Fenetre extends JFrame {
         prescriptionide.setVisible(false);
         consultationide.setVisible(false);
         acteinfirmieride.setVisible(false);
-
     }
 
-    public void TotaliteFalse() {
+    public void totaliteFalse() {
         barreduhaut.setVisible(false);
         connexion.setVisible(false);
-        this.PanelVisibleFalse();
+        this.panelVisibleFalse();
     }
 
 

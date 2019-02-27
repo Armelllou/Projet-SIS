@@ -18,7 +18,6 @@ import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * @author Manon
@@ -67,7 +66,7 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
             e1.printStackTrace();
         }
 
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(cdpis);
         cdpis.setVisible(true);
         jframe.revalidate();

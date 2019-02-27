@@ -46,7 +46,7 @@ public class BoutonValiderActe implements ActionListener {
 
             jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
 
-            fen.PanelVisibleFalse();
+            fen.panelVisibleFalse();
 
             fen.add(im);
             im.setVisible(true);

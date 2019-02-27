@@ -1,12 +1,12 @@
 package main.java.bd;
 
-import main.java.interfaces.BarreDuHaut;
-import main.java.interfaces.Connexion;
-import main.java.interfaces.ConsulterDPIPHetIDE;
 import main.java.nf.patient.Patient;
 
 import javax.swing.table.DefaultTableModel;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
 
 public class MethodeBD {
 
@@ -15,8 +15,42 @@ public class MethodeBD {
     /**
      * Constructeur de la classe, avec en paramètre la connection à la base.
      */
-    public MethodeBD() throws SQLException {
-        //this.state = ConnexionBD.getInstance().getConnexion().createStatement();
+    public MethodeBD() {
+    }
+
+    public static ResultSet executeQuery(String query) {
+        try {
+            ConnexionBD conn = ConnexionBD.getInstance();
+            PreparedStatement ps = conn.getConnexion().prepareStatement(query);
+            return ps.executeQuery(query);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static DefaultTableModel execute(String query) {
+        String[] infoAllPatient = new String[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return null;
+        }
+
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("NomDeNaissance");
+                infoAllPatient[1] = rs.getString("NomUsuel");
+                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
     }
 
     /**
@@ -43,7 +77,7 @@ public class MethodeBD {
      */
     public static DefaultTableModel listePatientJTableService(String service) {
         System.out.println(service);
-        return executeQuery("SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=" + service + " OR localisations.ServiceGeographique="+ service );
+        return execute("SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=" + service + " OR localisations.ServiceGeographique=" + service);
     }
 
     /**
@@ -52,7 +86,7 @@ public class MethodeBD {
      * @return DefaultTableModel
      */
     public static DefaultTableModel listeAllPatientJTable() {
-        return executeQuery("SELECT * FROM patient");
+        return execute("SELECT * FROM patient");
     }
 
     /**
@@ -61,31 +95,7 @@ public class MethodeBD {
      * @return DefaultTableModel
      */
     public static DefaultTableModel recherchePatientViaIPP(String ipp) {
-        return executeQuery("Select * FROM patient WHERE IPP ='" + ipp + "'");
-    }
-
-    private static DefaultTableModel executeQuery(String query) {
-        String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-        DefaultTableModel templatesTableModel = new DefaultTableModel();
-        templatesTableModel.setColumnIdentifiers(title);
-
-        try {
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps = conn.getConnexion().prepareStatement(query);
-            ResultSet rs = ps.executeQuery(query);
-
-            while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
-                infoAllPatient[3] = rs.getString("IPP");
-                templatesTableModel.addRow(infoAllPatient);
-            }
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
-        return templatesTableModel;
+        return execute("Select * FROM patient WHERE IPP ='" + ipp + "'");
     }
 
     /**
@@ -99,7 +109,7 @@ public class MethodeBD {
         } else {
             String nom = splitArray[0];
             String prenom = splitArray[1];
-            return executeQuery("Select * FROM patient WHERE NomUsuel ='" + nom + "'" +
+            return execute("Select * FROM patient WHERE NomUsuel ='" + nom + "'" +
                     "OR NomUsuel ='" + prenom + "'" +
                     "OR NomDeNaissance ='" + nom + "'" +
                     "OR NomDeNaissance ='" + prenom + "'and Prénom ='" + nom + "'" +
@@ -118,7 +128,7 @@ public class MethodeBD {
         } else {
             String nom = splitArray[0];
             String prenom = splitArray[1];
-            return executeQuery("Select * FROM patient WHERE NomUsuel ='" + nom + "'" +
+            return execute("Select * FROM patient WHERE NomUsuel ='" + nom + "'" +
                     "OR NomUsuel ='" + prenom + "'" +
                     "OR NomDeNaissance ='" + nom + "'" +
                     "OR NomDeNaissance ='" + prenom + "'and Prénom ='" + nom + "'" +

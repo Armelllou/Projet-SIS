@@ -27,7 +27,7 @@ public class BoutonDPIPHVersInfosMedPH implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        fen.PanelVisibleFalse();
+        fen.panelVisibleFalse();
         fen.add(im);
         im.setVisible(true);
         fen.revalidate();

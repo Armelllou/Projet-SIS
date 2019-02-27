@@ -35,7 +35,7 @@ public class TableauPrestations implements MouseListener {
     @Override
     public void mouseClicked(MouseEvent me) {
         int numLigne = table.getSelectedRow();
-        fen.PanelVisibleFalse();
+        fen.panelVisibleFalse();
         fen.add(pf);
         pf.setVisible(true);
         fen.revalidate();

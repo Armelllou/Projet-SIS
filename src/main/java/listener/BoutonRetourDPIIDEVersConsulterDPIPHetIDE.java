@@ -31,7 +31,7 @@ public class BoutonRetourDPIIDEVersConsulterDPIPHetIDE implements ActionListener
     }
 
     public void actionPerformed(ActionEvent ae) {
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(cdpis);
         cdpis.setVisible(true);
         jframe.revalidate();

@@ -31,7 +31,7 @@ public class BoutonAnnulerCreationDPI implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(cdpi);
         cdpi.setVisible(true);
         jframe.revalidate();

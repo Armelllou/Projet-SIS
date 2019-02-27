@@ -28,7 +28,7 @@ public class ConnexionBD {
 
 
             if (this.conn.isValid(0)) {
-                System.out.println("===>Connexion effectuée");
+                System.out.println("===> Connexion effectuee");
             }
 
 

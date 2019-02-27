@@ -28,7 +28,7 @@ public class BoutonDeconnexion implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        fen.TotaliteFalse();
+        fen.totaliteFalse();
 
         fen.add(c);
         c.setVisible(true);

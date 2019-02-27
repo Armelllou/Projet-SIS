@@ -31,7 +31,7 @@ public class BoutonAjouterConsultation implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(ac);
         ac.setVisible(true);
         jframe.revalidate();

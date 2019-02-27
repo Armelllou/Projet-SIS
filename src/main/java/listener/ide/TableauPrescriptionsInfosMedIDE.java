@@ -35,7 +35,7 @@ public class TableauPrescriptionsInfosMedIDE implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         int numLigne = table.getSelectedRow();
 
-        fen.PanelVisibleFalse();
+        fen.panelVisibleFalse();
         fen.add(cph);
         cph.setVisible(true);
         fen.revalidate();

@@ -31,7 +31,7 @@ public class BoutonRetourActeInfirmierPHVersInfosMedicalesPH implements ActionLi
     }
 
     public void actionPerformed(ActionEvent ae) {
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(im);
         im.setVisible(true);
         jframe.revalidate();

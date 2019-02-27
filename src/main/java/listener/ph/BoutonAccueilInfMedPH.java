@@ -29,7 +29,7 @@ public class BoutonAccueilInfMedPH implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        jframe.PanelVisibleFalse();
+        jframe.panelVisibleFalse();
         jframe.add(dpiphide);
         dpiphide.setVisible(true);
         jframe.revalidate();

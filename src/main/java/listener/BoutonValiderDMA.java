@@ -50,7 +50,7 @@ public class BoutonValiderDMA implements ActionListener {
             JOptionPane jop1 = new JOptionPane();
 
             jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
-            fen.PanelVisibleFalse();
+            fen.panelVisibleFalse();
             Statement stmt;
             String sql45;
             ResultSet rs;
