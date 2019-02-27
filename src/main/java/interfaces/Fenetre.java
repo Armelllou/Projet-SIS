@@ -31,6 +31,7 @@ public class Fenetre extends JFrame {
 
     // Déclaration de tous les JPanel
     Connexion connexion = new Connexion();
+    MethodeBD methodeBD = new MethodeBD(ConnexionBD.getInstance());
     CreationDPI creationdpi = new CreationDPI();
     ConsulterDPISecretaire consultdpis = new ConsulterDPISecretaire();
     ActeInfirmierPH acteinfirmierPH = new ActeInfirmierPH();
