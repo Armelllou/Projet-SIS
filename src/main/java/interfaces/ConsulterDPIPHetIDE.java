@@ -14,9 +14,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- * @author Manon
- */
 public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
     BarreDuHaut bdh;
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -114,9 +111,9 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         /**Code qui retourne dans une JTable la liste des patients de la main.java.bd
          */
         Statement stmt;
-        String Sql45;
+        String sql45;
         ResultSet rs;
-        Object[] InfoAllPatient = new Object[4];
+        String[] infoAllPatient = new String[4];
         String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -124,17 +121,17 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         try {
 
             //System.out.println("AAA"+ bdh.getService().getText());
-            Sql45 = "SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service ";
+            sql45 = "SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service ";
             ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
-            rs = ps.executeQuery(Sql45);
+            PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
+            rs = ps.executeQuery(sql45);
 
             while (rs.next()) {
-                InfoAllPatient[0] = rs.getString("NomDeNaissance");
-                InfoAllPatient[1] = rs.getString("NomUsuel");
-                InfoAllPatient[2] = rs.getString("Prénom");
-                InfoAllPatient[3] = rs.getString("IPP");
-                templatesTableModel.addRow(InfoAllPatient);
+                infoAllPatient[0] = rs.getString("NomDeNaissance");
+                infoAllPatient[1] = rs.getString("NomUsuel");
+                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
             }
             this.getjTable1().setModel(templatesTableModel);
             this.getjTable1().setFont(new Font("Calibri", 0, 18));

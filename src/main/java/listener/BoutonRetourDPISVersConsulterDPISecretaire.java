@@ -39,30 +39,24 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
 
     public void actionPerformed(ActionEvent ae) {
 
-        Statement stmt;
-        String Sql45;
+        String sql45;
         ResultSet rs;
-        Object[] InfoAllPatient = new Object[4];
+        String[] infoAllPatient = new String[4];
         String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
 
         try {
             ConnexionBD conn = ConnexionBD.getInstance();
-
-
-            Sql45 = "SELECT * FROM patient";
-            PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
-            ResultSet Rs = ps.executeQuery();
-            ;
-            rs = ps.executeQuery(Sql45);
-
+            sql45 = "SELECT * FROM patient";
+            PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
+            rs = ps.executeQuery(sql45);
             while (rs.next()) {
-                InfoAllPatient[0] = rs.getString("NomDeNaissance");
-                InfoAllPatient[1] = rs.getString("NomUsuel");
-                InfoAllPatient[2] = rs.getString("Prénom");
-                InfoAllPatient[3] = rs.getString("IPP");
-                templatesTableModel.addRow(InfoAllPatient);
+                infoAllPatient[0] = rs.getString("NomDeNaissance");
+                infoAllPatient[1] = rs.getString("NomUsuel");
+                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
             }
 
             cdpis.getjTable1().setModel(templatesTableModel);
@@ -72,7 +66,6 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-
 
         jframe.PanelVisibleFalse();
         jframe.add(cdpis);

@@ -21,9 +21,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author Manon
- */
+
 public class TableauConsulterDPISecretaire implements MouseListener {
 
     ConsulterDPISecretaire cdpis;
@@ -45,13 +43,12 @@ public class TableauConsulterDPISecretaire implements MouseListener {
     public void mouseClicked(MouseEvent me) {
 
         try {
-            int NumLigne;
-            NumLigne = table.getSelectedRow();
+            int numLigne = table.getSelectedRow();
 
-            String nomDeNaissance = (String) table.getModel().getValueAt(NumLigne, 0);
-            String nomUsuel = (String) table.getModel().getValueAt(NumLigne, 1);
-            String prenom = (String) table.getModel().getValueAt(NumLigne, 2);
-            String ipp = (String) table.getModel().getValueAt(NumLigne, 3);
+            String nomDeNaissance = (String) table.getModel().getValueAt(numLigne, 0);
+            String nomUsuel = (String) table.getModel().getValueAt(numLigne, 1);
+            String prenom = (String) table.getModel().getValueAt(numLigne, 2);
+            String ipp = (String) table.getModel().getValueAt(numLigne, 3);
             int ippS = Integer.parseInt(ipp);
 
             dpis.getjLabelnom().setText(nomDeNaissance);
@@ -59,56 +56,52 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             dpis.getjLabelprenom().setText(prenom);
             dpis.getjLabelipp().setText(ipp);
 
-            String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
+            String sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
 
-            ps = conn.getConnexion().prepareStatement(Sql1);
-
-            ResultSet Rs = ps.executeQuery();
-            ;
-
-            ResultSetMetaData rsmd = Rs.getMetaData();
+            ps = conn.getConnexion().prepareStatement(sql1);
+            ResultSet rs = ps.executeQuery();
+            ResultSetMetaData rsmd = rs.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
-            while (Rs.next()) {
+            while (rs.next()) {
 
-                String DateDeNaissance = Rs.getString(5);
+                String dateDeNaissance = rs.getString(5);
 
-                String Sexe = Rs.getString(6);
-                String MedecinG = Rs.getString(7);
-                String Adresse = Rs.getString(8);
-                String NumSS = Rs.getString(9);
-                String email = Rs.getString(10);
-                String telephone = Rs.getString(11);
+                String sexe = rs.getString(6);
+                String medecinG = rs.getString(7);
+                String adresse = rs.getString(8);
+                String numSS = rs.getString(9);
+                String email = rs.getString(10);
+                String telephone = rs.getString(11);
 
-                dpis.getjLabeladresse().setText(Adresse);
-                dpis.getjLabelnumsecu().setText(NumSS);
+                dpis.getjLabeladresse().setText(adresse);
+                dpis.getjLabelnumsecu().setText(numSS);
                 dpis.getjLabelemail().setText(email);
                 dpis.getjLabeltelephone().setText(telephone);
-                dpis.getjLabelannée().setText(DateDeNaissance);
-                dpis.getSexe().setText(Sexe);
+                dpis.getjLabelannée().setText(dateDeNaissance);
+                dpis.getSexe().setText(sexe);
 
             }
 
-            String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
+            String sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
             PreparedStatement ps2;
 
-            ps2 = conn.getConnexion().prepareStatement(Sql2);
+            ps2 = conn.getConnexion().prepareStatement(sql2);
 
-            ResultSet Rs2 = ps2.executeQuery();
-            ;
+            ResultSet rs2 = ps2.executeQuery();
 
-            ResultSetMetaData rsmd2 = Rs2.getMetaData();
+            ResultSetMetaData rsmd2 = rs2.getMetaData();
             int columnsNumber2 = rsmd2.getColumnCount();
 
-            while (Rs2.next()) {
+            while (rs2.next()) {
 
-                String ServiceGegraphique = Rs2.getString(2);
-                String ServiceRespo = Rs2.getString(3);
-                String chambre = Rs2.getString(4);
+                String serviceGeographique = rs2.getString(2);
+                String serviceRespo = rs2.getString(3);
+                String chambre = rs2.getString(4);
 
-                dpis.getSereviceRespo().setText(ServiceRespo);
-                dpis.getServiceGeo().setText(ServiceGegraphique);
+                dpis.getSereviceRespo().setText(serviceRespo);
+                dpis.getServiceGeo().setText(serviceGeographique);
 
                 dpis.getjLabelchamnre().setText(chambre);
 

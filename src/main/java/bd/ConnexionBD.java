@@ -15,16 +15,16 @@ public class ConnexionBD {
 
         try {
 
-            //String DBurl = "jdbc:mysql://192.168.64.2/bd2";
-            String DBurl = "jdbc:mysql://localhost:3306/bd2";
+            //String bBurl = "jdbc:mysql://192.168.64.2/bd2";
+            String bdUrl = "jdbc:mysql://localhost:3306/bd2";
 
-            DBurl += "?serverTimezone=UTC";
+            bdUrl += "?serverTimezone=UTC";
 
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            this.conn = DriverManager.getConnection(DBurl, "armelle", "armelle");
+            this.conn = DriverManager.getConnection(bdUrl, "armelle", "armelle");
 
-            //  this.conn = DriverManager.getConnection(DBurl, "root", "ok");
+            //  this.conn = DriverManager.getConnection(bBurl, "root", "ok");
 
 
             if (this.conn.isValid(0)) {

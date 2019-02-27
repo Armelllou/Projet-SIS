@@ -18,9 +18,6 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author stifinekawtar
- */
 
 public class TableauConsulterDPIPHetIDE implements MouseListener {
 
@@ -42,7 +39,6 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
         this.table = table;
         this.conn = conn;
 
-
     }
 
 
@@ -50,8 +46,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
     public void mouseClicked(MouseEvent e) {
 
 
-        int NumLigne;
-        NumLigne = table.getSelectedRow();
+        int numLigne = table.getSelectedRow();
 
         try {
             if (conn.ConnexionPH() == true) {

@@ -34,9 +34,7 @@ public class TableauConsultationsInfosMedIDE implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        int NumLigne;
-        NumLigne = table.getSelectedRow();
-
+        int numLigne = table.getSelectedRow();
         fen.PanelVisibleFalse();
         fen.add(cph);
         cph.setVisible(true);

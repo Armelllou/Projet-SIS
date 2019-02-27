@@ -26,12 +26,12 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
 
         try {
             String ipp = cdpis.getjTextField1().getText();
-            String Sql1 = "Select * FROM patient WHERE IPP ='" + ipp + "'";
+            String sql1 = "Select * FROM patient WHERE IPP ='" + ipp + "'";
 
             Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd2" + "?serverTimezone=UTC", "armelle", "armelle");
             Statement stmt = null;
             stmt = conn1.createStatement();
-            ResultSet rs = stmt.executeQuery(Sql1);
+            ResultSet rs = stmt.executeQuery(sql1);
             while (rs.next()) {
                 String nomDeNaissance = rs.getString("NomDeNaissance");
                 String nomUsuel = rs.getString("NomUsuel");
@@ -86,24 +86,24 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
 
             if (splitArray[0].isEmpty()) {
                 Statement stmt;
-                String Sql45;
+                String sql45;
                 ResultSet rs;
-                Object[] InfoAllPatient = new Object[4];
+                String[] infoAllPatient = new String[4];
                 String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
                 DefaultTableModel templatesTableModel = new DefaultTableModel();
                 templatesTableModel.setColumnIdentifiers(title);
 
                 Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
                 stmt = conn1.createStatement();
-                Sql45 = "SELECT * FROM patient";
-                rs = stmt.executeQuery(Sql45);
+                sql45 = "SELECT * FROM patient";
+                rs = stmt.executeQuery(sql45);
 
                 while (rs.next()) {
-                    InfoAllPatient[0] = rs.getString("NomDeNaissance");
-                    InfoAllPatient[1] = rs.getString("NomUsuel");
-                    InfoAllPatient[2] = rs.getString("Prénom");
-                    InfoAllPatient[3] = rs.getString("IPP");
-                    templatesTableModel.addRow(InfoAllPatient);
+                    infoAllPatient[0] = rs.getString("NomDeNaissance");
+                    infoAllPatient[1] = rs.getString("NomUsuel");
+                    infoAllPatient[2] = rs.getString("Prénom");
+                    infoAllPatient[3] = rs.getString("IPP");
+                    templatesTableModel.addRow(infoAllPatient);
                 }
                 cdpis.getjTable1().setModel(templatesTableModel);
                 cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
@@ -112,11 +112,11 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
 
                 String nom1 = splitArray[0];
                 String prenom1 = splitArray[1];
-                String Sql2 = "Select * FROM patient WHERE NomUsuel ='" + nom1 + "'OR NomUsuel ='" + prenom1 + "'OR NomDeNaissance ='" + nom1 + "'OR NomDeNaissance ='" + prenom1 + "'and Prénom ='" + nom1 + "'OR Prénom ='" + prenom1 + "'";
+                String sql2 = "Select * FROM patient WHERE NomUsuel ='" + nom1 + "'OR NomUsuel ='" + prenom1 + "'OR NomDeNaissance ='" + nom1 + "'OR NomDeNaissance ='" + prenom1 + "'and Prénom ='" + nom1 + "'OR Prénom ='" + prenom1 + "'";
                 Connection conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd1" + "?serverTimezone=UTC", "armelle", "armelle");
                 Statement stmt = null;
                 stmt = conn1.createStatement();
-                ResultSet rs = stmt.executeQuery(Sql2);
+                ResultSet rs = stmt.executeQuery(sql2);
                 while (rs.next()) {
                     String nomDeNaissance = rs.getString("NomDeNaissance");
                     String nomUsuel = rs.getString("NomUsuel");

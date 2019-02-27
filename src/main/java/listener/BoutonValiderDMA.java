@@ -26,9 +26,6 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author annel
- */
 public class BoutonValiderDMA implements ActionListener {
 
     Fenetre fen;
@@ -45,44 +42,35 @@ public class BoutonValiderDMA implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         try {
-
             Patient p = new Patient(cdpi.getNomdeNaissance().getText(), cdpi.getNom().getText(), new Dates(cdpi.getJour().getText(), cdpi.getMois().getText(), cdpi.getAnnee().getText()), cdpi.getGenre().getSelectedItem().toString(), cdpi.getPrenom().getText(), new Adresse(cdpi.getAdresse().getText(), cdpi.getVille().getText(), cdpi.getCodePostal().getText()), cdpi.getNumSS().getText(), cdpi.getEmail().getText(), cdpi.getTelephone().getText());
             Localisation localisation;
             localisation = new Localisation(p, cdpi.getServiceGeo().getSelectedItem().toString(), cdpi.getServiceRespo().getSelectedItem().toString());
-
             p.AjouterSurBdPatient(p);
             localisation.AjouterSurBdLocalisation(localisation);
-
             JOptionPane jop1 = new JOptionPane();
 
             jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
-
             fen.PanelVisibleFalse();
-
             Statement stmt;
-            String Sql45;
+            String sql45;
             ResultSet rs;
-            Object[] InfoAllPatient = new Object[4];
+            String[] infoallpatient = new String[4];
             String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
             DefaultTableModel templatesTableModel = new DefaultTableModel();
             templatesTableModel.setColumnIdentifiers(title);
 
             try {
-
-                Sql45 = "SELECT * FROM patient";
+                sql45 = "SELECT * FROM patient";
                 ConnexionBD conn = ConnexionBD.getInstance();
-                PreparedStatement ps = conn.getConnexion().prepareStatement(Sql45);
-                ResultSet Rs = ps.executeQuery();
-                ;
-                rs = ps.executeQuery(Sql45);
-
+                PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
+                rs = ps.executeQuery(sql45);
 
                 while (rs.next()) {
-                    InfoAllPatient[0] = rs.getString("NomDeNaissance");
-                    InfoAllPatient[1] = rs.getString("NomUsuel");
-                    InfoAllPatient[2] = rs.getString("Prénom");
-                    InfoAllPatient[3] = rs.getString("IPP");
-                    templatesTableModel.addRow(InfoAllPatient);
+                    infoallpatient[0] = rs.getString("NomDeNaissance");
+                    infoallpatient[1] = rs.getString("NomUsuel");
+                    infoallpatient[2] = rs.getString("Prénom");
+                    infoallpatient[3] = rs.getString("IPP");
+                    templatesTableModel.addRow(infoallpatient);
                 }
                 cdpis.getjTable1().setModel(templatesTableModel);
                 cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));

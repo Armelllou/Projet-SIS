@@ -5,12 +5,6 @@
  */
 package main.java.listener;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 
 import main.java.bd.ConnexionBD;
 import main.java.interfaces.*;
@@ -58,24 +52,24 @@ public class ConnexionEntrerListener implements KeyListener {
 
     public boolean ConnexionPH() throws SQLException {
         boolean j = false;
-        String Nom = " ";
-        String Prenom = " ";
-        String Service = " ";
+        String nom = " ";
+        String prenom = " ";
+        String service = " ";
         String id = "";
         String mdp = "";
 
-        String Sql1 = "Select * from praticienhospitaliers WHERE idPh ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
-        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-        ResultSet Rs = ps.executeQuery();
-        if (Rs.next()) {
-            ResultSetMetaData rsmd = Rs.getMetaData();
+        String sql1 = "Select * from praticienhospitaliers WHERE idPh ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
+        PreparedStatement ps = conn.getConnexion().prepareStatement(sql1);
+        ResultSet rs = ps.executeQuery();
+        if (rs.next()) {
+            ResultSetMetaData rsmd = rs.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
-            id = Rs.getString(1);
-            mdp = Rs.getString(2);
-            Nom = Rs.getString(3);
-            Prenom = Rs.getString(4);
-            Service = Rs.getString(5);
-            String Total = Nom + " " + Prenom + " " + Service;
+            id = rs.getString(1);
+            mdp = rs.getString(2);
+            nom = rs.getString(3);
+            prenom = rs.getString(4);
+            service = rs.getString(5);
+            String Total = nom + " " + prenom + " " + service;
 
             System.out.print(Total);
             //JOptionPane.showMessageDialog(null, "Correct");
@@ -88,9 +82,9 @@ public class ConnexionEntrerListener implements KeyListener {
             jframe.add(bh, BorderLayout.NORTH);
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
-            bh.getNom().setText(Nom);
-            bh.getPrenom().setText(Prenom);
-            bh.getService().setText(Service);
+            bh.getNom().setText(nom);
+            bh.getPrenom().setText(prenom);
+            bh.getService().setText(service);
             bh.setVisible(true);
             cdpiphetide.setVisible(true);
             bh.getId().setVisible(false);
@@ -109,26 +103,26 @@ public class ConnexionEntrerListener implements KeyListener {
 
     public boolean ConnexionIde() throws SQLException {
         boolean j = false;
-        String Nom = " ";
-        String Prenom = " ";
-        String Service = " ";
+        String nom = " ";
+        String prenom = " ";
+        String service = " ";
         String id = "";
         String mdp = "";
 
-        String Sql1 = "Select * from ide WHERE idIDE ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
-        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-        ResultSet Rs = ps.executeQuery();
+        String sql1 = "Select * from ide WHERE idIDE ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
+        PreparedStatement ps = conn.getConnexion().prepareStatement(sql1);
+        ResultSet rs = ps.executeQuery();
 
-        if (Rs.next()) {
-            ResultSetMetaData rsmd = Rs.getMetaData();
+        if (rs.next()) {
+            ResultSetMetaData rsmd = rs.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
 
-            id = Rs.getString(1);
-            mdp = Rs.getString(2);
-            Nom = Rs.getString(3);
-            Prenom = Rs.getString(4);
-            Service = Rs.getString(5);
-            String Total = Nom + " " + Prenom + " " + Service;
+            id = rs.getString(1);
+            mdp = rs.getString(2);
+            nom = rs.getString(3);
+            prenom = rs.getString(4);
+            service = rs.getString(5);
+            String Total = nom + " " + prenom + " " + service;
 
             System.out.print(Total);
 //                
@@ -143,9 +137,9 @@ public class ConnexionEntrerListener implements KeyListener {
 
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
-            bh.getNom().setText(Nom);
-            bh.getPrenom().setText(Prenom);
-            bh.getService().setText(Service);
+            bh.getNom().setText(nom);
+            bh.getPrenom().setText(prenom);
+            bh.getService().setText(service);
             bh.setVisible(true);
             cdpiphetide.setVisible(true);
             bh.getId().setVisible(false);
@@ -164,25 +158,25 @@ public class ConnexionEntrerListener implements KeyListener {
 
     public boolean connexionSecretaire() throws SQLException {
         boolean j = false;
-        String Nom = " ";
-        String Prenom = " ";
-        String Service = " ";
+        String nom = " ";
+        String prenom = " ";
+        String service = " ";
         String id = "";
         String mdp = "";
 
-        String Sql2 = "Select * from secretaireadministrative WHERE idSA ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
-        PreparedStatement ps2 = conn.getConnexion().prepareStatement(Sql2);
-        ResultSet Rs2 = ps2.executeQuery();
+        String sql2 = "Select * from secretaireadministrative WHERE idSA ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
+        PreparedStatement ps2 = conn.getConnexion().prepareStatement(sql2);
+        ResultSet rs2 = ps2.executeQuery();
 
-        if (Rs2.next()) {
-            ResultSetMetaData rsmd = Rs2.getMetaData();
+        if (rs2.next()) {
+            ResultSetMetaData rsmd = rs2.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
-            id = Rs2.getString(1);
-            mdp = Rs2.getString(2);
-            Nom = Rs2.getString(3);
-            Prenom = Rs2.getString(4);
-            Service = Rs2.getString(5);
-            String Total = Nom + " " + Prenom + " " + Service;
+            id = rs2.getString(1);
+            mdp = rs2.getString(2);
+            nom = rs2.getString(3);
+            prenom = rs2.getString(4);
+            service = rs2.getString(5);
+            String Total = nom + " " + prenom + " " + service;
 
             System.out.print(Total);
             jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -195,9 +189,9 @@ public class ConnexionEntrerListener implements KeyListener {
 
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
-            bh.getNom().setText(Nom);
-            bh.getPrenom().setText(Prenom);
-            bh.getService().setText(Service);
+            bh.getNom().setText(nom);
+            bh.getPrenom().setText(prenom);
+            bh.getService().setText(service);
             bh.setVisible(true);
             as.setVisible(true);
             bh.getId().setVisible(false);
@@ -217,40 +211,36 @@ public class ConnexionEntrerListener implements KeyListener {
 
     public boolean ConnexionMedicoTechniques() throws SQLException {
         boolean j = false;
-        String Nom = " ";
-        String Prenom = " ";
-        String Service = " ";
+        String nom = " ";
+        String prenom = " ";
+        String service = " ";
         String id = "";
         String mdp = "";
 
-        String Sql1 = "Select * from medicoTechniques WHERE idMT ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
-        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-        ResultSet Rs = ps.executeQuery();
+        String sql1 = "Select * from medicoTechniques WHERE idMT ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'";
+        PreparedStatement ps = conn.getConnexion().prepareStatement(sql1);
+        ResultSet rs = ps.executeQuery();
 
-        if (Rs.next()) {
-            ResultSetMetaData rsmd = Rs.getMetaData();
+        if (rs.next()) {
+            ResultSetMetaData rsmd = rs.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
-            id = Rs.getString(1);
-            mdp = Rs.getString(2);
-            Nom = Rs.getString(3);
-            Prenom = Rs.getString(4);
+            id = rs.getString(1);
+            mdp = rs.getString(2);
+            nom = rs.getString(3);
+            prenom = rs.getString(4);
 
-            String Total = Nom + " " + Prenom + " " + Service;
+            String Total = nom + " " + prenom + " " + service;
 
             System.out.print(Total);
-//                
-
             jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
             jframe.setLayout(new BorderLayout());
-
             jframe.PanelVisibleFalse();
-
             jframe.add(p, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);
             bh.getId().setText(id);
             bh.getMdp().setText(mdp);
-            bh.getNom().setText(Nom);
-            bh.getPrenom().setText(Prenom);
+            bh.getNom().setText(nom);
+            bh.getPrenom().setText(prenom);
             bh.getService().setText(" ");
             bh.setVisible(true);
             p.setVisible(true);

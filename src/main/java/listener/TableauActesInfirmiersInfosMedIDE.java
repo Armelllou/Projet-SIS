@@ -14,9 +14,6 @@ import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-/**
- * @author stifinekawtar
- */
 
 public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
 
@@ -37,9 +34,7 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        int NumLigne;
-        NumLigne = table.getSelectedRow();
-
+        int numLigne = table.getSelectedRow();
         fen.PanelVisibleFalse();
         fen.add(cph);
         cph.setVisible(true);

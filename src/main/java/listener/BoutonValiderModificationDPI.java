@@ -78,14 +78,11 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
         try {
             String ipp = mdpi.getjLabel3().getText();
-            String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
+            String sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
-
-            ps = conn.getConnexion().prepareStatement(Sql1);
-
+            ps = conn.getConnexion().prepareStatement(sql1);
             ResultSet Rs = ps.executeQuery();
-            ;
 
             ResultSetMetaData rsmd = Rs.getMetaData();
             int columnsNumber = rsmd.getColumnCount();
@@ -115,25 +112,22 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
             }
 
-            String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
+            String sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
             PreparedStatement ps2;
 
-            ps2 = conn.getConnexion().prepareStatement(Sql2);
-
-            ResultSet Rs2 = ps2.executeQuery();
-            ;
-
-            ResultSetMetaData rsmd2 = Rs2.getMetaData();
+            ps2 = conn.getConnexion().prepareStatement(sql2);
+            ResultSet rs2 = ps2.executeQuery();
+            ResultSetMetaData rsmd2 = rs2.getMetaData();
             int columnsNumber2 = rsmd2.getColumnCount();
 
-            while (Rs2.next()) {
+            while (rs2.next()) {
 
-                String ServiceGegraphique = Rs2.getString(2);
-                String ServiceRespo = Rs2.getString(3);
-                String chambre = Rs2.getString(4);
+                String serviceGeographique = rs2.getString(2);
+                String serviceRespo = rs2.getString(3);
+                String chambre = rs2.getString(4);
 
-                dpis.getSereviceRespo().setText(ServiceRespo);
-                dpis.getServiceGeo().setText(ServiceGegraphique);
+                dpis.getSereviceRespo().setText(serviceRespo);
+                dpis.getServiceGeo().setText(serviceGeographique);
                 dpis.getjLabelchamnre().setText(chambre);
 
             }
