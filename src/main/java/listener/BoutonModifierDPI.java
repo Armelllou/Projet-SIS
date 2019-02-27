@@ -32,7 +32,6 @@ public class BoutonModifierDPI implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
 
-
         String nom = dpis.getjLabelnom().getText();
         String nomUsuel = dpis.getjLabelnom1().getText();
         String prenom = dpis.getjLabelprenom().getText();

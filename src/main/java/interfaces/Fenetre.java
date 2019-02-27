@@ -5,6 +5,8 @@
  */
 package main.java.interfaces;
 
+import main.java.bd.ConnexionBD;
+import main.java.bd.MethodeBD;
 import main.java.interfaces.dpi.CreationDPI;
 import main.java.interfaces.dpi.ModificationDPI;
 import main.java.interfaces.ide.*;
@@ -22,6 +24,7 @@ import main.java.nf.Sih;
 import javax.swing.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.sql.SQLException;
 
 
 public class Fenetre extends JFrame {
@@ -118,10 +121,11 @@ public class Fenetre extends JFrame {
     private JTable tableauprestations = prestations.getjTable1();
 
 
-    public Fenetre() {
+    public Fenetre() throws SQLException {
         //state = State.NONCO;
         add(connexion);
-        this.setSize(1700, 830);
+
+
 
         ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this);
 
@@ -206,10 +210,16 @@ public class Fenetre extends JFrame {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Fenetre frame = new Fenetre();
+                Fenetre frame = null;
+                try {
+                    frame = new Fenetre();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 frame.setVisible(true);
                 frame.setVisible(true);
+
 
             }
         });

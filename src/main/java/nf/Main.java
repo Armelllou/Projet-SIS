@@ -1,6 +1,7 @@
 package main.java.nf;
 
 import main.java.bd.ConnexionBD;
+import main.java.bd.MethodeBD;
 
 import java.sql.SQLException;
 import java.util.Date;
@@ -11,6 +12,8 @@ public class Main {
 
         ConnexionBD conn = ConnexionBD.getInstance();
         Date d = new Date(01 - 01 - 1999);
+
+        MethodeBD.nbrePatientBD();
 
 //Sexe s = Sexe.H;
 //Adresse a = new Adresse("2","Rue des fleurs","bayonne","64000");

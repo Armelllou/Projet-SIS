@@ -5,14 +5,9 @@
  */
 package main.java.interfaces;
 
-import main.java.bd.ConnexionBD;
-
-import javax.swing.table.DefaultTableModel;
+import main.java.bd.MethodeBD;
 import java.awt.*;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
     BarreDuHaut bdh;
@@ -28,7 +23,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
     /**
      * Creates new form ConsulterDPI
      */
-    public ConsulterDPIPHetIDE() {
+    public ConsulterDPIPHetIDE() throws SQLException {
         initComponents();
     }
 
@@ -67,7 +62,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
      */
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+    private void initComponents() throws SQLException {
 
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
@@ -108,41 +103,8 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                 }
         ));
 
-        /**Code qui retourne dans une JTable la liste des patients de la main.java.bd
-         */
-        Statement stmt;
-        String sql45;
-        ResultSet rs;
-        String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-        DefaultTableModel templatesTableModel = new DefaultTableModel();
-        templatesTableModel.setColumnIdentifiers(title);
-
-        try {
-
-            //System.out.println("AAA"+ bdh.getService().getText());
-            sql45 = "SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service ";
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
-            rs = ps.executeQuery(sql45);
-
-            while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
-                infoAllPatient[3] = rs.getString("IPP");
-                templatesTableModel.addRow(infoAllPatient);
-            }
-            this.getjTable1().setModel(templatesTableModel);
-            this.getjTable1().setFont(new Font("Calibri", 0, 18));
-            System.out.println(this.getjTable1().getModel());
-
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
-        /**
-         */
-
+        this.getjTable1().setModel(MethodeBD.listePatientJTableService()); // rempli la JTable avec les patients de la BD
+        this.getjTable1().setFont(new Font("Calibri", 0, 18));
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 

@@ -6,7 +6,9 @@
 package main.java.interfaces.secretaire;
 
 import main.java.bd.ConnexionBD;
+import main.java.bd.MethodeBD;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.sql.PreparedStatement;
@@ -30,7 +32,7 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
     /**
      * Creates new form ConsulterSecretaire
      */
-    public ConsulterDPISecretaire() {
+    public ConsulterDPISecretaire() throws SQLException {
         initComponents();
     }
 
@@ -76,7 +78,7 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
-    private void initComponents() {
+    private void initComponents() throws SQLException {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -88,7 +90,8 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
-        setPreferredSize(new java.awt.Dimension(1700, 760));
+        //setPreferredSize(new java.awt.Dimension(1700, 760));
+        setPreferredSize(new java.awt.Dimension(1500, 740));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/resources/images/logo.png"))); // NOI18N
 
@@ -101,40 +104,9 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
-        /**Code qui retourne dans une JTable la liste des patients de la main.java.bd
-         *
-         */
-        String sql45;
-        ResultSet rs;
-        String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-        DefaultTableModel templatesTableModel = new DefaultTableModel();
-        templatesTableModel.setColumnIdentifiers(title);
-
-        try {
-            ConnexionBD conn = ConnexionBD.getInstance();
-            sql45 = "SELECT * FROM patient";
-            PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
-            rs = ps.executeQuery(sql45);
-
-            while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
-                infoAllPatient[3] = rs.getString("IPP");
-                templatesTableModel.addRow(infoAllPatient);
-            }
-            this.getjTable1().setModel(templatesTableModel);
-            this.getjTable1().setFont(new Font("Calibri", 0, 18));
-            System.out.println(this.getjTable1().getModel());
-
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
-        /**
-         */
-
-
+        //remplit la Jtable avec l'ensemble des patients de la BD
+        this.getjTable1().setModel(MethodeBD.listeAllPatientJTable());
+        this.getjTable1().setFont(new Font("Calibri", 0, 18));
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 

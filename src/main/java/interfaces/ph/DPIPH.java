@@ -264,10 +264,10 @@ public class DPIPH extends javax.swing.JPanel {
         jLabelnom1.setText("NOM");
 
         serviceRespo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        serviceRespo.setText("4 rue de la liberté");
+        serviceRespo.setText("Cardiologie");
 
         serviceGeo.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        serviceGeo.setText("4 rue de la liberté");
+        serviceGeo.setText("Anapathologie");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
