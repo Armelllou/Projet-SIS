@@ -1,4 +1,4 @@
-package main.java.nf.personnel;
+package nf.personnel;
 
 public abstract class Personnel {
     private int id;

@@ -1,8 +1,8 @@
-package main.java.nf.personnel;
+package nf.personnel;
 
-import main.java.nf.Sih;
-import main.java.nf.dossieradministratif.Dma;
-import main.java.nf.patient.Patient;
+import nf.Sih;
+import nf.dossieradministratif.Dma;
+import nf.patient.Patient;
 
 public class SecretaireMedical extends Personnel {
 

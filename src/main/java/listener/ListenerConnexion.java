@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package listener;
 
-import main.java.bd.ConnexionBD;
-import main.java.interfaces.*;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
+import bd.ConnexionBD;
+import interfaces.*;
+import interfaces.ConsulterDPISecretaire;
 
 import javax.swing.*;
 import java.awt.*;

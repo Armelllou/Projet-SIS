@@ -1,7 +1,7 @@
-package main.java.nf.personnel;
+package nf.personnel;
 
 
-import main.java.nf.Sih;
+import nf.Sih;
 
 public class Medecin {
     String nom;

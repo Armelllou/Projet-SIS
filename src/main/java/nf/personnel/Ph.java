@@ -1,4 +1,4 @@
-package main.java.nf.personnel;
+package nf.personnel;
 
 public class Ph extends Personnel {
     private Boolean chefDeService;

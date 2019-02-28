@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package listener;
 
-import main.java.interfaces.AjouterActeInfirmier;
-import main.java.interfaces.BarreDuHaut;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.ide.InfosMedicalesIDE;
-import main.java.nf.Dates;
-import main.java.nf.sejour.Acte;
+import interfaces.AjouterActeInfirmier;
+import interfaces.BarreDuHaut;
+import interfaces.Fenetre;
+import interfaces.InfosMedicalesIDE;
+import nf.Dates;
+import nf.sejour.Acte;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

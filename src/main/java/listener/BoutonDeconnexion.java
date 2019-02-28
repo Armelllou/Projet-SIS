@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package listener;
 
-import main.java.interfaces.BarreDuHaut;
-import main.java.interfaces.Connexion;
-import main.java.interfaces.Fenetre;
+import interfaces.BarreDuHaut;
+import interfaces.Connexion;
+import interfaces.Fenetre;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

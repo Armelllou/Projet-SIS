@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener.ide;
+package listener.ide;
 
-import main.java.interfaces.ConsulterDPIPHetIDE;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.ide.ConsultationIDE;
-import main.java.nf.Sih;
+import interfaces.ConsulterDPIPHetIDE;
+import interfaces.Fenetre;
+import interfaces.ConsultationIDE;
+import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

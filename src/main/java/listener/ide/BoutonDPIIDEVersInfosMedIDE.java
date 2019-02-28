@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener.ide;
+package listener.ide;
 
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.ide.DPIIDE;
-import main.java.interfaces.ide.InfosMedicalesIDE;
+import interfaces.Fenetre;
+import interfaces.DPIIDE;
+import interfaces.InfosMedicalesIDE;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

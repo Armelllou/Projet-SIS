@@ -1,11 +1,11 @@
-package main.java.nf.patient;
+package nf.patient;
 
-import main.java.bd.ConnexionBD;
-import main.java.interfaces.dpi.CreationDPI;
-import main.java.nf.Dates;
-import main.java.nf.Sih;
-import main.java.nf.dossieradministratif.Dma;
-import main.java.nf.localisation.Localisation;
+import bd.ConnexionBD;
+import interfaces.CreationDPI;
+import nf.Dates;
+import nf.Sih;
+import nf.dossieradministratif.Dma;
+import nf.localisation.Localisation;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

@@ -1,6 +1,6 @@
-package main.java.nf.personnel;
+package nf.personnel;
 
-import main.java.bd.ConnexionBD;
+import bd.ConnexionBD;
 
 import java.sql.SQLException;
 

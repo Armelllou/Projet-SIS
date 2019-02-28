@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.nf.localisation;
+package nf.localisation;
 
-import main.java.bd.ConnexionBD;
-import main.java.nf.patient.Ipp;
-import main.java.nf.patient.Patient;
+import bd.ConnexionBD;
+import nf.patient.Ipp;
+import nf.patient.Patient;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

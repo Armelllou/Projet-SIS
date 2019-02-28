@@ -1,6 +1,6 @@
-package main.java.nf.patient;
+package nf.patient;
 
-import main.java.bd.ConnexionBD;
+import bd.ConnexionBD;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

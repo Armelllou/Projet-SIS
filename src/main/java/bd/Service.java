@@ -1,4 +1,4 @@
-package main.java.bd;
+package bd;
 
 public class Service {
 

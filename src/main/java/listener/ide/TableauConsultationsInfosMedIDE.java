@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener.ide;
+package listener.ide;
 
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.ide.ConsultationIDE;
-import main.java.interfaces.ide.InfosMedicalesIDE;
-import main.java.nf.Sih;
+import interfaces.Fenetre;
+import interfaces.ConsultationIDE;
+import interfaces.InfosMedicalesIDE;
+import nf.Sih;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;

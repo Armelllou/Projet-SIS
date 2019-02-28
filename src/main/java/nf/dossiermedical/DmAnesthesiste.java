@@ -1,9 +1,9 @@
-package main.java.nf.dossiermedical;
+package nf.dossiermedical;
 
-import main.java.nf.sejour.Hospitalisation;
-import main.java.nf.sejour.Observation;
-import main.java.nf.sejour.Resultat;
-import main.java.nf.sejour.consultation.Consultation;
+import nf.sejour.Hospitalisation;
+import nf.sejour.Observation;
+import nf.sejour.Resultat;
+import nf.sejour.consultation.Consultation;
 
 import java.util.List;
 

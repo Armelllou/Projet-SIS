@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener.secretairemedical;
+package listener.secretairemedical;
 
-import main.java.bd.ConnexionBD;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
-import main.java.interfaces.secretaire.DPISecretaire;
-import main.java.nf.Sih;
+import bd.ConnexionBD;
+import interfaces.Fenetre;
+import interfaces.ConsulterDPISecretaire;
+import interfaces.DPISecretaire;
+import nf.Sih;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;

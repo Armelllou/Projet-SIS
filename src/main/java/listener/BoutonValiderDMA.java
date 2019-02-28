@@ -3,16 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package listener;
 
-import main.java.bd.ConnexionBD;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.dpi.CreationDPI;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
-import main.java.nf.Dates;
-import main.java.nf.localisation.Localisation;
-import main.java.nf.patient.Adresse;
-import main.java.nf.patient.Patient;
+import bd.ConnexionBD;
+import interfaces.Fenetre;
+import interfaces.CreationDPI;
+import interfaces.ConsulterDPISecretaire;
+import nf.Dates;
+import nf.localisation.Localisation;
+import nf.patient.Adresse;
+import nf.patient.Patient;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

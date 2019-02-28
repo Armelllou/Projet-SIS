@@ -1,4 +1,4 @@
-package main.java.nf.sejour;
+package nf.sejour;
 
 import java.util.List;
 

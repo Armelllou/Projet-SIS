@@ -1,9 +1,9 @@
-package main.java.listener.secretairemedical;
+package listener.secretairemedical;
 
-import main.java.bd.ConnexionBD;
-import main.java.bd.MethodeBD;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
+import bd.ConnexionBD;
+import bd.MethodeBD;
+import interfaces.Fenetre;
+import interfaces.ConsulterDPISecretaire;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;

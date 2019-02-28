@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.nf.patient;
+package nf.patient;
 
 import java.sql.SQLException;
 import java.util.Calendar;

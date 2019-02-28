@@ -1,7 +1,7 @@
-package main.java.nf;
+package nf;
 
-import main.java.bd.ConnexionBD;
-import main.java.bd.MethodeBD;
+import bd.ConnexionBD;
+import bd.MethodeBD;
 
 import java.sql.SQLException;
 import java.util.Date;

@@ -1,7 +1,7 @@
-package main.java.bd;
+package bd;
 
-import main.java.listener.ListenerConnexion;
-import main.java.nf.patient.Patient;
+import listener.ListenerConnexion;
+import nf.patient.Patient;
 
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
@@ -84,7 +84,7 @@ public class MethodeBD {
     }
 
     /**
-     * Code qui retourne dans une JTable la liste des patients de la main.java.bd
+     * Code qui retourne dans une JTable la liste des patients de la bd
      *
      * @return DefaultTableModel
      */

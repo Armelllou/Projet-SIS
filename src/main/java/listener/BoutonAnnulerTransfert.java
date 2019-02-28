@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package listener;
 
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.TransfertService;
-import main.java.interfaces.ph.DPIPH;
+import interfaces.Fenetre;
+import interfaces.TransfertService;
+import interfaces.DPIPH;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener;
+package listener;
 
 
-import main.java.interfaces.BarreDuHaut;
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.dpi.CreationDPI;
-import main.java.interfaces.secretaire.ConsulterDPISecretaire;
+import interfaces.BarreDuHaut;
+import interfaces.Fenetre;
+import interfaces.CreationDPI;
+import interfaces.ConsulterDPISecretaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

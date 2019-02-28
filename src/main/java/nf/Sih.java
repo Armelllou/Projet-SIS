@@ -1,16 +1,16 @@
-package main.java.nf;
+package nf;
 
 
-import main.java.nf.dossieradministratif.Dma;
-import main.java.nf.dossiermedical.Dm;
-import main.java.nf.patient.Patient;
-import main.java.nf.personnel.Medecin;
-import main.java.nf.personnel.SecretaireMedical;
-import main.java.nf.sejour.Acte;
-import main.java.nf.sejour.Hospitalisation;
-import main.java.nf.sejour.Observation;
-import main.java.nf.sejour.Resultat;
-import main.java.nf.sejour.consultation.Consultation;
+import nf.dossieradministratif.Dma;
+import nf.dossiermedical.Dm;
+import nf.patient.Patient;
+import nf.personnel.Medecin;
+import nf.personnel.SecretaireMedical;
+import nf.sejour.Acte;
+import nf.sejour.Hospitalisation;
+import nf.sejour.Observation;
+import nf.sejour.Resultat;
+import nf.sejour.consultation.Consultation;
 
 import java.util.ArrayList;
 import java.util.List;

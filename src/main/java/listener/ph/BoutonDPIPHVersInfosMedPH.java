@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.java.listener.ph;
+package listener.ph;
 
-import main.java.interfaces.Fenetre;
-import main.java.interfaces.ph.DPIPH;
-import main.java.interfaces.ph.InfosMedicalesPH;
+import interfaces.Fenetre;
+import interfaces.DPIPH;
+import interfaces.InfosMedicalesPH;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

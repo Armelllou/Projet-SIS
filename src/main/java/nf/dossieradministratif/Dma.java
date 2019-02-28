@@ -1,7 +1,7 @@
-package main.java.nf.dossieradministratif;
+package nf.dossieradministratif;
 
-import main.java.nf.patient.Patient;
-import main.java.nf.personnel.Personnel;
+import nf.patient.Patient;
+import nf.personnel.Personnel;
 
 import java.util.Date;
 

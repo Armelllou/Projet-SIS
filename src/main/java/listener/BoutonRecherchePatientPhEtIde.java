@@ -1,9 +1,9 @@
-package main.java.listener;
+package listener;
 
-import main.java.bd.ConnexionBD;
-import main.java.bd.MethodeBD;
-import main.java.interfaces.ConsulterDPIPHetIDE;
-import main.java.interfaces.Fenetre;
+import bd.ConnexionBD;
+import bd.MethodeBD;
+import interfaces.ConsulterDPIPHetIDE;
+import interfaces.Fenetre;
 
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;

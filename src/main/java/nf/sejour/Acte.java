@@ -1,7 +1,7 @@
-package main.java.nf.sejour;
+package nf.sejour;
 
-import main.java.bd.ConnexionBD;
-import main.java.nf.Dates;
+import bd.ConnexionBD;
+import nf.Dates;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;

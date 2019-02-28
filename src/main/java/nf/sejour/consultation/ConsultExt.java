@@ -1,7 +1,7 @@
-package main.java.nf.sejour.consultation;
+package nf.sejour.consultation;
 
-import main.java.nf.personnel.Personnel;
-import main.java.nf.sejour.Prescription;
+import nf.personnel.Personnel;
+import nf.sejour.Prescription;
 
 import java.util.List;
 

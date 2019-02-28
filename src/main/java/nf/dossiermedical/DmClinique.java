@@ -1,7 +1,7 @@
-package main.java.nf.dossiermedical;
+package nf.dossiermedical;
 
-import main.java.nf.sejour.Acte;
-import main.java.nf.sejour.Prescription;
+import nf.sejour.Acte;
+import nf.sejour.Prescription;
 
 public class DmClinique {
     private Acte acte;
