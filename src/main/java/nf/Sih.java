@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sih {
-    private static List<Patient> patientList = new ArrayList();
+    private static List<Patient> patientList = new ArrayList<Patient>();
     private static List<Medecin> medecinList;
     private static List<Dma> dmaList;
     private List<SecretaireMedical> secretaireMedicalList;

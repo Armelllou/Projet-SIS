@@ -1,5 +1,6 @@
 package main.java.bd;
 
+import main.java.listener.ListenerConnexion;
 import main.java.nf.patient.Patient;
 
 import javax.swing.table.DefaultTableModel;
@@ -9,8 +10,6 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 public class MethodeBD {
-
-    //private Statement state;
 
     /**
      * Constructeur de la classe, avec en paramètre la connection à la base.
@@ -36,7 +35,7 @@ public class MethodeBD {
         templatesTableModel.setColumnIdentifiers(title);
         ResultSet rs = executeQuery(query);
         if(rs == null) {
-            return null;
+            return templatesTableModel;
         }
 
         try {
@@ -76,8 +75,12 @@ public class MethodeBD {
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePatientJTableService(String service) {
-        System.out.println(service);
-        return execute("SELECT DISTINCT * FROM patient NATURAL JOIN localisations JOIN ide ON localisations.ServiceResponsable=" + service + " OR localisations.ServiceGeographique=" + service);
+        //System.out.println(ListenerConnexion.getBDHService());
+        return execute("SELECT * FROM patient NATURAL JOIN localisations " +
+                "JOIN ide ON localisations.ServiceResponsable=ide.Service " +
+                "OR localisations.ServiceGeographique=ide.Service " +
+                "WHERE ide.Service ='Anesthesie'" );
+
     }
 
     /**

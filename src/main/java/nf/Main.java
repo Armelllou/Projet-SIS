@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
 
         ConnexionBD conn = ConnexionBD.getInstance();
-        Date d = new Date(01 - 01 - 1999);
+        //Date d = new Date(01 - 01 - 1999);
 
         MethodeBD.nbrePatientBD();
 

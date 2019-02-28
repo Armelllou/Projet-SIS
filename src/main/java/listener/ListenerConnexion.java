@@ -27,7 +27,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     private Connexion c;
     private JPanel jp;
     private Fenetre jframe;
-    private BarreDuHaut bh;
+    private static BarreDuHaut bh;
 
     private ConsulterDPIPHetIDE cdpiphetide;
     private ConsulterDPISecretaire as;
@@ -44,7 +44,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 
     }
 
-    public String getBDHService() {
+    public static String getBDHService() {
         return bh.getService().getText();
     }
 

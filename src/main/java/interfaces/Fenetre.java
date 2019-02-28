@@ -121,13 +121,12 @@ public class Fenetre extends JFrame {
         //state = State.NONCO;
         add(connexion);
 
-
         consultdpiphide = new ConsulterDPIPHetIDE();
-
         ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this);
+        consultdpiphide.setService(l.getBDHService());
+
 
         //connexion
-        consultdpiphide.setService(l.getBDHService());
         valider.addActionListener(l);
         connexion.getjPasswordField1().addKeyListener(l);
 

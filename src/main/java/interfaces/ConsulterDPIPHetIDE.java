@@ -108,8 +108,8 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                 }
         ));
 
-        //this.getjTable1().setModel(MethodeBD.listePatientJTableService("Cardiologie")); // rempli la JTable avec les patients de la BD
         this.getjTable1().setFont(new Font("Calibri", 0, 18));
+        this.getjTable1().setModel(MethodeBD.listePatientJTableService(service)); // rempli la JTable avec les patients de la BD
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 
