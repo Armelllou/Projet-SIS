@@ -99,9 +99,6 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                 "IPP", "Nom de Naissance", "Nom Usuel", "Prénom"
             }
         ));
-        this.getjTable1().setFont(new Font("Calibri", 0, 18));
-        this.getjTable1().setModel(MethodeBD.listePatientJTableService(service)); // rempli la JTable avec les patients de la BD
-
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 
@@ -153,6 +150,10 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+
+    public String getService() {
+        return service;
+    }
     // End of variables declaration//GEN-END:variables
 
 

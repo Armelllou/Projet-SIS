@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import bd.Service;
 import listener.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -22,10 +23,10 @@ import javax.swing.JTable;
 
 public class Fenetre extends JFrame {
 
-    // Déclaration de tous les JPanel
+     //Déclaration de tous les JPanel
     Connexion connexion = new Connexion();
     CreationDPI creationdpi = new CreationDPI();
-    ConsulterDPISecretaire consultdpis = new ConsulterDPISecretaire();
+    ConsulterDPISecretaire consultdpis=new ConsulterDPISecretaire();
     ActeInfirmierPH acteinfirmierPH = new ActeInfirmierPH();
     AjouterActeInfirmier ajouterai = new AjouterActeInfirmier();
     AjouterConsultation ajouterconsult = new AjouterConsultation();
@@ -101,7 +102,7 @@ public class Fenetre extends JFrame {
     private JButton annulertransfert = transfert.getjButton2();
     private JButton validermodifdpi = modifdpi.getjButton1();
     private JButton validerActe = ajouterai.getjButton2();
-    
+
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
     private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
@@ -115,16 +116,24 @@ public class Fenetre extends JFrame {
 
 
     public Fenetre() {
-        //state = State.NONCO;
+       //state = State.NONCO;
         add(connexion);
         this.setSize(1700, 830);
-        
+
+        //Connexion
+
+
         ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this);
-        
-        //connexion
-        valider.addActionListener(l);
         connexion.getjPasswordField1().addKeyListener(l);
-        
+        valider.addActionListener(l);
+
+
+
+        Service service = new Service();
+
+
+
+
         //boutons
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
         validerDMA.addActionListener(new BoutonValiderDMA(consultdpis, this, creationdpi));
@@ -168,11 +177,11 @@ public class Fenetre extends JFrame {
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
         validermodifdpi.addActionListener (new BoutonValiderModificationDPI(this, dpis, modifdpi, sih));
         validerActe.addActionListener(new BoutonValiderActe(barreduhaut,infosmedide, this,ajouterai));
-        
-        
+
+
         //tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
-        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE (dpiph, dpiide, consultdpiphide,this,consultdpiphide.getjTable1(),l));     
+        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE (dpiph, dpiide, consultdpiphide,this,consultdpiphide.getjTable1(),l));
         tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph,consultationPH,this,sih,infosmedph.getjTable3()));
         tableauconsultinfmedide.addMouseListener(new TableauConsultationsInfosMedIDE(infosmedide,consultationide,this,sih,infosmedide.getjTable3()));
         tableauacteinfirmierinfmedph.addMouseListener(new TableauActesInfirmiersInfosMedPH(infosmedph,acteinfirmierPH,this,sih,infosmedph.getjTable2()));
@@ -213,28 +222,28 @@ public class Fenetre extends JFrame {
 
     public void panelVisibleFalse() {
         connexion.setVisible(false);
-        creationdpi.setVisible(false);
         consultdpis.setVisible(false);
-        acteinfirmierPH.setVisible(false);
         consultdpiphide.setVisible(false);
-        ajouterai.setVisible(false);
-        ajouterconsult.setVisible(false);
-        consultationPH.setVisible(false);
-        dpis.setVisible(false);
-        infosmedph.setVisible(false);
-        modifdpi.setVisible(false);
-        dpiide.setVisible(false);
         prestations.setVisible(false);
-        ajouterpresta.setVisible(false);
-        prestafaite.setVisible(false);
-        transfert.setVisible(false);
-        ajouterprescri.setVisible(false);
-        dpiph.setVisible(false);
-        infosmedide.setVisible(false);
-        prescriptionph.setVisible(false);
-        prescriptionide.setVisible(false);
-        consultationide.setVisible(false);
-        acteinfirmieride.setVisible(false);
+//        acteinfirmierPH.setVisible(false);
+//        creationdpi.setVisible(false);
+//        ajouterai.setVisible(false);
+//        ajouterconsult.setVisible(false);
+//        consultationPH.setVisible(false);
+//        dpis.setVisible(false);
+//        infosmedph.setVisible(false);
+//        modifdpi.setVisible(false);
+//        dpiide.setVisible(false);
+//        ajouterpresta.setVisible(false);
+//        prestafaite.setVisible(false);
+//        transfert.setVisible(false);
+//        ajouterprescri.setVisible(false);
+//        dpiph.setVisible(false);
+//        infosmedide.setVisible(false);
+//        prescriptionph.setVisible(false);
+//        prescriptionide.setVisible(false);
+//        consultationide.setVisible(false);
+//        acteinfirmieride.setVisible(false);
 
     }
 

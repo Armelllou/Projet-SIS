@@ -6,6 +6,8 @@
 package listener;
 
 import bd.ConnexionBD;
+import bd.MethodeBD;
+import bd.Service;
 import interfaces.*;
 import interfaces.ConsulterDPISecretaire;
 
@@ -32,6 +34,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     private ConsulterDPIPHetIDE cdpiphetide;
     private ConsulterDPISecretaire as;
     private Prestations p;
+    private static String service ;
 
     public ListenerConnexion(BarreDuHaut bh, Connexion c, ConsulterDPISecretaire as, ConsulterDPIPHetIDE cdpiphetide, Prestations p, Fenetre jframe) {
         this.bh = bh;
@@ -45,7 +48,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     }
 
     public static String getBDHService() {
-        return bh.getService().getText();
+        return service;
     }
 
     public void connexion() throws SQLException {
@@ -84,6 +87,10 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         if (Connexion("Select * from praticienhospitaliers WHERE idPh ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", cdpiphetide)) {
             cdpiphetide.setVisible(true);
             this.state = State.PH;
+            cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
+            cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableService(service)); // rempli la JTable avec les patients de la BD
+
+
             return true;
         }
         return false;
@@ -93,6 +100,9 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         if (Connexion("Select * from ide WHERE idIDE ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", cdpiphetide)) {
             cdpiphetide.setVisible(true);
             this.state = State.IDE;
+            cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
+            cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableService(service)); // rempli la JTable avec les patients de la BD
+
             return true;
         }
         return false;
@@ -122,6 +132,8 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         bh.getNom().setText(rs.getString(3));
         bh.getPrenom().setText(rs.getString(4));
         bh.getService().setText(rs.getString(5)); // attention medico praticien bug nullpointer surement
+        service =rs.getString(5);
+        System.out.println(service+"bb");
         bh.setVisible(true);
         bh.getId().setVisible(false);
         bh.getMdp().setVisible(false);

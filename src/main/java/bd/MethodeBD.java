@@ -75,11 +75,11 @@ public class MethodeBD {
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePatientJTableService(String service) {
-        //System.out.println(ListenerConnexion.getBDHService());
+        System.out.println(service);
         return execute("SELECT * FROM patient NATURAL JOIN localisations " +
                 "JOIN ide ON localisations.ServiceResponsable=ide.Service " +
                 "OR localisations.ServiceGeographique=ide.Service " +
-                "WHERE ide.Service ='Anesthesie'" );
+                "WHERE ide.Service ='" + service + "'");
 
     }
 

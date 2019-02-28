@@ -1,8 +1,10 @@
 package bd;
 
+import listener.ListenerConnexion;
+
 public class Service {
 
-    public static String getService(){
-return "1";
-    }
+private static String service= ListenerConnexion.getBDHService();
+
+    public static String getService(){ return service;}
 }
