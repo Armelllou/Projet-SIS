@@ -12,7 +12,7 @@ public class ConnexionBD {
      * Constructeur de la class.
      */
     private ConnexionBD() {
-
+// test
         try {
 
             //String bBurl = "jdbc:mysql://192.168.64.2/bd2";

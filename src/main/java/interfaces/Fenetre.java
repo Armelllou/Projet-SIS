@@ -225,25 +225,25 @@ public class Fenetre extends JFrame {
         consultdpis.setVisible(false);
         consultdpiphide.setVisible(false);
         prestations.setVisible(false);
-//        acteinfirmierPH.setVisible(false);
-//        creationdpi.setVisible(false);
-//        ajouterai.setVisible(false);
-//        ajouterconsult.setVisible(false);
-//        consultationPH.setVisible(false);
-//        dpis.setVisible(false);
-//        infosmedph.setVisible(false);
-//        modifdpi.setVisible(false);
-//        dpiide.setVisible(false);
-//        ajouterpresta.setVisible(false);
-//        prestafaite.setVisible(false);
-//        transfert.setVisible(false);
-//        ajouterprescri.setVisible(false);
-//        dpiph.setVisible(false);
-//        infosmedide.setVisible(false);
-//        prescriptionph.setVisible(false);
-//        prescriptionide.setVisible(false);
-//        consultationide.setVisible(false);
-//        acteinfirmieride.setVisible(false);
+        acteinfirmierPH.setVisible(false);
+        creationdpi.setVisible(false);
+        ajouterai.setVisible(false);
+        ajouterconsult.setVisible(false);
+        consultationPH.setVisible(false);
+        dpis.setVisible(false);
+        infosmedph.setVisible(false);
+        modifdpi.setVisible(false);
+        dpiide.setVisible(false);
+        ajouterpresta.setVisible(false);
+        prestafaite.setVisible(false);
+        transfert.setVisible(false);
+        ajouterprescri.setVisible(false);
+        dpiph.setVisible(false);
+        infosmedide.setVisible(false);
+        prescriptionph.setVisible(false);
+        prescriptionide.setVisible(false);
+        consultationide.setVisible(false);
+        acteinfirmieride.setVisible(false);
 
     }
 

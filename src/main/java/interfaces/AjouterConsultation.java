@@ -97,7 +97,7 @@ public class AjouterConsultation extends javax.swing.JPanel {
         jTextField4 = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jTextField5 = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        TITRE = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
@@ -140,8 +140,8 @@ public class AjouterConsultation extends javax.swing.JPanel {
 
         jTextField5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jLabel7.setText("Compte-rendu de la consultation :");
+        TITRE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        TITRE.setText("Compte-rendu de la consultation :");
 
         jTextField6.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -150,7 +150,7 @@ public class AjouterConsultation extends javax.swing.JPanel {
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
         jButton4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jButton4.setText("Ajouter une prescription");
@@ -164,7 +164,7 @@ public class AjouterConsultation extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
+                            .addComponent(TITRE)
                             .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 1455, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 174, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
@@ -212,7 +212,7 @@ public class AjouterConsultation extends javax.swing.JPanel {
                 .addGap(80, 80, 80)
                 .addComponent(jLabel2)
                 .addGap(117, 117, 117)
-                .addComponent(jLabel7)
+                .addComponent(TITRE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(176, Short.MAX_VALUE))
@@ -256,6 +256,7 @@ public class AjouterConsultation extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel TITRE;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
@@ -265,7 +266,6 @@ public class AjouterConsultation extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;

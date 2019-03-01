@@ -212,7 +212,7 @@ public class ModificationDPI extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel2.setText("Numéro de sécurité sociale :");
@@ -297,10 +297,10 @@ public class ModificationDPI extends javax.swing.JPanel {
         jLabel14.setText("Service responsable :");
 
         servicerespo.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        servicerespo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Urologie" }));
+        servicerespo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthesie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynecologie", "Hematologie", "Laboratoire", "Médecine", "Obstetrique", "Psychiatrie", "Radiologie", "Urologie" }));
 
         servicegeo.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        servicegeo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Urologie" }));
+        servicegeo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthesie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynecologie", "Hematologie", "Laboratoire", "Medecine", "Obstetrique", "Psychiatrie", "Radiologie", "Urologie" }));
 
         jLabel15.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel15.setText("Chambre :");
@@ -404,22 +404,19 @@ public class ModificationDPI extends javax.swing.JPanel {
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jRadioButton2)
                                 .addGap(141, 141, 141)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel14)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(servicerespo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jButton2)
+                                        .addGap(51, 51, 51))
+                                    .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabel13)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jButton2)
-                                                .addGap(51, 51, 51)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jButton1)
-                                            .addComponent(servicegeo, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addComponent(jLabel14)
+                                            .addComponent(jLabel13))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jButton1)
+                                    .addComponent(servicegeo, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(servicerespo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(69, 69, 69))
                             .addGroup(layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -490,9 +487,9 @@ public class ModificationDPI extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(86, 86, 86)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(servicerespo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel14)
-                            .addComponent(jRadioButton2))
+                            .addComponent(jRadioButton2)
+                            .addComponent(servicerespo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(servicegeo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
