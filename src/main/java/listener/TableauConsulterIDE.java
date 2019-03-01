@@ -7,12 +7,9 @@ package listener;
 
 import bd.ConnexionBD;
 import interfaces.ConsulterDPIPHetIDE;
-import interfaces.Fenetre;
 import interfaces.DPIIDE;
 import interfaces.DPIPH;
-import nf.Sih;
-
-import javax.swing.*;
+import interfaces.Fenetre;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.PreparedStatement;
@@ -21,21 +18,30 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
+import nf.Sih;
 
-public class TableauConsulterDPIPHetIDE implements MouseListener {
+/**
+ *
+ * @author annel
+ */
+public class TableauConsulterIDE implements MouseListener{
 
-    DPIPH imph;
     DPIIDE imide;
     ConsulterDPIPHetIDE cdpi;
 
     Fenetre fen;
-    Sih sih;;
+    Sih sih;
+    
 
     JTable table;
     ListenerConnexion conn;
-
-    public TableauConsulterDPIPHetIDE(DPIPH imph, DPIIDE imide, ConsulterDPIPHetIDE cdpi, Fenetre fen, JTable table, ListenerConnexion conn) {
-        this.imph = imph;
+    
+    
+    
+    
+    public TableauConsulterIDE(DPIIDE imide, ConsulterDPIPHetIDE cdpi, Fenetre fen, JTable table, ListenerConnexion conn) {
+        
         this.imide = imide;
         this.fen = fen;
         this.sih = sih;
@@ -51,7 +57,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
             int NumLigne = table.getSelectedRow();
             
             
-            if (conn.ConnexionPH() == true) {
+            if (conn.ConnexionIde() == true) {
 
                 String nomDeNaissance = (String) table.getModel().getValueAt(NumLigne, 0);
                 String nomUsuel = (String) table.getModel().getValueAt(NumLigne, 1);
@@ -59,10 +65,10 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
                 String ipp = (String) table.getModel().getValueAt(NumLigne, 3);
                 int ippS = Integer.parseInt(ipp);
 
-                imph.getjLabelnom().setText(nomDeNaissance);
-                imph.getjLabelnom1().setText(nomUsuel);
-                imph.getjLabelprenom().setText(prenom);
-                imph.getjLabelipp().setText(ipp);
+                imide.getjLabelnom().setText(nomDeNaissance);
+                imide.getjLabelnom1().setText(nomUsuel);
+                imide.getjLabelprenom().setText(prenom);
+                imide.getjLabelipp().setText(ipp);
 
                 String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
                 ConnexionBD conn = ConnexionBD.getInstance();
@@ -85,12 +91,12 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
                     String email = Rs.getString(10);
                     String telephone = Rs.getString(11);
 
-                    imph.getjLabeladresse().setText(Adresse);
-                    imph.getjLabelnumsecu().setText(NumSS);
-                    imph.getjLabelemail().setText(email);
-                    imph.getjLabeltelephone().setText(telephone);
-                    imph.getjLabelannée().setText(DateDeNaissance);
-                    imph.getSexe().setText(Sexe);
+                    imide.getjLabeladresse().setText(Adresse);
+                    imide.getjLabelnumsecu().setText(NumSS);
+                    imide.getjLabelemail().setText(email);
+                    imide.getjLabeltelephone().setText(telephone);
+                    imide.getjLabelannée().setText(DateDeNaissance);
+                    imide.getSexe().setText(Sexe);
 
                 }
 
@@ -110,14 +116,14 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
                     String ServiceRespo = Rs2.getString(3);
                     String chambre = Rs2.getString(4);
 
-                    imph.getServiceRespo().setText(ServiceRespo);
-                    imph.getServiceGeo().setText(ServiceGegraphique);
+                    imide.getServiceRespo().setText(ServiceRespo);
+                    imide.getServiceGeo().setText(ServiceGegraphique);
 
-                    imph.getjLabelchamnre().setText(chambre);
+                    imide.getjLabelchamnre().setText(chambre);
 
                     fen.panelVisibleFalse();
-                    fen.add(imph);
-                    imph.setVisible(true);
+                    fen.add(imide);
+                    imide.setVisible(true);
                     fen.revalidate();
                     fen.repaint();
                 }
@@ -148,5 +154,4 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
     public void mouseExited(MouseEvent e) {
         // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 }
