@@ -42,6 +42,8 @@ public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
         im.getjTable3().setModel(MethodeBD.listeConsultationJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
 
 
+        im.getjTable2().setFont(new Font("Calibri", 0, 18));
+        im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
 
     }
 }

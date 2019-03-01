@@ -98,6 +98,34 @@ public class MethodeBD {
     }
 
     /**
+     * modèle pour remplir la Jtable avec les consultations d'un patient selon service IDE
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel listeActeJTableServiceIde(String ipp) {
+        String[] infoAllPatient = new String[3];
+        String title[] = {"Type d'acte", "Nom de l'Ide", "Date"};
+        String query = "SELECT * FROM ide NATURAL JOIN actes WHERE IPP ='" + ipp + "'";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("type");
+                infoAllPatient[1] = rs.getString("Nom");
+                infoAllPatient[2] = rs.getString("Date");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+
+    /**
      * modèle pour remplir la Jtable Avec les patients des infirmières selon son service
      *
      * @return DefaultTableModel
