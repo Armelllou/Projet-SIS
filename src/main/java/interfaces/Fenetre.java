@@ -139,7 +139,7 @@ public class Fenetre extends JFrame {
         validerDMA.addActionListener(new BoutonValiderDMA(consultdpis, this, creationdpi));
         getRecherchePatient2.addActionListener(new BoutonRecherchePatientPhEtIde(this, consultdpiphide));
         recherchePatient.addActionListener(new BoutonRecherchePatient(this, consultdpis));
-        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, barreduhaut));
+        deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, barreduhaut,l));
         annulercreationDPI.addActionListener(new BoutonAnnulerCreationDPI(this, consultdpis, creationdpi, sih));
         retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPISVersConsulterDPISecretaire(this, consultdpis, dpis, sih));
         modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi, sih));

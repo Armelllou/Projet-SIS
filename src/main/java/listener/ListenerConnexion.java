@@ -47,6 +47,12 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 
     }
 
+  
+    
+    
+    
+    
+    
     public static String getBDHService() {
         return service;
     }
@@ -68,6 +74,8 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             case PH:
         }
     }
+    
+ 
 
     private boolean Connexion(String query, JPanel jPanel) throws SQLException {
         PreparedStatement ps = ConnexionBD.getInstance().getConnexion().prepareStatement(query);
@@ -111,7 +119,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     public boolean connexionSecretaire() throws SQLException {
         if (Connexion("Select * from secretaireadministrative WHERE idSA ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", as)) {
             as.setVisible(true);
-            this.state = State.IDE;
+            this.state = State.SM;
             return true;
         }
         return false;
@@ -120,7 +128,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     public boolean ConnexionMedicoTechniques() throws SQLException {
         if (Connexion("Select * from medicoTechniques WHERE idMT ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", p)) {
             p.setVisible(true);
-            this.state = State.IDE;
+            this.state = State.MT;
             return true;
         }
         return false;
@@ -168,6 +176,10 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
         // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
+     public State getState() {
+        return state;
     }
 
 }

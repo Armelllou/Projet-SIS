@@ -72,6 +72,7 @@ public class MethodeBD {
     /**
      * modèle pour remplir la Jtable Avec les patients des infirmières selon son service
      *
+     * @param service
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePatientJTableService(String service) {

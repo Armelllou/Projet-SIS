@@ -21,7 +21,7 @@ public class BoutonDeconnexion implements ActionListener {
     Connexion c;
     Fenetre fen;
 
-    public BoutonDeconnexion(Connexion c, Fenetre fen, BarreDuHaut b) {
+    public BoutonDeconnexion(Connexion c, Fenetre fen, BarreDuHaut b,ListenerConnexion l) {
         this.c = c;
         this.fen = fen;
         this.b = b;
