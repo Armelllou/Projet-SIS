@@ -5,11 +5,17 @@
  */
 package interfaces;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Manon
  */
 public class InfosMedicalesPH extends javax.swing.JPanel {
+
+    public JLabel getjLabelipp() {
+        return jLabelipp;
+    }
 
     /**
      * @return the jTable3

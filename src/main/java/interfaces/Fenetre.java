@@ -91,6 +91,8 @@ public class Fenetre extends JFrame {
     private JButton accueilinfmedphversconsultdpiphide = infosmedph.getjButton1();
     private JButton ajouterconsultation = infosmedph.getjButton4();
     private JButton ajouterprescription = infosmedph.getjButton6();
+    private JButton ajouterprescription2 = ajouterprescri.getjButton1();
+    
     private JButton ajouterprestation = infosmedph.getjButton5();
     private JButton annulermodifDPI = modifdpi.getjButton2();
     private JButton accueilprescriIDE = prescriptionide.getjButton3();
@@ -101,6 +103,7 @@ public class Fenetre extends JFrame {
     private JButton annulertransfert = transfert.getjButton2();
     private JButton validermodifdpi = modifdpi.getjButton1();
     private JButton validerActe = ajouterai.getjButton2();
+    private JButton validerPrescription = ajouterprescri.getjButton2();
 
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
@@ -157,7 +160,8 @@ public class Fenetre extends JFrame {
         retourinfosmedPHversDPIPH.addActionListener(new BoutonRetourInfosMedPHVersDPIPH(dpiph, infosmedph, this));
         accueilinfmedphversconsultdpiphide.addActionListener(new BoutonAccueilInfMedPH(this, infosmedph, consultdpiphide, sih));
         ajouterconsultation.addActionListener(new BoutonAjouterConsultation(this, ajouterconsult, infosmedph, sih));
-        ajouterprescription.addActionListener(new BoutonAjouterPrescription(this, ajouterprescri, infosmedph, sih));
+        ajouterprescription.addActionListener(new BoutonAjouterPrescription(this, ajouterprescri, infosmedph, sih, barreduhaut));
+        ajouterprescription2.addActionListener(new BoutonAnnulerPrescription( prescriptionph,infosmedph ,this));
         ajouterprestation.addActionListener(new BoutonAjouterPrestation(this, ajouterpresta, infosmedph, sih));
         annulermodifDPI.addActionListener(new BoutonAnnulerModificationDPI(this, dpis, modifdpi, sih));
         accueilprescriIDE.addActionListener(new BoutonAccueilPrescriptionIDE(this, prescriptionide, consultdpiphide, sih));
@@ -168,6 +172,9 @@ public class Fenetre extends JFrame {
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
         validermodifdpi.addActionListener(new BoutonValiderModificationDPI(this, dpis, modifdpi, sih));
         validerActe.addActionListener(new BoutonValiderActe(barreduhaut, infosmedide, this, ajouterai));
+        validerPrescription.addActionListener ( new BoutonValiderPrescription(ajouterprescri,infosmedph,this,barreduhaut));
+        
+    
 
         //tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));

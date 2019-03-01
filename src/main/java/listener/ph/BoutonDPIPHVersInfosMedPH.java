@@ -5,9 +5,11 @@
  */
 package listener.ph;
 
+import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.DPIPH;
 import interfaces.InfosMedicalesPH;
+import java.awt.Font;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,6 +29,35 @@ public class BoutonDPIPHVersInfosMedPH implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        
+         String nom =  dpi.getjLabelnom().getText();
+      String prenom =  dpi.getjLabelprenom().getText();
+       String ipp = dpi.getjLabelipp().getText();
+        
+        
+        im.getjLabelnom().setText(nom);
+        im.getjLabelprenom().setText(prenom);
+        im.getjLabelipp().setText(ipp);
+
+       
+        im.getjTable3().setFont(new Font("Calibri", 0, 18));
+        im.getjTable3().setModel(MethodeBD.listeConsultationJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
+
+
+        im.getjTable2().setFont(new Font("Calibri", 0, 18));
+        im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
+
+
+        im.getjTable1().setFont(new Font("Calibri", 0, 18));
+        im.getjTable1().setModel(MethodeBD.listePrescriptionJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
+        
+        
+        
+        
+        
+        
+        
+        
         fen.panelVisibleFalse();
         fen.add(im);
         im.setVisible(true);
