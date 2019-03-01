@@ -1,6 +1,7 @@
 package bd;
 
 import listener.ListenerConnexion;
+import listener.State;
 import nf.patient.Patient;
 
 import javax.swing.table.DefaultTableModel;
@@ -70,17 +71,55 @@ public class MethodeBD {
     }
 
     /**
+     * modèle pour remplir la Jtable avec les consultations d'un patient selon service IDE
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel listeConsultationJTableServiceIde(String ipp) {
+        String[] infoAllPatient = new String[2];
+        String title[] = {"Nom Du Medecin", "Date"};
+        String query = "SELECT * FROM Consultation WHERE IPP ='" + ipp + "'";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("NomMedecin");
+                infoAllPatient[1] = rs.getString("Date");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+
+    /**
      * modèle pour remplir la Jtable Avec les patients des infirmières selon son service
      *
      * @return DefaultTableModel
      */
-    public static DefaultTableModel listePatientJTableService(String service) {
-        System.out.println(service);
+    public static DefaultTableModel listePatientJTableServiceIde(String service) {
         return execute("SELECT * FROM patient NATURAL JOIN localisations " +
                 "JOIN ide ON localisations.ServiceResponsable=ide.Service " +
                 "OR localisations.ServiceGeographique=ide.Service " +
                 "WHERE ide.Service ='" + service + "'");
 
+    }
+
+    /**
+     * modèle pour remplir la Jtable Avec les patients des PH selon son service
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel listePatientJTableServicePH(String service) {
+        return execute("SELECT * FROM patient NATURAL JOIN localisations " +
+                "JOIN praticienhospitaliers ON localisations.ServiceResponsable=praticienhospitaliers.Service " +
+                "OR localisations.ServiceGeographique=praticienhospitaliers.Service " +
+                "WHERE praticienhospitaliers.Service ='" + service + "'");
     }
 
     /**
@@ -125,10 +164,13 @@ public class MethodeBD {
      *
      * @return DefaultTableModel
      */
-    public static DefaultTableModel recherchePatientviaNomEtPrenomIdeEtPh(String[] splitArray) {
-        if (splitArray[0].isEmpty()) {
-            return listePatientJTableService("Pneumologie");
-        } else {
+    public static DefaultTableModel recherchePatientviaNomEtPrenomIdeEtPh(String[] splitArray, String service, State state) {
+        if (splitArray[0].isEmpty()&& state == State.PH) {
+            System.out.println("Test :" + service);
+            return listePatientJTableServicePH(service);
+        }
+        if (splitArray[0].isEmpty()&& state == State.IDE) return listePatientJTableServiceIde(service);
+        else {
             String nom = splitArray[0];
             String prenom = splitArray[1];
             return execute("Select * FROM patient WHERE NomUsuel ='" + nom + "'" +
