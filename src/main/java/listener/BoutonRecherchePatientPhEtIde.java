@@ -47,7 +47,7 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
         for (int i = 0; i < splitArray.length; i++) {
             System.out.println("élement n° " + i + "=[" + splitArray[i] + "]"); // On affiche chaque élément du tableau
         }
-        cdpis.getjTable1().setModel(MethodeBD.recherchePatientviaNomEtPrenomIdeEtPh (splitArray));
+        cdpis.getjTable1().setModel(MethodeBD.recherchePatientviaNomEtPrenomIdeEtPh (splitArray,ListenerConnexion.getBDHService(), ListenerConnexion.getState()));
         cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
         cdpis.repaint();
         System.out.println(cdpis.getjTable1().getModel());

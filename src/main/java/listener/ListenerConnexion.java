@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 
 public class ListenerConnexion implements ActionListener, KeyListener {
 
-    private State state;
+    private static State state;
     private Connexion c;
     private JPanel jp;
     private Fenetre jframe;
@@ -88,7 +88,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             cdpiphetide.setVisible(true);
             this.state = State.PH;
             cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
-            cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableService(service)); // rempli la JTable avec les patients de la BD
+            cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(service)); // rempli la JTable avec les patients de la BD
 
 
             return true;
@@ -101,7 +101,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             cdpiphetide.setVisible(true);
             this.state = State.IDE;
             cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
-            cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableService(service)); // rempli la JTable avec les patients de la BD
+            cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableServiceIde(service)); // rempli la JTable avec les patients de la BD
 
             return true;
         }
@@ -151,6 +151,10 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     @Override
     public void keyTyped(KeyEvent e) {
 
+    }
+
+    public static State getState() {
+        return state;
     }
 
     @Override
