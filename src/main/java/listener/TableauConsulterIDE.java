@@ -29,19 +29,13 @@ public class TableauConsulterIDE implements MouseListener{
 
     DPIIDE imide;
     ConsulterDPIPHetIDE cdpi;
-
     Fenetre fen;
     Sih sih;
-    
-
     JTable table;
     ListenerConnexion conn;
     
     
-    
-    
     public TableauConsulterIDE(DPIIDE imide, ConsulterDPIPHetIDE cdpi, Fenetre fen, JTable table, ListenerConnexion conn) {
-        
         this.imide = imide;
         this.fen = fen;
         this.sih = sih;

@@ -17,7 +17,6 @@ public class DPIIDE extends javax.swing.JPanel {
     /**
      * @return the jButton1
      */
-    
 
     /**
      * @return the jButton2
@@ -79,7 +78,7 @@ public class DPIIDE extends javax.swing.JPanel {
     /**
      * @return the jLabelipp
      */
-    public javax.swing.JLabel getjLabelipp() {
+    public static javax.swing.JLabel getjLabelipp() {
         return jLabelipp;
     }
 
@@ -411,7 +410,7 @@ public class DPIIDE extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelannée;
     private javax.swing.JLabel jLabelchamnre;
     private javax.swing.JLabel jLabelemail;
-    private javax.swing.JLabel jLabelipp;
+    private static javax.swing.JLabel jLabelipp;
     private javax.swing.JLabel jLabeljour;
     private javax.swing.JLabel jLabelmois;
     private javax.swing.JLabel jLabelnom;

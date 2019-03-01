@@ -5,10 +5,12 @@
  */
 package listener.ide;
 
+import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.DPIIDE;
 import interfaces.InfosMedicalesIDE;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,6 +21,7 @@ public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
     DPIIDE dpi;
     InfosMedicalesIDE im;
     Fenetre fen;
+    String ipp;
 
     public BoutonDPIIDEVersInfosMedIDE(DPIIDE dpi, InfosMedicalesIDE im, Fenetre fen) {
         this.dpi = dpi;
@@ -32,5 +35,13 @@ public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
         im.setVisible(true);
         fen.revalidate();
         fen.repaint();
+
+
+        String  ipp = DPIIDE.getjLabelipp().getText();
+        im.getjTable3().setFont(new Font("Calibri", 0, 18));
+        im.getjTable3().setModel(MethodeBD.listeConsultationJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
+
+
+
     }
 }
