@@ -37,13 +37,17 @@ public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
         fen.repaint();
 
 
-        String  ipp = DPIIDE.getjLabelipp().getText();
+        String ipp = DPIIDE.getjLabelipp().getText();
         im.getjTable3().setFont(new Font("Calibri", 0, 18));
         im.getjTable3().setModel(MethodeBD.listeConsultationJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
 
 
         im.getjTable2().setFont(new Font("Calibri", 0, 18));
         im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
+
+
+        im.getjTable1().setFont(new Font("Calibri", 0, 18));
+        im.getjTable1().setModel(MethodeBD.listePrescriptionJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
 
     }
 }
