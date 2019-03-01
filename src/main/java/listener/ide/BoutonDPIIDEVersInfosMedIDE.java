@@ -36,8 +36,17 @@ public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
         fen.revalidate();
         fen.repaint();
 
+        
+      String nom =  dpi.getjLabelnom().getText();
+      String prenom =  dpi.getjLabelprenom().getText();
+       String ipp = dpi.getjLabelipp().getText();
+        
+        
+        im.getjLabelnom().setText(nom);
+        im.getjLabelprenom().setText(prenom);
+        im.getjLabelipp().setText(ipp);
 
-        String ipp = DPIIDE.getjLabelipp().getText();
+       
         im.getjTable3().setFont(new Font("Calibri", 0, 18));
         im.getjTable3().setModel(MethodeBD.listeConsultationJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
 

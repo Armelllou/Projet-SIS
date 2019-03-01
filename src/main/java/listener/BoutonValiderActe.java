@@ -5,10 +5,12 @@
  */
 package listener;
 
+import bd.MethodeBD;
 import interfaces.AjouterActeInfirmier;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
+import java.awt.Font;
 import nf.Dates;
 import nf.sejour.Acte;
 
@@ -23,6 +25,7 @@ import java.util.logging.Logger;
  * @author annel
  */
 public class BoutonValiderActe implements ActionListener {
+
     BarreDuHaut bh;
     Fenetre fen;
     InfosMedicalesIDE im;
@@ -39,13 +42,17 @@ public class BoutonValiderActe implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Acte a = new Acte(aai.getobservation().getText(), aai.gettype().getText(), bh.getId().getText(), aai.getIpp().getText(), new Dates(aai.getjour().getText(), aai.getmois().getText(), aai.getannee().getText()));
+//   
         try {
             a.AjouterActeSurBD(a);
 
             JOptionPane jop1 = new JOptionPane();
 
-            jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
-
+            jop1.showMessageDialog(null, "Acte correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
+            MethodeBD mb = new MethodeBD();
+            String ipp = aai.getIpp().getText();
+            im.getjTable2().setFont(new Font("Calibri", 0, 18));
+            im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
             fen.panelVisibleFalse();
 
             fen.add(im);

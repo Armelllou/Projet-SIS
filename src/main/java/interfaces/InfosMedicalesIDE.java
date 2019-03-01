@@ -5,6 +5,8 @@
  */
 package interfaces;
 
+import javax.swing.JLabel;
+
 /**
  *
  * @author Manon
@@ -44,10 +46,9 @@ public class InfosMedicalesIDE extends javax.swing.JPanel {
         return jButton3;
     }
 
-    /**
-     * @return the jButton4
-     */
-    
+    public JLabel getjLabelipp() {
+        return jLabelipp;
+    }
 
     /**
      * @return the jLabelnom

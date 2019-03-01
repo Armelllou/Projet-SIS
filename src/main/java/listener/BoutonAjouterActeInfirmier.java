@@ -6,6 +6,7 @@
 package listener;
 
 import interfaces.AjouterActeInfirmier;
+import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
 import nf.Sih;
@@ -19,15 +20,36 @@ public class BoutonAjouterActeInfirmier implements ActionListener {
     InfosMedicalesIDE im;
     Fenetre jframe;
     Sih sih;
+    BarreDuHaut bh;
 
-    public BoutonAjouterActeInfirmier(Fenetre jframe, AjouterActeInfirmier ai, InfosMedicalesIDE im, Sih sih) {
+    public BoutonAjouterActeInfirmier(Fenetre jframe, AjouterActeInfirmier ai, InfosMedicalesIDE im, Sih sih , BarreDuHaut bh) {
         this.jframe = jframe;
         this.ai = ai;
         this.im = im;
         this.sih = sih;
+        this.bh=bh;
     }
 
     public void actionPerformed(ActionEvent ae) {
+
+        String nom = im.getjLabelnom().getText();
+        String prenom = im.getjLabelprenom().getText();
+        String ipp = im.getjLabelipp().getText();
+        
+        String nomIDE = bh.getNom().getText();
+        String prenomIDE = bh.getPrenom().getText();
+        
+        
+       ai.getNomIDE().setText(nomIDE);
+       ai.getPrenomIDE().setText(prenomIDE);
+        
+        
+         ai.getNom().setText(nom);
+        ai.getPrenom().setText(prenom);
+        ai.getIpp().setText(ipp);
+
+        
+        
         jframe.panelVisibleFalse();
         jframe.add(ai);
         ai.setVisible(true);

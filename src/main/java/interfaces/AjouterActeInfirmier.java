@@ -13,6 +13,14 @@ import javax.swing.JLabel;
  */
 public class AjouterActeInfirmier extends javax.swing.JPanel {
 
+    public JLabel getNomIDE() {
+        return NomIDE;
+    }
+
+    public JLabel getPrenomIDE() {
+        return PrenomIDE;
+    }
+
     
     /**
      * @return the jButton1
@@ -28,10 +36,15 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         return jButton2;
     }
 
+    public JLabel getNom() {
+        return nom;
+    }
+
+    public JLabel getPrenom() {
+        return prenom;
+    }
+
    
-    /**
-     * @return the jTextField2
-     */
    
     /**
      * @return the jTextField3
@@ -104,8 +117,8 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         observation = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         type = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        prenom = new javax.swing.JLabel();
+        nom = new javax.swing.JLabel();
         ipp = new javax.swing.JLabel();
         NomIDE = new javax.swing.JLabel();
 
@@ -148,15 +161,15 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
 
         observation.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
         type.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jLabel10.setText("Prénom Patient");
+        prenom.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        prenom.setText("Prénom Patient");
 
-        jLabel11.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jLabel11.setText("Nom Patient");
+        nom.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        nom.setText("Nom Patient");
 
         ipp.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         ipp.setText("IPP  Patient");
@@ -211,9 +224,9 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(771, 771, 771)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ipp, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
+                    .addComponent(nom))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
@@ -245,9 +258,9 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
                         .addGap(17, 17, 17))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(57, 57, 57)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(nom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(ipp, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
@@ -283,8 +296,6 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
     private javax.swing.JLabel ipp;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -294,7 +305,9 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jour;
     private javax.swing.JTextField mois;
+    private javax.swing.JLabel nom;
     private javax.swing.JTextField observation;
+    private javax.swing.JLabel prenom;
     private javax.swing.JTextField type;
     // End of variables declaration//GEN-END:variables
 }

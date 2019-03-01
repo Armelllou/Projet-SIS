@@ -78,7 +78,7 @@ public class DPIIDE extends javax.swing.JPanel {
     /**
      * @return the jLabelipp
      */
-    public static javax.swing.JLabel getjLabelipp() {
+    public JLabel getjLabelipp() { 
         return jLabelipp;
     }
 
@@ -191,9 +191,9 @@ public class DPIIDE extends javax.swing.JPanel {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
         setPreferredSize(new java.awt.Dimension(1700, 760));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/flcheretour-ConvertImage.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/flcheretour-ConvertImage.png"))); // NOI18N
 
         jLabelprenom.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
         jLabelprenom.setText("Prénom");
@@ -364,9 +364,9 @@ public class DPIIDE extends javax.swing.JPanel {
                             .addComponent(jLabel4)
                             .addComponent(ServiceRespo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(ServiceGeo)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ServiceGeo)
+                            .addComponent(jLabel5)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(Sexe)
@@ -410,7 +410,7 @@ public class DPIIDE extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelannée;
     private javax.swing.JLabel jLabelchamnre;
     private javax.swing.JLabel jLabelemail;
-    private static javax.swing.JLabel jLabelipp;
+    private javax.swing.JLabel jLabelipp;
     private javax.swing.JLabel jLabeljour;
     private javax.swing.JLabel jLabelmois;
     private javax.swing.JLabel jLabelnom;

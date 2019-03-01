@@ -153,7 +153,7 @@ public class Fenetre extends JFrame {
         dpiphverstransfert.addActionListener(new BoutonDPIPHVersTransfert(dpiph, transfert, this));
         retourinfosmedIDEVersDPIIDE.addActionListener(new BoutonRetourInfosMedIDEVersDPIIDE(dpiide, infosmedide, this));
         accueilinfosmedIDE.addActionListener(new BoutonAccueilInfosMedIDE(this, infosmedide, consultdpiphide, sih));
-        ajouteracteinf.addActionListener(new BoutonAjouterActeInfirmier(this, ajouterai, infosmedide, sih));
+        ajouteracteinf.addActionListener(new BoutonAjouterActeInfirmier(this, ajouterai, infosmedide, sih,barreduhaut));
         retourinfosmedPHversDPIPH.addActionListener(new BoutonRetourInfosMedPHVersDPIPH(dpiph, infosmedph, this));
         accueilinfmedphversconsultdpiphide.addActionListener(new BoutonAccueilInfMedPH(this, infosmedph, consultdpiphide, sih));
         ajouterconsultation.addActionListener(new BoutonAjouterConsultation(this, ajouterconsult, infosmedph, sih));
