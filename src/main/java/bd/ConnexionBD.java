@@ -12,23 +12,26 @@ public class ConnexionBD {
      * Constructeur de la class.
      */
     private ConnexionBD() {
-// test
+// ------------BDD local -------------
+
+//            String bBurl = "jdbc:mysql://192.168.64.2/bd2";
+//            String bdUrl = "jdbc:mysql://localhost:3306/bd2";
+//            bdUrl += "?serverTimezone=UTC";
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            this.conn = DriverManager.getConnection(bdUrl, "armelle", "armelle");
+//            //  this.conn = DriverManager.getConnection(bBurl, "root", "ok");
+//            if (this.conn.isValid(0)) {
+//                System.out.println("===> Connexion effectuee");
+//            }
+// ------------BDD en ligne -------------
         try {
-
-            //String bBurl = "jdbc:mysql://192.168.64.2/bd2";
-            String bdUrl = "jdbc:mysql://localhost:3306/bd2";
-
+            System.out.println("===> Connexion en cours");
+            String bdUrl = "jdbc:mysql://sql7.freemysqlhosting.net/sql7281355";
             bdUrl += "?serverTimezone=UTC";
-
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            this.conn = DriverManager.getConnection(bdUrl, "armelle", "armelle");
-
-            //  this.conn = DriverManager.getConnection(bBurl, "root", "ok");
-
-
+            this.conn = DriverManager.getConnection(bdUrl, "sql7281355", "3ju17gUv79");
             if (this.conn.isValid(0)) {
-                System.out.println("===> Connexion effectuee");
+                System.out.println("===> Connexion ok");
             }
 
 
