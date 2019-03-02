@@ -78,7 +78,7 @@ public class MethodeBD {
     public static DefaultTableModel listeConsultationJTableServiceIde(String ipp) {
         String[] infoAllPatient = new String[2];
         String title[] = {"Nom Du Medecin", "Date"};
-        String query = "SELECT * FROM Consultation WHERE IPP ='" + ipp + "'";
+        String query = "SELECT * FROM consultation WHERE IPP ='" + ipp + "'";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         ResultSet rs = executeQuery(query);
@@ -238,7 +238,7 @@ public class MethodeBD {
     }
 
     public void AjouterSurBdPatient(Patient p) throws SQLException {
-        String sql = "INSERT INTO Patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
+        String sql = "INSERT INTO patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
         PreparedStatement statement = ConnexionBD.getInstance().getConnexion().prepareStatement(sql);
         statement.setObject(1, p.getIpp(), Types.INTEGER);
         statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);

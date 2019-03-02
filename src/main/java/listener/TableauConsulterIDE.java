@@ -64,7 +64,7 @@ public class TableauConsulterIDE implements MouseListener{
                 imide.getjLabelprenom().setText(prenom);
                 imide.getjLabelipp().setText(ipp);
 
-                String Sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
+                String Sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement ps;
 
