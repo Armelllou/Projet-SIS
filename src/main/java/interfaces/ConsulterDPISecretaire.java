@@ -85,14 +85,14 @@ public class ConsulterDPISecretaire extends javax.swing.JPanel {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
         setPreferredSize(new java.awt.Dimension(1700, 760));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel2.setText("Rechercher par nom ou par IPP :");
 
         jTextField1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loupe.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/loupe.png"))); // NOI18N
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 //remplit la Jtable avec l'ensemble des patients de la BD

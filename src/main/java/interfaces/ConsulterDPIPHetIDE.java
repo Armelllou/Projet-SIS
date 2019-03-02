@@ -5,10 +5,6 @@
  */
 package interfaces;
 
-import bd.MethodeBD;
-
-import java.awt.*;
-
 /**
  *
  * @author Manon
@@ -71,14 +67,14 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 204), 10));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
         jTextField1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel2.setText("Rechercher un patient par nom ou par IPP :");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loupe.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/loupe.png"))); // NOI18N
 
         jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(

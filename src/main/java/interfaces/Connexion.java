@@ -11,8 +11,6 @@ import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -25,7 +23,7 @@ public class Connexion extends javax.swing.JPanel implements ActionListener {
     ResultSet Rs = null;
     PreparedStatement ps = null;
     
-// connexion des images
+// connexion des interfaces
     Connexion c;
     ConsulterDPISecretaire consultdpis;
     JPanel jp;
@@ -89,9 +87,9 @@ public class Connexion extends javax.swing.JPanel implements ActionListener {
         jLabel3.setForeground(new java.awt.Color(0, 102, 204));
         jLabel3.setText("Connexion :");
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/51545017_451088455427259_6965317951922634752_n.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/51545017_451088455427259_6965317951922634752_n.png"))); // NOI18N
 
         txtuser.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
 
