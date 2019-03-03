@@ -13,6 +13,7 @@ import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Calendar;
 
 public class BoutonAjouterActeInfirmier implements ActionListener {
 
@@ -35,6 +36,11 @@ public class BoutonAjouterActeInfirmier implements ActionListener {
         String nom = im.getjLabelnom().getText();
         String prenom = im.getjLabelprenom().getText();
         String ipp = im.getjLabelipp().getText();
+        
+        Calendar date = Calendar.getInstance();
+        ai.getannee().setText(Integer.toString(date.get(Calendar.YEAR)));
+        ai.getmois().setText(Integer.toString(date.get(Calendar.MONTH)));
+        ai.getjour().setText(Integer.toString(date.get(Calendar.DAY_OF_MONTH)));
         
         String nomIDE = bh.getNom().getText();
         String prenomIDE = bh.getPrenom().getText();

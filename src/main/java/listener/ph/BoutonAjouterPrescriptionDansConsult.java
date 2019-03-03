@@ -3,38 +3,29 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listener;
+package listener.ph;
 
-import bd.MethodeBD;
 import interfaces.AjouterPrescription;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
-import java.awt.Font;
-import nf.Sih;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import nf.Dates;
-import nf.sejour.Prescription;
+import nf.Sih;
 
 /**
- * @author Manon
+ *
+ * @author annel
  */
-public class BoutonAjouterPrescription implements ActionListener {
-
+public class BoutonAjouterPrescriptionDansConsult implements ActionListener{
     AjouterPrescription ac;
     InfosMedicalesPH im;
     Fenetre jframe;
     Sih sih;
     BarreDuHaut bh;
 
-    public BoutonAjouterPrescription(Fenetre jframe, AjouterPrescription ac, InfosMedicalesPH im, Sih sih, BarreDuHaut bh) {
+    public BoutonAjouterPrescriptionDansConsult(Fenetre jframe, AjouterPrescription ac, InfosMedicalesPH im, Sih sih, BarreDuHaut bh) {
         this.jframe = jframe;
         this.ac = ac;
         this.im = im;
@@ -42,6 +33,7 @@ public class BoutonAjouterPrescription implements ActionListener {
         this.bh = bh;
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae) {
         String ipp = im.getjLabelipp().getText();
              String NomMedecin = bh.getNom().getText();
@@ -64,5 +56,4 @@ public class BoutonAjouterPrescription implements ActionListener {
             jframe.repaint();
        
     }
-
 }
