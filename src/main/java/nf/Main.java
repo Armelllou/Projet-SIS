@@ -2,6 +2,9 @@ package nf;
 
 import bd.ConnexionBD;
 import bd.MethodeBD;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 
 import java.sql.SQLException;
 import java.util.Date;
@@ -10,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws SQLException {
 
-        ConnexionBD conn = ConnexionBD.getInstance();
+    //    ConnexionBD conn = ConnexionBD.getInstance();
         //Date d = new Date(01 - 01 - 1999);
 
         MethodeBD.nbrePatientBD();
@@ -42,7 +45,26 @@ public class Main {
 //        }
 ////System.out.println("");
 //    }
+ String Sql1 = "Select * from patient WHERE IPP ='" + "19020001" + "'";
+                ConnexionBD conn = ConnexionBD.getInstance();
+                PreparedStatement ps;
 
+                ps = conn.getConnexion().prepareStatement(Sql1);
 
-    }
-}
+                ResultSet Rs = ps.executeQuery();;
+
+                ResultSetMetaData rsmd = Rs.getMetaData();
+                int columnsNumber = rsmd.getColumnCount();
+                while (Rs.next()) {
+
+                    String idIde = Rs.getString(1);
+
+                    String type = Rs.getString(2);
+                    String observation = Rs.getString(3);
+                    String date = Rs.getString(4);
+                    
+                    System.out.println(type);
+                    System.out.println("aaaaaa");
+
+    
+}}}
