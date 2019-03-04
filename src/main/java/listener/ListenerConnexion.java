@@ -52,7 +52,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     }
 
     public void connexion() throws SQLException {
-        jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
+       // jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
         jframe.setLayout(new BorderLayout());
         jframe.panelVisibleFalse();
         if(connexionSecretaire()

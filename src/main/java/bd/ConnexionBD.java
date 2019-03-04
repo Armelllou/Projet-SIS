@@ -13,12 +13,12 @@ public class ConnexionBD {
      */
     private ConnexionBD() {
 // ------------BDD local -------------
-
+//try{
 //            String bBurl = "jdbc:mysql://192.168.64.2/bd2";
-//            String bdUrl = "jdbc:mysql://localhost:3306/bd2";
-//            bdUrl += "?serverTimezone=UTC";
+//           // String bdUrl = "jdbc:mysql://localhost:3306/bd2";
+//           bBurl += "?serverTimezone=UTC";
 //            Class.forName("com.mysql.cj.jdbc.Driver");
-//            this.conn = DriverManager.getConnection(bdUrl, "armelle", "armelle");
+//            this.conn = DriverManager.getConnection(bBurl, "armelle", "armelle");
 //            //  this.conn = DriverManager.getConnection(bBurl, "root", "ok");
 //            if (this.conn.isValid(0)) {
 //                System.out.println("===> Connexion effectuee");
@@ -33,8 +33,8 @@ public class ConnexionBD {
             if (this.conn.isValid(0)) {
                 System.out.println("===> Connexion ok");
             }
-
-
+//
+//
         } catch (Exception ex) {
             System.out.println("Erreur Connection driver");
             ex.printStackTrace();
