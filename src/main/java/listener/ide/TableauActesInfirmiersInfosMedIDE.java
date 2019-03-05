@@ -45,11 +45,18 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
             String ipp = imph.getjLabelipp().getText();
             String idIde = "";
             int id = 0;
-            
+
             
             int numLigne = table.getSelectedRow();
-
-            String Sql1 = "Select * from actes WHERE IPP ='" + ipp + "'";
+            
+            String types = (String) table.getModel().getValueAt(numLigne, 0);
+            String dates = (String) table.getModel().getValueAt(numLigne, 2);
+             
+             
+             
+            String Sql1 = "Select * from actes WHERE IPP ='" + ipp + "'and type='" + types +"'and idActe ='"+dates+"'";
+       
+           
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
 
@@ -68,7 +75,7 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
                 String date = Rs.getString(5);
 
                 cph.getObservations().setText(observation);
-                cph.getDate().setText(date);
+                cph.getDate().setText(dates);
                 cph.getType().setText(type);
 
             }
@@ -92,11 +99,7 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
                 cph.getNomide().setText(nom);
                 cph.getPrenomide().setText(prenom);
 
-                fen.panelVisibleFalse();
-                fen.add(imph);
-                imph.setVisible(true);
-                fen.revalidate();
-                fen.repaint();
+               
             }
             
             

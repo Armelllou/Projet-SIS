@@ -24,7 +24,7 @@ public class Consultation {
     private String details;
     private Dates dates;
 
-    public Consultation(String details, String idPH, String ipp, Dates dates) {
+    public Consultation(String details, String idPH, String ipp) {
    
        
         this.idPH = idPH;
@@ -35,14 +35,13 @@ public class Consultation {
 
     public boolean AjouterConsultationSurBD(Consultation a) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO consultation (Observation, IPP, Date, NomMedecin) VALUES(?,?,?,?) ";
+        String sql = " INSERT INTO consultation (Observation, IPP, NomMedecin) VALUES(?,?,?) ";
         
         
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
 
         statement.setObject(2, a.getipp(), Types.VARCHAR);
-        statement.setObject(4, a.getIPH(), Types.VARCHAR);
-        statement.setObject(3, a.getDates(), Types.VARCHAR);
+        statement.setObject(3, a.getIPH(), Types.VARCHAR);
         statement.setObject(1, a.getDetail(), Types.VARCHAR);
    
 

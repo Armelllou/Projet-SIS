@@ -50,7 +50,7 @@ public class BoutonAjouterPrescription implements ActionListener {
              
              Calendar date = Calendar.getInstance();
         ac.getAnnee().setText(Integer.toString(date.get(Calendar.YEAR)));
-        ac.getDate().setText(Integer.toString(date.get(Calendar.MONTH)));
+        ac.getDate().setText(Integer.toString(date.get(Calendar.MONTH+1)));
         ac.getJour().setText(Integer.toString(date.get(Calendar.DAY_OF_MONTH)));
              
              ac.getIPP().setText(ipp);

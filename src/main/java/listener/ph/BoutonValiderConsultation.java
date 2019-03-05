@@ -57,7 +57,7 @@ AjouterConsultation ac;
         
         Dates dates = new Dates(ac.getDate().getText(), ac.getJour().getText(), ac.getAnnee().getText());
         
-        Consultation p = new Consultation(observation,NomMedecin, ipp, dates);
+        Consultation p = new Consultation(observation,NomMedecin, ipp);
         
         p.AjouterConsultationSurBD(p);
         

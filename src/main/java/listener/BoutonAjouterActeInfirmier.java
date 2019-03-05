@@ -39,7 +39,7 @@ public class BoutonAjouterActeInfirmier implements ActionListener {
         
         Calendar date = Calendar.getInstance();
         ai.getannee().setText(Integer.toString(date.get(Calendar.YEAR)));
-        ai.getmois().setText(Integer.toString(date.get(Calendar.MONTH)));
+        ai.getmois().setText(Integer.toString(date.get(Calendar.MONTH+1)));
         ai.getjour().setText(Integer.toString(date.get(Calendar.DAY_OF_MONTH)));
         
         String nomIDE = bh.getNom().getText();

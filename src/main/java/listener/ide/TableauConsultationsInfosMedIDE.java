@@ -5,6 +5,7 @@
  */
 package listener.ide;
 
+import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.ConsultationIDE;
 import interfaces.InfosMedicalesIDE;
@@ -13,10 +14,14 @@ import nf.Sih;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class TableauConsultationsInfosMedIDE implements MouseListener {
-
 
     InfosMedicalesIDE imph;
     ConsultationIDE cph;
@@ -34,31 +39,71 @@ public class TableauConsultationsInfosMedIDE implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        int numLigne = table.getSelectedRow();
-        fen.panelVisibleFalse();
-        fen.add(cph);
-        cph.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+
+        try {
+            String ipp = imph.getjLabelipp().getText();
+            String idIde = "";
+            int id = 0;
+
+            int numLigne = table.getSelectedRow();
+            
+            String Nomemdecin = (String) table.getModel().getValueAt(numLigne, 0);
+            String dates = (String) table.getModel().getValueAt(numLigne, 1);
+
+            String Sql1 = "Select * from consultation WHERE IPP ='" + ipp +"'and NomMedecin='" + Nomemdecin +"'and Date ='"+dates+"'";
+            ConnexionBD conn = ConnexionBD.getInstance();
+            PreparedStatement ps;
+
+            ps = conn.getConnexion().prepareStatement(Sql1);
+
+            ResultSet Rs = ps.executeQuery();;
+
+            ResultSetMetaData rsmd = Rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (Rs.next()) {
+
+                String nomMedecin = Rs.getString(4);
+                String observation = Rs.getString(1);
+                String date = Rs.getString(3);
+
+                cph.getObservation().setText(observation);
+                cph.getDate().setText(date);
+                cph.getNoMedecin().setText(nomMedecin);
+                
+                fen.panelVisibleFalse();
+                fen.add(cph);
+                cph.setVisible(true);
+                fen.revalidate();
+                fen.repaint();
+
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(TableauConsultationsInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    
+
+
+
+}
+
+    @Override
+        public void mousePressed(MouseEvent e) {
+
     }
 
     @Override
-    public void mousePressed(MouseEvent e) {
+        public void mouseReleased(MouseEvent e) {
 
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
+        public void mouseEntered(MouseEvent e) {
 
     }
 
     @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
+        public void mouseExited(MouseEvent e) {
 
     }
 

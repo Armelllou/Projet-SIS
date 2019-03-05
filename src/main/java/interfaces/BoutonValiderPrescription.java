@@ -52,7 +52,7 @@ public class BoutonValiderPrescription implements ActionListener {
             String Type = ac.getTypePrescription().getText();
             Dates dates = new Dates(ac.getDate().getText(), ac.getJour().getText(), ac.getAnnee().getText());
 
-            Prescription p = new Prescription(observation, Type, idMedecin, ipp, dates);
+            Prescription p = new Prescription(observation, Type, idMedecin, ipp);
             p.AjouterActeSurBD(p);
             im.getjTable1().setFont(new Font("Calibri", 0, 18));
             im.getjTable1().setModel(MethodeBD.listePrescriptionJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD

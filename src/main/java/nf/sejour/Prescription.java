@@ -16,7 +16,7 @@ public class Prescription {
     private String details;
     private Dates dates;
 
-    public Prescription(String details, String Type, String idPH, String ipp, Dates dates) {
+    public Prescription(String details, String Type, String idPH, String ipp) {
    
         this.type = Type;
         this.idPH = idPH;
@@ -27,7 +27,7 @@ public class Prescription {
 
     public boolean AjouterActeSurBD(Prescription a) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO prescription (type,ipp, idPh, Date, Detail) VALUES(?,?,?,?,?) ";
+        String sql = " INSERT INTO prescription (type,ipp, idPh, Detail) VALUES(?,?,?,?) ";
         
         
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
@@ -35,8 +35,7 @@ public class Prescription {
         statement.setObject(1, a.getType(), Types.VARCHAR);
         statement.setObject(2, a.getipp(), Types.INTEGER);
         statement.setObject(3, a.getIde(), Types.VARCHAR);
-        statement.setObject(4, a.getDates(), Types.VARCHAR);
-        statement.setObject(5, a.getDetail(), Types.VARCHAR);
+        statement.setObject(4, a.getDetail(), Types.VARCHAR);
 
 
         statement.executeUpdate();

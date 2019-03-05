@@ -116,7 +116,7 @@ public class MethodeBD {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("type");
                 infoAllPatient[1] = rs.getString("Nom") + " " +rs.getString("Prenom");
-                infoAllPatient[2] = rs.getString("Date");
+                infoAllPatient[2] = rs.getString("idActe");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {

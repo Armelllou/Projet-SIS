@@ -17,7 +17,7 @@ public class Acte {
     private String observations;
     private Dates dates;
 
-    public Acte(String observations, String Type, String idIDE, String ipp, Dates dates) {
+    public Acte(String observations, String Type, String idIDE, String ipp) {
         this.date = date;
         this.type = Type;
         this.idIDE = idIDE;
@@ -28,7 +28,7 @@ public class Acte {
 
     public boolean AjouterActeSurBD(Acte a) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO Actes (idIDE,ipp, type, observation, date) VALUES(?,?,?,?,?) ";
+        String sql = " INSERT INTO actes (idIDE,ipp, type, observation) VALUES(?,?,?,?) ";
         
         
         
@@ -43,7 +43,7 @@ public class Acte {
         statement.setObject(2, a.getipp(), Types.INTEGER);
         statement.setObject(3, a.getType(), Types.VARCHAR);
         statement.setObject(4, a.getObservation(), Types.VARCHAR);
-        statement.setObject(5, a.getDates(), Types.VARCHAR);
+   
 
 
         statement.executeUpdate();
