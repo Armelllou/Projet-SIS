@@ -65,6 +65,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 
         switch(state){
             case NONCO:
+                
                 return;
             case PH:
         }

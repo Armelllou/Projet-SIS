@@ -1,23 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package nf.personnel;
-
 
 import bd.ConnexionBD;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
-import nf.Sih;
 
-public class Medecin extends Personnel{
- String Service;
-    public Medecin(String nom, String prenom, int id, int mdp,String Service) {
+/**
+ *
+ * @author annel
+ */
+public class Technicien extends Personnel{
+    String Service;
+     public Technicien(String nom, String prenom, int id, int mdp,String Service) {
         super(nom, prenom, id, mdp);
-        this .Service = Service;
+        this.Service=Service;
     }
- 
-    public boolean AjouterSurBdMedecin(Medecin i) throws SQLException {
+    
+    
+      public boolean AjouterSurBdTechnicien(Technicien i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();
-        String sql = " INSERT INTO ide (idPh,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
+        String sql = " INSERT INTO ide (idSM,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         
         statement.setObject(1, i.getId(), Types.INTEGER);
@@ -32,10 +40,7 @@ public class Medecin extends Personnel{
         return j;
     }
 
-    
-
-    
-  @Override
+      @Override
     public String getNom() {
       return nom;
     }
@@ -60,6 +65,4 @@ public class Medecin extends Personnel{
     }
     
     
-    
 }
-

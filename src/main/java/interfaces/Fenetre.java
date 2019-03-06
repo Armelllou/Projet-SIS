@@ -47,6 +47,7 @@ public class Fenetre extends JFrame {
     PrescriptionIDE prescriptionide = new PrescriptionIDE();
     PrescriptionPH prescriptionph = new PrescriptionPH();
     ListePersonnel pl = new ListePersonnel ();
+    CreationPersonnel cp = new CreationPersonnel ();
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -106,7 +107,12 @@ public class Fenetre extends JFrame {
     private JButton validerPrescription = ajouterprescri.getjButton2();
     private JButton validerConsultation = ajouterconsult.getjButton2();
     private JButton ajouterprescriptiondansconsult = ajouterconsult.getjButton4();
-
+    
+    private JButton ajouterPersonnel = pl.getjButton3();
+    private JButton validerajoutpersonnel = cp.getBouttonValider();
+    private JButton annulerajouterpersonnel = cp.getBouttonAnnuler();
+    
+    
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
     private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
@@ -176,7 +182,13 @@ public class Fenetre extends JFrame {
         validerPrescription.addActionListener ( new BoutonValiderPrescription(ajouterprescri,infosmedph,this,barreduhaut));
         validerConsultation.addActionListener (new BoutonValiderConsultation (ajouterconsult,infosmedph,this,barreduhaut));
         ajouterprescriptiondansconsult.addActionListener(new BoutonAjouterPrescriptionDansConsult(this, ajouterprescri, infosmedph, sih, barreduhaut));
+        ajouterPersonnel.addActionListener(new BoutonAjouterDuPersonnel (this,pl,cp,barreduhaut));
+        validerajoutpersonnel.addActionListener(new BoutonValiderPersonnel(this,pl,cp));
+        annulerajouterpersonnel.addActionListener(new BoutonAnnulerPersonnel (this,pl,cp));
         
+        
+        
+  
 // tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE(dpiph, dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
@@ -243,6 +255,8 @@ public class Fenetre extends JFrame {
         prescriptionide.setVisible(false);
         consultationide.setVisible(false);
         acteinfirmieride.setVisible(false);
+        pl.setVisible(false);
+        cp.setVisible(false);
 
     }
 
