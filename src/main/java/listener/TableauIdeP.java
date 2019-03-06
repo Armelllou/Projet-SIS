@@ -72,6 +72,8 @@ public class TableauIdeP implements MouseListener {
                 mp.getId().setText(id);
                 mp.getMdp().setText(mdp);
                 mp.getService().setSelectedItem(Service);
+                mp.getType().setSelectedItem("ide");
+                mp.getType().setEnabled(false);
                 
                 
                 fen.panelVisibleFalse();

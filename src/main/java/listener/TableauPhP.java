@@ -70,7 +70,8 @@ public class TableauPhP implements MouseListener {
                  mp.getId().setText(id);
                  mp.getMdp().setText(mdp);
                  mp.getService().setSelectedItem(Service);;
-                 
+                 mp.getType().setSelectedItem("praticienhospitaliers");
+                   mp.getType().setEnabled(false);
                  
                  fen.panelVisibleFalse();
                  fen.add(mp);

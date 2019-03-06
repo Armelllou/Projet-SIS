@@ -8,6 +8,7 @@ import java.sql.ResultSetMetaData;
 
 import java.sql.SQLException;
 import java.util.Date;
+import java.util.UUID;
 
 public class Main {
 
@@ -44,6 +45,7 @@ public class Main {
 //                
 //        }
 ////System.out.println("");
+ 
 //    }
  String Sql1 = "Select * from patient WHERE IPP ='" + "19020001" + "'";
                 ConnexionBD conn = ConnexionBD.getInstance();

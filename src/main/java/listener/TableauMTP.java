@@ -71,6 +71,8 @@ public class TableauMTP implements MouseListener {
                  mp.getNom().setText(Nom);
                  mp.getId().setText(id);
                  mp.getMdp().setText(mdp);
+                 mp.getType().setSelectedItem("medicotechniques");
+                   mp.getType().setEnabled(false);
                  
                  
                  fen.panelVisibleFalse();

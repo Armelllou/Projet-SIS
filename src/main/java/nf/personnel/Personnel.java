@@ -1,9 +1,12 @@
 package nf.personnel;
 
+import java.util.UUID;
+
 public abstract class Personnel {
  
     String nom;
     String prenom;
+    String uniqueID = UUID.randomUUID().toString();
     int id;
     int mdp;
 

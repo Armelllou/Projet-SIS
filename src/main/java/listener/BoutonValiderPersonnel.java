@@ -47,9 +47,6 @@ public class BoutonValiderPersonnel implements ActionListener {
         String Service = cp.getService().getSelectedItem().toString();
         String Personnel = cp.getType().getSelectedItem().toString();
 
-        System.out.println(Personnel);
-
-        System.out.println(Personnel);
         try {
             if (Personnel == "ide") {
                 Infirmier i = new Infirmier(Nom, Prenom, id, mdp, Service);

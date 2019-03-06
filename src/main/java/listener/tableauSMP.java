@@ -71,6 +71,8 @@ public class tableauSMP implements MouseListener  {
                   mp.getId().setText(id);
                   mp.getMdp().setText(mdp);
                   mp.getService().setSelectedItem(Service);
+                  mp.getType().setSelectedItem("SecretaireAdministrative");
+                    mp.getType().setEnabled(false);
                   
                   
                   fen.panelVisibleFalse();
