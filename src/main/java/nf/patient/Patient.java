@@ -25,6 +25,7 @@ public class Patient {
     String numSS;
     String email;
     String telephone;
+    String typeSejour;
 
     Localisation localisation;
 
@@ -34,7 +35,7 @@ public class Patient {
 
     CreationDPI cdpi = new CreationDPI();
 
-    public Patient(String NomDeNaissance, String NomUsuel, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse, String numss, String email, String telephone) throws SQLException {
+    public Patient(String NomDeNaissance, String NomUsuel, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse, String numss, String email, String telephone,String typeSejour) throws SQLException {
         this.NomDeNaissance = NomDeNaissance;
         this.DateDeNaissance = DateDeNaissance;
         this.NomUsuel = NomUsuel;
@@ -46,6 +47,7 @@ public class Patient {
         this.email = email;
         this.telephone = telephone;
         this.ipp = new Ipp();
+        this.typeSejour=typeSejour;
 
         sih.ajoutPatient(this);
     }
@@ -53,7 +55,7 @@ public class Patient {
 
     public boolean AjouterSurBdPatient(Patient p) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO Patient (IPP, NomDeNaissance,NomUsuel, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse,NumDeSS,email,telephone) VALUES(?,?,?,?,?,?,?,?,?,?,?) ";
+        String sql = " INSERT INTO patient (IPP, NomDeNaissance,NomUsuel, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse,NumDeSS,email,telephone,typeSejour) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         statement.setObject(1, this.ipp.getIpp(), Types.INTEGER);
         statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);
@@ -67,6 +69,7 @@ public class Patient {
         statement.setObject(9, p.getNumSS(), Types.VARCHAR);
         statement.setObject(10, p.getEmail(), Types.VARCHAR);
         statement.setObject(11, p.getTelephone(), Types.INTEGER);
+        statement.setObject(12, p.getTypeSejour(), Types.VARCHAR);
 
         statement.executeUpdate();
         j = true;
@@ -98,6 +101,10 @@ public class Patient {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getTypeSejour() {
+        return typeSejour;
     }
 
     public String getTelephone() {

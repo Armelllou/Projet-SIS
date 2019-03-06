@@ -62,8 +62,8 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="Date" min="-2" pref="138" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="318" max="-2" attributes="0"/>
+                      <Component id="Date" min="-2" pref="387" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="219" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
