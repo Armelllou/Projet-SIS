@@ -46,6 +46,7 @@ public class Fenetre extends JFrame {
     ConsultationIDE consultationide = new ConsultationIDE();
     PrescriptionIDE prescriptionide = new PrescriptionIDE();
     PrescriptionPH prescriptionph = new PrescriptionPH();
+    ListePersonnel pl = new ListePersonnel ();
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -123,7 +124,7 @@ public class Fenetre extends JFrame {
         this.setSize(1700, 830);
 
         //Connexion
-        ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this);
+        ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this,pl);
         connexion.getjPasswordField1().addKeyListener(l);
         valider.addActionListener(l);
 

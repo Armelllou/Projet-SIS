@@ -11,7 +11,7 @@ public class ConnexionBD {
     /**
      * Constructeur de la class.
      */
-    private ConnexionBD() {
+    public ConnexionBD() {
 // ------------BDD local -------------
 //try{
 //            String bBurl = "jdbc:mysql://192.168.64.2/bd2";

@@ -149,6 +149,74 @@ public class MethodeBD {
         return templatesTableModel;
     }
 
+    public static DefaultTableModel listeIDE() {
+        String[] infoAllPatient = new String[3];
+        String title[] = {"Nom", "Prénom", "Service"};
+        String query = "SELECT * FROM ide";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("Nom");
+                infoAllPatient[1] = rs.getString("Prenom");
+                infoAllPatient[2] = rs.getString("Service");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+
+    
+    public static DefaultTableModel listePH() {
+        String[] infoAllPatient = new String[3];
+        String title[] = {"Nom", "Prénom", "Service"};
+        String query = "SELECT * FROM praticienhospitaliers";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("Nom");
+                infoAllPatient[1] = rs.getString("Prenom");
+                infoAllPatient[2] = rs.getString("Service");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+ public static DefaultTableModel listeMT() {
+        String[] infoAllPatient = new String[2];
+        String title[] = {"Nom", "Prénom"};
+        String query = "SELECT * FROM medicotechniques";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("Nom");
+                infoAllPatient[1] = rs.getString("Prenom");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+
 
     /**
      * modèle pour remplir la Jtable avec les patients des infirmières selon son service

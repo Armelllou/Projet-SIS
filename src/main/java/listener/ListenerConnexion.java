@@ -28,13 +28,14 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     private JPanel jp;
     private Fenetre jframe;
     private static BarreDuHaut bh;
+    private ListePersonnel pl;
 
     private ConsulterDPIPHetIDE cdpiphetide;
     private ConsulterDPISecretaire as;
     private Prestations p;
     private static String service ;
 
-    public ListenerConnexion(BarreDuHaut bh, Connexion c, ConsulterDPISecretaire as, ConsulterDPIPHetIDE cdpiphetide, Prestations p, Fenetre jframe) {
+    public ListenerConnexion(BarreDuHaut bh, Connexion c, ConsulterDPISecretaire as, ConsulterDPIPHetIDE cdpiphetide, Prestations p, Fenetre jframe,ListePersonnel pl) {
         this.bh = bh;
         this.c = c;
         this.jframe = jframe;
@@ -42,6 +43,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         this.cdpiphetide = cdpiphetide;
         this.as = as;
         this.p = p;
+        this.pl=pl;
 
     }
 
@@ -56,6 +58,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         if(connexionSecretaire()
         || ConnexionIde()
         || ConnexionPH()
+        ||ConnexionTechnicien()
         || ConnexionMedicoTechniques()) {
 
         }
@@ -118,7 +121,16 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     public boolean ConnexionMedicoTechniques() throws SQLException {
         if (Connexion("Select * from medicotechniques WHERE idMT ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", p)) {
             p.setVisible(true);
-            this.state = State.IDE;
+            this.state = State.SM;
+            return true;
+        }
+        return false;
+    }
+    
+     public boolean ConnexionTechnicien() throws SQLException {
+        if (Connexion("Select * from Technicien WHERE idTech ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", pl)) {
+            pl.setVisible(true);
+            this.state = State.TECH;
             return true;
         }
         return false;

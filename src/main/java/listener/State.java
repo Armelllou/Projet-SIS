@@ -12,6 +12,7 @@ public enum State {
     PH,
     IDE,
     SM,
-    NONCO;
+    NONCO,
+    TECH;
 
 }
