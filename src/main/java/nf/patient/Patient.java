@@ -55,7 +55,7 @@ public class Patient {
 
     public boolean AjouterSurBdPatient(Patient p) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO Patient (IPP, NomDeNaissance,NomUsuel, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse,NumDeSS,email,telephone,typeSejour) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ";
+        String sql = " INSERT INTO patient (IPP, NomDeNaissance,NomUsuel, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse,NumDeSS,email,telephone,typeSejour) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         statement.setObject(1, this.ipp.getIpp(), Types.INTEGER);
         statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);

@@ -30,6 +30,10 @@ public class CreationDPI extends javax.swing.JPanel {
         return telephone;
     }
 
+    public JComboBox<String> getTypesejour() {
+        return typesejour;
+    }
+
     public JComboBox<String> getServiceGeo() {
         return ServiceGeo;
     }
