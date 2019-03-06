@@ -7,10 +7,8 @@ package listener;
 
 import bd.ConnexionBD;
 import bd.MethodeBD;
-import bd.Service;
 import interfaces.*;
 import interfaces.ConsulterDPISecretaire;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

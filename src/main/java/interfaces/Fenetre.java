@@ -6,11 +6,9 @@
 package interfaces;
 
 import listener.BoutonValiderPrescription;
-import bd.Service;
 import listener.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-
 import listener.ide.*;
 import listener.ph.*;
 import listener.secretairemedical.*;
@@ -129,7 +127,6 @@ public class Fenetre extends JFrame {
         connexion.getjPasswordField1().addKeyListener(l);
         valider.addActionListener(l);
 
-        Service service = new Service();
 
         //boutons
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));

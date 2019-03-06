@@ -1,9 +1,6 @@
 package bd;
-
-import listener.ListenerConnexion;
 import listener.State;
 import nf.patient.Patient;
-
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
