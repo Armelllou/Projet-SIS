@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package interfaces;
+package listener;
 
 import bd.MethodeBD;
+import interfaces.AjouterPrescription;
+import interfaces.BarreDuHaut;
+import interfaces.Fenetre;
+import interfaces.InfosMedicalesPH;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

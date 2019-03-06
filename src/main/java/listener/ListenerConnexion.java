@@ -118,7 +118,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     }
 
     public boolean ConnexionMedicoTechniques() throws SQLException {
-        if (Connexion("Select * from medicoTechniques WHERE idMT ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", p)) {
+        if (Connexion("Select * from medicotechniques WHERE idMT ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", p)) {
             p.setVisible(true);
             this.state = State.IDE;
             return true;

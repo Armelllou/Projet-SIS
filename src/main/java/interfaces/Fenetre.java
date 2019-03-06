@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import listener.BoutonValiderPrescription;
 import bd.Service;
 import listener.*;
 import java.awt.event.WindowAdapter;

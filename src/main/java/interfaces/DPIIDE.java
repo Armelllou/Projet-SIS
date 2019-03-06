@@ -82,19 +82,6 @@ public class DPIIDE extends javax.swing.JPanel {
         return jLabelipp;
     }
 
-    /**
-     * @return the jLabeljour
-     */
-    public javax.swing.JLabel getjLabeljour() {
-        return jLabeljour;
-    }
-
-    /**
-     * @return the jLabelmois
-     */
-    public javax.swing.JLabel getjLabelmois() {
-        return jLabelmois;
-    }
 
     /**
      * @return the jLabelnom
@@ -167,11 +154,7 @@ public class DPIIDE extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabelprenom = new javax.swing.JLabel();
         jLabelnom = new javax.swing.JLabel();
-        jLabeljour = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabelannée = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabelmois = new javax.swing.JLabel();
         jLabelnumsecu = new javax.swing.JLabel();
         jLabelipp = new javax.swing.JLabel();
         ServiceRespo = new javax.swing.JLabel();
@@ -201,20 +184,8 @@ public class DPIIDE extends javax.swing.JPanel {
         jLabelnom.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
         jLabelnom.setText("NOM");
 
-        jLabeljour.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabeljour.setText("JJ");
-
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabel2.setText("/");
-
         jLabelannée.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelannée.setText("AAAA");
-
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabel3.setText("/");
-
-        jLabelmois.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabelmois.setText("MM");
 
         jLabelnumsecu.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelnumsecu.setText("2971162574323");
@@ -299,14 +270,7 @@ public class DPIIDE extends javax.swing.JPanel {
                                         .addGap(20, 20, 20)
                                         .addComponent(jLabel4))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabeljour)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabelmois)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel3)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(10, 10, 10)
                                         .addComponent(jLabelannée)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -352,14 +316,9 @@ public class DPIIDE extends javax.swing.JPanel {
                             .addComponent(jLabelnom1))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabeljour)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabelmois)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabelannée))
-                        .addGap(172, 172, 172)
+                        .addGap(51, 51, 51)
+                        .addComponent(jLabelannée)
+                        .addGap(171, 171, 171)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
                             .addComponent(ServiceRespo))
@@ -401,8 +360,6 @@ public class DPIIDE extends javax.swing.JPanel {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtoninfomed;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -411,8 +368,6 @@ public class DPIIDE extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelchamnre;
     private javax.swing.JLabel jLabelemail;
     private javax.swing.JLabel jLabelipp;
-    private javax.swing.JLabel jLabeljour;
-    private javax.swing.JLabel jLabelmois;
     private javax.swing.JLabel jLabelnom;
     private javax.swing.JLabel jLabelnom1;
     private javax.swing.JLabel jLabelnumsecu;

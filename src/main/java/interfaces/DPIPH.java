@@ -86,20 +86,6 @@ public class DPIPH extends javax.swing.JPanel {
     }
 
     /**
-     * @return the jLabeljour
-     */
-    public javax.swing.JLabel getjLabeljour() {
-        return jLabeljour;
-    }
-
-    /**
-     * @return the jLabelmois
-     */
-    public javax.swing.JLabel getjLabelmois() {
-        return jLabelmois;
-    }
-
-    /**
      * @return the jLabelnom
      */
     public javax.swing.JLabel getjLabelnom() {
@@ -169,11 +155,7 @@ public class DPIPH extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jLabelprenom = new javax.swing.JLabel();
         jLabelnom = new javax.swing.JLabel();
-        jLabeljour = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabelannée = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabelmois = new javax.swing.JLabel();
         Sexe = new javax.swing.JLabel();
         jLabelipp = new javax.swing.JLabel();
         jLabeladresse = new javax.swing.JLabel();
@@ -204,20 +186,8 @@ public class DPIPH extends javax.swing.JPanel {
         jLabelnom.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
         jLabelnom.setText("NOM");
 
-        jLabeljour.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabeljour.setText("JJ");
-
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabel2.setText("/");
-
         jLabelannée.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabelannée.setText("AAAA");
-
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabel3.setText("/");
-
-        jLabelmois.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
-        jLabelmois.setText("MM");
 
         Sexe.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         Sexe.setText("Sexe");
@@ -284,17 +254,20 @@ public class DPIPH extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Sexe))
-                            .addGroup(layout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(339, 339, 339)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabelannée)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGap(0, 0, Short.MAX_VALUE)
                                         .addComponent(jLabeltelephone))
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabeladresse)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(jLabelemail))
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jLabel5)
@@ -304,22 +277,12 @@ public class DPIPH extends javax.swing.JPanel {
                                                 .addGap(20, 20, 20)
                                                 .addComponent(jLabel4)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(ServiceRespo))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jLabeljour)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel2)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabelmois)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabel3)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jLabelannée)))
+                                                .addComponent(ServiceRespo)))
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 236, Short.MAX_VALUE)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabelchamnre))
-                                    .addGroup(layout.createSequentialGroup()
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                         .addComponent(jLabelnom)
                                         .addGap(72, 72, 72)
                                         .addComponent(jLabelnom1)
@@ -358,14 +321,9 @@ public class DPIPH extends javax.swing.JPanel {
                             .addComponent(jLabelprenom)
                             .addComponent(jLabelipp)
                             .addComponent(jLabelnom1))))
-                .addGap(50, 50, 50)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabeljour)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabelmois)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabelannée))
-                .addGap(18, 18, 18)
+                .addGap(42, 42, 42)
+                .addComponent(jLabelannée)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabeladresse)
                     .addComponent(jLabelemail))
@@ -412,8 +370,6 @@ public class DPIPH extends javax.swing.JPanel {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButtoninfomed;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -422,8 +378,6 @@ public class DPIPH extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelchamnre;
     private javax.swing.JLabel jLabelemail;
     private javax.swing.JLabel jLabelipp;
-    private javax.swing.JLabel jLabeljour;
-    private javax.swing.JLabel jLabelmois;
     private javax.swing.JLabel jLabelnom;
     private javax.swing.JLabel jLabelnom1;
     private javax.swing.JLabel jLabelnumsecu1;
