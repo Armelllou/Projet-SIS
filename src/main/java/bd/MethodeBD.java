@@ -151,7 +151,7 @@ public class MethodeBD {
 
     public static DefaultTableModel listeIDE() {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "Service"};
+        String title[] = {"Nom", "Prénom", "Id"};
         String query = "SELECT * FROM ide";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -163,7 +163,7 @@ public class MethodeBD {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("Nom");
                 infoAllPatient[1] = rs.getString("Prenom");
-                infoAllPatient[2] = rs.getString("Service");
+                infoAllPatient[2] = rs.getString("idIDE");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
@@ -175,7 +175,7 @@ public class MethodeBD {
     
     public static DefaultTableModel listePH() {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "Service"};
+        String title[] = {"Nom", "Prénom", "Id"};
         String query = "SELECT * FROM praticienhospitaliers";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -187,7 +187,7 @@ public class MethodeBD {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("Nom");
                 infoAllPatient[1] = rs.getString("Prenom");
-                infoAllPatient[2] = rs.getString("Service");
+                infoAllPatient[2] = rs.getString("idPh");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
@@ -199,7 +199,7 @@ public class MethodeBD {
     
      public static DefaultTableModel listeSA() {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "Service"};
+        String title[] = {"Nom", "Prénom", "id"};
         String query = "SELECT * FROM secretaireadministrative";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -211,7 +211,7 @@ public class MethodeBD {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("Nom");
                 infoAllPatient[1] = rs.getString("Prénom");
-                infoAllPatient[2] = rs.getString("Service");
+                infoAllPatient[2] = rs.getString("idSA");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
@@ -222,8 +222,8 @@ public class MethodeBD {
      
      
  public static DefaultTableModel listeMT() {
-        String[] infoAllPatient = new String[2];
-        String title[] = {"Nom", "Prénom"};
+        String[] infoAllPatient = new String[3];
+        String title[] = {"Nom", "Prénom","id"};
         String query = "SELECT * FROM medicotechniques";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -235,6 +235,7 @@ public class MethodeBD {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("Nom");
                 infoAllPatient[1] = rs.getString("Prenom");
+                infoAllPatient[2] = rs.getString("idMT");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {

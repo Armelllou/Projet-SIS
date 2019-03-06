@@ -43,7 +43,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
         try {
             String ipp = mdpi.getjLabel3().getText();
-            // String SQL = "UPDATE patient SET Prénom '" + mdpi.getPrenom().getText() + "' WHERE CODE = '" + ipp + "'";
+        
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE patient SET NomDeNaissance= ?, NomUsuel= ?, Prénom = ?,DateDeNaissance= ?,Sexe= ?,idAdresse= ?,NumDeSS= ?,email= ?,telephone= ? WHERE ipp = ?");
             prep2.setString(1, mdpi.getNomDenaissance().getText());
