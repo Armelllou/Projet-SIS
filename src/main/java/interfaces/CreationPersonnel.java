@@ -149,10 +149,10 @@ public class CreationPersonnel extends javax.swing.JPanel {
         });
 
         Type.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Autres", "praticienhospitaliers", "ide", "Technicien", "medicotechniques", " " }));
+        Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "praticienhospitaliers", "ide", "Technicien", "medicotechniques", "SecretaireAdministrative", " " }));
 
         Service.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        Service.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple consultation", "Urologie" }));
+        Service.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Autres", "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Simple consultation", "Urologie" }));
 
         jLabel6.setFont(new java.awt.Font("Calibri", 1, 48)); // NOI18N
         jLabel6.setText("Ajouter un Nouveau Personnel :");

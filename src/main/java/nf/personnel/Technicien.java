@@ -15,24 +15,24 @@ import java.sql.Types;
  * @author annel
  */
 public class Technicien extends Personnel{
-    String Service;
-     public Technicien(String nom, String prenom, int id, int mdp,String Service) {
+   
+     public Technicien(String nom, String prenom, int id, int mdp) {
         super(nom, prenom, id, mdp);
-        this.Service=Service;
+        
     }
     
     
       public boolean AjouterSurBdTechnicien(Technicien i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();
-        String sql = " INSERT INTO ide (idSM,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
+        String sql = " INSERT INTO Technicien (idSM,motDePasse,Nom,Prenom) VALUES(?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         
         statement.setObject(1, i.getId(), Types.INTEGER);
         statement.setObject(2, i.getMdp(), Types.INTEGER);
         statement.setObject(3, i.getNom(), Types.VARCHAR);
         statement.setObject(4, i.getPrenom(), Types.VARCHAR);
-        statement.setObject(5, i.getService(), Types.VARCHAR);
+        
        
 
         statement.executeUpdate();
@@ -60,9 +60,6 @@ public class Technicien extends Personnel{
         return mdp;
     }
 
-    public String getService() {
-        return Service;
-    }
-    
+ 
     
 }

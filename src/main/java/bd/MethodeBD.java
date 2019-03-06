@@ -195,6 +195,32 @@ public class MethodeBD {
         }
         return templatesTableModel;
     }
+    
+    
+     public static DefaultTableModel listeSA() {
+        String[] infoAllPatient = new String[3];
+        String title[] = {"Nom", "Prénom", "Service"};
+        String query = "SELECT * FROM secretaireadministrative";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("Nom");
+                infoAllPatient[1] = rs.getString("Prénom");
+                infoAllPatient[2] = rs.getString("Service");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+     
+     
  public static DefaultTableModel listeMT() {
         String[] infoAllPatient = new String[2];
         String title[] = {"Nom", "Prénom"};

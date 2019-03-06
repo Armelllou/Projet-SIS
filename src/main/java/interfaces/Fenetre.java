@@ -108,7 +108,7 @@ public class Fenetre extends JFrame {
     private JButton validerConsultation = ajouterconsult.getjButton2();
     private JButton ajouterprescriptiondansconsult = ajouterconsult.getjButton4();
     
-    private JButton ajouterPersonnel = pl.getjButton3();
+    private JButton ajouterPersonnel = pl.getAjouterPersonnel();
     private JButton validerajoutpersonnel = cp.getBouttonValider();
     private JButton annulerajouterpersonnel = cp.getBouttonAnnuler();
     

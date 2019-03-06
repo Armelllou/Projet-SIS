@@ -15,23 +15,24 @@ import java.sql.Types;
  * @author annel
  */
 public class MedicoTechnique extends Personnel {
-    
+    String service;
     public MedicoTechnique(String nom, String prenom, int id, int mdp) {
         super(nom, prenom, id, mdp);
+        
     }
     
     
-      public boolean AjouterSurBdMedicoTechnique(SecretaireMedical i) throws SQLException {
+      public boolean AjouterSurBdMedicoTechnique(MedicoTechnique i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();
-        String sql = " INSERT INTO ide (idSM,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
+        String sql = " INSERT INTO medicotechniques (idMT,motDePasse,Nom,Prenom) VALUES(?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         
         statement.setObject(1, i.getId(), Types.INTEGER);
         statement.setObject(2, i.getMdp(), Types.INTEGER);
         statement.setObject(3, i.getNom(), Types.VARCHAR);
         statement.setObject(4, i.getPrenom(), Types.VARCHAR);
-        statement.setObject(5, i.getService(), Types.VARCHAR);
+       
        
 
         statement.executeUpdate();
@@ -58,4 +59,7 @@ public class MedicoTechnique extends Personnel {
     public int getMdp() {
         return mdp;
     }
+    
+    
+    
 }

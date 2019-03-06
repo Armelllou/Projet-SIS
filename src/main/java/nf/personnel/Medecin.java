@@ -17,7 +17,7 @@ public class Medecin extends Personnel{
     public boolean AjouterSurBdMedecin(Medecin i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();
-        String sql = " INSERT INTO ide (idPh,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
+        String sql = " INSERT INTO praticienhospitaliers (idPh,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         
         statement.setObject(1, i.getId(), Types.INTEGER);
