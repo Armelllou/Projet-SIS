@@ -48,6 +48,7 @@ public class Fenetre extends JFrame {
     PrescriptionPH prescriptionph = new PrescriptionPH();
     ListePersonnel pl = new ListePersonnel ();
     CreationPersonnel cp = new CreationPersonnel ();
+    ModifierPersonnel mp = new ModifierPersonnel();
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -111,6 +112,7 @@ public class Fenetre extends JFrame {
     private JButton ajouterPersonnel = pl.getAjouterPersonnel();
     private JButton validerajoutpersonnel = cp.getBouttonValider();
     private JButton annulerajouterpersonnel = cp.getBouttonAnnuler();
+    private JButton annulermodificationpersonnel = mp.getBouttonAnnuler();
     
     
     //Déclarations Tableaux
@@ -123,6 +125,11 @@ public class Fenetre extends JFrame {
     private JTable tableauprescriinfmedide = infosmedide.getjTable1();
     private JTable tableauprescriinfmedph = infosmedph.getjTable1();
     private JTable tableauprestations = prestations.getjTable1();
+    private JTable tableauPH = pl.getTablePH();
+    private JTable tableauIDE = pl.getTableIDE();
+    private JTable tableauMT = pl.getTableMT();
+    private JTable tableauSA = pl.getTableSecretaire();
+    
 
     public Fenetre() {
         //state = State.NONCO;
@@ -185,6 +192,7 @@ public class Fenetre extends JFrame {
         ajouterPersonnel.addActionListener(new BoutonAjouterDuPersonnel (this,pl,cp,barreduhaut));
         validerajoutpersonnel.addActionListener(new BoutonValiderPersonnel(this,pl,cp));
         annulerajouterpersonnel.addActionListener(new BoutonAnnulerPersonnel (this,pl,cp));
+        annulermodificationpersonnel.addActionListener(new BouttonAnnulerModifPersonnel (this,pl,mp));
         
         
         
@@ -200,6 +208,12 @@ public class Fenetre extends JFrame {
         tableauprescriinfmedph.addMouseListener(new TableauPrescriptionsInfosMedPH(infosmedph, prescriptionph, this, sih, infosmedph.getjTable1()));
         tableauprestations.addMouseListener(new TableauPrestations(prestations, prestafaite, this, sih, prestations.getjTable1()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterIDE(dpiide, consultdpiphide, this, consultdpiphide.getjTable1(),l));
+        tableauIDE.addMouseListener(new TableauIdeP (this,pl,mp,tableauIDE));
+        tableauPH.addMouseListener(new TableauPhP (this,pl,mp,tableauPH));  
+        tableauMT.addMouseListener(new TableauMTP (this,pl,mp,tableauMT));
+        tableauSA.addMouseListener(new tableauSMP(this,pl,mp,tableauSA));
+        
+        
         
         
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
@@ -257,6 +271,7 @@ public class Fenetre extends JFrame {
         acteinfirmieride.setVisible(false);
         pl.setVisible(false);
         cp.setVisible(false);
+        mp.setVisible(false);
 
     }
 
