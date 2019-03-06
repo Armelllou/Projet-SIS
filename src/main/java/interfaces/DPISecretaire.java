@@ -179,6 +179,7 @@ public class DPISecretaire extends javax.swing.JPanel {
         sereviceRespo = new javax.swing.JLabel();
         jLabelnom1 = new javax.swing.JLabel();
         Sexe = new javax.swing.JLabel();
+        typeDeSejour = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -238,6 +239,9 @@ public class DPISecretaire extends javax.swing.JPanel {
 
         Sexe.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Sexe.setText("Sexe");
+
+        typeDeSejour.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
+        typeDeSejour.setText("Type de séjour");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -304,8 +308,13 @@ public class DPISecretaire extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButtonmodifier)
-                .addGap(678, 678, 678))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonmodifier)
+                        .addGap(678, 678, 678))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(typeDeSejour, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(181, 181, 181))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,6 +346,8 @@ public class DPISecretaire extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(chambre)
                                     .addComponent(jLabelchamnre))
+                                .addGap(18, 18, 18)
+                                .addComponent(typeDeSejour)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
@@ -384,5 +395,6 @@ public class DPISecretaire extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelprenom;
     private javax.swing.JLabel jLabeltelephone;
     private javax.swing.JLabel sereviceRespo;
+    private javax.swing.JLabel typeDeSejour;
     // End of variables declaration//GEN-END:variables
 }
