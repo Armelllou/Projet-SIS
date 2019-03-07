@@ -49,11 +49,12 @@ public class Fenetre extends JFrame {
     ListePersonnel pl = new ListePersonnel();
     CreationPersonnel cp = new CreationPersonnel();
     ModifierPersonnel mp = new ModifierPersonnel();
+    DetailsPrestation dp = new DetailsPrestation ();
 
     // Attributs de la JFrame
     Fenetre frame = this;
     BarreDuHaut barreduhaut = new BarreDuHaut();
-    
+
     Sih sih;
 
     // Déclarations Boutons
@@ -71,13 +72,13 @@ public class Fenetre extends JFrame {
     private JButton accueilActeInfirmierPH = acteinfirmierPH.getjButton3();
     private JButton annulerAjouterAI = ajouterai.getjButton1();
     private JButton annulerAjouterConsult = ajouterconsult.getjButton1();
-    private JButton annulerAjouterPresta = ajouterpresta.getjButton1();
+    private JButton annulerAjouterPresta = ajouterpresta.getBoutonAnnuler();
     private JButton accueilconsultPH = consultationPH.getjButton3();
     private JButton retourConsultPHVersInfosMedPH = consultationPH.getjButton4();
     private JButton ConnexionEntrerListener = connexion.getjButton1();
     private JButton retourActeInfIDEVersInfosMedIDE = acteinfirmieride.getjButton4();
     private JButton accueilActeInfIDE = acteinfirmieride.getjButton3();
-    private JButton annulerAjouterPrescri = ajouterpresta.getjButton1();
+    private JButton annulerAjouterPrescri = ajouterpresta.getBoutonAnnuler();
     private JButton retourConsultIDEVersInfosMedIDE = consultationide.getjButton4();
     private JButton accueilconsultationide = consultationide.getjButton3();
     private JButton accueilconsultationph = consultationPH.getjButton3();
@@ -94,26 +95,28 @@ public class Fenetre extends JFrame {
     private JButton ajouterconsultation = infosmedph.getjButton4();
     private JButton ajouterprescription = infosmedph.getjButton6();
     private JButton ajouterprescription2 = ajouterprescri.getjButton1();
-    
+
     private JButton ajouterprestation = infosmedph.getjButton5();
     private JButton annulermodifDPI = modifdpi.getjButton2();
     private JButton accueilprescriIDE = prescriptionide.getjButton3();
     private JButton retourPrescriIDEVersInfMedIDE = prescriptionide.getjButton4();
     private JButton accueilprescriPH = prescriptionph.getjButton3();
     private JButton retourPrescriPHVersInfMedPH = prescriptionph.getjButton4();
-    private JButton annulerprestafaite = prestafaite.getjButton1();
+    private JButton annulerprestafaite = dp.getBoutonRetour();
     private JButton annulertransfert = transfert.getjButton2();
     private JButton validermodifdpi = modifdpi.getjButton1();
     private JButton validerActe = ajouterai.getjButton2();
     private JButton validerPrescription = ajouterprescri.getjButton2();
     private JButton validerConsultation = ajouterconsult.getjButton2();
     private JButton ajouterprescriptiondansconsult = ajouterconsult.getjButton4();
-    
+
     private JButton ajouterPersonnel = pl.getAjouterPersonnel();
     private JButton validerajoutpersonnel = cp.getBouttonValider();
     private JButton annulerajouterpersonnel = cp.getBouttonAnnuler();
     private JButton annulermodificationpersonnel = mp.getBouttonAnnuler();
     private JButton validerrmodificationpersonnel = mp.getBouttonValider();
+    private JButton supprimerPersonnel = mp.getBouttonSupprimer();
+    private JButton validerPrestation = ajouterpresta.getBouttonValider();
 
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
@@ -124,12 +127,12 @@ public class Fenetre extends JFrame {
     private JTable tableauacteinfirmierinfmedide = infosmedide.getjTable2();
     private JTable tableauprescriinfmedide = infosmedide.getjTable1();
     private JTable tableauprescriinfmedph = infosmedph.getjTable1();
-    private JTable tableauprestations = prestations.getjTable1();
+    private JTable tableauprestations = prestations.getTablePrestation();
     private JTable tableauPH = pl.getTablePH();
     private JTable tableauIDE = pl.getTableIDE();
     private JTable tableauMT = pl.getTableMT();
     private JTable tableauSA = pl.getTableSecretaire();
-    
+
     public Fenetre() {
         //state = State.NONCO;
         add(connexion);
@@ -174,13 +177,13 @@ public class Fenetre extends JFrame {
         ajouterconsultation.addActionListener(new BoutonAjouterConsultation(this, ajouterconsult, infosmedph, barreduhaut));
         ajouterprescription.addActionListener(new BoutonAjouterPrescription(this, ajouterprescri, infosmedph, sih, barreduhaut));
         ajouterprescription2.addActionListener(new BoutonAnnulerPrescription(prescriptionph, infosmedph, this));
-        ajouterprestation.addActionListener(new BoutonAjouterPrestation(this, ajouterpresta, infosmedph, sih));
+        ajouterprestation.addActionListener(new BoutonAjouterPrestation(this, ajouterpresta, infosmedph, barreduhaut));
         annulermodifDPI.addActionListener(new BoutonAnnulerModificationDPI(this, dpis, modifdpi, sih));
         accueilprescriIDE.addActionListener(new BoutonAccueilPrescriptionIDE(this, prescriptionide, consultdpiphide, sih));
         retourPrescriIDEVersInfMedIDE.addActionListener(new BoutonRetourPrescriptionIDEVersInfosMedIDE(this, prescriptionide, infosmedide, sih));
         accueilprescriPH.addActionListener(new BoutonAccueilPrescriptionPH(this, prescriptionph, consultdpiphide, sih));
         retourPrescriPHVersInfMedPH.addActionListener(new BoutonRetourPrescriptionPHVersInfosMedPH(this, prescriptionph, infosmedph, sih));
-        annulerprestafaite.addActionListener(new BoutonAnnulerPrestaFaite(prestafaite, prestations, this));
+        annulerprestafaite.addActionListener(new BoutonRetourDetailsPrestation(dp, prestations, this));
         annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
         validermodifdpi.addActionListener(new BoutonValiderModificationDPI(this, dpis, modifdpi, sih));
         validerActe.addActionListener(new BoutonValiderActe(barreduhaut, infosmedide, this, ajouterai));
@@ -192,6 +195,10 @@ public class Fenetre extends JFrame {
         annulerajouterpersonnel.addActionListener(new BoutonAnnulerPersonnel(this, pl, cp));
         annulermodificationpersonnel.addActionListener(new BouttonAnnulerModifPersonnel(this, pl, mp));
         validerrmodificationpersonnel.addActionListener(new BoutonValiderModificationPersonnel(this, pl, mp));
+        supprimerPersonnel.addActionListener(new BoutonSupprimerPersonnel(pl, mp, this));
+        validerPrestation.addActionListener(new BoutonValiderDemandePrestation(ajouterpresta,infosmedph,barreduhaut,this,prestations));
+        
+        
 
 // tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
@@ -202,10 +209,10 @@ public class Fenetre extends JFrame {
         tableauacteinfirmierinfmedide.addMouseListener(new TableauActesInfirmiersInfosMedIDE(infosmedide, acteinfirmieride, this, barreduhaut, infosmedide.getjTable2()));
         tableauprescriinfmedide.addMouseListener(new TableauPrescriptionsInfosMedIDE(infosmedide, prescriptionide, this, sih, infosmedide.getjTable1()));
         tableauprescriinfmedph.addMouseListener(new TableauPrescriptionsInfosMedPH(infosmedph, prescriptionph, this, sih, infosmedph.getjTable1()));
-        tableauprestations.addMouseListener(new TableauPrestations(prestations, prestafaite, this, sih, prestations.getjTable1()));
+        tableauprestations.addMouseListener(new TableauPrestations(prestations, dp, this, sih, prestations.getTablePrestation()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterIDE(dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
         tableauIDE.addMouseListener(new TableauIdeP(this, pl, mp, tableauIDE));
-        tableauPH.addMouseListener(new TableauPhP(this, pl, mp, tableauPH));        
+        tableauPH.addMouseListener(new TableauPhP(this, pl, mp, tableauPH));
         tableauMT.addMouseListener(new TableauMTP(this, pl, mp, tableauMT));
         tableauSA.addMouseListener(new tableauSMP(this, pl, mp, tableauSA));
 
@@ -218,26 +225,26 @@ public class Fenetre extends JFrame {
                         JOptionPane.YES_NO_OPTION,
                         JOptionPane.QUESTION_MESSAGE);
                 if (reponse == JOptionPane.YES_OPTION) {
-                    
+
                     System.exit(0);
                 }
             }
         });
-        
+
     }
-    
+
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Fenetre frame = new Fenetre();
                 frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                 frame.setVisible(true);
-                
+
             }
         });
-        
+
     }
-    
+
     public void panelVisibleFalse() {
         connexion.setVisible(false);
         consultdpis.setVisible(false);
@@ -265,13 +272,13 @@ public class Fenetre extends JFrame {
         pl.setVisible(false);
         cp.setVisible(false);
         mp.setVisible(false);
-        
+
     }
-    
+
     public void totaliteFalse() {
         barreduhaut.setVisible(false);
         connexion.setVisible(false);
         this.panelVisibleFalse();
     }
-    
+
 }

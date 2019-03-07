@@ -79,7 +79,6 @@ public class ListePersonnel extends javax.swing.JPanel {
      */
     public ListePersonnel() {
         initComponents();
-
         this.getTableIDE().setFont(new Font("Calibri", 0, 18));
         this.getTableIDE().setModel(new MethodeBD().listeIDE());
         this.getTablePH().setFont(new Font("Calibri", 0, 18));

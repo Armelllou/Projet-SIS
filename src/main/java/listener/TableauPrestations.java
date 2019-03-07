@@ -5,6 +5,7 @@
  */
 package listener;
 
+import interfaces.DetailsPrestation;
 import interfaces.Fenetre;
 import interfaces.PrestationFaite;
 import interfaces.Prestations;
@@ -18,12 +19,12 @@ import java.awt.event.MouseListener;
 public class TableauPrestations implements MouseListener {
 
     Prestations p;
-    PrestationFaite pf;
+    DetailsPrestation pf;
     Fenetre fen;
     Sih sih;
     JTable table;
 
-    public TableauPrestations(Prestations p, PrestationFaite pf, Fenetre fen, Sih sih, JTable table) {
+    public TableauPrestations(Prestations p, DetailsPrestation pf, Fenetre fen, Sih sih, JTable table) {
         this.p = p;
         this.pf = pf;
         this.fen = fen;
@@ -36,7 +37,21 @@ public class TableauPrestations implements MouseListener {
     public void mouseClicked(MouseEvent me) {
         int numLigne = table.getSelectedRow();
         
+        String NomPatient=(String)table.getModel().getValueAt(numLigne, 0);
+        String PrenomPatient=(String)table.getModel().getValueAt(numLigne, 1); 
+        String IPP=(String)table.getModel().getValueAt(numLigne, 2);
+        String details=(String)table.getModel().getValueAt(numLigne, 3);
+        String NomMedecin  =(String)table.getModel().getValueAt(numLigne,5);
+       
         
+       
+        
+        
+       pf.getPrenomPatient().setText(PrenomPatient);
+       pf.getNomPatient().setText(NomPatient);
+       pf.getNomMedecin().setText(NomMedecin);
+       pf.getDetails().setText(details);
+       pf.getIPP().setText(IPP);
         
         
         

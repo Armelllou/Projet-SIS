@@ -19,6 +19,10 @@ public class ModifierPersonnel extends javax.swing.JPanel {
 
     private static final Logger LOG = Logger.getLogger(ModifierPersonnel.class.getName());
 
+    public JButton getBouttonSupprimer() {
+        return BouttonSupprimer;
+    }
+
     public JComboBox<String> getType() {
         return Type;
     }
@@ -111,6 +115,7 @@ public class ModifierPersonnel extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         Type = new javax.swing.JComboBox<>();
+        BouttonSupprimer = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -183,23 +188,20 @@ public class ModifierPersonnel extends javax.swing.JPanel {
         Type.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         Type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "praticienhospitaliers", "ide", "Technicien", "medicotechniques", "SecretaireAdministrative", " " }));
 
+        BouttonSupprimer.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        BouttonSupprimer.setText("Supprimer Personnel");
+        BouttonSupprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BouttonSupprimerActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(683, 683, 683)
-                        .addComponent(BouttonAnnuler)
-                        .addGap(65, 65, 65)
-                        .addComponent(BouttonValider))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(495, 495, 495)
-                        .addComponent(jLabel6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
@@ -220,7 +222,7 @@ public class ModifierPersonnel extends javax.swing.JPanel {
                                         .addGap(212, 212, 212))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 380, Short.MAX_VALUE)
                                         .addComponent(jLabel2))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -229,14 +231,32 @@ public class ModifierPersonnel extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Mdp, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Id, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 345, Short.MAX_VALUE))
+                            .addComponent(Type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(683, 683, 683)
+                                .addComponent(BouttonAnnuler)
+                                .addGap(65, 65, 65)
+                                .addComponent(BouttonValider))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(190, 190, 190)
+                                .addComponent(BouttonSupprimer)
+                                .addGap(130, 130, 130)
+                                .addComponent(jLabel6)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addGap(485, 485, 485))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(77, 77, 77)
-                .addComponent(jLabel6)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(BouttonSupprimer))
                 .addGap(106, 106, 106)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -288,9 +308,14 @@ public class ModifierPersonnel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_NomActionPerformed
 
+    private void BouttonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BouttonSupprimerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BouttonSupprimerActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BouttonAnnuler;
+    private javax.swing.JButton BouttonSupprimer;
     private javax.swing.JButton BouttonValider;
     private javax.swing.JTextField Id;
     private javax.swing.JTextField Mdp;

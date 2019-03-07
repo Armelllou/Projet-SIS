@@ -113,7 +113,7 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
             }
             if (Personnel == "SecretaireAdministrative") {
                 ConnexionBD conn = ConnexionBD.getInstance();
-                PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE SecretaireAdministrative SET Nom= ?, Prénom = ?,idSA= ?,motDePasse= ?,Service= ?WHERE idSA= ?");
+                PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE secretaireadministrative SET Nom= ?, Prénom = ?,idSA= ?,motDePasse= ?,Service= ?WHERE idSA= ?");
                 prep2.setString(1, Nom);
                 prep2.setString(2, Prenom);
                 prep2.setInt(3, id);

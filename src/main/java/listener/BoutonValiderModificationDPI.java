@@ -79,7 +79,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
         try {
             String ipp = mdpi.getjLabel3().getText();
-            String sql1 = "Select * from Patient WHERE IPP ='" + ipp + "'";
+            String sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
             ps = conn.getConnexion().prepareStatement(sql1);

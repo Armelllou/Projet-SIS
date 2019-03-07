@@ -6,6 +6,7 @@
 package listener;
 
 import interfaces.AjouterPrestation;
+import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
 import nf.Sih;
@@ -21,16 +22,20 @@ public class BoutonAjouterPrestation implements ActionListener {
     AjouterPrestation ac;
     InfosMedicalesPH im;
     Fenetre jframe;
-    Sih sih;
+  BarreDuHaut bh;
 
-    public BoutonAjouterPrestation(Fenetre jframe, AjouterPrestation ac, InfosMedicalesPH im, Sih sih) {
+    public BoutonAjouterPrestation(Fenetre jframe, AjouterPrestation ac, InfosMedicalesPH im, BarreDuHaut bh) {
         this.jframe = jframe;
         this.ac = ac;
         this.im = im;
-        this.sih = sih;
+        this.bh = bh;
     }
 
     public void actionPerformed(ActionEvent ae) {
+      String Service =  bh.getService().getText();
+        ac.getServiceDemandeur().setSelectedItem(Service);
+        ac.getServiceDemandeur().setEnabled(false);
+        
         jframe.panelVisibleFalse();
         jframe.add(ac);
         ac.setVisible(true);

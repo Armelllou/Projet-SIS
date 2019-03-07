@@ -49,6 +49,7 @@ public class MethodeBD {
         }
         return templatesTableModel;
     }
+    
 
     /**
      * Recupère le nombre de patient dans la BD
@@ -66,6 +67,9 @@ public class MethodeBD {
         nbre = Integer.parseInt(s);
         return nbre;
     }
+    
+    
+   
 
     /**
      * modèle pour remplir la Jtable avec les consultations d'un patient
@@ -93,6 +97,40 @@ public class MethodeBD {
         }
         return templatesTableModel;
     }
+    
+    
+    /**
+     * modèle pour remplir la Jtable avec les prestations
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel listePrestation() {
+        String[] infoAllPatient = new String[6];
+        String title[] = {"Nom ", "Prénom","IPP","Prestation à effectuer","ServiceDemandeur","Médecin Prescripteur"};
+        String query = "SELECT * FROM prestationAEffectuer ";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("NomPatient");
+                infoAllPatient[1] = rs.getString("PrenomPatient");
+                infoAllPatient[2] = rs.getString("IPP");
+                infoAllPatient[3] = rs.getString("PrestationDemande");
+                infoAllPatient[4] = rs.getString("ServiceDemandeur");
+                infoAllPatient[5] = rs.getString("NomPh") + " "+ rs.getString("PrenomPH")    ;
+                
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+
 
     /**
      * modèle pour remplir la Jtable avec les actes d'un patient selon service IDE
@@ -328,6 +366,9 @@ public class MethodeBD {
                     "OR Prénom ='" + prenom + "'");
         }
     }
+    
+    
+  
 
     public void AjouterSurBdPatient(Patient p) throws SQLException {
         String sql = "INSERT INTO patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";

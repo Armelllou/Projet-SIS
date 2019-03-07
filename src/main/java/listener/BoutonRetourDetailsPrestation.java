@@ -5,6 +5,7 @@
  */
 package listener;
 
+import interfaces.DetailsPrestation;
 import interfaces.Fenetre;
 import interfaces.PrestationFaite;
 import interfaces.Prestations;
@@ -15,13 +16,13 @@ import java.awt.event.ActionListener;
 /**
  * @author Manon
  */
-public class BoutonAnnulerPrestaFaite implements ActionListener {
+public class BoutonRetourDetailsPrestation implements ActionListener {
 
-    PrestationFaite pf;
+    DetailsPrestation pf;
     Prestations p;
     Fenetre fen;
 
-    public BoutonAnnulerPrestaFaite(PrestationFaite pf, Prestations p, Fenetre fen) {
+    public BoutonRetourDetailsPrestation(DetailsPrestation pf, Prestations p, Fenetre fen) {
         this.pf = pf;
         this.p = p;
         this.fen = fen;

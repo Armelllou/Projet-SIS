@@ -5,41 +5,34 @@
  */
 package interfaces;
 
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Manon
  */
 public class AjouterPrestation extends javax.swing.JPanel {
 
-    /**
-     * @return the jButton1
-     */
-    public javax.swing.JButton getjButton1() {
-        return jButton1;
+
+    public JTextField getPrestationDemandee() {
+        return prestationDemandee;
     }
 
-    /**
-     * @return the jButton2
-     */
-    public javax.swing.JButton getjButton2() {
-        return jButton2;
+    public JComboBox<String> getServiceDemandeur() {
+        return serviceDemandeur;
+    }
+
+    public JButton getBoutonAnnuler() {
+        return boutonAnnuler;
+    }
+
+    public JButton getBouttonValider() {
+        return bouttonValider;
     }
 
    
-
-    /**
-     * @return the jComboBox1
-     */
-    public javax.swing.JComboBox<String> getjComboBox1() {
-        return jComboBox1;
-    }
-
-    /**
-     * @return the jTextField1
-     */
-    public javax.swing.JTextField getjTextField1() {
-        return jTextField1;
-    }
 
     /**
      * Creates new form AjouterPrestation
@@ -58,34 +51,34 @@ public class AjouterPrestation extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        boutonAnnuler = new javax.swing.JButton();
+        bouttonValider = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        serviceDemandeur = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        prestationDemandee = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        jButton1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jButton1.setText("Annuler");
+        boutonAnnuler.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        boutonAnnuler.setText("Annuler");
 
-        jButton2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jButton2.setText("Valider");
+        bouttonValider.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        bouttonValider.setText("Valider");
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel2.setText("Service demandeur :");
 
-        jComboBox1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Urologie" }));
+        serviceDemandeur.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        serviceDemandeur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Urologie" }));
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel3.setText("Prestation demandée :");
 
-        jTextField1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        prestationDemandee.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -102,19 +95,19 @@ public class AjouterPrestation extends javax.swing.JPanel {
                                 .addGap(557, 557, 557)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel2)
-                                    .addComponent(jButton1))
+                                    .addComponent(boutonAnnuler))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(18, 18, 18)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(serviceDemandeur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(80, 80, 80)
-                                        .addComponent(jButton2))))
+                                        .addComponent(bouttonValider))))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(204, 204, 204)
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(prestationDemandee, javax.swing.GroupLayout.PREFERRED_SIZE, 849, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 502, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -124,15 +117,15 @@ public class AjouterPrestation extends javax.swing.JPanel {
                 .addGap(95, 95, 95)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(serviceDemandeur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(82, 82, 82)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(prestationDemandee, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(boutonAnnuler)
+                    .addComponent(bouttonValider))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -141,12 +134,12 @@ public class AjouterPrestation extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton boutonAnnuler;
+    private javax.swing.JButton bouttonValider;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField prestationDemandee;
+    private javax.swing.JComboBox<String> serviceDemandeur;
     // End of variables declaration//GEN-END:variables
 }
