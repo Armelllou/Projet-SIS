@@ -204,7 +204,7 @@ public class Fenetre extends JFrame {
         annulerEnvoyerResultats.addActionListener(new BoutonAnnulerResultats (prestafaite,  dp, this));
         validerEnvoyerResultats.addActionListener(new BoutonValiderResultats(prestafaite,dp, this,barreduhaut,prestations));
         
-        
+    
 
 // tableaux
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));

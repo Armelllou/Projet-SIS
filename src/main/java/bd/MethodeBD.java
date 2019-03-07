@@ -105,8 +105,8 @@ public class MethodeBD {
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePrestation() {
-        String[] infoAllPatient = new String[6];
-        String title[] = {"Nom ", "Prénom","IPP","Prestation à effectuer","ServiceDemandeur","Médecin Prescripteur"};
+        String[] infoAllPatient = new String[7];
+        String title[] = {"Nom ", "Prénom","IPP","Prestation à effectuer","ServiceDemandeur","Médecin Prescripteur","Date de Demande"};
         String query = "SELECT * FROM prestationAEffectuer ";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -122,6 +122,7 @@ public class MethodeBD {
                 infoAllPatient[3] = rs.getString("PrestationDemande");
                 infoAllPatient[4] = rs.getString("ServiceDemandeur");
                 infoAllPatient[5] = rs.getString("NomPh") + " "+ rs.getString("PrenomPH")    ;
+                infoAllPatient[6] = rs.getString("DateDeDemande")    ;
                 
                 templatesTableModel.addRow(infoAllPatient);
             }

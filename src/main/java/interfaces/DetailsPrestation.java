@@ -69,6 +69,10 @@ public class DetailsPrestation extends javax.swing.JPanel {
         return Srvice;
     }
 
+    public JLabel getDateDeDemande() {
+        return dateDeDemande;
+    }
+
 
    
 
@@ -109,6 +113,7 @@ public class DetailsPrestation extends javax.swing.JPanel {
         boutonRetour = new javax.swing.JButton();
         IPP1 = new javax.swing.JLabel();
         Srvice = new javax.swing.JLabel();
+        dateDeDemande = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -148,6 +153,8 @@ public class DetailsPrestation extends javax.swing.JPanel {
 
         Srvice.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         Srvice.setText("NOM");
+
+        dateDeDemande.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -190,7 +197,9 @@ public class DetailsPrestation extends javax.swing.JPanel {
                                         .addComponent(NomMedecin, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(52, 52, 52)
-                                        .addComponent(Srvice)))))
+                                        .addComponent(Srvice)
+                                        .addGap(213, 213, 213)
+                                        .addComponent(dateDeDemande)))))
                         .addGap(0, 185, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -199,7 +208,7 @@ public class DetailsPrestation extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(boutonRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomPatient)
                     .addComponent(IPP)
@@ -210,14 +219,15 @@ public class DetailsPrestation extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(IPP1)
-                    .addComponent(Srvice))
+                    .addComponent(Srvice)
+                    .addComponent(dateDeDemande))
                 .addGap(3, 3, 3)
                 .addComponent(jLabel3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(details, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -236,6 +246,7 @@ public class DetailsPrestation extends javax.swing.JPanel {
     private javax.swing.JLabel PrenomPatient;
     private javax.swing.JLabel Srvice;
     private javax.swing.JButton boutonRetour;
+    private javax.swing.JLabel dateDeDemande;
     private javax.swing.JTextField details;
     private javax.swing.JButton envoyerResultat;
     private javax.swing.JLabel jLabel3;

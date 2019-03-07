@@ -73,6 +73,8 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
                                       <Component id="Srvice" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                                      <Component id="dateDeDemande" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -89,7 +91,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="boutonRetour" min="-2" pref="47" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="NomPatient" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="IPP" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -102,6 +104,7 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="IPP1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="Srvice" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="dateDeDemande" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -109,7 +112,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="details" min="-2" pref="397" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Component id="jLabel9" min="-2" pref="103" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -223,6 +226,11 @@
           <Font name="Calibri" size="36" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="NOM"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dateDeDemande">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>
     </Component>
   </SubComponents>

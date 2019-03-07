@@ -15,7 +15,6 @@ import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-
 public class TableauPrestations implements MouseListener {
 
     Prestations p;
@@ -32,32 +31,27 @@ public class TableauPrestations implements MouseListener {
         this.table = table;
     }
 
-
     @Override
     public void mouseClicked(MouseEvent me) {
         int numLigne = table.getSelectedRow();
-        
-        String NomPatient=(String)table.getModel().getValueAt(numLigne, 0);
-        String PrenomPatient=(String)table.getModel().getValueAt(numLigne, 1); 
-        String IPP=(String)table.getModel().getValueAt(numLigne, 2);
-        String details=(String)table.getModel().getValueAt(numLigne, 3);
-        String Service=(String)table.getModel().getValueAt(numLigne, 4);
-        String NomMedecin  =(String)table.getModel().getValueAt(numLigne,5);
-       
-        
-       
-        
-        
-       pf.getPrenomPatient().setText(PrenomPatient);
-       pf.getNomPatient().setText(NomPatient);
-       pf.getNomMedecin().setText(NomMedecin);
-       pf.getDetails().setText(details);
-       pf.getIPP().setText(IPP);
-       pf.getSrvice().setText(Service);
-        
-        
-        
-        
+
+        String NomPatient = (String) table.getModel().getValueAt(numLigne, 0);
+        String PrenomPatient = (String) table.getModel().getValueAt(numLigne, 1);
+        String IPP = (String) table.getModel().getValueAt(numLigne, 2);
+        String details = (String) table.getModel().getValueAt(numLigne, 3);
+        String Service = (String) table.getModel().getValueAt(numLigne, 4);
+        String NomMedecin = (String) table.getModel().getValueAt(numLigne, 5);
+        String idPresta = (String) table.getModel().getValueAt(numLigne, 6);
+
+        pf.getPrenomPatient().setText(PrenomPatient);
+        pf.getNomPatient().setText(NomPatient);
+        pf.getNomMedecin().setText(NomMedecin);
+        pf.getDetails().setText(details);
+        pf.getIPP().setText(IPP);
+        pf.getSrvice().setText(Service);
+        pf.getDateDeDemande().setText(idPresta);
+        pf.getDateDeDemande().setVisible(false);
+
         fen.panelVisibleFalse();
         fen.add(pf);
         pf.setVisible(true);
@@ -84,6 +78,5 @@ public class TableauPrestations implements MouseListener {
     public void mouseExited(MouseEvent me) {
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 
 }

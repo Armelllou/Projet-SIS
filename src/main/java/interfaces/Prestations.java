@@ -60,21 +60,21 @@ public class Prestations extends javax.swing.JPanel {
         tablePrestation.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         tablePrestation.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nom", "Prénom", "IPP", "Prestation à effectuer", "Service demandeur", "Médecin Prescripteur"
+                "Nom", "Prénom", "IPP", "Prestation à effectuer", "Service demandeur", "Médecin Prescripteur", "Date de la demande"
             }
         ));
         jScrollPane1.setViewportView(tablePrestation);

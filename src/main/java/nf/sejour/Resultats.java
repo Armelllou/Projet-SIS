@@ -23,8 +23,9 @@ public class Resultats {
     String NomMedicoTech;
     String PrenomMedicotehc;
     int idTECH;
+    String Resultats;
 
-    public Resultats(String ServiceDemandeur, String NomPatient, String PrenomPatient, String IPP, String NomMedicoTech, String PrenomMedicotehc, int idTECH) {
+    public Resultats(String ServiceDemandeur, String NomPatient, String PrenomPatient, String IPP, String NomMedicoTech, String PrenomMedicotehc, int idTECH,String Resultats) {
         this.ServiceDemandeur = ServiceDemandeur;
         this.NomPatient = NomPatient;
         this.PrenomPatient = PrenomPatient;
@@ -32,11 +33,12 @@ public class Resultats {
         this.NomMedicoTech = NomMedicoTech;
         this.PrenomMedicotehc = PrenomMedicotehc;
         this.idTECH = idTECH;
+        this.Resultats =Resultats;
     }
 
     public boolean AjouterResutatsSurBD(Resultats r) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO PrestationsFaites (ServiceDemandeur,NomPatient,PrenomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH) VALUES(?,?,?,?,?,?,?) ";
+        String sql = " INSERT INTO PrestationsFaites (ServiceDemandeur,NomPatient,PrenomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats) VALUES(?,?,?,?,?,?,?,?) ";
 
         ConnexionBD conn = new ConnexionBD();
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
@@ -47,11 +49,16 @@ public class Resultats {
         statement.setObject(4, r.getIPP(), Types.VARCHAR);
         statement.setObject(5, r.getNomMedicoTech(), Types.VARCHAR);
         statement.setObject(6,r.getPrenomMedicotehc(), Types.VARCHAR);
-         statement.setObject(7,r.getIdTECH(), Types.INTEGER);
+        statement.setObject(7,r.getIdTECH(), Types.INTEGER);
+         statement.setObject(8,r.getResultats(), Types.VARCHAR);
 
         statement.executeUpdate();
         j = true;
         return j;
+    }
+
+    public String getResultats() {
+        return Resultats;
     }
 
     public String getServiceDemandeur() {
