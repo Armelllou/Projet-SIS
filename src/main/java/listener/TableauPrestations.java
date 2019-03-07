@@ -41,6 +41,7 @@ public class TableauPrestations implements MouseListener {
         String PrenomPatient=(String)table.getModel().getValueAt(numLigne, 1); 
         String IPP=(String)table.getModel().getValueAt(numLigne, 2);
         String details=(String)table.getModel().getValueAt(numLigne, 3);
+        String Service=(String)table.getModel().getValueAt(numLigne, 4);
         String NomMedecin  =(String)table.getModel().getValueAt(numLigne,5);
        
         
@@ -52,6 +53,7 @@ public class TableauPrestations implements MouseListener {
        pf.getNomMedecin().setText(NomMedecin);
        pf.getDetails().setText(details);
        pf.getIPP().setText(IPP);
+       pf.getSrvice().setText(Service);
         
         
         
