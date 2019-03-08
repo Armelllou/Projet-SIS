@@ -39,7 +39,7 @@ public class PrestationDemandee {
 
     public boolean AjouterDemandeDePrestationSurBD(PrestationDemandee pd) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO prestationAEffectuer (ServiceDemandeur,PrestationDemande, NomPatient, PrenomPatient,IPP,NomPh,PrenomPH,idPh) VALUES(?,?,?,?,?,?,?,?) ";
+        String sql = " INSERT INTO prestationaeffectuer (ServiceDemandeur,PrestationDemande, NomPatient, PrenomPatient,IPP,NomPh,PrenomPH,idPh) VALUES(?,?,?,?,?,?,?,?) ";
 
         ConnexionBD conn = new ConnexionBD();
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);

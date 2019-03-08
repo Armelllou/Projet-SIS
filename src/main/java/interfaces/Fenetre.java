@@ -49,7 +49,8 @@ public class Fenetre extends JFrame {
     ListePersonnel pl = new ListePersonnel();
     CreationPersonnel cp = new CreationPersonnel();
     ModifierPersonnel mp = new ModifierPersonnel();
-    DetailsPrestation dp = new DetailsPrestation ();
+    DetailsPrestation dp = new DetailsPrestation();
+    Resultat r = new Resultat();
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -119,8 +120,9 @@ public class Fenetre extends JFrame {
     private JButton validerPrestation = ajouterpresta.getBouttonValider();
     private JButton envoyerResultats = dp.getEnvoyerResultat();
     private JButton annulerEnvoyerResultats = prestafaite.getBoutonAnnuler();
-      private JButton validerEnvoyerResultats = prestafaite.getBoutonValider();
-
+    private JButton validerEnvoyerResultats = prestafaite.getBoutonValider();
+    private JButton accesResultats = consultdpiphide.getAccesAuxResultats();
+    private JButton retrouresultats = r.getFlecheRetour();
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
     private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
@@ -199,14 +201,15 @@ public class Fenetre extends JFrame {
         annulermodificationpersonnel.addActionListener(new BouttonAnnulerModifPersonnel(this, pl, mp));
         validerrmodificationpersonnel.addActionListener(new BoutonValiderModificationPersonnel(this, pl, mp));
         supprimerPersonnel.addActionListener(new BoutonSupprimerPersonnel(pl, mp, this));
-        validerPrestation.addActionListener(new BoutonValiderDemandePrestation(ajouterpresta,infosmedph,barreduhaut,this,prestations));
-        envoyerResultats.addActionListener(new BoutonEnvoyerResultats ( prestafaite,  dp, this));
-        annulerEnvoyerResultats.addActionListener(new BoutonAnnulerResultats (prestafaite,  dp, this));
-        validerEnvoyerResultats.addActionListener(new BoutonValiderResultats(prestafaite,dp, this,barreduhaut,prestations));
+        validerPrestation.addActionListener(new BoutonValiderDemandePrestation(ajouterpresta, infosmedph, barreduhaut, this, prestations));
+        envoyerResultats.addActionListener(new BoutonEnvoyerResultats(prestafaite, dp, this));
+        annulerEnvoyerResultats.addActionListener(new BoutonAnnulerResultats(prestafaite, dp, this));
+        validerEnvoyerResultats.addActionListener(new BoutonValiderResultats(prestafaite, dp, this, barreduhaut, prestations));
+        accesResultats.addActionListener(new BoutonAccederAuxRésultats(r,consultdpiphide,barreduhaut,this));
+        retrouresultats.addActionListener(new BoutonRetourDPIIDEVersConsulterDPIPHetIDE(this, consultdpiphide, dpiide, sih));
         
-    
 
-// tableaux
+// tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE(dpiph, dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
         tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph, consultationPH, this, sih, infosmedph.getjTable3()));
@@ -279,6 +282,7 @@ public class Fenetre extends JFrame {
         cp.setVisible(false);
         mp.setVisible(false);
         dp.setVisible(false);
+        r.setVisible(false);
 
     }
 

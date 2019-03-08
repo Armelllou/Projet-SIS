@@ -15,6 +15,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.UUID;
+import javax.swing.JOptionPane;
+
 
 public class Main {
 
@@ -39,7 +41,5 @@ public class Main {
 
         trayIcon.displayMessage("De Nouveaux Résultats sont disponibles","Allez consulter le tableau",  TrayIcon.MessageType.INFO);
    // }
-
-
-    
+ 
 }}

@@ -107,7 +107,7 @@ public class MethodeBD {
     public static DefaultTableModel listePrestation() {
         String[] infoAllPatient = new String[7];
         String title[] = {"Nom ", "Prénom","IPP","Prestation à effectuer","ServiceDemandeur","Médecin Prescripteur","Date de Demande"};
-        String query = "SELECT * FROM prestationAEffectuer ";
+        String query = "SELECT * FROM prestationaeffectuer ";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         ResultSet rs = executeQuery(query);
@@ -131,7 +131,34 @@ public class MethodeBD {
         }
         return templatesTableModel;
     }
-
+    
+    
+  public static DefaultTableModel listeResultats(String service) {
+        String[] infoAllPatient = new String[7];
+        String title[] = {"Nom ", "Prénom","IPP","résultats","Service Demandeur","Date de résultats"};
+        String query = "SELECT * FROM PrestationsFaites WHERE serviceDemandeur '"+ service + "'";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if(rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("NomPatient");
+                infoAllPatient[1] = rs.getString("PrenomPatient");
+                infoAllPatient[2] = rs.getString("IPP");
+                infoAllPatient[3] = rs.getString("Resultats");
+                infoAllPatient[4] = rs.getString("ServiceDemandeur");
+                infoAllPatient[6] = rs.getString("DateEffectuee")    ;
+                
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
 
     /**
      * modèle pour remplir la Jtable avec les actes d'un patient selon service IDE
@@ -152,7 +179,7 @@ public class MethodeBD {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("type");
                 infoAllPatient[1] = rs.getString("Nom") + " " +rs.getString("Prenom");
-                infoAllPatient[2] = rs.getString("idActe");
+                infoAllPatient[2] = rs.getString("Date");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
@@ -471,15 +498,4 @@ public class MethodeBD {
     
   
 
-    public void AjouterSurBdPatient(Patient p) throws SQLException {
-        String sql = "INSERT INTO patient (IPP, Nom, Prénom,DatedeNaissance,Sexe,MédecinG) VALUES(?,?,?,?,?,?)";
-        PreparedStatement statement = ConnexionBD.getInstance().getConnexion().prepareStatement(sql);
-        statement.setObject(1, p.getIpp(), Types.INTEGER);
-        statement.setObject(2, p.getNomDeNaissance(), Types.VARCHAR);
-        statement.setObject(3, p.getPrenom(), Types.VARCHAR);
-        statement.setObject(4, p.getDateDeNaissance(), Types.DATE);
-        statement.setObject(5, p.getSexe(), Types.VARCHAR);
-        statement.setObject(6, 123, Types.INTEGER);
-        statement.executeUpdate();
-    }
 }

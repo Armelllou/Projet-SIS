@@ -55,7 +55,7 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
              
              
              
-            String Sql1 = "Select * from actes WHERE IPP ='" + ipp + "'and type='" + types +"'and idActe ='"+dates+"'";
+            String Sql1 = "Select * from actes WHERE IPP ='" + ipp + "'and type='" + types +"'and Date ='"+dates+"'";
        
            
             ConnexionBD conn = ConnexionBD.getInstance();
