@@ -353,7 +353,7 @@ public class MethodeBD {
                     "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
                     "NATURAL JOIN consultationexterne " +
                     "WHERE ide.Service = '" + service + "'" +
-                    "AND consultationexterne.DateSortiec IS NOT NULL ";
+                    "AND consultationexterne.DateSortieC IS NOT NULL ";
             ResultSet rs1 = executeQuery(query1);
             if(rs1 == null) {
                 return templatesTableModel;
@@ -390,7 +390,7 @@ public class MethodeBD {
                 "JOIN praticienhospitaliers ON localisations.ServiceResponsable=praticienhospitaliers.Service OR localisations.ServiceGeographique=praticienhospitaliers.Service " +
                 "NATURAL JOIN hospitalisation " +
                 "WHERE praticienhospitaliers.Service = '" + service + "'" +
-                "AND hospitalisation.DateSortieH IS NOT NULL ";
+                "AND hospitalisation.DateSortieH IS NULL ";
 
         ResultSet rs = executeQuery(query);
         if (rs == null) {
