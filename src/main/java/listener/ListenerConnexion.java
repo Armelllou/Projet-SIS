@@ -62,6 +62,14 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         || ConnexionMedicoTechniques()) {
 
         }
+        else{
+            JOptionPane.showMessageDialog(null, "Identifiant ou mdp incorrect");
+            jframe.toutFalseSaufConnexion();
+            jframe.add(c);
+            c.setVisible(true);
+            jframe.revalidate();
+            jframe.repaint();
+        }
 
         switch(state){
             case NONCO:
