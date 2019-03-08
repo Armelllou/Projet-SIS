@@ -70,7 +70,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 
                 ps = conn.getConnexion().prepareStatement(Sql1);
 
-                ResultSet Rs = ps.executeQuery();;
+                ResultSet Rs = ps.executeQuery();
 
                 ResultSetMetaData rsmd = Rs.getMetaData();
                 int columnsNumber = rsmd.getColumnCount();

@@ -290,12 +290,62 @@ public class MethodeBD {
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePatientJTableServiceIde(String service) {
-        return execute("SELECT * FROM patient NATURAL JOIN localisations " +
-                "JOIN ide ON localisations.ServiceResponsable=ide.Service " +
-                "OR localisations.ServiceGeographique=ide.Service " +
-                "WHERE ide.Service ='" + service + "'");
+        String[] infoAllPatient = new String[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        String query = "SELECT * " +
+                "FROM patient " +
+                "NATURAL JOIN localisations " +
+                "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
+                "NATURAL JOIN hospitalisation " +
+                "WHERE ide.Service = '" + service + "'" +
+                "AND hospitalisation.DateSortieH IS NOT NULL ";
+
+        ResultSet rs = executeQuery(query);
+        if (rs == null) {
+            return templatesTableModel;
+        }
+
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("NomDeNaissance");
+                infoAllPatient[1] = rs.getString("NomUsuel");
+                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        try{
+            String query1 = "SELECT * " +
+                    "FROM patient " +
+                    "NATURAL JOIN localisations " +
+                    "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
+                    "NATURAL JOIN consultationexterne " +
+                    "WHERE ide.Service = '" + service + "'" +
+                    "AND consultationexterne.DateSortiec IS NOT NULL ";
+            ResultSet rs1 = executeQuery(query1);
+            if(rs1 == null) {
+                return templatesTableModel;
+            }
+
+            while (rs1.next()) {
+                infoAllPatient[0] = rs1.getString("NomDeNaissance");
+                infoAllPatient[1] = rs1.getString("NomUsuel");
+                infoAllPatient[2] = rs1.getString("Prénom");
+                infoAllPatient[3] = rs1.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
 
     }
+
 
     /**
      * modèle pour remplir la Jtable Avec les patients des PH selon son service
@@ -303,10 +353,60 @@ public class MethodeBD {
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePatientJTableServicePH(String service) {
-        return execute("SELECT * FROM patient NATURAL JOIN localisations " +
-                "JOIN praticienhospitaliers ON localisations.ServiceResponsable=praticienhospitaliers.Service " +
-                "OR localisations.ServiceGeographique=praticienhospitaliers.Service " +
-                "WHERE praticienhospitaliers.Service ='" + service + "'");
+        String[] infoAllPatient = new String[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        String query = "SELECT * " +
+                "FROM patient " +
+                "NATURAL JOIN localisations " +
+                "JOIN praticienhospitaliers ON localisations.ServiceResponsable=praticienhospitaliers.Service OR localisations.ServiceGeographique=praticienhospitaliers.Service " +
+                "NATURAL JOIN hospitalisation " +
+                "WHERE praticienhospitaliers.Service = '" + service + "'" +
+                "AND hospitalisation.DateSortieH IS NOT NULL ";
+
+        ResultSet rs = executeQuery(query);
+        if (rs == null) {
+            return templatesTableModel;
+        }
+
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("NomDeNaissance");
+                infoAllPatient[1] = rs.getString("NomUsuel");
+                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        try{
+            String query1 = "SELECT * " +
+                    "FROM patient " +
+                    "NATURAL JOIN localisations " +
+                    "JOIN praticienhospitaliers ON localisations.ServiceResponsable=praticienhospitaliers.Service OR localisations.ServiceGeographique=praticienhospitaliers.Service " +
+                    "NATURAL JOIN consultationexterne " +
+                    "WHERE praticienhospitaliers.Service = '" + service + "'" +
+                    "AND consultationexterne.DateSortiec IS NOT NULL ";
+            ResultSet rs1 = executeQuery(query1);
+            if(rs1 == null) {
+                return templatesTableModel;
+            }
+
+            while (rs1.next()) {
+                infoAllPatient[0] = rs1.getString("NomDeNaissance");
+                infoAllPatient[1] = rs1.getString("NomUsuel");
+                infoAllPatient[2] = rs1.getString("Prénom");
+                infoAllPatient[3] = rs1.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+
     }
 
     /**
