@@ -136,7 +136,7 @@ public class MethodeBD {
   public static DefaultTableModel listeResultats(String service) {
         String[] infoAllPatient = new String[7];
         String title[] = {"Nom ", "Prénom","IPP","résultats","Service Demandeur","Date de résultats"};
-        String query = "SELECT * FROM PrestationsFaites WHERE serviceDemandeur '"+ service + "'";
+        String query = "SELECT * FROM prestationsfaites WHERE serviceDemandeur '"+ service + "'";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         ResultSet rs = executeQuery(query);
