@@ -62,14 +62,15 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         || ConnexionMedicoTechniques()) {
 
         }
-        else{
-            JOptionPane.showMessageDialog(null, "Identifiant ou mdp incorrect");
-            jframe.toutFalseSaufConnexion();
-            jframe.add(c);
-            c.setVisible(true);
-            jframe.revalidate();
-            jframe.repaint();
-        }
+//        else{
+////            JOptionPane.showMessageDialog(null, "Identifiant ou mdp incorrect");
+////
+////            jframe.toutFalseSaufConnexion();
+////            jframe.add(c);
+////            c.setVisible(true);
+////            jframe.revalidate();
+////            jframe.repaint();
+//        }
 
         switch(state){
             case NONCO:
@@ -100,8 +101,6 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
             cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(service)); // rempli la JTable avec les patients de la BD
 
-
-            return true;
         }
         return false;
     }
@@ -150,9 +149,9 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         bh.getMdp().setText(rs.getString(2));
         bh.getNom().setText(rs.getString(3));
         bh.getPrenom().setText(rs.getString(4));
-        bh.getService().setText(rs.getString(5)); // attention medico praticien bug nullpointer surement
+        bh.getService().setText(rs.getString(5)); 
         service =rs.getString(5);
-        System.out.println(service+"bb");
+       
         bh.setVisible(true);
         bh.getId().setVisible(false);
         bh.getMdp().setVisible(false);

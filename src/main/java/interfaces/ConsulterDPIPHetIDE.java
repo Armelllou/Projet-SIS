@@ -5,7 +5,9 @@
  */
 package interfaces;
 
+import java.awt.Font;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 /**
  *
@@ -14,6 +16,10 @@ import javax.swing.JButton;
 public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
     BarreDuHaut bdh;
     String service;
+
+    public JLabel getNotification() {
+        return notification;
+    }
 
     public JButton getAccesAuxResultats() {
         return accesAuxResultats;
@@ -52,6 +58,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
      */
     public ConsulterDPIPHetIDE() {
         initComponents();
+      
         
     }
 
@@ -71,8 +78,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         accesAuxResultats = new javax.swing.JButton();
-        increment = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        notification = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 102, 204), 10));
@@ -111,11 +117,11 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         accesAuxResultats.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         accesAuxResultats.setText("Résultats");
 
-        increment.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        increment.setForeground(new java.awt.Color(255, 0, 51));
-        increment.setText("1");
-
-        jLabel3.setText("jLabel3");
+        notification.setBackground(new java.awt.Color(255, 255, 255));
+        notification.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        notification.setForeground(new java.awt.Color(204, 51, 0));
+        notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/cloche-ConvertImage (1).png"))); // NOI18N
+        notification.setText("1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -133,33 +139,29 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                         .addComponent(jButton1)))
                 .addGap(0, 357, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(123, 123, 123)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(increment, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(31, 31, 31)
-                                .addComponent(accesAuxResultats, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(36, 36, 36)
+                        .addComponent(accesAuxResultats, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(notification)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(increment, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(accesAuxResultats, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(notification))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(47, 47, 47)
+                        .addComponent(accesAuxResultats, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(79, 79, 79)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel2)
@@ -176,14 +178,13 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton accesAuxResultats;
-    private javax.swing.JLabel increment;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel notification;
     // End of variables declaration//GEN-END:variables
 
 

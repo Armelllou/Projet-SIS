@@ -134,9 +134,9 @@ public class MethodeBD {
     
     
   public static DefaultTableModel listeResultats(String service) {
-        String[] infoAllPatient = new String[7];
+        String[] infoAllPatient = new String[6];
         String title[] = {"Nom ", "Prénom","IPP","résultats","Service Demandeur","Date de résultats"};
-        String query = "SELECT * FROM prestationsfaites WHERE serviceDemandeur '"+ service + "'";
+        String query = "SELECT * FROM prestationsfaites WHERE serviceDemandeur = '"+ service + "'";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         ResultSet rs = executeQuery(query);
@@ -150,7 +150,7 @@ public class MethodeBD {
                 infoAllPatient[2] = rs.getString("IPP");
                 infoAllPatient[3] = rs.getString("Resultats");
                 infoAllPatient[4] = rs.getString("ServiceDemandeur");
-                infoAllPatient[6] = rs.getString("DateEffectuee")    ;
+                infoAllPatient[5] = rs.getString("DateEffectuee")    ;
                 
                 templatesTableModel.addRow(infoAllPatient);
             }

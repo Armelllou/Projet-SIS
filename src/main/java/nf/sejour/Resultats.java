@@ -38,7 +38,7 @@ public class Resultats {
 
     public boolean AjouterResutatsSurBD(Resultats r) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO PrestationsFaites (ServiceDemandeur,NomPatient,PrenomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats) VALUES(?,?,?,?,?,?,?,?) ";
+        String sql = " INSERT INTO prestationsfaites (ServiceDemandeur,NomPatient,PrenomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats) VALUES(?,?,?,?,?,?,?,?) ";
 
         ConnexionBD conn = new ConnexionBD();
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);

@@ -204,7 +204,7 @@ public class Fenetre extends JFrame {
         validerPrestation.addActionListener(new BoutonValiderDemandePrestation(ajouterpresta, infosmedph, barreduhaut, this, prestations));
         envoyerResultats.addActionListener(new BoutonEnvoyerResultats(prestafaite, dp, this));
         annulerEnvoyerResultats.addActionListener(new BoutonAnnulerResultats(prestafaite, dp, this));
-        validerEnvoyerResultats.addActionListener(new BoutonValiderResultats(prestafaite, dp, this, barreduhaut, prestations));
+        validerEnvoyerResultats.addActionListener(new BoutonValiderResultats(prestafaite, dp, this, barreduhaut, prestations,consultdpiphide,r));
         accesResultats.addActionListener(new BoutonAccederAuxRésultats(r,consultdpiphide,barreduhaut,this));
         retrouresultats.addActionListener(new BoutonRetourDPIIDEVersConsulterDPIPHetIDE(this, consultdpiphide, dpiide, sih));
         
