@@ -7,6 +7,7 @@ package listener;
 
 import bd.ConnexionBD;
 import bd.MethodeBD;
+import static bd.MethodeBD.compterTableauPrestationParService;
 import interfaces.*;
 import interfaces.ConsulterDPISecretaire;
 import javax.swing.*;
@@ -18,6 +19,7 @@ import java.awt.event.KeyListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,9 +35,9 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     private ConsulterDPIPHetIDE cdpiphetide;
     private ConsulterDPISecretaire as;
     private Prestations p;
-    private static String service ;
+    private static String service;
 
-    public ListenerConnexion(BarreDuHaut bh, Connexion c, ConsulterDPISecretaire as, ConsulterDPIPHetIDE cdpiphetide, Prestations p, Fenetre jframe,ListePersonnel pl) {
+    public ListenerConnexion(BarreDuHaut bh, Connexion c, ConsulterDPISecretaire as, ConsulterDPIPHetIDE cdpiphetide, Prestations p, Fenetre jframe, ListePersonnel pl) {
         this.bh = bh;
         this.c = c;
         this.jframe = jframe;
@@ -43,7 +45,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         this.cdpiphetide = cdpiphetide;
         this.as = as;
         this.p = p;
-        this.pl=pl;
+        this.pl = pl;
 
     }
 
@@ -52,14 +54,14 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     }
 
     public void connexion() throws SQLException {
-       // jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        // jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
         jframe.setLayout(new BorderLayout());
         jframe.panelVisibleFalse();
-        if(connexionSecretaire()
-        || ConnexionIde()
-        || ConnexionPH()
-        ||ConnexionTechnicien()
-        || ConnexionMedicoTechniques()) {
+        if (connexionSecretaire()
+                || ConnexionIde()
+                || ConnexionPH()
+                || ConnexionTechnicien()
+                || ConnexionMedicoTechniques()) {
 
         }
 //        else{
@@ -72,9 +74,9 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 ////            jframe.repaint();
 //        }
 
-        switch(state){
+        switch (state) {
             case NONCO:
-                
+
                 return;
             case PH:
         }
@@ -101,8 +103,31 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
             cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(service)); // rempli la JTable avec les patients de la BD
 
+            while (true) {
+                try {
+                    Thread.currentThread().sleep(1000);
+                } catch (InterruptedException ie) {
+                }
+                MethodeBD.compterTableauPrestationParService(service);
+                int i =   MethodeBD.compterTableauPrestationParService(service);
+                System.out.println(i);
+            }
         }
-        return false;
+
+       
+//        if(Thread.currentThread ()!= Thread.)){
+//                  String notification = cdpiphetide.getNotification().getText();
+//                int notif = Integer.parseInt(notification);
+//                int increment = notif += 1;
+//                String notificationFinale = Integer.toString(increment);
+//                cdpiphetide.getNotification().setText(notificationFinale);
+//
+//            }
+
+        
+    
+
+    return false;
     }
 
     public boolean ConnexionIde() throws SQLException {
@@ -113,6 +138,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableServiceIde(service)); // rempli la JTable avec les patients de la BD
 
             return true;
+
         }
         return false;
     }
@@ -134,8 +160,8 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         }
         return false;
     }
-    
-     public boolean ConnexionTechnicien() throws SQLException {
+
+    public boolean ConnexionTechnicien() throws SQLException {
         if (Connexion("Select * from technicien WHERE idTech ='" + c.getjTextField1().getText() + "'and motDePasse='" + c.getjPasswordField1().getText() + "'", pl)) {
             pl.setVisible(true);
             this.state = State.TECH;
@@ -149,9 +175,9 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         bh.getMdp().setText(rs.getString(2));
         bh.getNom().setText(rs.getString(3));
         bh.getPrenom().setText(rs.getString(4));
-        bh.getService().setText(rs.getString(5)); 
-        service =rs.getString(5);
-       
+        bh.getService().setText(rs.getString(5));
+        service = rs.getString(5);
+
         bh.setVisible(true);
         bh.getId().setVisible(false);
         bh.getMdp().setVisible(false);

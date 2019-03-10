@@ -121,7 +121,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         notification.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         notification.setForeground(new java.awt.Color(204, 51, 0));
         notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/cloche-ConvertImage (1).png"))); // NOI18N
-        notification.setText("1");
+        notification.setText("0");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

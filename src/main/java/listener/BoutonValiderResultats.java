@@ -50,11 +50,13 @@ public class BoutonValiderResultats implements ActionListener {
         this.rr=rr;
     }
 
+ 
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
             
-            Dimension PremierCompte = rr.getTablePrestation().size();
+           
             String NomMedicoTech = bh.getNom().getText();
             String PrenomMedicoTech = bh.getPrenom().getText();
             int idMedicoTech = Integer.parseInt(bh.getId().getText());
@@ -77,14 +79,15 @@ public class BoutonValiderResultats implements ActionListener {
             JOptionPane jop1 = new JOptionPane();
             jop1.showMessageDialog(null, "Résultat Correctement Envoyée", "Information", JOptionPane.INFORMATION_MESSAGE);
 
-          if (rr.getTablePrestation().size()!= PremierCompte){
-          String notification =  cdpiphetide.getNotification().getText();
-          int notif =  Integer.parseInt(notification);
-          int increment = notif+=1;
-          String notificationFinale = Integer.toString(increment);
-          cdpiphetide.getNotification().setText(notificationFinale);
             
-          }
+            
+//          String notification =  cdpiphetide.getNotification().getText();
+//          int notif =  Integer.parseInt(notification);
+//          int increment = notif+=1;
+//          String notificationFinale = Integer.toString(increment);
+//          cdpiphetide.getNotification().setText(notificationFinale);
+            
+          
             fen.panelVisibleFalse();
             fen.add(p);
             p.setVisible(true);
