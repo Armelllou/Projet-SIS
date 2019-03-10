@@ -29,18 +29,23 @@ public class BoutonRetourdetailsRversR implements ActionListener {
         this.dr = dr;
         this.r = r;
         this.fen = fen;
+        this.bh = bh;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-//        r.getTablePrestation().setFont(new Font("Calibri", 0, 18));
-//        r.getTablePrestation().setModel(new MethodeBD().listeResultats(bh.getService().getText()));
+
 
         fen.panelVisibleFalse();
         fen.add(r);
         r.setVisible(true);
         fen.revalidate();
         fen.repaint();
+        
+        
+        r.getTablePrestation().setFont(new Font("Calibri", 0, 18));
+        r.getTablePrestation().setModel(new MethodeBD().listeResultats(bh.getService().getText()));
+        
     }
 }

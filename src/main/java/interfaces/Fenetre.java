@@ -122,7 +122,7 @@ public class Fenetre extends JFrame {
     private JButton envoyerResultats = dp.getEnvoyerResultat();
     private JButton annulerEnvoyerResultats = prestafaite.getBoutonAnnuler();
     private JButton validerEnvoyerResultats = prestafaite.getBoutonValider();
-    private JButton accesResultats = consultdpiphide.getAccesAuxResultats();
+    private JButton accesResultats = consultdpiphide.getResultatsNonLus();
     private JButton retrouresultats = r.getFlecheRetour();
     private JButton retourR = dr.getBoutonAnnuler();
     
