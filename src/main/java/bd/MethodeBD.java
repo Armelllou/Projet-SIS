@@ -70,6 +70,7 @@ public class MethodeBD {
         nbre = Integer.parseInt(s);
         return nbre;
     }
+    
 
     /**
      * modèle pour remplir la Jtable avec les consultations d'un patient
@@ -318,13 +319,13 @@ public class MethodeBD {
         String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
-        String query = "SELECT * "
-                + "FROM patient "
-                + "NATURAL JOIN localisations "
-                + "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service "
-                + "NATURAL JOIN hospitalisation "
-                + "WHERE ide.Service = '" + service + "'"
-                + "AND hospitalisation.DateSortieH IS NOT NULL ";
+        String query = "SELECT * " +
+                "FROM patient " +
+                "NATURAL JOIN localisations " +
+                "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
+                "NATURAL JOIN hospitalisation " +
+                "WHERE ide.Service = '" + service + "'" +
+                "AND hospitalisation.DateSortieH IS NULL ";
 
         ResultSet rs = executeQuery(query);
         if (rs == null) {
@@ -343,14 +344,14 @@ public class MethodeBD {
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-        try {
-            String query1 = "SELECT * "
-                    + "FROM patient "
-                    + "NATURAL JOIN localisations "
-                    + "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service "
-                    + "NATURAL JOIN consultationexterne "
-                    + "WHERE ide.Service = '" + service + "'"
-                    + "AND consultationexterne.DateSortieC IS NOT NULL ";
+        try{
+            String query1 = "SELECT * " +
+                    "FROM patient " +
+                    "NATURAL JOIN localisations " +
+                    "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
+                    "NATURAL JOIN consultationexterne " +
+                    "WHERE ide.Service = '" + service + "'" +
+                    "AND consultationexterne.DateSortieC IS NULL ";
             ResultSet rs1 = executeQuery(query1);
             if (rs1 == null) {
                 return templatesTableModel;
@@ -405,14 +406,14 @@ public class MethodeBD {
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
-        try {
-            String query1 = "SELECT * "
-                    + "FROM patient "
-                    + "NATURAL JOIN localisations "
-                    + "JOIN praticienhospitaliers ON localisations.ServiceResponsable=praticienhospitaliers.Service OR localisations.ServiceGeographique=praticienhospitaliers.Service "
-                    + "NATURAL JOIN consultationexterne "
-                    + "WHERE praticienhospitaliers.Service = '" + service + "'"
-                    + "AND consultationexterne.DateSortiec IS NOT NULL ";
+        try{
+            String query1 = "SELECT * " +
+                    "FROM patient " +
+                    "NATURAL JOIN localisations " +
+                    "JOIN praticienhospitaliers ON localisations.ServiceResponsable=praticienhospitaliers.Service OR localisations.ServiceGeographique=praticienhospitaliers.Service " +
+                    "NATURAL JOIN consultationexterne " +
+                    "WHERE praticienhospitaliers.Service = '" + service + "'" +
+                    "AND consultationexterne.DateSortiec IS NULL ";
             ResultSet rs1 = executeQuery(query1);
             if (rs1 == null) {
                 return templatesTableModel;

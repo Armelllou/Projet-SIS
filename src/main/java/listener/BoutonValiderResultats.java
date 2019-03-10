@@ -7,7 +7,6 @@ package listener;
 
 import bd.ConnexionBD;
 import bd.MethodeBD;
-import static com.sun.org.apache.xml.internal.security.keys.keyresolver.KeyResolver.length;
 import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.DetailsPrestation;
