@@ -21,10 +21,11 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         return notification;
     }
 
-    public JButton getAccesAuxResultats() {
-        return accesAuxResultats;
+    public JButton getResultatsNonLus() {
+        return resultatsNonLus;
     }
 
+ 
     /**
      * @return the jButton1
      */
@@ -77,7 +78,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        accesAuxResultats = new javax.swing.JButton();
+        resultatsNonLus = new javax.swing.JButton();
         notification = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -114,8 +115,8 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 
-        accesAuxResultats.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        accesAuxResultats.setText("Résultats non lus");
+        resultatsNonLus.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        resultatsNonLus.setText("Résultats non lus");
 
         notification.setBackground(new java.awt.Color(255, 255, 255));
         notification.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
@@ -134,7 +135,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(accesAuxResultats, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(resultatsNonLus, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(notification)
                         .addGap(0, 0, Short.MAX_VALUE)))
@@ -160,7 +161,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
                         .addComponent(notification))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
-                        .addComponent(accesAuxResultats, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(resultatsNonLus, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -177,7 +178,6 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton accesAuxResultats;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -185,6 +185,7 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel notification;
+    private javax.swing.JButton resultatsNonLus;
     // End of variables declaration//GEN-END:variables
 
 

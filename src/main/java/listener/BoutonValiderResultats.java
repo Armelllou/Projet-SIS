@@ -63,7 +63,7 @@ public class BoutonValiderResultats implements ActionListener {
             String PrenomPatient = dp.getPrenomPatient().getText();
             String ipp = dp.getIPP().getText();
             String ServiceDemandeur = dp.getSrvice().getText();
-            String Resultats = pf.getResultats().getContentType();
+            String Resultats = pf.getResultats().getText();
 
             String idDemande = dp.getDateDeDemande().getText();
 
@@ -79,13 +79,7 @@ public class BoutonValiderResultats implements ActionListener {
             jop1.showMessageDialog(null, "Résultat Correctement Envoyée", "Information", JOptionPane.INFORMATION_MESSAGE);
 
             
-            
-//          String notification =  cdpiphetide.getNotification().getText();
-//          int notif =  Integer.parseInt(notification);
-//          int increment = notif+=1;
-//          String notificationFinale = Integer.toString(increment);
-//          cdpiphetide.getNotification().setText(notificationFinale);
-            
+
           
             fen.panelVisibleFalse();
             fen.add(p);
