@@ -37,8 +37,9 @@ public class BoutonAccederAuxRésultats implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         
       
-          r.getTablePrestation().setFont(new Font("Calibri", 0, 18));
+        r.getTablePrestation().setFont(new Font("Calibri", 0, 18));
         r.getTablePrestation().setModel(new MethodeBD().listeResultats(bh.getService().getText()));
+        
         cdpiphetide.getNotification().setText("0");
         jframe.panelVisibleFalse();
         jframe.add(r);

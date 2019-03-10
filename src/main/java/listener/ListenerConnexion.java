@@ -103,31 +103,16 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
             cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(service)); // rempli la JTable avec les patients de la BD
 
-            while (true) {
-                try {
-                    Thread.currentThread().sleep(1000);
-                } catch (InterruptedException ie) {
-                }
-                MethodeBD.compterTableauPrestationParService(service);
-                int i =   MethodeBD.compterTableauPrestationParService(service);
-                System.out.println(i);
-            }
+            int nombre = MethodeBD.compterTableauPrestationParService(service);
+            String notification = cdpiphetide.getNotification().getText();
+            int notif = Integer.parseInt(notification);
+            int increment = nombre;
+            String notificationFinale = Integer.toString(increment);
+            cdpiphetide.getNotification().setText(notificationFinale);
+            return true;
         }
 
-       
-//        if(Thread.currentThread ()!= Thread.)){
-//                  String notification = cdpiphetide.getNotification().getText();
-//                int notif = Integer.parseInt(notification);
-//                int increment = notif += 1;
-//                String notificationFinale = Integer.toString(increment);
-//                cdpiphetide.getNotification().setText(notificationFinale);
-//
-//            }
-
-        
-    
-
-    return false;
+        return false;
     }
 
     public boolean ConnexionIde() throws SQLException {
@@ -136,7 +121,12 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             this.state = State.IDE;
             cdpiphetide.getjTable1().setFont(new Font("Calibri", 0, 18));
             cdpiphetide.getjTable1().setModel(MethodeBD.listePatientJTableServiceIde(service)); // rempli la JTable avec les patients de la BD
-
+            int nombre = MethodeBD.compterTableauPrestationParService(service);
+            String notification = cdpiphetide.getNotification().getText();
+            int notif = Integer.parseInt(notification);
+            int increment = nombre;
+            String notificationFinale = Integer.toString(increment);
+            cdpiphetide.getNotification().setText(notificationFinale);
             return true;
 
         }

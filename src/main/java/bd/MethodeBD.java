@@ -493,12 +493,7 @@ public class MethodeBD {
         }
     }
 
-    
-    
-    
  
-    
-    
     
     public static int compterTableauPrestationParService(String Service) throws SQLException {
         String sql45 = "SELECT COUNT(*) FROM `prestationsfaites` WHERE serviceDemandeur = '" + Service + "'";

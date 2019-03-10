@@ -5,13 +5,19 @@
  */
 package listener.ide;
 
+import bd.MethodeBD;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.ActeInfirmierIDE;
+import interfaces.BarreDuHaut;
 import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import listener.BoutonRetourDPIIDEVersConsulterDPIPHetIDE;
 
 /**
  * @author Manon
@@ -21,16 +27,32 @@ public class BoutonAccueilActeInfirmierIDE implements ActionListener {
     ActeInfirmierIDE ai;
     ConsulterDPIPHetIDE dpiphide;
     Fenetre jframe;
-    Sih sih;
+   BarreDuHaut bh;
 
-    public BoutonAccueilActeInfirmierIDE(Fenetre jframe, ActeInfirmierIDE ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonAccueilActeInfirmierIDE(Fenetre jframe, ActeInfirmierIDE ai, ConsulterDPIPHetIDE dpiphide, BarreDuHaut bh) {
         this.jframe = jframe;
         this.ai = ai;
         this.dpiphide = dpiphide;
-        this.sih = sih;
+        this.bh = bh;
     }
 
     public void actionPerformed(ActionEvent ae) {
+        
+          int nombre = 0;
+        try {
+            nombre = MethodeBD.compterTableauPrestationParService(bh.getService().getText());
+        } catch (SQLException ex) {
+            Logger.getLogger(BoutonRetourDPIIDEVersConsulterDPIPHetIDE.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        String notification = dpiphide.getNotification().getText();
+        int notif = Integer.parseInt(notification);
+        int increment = nombre;
+        String notificationFinale = Integer.toString(increment);
+        dpiphide.getNotification().setText(notificationFinale);
+        
+        
+        
+        
         jframe.panelVisibleFalse();
         jframe.add(dpiphide);
         dpiphide.setVisible(true);

@@ -14,7 +14,7 @@ import javax.swing.JTextField;
  *
  * @author Manon
  */
-public class PrestationFaite extends javax.swing.JPanel {
+public class DetailsResultats extends javax.swing.JPanel {
 
     public JLabel getType() {
         return type;
@@ -53,7 +53,7 @@ public class PrestationFaite extends javax.swing.JPanel {
     /**
      * Creates new form PrestationFaite
      */
-    public PrestationFaite() {
+    public DetailsResultats() {
         initComponents();
     }
 
@@ -126,9 +126,9 @@ public class PrestationFaite extends javax.swing.JPanel {
                             .addComponent(jLabel3))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(862, 862, 862)
+                        .addGap(445, 445, 445)
                         .addComponent(boutonAnnuler)
-                        .addGap(47, 47, 47)
+                        .addGap(123, 123, 123)
                         .addComponent(boutonValider)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -161,19 +161,18 @@ public class PrestationFaite extends javax.swing.JPanel {
                     .addComponent(nomMedecin))
                 .addGap(66, 66, 66)
                 .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 427, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addGap(40, 40, 40)
+                        .addComponent(boutonAnnuler))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(boutonValider)
-                            .addComponent(boutonAnnuler))
-                        .addGap(54, 54, 54))))
+                        .addComponent(boutonValider)
+                        .addGap(16, 16, 16)))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
