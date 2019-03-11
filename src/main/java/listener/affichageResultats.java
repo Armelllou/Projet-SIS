@@ -84,7 +84,11 @@ public class affichageResultats implements MouseListener {
                 pf.getType().setText("MedicoTechnicien");
                 pf.getBoutonValider().setVisible(false);
                 pf.getBoutonAnnuler().setText("Retour");
-           
+                javax.swing.ImageIcon icone = new javax.swing.ImageIcon(getClass().getResource("/interfaces/flcheretour-ConvertImage.png"));
+                pf.getBoutonAnnuler().setIcon(icone);
+                pf.getBoutonAnnuler().setText("");
+            
+
 
             PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from prestationsfaites WHERE DateEffectuee ='" + Date + "'");
             prep2.executeUpdate();
