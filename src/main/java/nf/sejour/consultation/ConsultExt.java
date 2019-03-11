@@ -16,7 +16,7 @@ public class ConsultExt extends Consultation {
     public ConsultExt(Personnel pH, List<Prescription> lp) {
         super(pH, lp);
     }
-    
+
 
     public static boolean AjouterPatientConsultationExterne(Patient p) throws SQLException {
         boolean j = false;

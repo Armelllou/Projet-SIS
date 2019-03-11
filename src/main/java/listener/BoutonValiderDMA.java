@@ -49,7 +49,7 @@ public class BoutonValiderDMA implements ActionListener {
             Localisation localisation;
             localisation = new Localisation(p, cdpi.getServiceGeo().getSelectedItem().toString(), cdpi.getServiceRespo().getSelectedItem().toString());
             p.AjouterSurBdPatient(p);
-            System.out.println(p.getTypeSejour());
+
             if(p.getTypeSejour()=="Hospitalisation"){ Hospitalisation.AjouterPatientHospitalisation(p);}
             else{ ConsultExt.AjouterPatientConsultationExterne(p);}
 

@@ -51,8 +51,6 @@ public class DPISecretaire extends javax.swing.JPanel {
         return typeDeSejour;
     }
 
-    
-
     /**
      * @return the jButton2
      */
@@ -63,7 +61,6 @@ public class DPISecretaire extends javax.swing.JPanel {
     /**
      * @return the jButtoninfomed
      */
-    
 
     /**
      * @return the jButtonmodifier
