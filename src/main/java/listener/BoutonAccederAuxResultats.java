@@ -20,13 +20,13 @@ import nf.sejour.Resultats;
  *
  * @author annel
  */
-public class BoutonAccederAuxRésultats implements ActionListener {
+public class BoutonAccederAuxResultats implements ActionListener {
     Resultat r;
     ConsulterDPIPHetIDE cdpiphetide;
     BarreDuHaut bh;
     Fenetre jframe;
 
-    public BoutonAccederAuxRésultats(Resultat r, ConsulterDPIPHetIDE cdpiphetide, BarreDuHaut bh, Fenetre jframe) {
+    public BoutonAccederAuxResultats(Resultat r, ConsulterDPIPHetIDE cdpiphetide, BarreDuHaut bh, Fenetre jframe) {
         this.r = r;
         this.cdpiphetide = cdpiphetide;
         this.bh = bh;
