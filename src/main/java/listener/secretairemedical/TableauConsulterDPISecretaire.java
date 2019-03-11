@@ -6,10 +6,12 @@
 package listener.secretairemedical;
 
 import bd.ConnexionBD;
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
 import nf.Sih;
+import nf.patient.Patient;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
@@ -34,7 +36,6 @@ public class TableauConsulterDPISecretaire implements MouseListener {
         this.cdpis = cdpis;
         this.dpis = dpis;
         this.fen = fen;
-
         this.table = table;
     }
 
@@ -44,11 +45,12 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
         try {
             int numLigne = table.getSelectedRow();
-
             String nomDeNaissance = (String) table.getModel().getValueAt(numLigne, 0);
             String nomUsuel = (String) table.getModel().getValueAt(numLigne, 1);
             String prenom = (String) table.getModel().getValueAt(numLigne, 2);
             String ipp = (String) table.getModel().getValueAt(numLigne, 3);
+            String typeSejour;
+            String etat;
             int ippS = Integer.parseInt(ipp);
 
             dpis.getjLabelnom().setText(nomDeNaissance);
@@ -59,7 +61,6 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             String sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
-
             ps = conn.getConnexion().prepareStatement(sql1);
             ResultSet rs = ps.executeQuery();
             ResultSetMetaData rsmd = rs.getMetaData();
@@ -67,13 +68,15 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             while (rs.next()) {
 
                 String dateDeNaissance = rs.getString(5);
-
                 String sexe = rs.getString(6);
                 String medecinG = rs.getString(7);
                 String adresse = rs.getString(8);
                 String numSS = rs.getString(9);
                 String email = rs.getString(10);
                 String telephone = rs.getString(11);
+                typeSejour =rs.getString("typeSejour");
+                etat = rs.getString("etat");
+
 
                 dpis.getjLabeladresse().setText(adresse);
                 dpis.getjLabelnumsecu().setText(numSS);
@@ -81,16 +84,51 @@ public class TableauConsulterDPISecretaire implements MouseListener {
                 dpis.getjLabeltelephone().setText(telephone);
                 dpis.getjLabelannée().setText(dateDeNaissance);
                 dpis.getSexe().setText(sexe);
+                dpis.getTypeDeSejour().setText(typeSejour);
+                dpis.getEtat().setText(etat);
+                String type=typeSejour;
+
+
+
+            String sql23 = "Select * from hospitalisation WHERE IPP = '" + ipp + "'";
+            PreparedStatement ps23;
+            ps23 = conn.getConnexion().prepareStatement(sql23);
+            ResultSet rs23 = ps23.executeQuery();
+
+            while (rs23.next()) {
+                if (type.equals("Hospitalisation")) {
+                    String dateentre = rs23.getString(2);
+                    System.out.println(dateentre);
+                    dpis.getDateentree().setText(dateentre);
+                    String datesortie = rs23.getString(3);
+                    System.out.println(datesortie);
+                    dpis.getDatesortie().setText(datesortie);
+
+                }
+            }
+                String sql24 = "Select * from consultationexterne WHERE IPP = '" + ipp + "'";
+                PreparedStatement ps24;
+                ps24 = conn.getConnexion().prepareStatement(sql24);
+                ResultSet rs24 = ps24.executeQuery();
+
+                while (rs24.next()) {
+                    if(type.equals("Consultation externe")){
+                    String dateentre = rs24.getString(2);
+                        System.out.println(dateentre);
+                    dpis.getDateentree().setText(dateentre);
+                    String datesortie = rs24.getString(3);
+                        System.out.println(datesortie);
+                    dpis.getDatesortie().setText(datesortie);
+
+                }}
 
             }
 
+
             String sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
             PreparedStatement ps2;
-
             ps2 = conn.getConnexion().prepareStatement(sql2);
-
             ResultSet rs2 = ps2.executeQuery();
-
             ResultSetMetaData rsmd2 = rs2.getMetaData();
             int columnsNumber2 = rsmd2.getColumnCount();
 
@@ -111,6 +149,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
                 fen.revalidate();
 
             }
+
 
             fen.repaint();
         } catch (SQLException ex) {
