@@ -7,6 +7,7 @@ import nf.Sih;
 import nf.dossieradministratif.Dma;
 import nf.localisation.Localisation;
 
+import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
@@ -20,7 +21,7 @@ public class Patient {
     String sexe;
     String prenom;
     Adresse adresse;
-    Ipp ipp;
+    static Ipp ipp;
     Dma dma;
     String numSS;
     String email;
@@ -63,7 +64,6 @@ public class Patient {
         statement.setObject(4, p.getPrenom(), Types.VARCHAR);
         statement.setObject(5, p.getDateDeNaissance(), Types.VARCHAR);
         statement.setObject(6, p.getSexe(), Types.VARCHAR);
-
         statement.setObject(7, 123, Types.INTEGER);
         statement.setObject(8, p.getAdresse(), Types.VARCHAR);
         statement.setObject(9, p.getNumSS(), Types.VARCHAR);
@@ -75,6 +75,7 @@ public class Patient {
         j = true;
         return j;
     }
+
 
     //    public void SupprimerPatients() throws SQLException{
 //            String query ="DELETE FROM Patient";

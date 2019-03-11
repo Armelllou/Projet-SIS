@@ -13,6 +13,9 @@ import nf.Dates;
 import nf.localisation.Localisation;
 import nf.patient.Adresse;
 import nf.patient.Patient;
+import nf.*;
+import nf.sejour.Hospitalisation;
+import nf.sejour.consultation.ConsultExt;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -46,6 +49,10 @@ public class BoutonValiderDMA implements ActionListener {
             Localisation localisation;
             localisation = new Localisation(p, cdpi.getServiceGeo().getSelectedItem().toString(), cdpi.getServiceRespo().getSelectedItem().toString());
             p.AjouterSurBdPatient(p);
+            System.out.println(p.getTypeSejour());
+            if(p.getTypeSejour()=="Hospitalisation"){ Hospitalisation.AjouterPatientHospitalisation(p);}
+            else{ ConsultExt.AjouterPatientConsultationExterne(p);}
+
             localisation.AjouterSurBdLocalisation(localisation);
             JOptionPane jop1 = new JOptionPane();
 
