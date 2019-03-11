@@ -107,7 +107,7 @@ public class Fenetre extends JFrame {
     private JButton accueilprescriPH = prescriptionph.getjButton3();
     private JButton retourPrescriPHVersInfMedPH = prescriptionph.getjButton4();
     private JButton retourDetailsPrestation = dp.getBoutonRetour();
-    private JButton annulertransfert = transfert.getjButton2();
+    private JButton annulertransfert = transfert.getBoutonAnnuler();
     private JButton validermodifdpi = modifdpi.getjButton1();
     private JButton validerActe = ajouterai.getjButton2();
     private JButton validerPrescription = ajouterprescri.getjButton2();
@@ -131,7 +131,8 @@ public class Fenetre extends JFrame {
     private JButton resultatParPatientPH= infosmedph.getResultats();
     private JButton frelcheretourResultatsParPatient = rp.getFlecheRetour();
     private JButton retour = rc.getBoutonRetour();
-
+    private JButton validerTransfert = transfert.getBouttonvalider();
+    
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
     private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
@@ -223,6 +224,7 @@ public class Fenetre extends JFrame {
         resultatParPatientPH.addActionListener(new BoutonResultatsPh (rp,this,barreduhaut,infosmedide,infosmedph,l));
         frelcheretourResultatsParPatient.addActionListener (new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH));
         retour.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH));
+        validerTransfert.addActionListener(new BoutonValiderTransfert(transfert, this,dpiph,consultdpiphide,barreduhaut));
         
 
 // tableau
