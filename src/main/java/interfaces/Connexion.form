@@ -46,10 +46,10 @@
                                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jButton1" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtpass" min="-2" max="-2" attributes="0"/>
-                                  <Component id="txtuser" alignment="0" min="-2" pref="276" max="-2" attributes="0"/>
+                                  <Component id="txtuser" alignment="1" pref="276" max="32767" attributes="0"/>
+                                  <Component id="txtpass" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -68,7 +68,7 @@
               <Component id="jLabel4" min="-2" pref="137" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="202" max="32767" attributes="0"/>
+              <EmptySpace pref="159" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="txtuser" alignment="3" pref="37" max="32767" attributes="0"/>
@@ -95,7 +95,6 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="30" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtpassActionPerformed"/>

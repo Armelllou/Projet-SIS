@@ -9,6 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 
 
 public class BoutonRecherchePatientPhEtIde implements ActionListener {
@@ -51,6 +52,10 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
         cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
         cdpis.repaint();
         System.out.println(cdpis.getjTable1().getModel());
+        
+        if ((MethodeBD.recherchePatientViaIPP(ipp23)==null)&&(MethodeBD.recherchePatientviaNomEtPrenomIdeEtPh (splitArray,ListenerConnexion.getBDHService(), ListenerConnexion.getState())==null)){
+            new JOptionPane().showMessageDialog(null, "Aucun résultat pour le patient recherché", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
 
 
     }

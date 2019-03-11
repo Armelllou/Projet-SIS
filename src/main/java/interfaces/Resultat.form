@@ -75,7 +75,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri" size="36" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Liste des r&#xe9;sulats disponibles pour vore service:"/>
+        <Property name="text" type="java.lang.String" value="Liste des r&#xe9;sultats disponibles pour votre service :"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -96,7 +96,7 @@
                 <Column editable="true" title="Pr&#xe9;nom" type="java.lang.Object"/>
                 <Column editable="true" title="IPP" type="java.lang.Object"/>
                 <Column editable="true" title="R&#xe9;sultats" type="java.lang.Object"/>
-                <Column editable="true" title="Date des r&#xe9;usltats" type="java.lang.Object"/>
+                <Column editable="true" title="Date des r&#xe9;sultats" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

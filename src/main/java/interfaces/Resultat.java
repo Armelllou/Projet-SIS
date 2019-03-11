@@ -60,7 +60,7 @@ public class Resultat extends javax.swing.JPanel {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabel1.setText("Liste des résulats disponibles pour vore service:");
+        jLabel1.setText("Liste des résultats disponibles pour votre service :");
 
         tablePrestation.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         tablePrestation.setModel(new javax.swing.table.DefaultTableModel(
@@ -79,7 +79,7 @@ public class Resultat extends javax.swing.JPanel {
                 {null, null, null, null, null}
             },
             new String [] {
-                "Nom", "Prénom", "IPP", "Résultats", "Date des réusltats"
+                "Nom", "Prénom", "IPP", "Résultats", "Date des résultats"
             }
         ));
         jScrollPane1.setViewportView(tablePrestation);

@@ -103,7 +103,7 @@ public class DetailsResultats extends javax.swing.JPanel {
         jLabel3.setText("Résultats :");
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabel4.setText("Patient:");
+        jLabel4.setText("Patient :");
 
         nomMedecin.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         nomMedecin.setText("Nom Prenom");
@@ -150,6 +150,20 @@ public class DetailsResultats extends javax.swing.JPanel {
                                 .addComponent(jLabel3)))
                         .addGap(0, 563, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(82, 82, 82)
+                .addComponent(jLabel4)
+                .addGap(89, 89, 89)
+                .addComponent(nomPatient)
+                .addGap(70, 70, 70)
+                .addComponent(prenomPatient)
+                .addGap(85, 85, 85)
+                .addComponent(ipp)
+                .addGap(136, 136, 136)
+                .addComponent(type)
+                .addGap(27, 27, 27)
+                .addComponent(nomMedecin)
+                .addContainerGap(556, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -115,11 +115,11 @@ public class ConsulterDPIPHetIDE extends javax.swing.JPanel {
         jTable1.setGridColor(new java.awt.Color(153, 153, 153));
         jScrollPane1.setViewportView(jTable1);
 
-        resultatsNonLus.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        resultatsNonLus.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         resultatsNonLus.setText("Résultats non lus");
 
         notification.setBackground(new java.awt.Color(255, 255, 255));
-        notification.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        notification.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         notification.setForeground(new java.awt.Color(204, 51, 0));
         notification.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/cloche-ConvertImage (1).png"))); // NOI18N
         notification.setText("0");
