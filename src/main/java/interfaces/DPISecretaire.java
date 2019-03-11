@@ -13,26 +13,15 @@ import javax.swing.JLabel;
  */
 public class DPISecretaire extends javax.swing.JPanel {
 
-    /**
-     * @return the dateentree
-     */
-    public javax.swing.JLabel getDateentree() {
+    public JLabel getDateentree() {
         return dateentree;
     }
 
-    /**
-     * @param dateentree the dateentree to set
-     */
-    public void setDateentree(javax.swing.JLabel dateentree) {
-        this.dateentree = dateentree;
-    }
-
-    /**
-     * @return the datesortie
-     */
-    public javax.swing.JLabel getDatesortie() {
+    public JLabel getDatesortie() {
         return datesortie;
     }
+
+
 
     /**
      * @param datesortie the datesortie to set

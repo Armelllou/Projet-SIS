@@ -218,7 +218,7 @@ public class Fenetre extends JFrame {
         retourR.addActionListener(new BoutonRetourdetailsRversR(r, dr, this, barreduhaut));
         resultatParPatientIDE.addActionListener(new BoutonResultatsIde (rp,this,barreduhaut,infosmedide,infosmedph,l));
         resultatParPatientPH.addActionListener(new BoutonResultatsPh (rp,this,barreduhaut,infosmedide,infosmedph,l));
-       // frelcheretourResultatsParPatient.addActionListener (new BoutonRetourPrescriptionIDEVersInfosMedIDE(this, prescriptionide, infosmedide));
+       // frelcheretourResultatsParPatient.addActionListener (new  BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedic im, ActeInfirmierPH ai, Sih sih);
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
@@ -238,7 +238,7 @@ public class Fenetre extends JFrame {
         resultats.addMouseListener(new affichageResultats(dr, r, this, resultats, barreduhaut));
 
         
-        //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
+        //Confirmation pour quitter l'application 
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 int reponse = JOptionPane.showConfirmDialog(frame,
