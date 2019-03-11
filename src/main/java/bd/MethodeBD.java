@@ -193,9 +193,9 @@ public class MethodeBD {
      *
      * @return DefaultTableModel
      */
-    public static DefaultTableModel listePrescriptionJTableService(String ipp) {
-        String[] infoAllPatient = new String[3];
-        String title[] = {" ", "", ""," "};
+    public static DefaultTableModel listeResultatsParPatients(String ipp) {
+        String[] infoAllPatient = new String[5];
+        String title[] = {"Nom", "Prénom", "IPP","Résultats","Date des Résulats"};
         String query = "SELECT * FROM ResultatsLus WHERE IPP ='" + ipp + "'";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -205,9 +205,11 @@ public class MethodeBD {
         }
         try {
             while (rs.next()) {
-                infoAllPatient[0] = rs.getString("");
-                infoAllPatient[1] = rs.getString("") + " " + rs.getString("");
-                infoAllPatient[2] = rs.getString("");
+                infoAllPatient[0] = rs.getString("NomPatient");
+                infoAllPatient[1] = rs.getString("PrenomPatient");
+                infoAllPatient[2] = rs.getString("IPP") ;
+                infoAllPatient[3] = rs.getString("Resultats");
+                infoAllPatient[4] = rs.getString("DateEffectuee");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {

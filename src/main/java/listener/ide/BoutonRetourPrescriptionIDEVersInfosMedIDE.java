@@ -21,13 +21,13 @@ public class BoutonRetourPrescriptionIDEVersInfosMedIDE implements ActionListene
     PrescriptionIDE c;
     InfosMedicalesIDE im;
     Fenetre jframe;
-    Sih sih;
 
-    public BoutonRetourPrescriptionIDEVersInfosMedIDE(Fenetre jframe, PrescriptionIDE c, InfosMedicalesIDE im, Sih sih) {
+
+    public BoutonRetourPrescriptionIDEVersInfosMedIDE(Fenetre jframe, PrescriptionIDE c, InfosMedicalesIDE im) {
         this.jframe = jframe;
         this.c = c;
         this.im = im;
-        this.sih = sih;
+       
     }
 
     public void actionPerformed(ActionEvent ae) {

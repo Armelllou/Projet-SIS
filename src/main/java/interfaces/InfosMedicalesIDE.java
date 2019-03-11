@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 
 /**
@@ -12,6 +13,10 @@ import javax.swing.JLabel;
  * @author Manon
  */
 public class InfosMedicalesIDE extends javax.swing.JPanel {
+
+    public JButton getResultats() {
+        return resultats;
+    }
 
     /**
      * @return the jTable3
@@ -124,6 +129,7 @@ public class InfosMedicalesIDE extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
+        resultats = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -202,6 +208,9 @@ public class InfosMedicalesIDE extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel4.setText("Liste des prescriptions");
 
+        resultats.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        resultats.setText("Résultats ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -228,7 +237,9 @@ public class InfosMedicalesIDE extends javax.swing.JPanel {
                         .addComponent(jLabelprenom)
                         .addGap(165, 165, 165)
                         .addComponent(jLabelipp)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(resultats, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(130, 130, 130)
@@ -257,7 +268,10 @@ public class InfosMedicalesIDE extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabelnom)
                             .addComponent(jLabelprenom)
-                            .addComponent(jLabelipp))))
+                            .addComponent(jLabelipp)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(resultats)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -298,5 +312,6 @@ public class InfosMedicalesIDE extends javax.swing.JPanel {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JButton resultats;
     // End of variables declaration//GEN-END:variables
 }

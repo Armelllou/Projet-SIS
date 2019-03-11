@@ -52,6 +52,7 @@ public class Fenetre extends JFrame {
     DetailsPrestation dp = new DetailsPrestation();
     Resultat r = new Resultat();
     DetailsResultats dr = new DetailsResultats();
+    ResultatParPatient rp  = new ResultatParPatient();
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -125,6 +126,9 @@ public class Fenetre extends JFrame {
     private JButton accesResultats = consultdpiphide.getResultatsNonLus();
     private JButton retrouresultats = r.getFlecheRetour();
     private JButton retourR = dr.getBoutonAnnuler();
+    private JButton resultatParPatientIDE = infosmedide.getResultats();
+    private JButton resultatParPatientPH= infosmedph.getResultats();
+    private JButton frelcheretourResultatsParPatient = rp.getFlecheRetour();
 
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
@@ -189,7 +193,7 @@ public class Fenetre extends JFrame {
         ajouterprestation.addActionListener(new BoutonAjouterPrestation(this, ajouterpresta, infosmedph, barreduhaut));
         annulermodifDPI.addActionListener(new BoutonAnnulerModificationDPI(this, dpis, modifdpi, sih));
         accueilprescriIDE.addActionListener(new BoutonAccueilPrescriptionIDE(this, prescriptionide, consultdpiphide, barreduhaut));
-        retourPrescriIDEVersInfMedIDE.addActionListener(new BoutonRetourPrescriptionIDEVersInfosMedIDE(this, prescriptionide, infosmedide, sih));
+        retourPrescriIDEVersInfMedIDE.addActionListener(new BoutonRetourPrescriptionIDEVersInfosMedIDE(this, prescriptionide, infosmedide));
         accueilprescriPH.addActionListener(new BoutonAccueilPrescriptionPH(this, prescriptionph, consultdpiphide, barreduhaut));
         retourPrescriPHVersInfMedPH.addActionListener(new BoutonRetourPrescriptionPHVersInfosMedPH(this, prescriptionph, infosmedph, sih));
         retourDetailsPrestation.addActionListener(new BoutonRetourDetailsPrestation(dp, prestations, this));
@@ -212,6 +216,9 @@ public class Fenetre extends JFrame {
         accesResultats.addActionListener(new BoutonAccederAuxRésultats(r, consultdpiphide, barreduhaut, this));
         retrouresultats.addActionListener(new BoutonRetourDPIIDEVersConsulterDPIPHetIDE(this, consultdpiphide, dpiide, barreduhaut));
         retourR.addActionListener(new BoutonRetourdetailsRversR(r, dr, this, barreduhaut));
+        resultatParPatientIDE.addActionListener(new BoutonResultatsIde (rp,this,barreduhaut,infosmedide,infosmedph,l));
+        resultatParPatientPH.addActionListener(new BoutonResultatsPh (rp,this,barreduhaut,infosmedide,infosmedph,l));
+       // frelcheretourResultatsParPatient.addActionListener (new BoutonRetourPrescriptionIDEVersInfosMedIDE(this, prescriptionide, infosmedide));
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
@@ -230,6 +237,7 @@ public class Fenetre extends JFrame {
         tableauSA.addMouseListener(new tableauSMP(this, pl, mp, tableauSA));
         resultats.addMouseListener(new affichageResultats(dr, r, this, resultats, barreduhaut));
 
+        
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
@@ -289,6 +297,7 @@ public class Fenetre extends JFrame {
         dp.setVisible(false);
         r.setVisible(false);
         dr.setVisible(false);
+        rp.setVisible(false);
 
     }
 
