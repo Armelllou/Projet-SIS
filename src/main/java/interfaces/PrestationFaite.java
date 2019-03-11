@@ -111,7 +111,11 @@ public class PrestationFaite extends javax.swing.JPanel {
         type.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         type.setText("Médecin :");
 
-        resultats.setText("jTextField1");
+        resultats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                resultatsActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -167,17 +171,19 @@ public class PrestationFaite extends javax.swing.JPanel {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(boutonValider)
                             .addComponent(boutonAnnuler))
                         .addGap(54, 54, 54))))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void resultatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultatsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_resultatsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

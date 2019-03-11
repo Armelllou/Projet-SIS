@@ -84,14 +84,12 @@ public class affichageResultats implements MouseListener {
                 pf.getType().setText("MedicoTechnicien");
                 pf.getBoutonValider().setVisible(false);
                 pf.getBoutonAnnuler().setText("Retour");
-            
-
-            
+           
 
             PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from prestationsfaites WHERE DateEffectuee ='" + Date + "'");
             prep2.executeUpdate();
 
-            String sql = " INSERT INTO ResultatsLus (ServiceDemandeur,NomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats,DateEffectuee) VALUES(?,?,?,?,?,?,?,?) ";
+            String sql = " INSERT INTO ResultatsLus (ServiceDemandeur,NomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats,DateEffectuee,PrenomPatient) VALUES(?,?,?,?,?,?,?,?,?) ";
             PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
             statement.setObject(1, Service, Types.VARCHAR);
             statement.setObject(2, NomPatient, Types.VARCHAR);
@@ -101,6 +99,7 @@ public class affichageResultats implements MouseListener {
             statement.setObject(6, idTech, Types.INTEGER);
             statement.setObject(7, details, Types.VARCHAR);
             statement.setObject(8, Date, Types.VARCHAR);
+            statement.setObject(9, PrenomPatient, Types.VARCHAR);
             statement.executeUpdate();
             }
 

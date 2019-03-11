@@ -72,13 +72,15 @@ public class BoutonValiderResultats implements ActionListener {
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from prestationaeffectuer WHERE DateDeDemande ='" + idDemande + "'");
             prep2.executeUpdate();
+            
+            
             p.getTablePrestation().setFont(new Font("Calibri", 0, 18));
-            p.getTablePrestation().setModel(new MethodeBD().listePrestation());
+            p.getTablePrestation().setModel(MethodeBD.listePrestation());
 
             JOptionPane jop1 = new JOptionPane();
             jop1.showMessageDialog(null, "Résultat Correctement Envoyée", "Information", JOptionPane.INFORMATION_MESSAGE);
 
-            
+     
 
           
             fen.panelVisibleFalse();
