@@ -120,15 +120,15 @@ public class DetailsPrestation extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
-        NomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        NomPatient.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         NomPatient.setText("NOM");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        IPP.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
+        IPP.setFont(new java.awt.Font("Calibri", 0, 40)); // NOI18N
         IPP.setText("AAMMXXXXX");
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel3.setText("Détails :");
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
@@ -137,13 +137,13 @@ public class DetailsPrestation extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel5.setText("Patient :");
 
-        NomMedecin.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        NomMedecin.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         NomMedecin.setText("NOM");
 
         PrenomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         PrenomPatient.setText("Prénom");
 
-        envoyerResultat.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        envoyerResultat.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         envoyerResultat.setText("Envoyer le Résultat");
 
         boutonRetour.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/flcheretour-ConvertImage.png"))); // NOI18N
@@ -151,7 +151,7 @@ public class DetailsPrestation extends javax.swing.JPanel {
         IPP1.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         IPP1.setText("Service Demandeur :");
 
-        Srvice.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        Srvice.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         Srvice.setText("NOM");
 
         dateDeDemande.setText("jLabel1");
@@ -170,71 +170,81 @@ public class DetailsPrestation extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(envoyerResultat)
-                        .addGap(681, 681, 681)
+                        .addGap(555, 555, 555)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(boutonRetour))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(IPP1)
+                                .addContainerGap(119, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jLabel5)
-                                        .addGap(78, 78, 78)
-                                        .addComponent(NomPatient)
-                                        .addGap(55, 55, 55)
-                                        .addComponent(PrenomPatient)
-                                        .addGap(44, 44, 44)
-                                        .addComponent(IPP)))
+                                        .addGap(65, 65, 65)
+                                        .addComponent(NomPatient))
+                                    .addComponent(IPP1))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(150, 150, 150)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(NomMedecin, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(52, 52, 52)
+                                        .addGap(18, 18, 18)
                                         .addComponent(Srvice)
-                                        .addGap(213, 213, 213)
-                                        .addComponent(dateDeDemande))))
+                                        .addGap(184, 184, 184)
+                                        .addComponent(dateDeDemande)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addGap(45, 45, 45)
+                                        .addComponent(PrenomPatient)
+                                        .addGap(37, 37, 37)
+                                        .addComponent(IPP)
+                                        .addGap(662, 662, 662))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(198, 198, 198)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1079, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))))
-                        .addGap(0, 426, Short.MAX_VALUE)))
+                                .addContainerGap()
+                                .addComponent(boutonRetour)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4)
+                                .addGap(36, 36, 36)))
+                        .addComponent(NomMedecin, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(194, 194, 194))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(boutonRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomPatient)
-                    .addComponent(IPP)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(NomMedecin)
-                    .addComponent(PrenomPatient))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IPP1)
-                    .addComponent(Srvice)
-                    .addComponent(dateDeDemande))
-                .addGap(3, 3, 3)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(boutonRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(NomMedecin)
+                            .addComponent(jLabel4)
+                            .addComponent(IPP)
+                            .addComponent(PrenomPatient)
+                            .addComponent(NomPatient)
+                            .addComponent(jLabel5))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dateDeDemande)
+                            .addComponent(Srvice)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(IPP1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(envoyerResultat))
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 475, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(envoyerResultat))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

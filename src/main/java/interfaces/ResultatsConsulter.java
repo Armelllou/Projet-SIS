@@ -5,8 +5,8 @@
  */
 package interfaces;
 
-import javax.swing.JButton;
 
+import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
@@ -15,7 +15,7 @@ import javax.swing.JTextArea;
  *
  * @author Manon
  */
-public class PrestationFaite extends javax.swing.JPanel {
+public class ResultatsConsulter extends javax.swing.JPanel {
 
     public JLabel getType() {
         return type;
@@ -25,14 +25,8 @@ public class PrestationFaite extends javax.swing.JPanel {
         return resultats;
     }
 
-  
-
-    public JButton getBoutonAnnuler() {
-        return boutonAnnuler;
-    }
-
-    public JButton getBoutonValider() {
-        return boutonValider;
+    public JButton getBoutonRetour() {
+        return boutonRetour;
     }
 
     public JLabel getIpp() {
@@ -57,7 +51,7 @@ public class PrestationFaite extends javax.swing.JPanel {
     /**
      * Creates new form PrestationFaite
      */
-    public PrestationFaite() {
+    public ResultatsConsulter() {
         initComponents();
     }
 
@@ -72,8 +66,6 @@ public class PrestationFaite extends javax.swing.JPanel {
 
         nomPatient = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        boutonAnnuler = new javax.swing.JButton();
-        boutonValider = new javax.swing.JButton();
         prenomPatient = new javax.swing.JLabel();
         ipp = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -82,6 +74,7 @@ public class PrestationFaite extends javax.swing.JPanel {
         type = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         resultats = new javax.swing.JTextArea();
+        boutonRetour = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -90,12 +83,6 @@ public class PrestationFaite extends javax.swing.JPanel {
         nomPatient.setText("NOM");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
-
-        boutonAnnuler.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
-        boutonAnnuler.setText("Annuler");
-
-        boutonValider.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
-        boutonValider.setText("Valider");
 
         prenomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         prenomPatient.setText("Prénom");
@@ -113,12 +100,14 @@ public class PrestationFaite extends javax.swing.JPanel {
         nomMedecin.setText("Nom Prenom");
 
         type.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        type.setText("Médecin :");
+        type.setText("Date de réalisation de la prestation:");
 
         resultats.setColumns(20);
         resultats.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         resultats.setRows(5);
         jScrollPane2.setViewportView(resultats);
+
+        boutonRetour.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/flcheretour-ConvertImage.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -132,7 +121,12 @@ public class PrestationFaite extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
+                                .addContainerGap()
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(9, 9, 9)
+                                .addComponent(boutonRetour)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel4)
                                 .addGap(89, 89, 89)
                                 .addComponent(nomPatient)
@@ -142,51 +136,42 @@ public class PrestationFaite extends javax.swing.JPanel {
                                 .addComponent(ipp)
                                 .addGap(136, 136, 136)
                                 .addComponent(type)
-                                .addGap(27, 27, 27)
-                                .addComponent(nomMedecin))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel3)))
+                                .addGap(18, 18, 18)
+                                .addComponent(nomMedecin)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(653, 653, 653)
-                .addComponent(boutonAnnuler, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41)
-                .addComponent(boutonValider, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomPatient)
-                    .addComponent(prenomPatient)
-                    .addComponent(ipp)
-                    .addComponent(jLabel4)
-                    .addComponent(type)
-                    .addComponent(nomMedecin))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nomPatient)
+                            .addComponent(prenomPatient)
+                            .addComponent(ipp)
+                            .addComponent(jLabel4)
+                            .addComponent(type)
+                            .addComponent(nomMedecin)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(boutonRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(69, 69, 69)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(boutonAnnuler)
-                    .addComponent(boutonValider))
-                .addGap(21, 21, 21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton boutonAnnuler;
-    private javax.swing.JButton boutonValider;
+    private javax.swing.JButton boutonRetour;
     private javax.swing.JLabel ipp;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -53,6 +53,7 @@ public class Fenetre extends JFrame {
     Resultat r = new Resultat();
     DetailsResultats dr = new DetailsResultats();
     ResultatParPatient rp  = new ResultatParPatient();
+    ResultatsConsulter rc = new ResultatsConsulter();
 
     // Attributs de la JFrame
     Fenetre frame = this;
@@ -129,6 +130,7 @@ public class Fenetre extends JFrame {
     private JButton resultatParPatientIDE = infosmedide.getResultats();
     private JButton resultatParPatientPH= infosmedph.getResultats();
     private JButton frelcheretourResultatsParPatient = rp.getFlecheRetour();
+    private JButton retour = rc.getBoutonRetour();
 
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
@@ -145,6 +147,7 @@ public class Fenetre extends JFrame {
     private JTable tableauMT = pl.getTableMT();
     private JTable tableauSA = pl.getTableSecretaire();
     private JTable resultats = r.getTablePrestation();
+    private JTable tableresultatsparpatient = rp.getTablePrestation();
 
     public Fenetre() {
         //state = State.NONCO;
@@ -165,7 +168,7 @@ public class Fenetre extends JFrame {
         annulercreationDPI.addActionListener(new BoutonAnnulerCreationDPI(this, consultdpis, creationdpi, sih));
         retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPISVersConsulterDPISecretaire(this, consultdpis, dpis, sih));
         modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi, sih));
-        retourActeInfVersInfosMedPH.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph, acteinfirmierPH, sih));
+        retourActeInfVersInfosMedPH.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph, acteinfirmierPH));
         accueilActeInfirmierPH.addActionListener(new BoutonAccueilActeInfirmierPH(this, acteinfirmierPH, consultdpiphide, sih));
         annulerAjouterAI.addActionListener(new BoutonAnnulerAjouterActeInfirmier(this, ajouterai, infosmedide, sih));
         annulerAjouterConsult.addActionListener(new BoutonAnnulerAjouterConsultation(this, ajouterconsult, infosmedph, sih));
@@ -218,7 +221,9 @@ public class Fenetre extends JFrame {
         retourR.addActionListener(new BoutonRetourdetailsRversR(r, dr, this, barreduhaut));
         resultatParPatientIDE.addActionListener(new BoutonResultatsIde (rp,this,barreduhaut,infosmedide,infosmedph,l));
         resultatParPatientPH.addActionListener(new BoutonResultatsPh (rp,this,barreduhaut,infosmedide,infosmedph,l));
-        frelcheretourResultatsParPatient.addActionListener (new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH,sih));
+        frelcheretourResultatsParPatient.addActionListener (new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH));
+        retour.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH));
+        
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
@@ -236,6 +241,7 @@ public class Fenetre extends JFrame {
         tableauMT.addMouseListener(new TableauMTP(this, pl, mp, tableauMT));
         tableauSA.addMouseListener(new tableauSMP(this, pl, mp, tableauSA));
         resultats.addMouseListener(new affichageResultats(dr, r, this, resultats, barreduhaut));
+        tableresultatsparpatient.addMouseListener(new TableauResultatParPatient(this, rc, rp, tableresultatsparpatient));
 
         
         //Confirmation pour quitter l'application 
@@ -298,6 +304,7 @@ public class Fenetre extends JFrame {
         r.setVisible(false);
         dr.setVisible(false);
         rp.setVisible(false);
+        rc.setVisible(false);
 
     }
 

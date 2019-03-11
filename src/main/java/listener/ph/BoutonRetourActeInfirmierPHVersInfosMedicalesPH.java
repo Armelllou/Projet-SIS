@@ -23,7 +23,7 @@ public class BoutonRetourActeInfirmierPHVersInfosMedicalesPH implements ActionLi
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourActeInfirmierPHVersInfosMedicalesPH(Fenetre jframe, InfosMedicalesPH im, ActeInfirmierPH ai, Sih sih) {
+    public BoutonRetourActeInfirmierPHVersInfosMedicalesPH(Fenetre jframe, InfosMedicalesPH im, ActeInfirmierPH ai) {
         this.jframe = jframe;
         this.ai = ai;
         this.im = im;

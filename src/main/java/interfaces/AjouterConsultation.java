@@ -132,16 +132,16 @@ public class AjouterConsultation extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jButton2.setText("Valider");
 
-        getNomMedecin.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        getNomMedecin.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         getNomMedecin.setText("Nom");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel2.setText("Médecin :");
 
-        PrenomMedecin.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        PrenomMedecin.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         PrenomMedecin.setText("Prénom");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         jLabel4.setText("Date :");
 
         annee.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
@@ -156,7 +156,7 @@ public class AjouterConsultation extends javax.swing.JPanel {
 
         jour.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
-        TITRE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        TITRE.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         TITRE.setText("Compte-rendu de la consultation :");
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
@@ -173,15 +173,11 @@ public class AjouterConsultation extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
-                        .addGap(51, 51, 51)
-                        .addComponent(jButton2)
-                        .addGap(433, 433, 433)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -206,12 +202,15 @@ public class AjouterConsultation extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jButton4))
-                        .addGap(0, 261, Short.MAX_VALUE)))
+                        .addGap(0, 1, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(786, 786, 786)
+                        .addComponent(jButton1)
+                        .addGap(55, 55, 55)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,16 +234,16 @@ public class AjouterConsultation extends javax.swing.JPanel {
                                 .addComponent(jLabel6)
                                 .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4))
-                        .addGap(52, 52, 52)
+                        .addGap(39, 39, 39)
                         .addComponent(jButton4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2)
-                        .addComponent(jButton1))
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton1)
+                        .addComponent(jButton2)))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

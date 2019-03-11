@@ -84,16 +84,16 @@ public class PrescriptionIDE extends javax.swing.JPanel {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
         setPreferredSize(new java.awt.Dimension(1700, 760));
 
-        Nom.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        Nom.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         Nom.setText("Nom");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel2.setText("Médecin :");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel4.setText("Date :");
 
-        jLabel7.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel7.setText("Détail de la prescription :");
 
         Detail.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
@@ -109,7 +109,7 @@ public class PrescriptionIDE extends javax.swing.JPanel {
             }
         });
 
-        DATE.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        DATE.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         DATE.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -122,9 +122,7 @@ public class PrescriptionIDE extends javax.swing.JPanel {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(Detail, javax.swing.GroupLayout.PREFERRED_SIZE, 1455, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jLabel7))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -133,8 +131,7 @@ public class PrescriptionIDE extends javax.swing.JPanel {
                                         .addGap(18, 18, 18)
                                         .addComponent(Nom, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(487, 487, 487)
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                                        .addComponent(jLabel4))
                                     .addGroup(layout.createSequentialGroup()
                                         .addContainerGap()
                                         .addComponent(jButton4)
@@ -143,10 +140,13 @@ public class PrescriptionIDE extends javax.swing.JPanel {
                                         .addGap(657, 657, 657)))
                                 .addGap(6, 6, 6)
                                 .addComponent(DATE, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 174, Short.MAX_VALUE))
+                        .addGap(0, 109, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(Detail)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -165,8 +165,8 @@ public class PrescriptionIDE extends javax.swing.JPanel {
                 .addGap(114, 114, 114)
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
-                .addComponent(Detail, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(Detail, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );

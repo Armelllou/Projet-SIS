@@ -18,8 +18,16 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
         return resultats;
     }
 
-    public JLabel getjLabelipp() {
-        return jLabelipp;
+    public JButton getjButton4() {
+        return jButton4;
+    }
+
+    public JButton getjButton5() {
+        return jButton5;
+    }
+
+    public JButton getjButton6() {
+        return jButton6;
     }
 
     /**
@@ -30,18 +38,9 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
     }
 
     /**
-     * @return the jButton6
-     */
-    public javax.swing.JButton getjButton6() {
-        return jButton6;
-    }
-
-    /**
      * @return the jButton5
      */
-    public javax.swing.JButton getjButton5() {
-        return jButton5;
-    }
+    
 
     /**
      * @return the jButton1
@@ -57,16 +56,10 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
         return jButton2;
     }
 
-    /**
-     * @return the jButton3
-     */
    
 
-    /**
-     * @return the jButton4
-     */
-    public javax.swing.JButton getjButton4() {
-        return jButton4;
+    public JLabel getjLabelipp() {
+        return jLabelipp;
     }
 
     /**
@@ -133,19 +126,20 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        jLabelnom = new javax.swing.JLabel();
-        jLabelprenom = new javax.swing.JLabel();
-        jLabelipp = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
         resultats = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabelnom = new javax.swing.JLabel();
+        jLabelprenom = new javax.swing.JLabel();
+        jLabelipp = new javax.swing.JLabel();
+        jButton4 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -175,17 +169,8 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel2.setText("Liste des consultations");
-
-        jLabelnom.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabelnom.setText("NOM");
-
-        jLabelprenom.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabelprenom.setText("Prénom");
-
-        jLabelipp.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
-        jLabelipp.setText("AAMMXXXXX");
 
         jTable2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -201,14 +186,8 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel3.setText("Liste des actes infirmiers");
-
-        jButton4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jButton4.setText("Ajouter une consultation");
-
-        jButton5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jButton5.setText("Demander une prestation");
 
         jTable3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jTable3.setModel(new javax.swing.table.DefaultTableModel(
@@ -224,14 +203,55 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(jTable3);
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel4.setText("Liste des prescriptions");
-
-        jButton6.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jButton6.setText("Ajouter une prescription");
 
         resultats.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         resultats.setText("Résultats ");
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabelnom.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabelnom.setText("NOM");
+
+        jLabelprenom.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabelprenom.setText("Prénom");
+
+        jLabelipp.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabelipp.setText("AAMMXXXXX");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(jLabelnom)
+                .addGap(145, 145, 145)
+                .addComponent(jLabelprenom)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 376, Short.MAX_VALUE)
+                .addComponent(jLabelipp)
+                .addGap(31, 31, 31))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(29, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelnom)
+                    .addComponent(jLabelprenom)
+                    .addComponent(jLabelipp))
+                .addGap(27, 27, 27))
+        );
+
+        jButton4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jButton4.setText("Ajouter une consultation");
+
+        jButton5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jButton5.setText("Demander une prestation");
+
+        jButton6.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jButton6.setText("Ajouter une prescription");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -239,50 +259,48 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 527, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 502, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(381, 381, 381)
-                        .addComponent(jLabelnom)
-                        .addGap(59, 59, 59)
-                        .addComponent(jLabelprenom)
-                        .addGap(165, 165, 165)
-                        .addComponent(jLabelipp)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(resultats, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(54, 54, 54)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(130, 130, 130)
-                .addComponent(jLabel2)
-                .addGap(326, 326, 326)
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addGap(156, 156, 156))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(118, 118, 118)
+                                .addComponent(jLabel2)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 505, Short.MAX_VALUE)
+                                .addComponent(resultats, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(28, 28, 28))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(284, 284, 284)
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel4)
+                                .addGap(147, 147, 147))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(104, 104, 104)
+                        .addGap(126, 126, 126)
                         .addComponent(jButton4)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(276, 276, 276)
-                .addComponent(jButton6)
-                .addGap(127, 127, 127))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton6)
+                        .addGap(169, 169, 169))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton5)
+                        .addGap(576, 576, 576)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -294,33 +312,41 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
                             .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jButton1)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabelnom)
-                            .addComponent(jLabelprenom)
-                            .addComponent(jLabelipp)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(resultats)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 310, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(55, 55, 55)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton6))
-                .addGap(45, 45, 45)
+                        .addGap(27, 27, 27)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(resultats)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5))
-                .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4))
+                        .addGap(45, 45, 45))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel3)
+                        .addGap(32, 32, 32)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4)
+                        .addContainerGap(126, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton6)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(jButton5)
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -342,6 +368,7 @@ public class InfosMedicalesPH extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelipp;
     private javax.swing.JLabel jLabelnom;
     private javax.swing.JLabel jLabelprenom;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
