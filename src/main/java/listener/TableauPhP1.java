@@ -23,13 +23,13 @@ import javax.swing.JTable;
  *
  * @author annel
  */
-public class TableauPhP implements MouseListener {
+public class TableauPhP1 implements MouseListener {
      Fenetre fen;
     ListePersonnel lp;
     ModifierPersonnel mp;
     JTable table;
 
-    public TableauPhP(Fenetre fen, ListePersonnel lp, ModifierPersonnel mp, JTable table) {
+    public TableauPhP1(Fenetre fen, ListePersonnel lp, ModifierPersonnel mp, JTable table) {
         this.fen = fen;
         this.lp = lp;
         this.mp = mp;
@@ -80,7 +80,7 @@ public class TableauPhP implements MouseListener {
                  fen.repaint();
              }
              } catch (SQLException ex) {
-             Logger.getLogger(TableauPhP.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(TableauPhP1.class.getName()).log(Level.SEVERE, null, ex);
          }}
              @Override
              public void mousePressed(MouseEvent e) {

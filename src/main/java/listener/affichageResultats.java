@@ -100,7 +100,7 @@ public class affichageResultats implements MouseListener {
             statement.setObject(5, PrenomMedecin, Types.VARCHAR);
             statement.setObject(6, idTech, Types.INTEGER);
             statement.setObject(7, details, Types.VARCHAR);
-              statement.setObject(7, Date, Types.VARCHAR);
+            statement.setObject(8, Date, Types.VARCHAR);
             statement.executeUpdate();
             }
 

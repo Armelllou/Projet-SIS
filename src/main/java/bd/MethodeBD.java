@@ -187,6 +187,37 @@ public class MethodeBD {
         }
         return templatesTableModel;
     }
+    
+    /**
+     * modèle pour remplir la Jtable avec les prescription d'un patient selon service
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel listePrescriptionJTableService(String ipp) {
+        String[] infoAllPatient = new String[3];
+        String title[] = {" ", "", ""," "};
+        String query = "SELECT * FROM ResultatsLus WHERE IPP ='" + ipp + "'";
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if (rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("");
+                infoAllPatient[1] = rs.getString("") + " " + rs.getString("");
+                infoAllPatient[2] = rs.getString("");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return templatesTableModel;
+    }
+    
+    
+    
 
     /**
      * modèle pour remplir la Jtable avec les prescription d'un patient

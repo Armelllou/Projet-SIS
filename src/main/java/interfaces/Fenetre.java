@@ -125,8 +125,7 @@ public class Fenetre extends JFrame {
     private JButton accesResultats = consultdpiphide.getResultatsNonLus();
     private JButton retrouresultats = r.getFlecheRetour();
     private JButton retourR = dr.getBoutonAnnuler();
-    
-    
+
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
     private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
@@ -142,7 +141,6 @@ public class Fenetre extends JFrame {
     private JTable tableauMT = pl.getTableMT();
     private JTable tableauSA = pl.getTableSecretaire();
     private JTable resultats = r.getTablePrestation();
-    
 
     public Fenetre() {
         //state = State.NONCO;
@@ -210,11 +208,10 @@ public class Fenetre extends JFrame {
         validerPrestation.addActionListener(new BoutonValiderDemandePrestation(ajouterpresta, infosmedph, barreduhaut, this, prestations));
         envoyerResultats.addActionListener(new BoutonEnvoyerResultats(prestafaite, dp, this));
         annulerEnvoyerResultats.addActionListener(new BoutonAnnulerResultats(prestafaite, dp, this));
-        validerEnvoyerResultats.addActionListener(new BoutonValiderResultats(prestafaite, dp, this, barreduhaut, prestations,consultdpiphide,r));
-        accesResultats.addActionListener(new BoutonAccederAuxRésultats(r,consultdpiphide,barreduhaut,this));
+        validerEnvoyerResultats.addActionListener(new BoutonValiderResultats(prestafaite, dp, this, barreduhaut, prestations, consultdpiphide, r));
+        accesResultats.addActionListener(new BoutonAccederAuxRésultats(r, consultdpiphide, barreduhaut, this));
         retrouresultats.addActionListener(new BoutonRetourDPIIDEVersConsulterDPIPHetIDE(this, consultdpiphide, dpiide, barreduhaut));
-        retourR.addActionListener(new BoutonRetourdetailsRversR( r, dr, this,barreduhaut));
-        
+        retourR.addActionListener(new BoutonRetourdetailsRversR(r, dr, this, barreduhaut));
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
@@ -228,10 +225,10 @@ public class Fenetre extends JFrame {
         tableauprestations.addMouseListener(new TableauPrestations(prestations, dp, this, sih, prestations.getTablePrestation()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterIDE(dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
         tableauIDE.addMouseListener(new TableauIdeP(this, pl, mp, tableauIDE));
-        tableauPH.addMouseListener(new TableauPhP(this, pl, mp, tableauPH));
+        tableauPH.addMouseListener(new TableauPhP1 (this,pl,mp,tableauPH)); 
         tableauMT.addMouseListener(new TableauMTP(this, pl, mp, tableauMT));
         tableauSA.addMouseListener(new tableauSMP(this, pl, mp, tableauSA));
-        resultats.addMouseListener(new affichageResultats (dr,r,this,resultats,barreduhaut));
+        resultats.addMouseListener(new affichageResultats(dr, r, this, resultats, barreduhaut));
 
         //Confirmation pour quitter l'application SOUCI POUR QD ON VEUT PAS FERMER
         this.addWindowListener(new WindowAdapter() {
@@ -300,8 +297,8 @@ public class Fenetre extends JFrame {
         connexion.setVisible(false);
         this.panelVisibleFalse();
     }
-    
-    public void toutFalseSaufConnexion(){
+
+    public void toutFalseSaufConnexion() {
         consultdpis.setVisible(false);
         consultdpiphide.setVisible(false);
         prestations.setVisible(false);
