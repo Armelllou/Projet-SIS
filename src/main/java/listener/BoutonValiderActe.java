@@ -41,7 +41,7 @@ public class BoutonValiderActe implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Acte a = new Acte(aai.getobservation().getText(), aai.gettype().getText(), bh.getId().getText(), aai.getIpp().getText());
+        Acte a = new Acte(aai.getObservation().getText(), aai.getType().getText(), bh.getId().getText(), aai.getIpp().getText());
 //   
         try {
             a.AjouterActeSurBD(a);

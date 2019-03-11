@@ -7,6 +7,7 @@ package interfaces;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 /**
@@ -38,9 +39,11 @@ public class DetailsPrestation extends javax.swing.JPanel {
         return PrenomPatient;
     }
 
-    public JTextField getDetails() {
+    public JTextArea getDetails() {
         return details;
     }
+
+   
 
     public JButton getEnvoyerResultat() {
         return envoyerResultat;
@@ -57,9 +60,7 @@ public class DetailsPrestation extends javax.swing.JPanel {
     /**
      * @return the jTextField1
      */
-    public javax.swing.JTextField getjTextField1() {
-        return details;
-    }
+   
 
     public JButton getBoutonRetour() {
         return boutonRetour;
@@ -104,7 +105,6 @@ public class DetailsPrestation extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         IPP = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        details = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         NomMedecin = new javax.swing.JLabel();
@@ -114,6 +114,8 @@ public class DetailsPrestation extends javax.swing.JPanel {
         IPP1 = new javax.swing.JLabel();
         Srvice = new javax.swing.JLabel();
         dateDeDemande = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        details = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -128,8 +130,6 @@ public class DetailsPrestation extends javax.swing.JPanel {
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel3.setText("Détails :");
-
-        details.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel4.setText("Médecin prescripteur :");
@@ -156,6 +156,10 @@ public class DetailsPrestation extends javax.swing.JPanel {
 
         dateDeDemande.setText("jLabel1");
 
+        details.setColumns(20);
+        details.setRows(5);
+        jScrollPane1.setViewportView(details);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -165,15 +169,10 @@ public class DetailsPrestation extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(envoyerResultat)
-                        .addGap(453, 453, 453)
+                        .addGap(681, 681, 681)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(198, 198, 198)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(details, javax.swing.GroupLayout.PREFERRED_SIZE, 1212, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(boutonRetour))
@@ -199,8 +198,13 @@ public class DetailsPrestation extends javax.swing.JPanel {
                                         .addGap(52, 52, 52)
                                         .addComponent(Srvice)
                                         .addGap(213, 213, 213)
-                                        .addComponent(dateDeDemande)))))
-                        .addGap(0, 185, Short.MAX_VALUE)))
+                                        .addComponent(dateDeDemande))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(198, 198, 198)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1079, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3))))
+                        .addGap(0, 426, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -208,7 +212,7 @@ public class DetailsPrestation extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(boutonRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(NomPatient)
                     .addComponent(IPP)
@@ -223,17 +227,14 @@ public class DetailsPrestation extends javax.swing.JPanel {
                     .addComponent(dateDeDemande))
                 .addGap(3, 3, 3)
                 .addComponent(jLabel3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(details, javax.swing.GroupLayout.PREFERRED_SIZE, 397, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(envoyerResultat)
-                        .addGap(63, 63, 63))))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(envoyerResultat))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -247,11 +248,12 @@ public class DetailsPrestation extends javax.swing.JPanel {
     private javax.swing.JLabel Srvice;
     private javax.swing.JButton boutonRetour;
     private javax.swing.JLabel dateDeDemande;
-    private javax.swing.JTextField details;
+    private javax.swing.JTextArea details;
     private javax.swing.JButton envoyerResultat;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

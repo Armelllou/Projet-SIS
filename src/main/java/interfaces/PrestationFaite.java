@@ -6,9 +6,10 @@
 package interfaces;
 
 import javax.swing.JButton;
-import javax.swing.JEditorPane;
+
 import javax.swing.JLabel;
-import javax.swing.JTextField;
+import javax.swing.JTextArea;
+
 
 /**
  *
@@ -20,9 +21,11 @@ public class PrestationFaite extends javax.swing.JPanel {
         return type;
     }
 
-    public JTextField getResultats() {
+    public JTextArea getResultats() {
         return resultats;
     }
+
+  
 
     public JButton getBoutonAnnuler() {
         return boutonAnnuler;
@@ -77,7 +80,8 @@ public class PrestationFaite extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         nomMedecin = new javax.swing.JLabel();
         type = new javax.swing.JLabel();
-        resultats = new javax.swing.JTextField();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        resultats = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -111,11 +115,9 @@ public class PrestationFaite extends javax.swing.JPanel {
         type.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         type.setText("Médecin :");
 
-        resultats.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                resultatsActionPerformed(evt);
-            }
-        });
+        resultats.setColumns(20);
+        resultats.setRows(5);
+        jScrollPane2.setViewportView(resultats);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -131,26 +133,23 @@ public class PrestationFaite extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(jLabel4)
+                        .addGap(89, 89, 89)
+                        .addComponent(nomPatient)
+                        .addGap(70, 70, 70)
+                        .addComponent(prenomPatient)
+                        .addGap(85, 85, 85)
+                        .addComponent(ipp)
+                        .addGap(136, 136, 136)
+                        .addComponent(type)
+                        .addGap(27, 27, 27)
+                        .addComponent(nomMedecin))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(198, 198, 198)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addComponent(jLabel4)
-                                .addGap(89, 89, 89)
-                                .addComponent(nomPatient)
-                                .addGap(70, 70, 70)
-                                .addComponent(prenomPatient)
-                                .addGap(85, 85, 85)
-                                .addComponent(ipp)
-                                .addGap(136, 136, 136)
-                                .addComponent(type)
-                                .addGap(27, 27, 27)
-                                .addComponent(nomMedecin))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(198, 198, 198)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(resultats, javax.swing.GroupLayout.PREFERRED_SIZE, 1092, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3))))
-                        .addGap(0, 552, Short.MAX_VALUE)))
+                            .addComponent(jLabel3)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1198, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -167,8 +166,8 @@ public class PrestationFaite extends javax.swing.JPanel {
                 .addGap(66, 66, 66)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(resultats, javax.swing.GroupLayout.PREFERRED_SIZE, 394, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 366, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -181,10 +180,6 @@ public class PrestationFaite extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void resultatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resultatsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_resultatsActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boutonAnnuler;
@@ -193,10 +188,11 @@ public class PrestationFaite extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel nomMedecin;
     private javax.swing.JLabel nomPatient;
     private javax.swing.JLabel prenomPatient;
-    private javax.swing.JTextField resultats;
+    private javax.swing.JTextArea resultats;
     private javax.swing.JLabel type;
     // End of variables declaration//GEN-END:variables
 }
