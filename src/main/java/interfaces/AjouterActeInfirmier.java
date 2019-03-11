@@ -173,10 +173,12 @@ public class AjouterActeInfirmier extends javax.swing.JPanel {
         NomIDE.setText("Nom ");
 
         type.setColumns(20);
+        type.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         type.setRows(5);
         jScrollPane1.setViewportView(type);
 
         observations.setColumns(20);
+        observations.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         observations.setRows(5);
         jScrollPane2.setViewportView(observations);
 

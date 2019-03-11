@@ -180,6 +180,7 @@ public class AjouterPrescription extends javax.swing.JPanel {
         });
 
         prescription.setColumns(20);
+        prescription.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         prescription.setRows(5);
         jScrollPane1.setViewportView(prescription);
 

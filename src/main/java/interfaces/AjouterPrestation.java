@@ -83,6 +83,7 @@ public class AjouterPrestation extends javax.swing.JPanel {
         jLabel3.setText("Prestation demandée :");
 
         prestationDemandee.setColumns(20);
+        prestationDemandee.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         prestationDemandee.setRows(5);
         jScrollPane1.setViewportView(prestationDemandee);
 

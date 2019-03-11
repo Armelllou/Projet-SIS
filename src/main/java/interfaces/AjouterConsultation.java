@@ -165,6 +165,7 @@ public class AjouterConsultation extends javax.swing.JPanel {
         jButton4.setText("Ajouter une prescription");
 
         compteRendu.setColumns(20);
+        compteRendu.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         compteRendu.setRows(5);
         jScrollPane1.setViewportView(compteRendu);
 

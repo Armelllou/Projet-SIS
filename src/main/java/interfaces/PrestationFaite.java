@@ -116,6 +116,7 @@ public class PrestationFaite extends javax.swing.JPanel {
         type.setText("Médecin :");
 
         resultats.setColumns(20);
+        resultats.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         resultats.setRows(5);
         jScrollPane2.setViewportView(resultats);
 

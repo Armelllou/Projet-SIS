@@ -157,6 +157,7 @@ public class DetailsPrestation extends javax.swing.JPanel {
         dateDeDemande.setText("jLabel1");
 
         details.setColumns(20);
+        details.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         details.setRows(5);
         jScrollPane1.setViewportView(details);
 

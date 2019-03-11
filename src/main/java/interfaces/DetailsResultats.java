@@ -111,6 +111,7 @@ public class DetailsResultats extends javax.swing.JPanel {
         type.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         type.setText("Médecin :");
 
+        Resultats.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jScrollPane2.setViewportView(Resultats);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
