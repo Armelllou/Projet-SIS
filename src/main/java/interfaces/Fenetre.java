@@ -218,7 +218,7 @@ public class Fenetre extends JFrame {
         retourR.addActionListener(new BoutonRetourdetailsRversR(r, dr, this, barreduhaut));
         resultatParPatientIDE.addActionListener(new BoutonResultatsIde (rp,this,barreduhaut,infosmedide,infosmedph,l));
         resultatParPatientPH.addActionListener(new BoutonResultatsPh (rp,this,barreduhaut,infosmedide,infosmedph,l));
-       // frelcheretourResultatsParPatient.addActionListener (new  BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedic im, ActeInfirmierPH ai, Sih sih);
+        frelcheretourResultatsParPatient.addActionListener (new  BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH,sih));
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
