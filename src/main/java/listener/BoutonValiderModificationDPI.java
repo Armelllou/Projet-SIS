@@ -183,7 +183,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 String serviceRespo = rs2.getString(3);
                 String chambre = rs2.getString(4);
 
-                dpis.getSereviceRespo().setText(serviceRespo);
+                dpis.getServiceRespo().setText(serviceRespo);
                 dpis.getServiceGeo().setText(serviceGeographique);
                 dpis.getjLabelchamnre().setText(chambre);
 

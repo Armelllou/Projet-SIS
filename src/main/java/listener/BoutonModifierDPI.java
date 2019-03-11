@@ -41,7 +41,7 @@ public class BoutonModifierDPI implements ActionListener {
         String email = dpis.getjLabelemail().getText();
         String tel = dpis.getjLabeltelephone().getText();
         String dateNiassance = dpis.getjLabelannée().getText();
-        String serviceRespo = dpis.getSereviceRespo().getText();
+        String serviceRespo = dpis.getServiceRespo().getText();
         String serviceGeo = dpis.getServiceGeo().getText();
         String chambre = dpis.getjLabelchamnre().getText();
         String sexe = dpis.getSexe().getText();
