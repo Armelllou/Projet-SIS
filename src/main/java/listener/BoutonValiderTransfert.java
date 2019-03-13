@@ -55,20 +55,26 @@ public class BoutonValiderTransfert implements ActionListener {
             prep.setString(3, ts.getChambre().getText().toString());
             prep.setString(4, ts.getjLabelipp().getText());
             prep.executeUpdate();
-
+            
+            
+ 
             JOptionPane jop1 = new JOptionPane();
             jop1.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
             
+    
+           dpiph.getServiceGeo().setText(ts.getServiceGeographique().getSelectedItem().toString());
+           dpiph.getServiceRespo().setText( ts.getServiceResponsable().getSelectedItem().toString());
+            
+            
             
             fen.panelVisibleFalse();
-            fen.add(consult);
-            consult.setVisible(true);
+            fen.add(dpiph);
+            dpiph.setVisible(true);
             fen.revalidate();
             fen.repaint();
             
             
-             System.out.println(bh.getService().getText());  
-            
+        
 //         consult.getjTable1().setFont(new Font("Calibri", 0, 18));
 //         consult.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(bh.getService().getText()));
 

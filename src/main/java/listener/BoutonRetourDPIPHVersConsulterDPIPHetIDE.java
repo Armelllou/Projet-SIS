@@ -10,6 +10,7 @@ import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.DPIPH;
+import java.awt.Font;
 import nf.Sih;
 
 import java.awt.event.ActionEvent;
@@ -26,7 +27,7 @@ public class BoutonRetourDPIPHVersConsulterDPIPHetIDE implements ActionListener 
     DPIPH dpis;
     ConsulterDPIPHetIDE cdpis;
     Fenetre jframe;
-   BarreDuHaut bh;
+    BarreDuHaut bh;
 
     public BoutonRetourDPIPHVersConsulterDPIPHetIDE(Fenetre jframe, ConsulterDPIPHetIDE cdpis, DPIPH dpis, BarreDuHaut bh) {
         this.jframe = jframe;
@@ -36,14 +37,17 @@ public class BoutonRetourDPIPHVersConsulterDPIPHetIDE implements ActionListener 
     }
 
     public void actionPerformed(ActionEvent ae) {
-        
-        
-         int nombre = 0;
+
+        int nombre = 0;
         try {
             nombre = MethodeBD.compterTableauPrestationParService(bh.getService().getText());
         } catch (SQLException ex) {
             Logger.getLogger(BoutonRetourDPIIDEVersConsulterDPIPHetIDE.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
+        cdpis.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(bh.getService().getText()));
+
         String notification = cdpis.getNotification().getText();
         int notif = Integer.parseInt(notification);
         int increment = nombre;
