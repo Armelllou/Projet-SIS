@@ -1,5 +1,6 @@
-package nf.patient;
+package java.nf.patient;
 
+import nf.patient.Adresse;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
