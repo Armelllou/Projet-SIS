@@ -52,12 +52,13 @@ public class Fenetre extends JFrame {
     DetailsPrestation dp = new DetailsPrestation();
     Resultat r = new Resultat();
     DetailsResultats dr = new DetailsResultats();
-    ResultatParPatient rp  = new ResultatParPatient();
+    ResultatParPatient rp = new ResultatParPatient();
     ResultatsConsulter rc = new ResultatsConsulter();
 
     // Attributs de la JFrame
-    Fenetre frame = this;
     BarreDuHaut barreduhaut = new BarreDuHaut();
+    Fenetre frame = this;
+    
 
     Sih sih;
 
@@ -128,11 +129,11 @@ public class Fenetre extends JFrame {
     private JButton retrouresultats = r.getFlecheRetour();
     private JButton retourR = dr.getBoutonAnnuler();
     private JButton resultatParPatientIDE = infosmedide.getResultats();
-    private JButton resultatParPatientPH= infosmedph.getResultats();
+    private JButton resultatParPatientPH = infosmedph.getResultats();
     private JButton frelcheretourResultatsParPatient = rp.getFlecheRetour();
     private JButton retour = rc.getBoutonRetour();
     private JButton validerTransfert = transfert.getBouttonvalider();
-    
+
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
     private JTable tableauconsultdpiphide = consultdpiphide.getjTable1();
@@ -156,10 +157,9 @@ public class Fenetre extends JFrame {
         this.setSize(1700, 830);
 
         //Connexion
-        ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this, pl);
-        connexion.getjPasswordField1().addKeyListener(l);
-        valider.addActionListener(l);
-
+//        ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this, pl);
+//        connexion.getjPasswordField1().addKeyListener(l);
+//        valider.addActionListener(l);
         //boutons
         creerDPI.addActionListener(new BoutonCreerDPI(consultdpis, creationdpi, this));
         validerDMA.addActionListener(new BoutonValiderDMA(consultdpis, this, creationdpi));
@@ -220,12 +220,16 @@ public class Fenetre extends JFrame {
         accesResultats.addActionListener(new BoutonAccederAuxResultats(r, consultdpiphide, barreduhaut, this));
         retrouresultats.addActionListener(new BoutonRetourDPIIDEVersConsulterDPIPHetIDE(this, consultdpiphide, dpiide, barreduhaut));
         retourR.addActionListener(new BoutonRetourdetailsRversR(r, dr, this, barreduhaut));
-        resultatParPatientIDE.addActionListener(new BoutonResultatsIde (rp,this,barreduhaut,infosmedide,infosmedph,l));
-        resultatParPatientPH.addActionListener(new BoutonResultatsPh (rp,this,barreduhaut,infosmedide,infosmedph,l));
-        frelcheretourResultatsParPatient.addActionListener (new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH));
-        retour.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph , acteinfirmierPH));
-        validerTransfert.addActionListener(new BoutonValiderTransfert(transfert, this,dpiph,consultdpiphide,barreduhaut));
-        
+
+        ListenerConnexion l = new ListenerConnexion(barreduhaut, connexion, consultdpis, consultdpiphide, prestations, this, pl);
+        connexion.getjPasswordField1().addKeyListener(l);
+        valider.addActionListener(l);
+
+        resultatParPatientIDE.addActionListener(new BoutonResultatsIde(rp, this, barreduhaut, infosmedide, infosmedph, l));
+        resultatParPatientPH.addActionListener(new BoutonResultatsPh(rp, this, barreduhaut, infosmedide, infosmedph, l));
+        frelcheretourResultatsParPatient.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph, acteinfirmierPH));
+        retour.addActionListener(new BoutonRetourActeInfirmierPHVersInfosMedicalesPH(this, infosmedph, acteinfirmierPH));
+        validerTransfert.addActionListener(new BoutonValiderTransfert(transfert, this, dpiph, consultdpiphide, barreduhaut));
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
@@ -239,13 +243,17 @@ public class Fenetre extends JFrame {
         tableauprestations.addMouseListener(new TableauPrestations(prestations, dp, this, sih, prestations.getTablePrestation()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterIDE(dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
         tableauIDE.addMouseListener(new TableauIdeP(this, pl, mp, tableauIDE));
-        tableauPH.addMouseListener(new TableauPhP1 (this,pl,mp,tableauPH)); 
+        tableauPH.addMouseListener(new TableauPhP1(this, pl, mp, tableauPH));
         tableauMT.addMouseListener(new TableauMTP(this, pl, mp, tableauMT));
         tableauSA.addMouseListener(new tableauSMP(this, pl, mp, tableauSA));
         resultats.addMouseListener(new affichageResultats(dr, r, this, resultats, barreduhaut));
         tableresultatsparpatient.addMouseListener(new TableauResultatParPatient(this, rc, rp, tableresultatsparpatient));
-
         
+        
+        
+        
+        
+
         //Confirmation pour quitter l'application 
         this.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
