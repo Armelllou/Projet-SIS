@@ -12,7 +12,7 @@ import javax.swing.JTextField;
  *
  * @author Manon
  */
-public class ActeInfirmierPH extends javax.swing.JPanel {
+public class ActeInfirmier extends javax.swing.JPanel {
 
     /**
      * @return the jButton3
@@ -33,25 +33,17 @@ public class ActeInfirmierPH extends javax.swing.JPanel {
         return Observations;
     }
 
-    public JLabel getDate() {
-        return date;
-    }
 
     public JLabel getDate1() {
         return date1;
     }
 
-    public JLabel getNomide() {
-        return nomide;
-    }
 
     public JLabel getNomide1() {
         return nomide1;
     }
 
-    public JLabel getPrenomide() {
-        return prenomide;
-    }
+  
 
     public JLabel getPrenomide1() {
         return prenomide1;
@@ -83,7 +75,7 @@ public class ActeInfirmierPH extends javax.swing.JPanel {
     /**
      * Creates new form AjouterConsultation
      */
-    public ActeInfirmierPH() {
+    public ActeInfirmier() {
         initComponents();
     }
 
@@ -255,22 +247,16 @@ public class ActeInfirmierPH extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Observations;
     private javax.swing.JTextField Type;
-    private javax.swing.JLabel date;
     private javax.swing.JLabel date1;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel nomide;
     private javax.swing.JLabel nomide1;
-    private javax.swing.JLabel prenomide;
     private javax.swing.JLabel prenomide1;
     // End of variables declaration//GEN-END:variables
 }

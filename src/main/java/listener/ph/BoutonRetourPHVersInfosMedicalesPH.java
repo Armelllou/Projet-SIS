@@ -5,35 +5,38 @@
  */
 package listener.ph;
 
-import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
-import interfaces.ActeInfirmierPH;
+import interfaces.ActeInfirmier;
+import interfaces.InfosMedicalesPH;
 import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.ListenerConnexion;
 
 /**
  * @author Manon
  */
-public class BoutonAccueilActeInfirmierPH implements ActionListener {
+public class BoutonRetourPHVersInfosMedicalesPH implements ActionListener {
 
-    ActeInfirmierPH ai;
-    ConsulterDPIPHetIDE dpiphide;
+ 
+    InfosMedicalesPH im;
     Fenetre jframe;
-    Sih sih;
+   
+     ListenerConnexion l;
 
-    public BoutonAccueilActeInfirmierPH(Fenetre jframe, ActeInfirmierPH ai, ConsulterDPIPHetIDE dpiphide, Sih sih) {
+    public BoutonRetourPHVersInfosMedicalesPH(Fenetre jframe, InfosMedicalesPH im,ListenerConnexion l) {
         this.jframe = jframe;
-        this.ai = ai;
-        this.dpiphide = dpiphide;
-        this.sih = sih;
+        this.im = im;
+        this.l = l;
     }
 
     public void actionPerformed(ActionEvent ae) {
+        
+        
         jframe.panelVisibleFalse();
-        jframe.add(dpiphide);
-        dpiphide.setVisible(true);
+        jframe.add(im);
+        im.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
     }

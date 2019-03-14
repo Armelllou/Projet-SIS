@@ -6,36 +6,44 @@
 package listener.ide;
 
 import interfaces.Fenetre;
-import interfaces.ActeInfirmierIDE;
+import interfaces.ActeInfirmier;
 import interfaces.InfosMedicalesIDE;
 import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import listener.ListenerConnexion;
 
 /**
  * @author Manon
  */
 public class BoutonRetourActeInfirmierIDEVersInfosMedicalesIDE implements ActionListener {
 
-    ActeInfirmierIDE ai;
+    ActeInfirmier ai;
     InfosMedicalesIDE im;
     Fenetre jframe;
     Sih sih;
+    ListenerConnexion l;
 
-    public BoutonRetourActeInfirmierIDEVersInfosMedicalesIDE(Fenetre jframe, InfosMedicalesIDE im, ActeInfirmierIDE ai, Sih sih) {
+    public BoutonRetourActeInfirmierIDEVersInfosMedicalesIDE(Fenetre jframe, InfosMedicalesIDE im, ActeInfirmier ai, Sih sih,ListenerConnexion l) {
         this.jframe = jframe;
         this.ai = ai;
         this.im = im;
         this.sih = sih;
+        this.l=l;
     }
 
     public void actionPerformed(ActionEvent ae) {
-        jframe.panelVisibleFalse();
-        jframe.add(im);
-        im.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
-    }
+        
+       
+                jframe.panelVisibleFalse();
+                jframe.add(im);
+                im.setVisible(true);
+                jframe.revalidate();
+                jframe.repaint();
+         
 
-}
+    }}
