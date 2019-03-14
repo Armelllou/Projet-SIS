@@ -1,6 +1,8 @@
 package nf.personnel;
 
 import bd.ConnexionBD;
+import bd.MethodeBD;
+import java.awt.Font;
 import java.sql.PreparedStatement;
 
 import java.sql.SQLException;
@@ -16,7 +18,6 @@ public class Infirmier extends Personnel {
         this.service=service;
     }
     
-  
 
     public boolean AjouterSurBdIDE(Infirmier i) throws SQLException {
         boolean j = false;
@@ -35,6 +36,8 @@ public class Infirmier extends Personnel {
         j = true;
         return j;
     }
+    
+   
 
     @Override
     public String getNom() {

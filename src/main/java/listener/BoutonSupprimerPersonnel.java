@@ -45,6 +45,7 @@ public class BoutonSupprimerPersonnel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String id = mp.getId().getText();
+        int ids = Integer.parseInt(id);
         String Personnel = mp.getType().getSelectedItem().toString();
 
         int reponse = JOptionPane.showConfirmDialog(fen,
@@ -57,30 +58,22 @@ public class BoutonSupprimerPersonnel implements ActionListener {
             try {
                 if (Personnel == "ide") {
                    
-                    ConnexionBD conn = ConnexionBD.getInstance();
-                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from ide WHERE idIDE ='" + id + "'");
-                    prep2.executeUpdate();
+                    MethodeBD.SupprimerSurBdIDE(ids);
                     lp.getTableIDE().setFont(new Font("Calibri", 0, 18));
                     lp.getTableIDE().setModel(new MethodeBD().listeIDE());
                 }
                 if (Personnel == "praticienhospitaliers") {
                     
-                    ConnexionBD conn = ConnexionBD.getInstance();
-                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from praticienhospitaliers WHERE idPh ='" + id + "'");
-                    prep2.executeUpdate();
+                  MethodeBD.SupprimerSurBdPH(ids);
                     lp.getTablePH().setFont(new Font("Calibri", 0, 18));
                     lp.getTablePH().setModel(new MethodeBD().listePH());
                 }
                 if (Personnel == "Technicien") {
 
-                    ConnexionBD conn = ConnexionBD.getInstance();
-                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from Technicien WHERE idTECH ='" + id + "'");
-                    prep2.executeUpdate();
+                    MethodeBD.SupprimerSurBdTechnicien(ids);
                 }
                 if (Personnel == "medicotechniques") {
-                    ConnexionBD conn = ConnexionBD.getInstance();
-                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from medicotechniques WHERE idMT ='" + id + "'");
-                    prep2.executeUpdate();
+                   MethodeBD.SupprimerSurBdMedichoTech(ids);
 
                     lp.getTableMT().setFont(new Font("Calibri", 0, 18));
                     lp.getTableMT().setModel(MethodeBD.listeMT());
@@ -88,10 +81,7 @@ public class BoutonSupprimerPersonnel implements ActionListener {
                 }
                 if (Personnel == "SecretaireAdministrative") {
                   
-                    ConnexionBD conn = ConnexionBD.getInstance();
-                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from secretaireadministrative WHERE idSA ='" + id + "'");
-                    prep2.executeUpdate();
-
+                  MethodeBD.SupprimerSurBdSecretaire(ids);
                     lp.getTableSecretaire().setFont(new Font("Calibri", 0, 18));
                     lp.getTableSecretaire().setModel(new MethodeBD().listeSA());
 

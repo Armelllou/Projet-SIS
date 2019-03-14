@@ -539,5 +539,38 @@ public class MethodeBD {
         int nbre = Integer.parseInt(s);
         return nbre;
     }
+    
+    
+     public static void SupprimerSurBdIDE (int id) throws SQLException{
+        ConnexionBD conn = ConnexionBD.getInstance();
+        PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from ide WHERE idIDE ='" + id + "'");
+        prep2.executeUpdate();       
+    }
+     
+      public static void SupprimerSurBdPH (int id) throws SQLException{
+       ConnexionBD conn = ConnexionBD.getInstance();
+                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from praticienhospitaliers WHERE idPh ='" + id + "'");
+                    prep2.executeUpdate();
+                    
+      }
+       public static void SupprimerSurBdTechnicien (int id) throws SQLException{
+      ConnexionBD conn = ConnexionBD.getInstance();
+                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from Technicien WHERE idTECH ='" + id + "'");
+                    prep2.executeUpdate();
+       }
+       
+       
+      public static void SupprimerSurBdMedichoTech (int id) throws SQLException{  
+ ConnexionBD conn = ConnexionBD.getInstance();
+                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from medicotechniques WHERE idMT ='" + id + "'");
+                    prep2.executeUpdate();
+                    
+      }
+      
+      public static void SupprimerSurBdSecretaire (int id) throws SQLException{  
+        ConnexionBD conn = ConnexionBD.getInstance();
+                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from secretaireadministrative WHERE idSA ='" + id + "'");
+                    prep2.executeUpdate();
+      }
 
 }
