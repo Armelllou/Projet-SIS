@@ -5,38 +5,40 @@
  */
 package listener.ph;
 
+import interfaces.AjouterPrestation;
+import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
-import interfaces.ActeInfirmier;
 import interfaces.InfosMedicalesPH;
 import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import listener.commun.ListenerConnexion;
 
 /**
  * @author Manon
  */
-public class BoutonRetourPHVersInfosMedicalesPH implements ActionListener {
+public class BoutonAjouterPrestation implements ActionListener {
 
- 
+    AjouterPrestation ac;
     InfosMedicalesPH im;
     Fenetre jframe;
-   
-     ListenerConnexion l;
+  BarreDuHaut bh;
 
-    public BoutonRetourPHVersInfosMedicalesPH(Fenetre jframe, InfosMedicalesPH im,ListenerConnexion l) {
+    public BoutonAjouterPrestation(Fenetre jframe, AjouterPrestation ac, InfosMedicalesPH im, BarreDuHaut bh) {
         this.jframe = jframe;
+        this.ac = ac;
         this.im = im;
-        this.l = l;
+        this.bh = bh;
     }
 
     public void actionPerformed(ActionEvent ae) {
-        
+      String Service =  bh.getService().getText();
+        ac.getServiceDemandeur().setSelectedItem(Service);
+        ac.getServiceDemandeur().setEnabled(false);
         
         jframe.panelVisibleFalse();
-        jframe.add(im);
-        im.setVisible(true);
+        jframe.add(ac);
+        ac.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
     }

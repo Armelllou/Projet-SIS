@@ -5,8 +5,46 @@
  */
 package interfaces;
 
-import listener.BoutonValiderPrescription;
-import listener.*;
+import listener.commun.BoutonDeconnexion;
+import listener.technicien.BoutonValiderModificationPersonnel;
+import listener.commun.affichageResultats;
+import listener.commun.BoutonAnnulerResultats;
+import listener.secretairemedical.BoutonValiderModificationDPI;
+import listener.technicien.TableauPhP1;
+import listener.commun.TableauResultatParPatient;
+import listener.commun.BoutonRecherchePatientPhEtIde;
+import listener.commun.ListenerConnexion;
+import listener.commun.BoutonRetourdetailsRversR;
+import listener.commun.BoutonAccederAuxResultats;
+import listener.medicotech.BoutonValiderDemandePrestation;
+import listener.technicien.BoutonValiderPersonnel;
+import listener.commun.BoutonRetourVersConsulterDPIPHetIDE;
+import listener.medicotech.BoutonValiderResultats;
+import listener.secretairemedical.BoutonValiderDMA;
+import listener.medicotech.TableauPrestations;
+import listener.medicotech.BoutonRetourDetailsPrestation;
+import listener.ph.BoutonResultatsPh;
+import listener.ide.BoutonResultatsIde;
+import listener.ide.BoutonValiderActe;
+import listener.technicien.tableauSMP;
+import listener.technicien.TableauMTP;
+import listener.technicien.TableauIdeP;
+import listener.technicien.BouttonAnnulerModifPersonnel;
+import listener.ide.TableauConsulterIDE;
+import listener.ph.TableauConsulterDPIPH;
+import listener.medicotech.BoutonEnvoyerResultats;
+import listener.ph.BoutonAnnulerTransfert;
+import listener.technicien.BoutonSupprimerPersonnel;
+import listener.technicien.BoutonAnnulerPersonnel;
+import listener.ph.BoutonAjouterPrestation;
+import listener.technicien.BoutonAjouterDuPersonnel;
+import listener.secretairemedical.BoutonModifierDPI;
+import listener.ide.BoutonAjouterActeInfirmier;
+import listener.ph.BoutonAjouterConsultation;
+import listener.ph.BoutonAjouterPrescription;
+import listener.ph.BoutonValiderTransfert;
+import listener.secretairemedical.BoutonCreerDPI;
+import listener.ph.BoutonValiderPrescription;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import listener.ide.*;
@@ -196,7 +234,7 @@ public class Fenetre extends JFrame {
         ajouterprescription.addActionListener(new BoutonAjouterPrescription(this, ajouterprescri, infosmedph, sih, barreduhaut));
         ajouterprescription2.addActionListener(new BoutonRetourPHVersInfosMedicalesPH(this, infosmedph,l));
         ajouterprestation.addActionListener(new BoutonAjouterPrestation(this, ajouterpresta, infosmedph, barreduhaut));
-        annulermodifDPI.addActionListener(new BoutonAnnulerModificationDPI(this, dpis, modifdpi, sih));
+        annulermodifDPI.addActionListener(new BoutonRetourDPISVersConsulterDPISecretaire(this, consultdpis, dpis));
         accueilprescriIDE.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
         retourPrescriIDEVersInfMedIDE.addActionListener(new BoutonRetourIDEVersInfosMedIDE(this, infosmedide));
         accueilprescriPH.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
@@ -231,7 +269,7 @@ public class Fenetre extends JFrame {
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
-        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPHetIDE(dpiph, dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
+        tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPH(dpiph, dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
         tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph, consultationPH, this, sih, infosmedph.getjTable3()));
         tableauconsultinfmedide.addMouseListener(new TableauConsultationsInfosMedIDE(infosmedide, consultationide, this, sih, infosmedide.getjTable3()));
         tableauacteinfirmierinfmedph.addMouseListener(new TableauActesInfirmiersInfosMedPH(infosmedph, acteinfirmier, this,  infosmedph.getjTable2()));
