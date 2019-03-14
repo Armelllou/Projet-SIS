@@ -5,6 +5,7 @@
  */
 package interfaces;
 
+import bd.MethodeBD;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.JLabel;

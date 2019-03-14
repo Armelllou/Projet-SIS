@@ -1,0 +1,44 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package java.nf.patient;
+
+import nf.patient.Adresse;
+import org.junit.After;
+import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
+
+/**
+ *
+ * @author Manon
+ */
+@RunWith(Suite.class)
+@Suite.SuiteClasses({java.nf.patient.NewEmptyJUnitTest.class, java.nf.patient.AdresseTest.class})
+public class NewTestSuite {
+
+     @Before
+    public void init() {
+        System.out.println("before");
+    }
+
+    @After
+    public void after() {
+        System.out.println("after");
+    }
+
+    @Test
+    public void codePostalTest() {
+        Adresse adresse = new Adresse("test1", "test2", "test3");
+        assertEquals("test1", adresse.getAdresse());
+        //assertEquals("test2", adresse.getAdresse());
+
+    }
+    
+}

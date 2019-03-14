@@ -19,6 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,8 +32,9 @@ public class BoutonValiderTransfert implements ActionListener {
     Fenetre fen;
     ConsulterDPIPHetIDE consult;
     BarreDuHaut bh;
+  
 
-    public BoutonValiderTransfert(TransfertService ts, Fenetre fen,DPIPH dpiph, ConsulterDPIPHetIDE consult,BarreDuHaut bh) {
+    public BoutonValiderTransfert(TransfertService ts, Fenetre fen,DPIPH dpiph, ConsulterDPIPHetIDE consult,BarreDuHaut bh ){
         this.ts = ts;
         this.dpiph = dpiph;
         this.fen = fen;
@@ -41,37 +43,47 @@ public class BoutonValiderTransfert implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String ServiceResponsable = ts.getServiceGeographique().getSelectedItem().toString();
-        String ServiceGeographique = ts.getServiceGeographique().getSelectedItem().toString();
-        String lit = ts.getChambre().getText().toString();
-        String IPP = dpiph.getjLabelipp().getText();
+       
+       
     
-        try {
+         try {
+          
             ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE localisations SET ServiceResponsable= ?, ServiceGeographique = ?,lit= ? WHERE IPP= '"+IPP+"'");
-            prep2.setString(1, ServiceResponsable);
-            prep2.setString(2, ServiceGeographique);
-            prep2.setString(3, lit);
+            PreparedStatement prep = conn.getConnexion().prepareStatement("UPDATE localisations SET ServiceResponsable= ?, ServiceGeographique= ?, lit=? WHERE ipp = ?");
+            prep.setString(1, ts.getServiceGeographique().getSelectedItem().toString());
+            prep.setString(2, ts.getServiceResponsable().getSelectedItem().toString());
+            prep.setString(3, ts.getChambre().getText().toString());
+            prep.setString(4, ts.getjLabelipp().getText());
+            prep.executeUpdate();
             
-            prep2.executeUpdate();
-
+            
+ 
+            JOptionPane jop1 = new JOptionPane();
+            jop1.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
+            
+    
+           dpiph.getServiceGeo().setText(ts.getServiceGeographique().getSelectedItem().toString());
+           dpiph.getServiceRespo().setText( ts.getServiceResponsable().getSelectedItem().toString());
             
             
-         
-                
-                
+            
             fen.panelVisibleFalse();
-            fen.add(consult);
-            consult.setVisible(true);
+            fen.add(dpiph);
+            dpiph.setVisible(true);
             fen.revalidate();
             fen.repaint();
             
-            consult.getjTable1().setFont(new Font("Calibri", 0, 18));
-         consult.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(bh.getService().getText()));
+            
+        
+//         consult.getjTable1().setFont(new Font("Calibri", 0, 18));
+//         consult.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(bh.getService().getText()));
 
         } catch (SQLException ex) {
-            Logger.getLogger(BoutonValiderTransfert.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
+         
     }
-
 }

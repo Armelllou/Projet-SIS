@@ -27,6 +27,16 @@ public class BoutonDPIPHVersTransfert implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        
+        String IPP = dpi.getjLabelipp().getText();
+        String NomUsuel =dpi.getjLabelnom().getText();
+        String NomDeNaissance = dpi.getjLabelnom1().getText();
+        String Prenom = dpi.getjLabelprenom().getText();
+        
+        im.getjLabelnom().setText(NomUsuel);
+        im.getjLabelnom1().setText(NomDeNaissance);
+        im.getjLabelprenom().setText(Prenom);
+        im.getjLabelipp().setText(IPP);
         fen.panelVisibleFalse();
         fen.add(im);
         im.setVisible(true);

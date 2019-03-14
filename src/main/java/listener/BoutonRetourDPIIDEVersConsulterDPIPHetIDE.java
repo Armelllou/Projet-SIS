@@ -10,6 +10,7 @@ import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.DPIIDE;
+import java.awt.Font;
 import nf.Sih;
 
 import java.awt.event.ActionEvent;
@@ -50,6 +51,10 @@ public class BoutonRetourDPIIDEVersConsulterDPIPHetIDE implements ActionListener
         int increment = nombre;
         String notificationFinale = Integer.toString(increment);
         cdpis.getNotification().setText(notificationFinale);
+        System.out.println(bh.getService().getText());
+        
+        cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
+        cdpis.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(bh.getService().getText()));
 
         jframe.panelVisibleFalse();
         jframe.add(cdpis);
