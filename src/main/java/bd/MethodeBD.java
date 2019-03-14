@@ -1,7 +1,7 @@
 package bd;
 
 import interfaces.ConsulterDPIPHetIDE;
-import listener.State;
+import listener.commun.State;
 import nf.patient.Patient;
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
@@ -352,13 +352,13 @@ public class MethodeBD {
         String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
-        String query = "SELECT * " +
-                "FROM patient " +
-                "NATURAL JOIN localisations " +
-                "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
-                "NATURAL JOIN hospitalisation " +
-                "WHERE ide.Service = '" + service + "'" +
-                "AND hospitalisation.DateSortieH IS NULL ";
+        String query = "SELECT * "
+                + "FROM patient "
+                + "NATURAL JOIN localisations "
+                + "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service "
+                + "NATURAL JOIN hospitalisation "
+                + "WHERE ide.Service = '" + service + "'"
+                + "AND hospitalisation.DateSortieH IS NULL ";
 
         ResultSet rs = executeQuery(query);
         if (rs == null) {
@@ -384,7 +384,7 @@ public class MethodeBD {
                     "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
                     "NATURAL JOIN consultationexterne " +
                     "WHERE ide.Service = '" + service + "'" +
-                    "AND consultationexterne.DateSortieC IS NULL ";
+                    "AND consultationexterne.DateSortiec IS NULL ";
             ResultSet rs1 = executeQuery(query1);
             if (rs1 == null) {
                 return templatesTableModel;
@@ -401,6 +401,7 @@ public class MethodeBD {
             e1.printStackTrace();
         }
         return templatesTableModel;
+
 
     }
 
@@ -568,7 +569,7 @@ public class MethodeBD {
       }
       
       public static void SupprimerSurBdSecretaire (int id) throws SQLException{  
-        ConnexionBD conn = ConnexionBD.getInstance();
+                    ConnexionBD conn = ConnexionBD.getInstance();
                     PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from secretaireadministrative WHERE idSA ='" + id + "'");
                     prep2.executeUpdate();
       }

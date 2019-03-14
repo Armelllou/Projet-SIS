@@ -29,7 +29,7 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourDPISVersConsulterDPISecretaire(Fenetre jframe, ConsulterDPISecretaire cdpis, DPISecretaire dpis, Sih sih) {
+    public BoutonRetourDPISVersConsulterDPISecretaire(Fenetre jframe, ConsulterDPISecretaire cdpis, DPISecretaire dpis) {
         this.jframe = jframe;
         this.cdpis = cdpis;
         this.dpis = dpis;

@@ -30,11 +30,7 @@ public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        fen.panelVisibleFalse();
-        fen.add(im);
-        im.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+      
 
         
       String nom =  dpi.getjLabelnom().getText();
@@ -57,6 +53,12 @@ public class BoutonDPIIDEVersInfosMedIDE implements ActionListener {
 
         im.getjTable1().setFont(new Font("Calibri", 0, 18));
         im.getjTable1().setModel(MethodeBD.listePrescriptionJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
-
+        
+        
+  fen.panelVisibleFalse();
+        fen.add(im);
+        im.setVisible(true);
+        fen.revalidate();
+        fen.repaint();
     }
 }

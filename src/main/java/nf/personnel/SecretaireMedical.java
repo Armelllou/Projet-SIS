@@ -16,8 +16,6 @@ String Service;
     }
 
     
-    
-    
     public boolean AjouterSurBdSecretaireMedical(SecretaireMedical i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();

@@ -7,7 +7,7 @@ package listener.ph;
 
 import bd.ConnexionBD;
 import interfaces.Fenetre;
-import interfaces.ActeInfirmierPH;
+import interfaces.ActeInfirmier;
 import interfaces.InfosMedicalesPH;
 import nf.Sih;
 
@@ -26,16 +26,15 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
 
 
     InfosMedicalesPH imph;
-    ActeInfirmierPH cph;
+    ActeInfirmier cph;
     Fenetre fen;
-    Sih sih;
+  
     JTable table;
 
-    public TableauActesInfirmiersInfosMedPH(InfosMedicalesPH imph, ActeInfirmierPH cph, Fenetre fen, Sih sih, JTable table) {
+    public TableauActesInfirmiersInfosMedPH(InfosMedicalesPH imph, ActeInfirmier cph, Fenetre fen, JTable table) {
         this.imph = imph;
         this.cph = cph;
         this.fen = fen;
-        this.sih = sih;
         this.table = table;
     }
 
@@ -76,7 +75,7 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
                 String date = Rs.getString(5);
 
                 cph.getObservations().setText(observation);
-                cph.getDate().setText(dates);
+                cph.getDate1().setText(dates);
                 cph.getType().setText(type);
 
             }
@@ -97,8 +96,8 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
                 String prenom = Rs2.getString(4);
                 
 
-                cph.getNomide().setText(nom);
-                cph.getPrenomide().setText(prenom);
+                cph.getNomide1().setText(nom);
+                cph.getPrenomide1().setText(prenom);
 
                
             }
@@ -110,7 +109,7 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
             fen.revalidate();
             fen.repaint();
         } catch (SQLException ex) {
-            Logger.getLogger(TableauActesInfirmiersInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TableauActesInfirmiersInfosMedPH.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
