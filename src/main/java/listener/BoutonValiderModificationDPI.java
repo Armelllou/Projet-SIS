@@ -19,9 +19,7 @@ import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author Manon
- */
+
 public class BoutonValiderModificationDPI implements ActionListener {
 
     DPISecretaire dpis;
@@ -38,11 +36,12 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
 
+        ConnexionBD conn = ConnexionBD.getInstance();
         try {
             String ipp = mdpi.getjLabel3().getText();
-
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE patient SET NomDeNaissance= ?, NomUsuel= ?, Prénom = ?,DateDeNaissance= ?,Sexe= ?,idAdresse= ?,NumDeSS= ?,email= ?,telephone= ?,typeSejour= ? WHERE ipp = ?");
+            String dateSortie = mdpi.getJoursortie().getText() + mdpi.getMoissortie().getText() + mdpi.getAnneesortie().getText();
+            PreparedStatement prep2;
+            prep2 = conn.getConnexion().prepareStatement("UPDATE patient SET NomDeNaissance= ?, NomUsuel= ?, Prénom = ?,DateDeNaissance= ?,Sexe= ?,idAdresse= ?,NumDeSS= ?,email= ?,telephone= ?,typeSejour= ? WHERE ipp = ?");
             prep2.setString(1, mdpi.getNomDenaissance().getText());
             prep2.setString(2, mdpi.getNomUsuel().getText());
             prep2.setString(3, mdpi.getPrenom().getText());
@@ -54,13 +53,15 @@ public class BoutonValiderModificationDPI implements ActionListener {
             prep2.setString(9, mdpi.getTel().getText());
             prep2.setString(10, mdpi.getTypesejour().getSelectedItem().toString());
             prep2.setString(11, ipp);
-
             prep2.executeUpdate();
+
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+        //-------------------------------------------------------Update localisation -----------------------
         try {
-            ConnexionBD conn = ConnexionBD.getInstance();
+            conn = ConnexionBD.getInstance();
             String ipp = mdpi.getjLabel3().getText();
             PreparedStatement prep = conn.getConnexion().prepareStatement("UPDATE localisations SET ServiceResponsable= ?, ServiceGeographique= ?, lit=? WHERE ipp = ?");
             prep.setString(1, mdpi.getServicerespo().getSelectedItem().toString());
@@ -76,40 +77,43 @@ public class BoutonValiderModificationDPI implements ActionListener {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+        //------------------------------
+
         try {
             String ipp = mdpi.getjLabel3().getText();
             String sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
-            ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
             ps = conn.getConnexion().prepareStatement(sql1);
-            ResultSet Rs = ps.executeQuery();
-
-            ResultSetMetaData rsmd = Rs.getMetaData();
-
-            while (Rs.next()) {
-                String ipps = Rs.getString(1);
-                String nomDeNaissance = Rs.getString(2);
-                String nomUsuel = Rs.getString(3);
-                String prenom = Rs.getString(4);
-                String DateDeNaissance = Rs.getString(5);
-                String Sexe = Rs.getString(6);
-                String MedecinG = Rs.getString(7);
-                String Adresse = Rs.getString(8);
-                String NumSS = Rs.getString(9);
-                String email = Rs.getString(10);
-                String telephone = Rs.getString(11);
-                String typeSejour = Rs.getString("typeSejour");
+            ResultSet rs = ps.executeQuery();
 
 
+            while (rs.next()) {
+                String ipps = rs.getString(1);
+                String nomDeNaissance = rs.getString(2);
+                String nomUsuel = rs.getString(3);
+                String prenom = rs.getString(4);
+                String DateDeNaissance = rs.getString(5);
+                String Sexe = rs.getString(6);
+                String MedecinG = rs.getString(7);
+                String Adresse = rs.getString(8);
+                String NumSS = rs.getString(9);
+                String email = rs.getString(10);
+                String telephone = rs.getString(11);
+                String typeSejour = rs.getString("typeSejour");
 
-                if (typeSejour.equals("Hospitalisation")&& !dpis.getTypeDeSejour().getText().equals(mdpi.getTypesejour().getSelectedItem().toString())) {
+
+//------------------changement de table pour un changement de type de sejour
+                if (typeSejour.equals("Hospitalisation") && !dpis.getTypeDeSejour().getText().equals(mdpi.getTypesejour().getSelectedItem().toString())) {
 
                     ipp = mdpi.getjLabel3().getText();
                     String sql3 = "Select * from consultationexterne WHERE IPP ='" + ipp + "'";
                     PreparedStatement ps3;
                     ps3 = conn.getConnexion().prepareStatement(sql3);
                     ResultSet rs3 = ps3.executeQuery();
-
+                    PreparedStatement prep3 = conn.getConnexion().prepareStatement("UPDATE patient SET typeSejour= ? WHERE ipp = ?");
+                    prep3.setString(1, mdpi.getTypesejour().getSelectedItem().toString());
+                    prep3.setString(2, ipp);
+                    prep3.executeUpdate();
 
                     while (rs3.next()) {
                         String dateEntree = rs3.getString("dateEntreeC");
@@ -135,6 +139,11 @@ public class BoutonValiderModificationDPI implements ActionListener {
                     ps2 = conn.getConnexion().prepareStatement(sql2);
                     ResultSet rs2 = ps2.executeQuery();
 
+                    PreparedStatement prep3 = conn.getConnexion().prepareStatement("UPDATE patient SET typeSejour= ? WHERE ipp = ?");
+                    prep3.setString(1, mdpi.getTypesejour().getSelectedItem().toString());
+                    prep3.setString(2, ipp);
+                    prep3.executeUpdate();
+
 
                     while (rs2.next()) {
                         String dateEntree = rs2.getString("dateEntreeH");
@@ -156,6 +165,51 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
                 }
 
+
+
+////-----------------------------------marche pas-----------------
+//
+//                String dateSortie = mdpi.getJoursortie().getText() + mdpi.getMoissortie().getText() + mdpi.getAnneesortie().getText();
+//
+//                if (typeSejour.equals("Hospitalisation") && mdpi.getEtatsejour().toString().equals("Terminé")) {
+//
+//                    System.out.println("test1");
+//
+//                    String format = "dd/MM/yy";
+//                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
+//                    java.util.Date date = new java.util.Date();
+//
+//                    String sql = " UPDATE hospitalisation SET dateSortieH=? WHERE IPP = ?";
+//                    PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+//                    statement.setObject(1, date, Types.DATE);
+//                    dpis.getDatesortie().setText(dateSortie);
+//
+//                    String s = " UPDATE patient SET etat=? WHERE IPP = ?";
+//                    PreparedStatement statement1 = conn.getConnexion().prepareStatement(s);
+//                    statement1.setObject(1, "Terminé", Types.VARCHAR);
+//                    dpis.getEtat().setText("Terminé");
+//                }
+//
+//                if (typeSejour.equals("Consultation externe") && mdpi.getEtatsejour().equals("Terminé")) {
+//
+//                    System.out.println("test2");
+//
+//                    String format = "dd/MM/yy";
+//                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
+//                    java.util.Date date = new java.util.Date();
+//
+//                    String sql = " UPDATE consultationexterne SET dateSortieC=? WHERE IPP = ?";
+//                    PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+//                    statement.setObject(1, date, Types.DATE);
+//                    dpis.getDatesortie().setText(dateSortie);
+//
+//                    String s = " UPDATE patient SET etat=? WHERE IPP = ?";
+//                    PreparedStatement statement1 = conn.getConnexion().prepareStatement(s);
+//                    statement1.setObject(1, "Terminé", Types.VARCHAR);
+//                    dpis.getEtat().setText("Terminé");
+//                }
+////-----------------------------------marche pas-----------------
+
                 dpis.getjLabelnom().setText(nomDeNaissance);
                 dpis.getjLabelnom1().setText(nomUsuel);
                 dpis.getjLabelprenom().setText(prenom);
@@ -167,15 +221,17 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 dpis.getjLabelannée().setText(DateDeNaissance);
                 dpis.getSexe().setText(Sexe);
                 dpis.getTypeDeSejour().setText(typeSejour);
+
             }
+
+
 
             String sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
             PreparedStatement ps2;
 
             ps2 = conn.getConnexion().prepareStatement(sql2);
             ResultSet rs2 = ps2.executeQuery();
-            ResultSetMetaData rsmd2 = rs2.getMetaData();
-            int columnsNumber2 = rsmd2.getColumnCount();
+
 
             while (rs2.next()) {
 
@@ -198,6 +254,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
         dpis.setVisible(true);
         jframe.revalidate();
         jframe.repaint();
+
 
     }
 

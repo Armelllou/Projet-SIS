@@ -51,7 +51,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             String ipp = (String) table.getModel().getValueAt(numLigne, 3);
             String typeSejour;
             String etat;
-            int ippS = Integer.parseInt(ipp);
+
 
             dpis.getjLabelnom().setText(nomDeNaissance);
             dpis.getjLabelnom1().setText(nomUsuel);
@@ -63,8 +63,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             PreparedStatement ps;
             ps = conn.getConnexion().prepareStatement(sql1);
             ResultSet rs = ps.executeQuery();
-            ResultSetMetaData rsmd = rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
+
             while (rs.next()) {
 
                 String dateDeNaissance = rs.getString(5);
@@ -129,8 +128,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             PreparedStatement ps2;
             ps2 = conn.getConnexion().prepareStatement(sql2);
             ResultSet rs2 = ps2.executeQuery();
-            ResultSetMetaData rsmd2 = rs2.getMetaData();
-            int columnsNumber2 = rsmd2.getColumnCount();
+
 
             while (rs2.next()) {
 

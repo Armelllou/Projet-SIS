@@ -18,15 +18,13 @@ import nf.Dates;
 public class Consultation {
     ConnexionBD conn = ConnexionBD.getInstance();
 
-    
     private String idPH;
     private String ipp;
     private String details;
     private Dates dates;
 
     public Consultation(String details, String idPH, String ipp) {
-   
-       
+
         this.idPH = idPH;
         this.ipp = ipp;
         this.details = details;

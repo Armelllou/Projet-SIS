@@ -8,7 +8,6 @@ package listener;
 import bd.ConnexionBD;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.DPIIDE;
-import interfaces.DPIPH;
 import interfaces.Fenetre;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -21,10 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.JTable;
 import nf.Sih;
 
-/**
- *
- * @author annel
- */
+
 public class TableauConsulterIDE implements MouseListener{
 
     DPIIDE imide;
@@ -57,6 +53,8 @@ public class TableauConsulterIDE implements MouseListener{
                 String nomUsuel = (String) table.getModel().getValueAt(NumLigne, 1);
                 String prenom = (String) table.getModel().getValueAt(NumLigne, 2);
                 String ipp = (String) table.getModel().getValueAt(NumLigne, 3);
+                String typeSejour;
+                String etat;
                 int ippS = Integer.parseInt(ipp);
 
                 imide.getjLabelnom().setText(nomDeNaissance);
@@ -67,23 +65,21 @@ public class TableauConsulterIDE implements MouseListener{
                 String Sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement ps;
-
                 ps = conn.getConnexion().prepareStatement(Sql1);
+                ResultSet rs = ps.executeQuery();
+                ResultSetMetaData rsmd = rs.getMetaData();
 
-                ResultSet Rs = ps.executeQuery();;
+                while (rs.next()) {
 
-                ResultSetMetaData rsmd = Rs.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                while (Rs.next()) {
-
-                    String DateDeNaissance = Rs.getString(5);
-
-                    String Sexe = Rs.getString(6);
-                    String MedecinG = Rs.getString(7);
-                    String Adresse = Rs.getString(8);
-                    String NumSS = Rs.getString(9);
-                    String email = Rs.getString(10);
-                    String telephone = Rs.getString(11);
+                    String DateDeNaissance = rs.getString(5);
+                    String Sexe = rs.getString(6);
+                    String MedecinG = rs.getString(7);
+                    String Adresse = rs.getString(8);
+                    String NumSS = rs.getString(9);
+                    String email = rs.getString(10);
+                    String telephone = rs.getString(11);
+                    typeSejour =rs.getString("typeSejour");
+                    etat = rs.getString("etat");
 
                     imide.getjLabeladresse().setText(Adresse);
                     imide.getjLabelnumsecu().setText(NumSS);
@@ -91,24 +87,57 @@ public class TableauConsulterIDE implements MouseListener{
                     imide.getjLabeltelephone().setText(telephone);
                     imide.getjLabelannée().setText(DateDeNaissance);
                     imide.getSexe().setText(Sexe);
+                    imide.getTypeDeSejour().setText(typeSejour);
+                    imide.getEtat().setText(etat);
+                    String type=typeSejour;
 
+
+
+                String sql23 = "Select * from hospitalisation WHERE IPP = '" + ipp + "'";
+                PreparedStatement ps23;
+                ps23 = conn.getConnexion().prepareStatement(sql23);
+                ResultSet rs23 = ps23.executeQuery();
+
+                while (rs23.next()) {
+                    if (type.equals("Hospitalisation")) {
+                        String dateentre = rs23.getString(2);
+                        System.out.println(dateentre);
+                        imide.getDateentree().setText(dateentre);
+                        String datesortie = rs23.getString(3);
+                        System.out.println(datesortie);
+                        imide.getDatesortie().setText(datesortie);
+
+                    }
                 }
+                String sql24 = "Select * from consultationexterne WHERE IPP = '" + ipp + "'";
+                PreparedStatement ps24;
+                ps24 = conn.getConnexion().prepareStatement(sql24);
+                ResultSet rs24 = ps24.executeQuery();
+
+                while (rs24.next()) {
+                    if(type.equals("Consultation externe")){
+                        String dateentre = rs24.getString(2);
+                        System.out.println(dateentre);
+                        imide.getDateentree().setText(dateentre);
+                        String datesortie = rs24.getString(3);
+                        System.out.println(datesortie);
+                        imide.getDatesortie().setText(datesortie);
+
+                    }}
+
+            }
 
                 String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
                 PreparedStatement ps2;
-
                 ps2 = conn.getConnexion().prepareStatement(Sql2);
+                ResultSet rs2 = ps2.executeQuery();
 
-                ResultSet Rs2 = ps2.executeQuery();;
 
-                ResultSetMetaData rsmd2 = Rs2.getMetaData();
-                int columnsNumber2 = rsmd2.getColumnCount();
+                while (rs2.next()) {
 
-                while (Rs2.next()) {
-
-                    String ServiceGegraphique = Rs2.getString(2);
-                    String ServiceRespo = Rs2.getString(3);
-                    String chambre = Rs2.getString(4);
+                    String ServiceGegraphique = rs2.getString(2);
+                    String ServiceRespo = rs2.getString(3);
+                    String chambre = rs2.getString(4);
 
                     imide.getServiceRespo().setText(ServiceRespo);
                     imide.getServiceGeo().setText(ServiceGegraphique);
@@ -121,11 +150,11 @@ public class TableauConsulterIDE implements MouseListener{
                     fen.revalidate();
                     fen.repaint();
                 }
-                
-                
+
+                fen.repaint();
             }
         } catch (SQLException ex) {
-            Logger.getLogger(TableauConsulterDPIPHetIDE.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TableauConsulterDPIPH.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
