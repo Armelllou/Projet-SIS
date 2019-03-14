@@ -10,12 +10,17 @@ import interfaces.DPISecretaire;
 import interfaces.Fenetre;
 import interfaces.ModificationDPI;
 import listener.secretairemedical.TableauConsulterDPISecretaire;
+import nf.Dates;
 import nf.Sih;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Types;
+import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -166,49 +171,57 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 }
 
 
+//-----------------------------------marche pas-----------------
 
-////-----------------------------------marche pas-----------------
-//
-//                String dateSortie = mdpi.getJoursortie().getText() + mdpi.getMoissortie().getText() + mdpi.getAnneesortie().getText();
-//
-//                if (typeSejour.equals("Hospitalisation") && mdpi.getEtatsejour().toString().equals("Terminé")) {
-//
-//                    System.out.println("test1");
-//
-//                    String format = "dd/MM/yy";
-//                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
-//                    java.util.Date date = new java.util.Date();
-//
-//                    String sql = " UPDATE hospitalisation SET dateSortieH=? WHERE IPP = ?";
-//                    PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
-//                    statement.setObject(1, date, Types.DATE);
-//                    dpis.getDatesortie().setText(dateSortie);
-//
-//                    String s = " UPDATE patient SET etat=? WHERE IPP = ?";
-//                    PreparedStatement statement1 = conn.getConnexion().prepareStatement(s);
-//                    statement1.setObject(1, "Terminé", Types.VARCHAR);
-//                    dpis.getEtat().setText("Terminé");
-//                }
-//
-//                if (typeSejour.equals("Consultation externe") && mdpi.getEtatsejour().equals("Terminé")) {
-//
-//                    System.out.println("test2");
-//
-//                    String format = "dd/MM/yy";
-//                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
-//                    java.util.Date date = new java.util.Date();
-//
-//                    String sql = " UPDATE consultationexterne SET dateSortieC=? WHERE IPP = ?";
-//                    PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
-//                    statement.setObject(1, date, Types.DATE);
-//                    dpis.getDatesortie().setText(dateSortie);
-//
-//                    String s = " UPDATE patient SET etat=? WHERE IPP = ?";
-//                    PreparedStatement statement1 = conn.getConnexion().prepareStatement(s);
-//                    statement1.setObject(1, "Terminé", Types.VARCHAR);
-//                    dpis.getEtat().setText("Terminé");
-//                }
-////-----------------------------------marche pas-----------------
+
+                if (mdpi.getTypesejour().getSelectedItem().toString().equals("Hospitalisation") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Termine")) {
+
+                    System.out.println("test1");
+
+                    String format = "dd/MM/yy";
+                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
+                    java.util.Date date = new java.util.Date();
+                    System.out.println(date);
+                    String date1 = date.toString();
+
+                    String s1 = "UPDATE hospitalisation SET DateSortieH=? WHERE IPP=?";
+                    PreparedStatement prep = conn.getConnexion().prepareStatement(s1);
+                    prep.setObject(1, date1, Types.VARCHAR);
+                    prep.setString(2, ipp);
+                    prep.executeUpdate();
+                    dpis.getDatesortie().setText(date1);
+
+                    String s = " UPDATE patient SET etat=? WHERE IPP = ?";
+                    PreparedStatement statement1 = conn.getConnexion().prepareStatement(s);
+                    statement1.setObject(1, "Terminé", Types.VARCHAR);
+                    statement1.setObject(2, ipp);
+                    statement1.executeUpdate();
+                    dpis.getEtat().setText("Termine");
+                }
+
+                if (typeSejour.equals("Consultation externe") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Termine")) {
+
+                    System.out.println("test2");
+
+                    String format = "dd/MM/yy";
+                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
+                    java.util.Date date = new java.util.Date();
+
+                    String sql = " UPDATE consultationexterne SET DateSortieC=? WHERE IPP = ?";
+                    PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+                    statement.setObject(1, date, Types.DATE);
+                    statement.setObject(2, ipp);
+                    statement.executeUpdate();
+                    dpis.getDatesortie().setText(date.toString());
+
+                    String s = " UPDATE patient SET etat=? WHERE IPP = ?";
+                    PreparedStatement statement1 = conn.getConnexion().prepareStatement(s);
+                    statement1.setObject(1, "Terminé", Types.VARCHAR);
+                    statement1.setObject(2, ipp);
+                    statement1.executeUpdate();
+                    dpis.getEtat().setText("Terminé");
+                }
+//-----------------------------------marche pas-----------------
 
                 dpis.getjLabelnom().setText(nomDeNaissance);
                 dpis.getjLabelnom1().setText(nomUsuel);
@@ -223,7 +236,6 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 dpis.getTypeDeSejour().setText(typeSejour);
 
             }
-
 
 
             String sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
