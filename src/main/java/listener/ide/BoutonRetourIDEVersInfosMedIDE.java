@@ -21,13 +21,13 @@ public class BoutonRetourIDEVersInfosMedIDE implements ActionListener {
     ConsultationIDE c;
     InfosMedicalesIDE im;
     Fenetre jframe;
-    Sih sih;
+ 
 
-    public BoutonRetourIDEVersInfosMedIDE(Fenetre jframe, ConsultationIDE c, InfosMedicalesIDE im, Sih sih) {
+    public BoutonRetourIDEVersInfosMedIDE(Fenetre jframe, InfosMedicalesIDE im) {
         this.jframe = jframe;
         this.c = c;
-        this.im = im;
-        this.sih = sih;
+        
+       this.im=im;
     }
 
     public void actionPerformed(ActionEvent ae) {
