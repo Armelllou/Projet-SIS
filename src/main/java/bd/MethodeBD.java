@@ -1,7 +1,7 @@
 package bd;
 
 import interfaces.ConsulterDPIPHetIDE;
-import listener.State;
+import listener.commun.State;
 import nf.patient.Patient;
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
@@ -569,7 +569,7 @@ public class MethodeBD {
       }
       
       public static void SupprimerSurBdSecretaire (int id) throws SQLException{  
-        ConnexionBD conn = ConnexionBD.getInstance();
+                    ConnexionBD conn = ConnexionBD.getInstance();
                     PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from secretaireadministrative WHERE idSA ='" + id + "'");
                     prep2.executeUpdate();
       }

@@ -3,22 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package nf.personnel;
+package java.nf.personnel;
 
 
-import java.sql.SQLException;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import nf.personnel.Infirmier;
-
 
 /**
  *
  * @author stifinekawtar
  */
-public class ajouterPersonnel {
-    @Test
-     public void testAjoutPerso(Personnel p){
-         Personnel inf1= new Infirmier("Stifine","Kawtar",12345,12345,"Anapathologie");
-     }
+public class supprimerPersonnel {
+    
+    public supprimerPersonnel() {
+    }
+    
+    
+
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+     @Test
+     public void testSuppression() {}
 }

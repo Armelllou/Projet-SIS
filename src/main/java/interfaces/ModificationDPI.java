@@ -384,7 +384,7 @@ public class ModificationDPI extends javax.swing.JPanel {
         typesejour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Consultation externe", "Hospitalisation" }));
 
         etatsejour.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        etatsejour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En cours", "Terminé" }));
+        etatsejour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En cours", "Termine" }));
 
         jLabel20.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel20.setText("Etat du séjour :");
