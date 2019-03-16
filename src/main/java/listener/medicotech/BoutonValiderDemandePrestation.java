@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import listener.commun.RafraichitLesPanels;
 import nf.sejour.PrestationDemandee;
 
 /**
@@ -58,11 +59,7 @@ public class BoutonValiderDemandePrestation implements ActionListener {
             JOptionPane jop1 = new JOptionPane();
             jop1.showMessageDialog(null, "Prestation correctement demandée", "Information", JOptionPane.INFORMATION_MESSAGE);
             
-            fen.panelVisibleFalse();
-            fen.add(imph);
-            imph.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
+                RafraichitLesPanels rf = new RafraichitLesPanels(fen,imph);
             
             
          p.getTablePrestation().setFont(new Font("Calibri", 0, 18));

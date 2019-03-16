@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
+import listener.commun.RafraichitLesPanels;
 import nf.personnel.Infirmier;
 import nf.personnel.Medecin;
 import nf.personnel.MedicoTechnique;
@@ -130,11 +131,7 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
             Logger.getLogger(BoutonValiderPersonnel.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        fen.panelVisibleFalse();
-        fen.add(lp);
-        lp.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen,lp);
 
     }
 

@@ -11,6 +11,7 @@ import interfaces.Fenetre;
 import interfaces.ListePersonnel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  *
@@ -33,11 +34,7 @@ public class BoutonAjouterDuPersonnel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        jframe.panelVisibleFalse();
-        jframe.add(cp);
-        cp.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+           RafraichitLesPanels rf = new RafraichitLesPanels(jframe,cp);
     }
     
     

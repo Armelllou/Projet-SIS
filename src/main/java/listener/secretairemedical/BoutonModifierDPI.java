@@ -12,6 +12,7 @@ import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -60,12 +61,7 @@ public class BoutonModifierDPI implements ActionListener {
         mdpi.getChambre().setText(chambre);
         mdpi.getjLabel3().setText(ipp);
 
-
-        jframe.panelVisibleFalse();
-        jframe.add(mdpi);
-        mdpi.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+    RafraichitLesPanels rf = new RafraichitLesPanels(jframe,mdpi);
 
     }
 

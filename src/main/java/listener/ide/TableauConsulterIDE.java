@@ -20,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
 import listener.commun.ListenerConnexion;
+import listener.commun.RafraichitLesPanels;
 import nf.Sih;
 
 /**
@@ -116,11 +117,7 @@ public class TableauConsulterIDE implements MouseListener{
 
                     imide.getjLabelchamnre().setText(chambre);
 
-                    fen.panelVisibleFalse();
-                    fen.add(imide);
-                    imide.setVisible(true);
-                    fen.revalidate();
-                    fen.repaint();
+                        RafraichitLesPanels rf = new RafraichitLesPanels(fen,imide);
                 }
                 
                 

@@ -30,14 +30,18 @@ public class BoutonDeconnexion implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         fen.totaliteFalse();
 
-        fen.add(c);
-        c.setVisible(true);
-        c.getjPasswordField1().setText("          ");
+//        fen.add(c);
+//        c.setVisible(true);
+//         fen.revalidate();
+//        fen.repaint();
+        
+    RafraichitLesPanels rf = new RafraichitLesPanels(fen,c);
+        c.getjPasswordField1().setSize(2,5);
+        c.getjPasswordField1().setText("");
         c.getjTextField1().setText("");
 
         fen.setSize(1700, 830);
-        fen.revalidate();
-        fen.repaint();
+       
 
         //jframe.setState(State.NONCO);
     }

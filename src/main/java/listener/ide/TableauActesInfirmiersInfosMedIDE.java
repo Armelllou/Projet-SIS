@@ -22,6 +22,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 
 public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
 
@@ -103,12 +104,7 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
                
             }
             
-            
-            fen.panelVisibleFalse();
-            fen.add(cph);
-            cph.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
+             RafraichitLesPanels rf = new RafraichitLesPanels(fen,cph);
         } catch (SQLException ex) {
             Logger.getLogger(TableauActesInfirmiersInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
         }

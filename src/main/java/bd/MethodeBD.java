@@ -1,6 +1,7 @@
 package bd;
 
 import interfaces.ConsulterDPIPHetIDE;
+import java.awt.Font;
 import listener.commun.State;
 import nf.patient.Patient;
 import javax.swing.table.DefaultTableModel;
@@ -9,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.TimerTask;
+import javax.swing.JTable;
 import javax.swing.Timer;
 
 public class MethodeBD {
@@ -528,6 +530,33 @@ public class MethodeBD {
         }
     }
 
+     public static DefaultTableModel PatientSecretaire (JTable table) throws SQLException{
+         
+          String sql45;
+        ResultSet rs;
+        String[] infoAllPatient = new String[4];
+        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+
+
+            ConnexionBD conn = ConnexionBD.getInstance();
+            sql45 = "SELECT * FROM patient";
+            PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
+            rs = ps.executeQuery(sql45);
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("NomDeNaissance");
+                infoAllPatient[1] = rs.getString("NomUsuel");
+                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[3] = rs.getString("IPP");
+                templatesTableModel.addRow(infoAllPatient);
+            }
+
+            table.setModel(templatesTableModel);
+            table.setFont(new Font("Calibri", 0, 18));
+         
+            return templatesTableModel;
+     }
  
     
     public static int compterTableauPrestationParService(String Service) throws SQLException {
@@ -574,4 +603,6 @@ public class MethodeBD {
                     prep2.executeUpdate();
       }
 
+      
+      
 }

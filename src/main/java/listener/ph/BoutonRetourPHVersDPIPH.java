@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listener.technicien;
+package listener.ph;
 
-import interfaces.CreationPersonnel;
+import interfaces.DPIPH;
 import interfaces.Fenetre;
-import interfaces.ListePersonnel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import listener.commun.RafraichitLesPanels;
@@ -16,20 +15,22 @@ import listener.commun.RafraichitLesPanels;
  *
  * @author annel
  */
-public class BoutonAnnulerPersonnel implements ActionListener {
+public class BoutonRetourPHVersDPIPH implements ActionListener {
+
+    DPIPH dpiph;
     Fenetre fen;
-    ListePersonnel lp;
-    CreationPersonnel cp;
 
-    public BoutonAnnulerPersonnel(Fenetre fen, ListePersonnel lp, CreationPersonnel cp) {
+    public BoutonRetourPHVersDPIPH(DPIPH dpiph, Fenetre fen) {
+        this.dpiph = dpiph;
         this.fen = fen;
-        this.lp = lp;
-        this.cp = cp;
     }
-
+    
+    
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-               RafraichitLesPanels rf = new RafraichitLesPanels(fen,lp);
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen,dpiph);
+        
     }
 
 }

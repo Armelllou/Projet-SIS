@@ -67,11 +67,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         else{
             JOptionPane.showMessageDialog(null, "Identifiant ou mdp incorrect");
 
-            jframe.toutFalseSaufConnexion();
-            jframe.add(c);
-            c.setVisible(true);
-            jframe.revalidate();
-            jframe.repaint();
+               RafraichitLesPanels rf = new RafraichitLesPanels(jframe,c);
         }
 
         switch (state) {

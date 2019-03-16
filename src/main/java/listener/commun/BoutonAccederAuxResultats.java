@@ -41,11 +41,9 @@ public class BoutonAccederAuxResultats implements ActionListener {
         r.getTablePrestation().setModel(new MethodeBD().listeResultats(bh.getService().getText()));
         
         cdpiphetide.getNotification().setText("0");
-        jframe.panelVisibleFalse();
-        jframe.add(r);
-        r.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+        
+          RafraichitLesPanels rf = new RafraichitLesPanels(jframe,r);
+       
         
         
        }

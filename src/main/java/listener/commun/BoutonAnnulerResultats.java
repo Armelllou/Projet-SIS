@@ -30,10 +30,6 @@ public class BoutonAnnulerResultats implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       fen.panelVisibleFalse();
-        fen.add(dp);
-        dp.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+          RafraichitLesPanels rf = new RafraichitLesPanels(fen,dp);
     }
 }

@@ -6,6 +6,7 @@
 package listener.secretairemedical;
 
 import bd.ConnexionBD;
+import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.CreationDPI;
 import interfaces.ConsulterDPISecretaire;
@@ -28,6 +29,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 
 public class BoutonValiderDMA implements ActionListener {
 
@@ -58,39 +60,16 @@ public class BoutonValiderDMA implements ActionListener {
 
             jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
             fen.panelVisibleFalse();
-            Statement stmt;
-            String sql45;
-            ResultSet rs;
-            String[] infoallpatient = new String[4];
-            String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-            DefaultTableModel templatesTableModel = new DefaultTableModel();
-            templatesTableModel.setColumnIdentifiers(title);
+            
+        
 
-            try {
-                sql45 = "SELECT * FROM patient";
-                ConnexionBD conn = ConnexionBD.getInstance();
-                PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
-                rs = ps.executeQuery(sql45);
+             try {
+            MethodeBD.PatientSecretaire(cdpis.getjTable1());
+        } catch (SQLException ex) {
+            Logger.getLogger(BoutonRetourDPISVersConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-                while (rs.next()) {
-                    infoallpatient[0] = rs.getString("NomDeNaissance");
-                    infoallpatient[1] = rs.getString("NomUsuel");
-                    infoallpatient[2] = rs.getString("Prénom");
-                    infoallpatient[3] = rs.getString("IPP");
-                    templatesTableModel.addRow(infoallpatient);
-                }
-                cdpis.getjTable1().setModel(templatesTableModel);
-                cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
-                System.out.println(cdpis.getjTable1().getModel());
-
-            } catch (SQLException e1) {
-                e1.printStackTrace();
-            }
-
-            fen.add(cdpis);
-            cdpis.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
+               RafraichitLesPanels rf = new RafraichitLesPanels(fen,cdpis);
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderDMA.class.getName()).log(Level.SEVERE, null, ex);

@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import listener.commun.RafraichitLesPanels;
 import nf.personnel.Infirmier;
 import nf.personnel.Medecin;
 import nf.personnel.MedicoTechnique;
@@ -89,20 +90,11 @@ public class BoutonSupprimerPersonnel implements ActionListener {
                 Logger.getLogger(BoutonValiderPersonnel.class.getName()).log(Level.SEVERE, null, ex);
             }
             
-            fen.panelVisibleFalse();
-            fen.add(lp);
-            lp.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
+               RafraichitLesPanels rf = new RafraichitLesPanels(fen,lp);
             
             
         } else {
-            fen.panelVisibleFalse();
-            fen.add(mp);
-            mp.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
-            
+                RafraichitLesPanels rf = new RafraichitLesPanels(fen,mp);
         }
     }
 }

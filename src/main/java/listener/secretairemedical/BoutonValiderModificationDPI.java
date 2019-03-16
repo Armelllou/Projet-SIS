@@ -23,6 +23,7 @@ import java.sql.Types;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 
 
 public class BoutonValiderModificationDPI implements ActionListener {
@@ -261,12 +262,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
             Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        jframe.panelVisibleFalse();
-        jframe.add(dpis);
-        dpis.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
-
+            RafraichitLesPanels rf = new RafraichitLesPanels(jframe,dpis);
 
     }
 

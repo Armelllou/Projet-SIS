@@ -22,6 +22,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 
 
 public class TableauConsulterDPISecretaire implements MouseListener {
@@ -141,15 +142,11 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
                 dpis.getjLabelchamnre().setText(chambre);
 
-                fen.panelVisibleFalse();
-                fen.add(dpis);
-                dpis.setVisible(true);
-                fen.revalidate();
-
+             RafraichitLesPanels rf = new RafraichitLesPanels(fen,dpis);
             }
 
 
-            fen.repaint();
+           
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
         }

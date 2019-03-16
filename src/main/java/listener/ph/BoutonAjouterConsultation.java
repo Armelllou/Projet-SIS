@@ -16,6 +16,7 @@ import nf.Sih;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -42,16 +43,11 @@ public class BoutonAjouterConsultation implements ActionListener {
        ac.getPrenomMedecin().setText(bh.getPrenom().getText()) ;
         Calendar date = Calendar.getInstance();
         ac.getAnnee().setText(Integer.toString(date.get(Calendar.YEAR)));
-        ac.getDate().setText(Integer.toString(date.get(Calendar.MONTH+1)));
+        ac.getDate().setText(Integer.toString(date.get((Calendar.MONTH)+1)));
         ac.getJour().setText(Integer.toString(date.get(Calendar.DAY_OF_MONTH)));
         
         
-        jframe.panelVisibleFalse();
-        jframe.add(ac);
-        ac.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
-        
+           RafraichitLesPanels rf = new RafraichitLesPanels(jframe,ac);
         
         
         

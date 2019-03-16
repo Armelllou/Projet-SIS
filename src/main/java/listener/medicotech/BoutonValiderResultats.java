@@ -23,6 +23,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import listener.commun.RafraichitLesPanels;
 import nf.sejour.Resultats;
 
 /**
@@ -82,12 +83,7 @@ public class BoutonValiderResultats implements ActionListener {
 
      
 
-          
-            fen.panelVisibleFalse();
-            fen.add(p);
-            p.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
+              RafraichitLesPanels rf = new RafraichitLesPanels(fen,p);
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderResultats.class.getName()).log(Level.SEVERE, null, ex);

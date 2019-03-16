@@ -14,6 +14,7 @@ import nf.Sih;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+import listener.commun.RafraichitLesPanels;
 
 public class BoutonAjouterActeInfirmier implements ActionListener {
 
@@ -56,11 +57,7 @@ public class BoutonAjouterActeInfirmier implements ActionListener {
 
         
         
-        jframe.panelVisibleFalse();
-        jframe.add(ai);
-        ai.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+          RafraichitLesPanels rf = new RafraichitLesPanels(jframe,ai);
     }
 
 }

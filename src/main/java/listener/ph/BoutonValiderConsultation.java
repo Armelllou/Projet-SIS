@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import listener.commun.RafraichitLesPanels;
 import nf.sejour.Consultation;
 import nf.Dates;
 
@@ -69,11 +70,7 @@ AjouterConsultation ac;
         
         
         
-        fen.panelVisibleFalse();
-        fen.add(im);
-        im.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+           RafraichitLesPanels rf = new RafraichitLesPanels(fen,im);
         
         
     } catch (SQLException ex) {

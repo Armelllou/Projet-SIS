@@ -20,6 +20,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
+import listener.commun.RafraichitLesPanels;
 
 /**
  *
@@ -76,11 +77,7 @@ public class TableauIdeP implements MouseListener {
                 mp.getType().setEnabled(false);
                 
                 
-                fen.panelVisibleFalse();
-                fen.add(mp);
-                mp.setVisible(true);
-                fen.revalidate();
-                fen.repaint();
+                RafraichitLesPanels rf = new RafraichitLesPanels(fen,mp); 
             }
              } catch (SQLException ex) {
             Logger.getLogger(TableauIdeP.class.getName()).log(Level.SEVERE, null, ex);

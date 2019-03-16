@@ -22,6 +22,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
+import listener.commun.RafraichitLesPanels;
 
 public class TableauConsulterDPIPH implements MouseListener {
 
@@ -116,11 +117,7 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                     imph.getjLabelchamnre().setText(chambre);
 
-                    fen.panelVisibleFalse();
-                    fen.add(imph);
-                    imph.setVisible(true);
-                    fen.revalidate();
-                    fen.repaint();
+                        RafraichitLesPanels rf = new RafraichitLesPanels(fen,imph);
                 }
                 
                 

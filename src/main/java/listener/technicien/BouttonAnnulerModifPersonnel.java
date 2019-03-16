@@ -11,6 +11,7 @@ import interfaces.ModifierPersonnel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
+import listener.commun.RafraichitLesPanels;
 
 /**
  *
@@ -30,11 +31,7 @@ public class BouttonAnnulerModifPersonnel implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        fen.panelVisibleFalse();
-        fen.add(lp);
-        lp.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+        RafraichitLesPanels rf = new RafraichitLesPanels(fen,lp); 
     }
     
 }

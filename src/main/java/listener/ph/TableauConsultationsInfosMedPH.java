@@ -20,6 +20,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 import listener.ide.TableauConsultationsInfosMedIDE;
 
 public class TableauConsultationsInfosMedPH implements MouseListener {
@@ -70,11 +71,7 @@ public class TableauConsultationsInfosMedPH implements MouseListener {
                 cph.getDate().setText(date);
                 cph.getNoMedecin().setText(nomMedecin);
 
-                fen.panelVisibleFalse();
-                fen.add(cph);
-                cph.setVisible(true);
-                fen.revalidate();
-                fen.repaint();
+                  RafraichitLesPanels rf = new RafraichitLesPanels(fen,cph);
 
             }
         } catch (SQLException ex) {

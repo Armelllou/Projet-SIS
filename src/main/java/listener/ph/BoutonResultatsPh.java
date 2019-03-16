@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
+import listener.commun.RafraichitLesPanels;
 
 /**
  *
@@ -57,10 +58,6 @@ public class BoutonResultatsPh implements ActionListener {
         }
 
 
-        jframe.panelVisibleFalse();
-        jframe.add(rp);
-        rp.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+           RafraichitLesPanels rf = new RafraichitLesPanels(jframe,rp);
     }
 }

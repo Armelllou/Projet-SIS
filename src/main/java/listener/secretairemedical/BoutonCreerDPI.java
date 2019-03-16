@@ -13,6 +13,7 @@ import interfaces.ConsulterDPISecretaire;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author annel
@@ -34,12 +35,8 @@ public class BoutonCreerDPI implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        fen.panelVisibleFalse();
-
-        fen.add(dpi);
-        dpi.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+        RafraichitLesPanels rf = new RafraichitLesPanels(fen,dpi);
+        
     }
 
 }

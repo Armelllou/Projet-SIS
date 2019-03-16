@@ -20,6 +20,7 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import listener.commun.RafraichitLesPanels;
 import nf.Dates;
 import nf.sejour.Prescription;
 
@@ -44,25 +45,20 @@ public class BoutonAjouterPrescription implements ActionListener {
 
     public void actionPerformed(ActionEvent ae) {
         String ipp = im.getjLabelipp().getText();
-             String NomMedecin = bh.getNom().getText();
-             String PrenomMedecin = bh.getPrenom().getText();
-             
-             
-             Calendar date = Calendar.getInstance();
+        String NomMedecin = bh.getNom().getText();
+        String PrenomMedecin = bh.getPrenom().getText();
+
+        Calendar date = Calendar.getInstance();
         ac.getAnnee().setText(Integer.toString(date.get(Calendar.YEAR)));
-        ac.getDate().setText(Integer.toString(date.get(Calendar.MONTH+1)));
+        ac.getDate().setText(Integer.toString(date.get(Calendar.MONTH + 1)));
         ac.getJour().setText(Integer.toString(date.get(Calendar.DAY_OF_MONTH)));
-             
-             ac.getIPP().setText(ipp);
-             ac.getNomMedecin().setText(NomMedecin);
-             ac.getPrenomMedecin().setText(PrenomMedecin);
-            
-            jframe.panelVisibleFalse();
-            jframe.add(ac);
-            ac.setVisible(true);
-            jframe.revalidate();
-            jframe.repaint();
-       
+
+        ac.getIPP().setText(ipp);
+        ac.getNomMedecin().setText(NomMedecin);
+        ac.getPrenomMedecin().setText(PrenomMedecin);
+
+           RafraichitLesPanels rf = new RafraichitLesPanels(jframe,ac);
+
     }
 
 }

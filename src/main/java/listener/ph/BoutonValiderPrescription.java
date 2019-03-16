@@ -17,6 +17,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import listener.commun.RafraichitLesPanels;
 import nf.Dates;
 import nf.sejour.Prescription;
 
@@ -68,10 +69,6 @@ public class BoutonValiderPrescription implements ActionListener {
             Logger.getLogger(BoutonValiderPrescription.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        fen.panelVisibleFalse();
-        fen.add(im);
-        im.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen,im);
     }
 }

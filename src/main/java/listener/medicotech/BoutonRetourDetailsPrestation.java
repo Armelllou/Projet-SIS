@@ -12,6 +12,7 @@ import interfaces.Prestations;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -29,10 +30,6 @@ public class BoutonRetourDetailsPrestation implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent ae) {
-        fen.panelVisibleFalse();
-        fen.add(p);
-        p.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen,p);
     }
 }

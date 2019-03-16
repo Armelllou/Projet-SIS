@@ -33,7 +33,7 @@ import listener.technicien.BouttonAnnulerModifPersonnel;
 import listener.ide.TableauConsulterIDE;
 import listener.ph.TableauConsulterDPIPH;
 import listener.medicotech.BoutonEnvoyerResultats;
-import listener.ph.BoutonAnnulerTransfert;
+
 import listener.technicien.BoutonSupprimerPersonnel;
 import listener.technicien.BoutonAnnulerPersonnel;
 import listener.ph.BoutonAjouterPrestation;
@@ -131,7 +131,7 @@ public class Fenetre extends JFrame {
     private JButton retourinfosmedIDEVersDPIIDE = infosmedide.getjButton2();
     private JButton accueilinfosmedIDE = infosmedide.getjButton1();
     private JButton ajouteracteinf = infosmedide.getjButton3();
-    private JButton retourinfosmedPHversDPIPH = infosmedph.getjButton2();
+    private JButton retourinfosmedPHversDPIPH = infosmedph.getRetour();
     private JButton accueilinfmedphversconsultdpiphide = infosmedph.getjButton1();
     private JButton ajouterconsultation = infosmedph.getjButton4();
     private JButton ajouterprescription = infosmedph.getjButton6();
@@ -228,7 +228,7 @@ public class Fenetre extends JFrame {
         retourinfosmedIDEVersDPIIDE.addActionListener(new BoutonRetourInfosMedIDEVersDPIIDE(dpiide, infosmedide, this));
         accueilinfosmedIDE.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
         ajouteracteinf.addActionListener(new BoutonAjouterActeInfirmier(this, ajouterai, infosmedide, sih, barreduhaut));
-        retourinfosmedPHversDPIPH.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
+        retourinfosmedPHversDPIPH.addActionListener(new BoutonRetourPHVersDPIPH(dpiph,this));
         accueilinfmedphversconsultdpiphide.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
         ajouterconsultation.addActionListener(new BoutonAjouterConsultation(this, ajouterconsult, infosmedph, barreduhaut));
         ajouterprescription.addActionListener(new BoutonAjouterPrescription(this, ajouterprescri, infosmedph, sih, barreduhaut));
@@ -240,7 +240,7 @@ public class Fenetre extends JFrame {
         accueilprescriPH.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
         retourPrescriPHVersInfMedPH.addActionListener(new BoutonRetourPHVersInfosMedicalesPH(this, infosmedph,l));
         retourDetailsPrestation.addActionListener(new BoutonRetourDetailsPrestation(dp, prestations, this));
-        annulertransfert.addActionListener(new BoutonAnnulerTransfert(dpiph, transfert, this));
+        annulertransfert.addActionListener(new BoutonRetourPHVersDPIPH(dpiph, this));
         validermodifdpi.addActionListener(new BoutonValiderModificationDPI(this, dpis, modifdpi, sih));
         validerActe.addActionListener(new BoutonValiderActe(barreduhaut, infosmedide, this, ajouterai));
         validerPrescription.addActionListener(new BoutonValiderPrescription(ajouterprescri, infosmedph, this, barreduhaut));

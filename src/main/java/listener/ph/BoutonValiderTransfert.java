@@ -20,6 +20,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import listener.commun.RafraichitLesPanels;
 import listener.secretairemedical.BoutonValiderModificationDPI;
 
 /**
@@ -67,17 +68,7 @@ public class BoutonValiderTransfert implements ActionListener {
            dpiph.getServiceRespo().setText( ts.getServiceResponsable().getSelectedItem().toString());
             
             
-            
-            fen.panelVisibleFalse();
-            fen.add(dpiph);
-            dpiph.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
-            
-            
-        
-//         consult.getjTable1().setFont(new Font("Calibri", 0, 18));
-//         consult.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(bh.getService().getText()));
+               RafraichitLesPanels rf = new RafraichitLesPanels(fen,dpiph);
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);

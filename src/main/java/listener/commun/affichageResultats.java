@@ -111,11 +111,7 @@ public class affichageResultats implements MouseListener {
             Logger.getLogger(affichageResultats.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        fen.panelVisibleFalse();
-            fen.add(pf);
-            pf.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
+          RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
     }
 
     @Override

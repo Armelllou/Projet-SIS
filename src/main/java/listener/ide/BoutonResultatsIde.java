@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
+import listener.commun.RafraichitLesPanels;
 
 /**
  *
@@ -32,19 +33,18 @@ public class BoutonResultatsIde implements ActionListener {
     InfosMedicalesPH infosph;
     ListenerConnexion l;
 
-    public BoutonResultatsIde(ResultatParPatient rp, Fenetre jframe, BarreDuHaut bh, InfosMedicalesIDE infoside, InfosMedicalesPH infosph, ListenerConnexion l ) {
+    public BoutonResultatsIde(ResultatParPatient rp, Fenetre jframe, BarreDuHaut bh, InfosMedicalesIDE infoside, InfosMedicalesPH infosph, ListenerConnexion l) {
         this.rp = rp;
         this.jframe = jframe;
         this.bh = bh;
         this.rp = rp;
         this.l = l;
-        this.infoside=infoside;
-        this.infosph=infosph;
+        this.infoside = infoside;
+        this.infosph = infosph;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
 
         try {
             if (l.ConnexionIde() == true) {
@@ -54,11 +54,6 @@ public class BoutonResultatsIde implements ActionListener {
         } catch (SQLException ex) {
             Logger.getLogger(BoutonResultatsIde.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        jframe.panelVisibleFalse();
-        jframe.add(rp);
-        rp.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+    RafraichitLesPanels rf = new RafraichitLesPanels(jframe,rp);
     }
 }

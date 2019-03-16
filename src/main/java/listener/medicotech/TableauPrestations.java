@@ -14,6 +14,7 @@ import nf.Sih;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import listener.commun.RafraichitLesPanels;
 
 public class TableauPrestations implements MouseListener {
 
@@ -51,12 +52,8 @@ public class TableauPrestations implements MouseListener {
         pf.getSrvice().setText(Service);
         pf.getDateDeDemande().setText(idPresta);
         pf.getDateDeDemande().setVisible(false);
-
-        fen.panelVisibleFalse();
-        fen.add(pf);
-        pf.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+        
+    RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
     }
 
     @Override

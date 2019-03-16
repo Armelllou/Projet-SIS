@@ -13,6 +13,7 @@ import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -36,11 +37,7 @@ public class BoutonAjouterPrestation implements ActionListener {
         ac.getServiceDemandeur().setSelectedItem(Service);
         ac.getServiceDemandeur().setEnabled(false);
         
-        jframe.panelVisibleFalse();
-        jframe.add(ac);
-        ac.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+          RafraichitLesPanels rf = new RafraichitLesPanels(jframe,ac);
     }
 
 }

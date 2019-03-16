@@ -147,11 +147,7 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                     imph.getjLabelchamnre().setText(chambre);
 
-                    fen.panelVisibleFalse();
-                    fen.add(imph);
-                    imph.setVisible(true);
-                    fen.revalidate();
-                    fen.repaint();
+                       RafraichitLesPanels rf = new RafraichitLesPanels(fen,imph);
                 }
 
                 fen.repaint();

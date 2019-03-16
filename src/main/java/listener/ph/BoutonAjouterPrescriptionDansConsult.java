@@ -12,13 +12,15 @@ import interfaces.InfosMedicalesPH;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
+import listener.commun.RafraichitLesPanels;
 import nf.Sih;
 
 /**
  *
  * @author annel
  */
-public class BoutonAjouterPrescriptionDansConsult implements ActionListener{
+public class BoutonAjouterPrescriptionDansConsult implements ActionListener {
+
     AjouterPrescription ac;
     InfosMedicalesPH im;
     Fenetre jframe;
@@ -36,24 +38,19 @@ public class BoutonAjouterPrescriptionDansConsult implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         String ipp = im.getjLabelipp().getText();
-             String NomMedecin = bh.getNom().getText();
-             String PrenomMedecin = bh.getPrenom().getText();
-             
-             
-             Calendar date = Calendar.getInstance();
+        String NomMedecin = bh.getNom().getText();
+        String PrenomMedecin = bh.getPrenom().getText();
+
+        Calendar date = Calendar.getInstance();
         ac.getAnnee().setText(Integer.toString(date.get(Calendar.YEAR)));
         ac.getDate().setText(Integer.toString(date.get(Calendar.MONTH)));
         ac.getJour().setText(Integer.toString(date.get(Calendar.DAY_OF_MONTH)));
-             
-             ac.getIPP().setText(ipp);
-             ac.getNomMedecin().setText(NomMedecin);
-             ac.getPrenomMedecin().setText(PrenomMedecin);
-            
-            jframe.panelVisibleFalse();
-            jframe.add(ac);
-            ac.setVisible(true);
-            jframe.revalidate();
-            jframe.repaint();
-       
+
+        ac.getIPP().setText(ipp);
+        ac.getNomMedecin().setText(NomMedecin);
+        ac.getPrenomMedecin().setText(PrenomMedecin);
+
+           RafraichitLesPanels rf = new RafraichitLesPanels(jframe,ac);
+
     }
 }

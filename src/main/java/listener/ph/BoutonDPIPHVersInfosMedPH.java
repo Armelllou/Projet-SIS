@@ -13,6 +13,7 @@ import java.awt.Font;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -51,17 +52,6 @@ public class BoutonDPIPHVersInfosMedPH implements ActionListener {
         im.getjTable1().setFont(new Font("Calibri", 0, 18));
         im.getjTable1().setModel(MethodeBD.listePrescriptionJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
         
-        
-        
-        
-        
-        
-        
-        
-        fen.panelVisibleFalse();
-        fen.add(im);
-        im.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen,im);
     }
 }

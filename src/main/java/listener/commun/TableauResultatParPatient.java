@@ -52,11 +52,7 @@ public class TableauResultatParPatient implements MouseListener {
         pf.getResultats().setText(Resultats);
         pf.getNomMedecin().setText(Date);
 
-        fen.panelVisibleFalse();
-        fen.add(pf);
-        pf.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+           RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
         
     }
 

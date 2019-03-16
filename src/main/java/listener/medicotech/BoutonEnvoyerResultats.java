@@ -10,6 +10,7 @@ import interfaces.Fenetre;
 import interfaces.PrestationFaite;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  *
@@ -38,11 +39,7 @@ public class BoutonEnvoyerResultats implements ActionListener {
         
         
         
-       fen.panelVisibleFalse();
-        fen.add(pf);
-        pf.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+           RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
     }
     
 }

@@ -20,6 +20,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author annel
@@ -54,11 +55,7 @@ public class BoutonValiderActe implements ActionListener {
             im.getjTable2().setFont(new Font("Calibri", 0, 18));
             im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
             fen.panelVisibleFalse();
-
-            fen.add(im);
-            im.setVisible(true);
-            fen.revalidate();
-            fen.repaint();
+    RafraichitLesPanels rf = new RafraichitLesPanels(fen,im);
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderActe.class.getName()).log(Level.SEVERE, null, ex);
         }
