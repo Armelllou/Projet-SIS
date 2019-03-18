@@ -39,17 +39,12 @@ public class TableauResultatParPatient implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         int NumLigne = table.getSelectedRow();
 
-        String NomPatient = (String) table.getModel().getValueAt(NumLigne, 0);
-        String PrenomPatient = (String) table.getModel().getValueAt(NumLigne, 1);
-        String IPP = (String) table.getModel().getValueAt(NumLigne, 2);
-        String Resultats = (String) table.getModel().getValueAt(NumLigne, 3);
-        String Date = (String) table.getModel().getValueAt(NumLigne, 4);
 
-        pf.getNomPatient().setText(NomPatient);
-        pf.getPrenomPatient().setText(PrenomPatient);
-        pf.getIpp().setText(IPP);
-        pf.getResultats().setText(Resultats);
-        pf.getNomMedecin().setText(Date);
+        pf.getNomPatient().setText((String) table.getModel().getValueAt(NumLigne, 0));
+        pf.getPrenomPatient().setText((String) table.getModel().getValueAt(NumLigne, 1));
+        pf.getIpp().setText((String) table.getModel().getValueAt(NumLigne, 2));
+        pf.getResultats().setText((String) table.getModel().getValueAt(NumLigne, 3));
+        pf.getNomMedecin().setText((String) table.getModel().getValueAt(NumLigne, 4));
 
            RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
         

@@ -10,14 +10,12 @@ import interfaces.Fenetre;
 import interfaces.DPIIDE;
 import interfaces.DPIPH;
 
-
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import listener.commun.ListenerConnexion;
+import listener.commun.RafraichitLesPanels;
 import listener.commun.State;
-
-
 
 public class TableauConsulterDPIPHetIDE implements MouseListener {
 
@@ -26,7 +24,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
     ConsulterDPIPHetIDE cdpi;
 
     Fenetre fen;
-   
+
     JTable table;
     ListenerConnexion conn;
 
@@ -34,7 +32,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
         this.imph = imph;
         this.imide = imide;
         this.fen = fen;
-        
+
         this.table = table;
         this.conn = conn;
 
@@ -45,71 +43,41 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 
         int NumLigne = table.getSelectedRow();
 
-        if (ListenerConnexion.getState() == State.PH) {        
+        if (ListenerConnexion.getState() == State.PH) {
 
-                        fen.panelVisibleFalse();
-                        fen.add(imph);
-                        imph.setVisible(true);
-                        fen.revalidate();
-                        fen.repaint();
-                 }
-            
-        if(ListenerConnexion.getState() == State.IDE) {
-                        
-                        fen.panelVisibleFalse();
-                        fen.add(imide);
-                        imph.setVisible(true);
-                        fen.revalidate();
-                        fen.repaint();
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen, imph);
+        }
 
-                        }
-                
-                
-            } 
-            
-            
-            
-          
+        if (ListenerConnexion.getState() == State.IDE) {
 
-       
-        
-            @Override
-            public void mousePressed
-            (MouseEvent e
-            
-            
-            ) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen, imide);
+
+        }
+
     }
 
     @Override
-            public void mouseReleased
-            (MouseEvent e
-            
-            
-            ) {
-        //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void mousePressed(MouseEvent e
+    ) {
+
     }
 
     @Override
-            public void mouseEntered
-            (MouseEvent e
-            
-            
-            ) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void mouseReleased(MouseEvent e
+    ) {
+
     }
 
     @Override
-            public void mouseExited
-            (MouseEvent e
-            
-            
-        
-    
+    public void mouseEntered(MouseEvent e
+    ) {
 
-) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e
+    ) {
+
     }
 
 }
