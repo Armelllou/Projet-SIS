@@ -86,21 +86,10 @@ public class TableauPrescriptionsInfosMedIDE implements MouseListener {
         } catch (SQLException ex) {
             Logger.getLogger(TableauActesInfirmiersInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
         }
+     finally {
+         }
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+
       
     }
 

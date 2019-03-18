@@ -9,10 +9,7 @@ import bd.ConnexionBD;
 import interfaces.DPISecretaire;
 import interfaces.Fenetre;
 import interfaces.ModificationDPI;
-import listener.secretairemedical.TableauConsulterDPISecretaire;
-import nf.Dates;
 import nf.Sih;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,7 +17,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
@@ -45,8 +41,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
         ConnexionBD conn = ConnexionBD.getInstance();
         try {
             String ipp = mdpi.getjLabel3().getText();
-            String dateSortie = mdpi.getJoursortie().getText() + mdpi.getMoissortie().getText() + mdpi.getAnneesortie().getText();
-            PreparedStatement prep2;
+           PreparedStatement prep2;
             prep2 = conn.getConnexion().prepareStatement("UPDATE patient SET NomDeNaissance= ?, NomUsuel= ?, Prénom = ?,DateDeNaissance= ?,Sexe= ?,idAdresse= ?,NumDeSS= ?,email= ?,telephone= ?,typeSejour= ? WHERE ipp = ?");
             prep2.setString(1, mdpi.getNomDenaissance().getText());
             prep2.setString(2, mdpi.getNomUsuel().getText());
@@ -63,6 +58,8 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
         }
 
         //-------------------------------------------------------Update localisation -----------------------
@@ -82,6 +79,8 @@ public class BoutonValiderModificationDPI implements ActionListener {
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally {
+         }
 
         //------------------------------
 
@@ -260,6 +259,8 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
         }
 
             RafraichitLesPanels rf = new RafraichitLesPanels(jframe,dpis);

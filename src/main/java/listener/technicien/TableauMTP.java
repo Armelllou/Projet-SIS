@@ -20,10 +20,7 @@ import java.util.logging.Logger;
 import javax.swing.JTable;
 import listener.commun.RafraichitLesPanels;
 
-/**
- *
- * @author annel
- */
+
 public class TableauMTP implements MouseListener {
      Fenetre fen;
     ListePersonnel lp;
@@ -31,8 +28,7 @@ public class TableauMTP implements MouseListener {
     JTable table;
 
     public TableauMTP(Fenetre fen, ListePersonnel lp, ModifierPersonnel mp, JTable table) {
-      
-        
+
         this.fen = fen;
         this.lp = lp;
         this.mp = mp;
@@ -54,26 +50,22 @@ public class TableauMTP implements MouseListener {
              
              ps = conn.getConnexion().prepareStatement(Sql1);
              
-             ResultSet Rs = ps.executeQuery();;
-             
-             ResultSetMetaData rsmd = Rs.getMetaData();
-             int columnsNumber = rsmd.getColumnCount();
-             while (Rs.next()) {
+             ResultSet rs = ps.executeQuery();
+
+             while (rs.next()) {
                  
                  
-                 String id = Rs.getString(1);
-                 String mdp = Rs.getString(2);
-                 String Nom = Rs.getString(3);
-                 String Prenom = Rs.getString(4);
-                 String Service = Rs.getString(5);
-                 
+                 String id = rs.getString(1);
+                 String mdp = rs.getString(2);
+                 String Nom = rs.getString(3);
+                 String Prenom = rs.getString(4);
                  
                  mp.getPrénom().setText(Prenom);
                  mp.getNom().setText(Nom);
                  mp.getId().setText(id);
                  mp.getMdp().setText(mdp);
                  mp.getType().setSelectedItem("medicotechniques");
-                   mp.getType().setEnabled(false);
+                 mp.getType().setEnabled(false);
                  
                  
                 RafraichitLesPanels rf = new RafraichitLesPanels(fen,mp); 
@@ -83,7 +75,9 @@ public class TableauMTP implements MouseListener {
              }
             } catch (SQLException ex) {
              Logger.getLogger(TableauMTP.class.getName()).log(Level.SEVERE, null, ex);
-         } } 
+         }finally {
+          }
+    }
          
          
              @Override

@@ -43,8 +43,7 @@ public class TableauPhP1 implements MouseListener {
     public void mouseClicked(MouseEvent e) {
          try {
              int NumLigne = table.getSelectedRow();
-             
-             
+
              String idPH = (String) table.getModel().getValueAt(NumLigne, 2);
              String Sql1 = "Select * from praticienhospitaliers WHERE idPh ='" + idPH +"'";
              ConnexionBD conn = ConnexionBD.getInstance();
@@ -52,25 +51,23 @@ public class TableauPhP1 implements MouseListener {
              
              ps = conn.getConnexion().prepareStatement(Sql1);
              
-             ResultSet Rs = ps.executeQuery();;
-             
-             ResultSetMetaData rsmd = Rs.getMetaData();
-             int columnsNumber = rsmd.getColumnCount();
-             while (Rs.next()) {
+             ResultSet rs = ps.executeQuery();
+
+             while (rs.next()) {
                  
                  
-                 String id = Rs.getString(1);
-                 String mdp = Rs.getString(2);
-                 String Nom = Rs.getString(3);
-                 String Prenom = Rs.getString(4);
-                 String Service = Rs.getString(5);
+                 String id = rs.getString(1);
+                 String mdp = rs.getString(2);
+                 String nom = rs.getString(3);
+                 String prenom = rs.getString(4);
+                 String service = rs.getString(5);
                  
                  
-                 mp.getPrénom().setText(Prenom);
-                 mp.getNom().setText(Nom);
+                 mp.getPrénom().setText(prenom);
+                 mp.getNom().setText(nom);
                  mp.getId().setText(id);
                  mp.getMdp().setText(mdp);
-                 mp.getService().setSelectedItem(Service);;
+                 mp.getService().setSelectedItem(service);
                  mp.getType().setSelectedItem("praticienhospitaliers");
                    mp.getType().setEnabled(false);
                  
@@ -78,7 +75,10 @@ public class TableauPhP1 implements MouseListener {
              }
              } catch (SQLException ex) {
              Logger.getLogger(TableauPhP1.class.getName()).log(Level.SEVERE, null, ex);
-         }}
+         }finally {
+         }
+
+    }
              @Override
              public void mousePressed(MouseEvent e) {
          }

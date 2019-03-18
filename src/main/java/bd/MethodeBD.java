@@ -3,7 +3,8 @@ package bd;
 import interfaces.ConsulterDPIPHetIDE;
 import java.awt.Font;
 import listener.commun.State;
-import nf.patient.Patient;
+
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,6 +29,8 @@ public class MethodeBD {
             return ps.executeQuery(query);
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+
         }
         return null;
     }
@@ -52,6 +55,8 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }
+        finally {
         }
         return templatesTableModel;
     }
@@ -98,6 +103,8 @@ public class MethodeBD {
         } catch (SQLException e1) {
             e1.printStackTrace();
         }
+        finally {
+        }
         return templatesTableModel;
     }
 
@@ -130,6 +137,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
     }
@@ -157,6 +165,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
     }
@@ -186,6 +195,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
     }
@@ -216,6 +226,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
     }
@@ -247,7 +258,8 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
-        }
+        }finally {
+       }
         return templatesTableModel;
     }
 
@@ -270,6 +282,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
     }
@@ -293,6 +306,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
     }
@@ -316,6 +330,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
     }
@@ -339,7 +354,8 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
-        }
+        }finally {
+       }
         return templatesTableModel;
     }
 
@@ -378,7 +394,8 @@ public class MethodeBD {
 
         } catch (SQLException e1) {
             e1.printStackTrace();
-        }
+        }finally {
+         }
         try{
             String query1 = "SELECT * " +
                     "FROM patient " +
@@ -401,9 +418,9 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
-        }
+        }finally {
+         }
         return templatesTableModel;
-
 
     }
 
@@ -441,6 +458,7 @@ public class MethodeBD {
 
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         try{
             String query1 = "SELECT * " +
@@ -464,6 +482,7 @@ public class MethodeBD {
             }
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }finally {
         }
         return templatesTableModel;
 
@@ -591,7 +610,7 @@ public class MethodeBD {
        
        
       public static void SupprimerSurBdMedichoTech (int id) throws SQLException{  
- ConnexionBD conn = ConnexionBD.getInstance();
+        ConnexionBD conn = ConnexionBD.getInstance();
                     PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from medicotechniques WHERE idMT ='" + id + "'");
                     prep2.executeUpdate();
                     

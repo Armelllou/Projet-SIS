@@ -12,6 +12,7 @@ import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
 import nf.Sih;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -46,6 +47,9 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
             MethodeBD.PatientSecretaire(cdpis.getjTable1());
         } catch (SQLException ex) {
             Logger.getLogger(BoutonRetourDPISVersConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
+            //action systématique
         }
 
            RafraichitLesPanels rf = new RafraichitLesPanels(jframe,cdpis);

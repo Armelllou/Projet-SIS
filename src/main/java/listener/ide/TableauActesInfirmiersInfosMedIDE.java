@@ -45,7 +45,7 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
 
         try {
             String ipp = imph.getjLabelipp().getText();
-            String idIde = "";
+            String idIde ;
             int id = 0;
 
             
@@ -54,8 +54,7 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
             String types = (String) table.getModel().getValueAt(numLigne, 0);
             String dates = (String) table.getModel().getValueAt(numLigne, 2);
              
-             
-             
+
             String Sql1 = "Select * from actes WHERE IPP ='" + ipp + "'and type='" + types +"'and Date ='"+dates+"'";
        
            
@@ -64,17 +63,15 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
 
             ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet Rs = ps.executeQuery();;
-
-            ResultSetMetaData rsmd = Rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (Rs.next()) {
+            ResultSet rs = ps.executeQuery();
+;
+            while (rs.next()) {
                 
-                idIde   = Rs.getString(1);
+                idIde   = rs.getString(1);
                 id = Integer.decode(idIde);
-                String type = Rs.getString(3);
-                String observation = Rs.getString(4);
-                String date = Rs.getString(5);
+                String type = rs.getString(3);
+                String observation = rs.getString(4);
+                String date = rs.getString(5);
 
                 cph.getObservations().setText(observation);
                 cph.getDate1().setText(dates);
@@ -87,15 +84,13 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
 
             ps2 = conn.getConnexion().prepareStatement(Sql2);
 
-            ResultSet Rs2 = ps2.executeQuery();;
+            ResultSet rs2 = ps2.executeQuery();
 
-            ResultSetMetaData rsmd2 = Rs2.getMetaData();
-            int columnsNumber2 = rsmd2.getColumnCount();
 
-            while (Rs2.next()) {
+            while (rs2.next()) {
 
-                String nom = Rs2.getString(3);
-                String prenom = Rs2.getString(4);
+                String nom = rs2.getString(3);
+                String prenom = rs2.getString(4);
                 
 
                 cph.getNomide1().setText(nom);
@@ -108,6 +103,8 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
         } catch (SQLException ex) {
             Logger.getLogger(TableauActesInfirmiersInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally {
+          }
     }
 
     @Override

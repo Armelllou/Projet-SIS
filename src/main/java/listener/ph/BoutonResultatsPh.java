@@ -20,10 +20,8 @@ import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
 import listener.commun.RafraichitLesPanels;
 
-/**
- *
- * @author annel
- */
+import javax.swing.*;
+
 public class BoutonResultatsPh implements ActionListener {
 
     ResultatParPatient rp;
@@ -55,8 +53,8 @@ public class BoutonResultatsPh implements ActionListener {
           
         } catch (SQLException ex) {
             Logger.getLogger(BoutonResultatsPh.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        }finally {
+         }
 
            RafraichitLesPanels rf = new RafraichitLesPanels(jframe,rp);
     }

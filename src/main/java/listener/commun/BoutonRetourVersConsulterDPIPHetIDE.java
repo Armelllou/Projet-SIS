@@ -11,25 +11,21 @@ import interfaces.ConsulterDPIPHetIDE;
 import interfaces.DPIIDE;
 import interfaces.Fenetre;
 import interfaces.DPIPH;
-import java.awt.Font;
-import nf.Sih;
 
+import javax.swing.*;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- * @author Manon
- */
 public class BoutonRetourVersConsulterDPIPHetIDE implements ActionListener {
 
     DPIPH dpis;
     ConsulterDPIPHetIDE cdpis;
     Fenetre jframe;
     BarreDuHaut bh;
-    DPIIDE dpiide;
 
     public BoutonRetourVersConsulterDPIPHetIDE(Fenetre jframe, ConsulterDPIPHetIDE cdpis, DPIPH dpis,DPIIDE dpiide, BarreDuHaut bh) {
         this.jframe = jframe;
@@ -45,6 +41,7 @@ public class BoutonRetourVersConsulterDPIPHetIDE implements ActionListener {
             nombre = MethodeBD.compterTableauPrestationParService(bh.getService().getText());
         } catch (SQLException ex) {
             Logger.getLogger(BoutonRetourVersConsulterDPIPHetIDE.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
         }
 
 

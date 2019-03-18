@@ -54,18 +54,15 @@ public class TableauIdeP implements MouseListener {
 
             ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet Rs = ps.executeQuery();;
-
-            ResultSetMetaData rsmd = Rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (Rs.next()) {
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
 
                 
-                String id = Rs.getString(1);
-                String mdp = Rs.getString(2);
-                String Nom = Rs.getString(3);
-                String Prenom = Rs.getString(4);
-                String Service = Rs.getString(5);
+                String id = rs.getString(1);
+                String mdp = rs.getString(2);
+                String Nom = rs.getString(3);
+                String Prenom = rs.getString(4);
+                String Service = rs.getString(5);
 
                
                 mp.getPrénom().setText(Prenom);
@@ -81,7 +78,8 @@ public class TableauIdeP implements MouseListener {
             }
              } catch (SQLException ex) {
             Logger.getLogger(TableauIdeP.class.getName()).log(Level.SEVERE, null, ex);
-        } 
+        } finally {
+        }
            
         
         

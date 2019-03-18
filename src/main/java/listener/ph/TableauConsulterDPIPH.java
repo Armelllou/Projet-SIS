@@ -10,8 +10,6 @@ import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.DPIIDE;
 import interfaces.DPIPH;
-import nf.Sih;
-
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -28,10 +26,8 @@ public class TableauConsulterDPIPH implements MouseListener {
 
     DPIPH imph;
     DPIIDE imide;
-    ConsulterDPIPHetIDE cdpi;
 
     Fenetre fen;
-    Sih sih;;
 
     JTable table;
     ListenerConnexion conn;
@@ -40,7 +36,6 @@ public class TableauConsulterDPIPH implements MouseListener {
         this.imph = imph;
         this.imide = imide;
         this.fen = fen;
-        this.sih = sih;
         this.table = table;
         this.conn = conn;
 
@@ -72,20 +67,18 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                 ps = conn.getConnexion().prepareStatement(Sql1);
 
-                ResultSet Rs = ps.executeQuery();
+                ResultSet rs = ps.executeQuery();
 
-                ResultSetMetaData rsmd = Rs.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                while (Rs.next()) {
+                while (rs.next()) {
 
-                    String DateDeNaissance = Rs.getString(5);
+                    String DateDeNaissance = rs.getString(5);
 
-                    String Sexe = Rs.getString(6);
-                    String MedecinG = Rs.getString(7);
-                    String Adresse = Rs.getString(8);
-                    String NumSS = Rs.getString(9);
-                    String email = Rs.getString(10);
-                    String telephone = Rs.getString(11);
+                    String Sexe = rs.getString(6);
+                    String MedecinG = rs.getString(7);
+                    String Adresse = rs.getString(8);
+                    String NumSS = rs.getString(9);
+                    String email = rs.getString(10);
+                    String telephone = rs.getString(11);
 
                     imph.getjLabeladresse().setText(Adresse);
                     imph.getjLabelnumsecu().setText(NumSS);
@@ -101,16 +94,14 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                 ps2 = conn.getConnexion().prepareStatement(Sql2);
 
-                ResultSet Rs2 = ps2.executeQuery();;
+                ResultSet rs2 = ps2.executeQuery();
 
-                ResultSetMetaData rsmd2 = Rs2.getMetaData();
-                int columnsNumber2 = rsmd2.getColumnCount();
 
-                while (Rs2.next()) {
+                while (rs2.next()) {
 
-                    String ServiceGegraphique = Rs2.getString(2);
-                    String ServiceRespo = Rs2.getString(3);
-                    String chambre = Rs2.getString(4);
+                    String ServiceGegraphique = rs2.getString(2);
+                    String ServiceRespo = rs2.getString(3);
+                    String chambre = rs2.getString(4);
 
                     imph.getServiceRespo().setText(ServiceRespo);
                     imph.getServiceGeo().setText(ServiceGegraphique);
@@ -124,6 +115,8 @@ public class TableauConsulterDPIPH implements MouseListener {
             }
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPIPH.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
         }
     }
 

@@ -6,19 +6,15 @@
 package listener.secretairemedical;
 
 import bd.ConnexionBD;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
 import nf.Sih;
-import nf.patient.Patient;
-
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -150,6 +146,8 @@ public class TableauConsulterDPISecretaire implements MouseListener {
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally {
+            }
 
     }
 

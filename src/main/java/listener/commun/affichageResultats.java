@@ -49,67 +49,67 @@ public class affichageResultats implements MouseListener {
         try {
 
             int numLigne = table.getSelectedRow();
-            String NomPatient = (String) table.getModel().getValueAt(numLigne, 0);
-            String PrenomPatient = (String) table.getModel().getValueAt(numLigne, 1);
-            String IPP = (String) table.getModel().getValueAt(numLigne, 2);
-            String Service = (String) table.getModel().getValueAt(numLigne, 4);
-            String Date = (String) table.getModel().getValueAt(numLigne, 5);
-            String NomMedecin = "";
-            String PrenomMedecin = "";
-            String LabelMedecin = "";
+            String nomPatient = (String) table.getModel().getValueAt(numLigne, 0);
+            String prenomPatient = (String) table.getModel().getValueAt(numLigne, 1);
+            String ipp = (String) table.getModel().getValueAt(numLigne, 2);
+            String service = (String) table.getModel().getValueAt(numLigne, 4);
+            String date = (String) table.getModel().getValueAt(numLigne, 5);
+            String nomMedecin = "";
+            String prenomMedecin = "";
+            String labelMedecin = "";
             String details = "";
             int idTech = 0;
 
-            String Sql1 = "Select * from prestationsfaites WHERE DateEffectuee ='" + Date + "'";
+            String Sql1 = "Select * from prestationsfaites WHERE DateEffectuee ='" + date + "'";
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
             ps = conn.getConnexion().prepareStatement(Sql1);
-            ResultSet Rs = ps.executeQuery();;
-            ResultSetMetaData rsmd = Rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (Rs.next()) {
+            ResultSet rs = ps.executeQuery();
 
-                NomMedecin = Rs.getString(7);
-                PrenomMedecin = Rs.getString(8);
-                LabelMedecin = Rs.getString(7) + " " + Rs.getString(8);
-                details = Rs.getString(4);
-                idTech = Integer.parseInt(Rs.getString(9));
+            while (rs.next()) {
 
-                pf.getPrenomPatient().setText(PrenomPatient);
-                pf.getNomPatient().setText(NomPatient);
-                pf.getNomMedecin().setText(LabelMedecin);
+                nomMedecin = rs.getString(7);
+                prenomMedecin = rs.getString(8);
+                labelMedecin = rs.getString(7) + " " + rs.getString(8);
+                details = rs.getString(4);
+                idTech = Integer.parseInt(rs.getString(9));
+
+                pf.getPrenomPatient().setText(prenomPatient);
+                pf.getNomPatient().setText(nomPatient);
+                pf.getNomMedecin().setText(labelMedecin);
                 pf.getResultats().setText(details);
                 pf.getResultats().setEditable(false);
-                pf.getIpp().setText(IPP);
+                pf.getIpp().setText(ipp);
                 pf.getType().setText("MedicoTechnicien");
                 pf.getBoutonValider().setVisible(false);
                 pf.getBoutonAnnuler().setText("Retour");
                 javax.swing.ImageIcon icone = new javax.swing.ImageIcon(getClass().getResource("/interfaces/flcheretour-ConvertImage.png"));
                 pf.getBoutonAnnuler().setIcon(icone);
                 pf.getBoutonAnnuler().setText("");
-            
 
 
-            PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from prestationsfaites WHERE DateEffectuee ='" + Date + "'");
+            PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from prestationsfaites WHERE DateEffectuee ='" + date + "'");
             prep2.executeUpdate();
 
             String sql = " INSERT INTO ResultatsLus (ServiceDemandeur,NomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats,DateEffectuee,PrenomPatient) VALUES(?,?,?,?,?,?,?,?,?) ";
             PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
-            statement.setObject(1, Service, Types.VARCHAR);
-            statement.setObject(2, NomPatient, Types.VARCHAR);
-            statement.setObject(3, IPP, Types.VARCHAR);
-            statement.setObject(4, NomMedecin, Types.VARCHAR);
-            statement.setObject(5, PrenomMedecin, Types.VARCHAR);
+            statement.setObject(1, service, Types.VARCHAR);
+            statement.setObject(2, nomPatient, Types.VARCHAR);
+            statement.setObject(3, ipp, Types.VARCHAR);
+            statement.setObject(4, nomMedecin, Types.VARCHAR);
+            statement.setObject(5, prenomMedecin, Types.VARCHAR);
             statement.setObject(6, idTech, Types.INTEGER);
             statement.setObject(7, details, Types.VARCHAR);
-            statement.setObject(8, Date, Types.VARCHAR);
-            statement.setObject(9, PrenomPatient, Types.VARCHAR);
+            statement.setObject(8, date, Types.VARCHAR);
+            statement.setObject(9, prenomPatient, Types.VARCHAR);
             statement.executeUpdate();
             }
 
         } catch (SQLException ex) {
             Logger.getLogger(affichageResultats.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally {
+       }
         
           RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
     }

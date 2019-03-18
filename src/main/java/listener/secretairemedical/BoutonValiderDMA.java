@@ -74,6 +74,8 @@ public class BoutonValiderDMA implements ActionListener {
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderDMA.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally {
+        }
 
     }
 

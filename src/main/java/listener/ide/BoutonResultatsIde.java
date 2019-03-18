@@ -20,6 +20,8 @@ import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
 import listener.commun.RafraichitLesPanels;
 
+import javax.swing.*;
+
 /**
  *
  * @author annel

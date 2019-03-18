@@ -6,13 +6,11 @@
 package listener.ph;
 
 import bd.ConnexionBD;
-import bd.MethodeBD;
 import interfaces.BarreDuHaut;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.DPIPH;
 import interfaces.Fenetre;
 import interfaces.TransfertService;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
@@ -33,7 +31,6 @@ public class BoutonValiderTransfert implements ActionListener {
     DPIPH dpiph;
     Fenetre fen;
     ConsulterDPIPHetIDE consult;
-    BarreDuHaut bh;
   
 
     public BoutonValiderTransfert(TransfertService ts, Fenetre fen,DPIPH dpiph, ConsulterDPIPHetIDE consult,BarreDuHaut bh ){
@@ -45,8 +42,7 @@ public class BoutonValiderTransfert implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-       
-       
+
     
          try {
           
@@ -62,8 +58,7 @@ public class BoutonValiderTransfert implements ActionListener {
  
             JOptionPane jop1 = new JOptionPane();
             jop1.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
-            
-    
+
            dpiph.getServiceGeo().setText(ts.getServiceGeographique().getSelectedItem().toString());
            dpiph.getServiceRespo().setText( ts.getServiceResponsable().getSelectedItem().toString());
             
@@ -73,8 +68,9 @@ public class BoutonValiderTransfert implements ActionListener {
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+         finally {
+         }
+
         
          
     }

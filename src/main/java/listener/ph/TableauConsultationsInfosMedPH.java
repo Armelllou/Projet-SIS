@@ -43,8 +43,6 @@ public class TableauConsultationsInfosMedPH implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         try {
             String ipp = imph.getjLabelipp().getText();
-            String idIde = "";
-            int id = 0;
 
             int numLigne = table.getSelectedRow();
 
@@ -57,15 +55,13 @@ public class TableauConsultationsInfosMedPH implements MouseListener {
 
             ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet Rs = ps.executeQuery();;
+            ResultSet rs = ps.executeQuery();
 
-            ResultSetMetaData rsmd = Rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (Rs.next()) {
+            while (rs.next()) {
 
-                String nomMedecin = Rs.getString(4);
-                String observation = Rs.getString(1);
-                String date = Rs.getString(3);
+                String nomMedecin = rs.getString(4);
+                String observation = rs.getString(1);
+                String date = rs.getString(3);
 
                 cph.getObservation().setText(observation);
                 cph.getDate().setText(date);
@@ -76,6 +72,8 @@ public class TableauConsultationsInfosMedPH implements MouseListener {
             }
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsultationsInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
         }
     }
 
