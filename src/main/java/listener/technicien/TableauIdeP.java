@@ -22,6 +22,8 @@ import java.util.logging.Logger;
 import javax.swing.JTable;
 import listener.commun.RafraichitLesPanels;
 
+import static bd.MethodeBD.executeQuery;
+
 /**
  *
  * @author annel
@@ -48,13 +50,9 @@ public class TableauIdeP implements MouseListener {
             int NumLigne = table.getSelectedRow();
             
             String idide = (String) table.getModel().getValueAt(NumLigne, 2);
-            String Sql1 = "Select * from ide WHERE idIDE ='" + idide +"'";
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps;
 
-            ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet rs = ps.executeQuery();
+            ResultSet rs = executeQuery("Select * from ide WHERE idIDE ='" + idide +"'");
             while (rs.next()) {
 
                 

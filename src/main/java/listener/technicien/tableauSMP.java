@@ -20,6 +20,8 @@ import java.util.logging.Logger;
 import javax.swing.JTable;
 import listener.commun.RafraichitLesPanels;
 
+import static bd.MethodeBD.executeQuery;
+
 /**
  *
  * @author annel
@@ -45,13 +47,9 @@ public class tableauSMP implements MouseListener  {
               int NumLigne = table.getSelectedRow();
 
               String idSA = (String) table.getModel().getValueAt(NumLigne, 2);
-              String sql1 = "Select * from secretaireadministrative WHERE idSA ='" + idSA +"'";
-              ConnexionBD conn = ConnexionBD.getInstance();
-              PreparedStatement ps;
+
               
-              ps = conn.getConnexion().prepareStatement(sql1);
-              
-              ResultSet rs = ps.executeQuery();
+              ResultSet rs = executeQuery("Select * from secretaireadministrative WHERE idSA ='" + idSA +"'");
 
               while (rs.next()) {
 

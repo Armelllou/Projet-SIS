@@ -67,7 +67,7 @@ public class TableauConsulterDPIPH implements MouseListener {
                 imph.getjLabelprenom().setText(prenom);
                 imph.getjLabelipp().setText(ipp);
 
-                ConnexionBD conn = ConnexionBD.getInstance();
+
                 ResultSet rs = executeQuery("Select * from patient WHERE IPP ='" + ipp + "'");
 
 
@@ -107,7 +107,7 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                         }
                     }
-                 
+
                     ResultSet rs24 = executeQuery("Select * from consultationexterne WHERE IPP = '" + ipp + "'");
 
                     while (rs24.next()) {
@@ -123,10 +123,8 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                 }
 
-                String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
-                PreparedStatement ps2;
-                ps2 = conn.getConnexion().prepareStatement(Sql2);
-                ResultSet rs2 = ps2.executeQuery();
+
+                ResultSet rs2 = executeQuery("Select * from localisations WHERE IPP = '" + ipp + "'");
 
 
                 while (rs2.next()) {

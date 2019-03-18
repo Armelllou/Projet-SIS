@@ -63,15 +63,13 @@ public class TableauPrescriptionsInfosMedIDE implements MouseListener {
 
             ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet Rs = ps.executeQuery();;
+            ResultSet rs = ps.executeQuery();
 
-            ResultSetMetaData rsmd = Rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (Rs.next()) {
+            while (rs.next()) {
                 
              
          
-                String observation = Rs.getString(5);
+                String observation = rs.getString(5);
               
 
                 cph.getDetail().setText(observation);

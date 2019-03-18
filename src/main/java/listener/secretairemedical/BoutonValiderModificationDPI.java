@@ -21,6 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
 
+import static bd.MethodeBD.executeQuery;
+
 
 public class BoutonValiderModificationDPI implements ActionListener {
 
@@ -86,10 +88,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
         try {
             String ipp = mdpi.getjLabel3().getText();
-            String sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
-            PreparedStatement ps;
-            ps = conn.getConnexion().prepareStatement(sql1);
-            ResultSet rs = ps.executeQuery();
+            ResultSet rs = executeQuery("Select * from patient WHERE IPP ='" + ipp + "'");
 
 
             while (rs.next()) {
@@ -111,10 +110,8 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 if (typeSejour.equals("Hospitalisation") && !dpis.getTypeDeSejour().getText().equals(mdpi.getTypesejour().getSelectedItem().toString())) {
 
                     ipp = mdpi.getjLabel3().getText();
-                    String sql3 = "Select * from consultationexterne WHERE IPP ='" + ipp + "'";
-                    PreparedStatement ps3;
-                    ps3 = conn.getConnexion().prepareStatement(sql3);
-                    ResultSet rs3 = ps3.executeQuery();
+
+                    ResultSet rs3 = executeQuery("Select * from consultationexterne WHERE IPP ='" + ipp + "'");
                     PreparedStatement prep3 = conn.getConnexion().prepareStatement("UPDATE patient SET typeSejour= ? WHERE ipp = ?");
                     prep3.setString(1, mdpi.getTypesejour().getSelectedItem().toString());
                     prep3.setString(2, ipp);
@@ -139,10 +136,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
                     }
                 } else {
                     ipp = mdpi.getjLabel3().getText();
-                    String sql2 = "Select * from hospitalisation WHERE IPP ='" + ipp + "'";
-                    PreparedStatement ps2;
-                    ps2 = conn.getConnexion().prepareStatement(sql2);
-                    ResultSet rs2 = ps2.executeQuery();
+                    ResultSet rs2 = executeQuery("Select * from hospitalisation WHERE IPP ='" + ipp + "'");
 
                     PreparedStatement prep3 = conn.getConnexion().prepareStatement("UPDATE patient SET typeSejour= ? WHERE ipp = ?");
                     prep3.setString(1, mdpi.getTypesejour().getSelectedItem().toString());
@@ -238,11 +232,8 @@ public class BoutonValiderModificationDPI implements ActionListener {
             }
 
 
-            String sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
-            PreparedStatement ps2;
 
-            ps2 = conn.getConnexion().prepareStatement(sql2);
-            ResultSet rs2 = ps2.executeQuery();
+            ResultSet rs2 =executeQuery("Select * from localisations WHERE IPP = '" + ipp + "'");
 
 
             while (rs2.next()) {

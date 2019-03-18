@@ -20,6 +20,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
 
+import static bd.MethodeBD.executeQuery;
+
 
 public class TableauConsulterDPISecretaire implements MouseListener {
 
@@ -55,11 +57,8 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             dpis.getjLabelprenom().setText(prenom);
             dpis.getjLabelipp().setText(ipp);
 
-            String sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps;
-            ps = conn.getConnexion().prepareStatement(sql1);
-            ResultSet rs = ps.executeQuery();
+
+            ResultSet rs = executeQuery("Select * from patient WHERE IPP ='" + ipp + "'");
 
             while (rs.next()) {
 
@@ -85,11 +84,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
                 String type=typeSejour;
 
 
-
-            String sql23 = "Select * from hospitalisation WHERE IPP = '" + ipp + "'";
-            PreparedStatement ps23;
-            ps23 = conn.getConnexion().prepareStatement(sql23);
-            ResultSet rs23 = ps23.executeQuery();
+            ResultSet rs23 = executeQuery("Select * from hospitalisation WHERE IPP = '" + ipp + "'");
 
             while (rs23.next()) {
                 if (type.equals("Hospitalisation")) {
@@ -102,10 +97,8 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
                 }
             }
-                String sql24 = "Select * from consultationexterne WHERE IPP = '" + ipp + "'";
-                PreparedStatement ps24;
-                ps24 = conn.getConnexion().prepareStatement(sql24);
-                ResultSet rs24 = ps24.executeQuery();
+
+                ResultSet rs24 = executeQuery("Select * from consultationexterne WHERE IPP = '" + ipp + "'");
 
                 while (rs24.next()) {
                     if(type.equals("Consultation externe")){
@@ -121,10 +114,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
             }
 
 
-            String sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
-            PreparedStatement ps2;
-            ps2 = conn.getConnexion().prepareStatement(sql2);
-            ResultSet rs2 = ps2.executeQuery();
+            ResultSet rs2 = executeQuery("Select * from localisations WHERE IPP = '" + ipp + "'");
 
 
             while (rs2.next()) {
@@ -146,8 +136,6 @@ public class TableauConsulterDPISecretaire implements MouseListener {
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
         }
-        finally {
-            }
 
     }
 

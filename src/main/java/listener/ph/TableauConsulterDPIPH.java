@@ -22,6 +22,8 @@ import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
 import listener.commun.RafraichitLesPanels;
 
+import static bd.MethodeBD.executeQuery;
+
 public class TableauConsulterDPIPH implements MouseListener {
 
     DPIPH imph;
@@ -61,13 +63,9 @@ public class TableauConsulterDPIPH implements MouseListener {
                 imph.getjLabelprenom().setText(prenom);
                 imph.getjLabelipp().setText(ipp);
 
-                String Sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
-                ConnexionBD conn = ConnexionBD.getInstance();
-                PreparedStatement ps;
 
-                ps = conn.getConnexion().prepareStatement(Sql1);
 
-                ResultSet rs = ps.executeQuery();
+                ResultSet rs = executeQuery("Select * from patient WHERE IPP ='" + ipp + "'");
 
                 while (rs.next()) {
 
@@ -89,12 +87,8 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                 }
 
-                String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
-                PreparedStatement ps2;
 
-                ps2 = conn.getConnexion().prepareStatement(Sql2);
-
-                ResultSet rs2 = ps2.executeQuery();
+                ResultSet rs2 = executeQuery("Select * from localisations WHERE IPP = '" + ipp + "'");
 
 
                 while (rs2.next()) {
