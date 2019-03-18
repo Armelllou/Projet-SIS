@@ -18,18 +18,7 @@ import javax.swing.JPanel;
  * @author Manon
  */
 public class Connexion extends javax.swing.JPanel implements ActionListener {
-// rapport avec la base de donnée
-    ConnexionBD conn = null;
-    ResultSet Rs = null;
-    PreparedStatement ps = null;
-    
-// connexion des interfaces
-    Connexion c;
-    ConsulterDPISecretaire consultdpis;
-    JPanel jp;
-    Fenetre jframe;
-    BarreDuHaut bh;
-    ConsulterDPIPHetIDE cdpiphetide;
+
     /**
      * Creates new form Connexion
      */

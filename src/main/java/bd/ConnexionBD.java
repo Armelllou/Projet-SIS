@@ -35,7 +35,6 @@ public class ConnexionBD {
                 System.out.println("===> Connexion effectuee");
             }
 //
-
         } catch (Exception ex) {
             System.out.println("Erreur Connection driver");
             ex.printStackTrace();

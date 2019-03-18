@@ -181,7 +181,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 
     @Override
     public void keyTyped(KeyEvent e) {
-G
+
     }
 
     public static State getState() {

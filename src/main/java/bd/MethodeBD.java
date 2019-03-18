@@ -23,14 +23,13 @@ public class MethodeBD {
     }
 
     public static ResultSet executeQuery(String query) {
+
         try {
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps = conn.getConnexion().prepareStatement(query);
             return ps.executeQuery(query);
         } catch (SQLException e) {
             e.printStackTrace();
-        }finally {
-
         }
         return null;
     }
@@ -61,23 +60,6 @@ public class MethodeBD {
         return templatesTableModel;
     }
 
-    /**
-     * Recupère le nombre de patient dans la BD
-     *
-     * @return int
-     */
-    public static int nbrePatientBD() throws SQLException {
-        int nbre;
-        String s;
-        String sql = "SELECT COUNT(*) FROM `patient`";
-        PreparedStatement ps = ConnexionBD.getInstance().getConnexion().prepareStatement(sql);
-        ResultSet rs = ps.executeQuery(sql);
-        rs.next();
-        s = rs.getString(1);
-        nbre = Integer.parseInt(s);
-        return nbre;
-    }
-    
 
     /**
      * modèle pour remplir la Jtable avec les consultations d'un patient
@@ -580,9 +562,7 @@ public class MethodeBD {
     
     public static int compterTableauPrestationParService(String Service) throws SQLException {
         String sql45 = "SELECT COUNT(*) FROM `prestationsfaites` WHERE serviceDemandeur = '" + Service + "'";
-        ConnexionBD conn = ConnexionBD.getInstance();
-        PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
-        ResultSet rs = ps.executeQuery(sql45);
+        ResultSet rs = executeQuery(sql45);
         rs.next();
         String s = rs.getString(1);
         int nbre = Integer.parseInt(s);
@@ -598,8 +578,8 @@ public class MethodeBD {
      
       public static void SupprimerSurBdPH (int id) throws SQLException{
        ConnexionBD conn = ConnexionBD.getInstance();
-                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from praticienhospitaliers WHERE idPh ='" + id + "'");
-                    prep2.executeUpdate();
+       PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from praticienhospitaliers WHERE idPh ='" + id + "'");
+       prep2.executeUpdate();
                     
       }
        public static void SupprimerSurBdTechnicien (int id) throws SQLException{
