@@ -22,6 +22,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import static bd.MethodeBD.executeQuery;
+
 public class TableauConsulterDPIPH implements MouseListener {
 
     DPIPH imph;
@@ -65,11 +67,8 @@ public class TableauConsulterDPIPH implements MouseListener {
                 imph.getjLabelprenom().setText(prenom);
                 imph.getjLabelipp().setText(ipp);
 
-                String Sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
                 ConnexionBD conn = ConnexionBD.getInstance();
-                PreparedStatement ps;
-                ps = conn.getConnexion().prepareStatement(Sql1);
-                ResultSet rs = ps.executeQuery();
+                ResultSet rs = executeQuery("Select * from patient WHERE IPP ='" + ipp + "'");
 
 
                 while (rs.next()) {
@@ -95,11 +94,7 @@ public class TableauConsulterDPIPH implements MouseListener {
                     imph.getEtat().setText(etat);
                     String type=typeSejour;
 
-
-                    String sql23 = "Select * from hospitalisation WHERE IPP = '" + ipp + "'";
-                    PreparedStatement ps23;
-                    ps23 = conn.getConnexion().prepareStatement(sql23);
-                    ResultSet rs23 = ps23.executeQuery();
+                    ResultSet rs23 = executeQuery("Select * from hospitalisation WHERE IPP = '" + ipp + "'");
 
                     while (rs23.next()) {
                         if (type.equals("Hospitalisation")) {
@@ -112,10 +107,8 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                         }
                     }
-                    String sql24 = "Select * from consultationexterne WHERE IPP = '" + ipp + "'";
-                    PreparedStatement ps24;
-                    ps24 = conn.getConnexion().prepareStatement(sql24);
-                    ResultSet rs24 = ps24.executeQuery();
+                 
+                    ResultSet rs24 = executeQuery("Select * from consultationexterne WHERE IPP = '" + ipp + "'");
 
                     while (rs24.next()) {
                         if(type.equals("Consultation externe")){
