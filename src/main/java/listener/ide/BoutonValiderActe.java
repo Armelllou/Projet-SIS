@@ -11,7 +11,6 @@ import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
 import java.awt.Font;
-import nf.Dates;
 import nf.sejour.Acte;
 
 import javax.swing.*;
@@ -49,7 +48,6 @@ public class BoutonValiderActe implements ActionListener {
             JOptionPane jop1 = new JOptionPane();
 
             jop1.showMessageDialog(null, "Acte correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
-            MethodeBD mb = new MethodeBD();
             String ipp = aai.getIpp().getText();
             im.getjTable2().setFont(new Font("Calibri", 0, 18));
             im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
@@ -61,7 +59,8 @@ public class BoutonValiderActe implements ActionListener {
             fen.repaint();
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderActe.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }finally {
+         }
 
     }
 }

@@ -14,7 +14,6 @@ import interfaces.Fenetre;
 import interfaces.PrestationFaite;
 import interfaces.Prestations;
 import interfaces.Resultat;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -54,7 +53,6 @@ public class BoutonValiderResultats implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
-            
            
             String NomMedicoTech = bh.getNom().getText();
             String PrenomMedicoTech = bh.getPrenom().getText();
@@ -91,6 +89,7 @@ public class BoutonValiderResultats implements ActionListener {
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderResultats.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
         }
 
     }

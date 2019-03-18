@@ -45,7 +45,7 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
     public void mouseClicked(MouseEvent e) {
        try {
             String ipp = imph.getjLabelipp().getText();
-            String idIde = "";
+            String idIde = null;
             int id = 0;
 
             
@@ -54,37 +54,25 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
             String types = (String) table.getModel().getValueAt(numLigne, 0);
             String Nom =(String) table.getModel().getValueAt(numLigne, 1);
             String dates = (String) table.getModel().getValueAt(numLigne, 2);
-             
-             
-            
+
             String Sql1 = "Select * from prescription WHERE IPP ='" + ipp + "'and Type='" + types +"'and Date ='"+dates+"'";
-       
-           
+
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps;
 
             ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet Rs = ps.executeQuery();;
+            ResultSet rs = ps.executeQuery();
 
-            ResultSetMetaData rsmd = Rs.getMetaData();
-            int columnsNumber = rsmd.getColumnCount();
-            while (Rs.next()) {
-                
-             
-         
-                String observation = Rs.getString(5);
-              
+            while (rs.next()) {
 
+                String observation = rs.getString(5);
                 cph.getDetail().setText(observation);
                 cph.getDATE().setText(dates);
                 cph.getNom().setText(Nom);
 
             }
-
-         
-            
-              fen.panelVisibleFalse();
+            fen.panelVisibleFalse();
         fen.add(cph);
         cph.setVisible(true);
         fen.revalidate();
@@ -92,6 +80,8 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
          
         } catch (SQLException ex) {
             Logger.getLogger(TableauActesInfirmiersInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
         }
 
     }

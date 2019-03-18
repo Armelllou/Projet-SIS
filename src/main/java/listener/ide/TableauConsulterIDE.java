@@ -18,7 +18,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
+import javax.swing.*;
+
 import listener.commun.ListenerConnexion;
 import nf.Sih;
 
@@ -58,7 +59,6 @@ public class TableauConsulterIDE implements MouseListener{
                 String nomUsuel = (String) table.getModel().getValueAt(NumLigne, 1);
                 String prenom = (String) table.getModel().getValueAt(NumLigne, 2);
                 String ipp = (String) table.getModel().getValueAt(NumLigne, 3);
-                int ippS = Integer.parseInt(ipp);
 
                 imide.getjLabelnom().setText(nomDeNaissance);
                 imide.getjLabelnom1().setText(nomUsuel);
@@ -71,20 +71,19 @@ public class TableauConsulterIDE implements MouseListener{
 
                 ps = conn.getConnexion().prepareStatement(Sql1);
 
-                ResultSet Rs = ps.executeQuery();;
+                ResultSet rs = ps.executeQuery();
 
-                ResultSetMetaData rsmd = Rs.getMetaData();
-                int columnsNumber = rsmd.getColumnCount();
-                while (Rs.next()) {
 
-                    String DateDeNaissance = Rs.getString(5);
+                while (rs.next()) {
 
-                    String Sexe = Rs.getString(6);
-                    String MedecinG = Rs.getString(7);
-                    String Adresse = Rs.getString(8);
-                    String NumSS = Rs.getString(9);
-                    String email = Rs.getString(10);
-                    String telephone = Rs.getString(11);
+                    String DateDeNaissance = rs.getString(5);
+
+                    String Sexe = rs.getString(6);
+                    String MedecinG = rs.getString(7);
+                    String Adresse = rs.getString(8);
+                    String NumSS = rs.getString(9);
+                    String email = rs.getString(10);
+                    String telephone = rs.getString(11);
 
                     imide.getjLabeladresse().setText(Adresse);
                     imide.getjLabelnumsecu().setText(NumSS);
@@ -100,16 +99,13 @@ public class TableauConsulterIDE implements MouseListener{
 
                 ps2 = conn.getConnexion().prepareStatement(Sql2);
 
-                ResultSet Rs2 = ps2.executeQuery();;
+                ResultSet rs2 = ps2.executeQuery();
 
-                ResultSetMetaData rsmd2 = Rs2.getMetaData();
-                int columnsNumber2 = rsmd2.getColumnCount();
+                while (rs2.next()) {
 
-                while (Rs2.next()) {
-
-                    String ServiceGegraphique = Rs2.getString(2);
-                    String ServiceRespo = Rs2.getString(3);
-                    String chambre = Rs2.getString(4);
+                    String ServiceGegraphique = rs2.getString(2);
+                    String ServiceRespo = rs2.getString(3);
+                    String chambre = rs2.getString(4);
 
                     imide.getServiceRespo().setText(ServiceRespo);
                     imide.getServiceGeo().setText(ServiceGegraphique);
@@ -127,6 +123,7 @@ public class TableauConsulterIDE implements MouseListener{
             }
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterIDE.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
         }
     }
 

@@ -20,10 +20,7 @@ import javax.swing.JOptionPane;
 import nf.sejour.Consultation;
 import nf.Dates;
 
-/**
- *
- * @author annel
- */
+
 public class BoutonValiderConsultation implements ActionListener {
 AjouterConsultation ac;
     InfosMedicalesPH im;
@@ -53,9 +50,6 @@ AjouterConsultation ac;
         ac.getPrenomMedecin().setText(PrenomMedecin);
         
         String observation = ac.getCompteRendu().getText();
-        String idMedecin = bh.getId().getText();
-        
-        Dates dates = new Dates(ac.getDate().getText(), ac.getJour().getText(), ac.getAnnee().getText());
         
         Consultation p = new Consultation(observation,NomMedecin, ipp);
         
@@ -78,7 +72,8 @@ AjouterConsultation ac;
         
     } catch (SQLException ex) {
         Logger.getLogger(BoutonValiderConsultation.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    }finally {
+     }
     }
     
     

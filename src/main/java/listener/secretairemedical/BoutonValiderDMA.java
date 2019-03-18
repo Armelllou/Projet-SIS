@@ -86,6 +86,8 @@ public class BoutonValiderDMA implements ActionListener {
             } catch (SQLException e1) {
                 e1.printStackTrace();
             }
+            finally {
+             }
 
             fen.add(cdpis);
             cdpis.setVisible(true);
@@ -94,6 +96,8 @@ public class BoutonValiderDMA implements ActionListener {
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderDMA.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
         }
 
     }

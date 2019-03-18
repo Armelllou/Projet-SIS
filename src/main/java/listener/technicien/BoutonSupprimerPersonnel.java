@@ -46,7 +46,7 @@ public class BoutonSupprimerPersonnel implements ActionListener {
         
         String id = mp.getId().getText();
         int ids = Integer.parseInt(id);
-        String Personnel = mp.getType().getSelectedItem().toString();
+        String personnel = mp.getType().getSelectedItem().toString();
         
         int reponse = JOptionPane.showConfirmDialog(fen,
                 "Voulez-vous vraiment supprimer ce personnel ?",
@@ -56,29 +56,29 @@ public class BoutonSupprimerPersonnel implements ActionListener {
         
         if (reponse == JOptionPane.YES_OPTION) {
             try {
-                if (Personnel == "ide") {
+                if (personnel == "ide") {
                     
                     MethodeBD.SupprimerSurBdIDE(ids);
                     lp.getTableIDE().setFont(new Font("Calibri", 0, 18));
                     lp.getTableIDE().setModel(new MethodeBD().listeIDE());
                 }
-                if (Personnel == "praticienhospitaliers") {
+                if (personnel == "praticienhospitaliers") {
                     
                     MethodeBD.SupprimerSurBdPH(ids);
                     lp.getTablePH().setFont(new Font("Calibri", 0, 18));
                     lp.getTablePH().setModel(new MethodeBD().listePH());
                 }
-                if (Personnel == "Technicien") {
+                if (personnel == "Technicien") {
                     
                     MethodeBD.SupprimerSurBdTechnicien(ids);
                 }
-                if (Personnel == "medicotechniques") {
+                if (personnel == "medicotechniques") {
                     MethodeBD.SupprimerSurBdMedichoTech(ids);
                     lp.getTableMT().setFont(new Font("Calibri", 0, 18));
                     lp.getTableMT().setModel(MethodeBD.listeMT());
                     
                 }
-                if (Personnel == "SecretaireAdministrative") {
+                if (personnel == "SecretaireAdministrative") {
                     
                     MethodeBD.SupprimerSurBdSecretaire(ids);
                     lp.getTableSecretaire().setFont(new Font("Calibri", 0, 18));
@@ -87,6 +87,8 @@ public class BoutonSupprimerPersonnel implements ActionListener {
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(BoutonValiderPersonnel.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            finally {
             }
             
             fen.panelVisibleFalse();

@@ -19,10 +19,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
 
-/**
- *
- * @author annel
- */
+import javax.swing.*;
+
 public class BoutonResultatsPh implements ActionListener {
 
     ResultatParPatient rp;
@@ -54,8 +52,8 @@ public class BoutonResultatsPh implements ActionListener {
           
         } catch (SQLException ex) {
             Logger.getLogger(BoutonResultatsPh.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
+        }finally {
+         }
 
         jframe.panelVisibleFalse();
         jframe.add(rp);

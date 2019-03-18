@@ -19,6 +19,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
 
+import javax.swing.*;
+
 /**
  *
  * @author annel
@@ -53,7 +55,8 @@ public class BoutonResultatsIde implements ActionListener {
             rp.getTablePrestation().setModel(new MethodeBD().listeResultatsParPatients(infoside.getjLabelipp().getText()));
         } catch (SQLException ex) {
             Logger.getLogger(BoutonResultatsIde.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }finally {
+         }
 
         jframe.panelVisibleFalse();
         jframe.add(rp);

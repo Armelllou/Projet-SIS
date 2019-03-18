@@ -10,6 +10,8 @@ import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.ListePersonnel;
 import interfaces.ModifierPersonnel;
+
+import javax.swing.*;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,50 +19,38 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
-import nf.personnel.Infirmier;
-import nf.personnel.Medecin;
-import nf.personnel.MedicoTechnique;
-import nf.personnel.SecretaireMedical;
-import nf.personnel.Technicien;
 
-/**
- *
- * @author annel
- */
 public class BoutonValiderModificationPersonnel implements ActionListener {
 
     Fenetre fen;
     ListePersonnel lp;
     ModifierPersonnel mp;
-    JTable table;
 
     public BoutonValiderModificationPersonnel(Fenetre fen, ListePersonnel lp, ModifierPersonnel mp) {
         this.fen = fen;
         this.lp = lp;
         this.mp = mp;
-
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        String Nom = mp.getNom().getText();
-        String Prenom = mp.getPrénom().getText();
+        String nom = mp.getNom().getText();
+        String prenom = mp.getPrénom().getText();
         int id = Integer.parseInt(mp.getId().getText());
         int mdp = Integer.parseInt(mp.getMdp().getText());
-        String Service = mp.getService().getSelectedItem().toString();
-        String Personnel = mp.getType().getSelectedItem().toString();
+        String service = mp.getService().getSelectedItem().toString();
+        String personnel = mp.getType().getSelectedItem().toString();
 
         try {
-            if (Personnel == "ide") {
+            if (personnel == "ide") {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE ide SET Nom= ?, Prenom = ?,idIDE= ?,motDePasse= ?,Service= ?WHERE idIDE= ?");
-                prep2.setString(1, Nom);
-                prep2.setString(2, Prenom);
+                prep2.setString(1, nom);
+                prep2.setString(2, prenom);
                 prep2.setInt(3, id);
                 prep2.setInt(4, mdp);
-                prep2.setString(5, Service);
+                prep2.setString(5, service);
                 prep2.setInt(6, id);
 
                 prep2.executeUpdate();
@@ -68,14 +58,14 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
                 lp.getTableIDE().setFont(new Font("Calibri", 0, 18));
                 lp.getTableIDE().setModel(new MethodeBD().listeIDE());
             }
-            if (Personnel == "praticienhospitaliers") {
+            if (personnel == "praticienhospitaliers") {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE praticienhospitaliers SET Nom= ?, Prenom = ?,idPh= ?,motDePasse= ?,Service= ?WHERE idPh= ?");
-                prep2.setString(1, Nom);
-                prep2.setString(2, Prenom);
+                prep2.setString(1, nom);
+                prep2.setString(2, prenom);
                 prep2.setInt(3, id);
                 prep2.setInt(4, mdp);
-                prep2.setString(5, Service);
+                prep2.setString(5, service);
                 prep2.setInt(6, id);
                 prep2.executeUpdate();
 
@@ -83,27 +73,27 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
                 lp.getTablePH().setFont(new Font("Calibri", 0, 18));
                 lp.getTablePH().setModel(new MethodeBD().listePH());
             }
-            if (Personnel == "Technicien") {
+            if (personnel == "Technicien") {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE Technicien SET Nom= ?, Prenom = ?,idTECH= ?,motDePasse= ?,Service= ?WHERE idTECH= ?");
-                prep2.setString(1, Nom);
-                prep2.setString(2, Prenom);
+                prep2.setString(1, nom);
+                prep2.setString(2, prenom);
                 prep2.setInt(3, id);
                 prep2.setInt(4, mdp);
-                prep2.setString(5, Service);
+                prep2.setString(5, service);
                 prep2.setInt(6, id);
                 prep2.executeUpdate();
 
                 System.out.println("ok technicien");
             }
-            if (Personnel == "medicotechniques") {
+            if (personnel == "medicotechniques") {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE medicotechniques SET Nom= ?, Prenom = ?,idMT= ?,motDePasse= ?,Service= ?WHERE idMT= ?");
-                prep2.setString(1, Nom);
-                prep2.setString(2, Prenom);
+                prep2.setString(1, nom);
+                prep2.setString(2, prenom);
                 prep2.setInt(3, id);
                 prep2.setInt(4, mdp);
-                prep2.setString(5, Service);
+                prep2.setString(5, service);
                 prep2.setInt(6, id);
                 prep2.executeUpdate();
 
@@ -111,14 +101,14 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
                 lp.getTableMT().setModel(MethodeBD.listeMT());
                 System.out.println("ok medicotechnicien");
             }
-            if (Personnel == "SecretaireAdministrative") {
+            if (personnel == "SecretaireAdministrative") {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE secretaireadministrative SET Nom= ?, Prénom = ?,idSA= ?,motDePasse= ?,Service= ?WHERE idSA= ?");
-                prep2.setString(1, Nom);
-                prep2.setString(2, Prenom);
+                prep2.setString(1, nom);
+                prep2.setString(2, prenom);
                 prep2.setInt(3, id);
                 prep2.setInt(4, mdp);
-                prep2.setString(5, Service);
+                prep2.setString(5, service);
                 prep2.setInt(6, id);
                 prep2.executeUpdate();
 
@@ -128,6 +118,8 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
             }
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderPersonnel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        finally {
         }
 
         fen.panelVisibleFalse();

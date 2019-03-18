@@ -159,6 +159,8 @@ public class TableauConsulterDPIPH implements MouseListener {
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPIPH.class.getName()).log(Level.SEVERE, null, ex);
         }
+        finally {
+        }
     }
 
     @Override

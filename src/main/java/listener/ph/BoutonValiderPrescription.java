@@ -17,13 +17,9 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import nf.Dates;
 import nf.sejour.Prescription;
 
-/**
- *
- * @author annel
- */
+
 public class BoutonValiderPrescription implements ActionListener {
 
     AjouterPrescription ac;
@@ -54,7 +50,6 @@ public class BoutonValiderPrescription implements ActionListener {
             String observation = ac.getPrescription().getText();
             String idMedecin = bh.getId().getText();
             String Type = ac.getTypePrescription().getText();
-            Dates dates = new Dates(ac.getDate().getText(), ac.getJour().getText(), ac.getAnnee().getText());
 
             Prescription p = new Prescription(observation, Type, idMedecin, ipp);
             p.AjouterActeSurBD(p);
@@ -66,7 +61,8 @@ public class BoutonValiderPrescription implements ActionListener {
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderPrescription.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }finally {
+         }
 
         fen.panelVisibleFalse();
         fen.add(im);

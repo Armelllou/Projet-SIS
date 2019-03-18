@@ -70,7 +70,8 @@ public class BoutonValiderDemandePrestation implements ActionListener {
         
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderDemandePrestation.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }finally {
+         }
 
     }
 

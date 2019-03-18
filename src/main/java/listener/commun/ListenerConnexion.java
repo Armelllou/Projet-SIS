@@ -179,12 +179,13 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             connexion();
         } catch (SQLException ex) {
             Logger.getLogger(ListenerConnexion.class.getName()).log(Level.SEVERE, null, ex);
+        }finally {
         }
     }
 
     @Override
     public void keyTyped(KeyEvent e) {
-
+G
     }
 
     public static State getState() {
@@ -200,6 +201,8 @@ public class ListenerConnexion implements ActionListener, KeyListener {
                 ex.printStackTrace();
                 //Logger.getLogger(ConnexionEntrerListener.class.getName()).log(Level.SEVERE, null, ex);
             }
+            finally {
+           }
         }
     }
 

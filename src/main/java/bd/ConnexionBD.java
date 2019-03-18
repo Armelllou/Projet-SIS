@@ -1,5 +1,6 @@
 package bd;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -38,6 +39,7 @@ public class ConnexionBD {
         } catch (Exception ex) {
             System.out.println("Erreur Connection driver");
             ex.printStackTrace();
+        }finally {
         }
     }
 

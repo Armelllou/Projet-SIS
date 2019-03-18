@@ -11,6 +11,7 @@ import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
 import nf.Sih;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -64,6 +65,9 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
 
         } catch (SQLException e1) {
             e1.printStackTrace();
+        }
+        finally {
+            //action systématique
         }
 
         jframe.panelVisibleFalse();
