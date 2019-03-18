@@ -6,6 +6,7 @@
 package listener.commun;
 
 import bd.ConnexionBD;
+import static bd.MethodeBD.executeQuery;
 
 import interfaces.BarreDuHaut;
 

@@ -9,18 +9,15 @@ import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.DPIIDE;
 import interfaces.DPIPH;
-import nf.Sih;
+
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import main.java.bd.ConnexionBD;
+import listener.commun.ListenerConnexion;
+import listener.commun.State;
+
+
 
 public class TableauConsulterDPIPHetIDE implements MouseListener {
 
@@ -29,7 +26,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
     ConsulterDPIPHetIDE cdpi;
 
     Fenetre fen;
-    Sih sih;
+   
     JTable table;
     ListenerConnexion conn;
 
@@ -37,7 +34,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
         this.imph = imph;
         this.imide = imide;
         this.fen = fen;
-        this.sih = sih;
+        
         this.table = table;
         this.conn = conn;
 
@@ -48,7 +45,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
 
         int NumLigne = table.getSelectedRow();
 
-        if (conn.getState() == State.PH) {        
+        if (ListenerConnexion.getState() == State.PH) {        
 
                         fen.panelVisibleFalse();
                         fen.add(imph);
@@ -57,7 +54,7 @@ public class TableauConsulterDPIPHetIDE implements MouseListener {
                         fen.repaint();
                  }
             
-        if(conn.getState() == State.IDE) {
+        if(ListenerConnexion.getState() == State.IDE) {
                         
                         fen.panelVisibleFalse();
                         fen.add(imide);
