@@ -9,7 +9,6 @@ import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.ConsultationIDE;
 import interfaces.InfosMedicalesIDE;
-import nf.Sih;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
@@ -27,14 +26,14 @@ public class TableauConsultationsInfosMedIDE implements MouseListener {
     InfosMedicalesIDE imph;
     ConsultationIDE cph;
     Fenetre fen;
-    Sih sih;
+    
     JTable table;
 
-    public TableauConsultationsInfosMedIDE(InfosMedicalesIDE imph, ConsultationIDE cph, Fenetre fen, Sih sih, JTable table) {
+    public TableauConsultationsInfosMedIDE(InfosMedicalesIDE imph, ConsultationIDE cph, Fenetre fen, JTable table) {
         this.imph = imph;
         this.cph = cph;
         this.fen = fen;
-        this.sih = sih;
+      
         this.table = table;
     }
 

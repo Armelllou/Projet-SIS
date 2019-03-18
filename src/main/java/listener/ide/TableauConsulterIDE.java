@@ -8,13 +8,11 @@ package listener.ide;
 import bd.ConnexionBD;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.DPIIDE;
-import interfaces.DPIPH;
 import interfaces.Fenetre;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,7 +20,7 @@ import javax.swing.*;
 
 import listener.commun.ListenerConnexion;
 import listener.commun.RafraichitLesPanels;
-import nf.Sih;
+
 
 /**
  *
@@ -32,16 +30,14 @@ public class TableauConsulterIDE implements MouseListener{
 
     DPIIDE imide;
     ConsulterDPIPHetIDE cdpi;
-    Fenetre fen;
-    Sih sih;
-    JTable table;
+ Fenetre fen; JTable table;
     ListenerConnexion conn;
     
     
     public TableauConsulterIDE(DPIIDE imide, ConsulterDPIPHetIDE cdpi, Fenetre fen, JTable table, ListenerConnexion conn) {
         this.imide = imide;
         this.fen = fen;
-        this.sih = sih;
+      
         this.table = table;
         this.conn = conn;
 
@@ -126,21 +122,21 @@ public class TableauConsulterIDE implements MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
     }
 }

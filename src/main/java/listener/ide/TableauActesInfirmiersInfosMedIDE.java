@@ -6,19 +6,19 @@
 package listener.ide;
 
 import bd.ConnexionBD;
-import interfaces.ActeInfirmier;
+
 import interfaces.ActeInfirmieride;
 import interfaces.Fenetre;
 import interfaces.BarreDuHaut;
 import interfaces.InfosMedicalesIDE;
-import nf.Sih;
+
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,7 +64,7 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
             ps = conn.getConnexion().prepareStatement(Sql1);
 
             ResultSet rs = ps.executeQuery();
-;
+
             while (rs.next()) {
                 
                 idIde   = rs.getString(1);

@@ -14,7 +14,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import nf.sejour.Resultats;
+
 
 /**
  *
@@ -38,7 +38,7 @@ public class BoutonAccederAuxResultats implements ActionListener {
         
       
         r.getTablePrestation().setFont(new Font("Calibri", 0, 18));
-        r.getTablePrestation().setModel(new MethodeBD().listeResultats(bh.getService().getText()));
+        r.getTablePrestation().setModel(MethodeBD.listeResultats(bh.getService().getText()));
         
         cdpiphetide.getNotification().setText("0");
         

@@ -59,7 +59,7 @@ public class BoutonValiderPrescription implements ActionListener {
             im.getjTable1().setModel(MethodeBD.listePrescriptionJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
 
             JOptionPane jop1 = new JOptionPane();
-            jop1.showMessageDialog(null, "Prescription correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Prescription correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderPrescription.class.getName()).log(Level.SEVERE, null, ex);

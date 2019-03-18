@@ -10,14 +10,14 @@ import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.DPIIDE;
 import interfaces.DPIPH;
-import nf.Sih;
+
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -29,7 +29,7 @@ public class TableauConsulterDPIPH implements MouseListener {
     ConsulterDPIPHetIDE cdpi;
 
     Fenetre fen;
-    Sih sih;;
+  
 
     JTable table;
     ListenerConnexion conn;
@@ -38,7 +38,7 @@ public class TableauConsulterDPIPH implements MouseListener {
         this.imph = imph;
         this.imide = imide;
         this.fen = fen;
-        this.sih = sih;
+     
         this.table = table;
         this.conn = conn;
 
@@ -66,9 +66,9 @@ public class TableauConsulterDPIPH implements MouseListener {
                 imph.getjLabelipp().setText(ipp);
 
                 String Sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
-                ConnexionBD conn = ConnexionBD.getInstance();
+                ConnexionBD a = ConnexionBD.getInstance();
                 PreparedStatement ps;
-                ps = conn.getConnexion().prepareStatement(Sql1);
+                ps = a.getConnexion().prepareStatement(Sql1);
                 ResultSet rs = ps.executeQuery();
 
 
@@ -98,7 +98,7 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                     String sql23 = "Select * from hospitalisation WHERE IPP = '" + ipp + "'";
                     PreparedStatement ps23;
-                    ps23 = conn.getConnexion().prepareStatement(sql23);
+                    ps23 = a.getConnexion().prepareStatement(sql23);
                     ResultSet rs23 = ps23.executeQuery();
 
                     while (rs23.next()) {
@@ -114,7 +114,7 @@ public class TableauConsulterDPIPH implements MouseListener {
                     }
                     String sql24 = "Select * from consultationexterne WHERE IPP = '" + ipp + "'";
                     PreparedStatement ps24;
-                    ps24 = conn.getConnexion().prepareStatement(sql24);
+                    ps24 = a.getConnexion().prepareStatement(sql24);
                     ResultSet rs24 = ps24.executeQuery();
 
                     while (rs24.next()) {
@@ -132,7 +132,7 @@ public class TableauConsulterDPIPH implements MouseListener {
 
                 String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
                 PreparedStatement ps2;
-                ps2 = conn.getConnexion().prepareStatement(Sql2);
+                ps2 = a.getConnexion().prepareStatement(Sql2);
                 ResultSet rs2 = ps2.executeQuery();
 
 
@@ -161,22 +161,19 @@ public class TableauConsulterDPIPH implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

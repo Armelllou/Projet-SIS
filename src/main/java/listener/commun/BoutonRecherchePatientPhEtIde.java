@@ -54,7 +54,7 @@ public class BoutonRecherchePatientPhEtIde implements ActionListener {
         System.out.println(cdpis.getjTable1().getModel());
         
         if ((MethodeBD.recherchePatientViaIPP(ipp23)==null)&&(MethodeBD.recherchePatientviaNomEtPrenomIdeEtPh (splitArray,ListenerConnexion.getBDHService(), ListenerConnexion.getState())==null)){
-            new JOptionPane().showMessageDialog(null, "Aucun résultat pour le patient recherché", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Aucun résultat pour le patient recherché", "Information", JOptionPane.INFORMATION_MESSAGE);
         }
 
 

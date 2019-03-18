@@ -13,7 +13,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;
 import listener.commun.RafraichitLesPanels;
-import nf.Sih;
 
 /**
  *
@@ -24,14 +23,14 @@ public class BoutonAjouterPrescriptionDansConsult implements ActionListener {
     AjouterPrescription ac;
     InfosMedicalesPH im;
     Fenetre jframe;
-    Sih sih;
+   
     BarreDuHaut bh;
 
-    public BoutonAjouterPrescriptionDansConsult(Fenetre jframe, AjouterPrescription ac, InfosMedicalesPH im, Sih sih, BarreDuHaut bh) {
+    public BoutonAjouterPrescriptionDansConsult(Fenetre jframe, AjouterPrescription ac, InfosMedicalesPH im,  BarreDuHaut bh) {
         this.jframe = jframe;
         this.ac = ac;
         this.im = im;
-        this.sih = sih;
+     
         this.bh = bh;
     }
 

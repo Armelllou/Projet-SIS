@@ -5,20 +5,15 @@
  */
 package listener.secretairemedical;
 
-import bd.ConnexionBD;
+
 import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
-import nf.Sih;
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,15 +27,16 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
     DPISecretaire dpis;
     ConsulterDPISecretaire cdpis;
     Fenetre jframe;
-    Sih sih;
+   
 
     public BoutonRetourDPISVersConsulterDPISecretaire(Fenetre jframe, ConsulterDPISecretaire cdpis, DPISecretaire dpis) {
         this.jframe = jframe;
         this.cdpis = cdpis;
         this.dpis = dpis;
-        this.sih = sih;
+       
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae) {
 
         try {

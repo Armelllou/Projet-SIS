@@ -19,7 +19,6 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import listener.commun.RafraichitLesPanels;
 import nf.sejour.Consultation;
-import nf.Dates;
 
 
 public class BoutonValiderConsultation implements ActionListener {
@@ -60,7 +59,7 @@ AjouterConsultation ac;
         im.getjTable3().setModel(MethodeBD.listeConsultationJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
         
         JOptionPane jop1 = new JOptionPane();
-        jop1.showMessageDialog(null, "Consultation correctement ajoutée", "Information", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Consultation correctement ajoutée", "Information", JOptionPane.INFORMATION_MESSAGE);
         
         
         

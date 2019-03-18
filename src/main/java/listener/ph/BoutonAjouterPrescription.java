@@ -5,24 +5,21 @@
  */
 package listener.ph;
 
-import bd.MethodeBD;
+
 import interfaces.AjouterPrescription;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
-import java.awt.Font;
-import nf.Sih;
+
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
+
 import java.util.Calendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 import listener.commun.RafraichitLesPanels;
-import nf.Dates;
-import nf.sejour.Prescription;
+
 
 /**
  * @author Manon
@@ -32,14 +29,14 @@ public class BoutonAjouterPrescription implements ActionListener {
     AjouterPrescription ac;
     InfosMedicalesPH im;
     Fenetre jframe;
-    Sih sih;
+ 
     BarreDuHaut bh;
 
-    public BoutonAjouterPrescription(Fenetre jframe, AjouterPrescription ac, InfosMedicalesPH im, Sih sih, BarreDuHaut bh) {
+    public BoutonAjouterPrescription(Fenetre jframe, AjouterPrescription ac, InfosMedicalesPH im,  BarreDuHaut bh) {
         this.jframe = jframe;
         this.ac = ac;
         this.im = im;
-        this.sih = sih;
+        
         this.bh = bh;
     }
 

@@ -9,7 +9,7 @@ import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
-import nf.Sih;
+
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -26,7 +26,7 @@ public class TableauConsulterDPISecretaire implements MouseListener {
     ConsulterDPISecretaire cdpis;
     DPISecretaire dpis;
     Fenetre fen;
-    Sih sih;
+
     JTable table;
 
     public TableauConsulterDPISecretaire(ConsulterDPISecretaire cdpis, DPISecretaire dpis, Fenetre fen, JTable table) {

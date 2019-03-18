@@ -9,7 +9,7 @@ import interfaces.AjouterActeInfirmier;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
-import nf.Sih;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,17 +21,18 @@ public class BoutonAjouterActeInfirmier implements ActionListener {
     AjouterActeInfirmier ai;
     InfosMedicalesIDE im;
     Fenetre jframe;
-    Sih sih;
+  
     BarreDuHaut bh;
 
-    public BoutonAjouterActeInfirmier(Fenetre jframe, AjouterActeInfirmier ai, InfosMedicalesIDE im, Sih sih , BarreDuHaut bh) {
+    public BoutonAjouterActeInfirmier(Fenetre jframe, AjouterActeInfirmier ai, InfosMedicalesIDE im, BarreDuHaut bh) {
         this.jframe = jframe;
         this.ai = ai;
         this.im = im;
-        this.sih = sih;
+        
         this.bh=bh;
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae) {
 
         String nom = im.getjLabelnom().getText();

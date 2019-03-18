@@ -9,14 +9,13 @@ import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
 import interfaces.PrescriptionPH;
-import nf.Sih;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -31,14 +30,13 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
     InfosMedicalesPH imph;
     PrescriptionPH cph;
     Fenetre fen;
-    Sih sih;
+
     JTable table;
 
-    public TableauPrescriptionsInfosMedPH(InfosMedicalesPH imph, PrescriptionPH cph, Fenetre fen, Sih sih, JTable table) {
+    public TableauPrescriptionsInfosMedPH(InfosMedicalesPH imph, PrescriptionPH cph, Fenetre fen,  JTable table) {
         this.imph = imph;
         this.cph = cph;
         this.fen = fen;
-        this.sih = sih;
         this.table = table;
     }
 
@@ -88,22 +86,18 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 

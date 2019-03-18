@@ -11,7 +11,7 @@ import interfaces.Fenetre;
 import interfaces.ListePersonnel;
 import interfaces.ModifierPersonnel;
 
-import javax.swing.*;
+
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,13 +19,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JTable;
+
 import listener.commun.RafraichitLesPanels;
-import nf.personnel.Infirmier;
-import nf.personnel.Medecin;
-import nf.personnel.MedicoTechnique;
-import nf.personnel.SecretaireMedical;
-import nf.personnel.Technicien;
+
 
 public class BoutonValiderModificationPersonnel implements ActionListener {
 
@@ -50,7 +46,7 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
         String personnel = mp.getType().getSelectedItem().toString();
 
         try {
-            if (personnel == "ide") {
+            if ("ide".equals(personnel)) {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE ide SET Nom= ?, Prenom = ?,idIDE= ?,motDePasse= ?,Service= ?WHERE idIDE= ?");
                 prep2.setString(1, nom);
@@ -63,9 +59,9 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
                 prep2.executeUpdate();
                 System.out.println("ok ide");
                 lp.getTableIDE().setFont(new Font("Calibri", 0, 18));
-                lp.getTableIDE().setModel(new MethodeBD().listeIDE());
+                lp.getTableIDE().setModel(MethodeBD.listeIDE());
             }
-            if (personnel == "praticienhospitaliers") {
+            if ("praticienhospitaliers".equals(personnel)) {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE praticienhospitaliers SET Nom= ?, Prenom = ?,idPh= ?,motDePasse= ?,Service= ?WHERE idPh= ?");
                 prep2.setString(1, nom);
@@ -78,9 +74,9 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
 
                 System.out.println("ok ph");
                 lp.getTablePH().setFont(new Font("Calibri", 0, 18));
-                lp.getTablePH().setModel(new MethodeBD().listePH());
+                lp.getTablePH().setModel(MethodeBD.listePH());
             }
-            if (personnel == "Technicien") {
+            if ("Technicien".equals(personnel)) {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE Technicien SET Nom= ?, Prenom = ?,idTECH= ?,motDePasse= ?,Service= ?WHERE idTECH= ?");
                 prep2.setString(1, nom);
@@ -93,7 +89,7 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
 
                 System.out.println("ok technicien");
             }
-            if (personnel == "medicotechniques") {
+            if ("medicotechniques".equals(personnel)) {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE medicotechniques SET Nom= ?, Prenom = ?,idMT= ?,motDePasse= ?,Service= ?WHERE idMT= ?");
                 prep2.setString(1, nom);
@@ -108,7 +104,7 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
                 lp.getTableMT().setModel(MethodeBD.listeMT());
                 System.out.println("ok medicotechnicien");
             }
-            if (personnel == "SecretaireAdministrative") {
+            if ("SecretaireAdministrative".equals(personnel)) {
                 ConnexionBD conn = ConnexionBD.getInstance();
                 PreparedStatement prep2 = conn.getConnexion().prepareStatement("UPDATE secretaireadministrative SET Nom= ?, Prénom = ?,idSA= ?,motDePasse= ?,Service= ?WHERE idSA= ?");
                 prep2.setString(1, nom);
@@ -120,7 +116,7 @@ public class BoutonValiderModificationPersonnel implements ActionListener {
                 prep2.executeUpdate();
 
                 lp.getTableSecretaire().setFont(new Font("Calibri", 0, 18));
-                lp.getTableSecretaire().setModel(new MethodeBD().listeSA());
+                lp.getTableSecretaire().setModel(MethodeBD.listeSA());
                 System.out.println("ok sa");
             }
         } catch (SQLException ex) {

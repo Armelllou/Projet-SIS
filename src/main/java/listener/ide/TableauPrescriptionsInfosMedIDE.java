@@ -9,7 +9,6 @@ import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
 import interfaces.PrescriptionIDE;
-import nf.Sih;
 
 import javax.swing.*;
 import java.awt.event.MouseEvent;
@@ -28,18 +27,19 @@ public class TableauPrescriptionsInfosMedIDE implements MouseListener {
     InfosMedicalesIDE imph;
     PrescriptionIDE cph;
     Fenetre fen;
-    Sih sih;
+
     JTable table;
 
-    public TableauPrescriptionsInfosMedIDE(InfosMedicalesIDE imph, PrescriptionIDE cph, Fenetre fen, Sih sih, JTable table) {
+    public TableauPrescriptionsInfosMedIDE(InfosMedicalesIDE imph, PrescriptionIDE cph, Fenetre fen, JTable table) {
         this.imph = imph;
         this.cph = cph;
         this.fen = fen;
-        this.sih = sih;
+        
         this.table = table;
     }
 
     @Override
+    @SuppressWarnings("empty-statement")
     public void mouseClicked(MouseEvent e) {
      try {
             String ipp = imph.getjLabelipp().getText();

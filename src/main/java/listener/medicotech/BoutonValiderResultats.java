@@ -77,7 +77,7 @@ public class BoutonValiderResultats implements ActionListener {
             p.getTablePrestation().setModel(MethodeBD.listePrestation());
 
             JOptionPane jop1 = new JOptionPane();
-            jop1.showMessageDialog(null, "Résultat Correctement Envoyée", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Résultat Correctement Envoyée", "Information", JOptionPane.INFORMATION_MESSAGE);
 
      
 

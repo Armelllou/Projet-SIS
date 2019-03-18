@@ -7,7 +7,6 @@ package listener.commun;
 
 import bd.ConnexionBD;
 import bd.MethodeBD;
-import static bd.MethodeBD.compterTableauPrestationParService;
 import interfaces.*;
 import interfaces.ConsulterDPISecretaire;
 import javax.swing.*;
@@ -19,7 +18,6 @@ import java.awt.event.KeyListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -204,7 +202,6 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

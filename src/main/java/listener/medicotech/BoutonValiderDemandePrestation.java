@@ -57,13 +57,13 @@ public class BoutonValiderDemandePrestation implements ActionListener {
             pd.AjouterDemandeDePrestationSurBD(pd);
             
             JOptionPane jop1 = new JOptionPane();
-            jop1.showMessageDialog(null, "Prestation correctement demandée", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Prestation correctement demandée", "Information", JOptionPane.INFORMATION_MESSAGE);
             
                 RafraichitLesPanels rf = new RafraichitLesPanels(fen,imph);
             
             
          p.getTablePrestation().setFont(new Font("Calibri", 0, 18));
-        p.getTablePrestation().setModel(new MethodeBD().listePrestation());
+        p.getTablePrestation().setModel(MethodeBD.listePrestation());
         
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderDemandePrestation.class.getName()).log(Level.SEVERE, null, ex);

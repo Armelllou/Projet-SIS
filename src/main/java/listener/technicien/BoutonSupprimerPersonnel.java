@@ -5,7 +5,7 @@
  */
 package listener.technicien;
 
-import bd.ConnexionBD;
+
 import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.ListePersonnel;
@@ -13,18 +13,12 @@ import interfaces.ModifierPersonnel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import listener.commun.RafraichitLesPanels;
-import nf.personnel.Infirmier;
-import nf.personnel.Medecin;
-import nf.personnel.MedicoTechnique;
-import nf.personnel.SecretaireMedical;
-import nf.personnel.Technicien;
 
 /**
  *
@@ -57,33 +51,33 @@ public class BoutonSupprimerPersonnel implements ActionListener {
         
         if (reponse == JOptionPane.YES_OPTION) {
             try {
-                if (personnel == "ide") {
+                if ("ide".equals(personnel)) {
                     
                     MethodeBD.SupprimerSurBdIDE(ids);
                     lp.getTableIDE().setFont(new Font("Calibri", 0, 18));
-                    lp.getTableIDE().setModel(new MethodeBD().listeIDE());
+                    lp.getTableIDE().setModel(MethodeBD.listeIDE());
                 }
-                if (personnel == "praticienhospitaliers") {
+                if ("praticienhospitaliers".equals(personnel)) {
                     
                     MethodeBD.SupprimerSurBdPH(ids);
                     lp.getTablePH().setFont(new Font("Calibri", 0, 18));
-                    lp.getTablePH().setModel(new MethodeBD().listePH());
+                    lp.getTablePH().setModel(MethodeBD.listePH());
                 }
-                if (personnel == "Technicien") {
+                if ("Technicien".equals(personnel)) {
                     
                     MethodeBD.SupprimerSurBdTechnicien(ids);
                 }
-                if (personnel == "medicotechniques") {
+                if ("medicotechniques".equals(personnel)) {
                     MethodeBD.SupprimerSurBdMedichoTech(ids);
                     lp.getTableMT().setFont(new Font("Calibri", 0, 18));
                     lp.getTableMT().setModel(MethodeBD.listeMT());
                     
                 }
-                if (personnel == "SecretaireAdministrative") {
+                if ("SecretaireAdministrative".equals(personnel)) {
                     
                     MethodeBD.SupprimerSurBdSecretaire(ids);
                     lp.getTableSecretaire().setFont(new Font("Calibri", 0, 18));
-                    lp.getTableSecretaire().setModel(new MethodeBD().listeSA());
+                    lp.getTableSecretaire().setModel(MethodeBD.listeSA());
                     
                 }
             } catch (SQLException ex) {

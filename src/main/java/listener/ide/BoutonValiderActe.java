@@ -42,13 +42,12 @@ public class BoutonValiderActe implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Acte a = new Acte(aai.getObservation().getText(), aai.getType().getText(), bh.getId().getText(), aai.getIpp().getText());
-//   
         try {
             a.AjouterActeSurBD(a);
 
             JOptionPane jop1 = new JOptionPane();
 
-            jop1.showMessageDialog(null, "Acte correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Acte correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
             String ipp = aai.getIpp().getText();
             im.getjTable2().setFont(new Font("Calibri", 0, 18));
             im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD

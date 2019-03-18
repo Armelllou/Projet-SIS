@@ -5,13 +5,13 @@
  */
 package listener.ph;
 
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.date;
+
 
 import interfaces.AjouterConsultation;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
-import nf.Sih;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -35,6 +35,7 @@ public class BoutonAjouterConsultation implements ActionListener {
         this.bh = bh;
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae) {
         
         

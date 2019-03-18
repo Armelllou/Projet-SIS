@@ -9,7 +9,7 @@ import bd.ConnexionBD;
 import interfaces.DPISecretaire;
 import interfaces.Fenetre;
 import interfaces.ModificationDPI;
-import nf.Sih;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -27,13 +27,13 @@ public class BoutonValiderModificationDPI implements ActionListener {
     DPISecretaire dpis;
     ModificationDPI mdpi;
     Fenetre jframe;
-    Sih sih;
+    
 
-    public BoutonValiderModificationDPI(Fenetre jframe, DPISecretaire dpis, ModificationDPI mdpi, Sih sih) {
+    public BoutonValiderModificationDPI(Fenetre jframe, DPISecretaire dpis, ModificationDPI mdpi) {
         this.jframe = jframe;
         this.mdpi = mdpi;
         this.dpis = dpis;
-        this.sih = sih;
+      
     }
 
     public void actionPerformed(ActionEvent ae) {
@@ -74,7 +74,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
             prep.executeUpdate();
 
             JOptionPane jop1 = new JOptionPane();
-            jop1.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderModificationDPI.class.getName()).log(Level.SEVERE, null, ex);

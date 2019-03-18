@@ -50,14 +50,14 @@ public class BoutonValiderTransfert implements ActionListener {
             PreparedStatement prep = conn.getConnexion().prepareStatement("UPDATE localisations SET ServiceResponsable= ?, ServiceGeographique= ?, lit=? WHERE ipp = ?");
             prep.setString(1, ts.getServiceGeographique().getSelectedItem().toString());
             prep.setString(2, ts.getServiceResponsable().getSelectedItem().toString());
-            prep.setString(3, ts.getChambre().getText().toString());
+            prep.setString(3, ts.getChambre().getText());
             prep.setString(4, ts.getjLabelipp().getText());
             prep.executeUpdate();
             
             
  
             JOptionPane jop1 = new JOptionPane();
-            jop1.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
 
            dpiph.getServiceGeo().setText(ts.getServiceGeographique().getSelectedItem().toString());
            dpiph.getServiceRespo().setText( ts.getServiceResponsable().getSelectedItem().toString());

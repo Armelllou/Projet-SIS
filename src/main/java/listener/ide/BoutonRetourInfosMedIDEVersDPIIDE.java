@@ -27,6 +27,7 @@ public class BoutonRetourInfosMedIDEVersDPIIDE implements ActionListener {
         this.fen = fen;
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
           RafraichitLesPanels rf = new RafraichitLesPanels(fen,dpi);
     }

@@ -3,7 +3,7 @@ package nf.patient;
 import bd.ConnexionBD;
 import interfaces.CreationDPI;
 import nf.Dates;
-import nf.Sih;
+
 import nf.dossieradministratif.Dma;
 import nf.localisation.Localisation;
 
@@ -31,7 +31,7 @@ public class Patient {
     Localisation localisation;
 
     ConnexionBD conn = ConnexionBD.getInstance();
-    Sih sih = new Sih();
+    
     boolean ajoute = false;
 
     CreationDPI cdpi = new CreationDPI();
@@ -50,7 +50,7 @@ public class Patient {
         this.ipp = new Ipp();
         this.typeSejour=typeSejour;
 
-        sih.ajoutPatient(this);
+        
     }
 
 
@@ -174,15 +174,6 @@ public class Patient {
 
     public void setLocalisation(Localisation localisation) {
         this.localisation = localisation;
-    }
-
-    public Patient rechercherPatientIPP(String ipp) {
-        for (Patient patient : Sih.getPatientList()) {
-            if (patient.ipp.equals(ipp)) {
-                return patient;
-            }
-        }
-        return null;
     }
 
 }

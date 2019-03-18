@@ -15,7 +15,7 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+
 import listener.commun.RafraichitLesPanels;
 import nf.personnel.Infirmier;
 import nf.personnel.Medecin;
@@ -23,7 +23,6 @@ import nf.personnel.MedicoTechnique;
 import nf.personnel.SecretaireMedical;
 import nf.personnel.Technicien;
 
-import javax.swing.*;
 
 /**
  *
@@ -54,37 +53,37 @@ public class BoutonValiderPersonnel implements ActionListener {
         
                     
                    try {
-            if (personnel == "ide") {
+            if ("ide".equals(personnel)) {
                 Infirmier i = new Infirmier(nom, prenom, id, mdp, service);
                 i.AjouterSurBdIDE(i);
                 System.out.println("ok ide");
                 lp.getTableIDE().setFont(new Font("Calibri", 0, 18));
-                lp.getTableIDE().setModel(new MethodeBD().listeIDE());
+                lp.getTableIDE().setModel(MethodeBD.listeIDE());
             }
-            if (personnel == "praticienhospitaliers") {
+            if ("praticienhospitaliers".equals(personnel)) {
                 Medecin m = new Medecin(nom, prenom, id, mdp, service);
                 m.AjouterSurBdMedecin(m);
                 System.out.println("ok ph");
                 lp.getTablePH().setFont(new Font("Calibri", 0, 18));
-                lp.getTablePH().setModel(new MethodeBD().listePH());
+                lp.getTablePH().setModel(MethodeBD.listePH());
             }
-            if (personnel == "Technicien") {
+            if ("Technicien".equals(personnel)) {
                 Technicien t = new Technicien(nom, prenom, id, mdp);
                 t.AjouterSurBdTechnicien(t);
                 System.out.println("ok technicien");
             }
-            if (personnel == "medicotechniques") {
+            if ("medicotechniques".equals(personnel)) {
                 MedicoTechnique mt = new MedicoTechnique(nom, prenom, id, mdp);
                 mt.AjouterSurBdMedicoTechnique(mt);
                 lp.getTableMT().setFont(new Font("Calibri", 0, 18));
                 lp.getTableMT().setModel(MethodeBD.listeMT());
                 System.out.println("ok medicotechnicien");    
                 } 
-            if(personnel=="SecretaireAdministrative") {
+            if("SecretaireAdministrative".equals(personnel)) {
                 SecretaireMedical sm = new SecretaireMedical(nom, prenom, id, mdp, service);
                 sm.AjouterSurBdSecretaireMedical(sm);
                 lp.getTableSecretaire().setFont(new Font("Calibri", 0, 18));
-                lp.getTableSecretaire().setModel(new MethodeBD().listeSA());
+                lp.getTableSecretaire().setModel(MethodeBD.listeSA());
                 System.out.println("ok sa");
             }
         }  

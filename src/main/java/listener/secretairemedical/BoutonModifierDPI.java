@@ -8,29 +8,28 @@ package listener.secretairemedical;
 import interfaces.Fenetre;
 import interfaces.ModificationDPI;
 import interfaces.DPISecretaire;
-import nf.Sih;
+
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import listener.commun.RafraichitLesPanels;
 
-/**
- * @author Manon
- */
+
 public class BoutonModifierDPI implements ActionListener {
 
     DPISecretaire dpis;
     ModificationDPI mdpi;
     Fenetre jframe;
-    Sih sih;
+  
 
-    public BoutonModifierDPI(Fenetre jframe, DPISecretaire dpis, ModificationDPI mdpi, Sih sih) {
+    public BoutonModifierDPI(Fenetre jframe, DPISecretaire dpis, ModificationDPI mdpi) {
         this.jframe = jframe;
         this.mdpi = mdpi;
         this.dpis = dpis;
-        this.sih = sih;
+        
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae) {
 
         String nom = dpis.getjLabelnom().getText();

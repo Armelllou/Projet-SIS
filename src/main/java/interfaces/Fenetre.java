@@ -98,7 +98,7 @@ public class Fenetre extends JFrame {
     Fenetre frame = this;
     
 
-    Sih sih;
+
 
     // Déclarations Boutons
     private JButton valider = connexion.getjButton1();
@@ -207,7 +207,7 @@ public class Fenetre extends JFrame {
         deconnexion.addActionListener(new BoutonDeconnexion(connexion, this, barreduhaut));
         annulercreationDPI.addActionListener(new BoutonRetourDPISVersConsulterDPISecretaire(this, consultdpis, dpis));
         retourDPIVersConsulterDPISecretaire.addActionListener(new BoutonRetourDPISVersConsulterDPISecretaire(this, consultdpis, dpis));
-        modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi, sih));
+        modificationdpi.addActionListener(new BoutonModifierDPI(this, dpis, modifdpi));
         retourActeInfVersInfosMedPH.addActionListener(new BoutonRetourPHVersInfosMedicalesPH(this, infosmedph,l));
         accueilActeInfirmierPH.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
         annulerAjouterAI.addActionListener( new BoutonRetourIDEVersInfosMedIDE(this, infosmedide));
@@ -227,11 +227,11 @@ public class Fenetre extends JFrame {
         dpiphverstransfert.addActionListener(new BoutonDPIPHVersTransfert(dpiph, transfert, this));
         retourinfosmedIDEVersDPIIDE.addActionListener(new BoutonRetourInfosMedIDEVersDPIIDE(dpiide, infosmedide, this));
         accueilinfosmedIDE.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
-        ajouteracteinf.addActionListener(new BoutonAjouterActeInfirmier(this, ajouterai, infosmedide, sih, barreduhaut));
+        ajouteracteinf.addActionListener(new BoutonAjouterActeInfirmier(this, ajouterai, infosmedide,  barreduhaut));
         retourinfosmedPHversDPIPH.addActionListener(new BoutonRetourPHVersDPIPH(dpiph,this));
         accueilinfmedphversconsultdpiphide.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
         ajouterconsultation.addActionListener(new BoutonAjouterConsultation(this, ajouterconsult, infosmedph, barreduhaut));
-        ajouterprescription.addActionListener(new BoutonAjouterPrescription(this, ajouterprescri, infosmedph, sih, barreduhaut));
+        ajouterprescription.addActionListener(new BoutonAjouterPrescription(this, ajouterprescri, infosmedph,  barreduhaut));
         ajouterprescription2.addActionListener(new BoutonRetourPHVersInfosMedicalesPH(this, infosmedph,l));
         ajouterprestation.addActionListener(new BoutonAjouterPrestation(this, ajouterpresta, infosmedph, barreduhaut));
         annulermodifDPI.addActionListener(new BoutonRetourDPISVersConsulterDPISecretaire(this, consultdpis, dpis));
@@ -241,11 +241,11 @@ public class Fenetre extends JFrame {
         retourPrescriPHVersInfMedPH.addActionListener(new BoutonRetourPHVersInfosMedicalesPH(this, infosmedph,l));
         retourDetailsPrestation.addActionListener(new BoutonRetourDetailsPrestation(dp, prestations, this));
         annulertransfert.addActionListener(new BoutonRetourPHVersDPIPH(dpiph, this));
-        validermodifdpi.addActionListener(new BoutonValiderModificationDPI(this, dpis, modifdpi, sih));
+        validermodifdpi.addActionListener(new BoutonValiderModificationDPI(this, dpis, modifdpi));
         validerActe.addActionListener(new BoutonValiderActe(barreduhaut, infosmedide, this, ajouterai));
         validerPrescription.addActionListener(new BoutonValiderPrescription(ajouterprescri, infosmedph, this, barreduhaut));
         validerConsultation.addActionListener(new BoutonValiderConsultation(ajouterconsult, infosmedph, this, barreduhaut));
-        ajouterprescriptiondansconsult.addActionListener(new BoutonAjouterPrescriptionDansConsult(this, ajouterprescri, infosmedph, sih, barreduhaut));
+        ajouterprescriptiondansconsult.addActionListener(new BoutonAjouterPrescriptionDansConsult(this, ajouterprescri, infosmedph,  barreduhaut));
         ajouterPersonnel.addActionListener(new BoutonAjouterDuPersonnel(this, pl, cp, barreduhaut));
         validerajoutpersonnel.addActionListener(new BoutonValiderPersonnel(this, pl, cp));
         annulerajouterpersonnel.addActionListener(new BoutonAnnulerPersonnel(this, pl, cp));
@@ -270,13 +270,13 @@ public class Fenetre extends JFrame {
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterDPIPH(dpiph, dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
-        tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph, consultationPH, this, sih, infosmedph.getjTable3()));
-        tableauconsultinfmedide.addMouseListener(new TableauConsultationsInfosMedIDE(infosmedide, consultationide, this, sih, infosmedide.getjTable3()));
+        tableauconsultinfmedph.addMouseListener(new TableauConsultationsInfosMedPH(infosmedph, consultationPH, this,  infosmedph.getjTable3()));
+        tableauconsultinfmedide.addMouseListener(new TableauConsultationsInfosMedIDE(infosmedide, consultationide, this,  infosmedide.getjTable3()));
         tableauacteinfirmierinfmedph.addMouseListener(new TableauActesInfirmiersInfosMedPH(infosmedph, acteinfirmier, this,  infosmedph.getjTable2()));
         tableauacteinfirmierinfmedide.addMouseListener(new TableauActesInfirmiersInfosMedIDE(infosmedide, aiide, this, barreduhaut, infosmedide.getjTable2()));
-        tableauprescriinfmedide.addMouseListener(new TableauPrescriptionsInfosMedIDE(infosmedide, prescriptionide, this, sih, infosmedide.getjTable1()));
-        tableauprescriinfmedph.addMouseListener(new TableauPrescriptionsInfosMedPH(infosmedph, prescriptionph, this, sih, infosmedph.getjTable1()));
-        tableauprestations.addMouseListener(new TableauPrestations(prestations, dp, this, sih, prestations.getTablePrestation()));
+        tableauprescriinfmedide.addMouseListener(new TableauPrescriptionsInfosMedIDE(infosmedide, prescriptionide, this,  infosmedide.getjTable1()));
+        tableauprescriinfmedph.addMouseListener(new TableauPrescriptionsInfosMedPH(infosmedph, prescriptionph, this,  infosmedph.getjTable1()));
+        tableauprestations.addMouseListener(new TableauPrestations(prestations, dp, this, prestations.getTablePrestation()));
         tableauconsultdpiphide.addMouseListener(new TableauConsulterIDE(dpiide, consultdpiphide, this, consultdpiphide.getjTable1(), l));
         tableauIDE.addMouseListener(new TableauIdeP(this, pl, mp, tableauIDE));
         tableauPH.addMouseListener(new TableauPhP1(this, pl, mp, tableauPH));

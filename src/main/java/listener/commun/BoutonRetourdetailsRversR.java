@@ -39,7 +39,6 @@ public class BoutonRetourdetailsRversR implements ActionListener {
 
            RafraichitLesPanels rf = new RafraichitLesPanels(fen,r);
         
-        
         r.getTablePrestation().setFont(new Font("Calibri", 0, 18));
         r.getTablePrestation().setModel(new MethodeBD().listeResultats(bh.getService().getText()));
         

@@ -9,7 +9,6 @@ import interfaces.AjouterPrestation;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
-import nf.Sih;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,6 +31,7 @@ public class BoutonAjouterPrestation implements ActionListener {
         this.bh = bh;
     }
 
+    @Override
     public void actionPerformed(ActionEvent ae) {
       String Service =  bh.getService().getText();
         ac.getServiceDemandeur().setSelectedItem(Service);
