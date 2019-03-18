@@ -6,11 +6,13 @@
 package listener.secretairemedical;
 
 import bd.ConnexionBD;
+import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
 import nf.Sih;
 
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -18,6 +20,9 @@ import java.awt.event.ActionListener;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -29,7 +34,7 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
     Fenetre jframe;
     Sih sih;
 
-    public BoutonRetourDPISVersConsulterDPISecretaire(Fenetre jframe, ConsulterDPISecretaire cdpis, DPISecretaire dpis, Sih sih) {
+    public BoutonRetourDPISVersConsulterDPISecretaire(Fenetre jframe, ConsulterDPISecretaire cdpis, DPISecretaire dpis) {
         this.jframe = jframe;
         this.cdpis = cdpis;
         this.dpis = dpis;
@@ -38,39 +43,11 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
 
     public void actionPerformed(ActionEvent ae) {
 
-        String sql45;
-        ResultSet rs;
-        String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-        DefaultTableModel templatesTableModel = new DefaultTableModel();
-        templatesTableModel.setColumnIdentifiers(title);
 
-        try {
-            ConnexionBD conn = ConnexionBD.getInstance();
-            sql45 = "SELECT * FROM patient";
-            PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
-            rs = ps.executeQuery(sql45);
-            while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
-                infoAllPatient[3] = rs.getString("IPP");
-                templatesTableModel.addRow(infoAllPatient);
-            }
+            MethodeBD.PatientSecretaire(cdpis.getjTable1());
 
-            cdpis.getjTable1().setModel(templatesTableModel);
-            cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
-            System.out.println(cdpis.getjTable1().getModel());
 
-        } catch (SQLException e1) {
-            e1.printStackTrace();
-        }
-
-        jframe.panelVisibleFalse();
-        jframe.add(cdpis);
-        cdpis.setVisible(true);
-        jframe.revalidate();
-        jframe.repaint();
+           RafraichitLesPanels rf = new RafraichitLesPanels(jframe,cdpis);
     }
 
 }

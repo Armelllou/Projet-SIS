@@ -1,14 +1,30 @@
 package nf.sejour;
 
-import java.util.List;
+import bd.ConnexionBD;
+import nf.patient.Patient;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Types;
 
 public class Hospitalisation {
-    private Resultat resultat;
-    private List<Acte> acte;
-    private List<Prescription> lp;
+    private String dateEntree;
+    private String dateSortie;
 
-    public Hospitalisation(Resultat resultat, List<Prescription> lp) {
-        this.resultat = resultat;
-        this.lp = lp;
+
+    public Hospitalisation(String dateEntree, String dateSortie) {
+        this.dateEntree = dateEntree;
+        this.dateSortie = dateSortie;
     }
+
+    public static boolean AjouterPatientHospitalisation(Patient p) throws SQLException {
+        boolean j = false;
+        ConnexionBD conn = ConnexionBD.getInstance();
+        String sql = " INSERT INTO hospitalisation (IPP) VALUES(?) ";
+        PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+        statement.setObject(1, p.getIpp().getIpp(), Types.INTEGER);
+        statement.executeUpdate();
+        j = true;
+        return j;
+    }
+
 }

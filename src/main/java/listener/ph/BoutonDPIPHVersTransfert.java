@@ -11,6 +11,7 @@ import interfaces.DPIPH;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -27,10 +28,17 @@ public class BoutonDPIPHVersTransfert implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        fen.panelVisibleFalse();
-        fen.add(im);
-        im.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+        
+        String IPP = dpi.getjLabelipp().getText();
+        String NomUsuel =dpi.getjLabelnom().getText();
+        String NomDeNaissance = dpi.getjLabelnom1().getText();
+        String Prenom = dpi.getjLabelprenom().getText();
+        
+        im.getjLabelnom().setText(NomUsuel);
+        im.getjLabelnom1().setText(NomDeNaissance);
+        im.getjLabelprenom().setText(Prenom);
+        im.getjLabelipp().setText(IPP);
+        
+           RafraichitLesPanels rf = new RafraichitLesPanels(fen,im);
     }
 }

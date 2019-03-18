@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import javax.swing.JOptionPane;
 
 public class BoutonRecherchePatient implements ActionListener {
     Fenetre fen;
@@ -54,4 +55,6 @@ public class BoutonRecherchePatient implements ActionListener {
         cdpis.repaint();
         System.out.println(cdpis.getjTable1().getModel());
     }
+        
+        
 }

@@ -9,11 +9,12 @@ import nf.personnel.SecretaireMedical;
 import nf.sejour.Acte;
 import nf.sejour.Hospitalisation;
 import nf.sejour.Observation;
-import nf.sejour.Resultat;
+
 import nf.sejour.consultation.Consultation;
 
 import java.util.ArrayList;
 import java.util.List;
+import nf.sejour.Resultats;
 
 public class Sih {
     private static List<Patient> patientList = new ArrayList<Patient>();
@@ -22,7 +23,7 @@ public class Sih {
     private List<SecretaireMedical> secretaireMedicalList;
     private List<Dm> dmList;
     private List<Observation> observationList;
-    private List<Resultat> resultatList;
+    private List<Resultats> resultatList;
     private List<Hospitalisation> hospitalisationList;
     private List<Consultation> consultationList;
     private List<Acte> acte;
@@ -59,7 +60,7 @@ public class Sih {
         return observationList;
     }
 
-    public List<Resultat> getResultatList() {
+    public List<Resultats> getResultatList() {
         return resultatList;
     }
 

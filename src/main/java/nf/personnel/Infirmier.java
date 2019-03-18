@@ -1,68 +1,71 @@
 package nf.personnel;
 
 import bd.ConnexionBD;
+import bd.MethodeBD;
+import java.awt.Font;
+import java.sql.PreparedStatement;
 
 import java.sql.SQLException;
+import java.sql.Types;
 
 public class Infirmier extends Personnel {
-    public int idIDE;
-    public int mdp;
-    public String nom;
-    public String prenom;
+    
     public String service;
 
-    ConnexionBD conn = ConnexionBD.getInstance();
+    
+    public Infirmier(String nom, String prenom, int id, int mdp,String service) {
+        super(nom, prenom, id, mdp);
+        this.service=service;
+    }
+    
 
-    public Infirmier(int idIDE, int mdp, String nom, String prenom, String service) {
-        this.idIDE = idIDE;
-        this.mdp = mdp;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.service = service;
+    public boolean AjouterSurBdIDE(Infirmier i) throws SQLException {
+        boolean j = false;
+        ConnexionBD conn = new ConnexionBD ();
+        String sql = " INSERT INTO ide (idIDE,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
+        PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+        
+        statement.setObject(1, i.getId(), Types.INTEGER);
+        statement.setObject(2, i.getMdp(), Types.INTEGER);
+        statement.setObject(3, i.getNom(), Types.VARCHAR);
+        statement.setObject(4, i.getPrenom(), Types.VARCHAR);
+        statement.setObject(5, i.getService(), Types.VARCHAR);
+       
+
+        statement.executeUpdate();
+        j = true;
+        return j;
+    }
+    
+   
+
+
+
+    @Override
+    public String getNom() {
+      return nom;
     }
 
-    public int getIdIDE() throws SQLException {
-//         /// problème pour avoir li' id d'une IDE pour une seule personne et pas pour toute la table 
-//          int idIDEs=0;
-//        String Sql1 =  "SELECT idIDE FROM ide";
-//        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-//        ResultSet resultSet = ps.executeQuery();
-//
-//        ResultSetMetaData rsmd = resultSet.getMetaData();
-//        int columnsNumber = rsmd.getColumnCount();
-//        while (resultSet.next()) {
-//            for (int i = 1; i <= columnsNumber; i++) {
-//                if (i > 1) {
-//
-//                }
-//                String columnValue = resultSet.getString(i);
-//                String columnInteressant = columnValue.substring(5);
-//                
-//                 idIDEs = Integer.parseInt(columnInteressant);
-//                //System.out.print(idIDEs);
-//            } 
-//        
-//    }
-        return idIDE;
-
+    @Override
+    public String getPrenom() {
+       return prenom;
     }
 
+    @Override
+    public int getId() {
+       return id;
+    }
 
+    @Override
     public int getMdp() {
         return mdp;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
     }
 
     public String getService() {
         return service;
     }
+  
+
 
 
 }

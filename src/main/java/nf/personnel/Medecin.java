@@ -1,28 +1,65 @@
 package nf.personnel;
 
 
+import bd.ConnexionBD;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Types;
 import nf.Sih;
 
-public class Medecin {
-    String nom;
-    String prenom;
-    String ville;
-    boolean medecinGeneraliste = false;
+public class Medecin extends Personnel{
+ String Service;
+    public Medecin(String nom, String prenom, int id, int mdp,String Service) {
+        super(nom, prenom, id, mdp);
+        this .Service = Service;
+    }
+ 
+    public boolean AjouterSurBdMedecin(Medecin i) throws SQLException {
+        boolean j = false;
+        ConnexionBD conn = new ConnexionBD ();
+        String sql = " INSERT INTO praticienhospitaliers (idPh,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
+        PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+        
+        statement.setObject(1, i.getId(), Types.INTEGER);
+        statement.setObject(2, i.getMdp(), Types.INTEGER);
+        statement.setObject(3, i.getNom(), Types.VARCHAR);
+        statement.setObject(4, i.getPrenom(), Types.VARCHAR);
+        statement.setObject(5, i.getService(), Types.VARCHAR);
+       
 
-    public Medecin(String nom, String Prenom, String ville) {
-        this.nom = nom;
-        this.prenom = Prenom;
-        this.ville = ville;
+        statement.executeUpdate();
+        j = true;
+        return j;
     }
 
-    public Medecin rechercherMedecin(String nom, String prenom) {
-        for (Medecin medecin : Sih.getMedecinList()) {
-            if (medecin.nom.equals(nom) && medecin.prenom.equals(prenom)) {
-                return medecin;
-            }
-        }
-        return null;
+    
+
+    
+  @Override
+    public String getNom() {
+      return nom;
     }
 
+    @Override
+    public String getPrenom() {
+       return prenom;
+    }
+
+    @Override
+    public int getId() {
+       return id;
+    }
+
+    @Override
+    public int getMdp() {
+        return mdp;
+    }
+
+    public String getService() {
+        return Service;
+    }
+    
+    
+    
 }
 

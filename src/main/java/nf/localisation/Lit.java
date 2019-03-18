@@ -15,10 +15,10 @@ public class Lit {
 
 
     public Lit(String n) {
-        if (n.equals(f) == false) {
+        if (!n.equals(f)) {
             System.out.println("le numéro de lit est inconnu");
         }
-        if (n.equals(p) == false) {
+        if (!n.equals(p)) {
             System.out.println("le format de lit est inconnu");
         } else this.n = n;
     }

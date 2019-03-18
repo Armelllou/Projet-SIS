@@ -5,6 +5,7 @@
  */
 package listener.ide;
 
+import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
 import interfaces.PrescriptionIDE;
@@ -13,6 +14,13 @@ import nf.Sih;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import listener.commun.RafraichitLesPanels;
 
 public class TableauPrescriptionsInfosMedIDE implements MouseListener {
 
@@ -33,13 +41,56 @@ public class TableauPrescriptionsInfosMedIDE implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        int numLigne = table.getSelectedRow();
+     try {
+            String ipp = imph.getjLabelipp().getText();
+            String idIde = "";
+            int id = 0;
 
-        fen.panelVisibleFalse();
-        fen.add(cph);
-        cph.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+            
+            int numLigne = table.getSelectedRow();
+            
+            String types = (String) table.getModel().getValueAt(numLigne, 0);
+            String Nom =(String) table.getModel().getValueAt(numLigne, 1);
+            String dates = (String) table.getModel().getValueAt(numLigne, 2);
+             
+             
+            
+            String Sql1 = "Select * from prescription WHERE IPP ='" + ipp + "'and Type='" + types +"'and Date ='"+dates+"'";
+       
+           
+            ConnexionBD conn = ConnexionBD.getInstance();
+            PreparedStatement ps;
+
+            ps = conn.getConnexion().prepareStatement(Sql1);
+
+            ResultSet Rs = ps.executeQuery();;
+
+            ResultSetMetaData rsmd = Rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (Rs.next()) {
+                
+             
+         
+                String observation = Rs.getString(5);
+              
+
+                cph.getDetail().setText(observation);
+                cph.getDATE().setText(dates);
+                cph.getNom().setText(Nom);
+
+            }
+
+         
+          RafraichitLesPanels rf = new RafraichitLesPanels(fen,cph);
+         
+        } catch (SQLException ex) {
+            Logger.getLogger(TableauActesInfirmiersInfosMedIDE.class.getName()).log(Level.SEVERE, null, ex);
+        }
+     finally {
+         }
+
+
+      
     }
 
     @Override

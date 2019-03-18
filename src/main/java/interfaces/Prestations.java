@@ -5,6 +5,11 @@
  */
 package interfaces;
 
+import bd.MethodeBD;
+import static bd.MethodeBD.listePrestation;
+import java.awt.Font;
+import javax.swing.JTable;
+
 /**
  *
  * @author Manon
@@ -18,18 +23,18 @@ public class Prestations extends javax.swing.JPanel {
         return jScrollPane1;
     }
 
-    /**
-     * @return the jTable1
-     */
-    public javax.swing.JTable getjTable1() {
-        return jTable1;
+    public JTable getTablePrestation() {
+        return tablePrestation;
     }
+
 
     /**
      * Creates new form Prestations
      */
     public Prestations() {
         initComponents();
+         this.getTablePrestation().setFont(new Font("Calibri", 0, 18));
+        this.getTablePrestation().setModel(new MethodeBD().listePrestation());
     }
 
     /**
@@ -43,7 +48,7 @@ public class Prestations extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablePrestation = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -52,29 +57,29 @@ public class Prestations extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel1.setText("Prestations à effectuer :");
 
-        jTable1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablePrestation.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        tablePrestation.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nom", "Prénom", "IPP", "Prestation à effectuer", "Service demandeur"
+                "Nom", "Prénom", "IPP", "Prestation à effectuer", "Service demandeur", "Médecin Prescripteur", "Date de la demande"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablePrestation);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -112,6 +117,6 @@ public class Prestations extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablePrestation;
     // End of variables declaration//GEN-END:variables
 }

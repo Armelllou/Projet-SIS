@@ -81,7 +81,7 @@ public class BarreDuHaut extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(0, 0, 153));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/compte-ConvertImage.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/compte-ConvertImage.png"))); // NOI18N
 
         service.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         service.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,11 +89,11 @@ public class BarreDuHaut extends javax.swing.JPanel {
 
         jButton1.setBackground(new java.awt.Color(0, 0, 153));
         jButton1.setForeground(new java.awt.Color(0, 0, 153));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icone-deconnexion-png-9-ConvertImage (6).png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/icone-deconnexion-png-9-ConvertImage (6).png"))); // NOI18N
 
         jButton2.setBackground(new java.awt.Color(0, 0, 102));
         jButton2.setForeground(new java.awt.Color(0, 0, 102));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/18116-ConvertImage.png"))); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/18116-ConvertImage.png"))); // NOI18N
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

@@ -17,7 +17,7 @@ public class Acte {
     private String observations;
     private Dates dates;
 
-    public Acte(String observations, String Type, String idIDE, String ipp, Dates dates) {
+    public Acte(String observations, String Type, String idIDE, String ipp) {
         this.date = date;
         this.type = Type;
         this.idIDE = idIDE;
@@ -28,13 +28,22 @@ public class Acte {
 
     public boolean AjouterActeSurBD(Acte a) throws SQLException {
         boolean j = false;
-        String sql = " INSERT INTO Actes (idIDE, ,ipp, type,observation,date) VALUES(?,?,?,?,?) ";
-        PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
+        String sql = " INSERT INTO actes (idIDE,ipp, type, observation) VALUES(?,?,?,?) ";
+        
+        
+        
+        
+        PreparedStatement statement = conn.getConnexion().prepareStatement(sql); 
+//        statement.setObject(1, "456", Types.INTEGER);
+//        statement.setObject(2,"19020003", Types.INTEGER);
+//        statement.setObject(3, "prise de sang", Types.VARCHAR);
+//        statement.setObject(4, "patient agité", Types.VARCHAR);
+//        statement.setObject(5, new Dates ("01","03","2019"), Types.VARCHAR);
         statement.setObject(1, a.getIde(), Types.INTEGER);
         statement.setObject(2, a.getipp(), Types.INTEGER);
         statement.setObject(3, a.getType(), Types.VARCHAR);
         statement.setObject(4, a.getObservation(), Types.VARCHAR);
-        statement.setObject(5, a.getDates(), Types.INTEGER);
+   
 
 
         statement.executeUpdate();
@@ -63,8 +72,6 @@ public class Acte {
         return dates;
     }
 
-    public ConnexionBD getConn() {
-        return conn;
-    }
+    
 
 }

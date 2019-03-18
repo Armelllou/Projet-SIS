@@ -11,6 +11,7 @@ import interfaces.InfosMedicalesIDE;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -27,10 +28,6 @@ public class BoutonRetourInfosMedIDEVersDPIIDE implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        fen.panelVisibleFalse();
-        fen.add(dpi);
-        dpi.setVisible(true);
-        fen.revalidate();
-        fen.repaint();
+          RafraichitLesPanels rf = new RafraichitLesPanels(fen,dpi);
     }
 }

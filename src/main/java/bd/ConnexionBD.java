@@ -1,5 +1,6 @@
 package bd;
 
+import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -11,30 +12,33 @@ public class ConnexionBD {
     /**
      * Constructeur de la class.
      */
-    private ConnexionBD() {
-
+    public ConnexionBD() {
+ //------------BDD local -------------
+//try{
+//            String bBurl = "jdbc:mysql://192.168.64.2/bd2";
+//            String bdUrl = "jdbc:mysql://localhost:3306/bd2";
+//            bdUrl += "?serverTimezone=UTC";
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            this.conn = DriverManager.getConnection(bdUrl, "armelle", "armelle");
+//              this.conn = DriverManager.getConnection(bBurl, "root", "ok");
+//            if (this.conn.isValid(0)) {
+//                System.out.println("===> Connexion effectuee");
+//            }
+// ------------BDD en ligne -------------
         try {
-
-            //String bBurl = "jdbc:mysql://192.168.64.2/bd2";
-            String bdUrl = "jdbc:mysql://localhost:3306/bd2";
-
+            System.out.println("===> Connexion en cours");
+            String bdUrl = "jdbc:mysql://db4free.net/sqlsis1";
             bdUrl += "?serverTimezone=UTC";
-
             Class.forName("com.mysql.cj.jdbc.Driver");
-
-            this.conn = DriverManager.getConnection(bdUrl, "armelle", "armelle");
-
-            //  this.conn = DriverManager.getConnection(bBurl, "root", "ok");
-
-
+            this.conn = DriverManager.getConnection(bdUrl, "sqlprojetsis", "sqlprojetsis");
             if (this.conn.isValid(0)) {
                 System.out.println("===> Connexion effectuee");
             }
-
-
+//
         } catch (Exception ex) {
             System.out.println("Erreur Connection driver");
             ex.printStackTrace();
+        }finally {
         }
     }
 
