@@ -8,6 +8,8 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.Calendar;
 
+import static bd.MethodeBD.executeQuery;
+
 public class IppCounter {
 
     private static int month = 0;
@@ -28,10 +30,8 @@ public class IppCounter {
         // incrémente le chiffre à la création de chaque nombre de patient
 
         // if (ippCounter !=0){
-        ConnexionBD conn = ConnexionBD.getInstance();
-        String Sql1 = "Select max(IPP) from patient";
-        PreparedStatement ps = conn.getConnexion().prepareStatement(Sql1);
-        ResultSet resultSet = ps.executeQuery();
+
+        ResultSet resultSet = executeQuery("Select max(IPP) from patient");
 
         ResultSetMetaData rsmd = resultSet.getMetaData();
         int columnsNumber = rsmd.getColumnCount();

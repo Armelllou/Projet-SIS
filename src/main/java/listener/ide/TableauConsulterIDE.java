@@ -22,6 +22,8 @@ import listener.commun.ListenerConnexion;
 import listener.commun.RafraichitLesPanels;
 
 
+import static bd.MethodeBD.executeQuery;
+
 /**
  *
  * @author annel
@@ -48,8 +50,8 @@ public class TableauConsulterIDE implements MouseListener{
 
         try {
             int NumLigne = table.getSelectedRow();
-            
-            
+
+
             if (conn.ConnexionIde() == true) {
 
                 String nomDeNaissance = (String) table.getModel().getValueAt(NumLigne, 0);
@@ -62,41 +64,32 @@ public class TableauConsulterIDE implements MouseListener{
                 imide.getjLabelprenom().setText(prenom);
                 imide.getjLabelipp().setText(ipp);
 
-                String Sql1 = "Select * from patient WHERE IPP ='" + ipp + "'";
-                ConnexionBD conn = ConnexionBD.getInstance();
-                PreparedStatement ps;
 
-                ps = conn.getConnexion().prepareStatement(Sql1);
-
-                ResultSet rs = ps.executeQuery();
+                ResultSet rs = executeQuery("Select * from patient WHERE IPP ='" + ipp + "'");
 
 
                 while (rs.next()) {
 
-                    String DateDeNaissance = rs.getString(5);
+                    String dateDeNaissance = rs.getString(5);
 
-                    String Sexe = rs.getString(6);
-                    String MedecinG = rs.getString(7);
-                    String Adresse = rs.getString(8);
-                    String NumSS = rs.getString(9);
+                    String sexe = rs.getString(6);
+                    String medecinG = rs.getString(7);
+                    String adresse = rs.getString(8);
+                    String numSS = rs.getString(9);
                     String email = rs.getString(10);
                     String telephone = rs.getString(11);
 
-                    imide.getjLabeladresse().setText(Adresse);
-                    imide.getjLabelnumsecu().setText(NumSS);
+                    imide.getjLabeladresse().setText(adresse);
+                    imide.getjLabelnumsecu().setText(numSS);
                     imide.getjLabelemail().setText(email);
                     imide.getjLabeltelephone().setText(telephone);
-                    imide.getjLabelannée().setText(DateDeNaissance);
-                    imide.getSexe().setText(Sexe);
+                    imide.getjLabelannée().setText(dateDeNaissance);
+                    imide.getSexe().setText(sexe);
 
                 }
 
-                String Sql2 = "Select * from localisations WHERE IPP = '" + ipp + "'";
-                PreparedStatement ps2;
 
-                ps2 = conn.getConnexion().prepareStatement(Sql2);
-
-                ResultSet rs2 = ps2.executeQuery();
+                ResultSet rs2 = executeQuery("Select * from localisations WHERE IPP = '" + ipp + "'");
 
                 while (rs2.next()) {
 
@@ -109,14 +102,14 @@ public class TableauConsulterIDE implements MouseListener{
 
                     imide.getjLabelchamnre().setText(chambre);
 
-                        RafraichitLesPanels rf = new RafraichitLesPanels(fen,imide);
+                    RafraichitLesPanels rf = new RafraichitLesPanels(fen, imide);
                 }
-                
-                
+
+
             }
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterIDE.class.getName()).log(Level.SEVERE, null, ex);
-        }finally {
+
         }
     }
 

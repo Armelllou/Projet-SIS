@@ -20,6 +20,8 @@ import java.util.logging.Logger;
 import javax.swing.JTable;
 import listener.commun.RafraichitLesPanels;
 
+import static bd.MethodeBD.executeQuery;
+
 
 public class TableauMTP implements MouseListener {
      Fenetre fen;
@@ -44,13 +46,7 @@ public class TableauMTP implements MouseListener {
              int NumLigne = table.getSelectedRow();
         
              String idMT = (String) table.getModel().getValueAt(NumLigne, 2);
-             String Sql1 = "Select * from medicotechniques WHERE idMt ='" + idMT+"'";
-             ConnexionBD conn = ConnexionBD.getInstance();
-             PreparedStatement ps;
-             
-             ps = conn.getConnexion().prepareStatement(Sql1);
-             
-             ResultSet rs = ps.executeQuery();
+             ResultSet rs = executeQuery("Select * from medicotechniques WHERE idMt ='" + idMT+"'");
 
              while (rs.next()) {
                  

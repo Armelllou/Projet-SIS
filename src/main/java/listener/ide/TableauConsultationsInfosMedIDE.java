@@ -21,6 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
 
+import static bd.MethodeBD.executeQuery;
+
 public class TableauConsultationsInfosMedIDE implements MouseListener {
 
     InfosMedicalesIDE imph;
@@ -50,13 +52,9 @@ public class TableauConsultationsInfosMedIDE implements MouseListener {
             String Nomemdecin = (String) table.getModel().getValueAt(numLigne, 0);
             String dates = (String) table.getModel().getValueAt(numLigne, 1);
 
-            String Sql1 = "Select * from consultation WHERE IPP ='" + ipp +"'and NomMedecin='" + Nomemdecin +"'and Date ='"+dates+"'";
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps;
 
-            ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet rs = ps.executeQuery();
+            ResultSet rs = executeQuery("Select * from consultation WHERE IPP ='" + ipp +"'and NomMedecin='" + Nomemdecin +"'and Date ='"+dates+"'");
 
             while (rs.next()) {
 

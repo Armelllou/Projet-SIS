@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
 import listener.ide.TableauActesInfirmiersInfosMedIDE;
 
+import static bd.MethodeBD.executeQuery;
 
 
 public class TableauPrescriptionsInfosMedPH implements MouseListener {
@@ -54,14 +55,9 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
             String Nom =(String) table.getModel().getValueAt(numLigne, 1);
             String dates = (String) table.getModel().getValueAt(numLigne, 2);
 
-            String Sql1 = "Select * from prescription WHERE IPP ='" + ipp + "'and Type='" + types +"'and Date ='"+dates+"'";
 
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps;
 
-            ps = conn.getConnexion().prepareStatement(Sql1);
-
-            ResultSet rs = ps.executeQuery();
+            ResultSet rs = executeQuery("Select * from prescription WHERE IPP ='" + ipp + "'and Type='" + types +"'and Date ='"+dates+"'");
 
             while (rs.next()) {
 

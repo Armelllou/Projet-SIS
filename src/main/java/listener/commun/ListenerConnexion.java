@@ -77,8 +77,8 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     }
 
     private boolean Connexion(String query, JPanel jPanel) throws SQLException {
-        PreparedStatement ps = ConnexionBD.getInstance().getConnexion().prepareStatement(query);
-        ResultSet rs = ps.executeQuery();
+
+        ResultSet rs = executeQuery(query);
         if (rs.next()) {
             jframe.add(jPanel, BorderLayout.CENTER);
             jframe.add(bh, BorderLayout.NORTH);

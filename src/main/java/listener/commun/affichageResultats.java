@@ -59,11 +59,8 @@ public class affichageResultats implements MouseListener {
             String details = "";
             int idTech = 0;
 
-            String Sql1 = "Select * from prestationsfaites WHERE DateEffectuee ='" + date + "'";
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps;
-            ps = conn.getConnexion().prepareStatement(Sql1);
-            ResultSet rs = ps.executeQuery();
+
+            ResultSet rs = executeQuery("Select * from prestationsfaites WHERE DateEffectuee ='" + date + "'");
 
             while (rs.next()) {
 
@@ -86,7 +83,7 @@ public class affichageResultats implements MouseListener {
                 pf.getBoutonAnnuler().setIcon(icone);
                 pf.getBoutonAnnuler().setText("");
 
-
+                ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE from prestationsfaites WHERE DateEffectuee ='" + date + "'");
             prep2.executeUpdate();
 

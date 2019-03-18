@@ -39,14 +39,9 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
     @Override
     public void actionPerformed(ActionEvent ae) {
 
-        try {
+
             MethodeBD.PatientSecretaire(cdpis.getjTable1());
-        } catch (SQLException ex) {
-            Logger.getLogger(BoutonRetourDPISVersConsulterDPISecretaire.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        finally {
-            //action systématique
-        }
+
 
            RafraichitLesPanels rf = new RafraichitLesPanels(jframe,cdpis);
     }

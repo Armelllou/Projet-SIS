@@ -23,7 +23,6 @@ public class MethodeBD {
     }
 
     public static ResultSet executeQuery(String query) {
-
         try {
             ConnexionBD conn = ConnexionBD.getInstance();
             PreparedStatement ps = conn.getConnexion().prepareStatement(query);
@@ -43,7 +42,6 @@ public class MethodeBD {
         if (rs == null) {
             return templatesTableModel;
         }
-
         try {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("NomDeNaissance");
@@ -93,6 +91,7 @@ public class MethodeBD {
     /**
      * modèle pour remplir la Jtable avec les prestations
      *
+     * @param service
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePrestation() {
@@ -465,6 +464,7 @@ public class MethodeBD {
         } catch (SQLException e1) {
             e1.printStackTrace();
         }finally {
+
         }
         return templatesTableModel;
 
@@ -515,7 +515,6 @@ public class MethodeBD {
      */
     public static DefaultTableModel recherchePatientviaNomEtPrenomIdeEtPh(String[] splitArray, String service, State state) {
         if (splitArray[0].isEmpty() && state == State.PH) {
-            System.out.println("Test :" + service);
             return listePatientJTableServicePH(service);
         }
         if (splitArray[0].isEmpty() && state == State.IDE) {
@@ -531,38 +530,14 @@ public class MethodeBD {
         }
     }
 
-     public static DefaultTableModel PatientSecretaire (JTable table) throws SQLException{
-         
-          String sql45;
-        ResultSet rs;
-        String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
-        DefaultTableModel templatesTableModel = new DefaultTableModel();
-        templatesTableModel.setColumnIdentifiers(title);
+     public static DefaultTableModel PatientSecretaire (JTable table){
+         return execute("SELECT * FROM patient");
 
-
-            ConnexionBD conn = ConnexionBD.getInstance();
-            sql45 = "SELECT * FROM patient";
-            PreparedStatement ps = conn.getConnexion().prepareStatement(sql45);
-            rs = ps.executeQuery(sql45);
-            while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
-                infoAllPatient[3] = rs.getString("IPP");
-                templatesTableModel.addRow(infoAllPatient);
-            }
-
-            table.setModel(templatesTableModel);
-            table.setFont(new Font("Calibri", 0, 18));
-         
-            return templatesTableModel;
      }
  
     
     public static int compterTableauPrestationParService(String Service) throws SQLException {
-        String sql45 = "SELECT COUNT(*) FROM `prestationsfaites` WHERE serviceDemandeur = '" + Service + "'";
-        ResultSet rs = executeQuery(sql45);
+        ResultSet rs = executeQuery("SELECT COUNT(*) FROM `prestationsfaites` WHERE serviceDemandeur = '" + Service + "'");
         rs.next();
         String s = rs.getString(1);
         int nbre = Integer.parseInt(s);

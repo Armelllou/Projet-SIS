@@ -21,6 +21,8 @@ import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
 
 
+import static bd.MethodeBD.executeQuery;
+
 public class TableauActesInfirmiersInfosMedPH implements MouseListener {
 
 
@@ -51,17 +53,9 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
             String types = (String) table.getModel().getValueAt(numLigne, 0);
             String dates = (String) table.getModel().getValueAt(numLigne, 2);
              
-             
-             
-            String Sql1 = "Select * from actes WHERE IPP ='" + ipp + "'and type='" + types +"'and Date ='"+dates+"'";
-       
-           
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps;
 
-            ps = conn.getConnexion().prepareStatement(Sql1);
 
-            ResultSet rs = ps.executeQuery();
+            ResultSet rs = executeQuery("Select * from actes WHERE IPP ='" + ipp + "'and type='" + types +"'and Date ='"+dates+"'");
 
             while (rs.next()) {
                 
@@ -77,12 +71,8 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
 
             }
 
-            String Sql2 = "Select * from ide WHERE idIDE = '" + id + "'";
-            PreparedStatement ps2;
 
-            ps2 = conn.getConnexion().prepareStatement(Sql2);
-
-            ResultSet rs2 = ps2.executeQuery();
+            ResultSet rs2 = executeQuery("Select * from ide WHERE idIDE = '" + id + "'");
 
 
             while (rs2.next()) {
@@ -101,8 +91,7 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
         } catch (SQLException ex) {
             Logger.getLogger(TableauActesInfirmiersInfosMedPH.class.getName()).log(Level.SEVERE, null, ex);
         }
-        finally {
-            }
+
         
 
     }
