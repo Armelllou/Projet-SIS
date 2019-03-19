@@ -5,20 +5,12 @@
  */
 package interfaces;
 
-import listener.commun.BoutonDeconnexion;
+import listener.commun.*;
 import listener.technicien.BoutonValiderModificationPersonnel;
-import listener.commun.affichageResultats;
-import listener.commun.BoutonAnnulerResultats;
 import listener.secretairemedical.BoutonValiderModificationDPI;
 import listener.technicien.TableauPhP1;
-import listener.commun.TableauResultatParPatient;
-import listener.commun.BoutonRecherchePatientPhEtIde;
-import listener.commun.ListenerConnexion;
-import listener.commun.BoutonRetourdetailsRversR;
-import listener.commun.BoutonAccederAuxResultats;
 import listener.medicotech.BoutonValiderDemandePrestation;
 import listener.technicien.BoutonValiderPersonnel;
-import listener.commun.BoutonRetourVersConsulterDPIPHetIDE;
 import listener.medicotech.BoutonValiderResultats;
 import listener.secretairemedical.BoutonValiderDMA;
 import listener.medicotech.TableauPrestations;
@@ -172,6 +164,11 @@ public class Fenetre extends JFrame {
     private JButton frelcheretourResultatsParPatient = rp.getFlecheRetour();
     private JButton retour = rc.getBoutonRetour();
     private JButton validerTransfert = transfert.getBouttonvalider();
+    private  JButton recherchePH = pl.getBoutonRecherchePH();
+    private  JButton rechercheIde = pl.getBoutonIDE();
+    private  JButton rechercheSA = pl.getBouttonMT1();
+    private  JButton rechercheMT = pl.getBouttonMT();
+
 
     //Déclarations Tableaux
     private JTable tableauconsultdpis = consultdpis.getjTable1();
@@ -260,6 +257,10 @@ public class Fenetre extends JFrame {
         retrouresultats.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
         retourR.addActionListener(new BoutonRetourdetailsRversR(r, dr, this, barreduhaut));
 
+        recherchePH.addActionListener(new BoutonRecherchePh(this,pl));
+        rechercheIde.addActionListener(new BoutonRechercheIde(this,pl));
+        rechercheSA.addActionListener(new BoutonRechercheSA(this,pl));
+        rechercheMT.addActionListener(new BoutonRechercheMT(this,pl));
      
         resultatParPatientIDE.addActionListener(new BoutonResultatsIde(rp, this, barreduhaut, infosmedide, infosmedph, l));
         resultatParPatientPH.addActionListener(new BoutonResultatsPh(rp, this, barreduhaut, infosmedide, infosmedph, l));

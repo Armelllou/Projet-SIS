@@ -58,6 +58,36 @@ public class MethodeBD {
         return templatesTableModel;
     }
 
+    private static DefaultTableModel executeRecherchePersonnel(String query, String type) {
+        String[] infoAllPatient = new String[3];
+        String title[] = {"Nom", "Prénom", "id"};
+        DefaultTableModel templatesTableModel = new DefaultTableModel();
+        templatesTableModel.setColumnIdentifiers(title);
+        ResultSet rs = executeQuery(query);
+        if (rs == null) {
+            return templatesTableModel;
+        }
+        try {
+            while (rs.next()) {
+                infoAllPatient[0] = rs.getString("Nom");
+
+                if(type.equals("ph")){ infoAllPatient[2] = rs.getString("idPH");infoAllPatient[1] = rs.getString("Prenom");}
+
+                if(type.equals("ide")){ infoAllPatient[2] = rs.getString("idIDE");infoAllPatient[1] = rs.getString("Prenom");}
+                if(type.equals("SA")) {
+                    infoAllPatient[1] = rs.getString("Prénom");
+                    infoAllPatient[2] = rs.getString("idSA");
+                }
+                if(type.equals("MT")) { infoAllPatient[2] = rs.getString("idMT");infoAllPatient[1] = rs.getString("Prenom");}
+                templatesTableModel.addRow(infoAllPatient);
+            }
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        finally {
+        }
+        return templatesTableModel;
+    }
 
     /**
      * modèle pour remplir la Jtable avec les consultations d'un patient
@@ -91,7 +121,6 @@ public class MethodeBD {
     /**
      * modèle pour remplir la Jtable avec les prestations
      *
-     * @param service
      * @return DefaultTableModel
      */
     public static DefaultTableModel listePrestation() {
@@ -487,6 +516,45 @@ public class MethodeBD {
     public static DefaultTableModel recherchePatientViaIPP(String ipp) {
         return execute("Select * FROM patient WHERE IPP ='" + ipp + "'");
     }
+
+    /**
+     * Retourne le praticien hospitalier correspondant à l'id renseigné
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel recherchePHViaIPP(String id) {
+
+        return executeRecherchePersonnel("Select * FROM praticienhospitaliers WHERE idPh ='" + id + "'","ph");
+    }
+
+    /**
+     * Retourne l'ide correspondant à l'id renseigné
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel rechercheIdeViaIPP(String id) {
+        return executeRecherchePersonnel("Select * FROM ide WHERE idIDE ='" + id + "'","ide");
+    }
+
+    /**
+     * Retourne le medicotechnique correspondant à l'id renseigné
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel rechercheMedicoTechViaIPP(String id) {
+        return executeRecherchePersonnel("Select * FROM medicotechniques WHERE idMT ='" + id + "'","MT");
+    }
+
+
+    /**
+     * Retourne la/le secrétaire adminitrative correspondant à l'id renseigné
+     *
+     * @return DefaultTableModel
+     */
+    public static DefaultTableModel rechercheSAdViaIPP(String id) {
+        return executeRecherchePersonnel("Select * FROM  secretaireadministrative WHERE idSA ='" + id + "'","SA");
+    }
+
 
     /**
      * Retourne le patient correspondant au nom et prenom pour une secrétaire

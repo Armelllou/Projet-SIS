@@ -164,24 +164,23 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
                 }
 
-
-//-----------------------------------marche pas-----------------
+                String format = "dd/MM/yy";
+                java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
+                java.util.Date date = new java.util.Date();
+                System.out.println(date);
+                String date1 = date.toString();
+//-----------------------------------Fermeture DPI-----------------
 
 
                 if (mdpi.getTypesejour().getSelectedItem().toString().equals("Hospitalisation") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Termine")) {
 
                     System.out.println("test1");
 
-                    String format = "dd/MM/yy";
-                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
-                    java.util.Date date = new java.util.Date();
-                    System.out.println(date);
-                    String date1 = date.toString();
 
                     String s1 = "UPDATE hospitalisation SET DateSortieH=? WHERE IPP=?";
                     PreparedStatement prep = conn.getConnexion().prepareStatement(s1);
                     prep.setObject(1, date1, Types.VARCHAR);
-                    prep.setString(2, ipp);
+                    prep.setInt(2, Integer.parseInt(ipp));
                     prep.executeUpdate();
                     dpis.getDatesortie().setText(date1);
 
@@ -197,13 +196,9 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
                     System.out.println("test2");
 
-                    String format = "dd/MM/yy";
-                    java.text.SimpleDateFormat formater = new java.text.SimpleDateFormat(format);
-                    java.util.Date date = new java.util.Date();
-
                     String sql = " UPDATE consultationexterne SET DateSortieC=? WHERE IPP = ?";
                     PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
-                    statement.setObject(1, date, Types.DATE);
+                    statement.setObject(1, date1, Types.VARCHAR);
                     statement.setObject(2, ipp);
                     statement.executeUpdate();
                     dpis.getDatesortie().setText(date.toString());
@@ -215,7 +210,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
                     statement1.executeUpdate();
                     dpis.getEtat().setText("Terminé");
                 }
-//-----------------------------------marche pas-----------------
+//----------------------------------------------------
 
                 dpis.getjLabelnom().setText(nomDeNaissance);
                 dpis.getjLabelnom1().setText(nomUsuel);

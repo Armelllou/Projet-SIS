@@ -1,10 +1,8 @@
 package listener.commun;
 
-import bd.ConnexionBD;
 import bd.MethodeBD;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
-
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -15,7 +13,6 @@ import javax.swing.JOptionPane;
 public class BoutonRecherchePatientPhEtIde implements ActionListener {
     Fenetre fen;
     ConsulterDPIPHetIDE cdpis;
-    ConnexionBD conn = ConnexionBD.getInstance();
 
     public BoutonRecherchePatientPhEtIde(Fenetre jframe, ConsulterDPIPHetIDE cdpis) {
         this.fen = jframe;
