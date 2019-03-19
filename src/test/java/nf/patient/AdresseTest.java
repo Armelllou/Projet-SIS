@@ -1,4 +1,4 @@
-package java.nf.patient;
+package nf.patient;
 
 import nf.patient.Adresse;
 import org.junit.After;
