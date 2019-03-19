@@ -172,7 +172,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
 //-----------------------------------Fermeture DPI-----------------
 
 
-                if (mdpi.getTypesejour().getSelectedItem().toString().equals("Hospitalisation") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Termine")) {
+                if (mdpi.getTypesejour().getSelectedItem().toString().equals("Hospitalisation") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Terminé")) {
 
                     System.out.println("test1");
 
@@ -189,10 +189,10 @@ public class BoutonValiderModificationDPI implements ActionListener {
                     statement1.setObject(1, "Terminé", Types.VARCHAR);
                     statement1.setObject(2, ipp);
                     statement1.executeUpdate();
-                    dpis.getEtat().setText("Termine");
+                    dpis.getEtat().setText("Terminé");
                 }
 
-                if (typeSejour.equals("Consultation externe") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Termine")) {
+                if (typeSejour.equals("Consultation externe") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Terminé")) {
 
                     System.out.println("test2");
 

@@ -20,6 +20,7 @@ import nf.sejour.consultation.ConsultExt;
 
 import javax.swing.*;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -62,6 +63,11 @@ public class BoutonValiderDMA implements ActionListener {
             jop1.showMessageDialog(null, "Patient correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
             fen.panelVisibleFalse();
 
+            MethodeBD.listeAllPatientJTable();
+            cdpis.getjTable1().setGridColor(new Color(153, 153, 153));
+            cdpis.getjTable1().setModel(MethodeBD.listeAllPatientJTable());
+            cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
+            cdpis.repaint();
 
             MethodeBD.PatientSecretaire(cdpis.getjTable1());
             RafraichitLesPanels rf = new RafraichitLesPanels(fen,cdpis);

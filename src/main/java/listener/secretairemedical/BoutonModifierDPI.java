@@ -48,6 +48,9 @@ public class BoutonModifierDPI implements ActionListener {
         String serviceGeo = dpis.getServiceGeo().getText();
         String chambre = dpis.getjLabelchamnre().getText();
         String sexe = dpis.getSexe().getText();
+        String typesejour = dpis.getTypeDeSejour().getText();
+        String etat = dpis.getEtat().getText();
+        System.out.println(etat);
 
         mdpi.getNomDenaissance().setText(nom);
         mdpi.getNomUsuel().setText(nomUsuel);
@@ -57,11 +60,13 @@ public class BoutonModifierDPI implements ActionListener {
         mdpi.getEmail().setText(email);
         mdpi.getTel().setText(tel);
         mdpi.getDateDeNaissance().setText(dateNiassance);
-        mdpi.getServicegeo().setActionCommand(serviceRespo);
-        mdpi.getServicegeo().setActionCommand(serviceGeo);
-        mdpi.getSexe().setActionCommand(sexe);
+        mdpi.getServicerespo().setSelectedItem(serviceRespo);
+        mdpi.getServicegeo().setSelectedItem(serviceGeo);
+        mdpi.getSexe().setSelectedItem(sexe);
         mdpi.getChambre().setText(chambre);
         mdpi.getjLabel3().setText(ipp);
+        mdpi.getTypesejour().setSelectedItem(typesejour);
+        mdpi.getEtatsejour().setSelectedItem(etat);
 
     RafraichitLesPanels rf = new RafraichitLesPanels(jframe,mdpi);
 

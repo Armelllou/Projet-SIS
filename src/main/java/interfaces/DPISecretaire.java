@@ -141,7 +141,7 @@ public class DPISecretaire extends javax.swing.JPanel {
      * @return the jLabelnumsecu
      */
     public javax.swing.JLabel getjLabelnumsecu() {
-        return Sexe;
+        return jLabelnumsecu1;
     }
 
     /**
