@@ -73,17 +73,17 @@ public class AjouterPrestation extends javax.swing.JPanel {
         bouttonValider.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         bouttonValider.setText("Valider");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel2.setText("Service demandeur :");
 
-        serviceDemandeur.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        serviceDemandeur.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         serviceDemandeur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Anapathologie", "Anesthésie", "Cardiologie", "Chirurgie", "Dermatologie", "Gynécologie", "Hématologie", "Laboratoire", "Médecine", "Obstétrique", "Psychiatrie", "Radiologie", "Urologie" }));
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel3.setText("Prestation demandée :");
 
         prestationDemandee.setColumns(20);
-        prestationDemandee.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        prestationDemandee.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         prestationDemandee.setRows(5);
         jScrollPane1.setViewportView(prestationDemandee);
 
@@ -115,7 +115,7 @@ public class AjouterPrestation extends javax.swing.JPanel {
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 885, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 466, Short.MAX_VALUE)))
+                        .addGap(0, 410, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -132,7 +132,7 @@ public class AjouterPrestation extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(54, 54, 54)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonAnnuler)
                     .addComponent(bouttonValider))

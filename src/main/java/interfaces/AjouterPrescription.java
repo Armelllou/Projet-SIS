@@ -135,44 +135,45 @@ public class AjouterPrescription extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jButton2.setText("Valider");
 
-        NomMedecin.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        NomMedecin.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         NomMedecin.setText("Nom");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel2.setText("Patient :");
 
-        PrenomMedecin.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        PrenomMedecin.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         PrenomMedecin.setText("Prénom");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel4.setText("Date :");
 
-        annee.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        annee.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
 
-        jLabel5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel5.setText("/");
 
-        date.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        date.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
 
-        jLabel6.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel6.setText("/");
 
-        jour.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jour.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel7.setText("Détail de la prescription :");
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel9.setText("Médecin :");
 
-        IPP.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        IPP.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         IPP.setText("IPP");
 
-        Type.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        Type.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         Type.setText("Type de Prescription :");
 
+        TypePrescription.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         TypePrescription.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TypePrescriptionActionPerformed(evt);
@@ -180,7 +181,7 @@ public class AjouterPrescription extends javax.swing.JPanel {
         });
 
         prescription.setColumns(20);
-        prescription.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        prescription.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         prescription.setRows(5);
         jScrollPane1.setViewportView(prescription);
 
@@ -195,11 +196,11 @@ public class AjouterPrescription extends javax.swing.JPanel {
                 .addComponent(NomMedecin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PrenomMedecin)
-                .addGap(346, 346, 346)
+                .addGap(264, 264, 264)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(IPP, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(185, 185, 185)
+                .addGap(161, 161, 161)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +212,7 @@ public class AjouterPrescription extends javax.swing.JPanel {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(273, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -222,13 +223,13 @@ public class AjouterPrescription extends javax.swing.JPanel {
                                 .addComponent(Type)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(TypePrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 1065, Short.MAX_VALUE))
+                        .addGap(0, 1013, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1)
-                        .addGap(57, 57, 57)
+                        .addGap(58, 58, 58)
                         .addComponent(jButton2)
-                        .addGap(466, 466, 466)
+                        .addGap(465, 465, 465)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
@@ -243,9 +244,7 @@ public class AjouterPrescription extends javax.swing.JPanel {
                         .addGap(183, 183, 183)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Type)
-                            .addComponent(TypePrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel7))
+                            .addComponent(TypePrescription, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(67, 67, 67)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -263,14 +262,19 @@ public class AjouterPrescription extends javax.swing.JPanel {
                             .addComponent(jour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6)
                             .addComponent(annee, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(11, 11, 11)
+                .addComponent(jLabel7)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 327, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton2)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1)
+                            .addComponent(jButton2))))
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

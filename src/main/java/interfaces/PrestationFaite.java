@@ -91,10 +91,10 @@ public class PrestationFaite extends javax.swing.JPanel {
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        boutonAnnuler.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        boutonAnnuler.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         boutonAnnuler.setText("Annuler");
 
-        boutonValider.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        boutonValider.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         boutonValider.setText("Valider");
 
         prenomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
@@ -147,16 +147,16 @@ public class PrestationFaite extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel3)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 296, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(653, 653, 653)
-                .addComponent(boutonAnnuler, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(773, 773, 773)
+                .addComponent(boutonAnnuler)
                 .addGap(41, 41, 41)
-                .addComponent(boutonValider, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(boutonValider)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -172,9 +172,9 @@ public class PrestationFaite extends javax.swing.JPanel {
                     .addComponent(nomMedecin))
                 .addGap(69, 69, 69)
                 .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boutonAnnuler)
                     .addComponent(boutonValider))

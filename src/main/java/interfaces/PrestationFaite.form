@@ -55,7 +55,7 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="296" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -65,10 +65,10 @@
               <Component id="jLabel9" min="-2" pref="241" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="-2" pref="653" max="-2" attributes="0"/>
-              <Component id="boutonAnnuler" min="-2" pref="231" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="773" max="-2" attributes="0"/>
+              <Component id="boutonAnnuler" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-              <Component id="boutonValider" min="-2" pref="210" max="-2" attributes="0"/>
+              <Component id="boutonValider" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -87,9 +87,9 @@
               </Group>
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="422" max="-2" attributes="0"/>
-              <EmptySpace pref="39" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="350" max="-2" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="boutonAnnuler" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="boutonValider" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -119,7 +119,7 @@
     <Component class="javax.swing.JButton" name="boutonAnnuler">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="0"/>
+          <Font name="Calibri" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Annuler"/>
       </Properties>
@@ -127,7 +127,7 @@
     <Component class="javax.swing.JButton" name="boutonValider">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="0"/>
+          <Font name="Calibri" size="24" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Valider"/>
       </Properties>

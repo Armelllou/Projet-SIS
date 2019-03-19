@@ -43,28 +43,28 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Component id="boutonRetour" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                              <Component id="nomPatient" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                              <Component id="prenomPatient" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
-                              <Component id="ipp" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="136" max="-2" attributes="0"/>
-                              <Component id="type" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="nomPatient" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="prenomPatient" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
+                              <Component id="ipp" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="131" max="-2" attributes="0"/>
+                              <Component id="type" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="nomMedecin" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="0" pref="227" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel9" min="-2" pref="241" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jLabel9" min="-2" pref="241" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -91,9 +91,10 @@
               <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jScrollPane2" min="-2" pref="422" max="-2" attributes="0"/>
-              <EmptySpace pref="113" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" min="-2" pref="336" max="-2" attributes="0"/>
+              <EmptySpace pref="101" max="32767" attributes="0"/>
               <Component id="jLabel9" min="-2" pref="103" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -102,7 +103,7 @@
     <Component class="javax.swing.JLabel" name="nomPatient">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="1"/>
+          <Font name="Calibri" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="NOM"/>
       </Properties>
@@ -117,7 +118,7 @@
     <Component class="javax.swing.JLabel" name="prenomPatient">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="1"/>
+          <Font name="Calibri" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Pr&#xe9;nom"/>
       </Properties>
@@ -125,7 +126,7 @@
     <Component class="javax.swing.JLabel" name="ipp">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="40" style="1"/>
+          <Font name="Calibri" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="AAMMXXXXX"/>
       </Properties>
@@ -133,7 +134,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="0"/>
+          <Font name="Calibri" size="30" style="0"/>
         </Property>
         <Property name="text" type="java.lang.String" value="R&#xe9;sultats :"/>
       </Properties>
@@ -141,7 +142,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="1"/>
+          <Font name="Calibri" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Patient:"/>
       </Properties>
@@ -149,7 +150,7 @@
     <Component class="javax.swing.JLabel" name="nomMedecin">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="1"/>
+          <Font name="Calibri" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Nom Prenom"/>
       </Properties>
@@ -157,7 +158,7 @@
     <Component class="javax.swing.JLabel" name="type">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri" size="36" style="1"/>
+          <Font name="Calibri" size="30" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Date de r&#xe9;alisation de la prestation:"/>
       </Properties>

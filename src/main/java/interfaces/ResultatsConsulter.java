@@ -79,27 +79,27 @@ public class ResultatsConsulter extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
-        nomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        nomPatient.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         nomPatient.setText("NOM");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        prenomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        prenomPatient.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         prenomPatient.setText("Prénom");
 
-        ipp.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
+        ipp.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         ipp.setText("AAMMXXXXX");
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel3.setText("Résultats :");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel4.setText("Patient:");
 
-        nomMedecin.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        nomMedecin.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         nomMedecin.setText("Nom Prenom");
 
-        type.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        type.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         type.setText("Date de réalisation de la prestation:");
 
         resultats.setColumns(20);
@@ -126,23 +126,23 @@ public class ResultatsConsulter extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
                                 .addComponent(boutonRetour)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(51, 51, 51)
                                 .addComponent(jLabel4)
-                                .addGap(89, 89, 89)
-                                .addComponent(nomPatient)
-                                .addGap(70, 70, 70)
-                                .addComponent(prenomPatient)
-                                .addGap(85, 85, 85)
-                                .addComponent(ipp)
-                                .addGap(136, 136, 136)
-                                .addComponent(type)
                                 .addGap(18, 18, 18)
+                                .addComponent(nomPatient)
+                                .addGap(42, 42, 42)
+                                .addComponent(prenomPatient)
+                                .addGap(81, 81, 81)
+                                .addComponent(ipp)
+                                .addGap(131, 131, 131)
+                                .addComponent(type)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(nomMedecin)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 227, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,9 +163,10 @@ public class ResultatsConsulter extends javax.swing.JPanel {
                 .addGap(69, 69, 69)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 422, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 

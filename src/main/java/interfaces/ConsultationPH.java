@@ -95,19 +95,19 @@ public class ConsultationPH extends javax.swing.JPanel {
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
         setPreferredSize(new java.awt.Dimension(1700, 760));
 
-        NoMedecin.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        NoMedecin.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         NoMedecin.setText("Nom");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel2.setText("Médecin :");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel4.setText("Date :");
 
-        jLabel7.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         jLabel7.setText("Compte-rendu de la consultation :");
 
-        Observation.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        Observation.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
@@ -120,7 +120,7 @@ public class ConsultationPH extends javax.swing.JPanel {
             }
         });
 
-        Date.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        Date.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         Date.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -128,7 +128,7 @@ public class ConsultationPH extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(531, Short.MAX_VALUE)
+                .addContainerGap(482, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,7 +173,7 @@ public class ConsultationPH extends javax.swing.JPanel {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(Observation, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
