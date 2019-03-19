@@ -64,7 +64,6 @@ public class TableauConsulterDPIPH implements MouseListener {
                 imph.getjLabelipp().setText(ipp);
 
 
-
                 ResultSet rs = executeQuery("Select * from patient WHERE IPP ='" + ipp + "'");
 
                 while (rs.next()) {
@@ -77,6 +76,7 @@ public class TableauConsulterDPIPH implements MouseListener {
                     String NumSS = rs.getString(9);
                     String email = rs.getString(10);
                     String telephone = rs.getString(11);
+                    String etat = rs.getString(13);
 
                     imph.getjLabeladresse().setText(Adresse);
                     imph.getjLabelnumsecu().setText(NumSS);
@@ -84,6 +84,35 @@ public class TableauConsulterDPIPH implements MouseListener {
                     imph.getjLabeltelephone().setText(telephone);
                     imph.getjLabelannée().setText(DateDeNaissance);
                     imph.getSexe().setText(Sexe);
+                    imph.getEtat().setText(etat);
+
+                    ResultSet rs23 = executeQuery("Select * from hospitalisation WHERE IPP = '" + ipp + "'");
+
+                    while (rs23.next()) {
+                        if (rs.getString(12).equals("Hospitalisation")) {
+                            String dateentre = rs23.getString(2);
+                            System.out.println(dateentre);
+                            imph.getDateentree().setText(dateentre);
+                            String datesortie = rs23.getString(3);
+                            System.out.println(datesortie);
+                            imph.getDatesortie().setText(datesortie);
+
+                        }
+                    }
+
+                    ResultSet rs24 = executeQuery("Select * from consultationexterne WHERE IPP = '" + ipp + "'");
+
+                    while (rs24.next()) {
+                        if (rs.getString(12).equals("Consultation externe")) {
+                            String dateentre = rs24.getString(2);
+                            System.out.println(dateentre);
+                            imph.getDateentree().setText(dateentre);
+                            String datesortie = rs24.getString(3);
+                            System.out.println(datesortie);
+                            imph.getDatesortie().setText(datesortie);
+
+                        }
+                    }
 
                 }
 
@@ -101,17 +130,15 @@ public class TableauConsulterDPIPH implements MouseListener {
                     imph.getServiceGeo().setText(ServiceGegraphique);
 
                     imph.getjLabelchamnre().setText(chambre);
-
-                        RafraichitLesPanels rf = new RafraichitLesPanels(fen,imph);
+                    RafraichitLesPanels rf = new RafraichitLesPanels(fen, imph);
                 }
-                
-                
+
             }
+
         } catch (SQLException ex) {
             Logger.getLogger(TableauConsulterDPIPH.class.getName()).log(Level.SEVERE, null, ex);
         }
-        finally {
-        }
+
     }
 
     @Override

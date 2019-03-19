@@ -78,6 +78,7 @@ public class TableauConsulterIDE implements MouseListener{
                     String numSS = rs.getString(9);
                     String email = rs.getString(10);
                     String telephone = rs.getString(11);
+                    String etat = rs.getString(13);
 
                     imide.getjLabeladresse().setText(adresse);
                     imide.getjLabelnumsecu().setText(numSS);
@@ -85,6 +86,37 @@ public class TableauConsulterIDE implements MouseListener{
                     imide.getjLabeltelephone().setText(telephone);
                     imide.getjLabelannée().setText(dateDeNaissance);
                     imide.getSexe().setText(sexe);
+                    imide.getEtat().setText(etat);
+
+
+
+                    ResultSet rs23 = executeQuery("Select * from hospitalisation WHERE IPP = '" + ipp + "'");
+
+                    while (rs23.next()) {
+                        if (rs.getString(12).equals("Hospitalisation")) {
+                            String dateentre = rs23.getString(2);
+                            System.out.println(dateentre);
+                            imide.getDateentree().setText(dateentre);
+                            String datesortie = rs23.getString(3);
+                            System.out.println(datesortie);
+                            imide.getDatesortie().setText(datesortie);
+
+                        }
+                    }
+
+                    ResultSet rs24 = executeQuery("Select * from consultationexterne WHERE IPP = '" + ipp + "'");
+
+                    while (rs24.next()) {
+                        if (rs.getString(12).equals("Consultation externe")) {
+                            String dateentre = rs24.getString(2);
+                            System.out.println(dateentre);
+                            imide.getDateentree().setText(dateentre);
+                            String datesortie = rs24.getString(3);
+                            System.out.println(datesortie);
+                            imide.getDatesortie().setText(datesortie);
+
+                        }
+                    }
 
                 }
 

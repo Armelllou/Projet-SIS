@@ -168,6 +168,7 @@ public class Fenetre extends JFrame {
     private  JButton rechercheIde = pl.getBoutonIDE();
     private  JButton rechercheSA = pl.getBouttonMT1();
     private  JButton rechercheMT = pl.getBouttonMT();
+    private JButton accueil = aiide.getjButton3();
 
 
     //Déclarations Tableaux
@@ -186,6 +187,7 @@ public class Fenetre extends JFrame {
     private JTable tableauSA = pl.getTableSecretaire();
     private JTable resultats = r.getTablePrestation();
     private JTable tableresultatsparpatient = rp.getTablePrestation();
+
 
     public Fenetre() {
         //state = State.NONCO;
@@ -267,6 +269,8 @@ public class Fenetre extends JFrame {
         frelcheretourResultatsParPatient.addActionListener(new BoutonRetourPHVersInfosMedicalesPH(this, infosmedph,l));
         retour.addActionListener(new BoutonRetourPHVersInfosMedicalesPH(this, infosmedph,l));
         validerTransfert.addActionListener(new BoutonValiderTransfert(transfert, this, dpiph, consultdpiphide, barreduhaut));
+
+        accueil.addActionListener(new BoutonRetourVersConsulterDPIPHetIDE(this, consultdpiphide,dpiph, dpiide, barreduhaut));
 
 // tableau
         tableauconsultdpis.addMouseListener(new TableauConsulterDPISecretaire(consultdpis, dpis, this, consultdpis.getjTable1()));
