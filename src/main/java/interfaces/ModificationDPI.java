@@ -15,12 +15,7 @@ import javax.swing.JTextField;
  */
 public class ModificationDPI extends javax.swing.JPanel {
 
-    /**
-     * @return the anneesortie
-     */
-    public javax.swing.JTextField getAnneesortie() {
-        return anneesortie;
-    }
+   
 
     /**
      * @return the etatsejour
@@ -29,19 +24,8 @@ public class ModificationDPI extends javax.swing.JPanel {
         return etatsejour;
     }
 
-    /**
-     * @return the joursortie
-     */
-    public javax.swing.JTextField getJoursortie() {
-        return joursortie;
-    }
 
-    /**
-     * @return the moissortie
-     */
-    public javax.swing.JTextField getMoissortie() {
-        return moissortie;
-    }
+
 
     /**
      * @return the typesejour
@@ -245,12 +229,6 @@ public class ModificationDPI extends javax.swing.JPanel {
         typesejour = new javax.swing.JComboBox<>();
         etatsejour = new javax.swing.JComboBox<>();
         jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        joursortie = new javax.swing.JTextField();
-        jLabel22 = new javax.swing.JLabel();
-        moissortie = new javax.swing.JTextField();
-        jLabel23 = new javax.swing.JLabel();
-        anneesortie = new javax.swing.JTextField();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
@@ -384,40 +362,10 @@ public class ModificationDPI extends javax.swing.JPanel {
         typesejour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Consultation externe", "Hospitalisation" }));
 
         etatsejour.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        etatsejour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En cours", "Termine" }));
+        etatsejour.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "En cours", "Terminé" }));
 
         jLabel20.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel20.setText("Etat du séjour :");
-
-        jLabel21.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel21.setText("Date de sortie :");
-
-        joursortie.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        joursortie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                joursortieActionPerformed(evt);
-            }
-        });
-
-        jLabel22.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel22.setText("/");
-
-        moissortie.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        moissortie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                moissortieActionPerformed(evt);
-            }
-        });
-
-        jLabel23.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel23.setText("/");
-
-        anneesortie.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        anneesortie.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                anneesortieActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -502,20 +450,7 @@ public class ModificationDPI extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(etatsejour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(typesejour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(7, 7, 7)
-                                .addComponent(jLabel21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(joursortie, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel22)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(moissortie, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel23)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(anneesortie, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(typesejour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -546,20 +481,18 @@ public class ModificationDPI extends javax.swing.JPanel {
                     .addComponent(jLabel17)
                     .addComponent(DateDeNaissance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton1)
-                                    .addComponent(jButton2))
-                                .addGap(23, 23, 23))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jButton1)
+                                .addComponent(jButton2))
+                            .addGap(23, 23, 23))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap()))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Adresse, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel8))
@@ -583,12 +516,6 @@ public class ModificationDPI extends javax.swing.JPanel {
                             .addComponent(servicegeo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel21)
-                            .addComponent(anneesortie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel23)
-                            .addComponent(moissortie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel22)
-                            .addComponent(joursortie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel15)
                             .addComponent(chambre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(151, 151, 151))))
@@ -631,25 +558,12 @@ public class ModificationDPI extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_nomDenaissanceActionPerformed
 
-    private void joursortieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joursortieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_joursortieActionPerformed
-
-    private void moissortieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_moissortieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_moissortieActionPerformed
-
-    private void anneesortieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_anneesortieActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_anneesortieActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Adresse;
     private javax.swing.JTextField DateDeNaissance;
     private javax.swing.JTextField NomUsuel;
     private javax.swing.JComboBox<String> Sexe;
-    private javax.swing.JTextField anneesortie;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField chambre;
     private javax.swing.JTextField email;
@@ -667,17 +581,12 @@ public class ModificationDPI extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField joursortie;
-    private javax.swing.JTextField moissortie;
     private javax.swing.JTextField nomDenaissance;
     private javax.swing.JTextField numSS;
     private javax.swing.JTextField prenom;

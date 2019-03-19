@@ -64,7 +64,7 @@ public class BoutonValiderDMA implements ActionListener {
 
 
             MethodeBD.PatientSecretaire(cdpis.getjTable1());
-               RafraichitLesPanels rf = new RafraichitLesPanels(fen,cdpis);
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen,cdpis);
 
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderDMA.class.getName()).log(Level.SEVERE, null, ex);
