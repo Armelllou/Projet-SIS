@@ -627,7 +627,7 @@ public class MethodeBD {
       }
        public static void SupprimerSurBdTechnicien (int id) throws SQLException{
       ConnexionBD conn = ConnexionBD.getInstance();
-                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from Technicien WHERE idTECH ='" + id + "'");
+                    PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from technicien WHERE idTECH ='" + id + "'");
                     prep2.executeUpdate();
        }
        
