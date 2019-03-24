@@ -42,10 +42,10 @@ public class IppCounter {
                 }
                 String columnValue = resultSet.getString(i);
                 String columnInteressant = columnValue.substring(5);
-                //System.out.print(columnInteressant);
+         
                 int ipp = Integer.parseInt(columnInteressant);
                 ippCounter = ipp;
-            }//}
+            }
 
         }
         ippCounter += 1;

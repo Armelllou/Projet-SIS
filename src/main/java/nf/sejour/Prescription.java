@@ -16,6 +16,7 @@ public class Prescription {
     private String details;
     private Dates dates;
 
+    // creer une prescription
     public Prescription(String details, String Type, String idPH, String ipp) {
    
         this.type = Type;
@@ -25,6 +26,7 @@ public class Prescription {
         this.dates = dates;
     }
 
+    // ajoute une prescription sur la base de donnée
     public boolean AjouterActeSurBD(Prescription a) throws SQLException {
         boolean j = false;
         String sql = " INSERT INTO prescription (type,ipp, idPh, Detail) VALUES(?,?,?,?) ";

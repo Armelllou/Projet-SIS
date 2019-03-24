@@ -10,12 +10,14 @@ import nf.patient.Patient;
 
 public class SecretaireMedical extends Personnel {
 String Service;
+
+// Cree un SA
     public SecretaireMedical(String nom, String prenom, int id, int mdp,String Service) {
         super(nom, prenom, id, mdp);
         this.Service=Service;
     }
 
-    
+   // ajouter une SA sur la BD 
     public boolean AjouterSurBdSecretaireMedical(SecretaireMedical i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();

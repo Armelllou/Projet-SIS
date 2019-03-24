@@ -27,16 +27,18 @@ public class Patient {
     String email;
     String telephone;
     String typeSejour;
-
     Localisation localisation;
-
-    ConnexionBD conn = ConnexionBD.getInstance();
     
+    
+    
+    
+    
+    ConnexionBD conn = ConnexionBD.getInstance();
     boolean ajoute = false;
-
     CreationDPI cdpi = new CreationDPI();
 
-    public Patient(String NomDeNaissance, String NomUsuel, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse, String numss, String email, String telephone,String typeSejour) throws SQLException {
+    // crée un patient 
+    public Patient(String NomDeNaissance, String NomUsuel, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse, String numss, String email, String telephone, String typeSejour) throws SQLException {
         this.NomDeNaissance = NomDeNaissance;
         this.DateDeNaissance = DateDeNaissance;
         this.NomUsuel = NomUsuel;
@@ -48,12 +50,11 @@ public class Patient {
         this.email = email;
         this.telephone = telephone;
         this.ipp = new Ipp();
-        this.typeSejour=typeSejour;
+        this.typeSejour = typeSejour;
 
-        
     }
 
-
+// méthode qui ajoute un patienr sur la base de données
     public boolean AjouterSurBdPatient(Patient p) throws SQLException {
         boolean j = false;
         String sql = " INSERT INTO patient (IPP, NomDeNaissance,NomUsuel, Prénom,DatedeNaissance,Sexe,MédecinG,idAdresse,NumDeSS,email,telephone,typeSejour) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ";
@@ -76,24 +77,15 @@ public class Patient {
         return j;
     }
 
-
     //    public void SupprimerPatients() throws SQLException{
 //            String query ="DELETE FROM Patient";
 //        PreparedStatement statement1 = conn.getConnexion().prepareStatement(query); 
 //         
 //          statement1.executeUpdate();
-//    
+//   
+    // toutes les lignes qui suivent servent à récupérer des infos sur un patient
     public String getNomUsuel() throws SQLException {
-
-//        String NomUsuel = "SELECT Nom FROM Patient";
-//        PreparedStatement statement = conn.getConnexion().prepareStatement(NomUsuel); 
-//        statement.executeUpdate();
-//        
         return NomUsuel;
-    }
-
-    public void setNomUsuel(String NomUsuel) {
-        this.NomUsuel = NomUsuel;
     }
 
     public String getNumSS() {
@@ -116,64 +108,32 @@ public class Patient {
         return NomDeNaissance;
     }
 
-    public void setNomDeNaissance(String NomDeNaissance) {
-        this.NomDeNaissance = NomDeNaissance;
-    }
-
     public String getDateDeNaissance() {
         return DateDeNaissance.toString();
-    }
-
-    public void setDateDeNaissance(Date DateDeNaissance) {
-        //this.DateDeNaissance = DateDeNaissance;
     }
 
     public String getSexe() {
         return sexe;
     }
 
-//    public void setSexe(Sexe sexe) {
-//        this.sexe = sexe;
-//    }
-
     public String getPrenom() {
         return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
     }
 
     public String getAdresse() {
         return adresse.toString();
     }
 
-    public void setAdresse(Adresse adresse) {
-        this.adresse = adresse;
-    }
-
     public Ipp getIpp() {
         return ipp;
-    }
-
-    public void setIpp(Ipp ipp) {
-        this.ipp = ipp;
     }
 
     public Dma getDma() {
         return dma;
     }
 
-    public void setDma(Dma dma) {
-        this.dma = dma;
-    }
-
     public Localisation getLocalisation() {
         return localisation;
-    }
-
-    public void setLocalisation(Localisation localisation) {
-        this.localisation = localisation;
     }
 
 }

@@ -12,13 +12,14 @@ public class Infirmier extends Personnel {
     
     public String service;
 
+    // infirmier es un personnel avec un service propre
     
+    // créerr une infirmier
     public Infirmier(String nom, String prenom, int id, int mdp,String service) {
         super(nom, prenom, id, mdp);
         this.service=service;
     }
-    
-
+    //Ajoute une infirmière sur la base de donnée
     public boolean AjouterSurBdIDE(Infirmier i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();
@@ -37,10 +38,6 @@ public class Infirmier extends Personnel {
         return j;
     }
     
-   
-
-
-
     @Override
     public String getNom() {
       return nom;

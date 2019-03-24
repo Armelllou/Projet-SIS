@@ -25,6 +25,8 @@ public class Resultats {
     int idTECH;
     String Resultats;
 
+    
+    //creer un résultats
     public Resultats(String ServiceDemandeur, String NomPatient, String PrenomPatient, String IPP, String NomMedicoTech, String PrenomMedicotehc, int idTECH,String Resultats) {
         this.ServiceDemandeur = ServiceDemandeur;
         this.NomPatient = NomPatient;
@@ -35,7 +37,7 @@ public class Resultats {
         this.idTECH = idTECH;
         this.Resultats =Resultats;
     }
-
+// Ajouter un résultat à la base de donnée pour le transmettre au service responsable
     public boolean AjouterResutatsSurBD(Resultats r) throws SQLException {
         boolean j = false;
         String sql = " INSERT INTO prestationsfaites (ServiceDemandeur,NomPatient,PrenomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats) VALUES(?,?,?,?,?,?,?,?) ";

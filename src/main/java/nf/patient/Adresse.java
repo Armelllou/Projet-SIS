@@ -17,7 +17,6 @@ public class Adresse {
 
     public Adresse(String adresse, String ville, String codePostal) {
         this.adresse = adresse;
-
         this.ville = ville;
         this.codePostal = codePostal;
     }
@@ -25,10 +24,6 @@ public class Adresse {
 
     public String getVille() {
         return ville;
-    }
-
-    public void setVille(String ville) {
-        this.ville = ville;
     }
 
     public String getAdresse() {
@@ -39,9 +34,7 @@ public class Adresse {
         return codePostal;
     }
 
-    public void setCodePostal(String codePostal) {
-        this.codePostal = codePostal;
-    }
+   
 
     @Override
     public String toString() {

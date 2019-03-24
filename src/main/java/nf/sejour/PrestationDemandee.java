@@ -25,6 +25,8 @@ public class PrestationDemandee {
     String PrenomMedecin;
     int idPH;
 
+    
+    //creer une demande
     public PrestationDemandee(String ServiceDemandeur, String PrestationDemande, String NomPatient, String PrenomPatient, String IPP, String NomMedecin, String PrenomMedecin, int idPH) {
         this.ServiceDemandeur = ServiceDemandeur;
         this.PrestationDemande = PrestationDemande;
@@ -36,7 +38,7 @@ public class PrestationDemandee {
         this.idPH = idPH;
 
     }
-
+// ajout cette demande à la base de donnée afin qu'elle sois transmise aux médicotechniciens
     public boolean AjouterDemandeDePrestationSurBD(PrestationDemandee pd) throws SQLException {
         boolean j = false;
         String sql = " INSERT INTO prestationaeffectuer (ServiceDemandeur,PrestationDemande, NomPatient, PrenomPatient,IPP,NomPh,PrenomPH,idPh) VALUES(?,?,?,?,?,?,?,?) ";

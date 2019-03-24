@@ -25,6 +25,8 @@ public class Localisation {
     ConnexionBD conn = ConnexionBD.getInstance();
     Ipp ipp;
     Patient p;
+    
+    // constructeur de la classe crée une localisation pour un patient
 
     public Localisation(Patient p, String serviceGeographique, String serviceResponsbale) {
         this.p = p;
@@ -32,6 +34,7 @@ public class Localisation {
         this.serviceResponsbale = serviceResponsbale;
     }
 
+    // Ajouter une localisation par IPP sur la base de donnée 
     public boolean AjouterSurBdLocalisation(Localisation l) throws SQLException {
         boolean j = false;
         String sql = " INSERT INTO localisations (IPP, ServiceResponsable,ServiceGeographique,lit) VALUES(?,?,?,?) ";
@@ -54,16 +57,10 @@ public class Localisation {
         return serviceGeographique;
     }
 
-    public void setServiceGeographique(String serviceGeographique) {
-        this.serviceGeographique = serviceGeographique;
-    }
-
     public String getServiceResponsbale() {
         return serviceResponsbale;
     }
 
-    public void setServiceResponsbale(String serviceResponsbale) {
-        this.serviceResponsbale = serviceResponsbale;
-    }
+    
 
 }

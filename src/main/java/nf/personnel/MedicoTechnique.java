@@ -15,13 +15,14 @@ import java.sql.Types;
  * @author annel
  */
 public class MedicoTechnique extends Personnel {
-    String service;
+   
+    // crée un MT
     public MedicoTechnique(String nom, String prenom, int id, int mdp) {
         super(nom, prenom, id, mdp);
         
     }
     
-    
+    // ajpouter le medicotech sur la BD
       public boolean AjouterSurBdMedicoTechnique(MedicoTechnique i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();

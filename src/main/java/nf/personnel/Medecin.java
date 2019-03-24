@@ -9,11 +9,17 @@ import java.sql.Types;
 
 public class Medecin extends Personnel{
  String Service;
+ 
+  //medecin personnel avec un service
+ 
+ // crée un médecin
     public Medecin(String nom, String prenom, int id, int mdp,String Service) {
         super(nom, prenom, id, mdp);
         this .Service = Service;
     }
- 
+    
+    
+//ajoute un médecin sur la base de donnée 
     public boolean AjouterSurBdMedecin(Medecin i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();

@@ -16,12 +16,14 @@ import java.sql.Types;
  */
 public class Technicien extends Personnel{
    
+    
+    // cree un technicien
      public Technicien(String nom, String prenom, int id, int mdp) {
         super(nom, prenom, id, mdp);
         
     }
     
-    
+    /// ajouter un technicien sur la BD
       public boolean AjouterSurBdTechnicien(Technicien i) throws SQLException {
         boolean j = false;
         ConnexionBD conn = new ConnexionBD ();

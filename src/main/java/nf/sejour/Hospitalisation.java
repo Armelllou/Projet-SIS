@@ -10,12 +10,12 @@ public class Hospitalisation {
     private String dateEntree;
     private String dateSortie;
 
-
+// Constructeur de l'hospitalisation
     public Hospitalisation(String dateEntree, String dateSortie) {
         this.dateEntree = dateEntree;
         this.dateSortie = dateSortie;
     }
-
+//ajoute une hospitalisation pour un patient à la BD 
     public static boolean AjouterPatientHospitalisation(Patient p) throws SQLException {
         boolean j = false;
         ConnexionBD conn = ConnexionBD.getInstance();

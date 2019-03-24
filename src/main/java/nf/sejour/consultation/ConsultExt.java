@@ -11,13 +11,17 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
 
-public class ConsultExt extends Consultation {
-
-    public ConsultExt(Personnel pH, List<Prescription> lp) {
-        super(pH, lp);
+public class ConsultExt  {
+ private Personnel pH;
+    
+    
+    
+    public ConsultExt(Personnel pH) {
+         this.pH = pH;
+  
     }
 
-
+// permet d'ajouter une consultation externe sur la table dans la base de donnée, si pas en hospitalisation
     public static boolean AjouterPatientConsultationExterne(Patient p) throws SQLException {
         boolean j = false;
         ConnexionBD conn = ConnexionBD.getInstance();

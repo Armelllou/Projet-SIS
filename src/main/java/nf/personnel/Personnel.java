@@ -6,10 +6,11 @@ public abstract class Personnel {
  
     String nom;
     String prenom;
-    String uniqueID = UUID.randomUUID().toString();
     int id;
     int mdp;
 
+    // classe abstraite commune a tous les personnels ici on construit un personnel avec en commun pour tous
+    //nom, prenom, id , mdp
     public Personnel(String nom, String prenom, int id, int mdp) {
         this.nom = nom;
         this.prenom = prenom;

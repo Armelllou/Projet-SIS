@@ -21,16 +21,18 @@ public class Consultation {
     private String idPH;
     private String ipp;
     private String details;
-    private Dates dates;
 
+
+    
+    // creer une consultation
     public Consultation(String details, String idPH, String ipp) {
 
         this.idPH = idPH;
         this.ipp = ipp;
         this.details = details;
-        this.dates = dates;
+        
     }
-
+// ajouter une consultation sulla base de donnée
     public boolean AjouterConsultationSurBD(Consultation a) throws SQLException {
         boolean j = false;
         String sql = " INSERT INTO consultation (Observation, IPP, NomMedecin) VALUES(?,?,?) ";
@@ -63,7 +65,5 @@ public class Consultation {
         return details;
     }
 
-    public Dates getDates() {
-        return dates;
-    }
+    
 }
