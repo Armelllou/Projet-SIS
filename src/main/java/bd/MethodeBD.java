@@ -612,7 +612,8 @@ public class MethodeBD {
         return nbre;
     }
     
-    
+    //méthodes de suppression Personnel 
+
      public static void SupprimerSurBdIDE (int id) throws SQLException{
         ConnexionBD conn = ConnexionBD.getInstance();
         PreparedStatement prep2 = conn.getConnexion().prepareStatement("DELETE  from ide WHERE idIDE ='" + id + "'");
