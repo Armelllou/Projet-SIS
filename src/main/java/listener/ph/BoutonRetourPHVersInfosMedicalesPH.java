@@ -12,6 +12,9 @@ import interfaces.InfosMedicalesPH;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import listener.commun.ListenerConnexion;
 import listener.commun.RafraichitLesPanels;
 
@@ -34,8 +37,13 @@ public class BoutonRetourPHVersInfosMedicalesPH implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        
-          RafraichitLesPanels rf = new RafraichitLesPanels(jframe,im);
+        try {
+            if (l.ConnexionPH() == true){
+                RafraichitLesPanels rf = new RafraichitLesPanels(jframe,im);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(BoutonRetourPHVersInfosMedicalesPH.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
