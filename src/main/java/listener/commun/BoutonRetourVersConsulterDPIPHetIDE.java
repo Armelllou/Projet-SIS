@@ -55,7 +55,7 @@ public class BoutonRetourVersConsulterDPIPHetIDE implements ActionListener {
         cdpis.getjTable1().setFont(new Font("Calibri", 0, 18));
         cdpis.getjTable1().setModel(MethodeBD.listePatientJTableServicePH(bh.getService().getText()));
         
-        
+        cdpis.getjTextField1().setText("");
         jframe.panelVisibleFalse();
         jframe.add(cdpis);
         cdpis.setVisible(true);

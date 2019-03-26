@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 public class BoutonRecherchePatient implements ActionListener {
     Fenetre fen;
     ConsulterDPISecretaire cdpis;
-    ConnexionBD conn = ConnexionBD.getInstance();
+
 
     public BoutonRecherchePatient(Fenetre jframe, ConsulterDPISecretaire cdpis) {
         this.fen = jframe;

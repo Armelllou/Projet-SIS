@@ -35,7 +35,6 @@ public class ConnexionBD {
         try {
             String uname = getEncryptedUser();
             String password = getEncryptedPass();
-
             System.out.println("===> Connexion en cours");
             String bdUrl = "jdbc:mysql://db4free.net/sqlsis1";
             bdUrl += "?serverTimezone=UTC";

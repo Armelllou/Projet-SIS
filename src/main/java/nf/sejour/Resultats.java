@@ -42,7 +42,7 @@ public class Resultats {
         boolean j = false;
         String sql = " INSERT INTO prestationsfaites (ServiceDemandeur,NomPatient,PrenomPatient,IPP,NomMedicoTech,PrenomMedicotehc,idTECH,Resultats) VALUES(?,?,?,?,?,?,?,?) ";
 
-        ConnexionBD conn = new ConnexionBD();
+        ConnexionBD conn = ConnexionBD.getInstance();
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
 
         statement.setObject(1, r.getServiceDemandeur(), Types.VARCHAR);

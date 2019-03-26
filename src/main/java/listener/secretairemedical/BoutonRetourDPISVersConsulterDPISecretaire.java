@@ -37,6 +37,7 @@ public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListene
 
 
             MethodeBD.PatientSecretaire(cdpis.getjTable1());
+            cdpis.getjTextField1().setText("");
 
 
            RafraichitLesPanels rf = new RafraichitLesPanels(jframe,cdpis);

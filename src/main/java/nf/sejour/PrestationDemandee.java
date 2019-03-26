@@ -43,7 +43,7 @@ public class PrestationDemandee {
         boolean j = false;
         String sql = " INSERT INTO prestationaeffectuer (ServiceDemandeur,PrestationDemande, NomPatient, PrenomPatient,IPP,NomPh,PrenomPH,idPh) VALUES(?,?,?,?,?,?,?,?) ";
 
-        ConnexionBD conn = new ConnexionBD();
+        ConnexionBD conn = ConnexionBD.getInstance();
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
 
         statement.setObject(1, pd.getServiceDemandeur(), Types.VARCHAR);
