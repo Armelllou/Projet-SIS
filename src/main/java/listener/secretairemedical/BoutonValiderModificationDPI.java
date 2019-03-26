@@ -107,7 +107,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
 
                 //------------------changement de table pour un changement de type de sejour
                 if (typeSejour.equals("Hospitalisation") && !dpis.getTypeDeSejour().getText().equals(mdpi.getTypesejour().getSelectedItem().toString())) {
-
+                    System.out.println("testbababa");
                     ipp = mdpi.getjLabel3().getText();
 
                     ResultSet rs3 = executeQuery("Select * from consultationexterne WHERE IPP ='" + ipp + "'");
@@ -133,7 +133,9 @@ public class BoutonValiderModificationDPI implements ActionListener {
                         statement.executeUpdate();
 
                     }
-                } else {
+                }
+                if(typeSejour.equals("Consultation externe") && !dpis.getTypeDeSejour().getText().equals(mdpi.getTypesejour().getSelectedItem().toString())){
+                    System.out.println("l,dkekf12");
                     ipp = mdpi.getjLabel3().getText();
                     ResultSet rs2 = executeQuery("Select * from hospitalisation WHERE IPP ='" + ipp + "'");
 
@@ -173,7 +175,6 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 if (mdpi.getTypesejour().getSelectedItem().toString().equals("Hospitalisation") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Terminé")) {
 
                     System.out.println("test1");
-
 
                     String s1 = "UPDATE hospitalisation SET DateSortieH=? WHERE IPP=?";
                     PreparedStatement prep = conn.getConnexion().prepareStatement(s1);
