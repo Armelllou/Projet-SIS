@@ -5,13 +5,11 @@
  */
 package listener.technicien;
 
-import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.ListePersonnel;
 import interfaces.ModifierPersonnel;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import java.sql.SQLException;
@@ -78,20 +76,24 @@ public class TableauPhP1 implements MouseListener {
     }
              @Override
              public void mousePressed(MouseEvent e) {
+                 //throw new UnsupportedOperationException();
          }
              
              @Override
              public void mouseReleased(MouseEvent e) {
+                 //throw new UnsupportedOperationException();
              
          }
              
              @Override
              public void mouseEntered(MouseEvent e) {
+                 //throw new UnsupportedOperationException();
              
          }
              
              @Override
              public void mouseExited(MouseEvent e) {
+                 //throw new UnsupportedOperationException();
              
          }    
 }

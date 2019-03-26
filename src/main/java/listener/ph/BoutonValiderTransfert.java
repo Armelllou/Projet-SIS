@@ -53,10 +53,7 @@ public class BoutonValiderTransfert implements ActionListener {
             prep.setString(3, ts.getChambre().getText());
             prep.setString(4, ts.getjLabelipp().getText());
             prep.executeUpdate();
-            
-            
- 
-            JOptionPane jop1 = new JOptionPane();
+
             JOptionPane.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
 
            dpiph.getServiceGeo().setText(ts.getServiceGeographique().getSelectedItem().toString());

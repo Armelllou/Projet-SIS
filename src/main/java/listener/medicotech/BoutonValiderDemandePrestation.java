@@ -55,8 +55,7 @@ public class BoutonValiderDemandePrestation implements ActionListener {
         try {
             PrestationDemandee pd = new PrestationDemandee(Service, PrestationDemandee, nom, prenom, ipp,NomMedecin,PrenomMedecin,idph);
             pd.AjouterDemandeDePrestationSurBD(pd);
-            
-            JOptionPane jop1 = new JOptionPane();
+
             JOptionPane.showMessageDialog(null, "Prestation correctement demandée", "Information", JOptionPane.INFORMATION_MESSAGE);
             
                 RafraichitLesPanels rf = new RafraichitLesPanels(fen,imph);

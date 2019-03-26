@@ -1,26 +1,20 @@
 package bd;
 
-import interfaces.ConsulterDPIPHetIDE;
-import java.awt.Font;
 import listener.commun.State;
-
-import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Types;
-import java.util.TimerTask;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JTable;
-import javax.swing.Timer;
+
 
 public class MethodeBD {
+    private static final String PRENOM = "Prénom";
+    private static final String NOM_NAISSANCE = "NomDeNaissance";
+    private static final String NOM_USUEL = "NomUsuel";
 
-    /**
-     * Constructeur de la classe, avec en paramètre la connection à la base.
-     */
-    public MethodeBD() {
-    }
 
     public static ResultSet executeQuery(String query) {
         try {
@@ -28,14 +22,14 @@ public class MethodeBD {
             PreparedStatement ps = conn.getConnexion().prepareStatement(query);
             return ps.executeQuery(query);
         } catch (SQLException e) {
-            e.printStackTrace();
+            Logger.getLogger(ResultSet.class.getName()).log(Level.SEVERE, null, e);
         }
         return null;
     }
 
     private static DefaultTableModel execute(String query) {
         String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        String title[] = {NOM_NAISSANCE, NOM_USUEL, PRENOM, "IPP"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         ResultSet rs = executeQuery(query);
@@ -44,14 +38,14 @@ public class MethodeBD {
         }
         try {
             while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[0] = rs.getString(NOM_NAISSANCE);
+                infoAllPatient[1] = rs.getString(NOM_USUEL);
+                infoAllPatient[2] = rs.getString(PRENOM);
                 infoAllPatient[3] = rs.getString("IPP");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }
         finally {
         }
@@ -60,7 +54,7 @@ public class MethodeBD {
 
     private static DefaultTableModel executeRecherchePersonnel(String query, String type) {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "id"};
+        String title[] = {"Nom", PRENOM, "id"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         ResultSet rs = executeQuery(query);
@@ -75,14 +69,14 @@ public class MethodeBD {
 
                 if(type.equals("ide")){ infoAllPatient[2] = rs.getString("idIDE");infoAllPatient[1] = rs.getString("Prenom");}
                 if(type.equals("SA")) {
-                    infoAllPatient[1] = rs.getString("Prénom");
+                    infoAllPatient[1] = rs.getString(PRENOM);
                     infoAllPatient[2] = rs.getString("idSA");
                 }
                 if(type.equals("MT")) { infoAllPatient[2] = rs.getString("idMT");infoAllPatient[1] = rs.getString("Prenom");}
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }
         finally {
         }
@@ -111,7 +105,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }
         finally {
         }
@@ -125,7 +119,7 @@ public class MethodeBD {
      */
     public static DefaultTableModel listePrestation() {
         String[] infoAllPatient = new String[7];
-        String title[] = {"Nom ", "Prénom", "IPP", "Prestation à effectuer", "ServiceDemandeur", "Médecin Prescripteur", "Date de Demande"};
+        String title[] = {"Nom ", PRENOM, "IPP", "Prestation à effectuer", "ServiceDemandeur", "Médecin Prescripteur", "Date de Demande"};
         String query = "SELECT * FROM prestationaeffectuer ";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -146,7 +140,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
         }
         return templatesTableModel;
@@ -154,7 +148,7 @@ public class MethodeBD {
 
     public static DefaultTableModel listeResultats(String service) {
         String[] infoAllPatient = new String[6];
-        String title[] = {"Nom ", "Prénom", "IPP", "résultats", "Service Demandeur", "Date de résultats"};
+        String title[] = {"Nom ", PRENOM, "IPP", "résultats", "Service Demandeur", "Date de résultats"};
         String query = "SELECT * FROM prestationsfaites WHERE serviceDemandeur = '" + service + "'";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -174,7 +168,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
         }
         return templatesTableModel;
@@ -204,7 +198,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
         }
         return templatesTableModel;
@@ -217,7 +211,7 @@ public class MethodeBD {
      */
     public static DefaultTableModel listeResultatsParPatients(String ipp) {
         String[] infoAllPatient = new String[5];
-        String title[] = {"Nom", "Prénom", "IPP","Résultats","Date des Résulats"};
+        String title[] = {"Nom", PRENOM, "IPP","Résultats","Date des Résulats"};
         String query = "SELECT * FROM ResultatsLus WHERE IPP ='" + ipp + "'";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -235,7 +229,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
         }
         return templatesTableModel;
@@ -267,7 +261,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
        }
         return templatesTableModel;
@@ -275,7 +269,7 @@ public class MethodeBD {
 
     public static DefaultTableModel listeIDE() {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "Id"};
+        String title[] = {"Nom", PRENOM, "Id"};
         String query = "SELECT * FROM ide";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -299,7 +293,7 @@ public class MethodeBD {
 
     public static DefaultTableModel listePH() {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "Id"};
+        String title[] = {"Nom", PRENOM, "Id"};
         String query = "SELECT * FROM praticienhospitaliers";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -315,7 +309,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
         }
         return templatesTableModel;
@@ -323,7 +317,7 @@ public class MethodeBD {
 
     public static DefaultTableModel listeSA() {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "id"};
+        String title[] = {"Nom", PRENOM, "id"};
         String query = "SELECT * FROM secretaireadministrative";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
@@ -334,12 +328,12 @@ public class MethodeBD {
         try {
             while (rs.next()) {
                 infoAllPatient[0] = rs.getString("Nom");
-                infoAllPatient[1] = rs.getString("Prénom");
+                infoAllPatient[1] = rs.getString(PRENOM);
                 infoAllPatient[2] = rs.getString("idSA");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
         }
         return templatesTableModel;
@@ -347,10 +341,10 @@ public class MethodeBD {
 
     public static DefaultTableModel listeMT() {
         String[] infoAllPatient = new String[3];
-        String title[] = {"Nom", "Prénom", "id"};
+        String title1[] = {"Nom", PRENOM, "id"};
         String query = "SELECT * FROM medicotechniques";
         DefaultTableModel templatesTableModel = new DefaultTableModel();
-        templatesTableModel.setColumnIdentifiers(title);
+        templatesTableModel.setColumnIdentifiers(title1);
         ResultSet rs = executeQuery(query);
         if (rs == null) {
             return templatesTableModel;
@@ -363,7 +357,7 @@ public class MethodeBD {
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
        }
         return templatesTableModel;
@@ -377,7 +371,7 @@ public class MethodeBD {
      */
     public static DefaultTableModel listePatientJTableServiceIde(String service) {
         String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        String title[] = {NOM_NAISSANCE, NOM_USUEL, PRENOM, "IPP"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         String query = "SELECT * "
@@ -395,15 +389,15 @@ public class MethodeBD {
 
         try {
             while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[0] = rs.getString(NOM_NAISSANCE);
+                infoAllPatient[1] = rs.getString(NOM_USUEL);
+                infoAllPatient[2] = rs.getString(PRENOM);
                 infoAllPatient[3] = rs.getString("IPP");
                 templatesTableModel.addRow(infoAllPatient);
             }
 
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
          }
         try{
@@ -420,14 +414,14 @@ public class MethodeBD {
             }
 
             while (rs1.next()) {
-                infoAllPatient[0] = rs1.getString("NomDeNaissance");
-                infoAllPatient[1] = rs1.getString("NomUsuel");
-                infoAllPatient[2] = rs1.getString("Prénom");
+                infoAllPatient[0] = rs1.getString(NOM_NAISSANCE);
+                infoAllPatient[1] = rs1.getString(NOM_USUEL);
+                infoAllPatient[2] = rs1.getString(PRENOM);
                 infoAllPatient[3] = rs1.getString("IPP");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
          }
         return templatesTableModel;
@@ -441,7 +435,7 @@ public class MethodeBD {
      */
     public static DefaultTableModel listePatientJTableServicePH(String service) {
         String[] infoAllPatient = new String[4];
-        String title[] = {"NomDeNaissance", "NomUsuel", "Prénom", "IPP"};
+        String title[] = {NOM_NAISSANCE, NOM_USUEL, PRENOM, "IPP"};
         DefaultTableModel templatesTableModel = new DefaultTableModel();
         templatesTableModel.setColumnIdentifiers(title);
         String query = "SELECT * "
@@ -459,15 +453,15 @@ public class MethodeBD {
 
         try {
             while (rs.next()) {
-                infoAllPatient[0] = rs.getString("NomDeNaissance");
-                infoAllPatient[1] = rs.getString("NomUsuel");
-                infoAllPatient[2] = rs.getString("Prénom");
+                infoAllPatient[0] = rs.getString(NOM_NAISSANCE);
+                infoAllPatient[1] = rs.getString(NOM_USUEL);
+                infoAllPatient[2] = rs.getString(PRENOM);
                 infoAllPatient[3] = rs.getString("IPP");
                 templatesTableModel.addRow(infoAllPatient);
             }
 
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
         }
         try{
@@ -484,14 +478,14 @@ public class MethodeBD {
             }
 
             while (rs1.next()) {
-                infoAllPatient[0] = rs1.getString("NomDeNaissance");
-                infoAllPatient[1] = rs1.getString("NomUsuel");
-                infoAllPatient[2] = rs1.getString("Prénom");
+                infoAllPatient[0] = rs1.getString(NOM_NAISSANCE);
+                infoAllPatient[1] = rs1.getString(NOM_USUEL);
+                infoAllPatient[2] = rs1.getString(PRENOM);
                 infoAllPatient[3] = rs1.getString("IPP");
                 templatesTableModel.addRow(infoAllPatient);
             }
         } catch (SQLException e1) {
-            e1.printStackTrace();
+            Logger.getLogger(DefaultTableModel.class.getName()).log(Level.SEVERE, null, e1);
         }finally {
 
         }

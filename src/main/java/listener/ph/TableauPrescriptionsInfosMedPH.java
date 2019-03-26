@@ -45,8 +45,6 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
     public void mouseClicked(MouseEvent e) {
        try {
             String ipp = imph.getjLabelipp().getText();
-            String idIde = null;
-            int id = 0;
 
             
             int numLigne = table.getSelectedRow();
@@ -82,18 +80,22 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException();
     }
 
 

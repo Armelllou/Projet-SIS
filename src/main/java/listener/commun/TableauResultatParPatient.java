@@ -10,7 +10,6 @@ import interfaces.Fenetre;
 
 import interfaces.ResultatParPatient;
 import interfaces.ResultatsConsulter;
-;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -52,21 +51,25 @@ public class TableauResultatParPatient implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException();
        
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException();
        
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException();
        
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException();
        
     }
 

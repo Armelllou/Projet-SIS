@@ -23,6 +23,8 @@ import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
 import listener.ide.TableauConsultationsInfosMedIDE;
 
+import static bd.MethodeBD.executeQuery;
+
 public class TableauConsultationsInfosMedPH implements MouseListener {
 
     InfosMedicalesPH imph;
@@ -49,13 +51,7 @@ public class TableauConsultationsInfosMedPH implements MouseListener {
             String Nomemdecin = (String) table.getModel().getValueAt(numLigne, 0);
             String dates = (String) table.getModel().getValueAt(numLigne, 1);
 
-            String Sql1 = "Select * from consultation WHERE IPP ='" + ipp + "'and NomMedecin='" + Nomemdecin + "'and Date ='" + dates + "'";
-            ConnexionBD conn = ConnexionBD.getInstance();
-            PreparedStatement ps;
-
-            ps = conn.getConnexion().prepareStatement(Sql1);
-
-            ResultSet rs = ps.executeQuery();
+            ResultSet rs = executeQuery("Select * from consultation WHERE IPP ='" + ipp + "'and NomMedecin='" + Nomemdecin + "'and Date ='" + dates + "'");
 
             while (rs.next()) {
 
@@ -79,22 +75,23 @@ public class TableauConsultationsInfosMedPH implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException();
     
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-       
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-       
+        //throw new UnsupportedOperationException();
     }
 
 }

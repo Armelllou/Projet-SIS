@@ -5,7 +5,6 @@
  */
 package listener.commun;
 
-import bd.ConnexionBD;
 import bd.MethodeBD;
 import static bd.MethodeBD.executeQuery;
 import interfaces.*;
@@ -52,7 +51,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
         return service;
     }
 
-    public void connexion() throws SQLException {
+    public void connexion_personnel() throws SQLException {
         jframe.setExtendedState(JFrame.MAXIMIZED_BOTH);
         jframe.setLayout(new BorderLayout());
         jframe.panelVisibleFalse();
@@ -171,7 +170,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
-            connexion();
+            connexion_personnel();
         } catch (SQLException ex) {
             Logger.getLogger(ListenerConnexion.class.getName()).log(Level.SEVERE, null, ex);
         }finally {
@@ -191,7 +190,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             try {
-                connexion();
+                connexion_personnel();
             } catch (SQLException ex) {
                 ex.printStackTrace();
                 //Logger.getLogger(ConnexionEntrerListener.class.getName()).log(Level.SEVERE, null, ex);
@@ -203,6 +202,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
+        //throw new UnsupportedOperationException();
     }
 
 }

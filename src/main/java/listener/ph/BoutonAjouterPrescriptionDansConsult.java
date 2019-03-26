@@ -14,10 +14,6 @@ import java.awt.event.ActionListener;
 import java.util.Calendar;
 import listener.commun.RafraichitLesPanels;
 
-/**
- *
- * @author annel
- */
 public class BoutonAjouterPrescriptionDansConsult implements ActionListener {
 
     AjouterPrescription ac;

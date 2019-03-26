@@ -10,16 +10,16 @@ import interfaces.AjouterActeInfirmier;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
-import java.awt.Font;
+import listener.commun.RafraichitLesPanels;
 import nf.sejour.Acte;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import listener.commun.RafraichitLesPanels;
 
 /**
  * @author annel
@@ -45,18 +45,16 @@ public class BoutonValiderActe implements ActionListener {
         try {
             a.AjouterActeSurBD(a);
 
-            JOptionPane jop1 = new JOptionPane();
-
             JOptionPane.showMessageDialog(null, "Acte correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
             String ipp = aai.getIpp().getText();
             im.getjTable2().setFont(new Font("Calibri", 0, 18));
             im.getjTable2().setModel(MethodeBD.listeActeJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
             fen.panelVisibleFalse();
-    RafraichitLesPanels rf = new RafraichitLesPanels(fen,im);
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen, im);
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderActe.class.getName()).log(Level.SEVERE, null, ex);
-        }finally {
-         }
+        } finally {
+        }
 
     }
 }

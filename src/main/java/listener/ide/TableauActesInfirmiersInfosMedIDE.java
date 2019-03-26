@@ -5,8 +5,6 @@
  */
 package listener.ide;
 
-import bd.ConnexionBD;
-
 import interfaces.ActeInfirmieride;
 import interfaces.Fenetre;
 import interfaces.BarreDuHaut;
@@ -16,7 +14,6 @@ import interfaces.InfosMedicalesIDE;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import java.sql.SQLException;
@@ -99,21 +96,25 @@ public class TableauActesInfirmiersInfosMedIDE implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException();
 
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException();
 
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException();
 
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException();
 
     }
 

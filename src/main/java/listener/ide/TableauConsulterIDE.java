@@ -5,13 +5,11 @@
  */
 package listener.ide;
 
-import bd.ConnexionBD;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.DPIIDE;
 import interfaces.Fenetre;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -147,21 +145,25 @@ public class TableauConsulterIDE implements MouseListener{
 
     @Override
     public void mousePressed(MouseEvent e) {
+        //throw new UnsupportedOperationException();
         
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        //throw new UnsupportedOperationException();
     
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
+        //throw new UnsupportedOperationException();
 
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
+        //throw new UnsupportedOperationException();
        
     }
 }

@@ -1,8 +1,15 @@
 package bd;
 
+import listener.secretairemedical.TableauConsulterDPISecretaire;
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import static com.sun.xml.internal.ws.spi.db.BindingContextFactory.LOGGER;
 
 public class ConnexionBD {
 
@@ -38,6 +45,8 @@ public class ConnexionBD {
         } catch (Exception ex) {
             System.out.println("Erreur Connection driver");
             ex.printStackTrace();
+            Logger.getLogger(ConnexionBD.class.getName()).log(Level.SEVERE, null, ex);
+
         }finally {
         }
     }
@@ -50,7 +59,7 @@ public class ConnexionBD {
     }
 
     /**
-     * Retourne la connexion en cours de la class
+     * Retourne la connexion_personnel en cours de la class
      *
      * @return Connection conn
      */

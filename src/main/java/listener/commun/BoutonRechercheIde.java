@@ -1,11 +1,8 @@
 package listener.commun;
 
 import bd.MethodeBD;
-import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.ListePersonnel;
-
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

@@ -57,21 +57,25 @@ public class TableauPrestations implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent me) {
+        //throw new UnsupportedOperationException();
        
     }
 
     @Override
     public void mouseReleased(MouseEvent me) {
+        //throw new UnsupportedOperationException();
     
     }
 
     @Override
     public void mouseEntered(MouseEvent me) {
+        //throw new UnsupportedOperationException();
     
     }
 
     @Override
     public void mouseExited(MouseEvent me) {
+        //throw new UnsupportedOperationException();
     
     }
 

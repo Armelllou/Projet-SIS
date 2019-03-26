@@ -5,7 +5,6 @@
  */
 package listener.secretairemedical;
 
-import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
@@ -13,7 +12,6 @@ import interfaces.DPISecretaire;
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -141,19 +139,23 @@ public class TableauConsulterDPISecretaire implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent me) {
+        //throw new UnsupportedOperationException();
 
     }
 
     @Override
     public void mouseReleased(MouseEvent me) {
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void mouseEntered(MouseEvent me) {
+        //throw new UnsupportedOperationException();
     }
 
     @Override
     public void mouseExited(MouseEvent me) {
+        //throw new UnsupportedOperationException();
     }
 
 }

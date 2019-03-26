@@ -84,7 +84,6 @@ public class BoutonValiderModificationDPI implements ActionListener {
         finally {
          }
 
-        //------------------------------
 
         try {
             String ipp = mdpi.getjLabel3().getText();
@@ -106,7 +105,7 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 String typeSejour = rs.getString("typeSejour");
 
 
-//------------------changement de table pour un changement de type de sejour
+                //------------------changement de table pour un changement de type de sejour
                 if (typeSejour.equals("Hospitalisation") && !dpis.getTypeDeSejour().getText().equals(mdpi.getTypesejour().getSelectedItem().toString())) {
 
                     ipp = mdpi.getjLabel3().getText();
@@ -169,9 +168,8 @@ public class BoutonValiderModificationDPI implements ActionListener {
                 java.util.Date date = new java.util.Date();
                 System.out.println(date);
                 String date1 = date.toString();
-//-----------------------------------Fermeture DPI-----------------
 
-
+                //-----------------------------------Fermeture DPI-----------------
                 if (mdpi.getTypesejour().getSelectedItem().toString().equals("Hospitalisation") && mdpi.getEtatsejour().getSelectedItem().toString().equals("Terminé")) {
 
                     System.out.println("test1");
@@ -210,7 +208,6 @@ public class BoutonValiderModificationDPI implements ActionListener {
                     statement1.executeUpdate();
                     dpis.getEtat().setText("Terminé");
                 }
-//----------------------------------------------------
 
                 dpis.getjLabelnom().setText(nomDeNaissance);
                 dpis.getjLabelnom1().setText(nomUsuel);

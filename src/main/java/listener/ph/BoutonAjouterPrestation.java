@@ -9,10 +9,10 @@ import interfaces.AjouterPrestation;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesPH;
+import listener.commun.RafraichitLesPanels;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import listener.commun.RafraichitLesPanels;
 
 /**
  * @author Manon
@@ -22,7 +22,7 @@ public class BoutonAjouterPrestation implements ActionListener {
     AjouterPrestation ac;
     InfosMedicalesPH im;
     Fenetre jframe;
-  BarreDuHaut bh;
+    BarreDuHaut bh;
 
     public BoutonAjouterPrestation(Fenetre jframe, AjouterPrestation ac, InfosMedicalesPH im, BarreDuHaut bh) {
         this.jframe = jframe;
@@ -33,11 +33,11 @@ public class BoutonAjouterPrestation implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-      String Service =  bh.getService().getText();
+        String Service = bh.getService().getText();
         ac.getServiceDemandeur().setSelectedItem(Service);
         ac.getServiceDemandeur().setEnabled(false);
-        
-          RafraichitLesPanels rf = new RafraichitLesPanels(jframe,ac);
+
+        RafraichitLesPanels rf = new RafraichitLesPanels(jframe, ac);
     }
 
 }
