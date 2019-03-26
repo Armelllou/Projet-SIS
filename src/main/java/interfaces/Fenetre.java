@@ -85,7 +85,7 @@ public class Fenetre extends JFrame {
     ResultatsConsulter rc = new ResultatsConsulter();
     ActeInfirmieride  aiide = new ActeInfirmieride();
 
-    // Attributs de la JFrame
+    // Attributs de la JFrames
     BarreDuHaut barreduhaut = new BarreDuHaut();
     Fenetre frame = this;
     
