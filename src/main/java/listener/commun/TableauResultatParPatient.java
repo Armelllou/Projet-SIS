@@ -38,7 +38,6 @@ public class TableauResultatParPatient implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         int NumLigne = table.getSelectedRow();
 
-
         pf.getNomPatient().setText((String) table.getModel().getValueAt(NumLigne, 0));
         pf.getPrenomPatient().setText((String) table.getModel().getValueAt(NumLigne, 1));
         pf.getIpp().setText((String) table.getModel().getValueAt(NumLigne, 2));

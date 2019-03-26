@@ -414,7 +414,7 @@ public class MethodeBD {
                     "JOIN ide ON localisations.ServiceResponsable=ide.Service OR localisations.ServiceGeographique=ide.Service " +
                     "NATURAL JOIN consultationexterne " +
                     "WHERE ide.Service = '" + service + "'" +
-                    "AND consultationexterne.DateSortiec IS NULL ";
+                    "AND consultationexterne.DateSortieC IS NULL ";
             ResultSet rs1 = executeQuery(query1);
             if (rs1 == null) {
                 return templatesTableModel;
