@@ -86,7 +86,7 @@ public class PrestationFaite extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
-        nomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        nomPatient.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         nomPatient.setText("NOM");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
@@ -97,7 +97,7 @@ public class PrestationFaite extends javax.swing.JPanel {
         boutonValider.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         boutonValider.setText("Valider");
 
-        prenomPatient.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        prenomPatient.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         prenomPatient.setText("Prénom");
 
         ipp.setFont(new java.awt.Font("Calibri", 1, 40)); // NOI18N
@@ -109,7 +109,7 @@ public class PrestationFaite extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
         jLabel4.setText("Patient:");
 
-        nomMedecin.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
+        nomMedecin.setFont(new java.awt.Font("Calibri", 0, 36)); // NOI18N
         nomMedecin.setText("Nom Prenom");
 
         type.setFont(new java.awt.Font("Calibri", 1, 36)); // NOI18N
@@ -132,22 +132,22 @@ public class PrestationFaite extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(82, 82, 82)
-                                .addComponent(jLabel4)
-                                .addGap(89, 89, 89)
-                                .addComponent(nomPatient)
-                                .addGap(70, 70, 70)
-                                .addComponent(prenomPatient)
-                                .addGap(85, 85, 85)
-                                .addComponent(ipp)
-                                .addGap(136, 136, 136)
-                                .addComponent(type)
-                                .addGap(27, 27, 27)
-                                .addComponent(nomMedecin))
-                            .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jLabel3)))
-                        .addGap(0, 296, Short.MAX_VALUE)))
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(57, 57, 57)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nomPatient)
+                                .addGap(82, 82, 82)
+                                .addComponent(prenomPatient)
+                                .addGap(125, 125, 125)
+                                .addComponent(ipp)
+                                .addGap(192, 192, 192)
+                                .addComponent(type)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(nomMedecin)))
+                        .addGap(0, 319, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

@@ -79,12 +79,12 @@ public class ResultatsConsulter extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 102, 204), 10, true));
 
-        nomPatient.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
+        nomPatient.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         nomPatient.setText("NOM");
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/interfaces/logo.png"))); // NOI18N
 
-        prenomPatient.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
+        prenomPatient.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         prenomPatient.setText("Prénom");
 
         ipp.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
@@ -96,7 +96,7 @@ public class ResultatsConsulter extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
         jLabel4.setText("Patient:");
 
-        nomMedecin.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
+        nomMedecin.setFont(new java.awt.Font("Calibri", 0, 30)); // NOI18N
         nomMedecin.setText("Nom Prenom");
 
         type.setFont(new java.awt.Font("Calibri", 1, 30)); // NOI18N
@@ -127,34 +127,37 @@ public class ResultatsConsulter extends javax.swing.JPanel {
                                     .addComponent(jLabel3)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(boutonRetour)
-                                        .addGap(48, 48, 48)
+                                        .addGap(33, 33, 33)
                                         .addComponent(jLabel4)
-                                        .addGap(18, 18, 18)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(nomPatient)
-                                        .addGap(42, 42, 42)
+                                        .addGap(54, 54, 54)
                                         .addComponent(prenomPatient)
-                                        .addGap(81, 81, 81)
+                                        .addGap(74, 74, 74)
                                         .addComponent(ipp)
-                                        .addGap(131, 131, 131)
+                                        .addGap(130, 130, 130)
                                         .addComponent(type)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(nomMedecin)))
-                                .addGap(0, 227, Short.MAX_VALUE)))))
+                                .addGap(0, 254, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(nomPatient)
-                        .addComponent(prenomPatient)
-                        .addComponent(ipp)
-                        .addComponent(jLabel4)
-                        .addComponent(type)
-                        .addComponent(nomMedecin))
-                    .addComponent(boutonRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(nomPatient)
+                            .addComponent(prenomPatient)
+                            .addComponent(ipp)
+                            .addComponent(jLabel4)
+                            .addComponent(type)
+                            .addComponent(nomMedecin)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(boutonRetour, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(69, 69, 69)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
