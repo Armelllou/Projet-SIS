@@ -10,7 +10,7 @@ import java.sql.Types;
 
 public class Infirmier extends Personnel {
     
-    public String service;
+    private String service;
 
     // infirmier es un personnel avec un service propre
     

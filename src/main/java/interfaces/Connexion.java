@@ -173,7 +173,7 @@ public class Connexion extends javax.swing.JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
+        //throw new UnsupportedOperationException();
     }
 
  

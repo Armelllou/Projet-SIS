@@ -70,9 +70,10 @@ public class ListenerConnexion implements ActionListener, KeyListener {
 
         switch (state) {
             case NONCO:
-
                 return;
             case PH:
+            default:
+                break;
         }
     }
 
@@ -192,8 +193,7 @@ public class ListenerConnexion implements ActionListener, KeyListener {
             try {
                 connexion_personnel();
             } catch (SQLException ex) {
-                ex.printStackTrace();
-                //Logger.getLogger(ConnexionEntrerListener.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ListenerConnexion.class.getName()).log(Level.SEVERE, null, ex);
             }
             finally {
            }

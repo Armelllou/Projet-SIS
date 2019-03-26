@@ -33,18 +33,20 @@ public class ConnexionBD {
 //            }
 // ------------BDD en ligne -------------
         try {
+            String uname = getEncryptedUser();
+            String password = getEncryptedPass();
+
             System.out.println("===> Connexion en cours");
             String bdUrl = "jdbc:mysql://db4free.net/sqlsis1";
             bdUrl += "?serverTimezone=UTC";
             Class.forName("com.mysql.cj.jdbc.Driver");
-            this.conn = DriverManager.getConnection(bdUrl, "sqlprojetsis", "sqlprojetsis");
+            this.conn = DriverManager.getConnection(bdUrl, uname, password);
             if (this.conn.isValid(0)) {
                 System.out.println("===> Connexion effectuee");
             }
 //
         } catch (Exception ex) {
             System.out.println("Erreur Connection driver");
-            ex.printStackTrace();
             Logger.getLogger(ConnexionBD.class.getName()).log(Level.SEVERE, null, ex);
 
         }finally {
@@ -65,5 +67,14 @@ public class ConnexionBD {
      */
     public Connection getConnexion() {
         return conn;
+    }
+
+    public String getEncryptedUser() {
+
+        return "sqlprojetsis";
+    }
+
+    public String getEncryptedPass() {
+        return "sqlprojetsis";
     }
 }
