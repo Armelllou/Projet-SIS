@@ -80,6 +80,8 @@ public class TableauActesInfirmiersInfosMedPH implements MouseListener {
 
                 cph.getNomide1().setText(nom);
                 cph.getPrenomide1().setText(prenom);
+                cph.getObservations().setEditable(false);
+                cph.getType().setEditable(false);
 
                
             }

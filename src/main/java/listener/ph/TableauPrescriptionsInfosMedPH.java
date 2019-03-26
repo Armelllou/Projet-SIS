@@ -63,6 +63,7 @@ public class TableauPrescriptionsInfosMedPH implements MouseListener {
                 cph.getDetail().setText(observation);
                 cph.getDATE().setText(dates);
                 cph.getNom().setText(Nom);
+                cph.getDetail().setEditable(false);
 
             }
 

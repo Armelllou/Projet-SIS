@@ -52,6 +52,8 @@ public class TableauPrestations implements MouseListener {
         pf.getDateDeDemande().setText(idPresta);
         pf.getDateDeDemande().setVisible(false);
         
+        pf.getDetails().setEditable(false);
+        
     RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
     }
 

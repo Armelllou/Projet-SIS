@@ -38,7 +38,7 @@ public class BoutonValiderDemandePrestation implements ActionListener {
         this.imph = imph;
         this.bh = bh;
         this.fen = fen;
-        this.p=p;
+        this.p = p;
     }
 
     @Override
@@ -50,24 +50,23 @@ public class BoutonValiderDemandePrestation implements ActionListener {
         String Service = ap.getServiceDemandeur().getSelectedItem().toString();
         String NomMedecin = bh.getNom().getText();
         String PrenomMedecin = bh.getPrenom().getText();
-        int idph =Integer.parseInt(bh.getId().getText()) ;
+        int idph = Integer.parseInt(bh.getId().getText());
 
         try {
-            PrestationDemandee pd = new PrestationDemandee(Service, PrestationDemandee, nom, prenom, ipp,NomMedecin,PrenomMedecin,idph);
+            PrestationDemandee pd = new PrestationDemandee(Service, PrestationDemandee, nom, prenom, ipp, NomMedecin, PrenomMedecin, idph);
             pd.AjouterDemandeDePrestationSurBD(pd);
 
             JOptionPane.showMessageDialog(null, "Prestation correctement demandée", "Information", JOptionPane.INFORMATION_MESSAGE);
-            
-                RafraichitLesPanels rf = new RafraichitLesPanels(fen,imph);
-            
-            
-         p.getTablePrestation().setFont(new Font("Calibri", 0, 18));
-        p.getTablePrestation().setModel(MethodeBD.listePrestation());
-        
+
+            RafraichitLesPanels rf = new RafraichitLesPanels(fen, imph);
+
+            p.getTablePrestation().setFont(new Font("Calibri", 0, 18));
+            p.getTablePrestation().setModel(MethodeBD.listePrestation());
+
         } catch (SQLException ex) {
             Logger.getLogger(BoutonValiderDemandePrestation.class.getName()).log(Level.SEVERE, null, ex);
-        }finally {
-         }
+        } finally {
+        }
 
     }
 

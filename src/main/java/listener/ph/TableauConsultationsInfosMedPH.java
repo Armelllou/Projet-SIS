@@ -62,6 +62,7 @@ public class TableauConsultationsInfosMedPH implements MouseListener {
                 cph.getObservation().setText(observation);
                 cph.getDate().setText(date);
                 cph.getNoMedecin().setText(nomMedecin);
+                cph.getObservation().setEditable(false);
 
                   RafraichitLesPanels rf = new RafraichitLesPanels(fen,cph);
 
