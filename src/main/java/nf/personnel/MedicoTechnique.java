@@ -25,7 +25,7 @@ public class MedicoTechnique extends Personnel {
     // ajpouter le medicotech sur la BD
       public boolean AjouterSurBdMedicoTechnique(MedicoTechnique i) throws SQLException {
         boolean j = false;
-        ConnexionBD conn = new ConnexionBD ();
+        ConnexionBD conn = ConnexionBD.getInstance();
         String sql = " INSERT INTO medicotechniques (idMT,motDePasse,Nom,Prenom) VALUES(?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         

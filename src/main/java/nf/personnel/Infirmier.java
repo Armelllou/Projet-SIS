@@ -22,7 +22,7 @@ public class Infirmier extends Personnel {
     //Ajoute une infirmière sur la base de donnée
     public boolean AjouterSurBdIDE(Infirmier i) throws SQLException {
         boolean j = false;
-        ConnexionBD conn = new ConnexionBD ();
+        ConnexionBD conn = ConnexionBD.getInstance();
         String sql = " INSERT INTO ide (idIDE,motDePasse,Nom,Prenom, Service) VALUES(?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         

@@ -26,7 +26,7 @@ public class Technicien extends Personnel{
     /// ajouter un technicien sur la BD
       public boolean AjouterSurBdTechnicien(Technicien i) throws SQLException {
         boolean j = false;
-        ConnexionBD conn = new ConnexionBD ();
+        ConnexionBD conn = ConnexionBD.getInstance();
         String sql = " INSERT INTO Technicien (idSM,motDePasse,Nom,Prenom) VALUES(?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         

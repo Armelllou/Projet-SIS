@@ -20,7 +20,7 @@ String Service;
    // ajouter une SA sur la BD 
     public boolean AjouterSurBdSecretaireMedical(SecretaireMedical i) throws SQLException {
         boolean j = false;
-        ConnexionBD conn = new ConnexionBD ();
+        ConnexionBD conn = ConnexionBD.getInstance();
         String sql = " INSERT INTO secretaireadministrative (idSA,motDePasse,Nom,Prénom, Service) VALUES(?,?,?,?,?) ";
         PreparedStatement statement = conn.getConnexion().prepareStatement(sql);
         
