@@ -8,8 +8,6 @@ package listener.secretairemedical;
 import interfaces.Fenetre;
 import interfaces.ModificationDPI;
 import interfaces.DPISecretaire;
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import listener.commun.RafraichitLesPanels;

@@ -15,7 +15,6 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import listener.commun.RafraichitLesPanels;
 import nf.personnel.Infirmier;
 import nf.personnel.Medecin;

@@ -14,9 +14,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import listener.commun.RafraichitLesPanels;
 
-/**
- * @author Manon
- */
 public class BoutonRetourDetailsPrestation implements ActionListener {
 
     DetailsPrestation pf;

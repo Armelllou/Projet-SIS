@@ -1,6 +1,5 @@
 package listener.secretairemedical;
 
-import bd.ConnexionBD;
 import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;

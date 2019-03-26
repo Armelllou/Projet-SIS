@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
 
-import nf.dossieradministratif.Dma;
-import nf.patient.Patient;
 
 public class SecretaireMedical extends Personnel {
 String Service;

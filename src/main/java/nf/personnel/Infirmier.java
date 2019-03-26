@@ -1,8 +1,6 @@
 package nf.personnel;
 
 import bd.ConnexionBD;
-import bd.MethodeBD;
-import java.awt.Font;
 import java.sql.PreparedStatement;
 
 import java.sql.SQLException;

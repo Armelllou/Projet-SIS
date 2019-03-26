@@ -10,14 +10,10 @@ import bd.MethodeBD;
 import interfaces.Fenetre;
 import interfaces.ConsulterDPISecretaire;
 import interfaces.DPISecretaire;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import listener.commun.RafraichitLesPanels;
 
-/**
- * @author Manon
- */
 public class BoutonRetourDPISVersConsulterDPISecretaire implements ActionListener {
 
     DPISecretaire dpis;

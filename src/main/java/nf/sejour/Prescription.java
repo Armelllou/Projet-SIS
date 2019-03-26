@@ -4,7 +4,6 @@ import bd.ConnexionBD;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.util.Date;
 import nf.Dates;
 
 public class Prescription {

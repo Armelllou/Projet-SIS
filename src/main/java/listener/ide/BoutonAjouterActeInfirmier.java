@@ -9,8 +9,6 @@ import interfaces.AjouterActeInfirmier;
 import interfaces.BarreDuHaut;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
-
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Calendar;

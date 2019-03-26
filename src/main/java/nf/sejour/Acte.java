@@ -1,8 +1,6 @@
 package nf.sejour;
 
 import bd.ConnexionBD;
-import nf.Dates;
-
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;

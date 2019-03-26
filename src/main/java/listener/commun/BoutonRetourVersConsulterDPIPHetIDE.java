@@ -11,8 +11,6 @@ import interfaces.ConsulterDPIPHetIDE;
 import interfaces.DPIIDE;
 import interfaces.Fenetre;
 import interfaces.DPIPH;
-
-
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -47,7 +45,6 @@ public class BoutonRetourVersConsulterDPIPHetIDE implements ActionListener {
 
 
         String notification = cdpis.getNotification().getText();
-        int notif = Integer.parseInt(notification);
         int increment = nombre;
         String notificationFinale = Integer.toString(increment);
         cdpis.getNotification().setText(notificationFinale);

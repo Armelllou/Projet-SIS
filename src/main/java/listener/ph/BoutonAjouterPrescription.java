@@ -21,9 +21,6 @@ import java.util.Calendar;
 import listener.commun.RafraichitLesPanels;
 
 
-/**
- * @author Manon
- */
 public class BoutonAjouterPrescription implements ActionListener {
 
     AjouterPrescription ac;

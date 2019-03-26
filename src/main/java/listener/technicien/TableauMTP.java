@@ -16,7 +16,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JTable;
 import listener.commun.RafraichitLesPanels;
-
 import static bd.MethodeBD.executeQuery;
 
 
@@ -35,7 +34,6 @@ public class TableauMTP implements MouseListener {
         
     }
 
-   
 
     @Override
     public void mouseClicked(MouseEvent e) {

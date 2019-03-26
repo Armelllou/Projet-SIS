@@ -14,10 +14,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- *
- * @author annel
- */
 public class BoutonRetourdetailsRversR implements ActionListener {
 
     Resultat r;
@@ -34,8 +30,6 @@ public class BoutonRetourdetailsRversR implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-
 
            RafraichitLesPanels rf = new RafraichitLesPanels(fen,r);
         

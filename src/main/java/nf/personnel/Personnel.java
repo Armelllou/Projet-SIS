@@ -1,6 +1,5 @@
 package nf.personnel;
 
-import java.util.UUID;
 
 public abstract class Personnel {
  

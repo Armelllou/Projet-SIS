@@ -57,7 +57,6 @@ public class BoutonValiderPrescription implements ActionListener {
             im.getjTable1().setFont(new Font("Calibri", 0, 18));
             im.getjTable1().setModel(MethodeBD.listePrescriptionJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
 
-            JOptionPane jop1 = new JOptionPane();
             JOptionPane.showMessageDialog(null, "Prescription correctement ajouté", "Information", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (SQLException ex) {

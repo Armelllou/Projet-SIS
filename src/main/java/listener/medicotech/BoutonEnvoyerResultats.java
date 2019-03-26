@@ -37,8 +37,6 @@ public class BoutonEnvoyerResultats implements ActionListener {
         pf.getPrenomPatient().setText(dp.getPrenomPatient().getText());
         pf.getIpp().setText(dp.getIPP().getText());
         
-        
-        
            RafraichitLesPanels rf = new RafraichitLesPanels(fen,pf);
     }
     

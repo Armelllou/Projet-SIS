@@ -5,17 +5,14 @@
  */
 package listener.commun;
 
-import bd.ConnexionBD;
 import interfaces.ConsulterDPIPHetIDE;
 import interfaces.Fenetre;
 import interfaces.DPIIDE;
 import interfaces.DPIPH;
-
-
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.PreparedStatement;
+
 import java.sql.ResultSet;
 
 import java.sql.SQLException;

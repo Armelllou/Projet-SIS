@@ -24,7 +24,7 @@ public class AdresseTest {
     public void codePostalTest() {
         Adresse adresse = new Adresse("test1", "test2", "test3");
         assertEquals("test1", adresse.getAdresse());
-        //assertEquals("test2", adresse.getAdresse());
+
 
     }
 

@@ -5,17 +5,13 @@
  */
 package listener.ide;
 
-import bd.ConnexionBD;
 import interfaces.Fenetre;
 import interfaces.InfosMedicalesIDE;
 import interfaces.PrescriptionIDE;
-
 import javax.swing.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;

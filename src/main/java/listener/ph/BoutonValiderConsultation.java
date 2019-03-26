@@ -22,7 +22,7 @@ import nf.sejour.Consultation;
 
 
 public class BoutonValiderConsultation implements ActionListener {
-AjouterConsultation ac;
+    AjouterConsultation ac;
     InfosMedicalesPH im;
     Fenetre fen;
     BarreDuHaut bh;
@@ -57,8 +57,7 @@ AjouterConsultation ac;
         
         im.getjTable3().setFont(new Font("Calibri", 0, 18));
         im.getjTable3().setModel(MethodeBD.listeConsultationJTableServiceIde(ipp)); // rempli la JTable avec les patients de la BD
-        
-        JOptionPane jop1 = new JOptionPane();
+
         JOptionPane.showMessageDialog(null, "Consultation correctement ajoutée", "Information", JOptionPane.INFORMATION_MESSAGE);
         
         

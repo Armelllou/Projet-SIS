@@ -3,15 +3,12 @@ package nf.patient;
 import bd.ConnexionBD;
 import interfaces.CreationDPI;
 import nf.Dates;
-
 import nf.dossieradministratif.Dma;
 import nf.localisation.Localisation;
-
-import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Types;
-import java.util.Date;
+
 
 public class Patient {
 
@@ -34,8 +31,6 @@ public class Patient {
     
     
     ConnexionBD conn = ConnexionBD.getInstance();
-    boolean ajoute = false;
-    CreationDPI cdpi = new CreationDPI();
 
     // crée un patient 
     public Patient(String NomDeNaissance, String NomUsuel, Dates DateDeNaissance, String sexe, String prenom, Adresse adresse, String numss, String email, String telephone, String typeSejour) throws SQLException {

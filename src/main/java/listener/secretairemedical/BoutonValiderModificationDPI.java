@@ -75,7 +75,6 @@ public class BoutonValiderModificationDPI implements ActionListener {
             prep.setString(4, ipp);
             prep.executeUpdate();
 
-            JOptionPane jop1 = new JOptionPane();
             JOptionPane.showMessageDialog(null, "Informations correctement modifiées", "Information", JOptionPane.INFORMATION_MESSAGE);
 
         } catch (SQLException ex) {

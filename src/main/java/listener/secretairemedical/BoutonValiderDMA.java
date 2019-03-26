@@ -14,18 +14,13 @@ import nf.Dates;
 import nf.localisation.Localisation;
 import nf.patient.Adresse;
 import nf.patient.Patient;
-
 import nf.sejour.Hospitalisation;
 import nf.sejour.consultation.ConsultExt;
-
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import java.sql.SQLException;
-
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import listener.commun.RafraichitLesPanels;
